@@ -4,8 +4,8 @@
 
 <h1 align="center">2026 World Cup Predictor</h1>
 <p align="center">
-  <em>单文件 HTML · 48 队完整模拟 · 香槟金海报分享</em><br>
-  <em>Single-file HTML · 48-team full simulation · champagne-gold poster export</em>
+  <em>Single-file HTML · 48-team full simulation · champagne-gold poster export</em><br>
+  <em>单文件 HTML · 48 队完整模拟 · 香槟金海报分享</em>
 </p>
 
 <p align="center">
@@ -16,14 +16,14 @@
   <a href="https://gmliangjz.github.io/WorldCup2026/"><img src="https://img.shields.io/badge/demo-live-success?style=flat-square"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square"></a>
   <img src="https://img.shields.io/badge/build-single--file-orange?style=flat-square">
-  <img src="https://img.shields.io/badge/i18n-中文%20%2B%20English-purple?style=flat-square">
+  <img src="https://img.shields.io/badge/i18n-English%20%2B%20中文-purple?style=flat-square">
   <img src="https://img.shields.io/badge/backend-none-success?style=flat-square">
 </p>
 
 <p align="center">
   <a href="https://gmliangjz.github.io/WorldCup2026/"><b>🌐 Live Demo</b></a> ·
-  <a href="#中文">中文</a> ·
-  <a href="#english">English</a>
+  <a href="#english">English</a> ·
+  <a href="#中文">中文</a>
 </p>
 
 <p align="center"><sub>⚠️ Unofficial fan-made project · not affiliated with FIFA or the FIFA World Cup™ · 非官方粉丝作品，与 FIFA 无关</sub></p>
@@ -33,16 +33,152 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshot-poster.png" alt="Champion poster" width="280">
-  <img src="docs/screenshot-bracket.png" alt="Knockout bracket" width="280">
-  <img src="docs/screenshot-leaderboard.png" alt="Top scorers" width="280">
+  <img src="docs/screenshot-poster.png" alt="Champion share poster" width="320">
 </p>
+
+<p align="center">
+  <img src="docs/screenshot-bracket.png" alt="Knockout bracket (dark mode)" width="760">
+</p>
+
+<p align="center">
+  <img src="docs/screenshot-leaderboard.png" alt="Top scorers & assists" width="760">
+</p>
+
+---
+
+## English
+
+A single-file HTML simulator for the 2026 FIFA World Cup. Predict from the group stage to the final, watch the champion reveal with confetti, then export a deep-forest-green + champagne-gold "champion poster" to share.
+
+**No npm install, no build pipeline, no backend** — just open `index.html`.
+
+### ✨ Features
+
+- **All 48 teams under the FIFA 2026 format**: 12 groups × 4 + 8 best-third advancement, with the new H2H-first tie-breaker
+- **528 real players**: 48 teams × 11, classified into 8 positions (ST / W / AM / CM / DM / FB / CB / GK)
+- **Strength-tier engine + upset cap**: 5 strength tiers with auto-weighted scoring; prevents unrealistic blowouts like "Saudi 5-1 Brazil"
+- **Position-weighted goals**: strikers score, attacking mids assist — matches real on-pitch roles
+- **Manual / semi-auto / full random**: type every score, click to randomize one match, or randomize everything at once
+- **Top scorers + assists**: auto-tallied from your predictions, top 20 with Wikipedia headshots
+- **Champion path reveal**: after the final, R32 → Final lights up progressively in gold + a confetti burst
+- **Champagne-gold share poster**: 1080×1620 PNG, deep-forest-green base + champagne gold, with a 5-tier original tagline
+- **Bilingual i18n**: one-tap toggle covering UI, team names, player names, and taglines
+- **Light / dark theme**: follows the system or toggles manually
+- **localStorage autosave**: close the browser, your prediction stays
+- **Responsive**: mobile / 1080p / desktop breakpoints
+- **Core engine runs offline**: the simulation is pure front-end with no backend; the poster/confetti use 2 CDNs (html2canvas / canvas-confetti), and photos/flags are fetched at runtime (Wikipedia / FlagCDN)
+
+### 🚀 Quick Start
+
+```bash
+# 1. Clone
+git clone https://github.com/gmliangjz/WorldCup2026.git
+
+# 2. Open index.html, or serve it statically
+cd WorldCup2026
+python -m http.server 8000   # or: npx serve
+```
+
+Or just open the **[Live Demo](https://gmliangjz.github.io/WorldCup2026/)**.
+
+### 🛠 Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Core | HTML / CSS / Vanilla JS (no framework) |
+| Poster render | [html2canvas](https://html2canvas.hertzen.com/) 1.4.1 |
+| Celebration | [canvas-confetti](https://github.com/catdad/canvas-confetti) |
+| Player photos | Wikipedia REST API |
+| Flags | [FlagCDN](https://flagcdn.com/) |
+| QR code | hand-rolled CSS-grid QR matrix |
+
+### 📐 Algorithm
+
+**Strength tiers** (`STRENGTH`, 1–5):
+```
+Tier 5: France / Spain / Argentina / England / Portugal / Brazil / Germany
+Tier 4: Netherlands / Belgium / Croatia / Morocco / Uruguay / Colombia / Japan
+Tier 3: USA / Mexico / Canada / Switzerland / Korea / Sweden / Türkiye … (20 teams)
+Tier 2: Saudi Arabia / Qatar / Egypt / Bosnia / Panama … (11 teams)
+Tier 1: Haiti / Curaçao / Cape Verde
+```
+
+**Score sampling** (`rnd`):
+- Base probability table `WW = [0,0,0,0,1,1,1,1,1,1,2,2,2,2,3,3,4,5]` (mostly 0–2 goals, occasionally 3–5)
+- Strength-delta weighting: `boostP = |Δ| × 0.20`, `nerfP = |Δ| × 0.12`
+- Knockout forces a decisive result; the group stage allows draws
+
+**Upset cap** (`applyUpsetCap`, knockout only):
+- When a weak team (≥ 2-tier gap) wins, the scoreline is rewritten to 1-0 / 2-0 / 2-1
+- Keeps the upset alive while avoiding unrealistic blowouts
+
+**Group ranking** (`rankGroup`) under the 2026 FIFA rules:
+1. Points → 2. **H2H points** (changed from 2022!) → 3. H2H goal difference → 4. H2H goals → 5. overall GD → 6. overall goals
+
+> ⚠️ FIFA reordered the 2026 tie-breakers, moving head-to-head ahead of overall goal difference — the key change from 2022.
+
+### 📊 Scoring (activates post-tournament)
+
+This isn't just for fun — once the 2026 results are in, your bracket is scored automatically against reality:
+
+| Correct call | Points |
+|---|---|
+| Group result (W/D/L direction) | 3 |
+| Exact group scoreline (bonus) | +2 |
+| Team correctly reaching R16 | 5 / team |
+| Team correctly reaching QF | 8 / team |
+| Team correctly reaching SF | 12 / team |
+| Team correctly reaching Final | 16 / team |
+| Correct 3rd place | 15 |
+| Correct runner-up | 20 |
+| **Correct champion** | **30** |
+
+> The scoring logic (`SCORE_RULES` + `scorePrediction()`) is implemented and unit-tested; it stays dormant until real results are wired in (`ACTUAL_RESULTS.ready=false`), so nothing is scored before kickoff.
+
+### 📝 Champion Taglines (Original Tribute)
+
+Each champion tier triggers an original Chinese commentary-style tagline, with a parallel English version. **These are original tributes to the Chinese sports-broadcasting tradition — not quotations from any specific commentator.**
+
+| Tier | Champions | English | 中文 |
+|---|---|---|---|
+| **Traditional Powerhouse** | FR / ES / AR / EN / PT / BR / DE | *Down from the mountain heights I came, yet saw no soul approaching.* | *我自山峰而下，犹未见来人。* |
+| **Golden Generation** | NL / BE / HR / MA / UY / CO / JP | *For a generation that lived in the word 'almost' — 'almost' ends tonight.* | *「差一点」是这一代人最熟悉的三个字……* |
+| **Dark Horse** | USA / Switzerland / Norway … | *The greatness of football lies precisely in its refusal to bow to any ranking…* | *足球的伟大之处，正是它不肯臣服于任何排行榜……* |
+| **Underdog Legend** | SA / QA / EG / Bosnia / Panama … | *Ninety minutes silenced every prediction…* | *他们用九十分钟，让所有的预言安静下来……* |
+| **Fairy Tale** | Haiti / Curaçao / Cape Verde | *Names that never appeared in any forecast…* | *这些从未出现在任何冠军预测里的名字……* |
+
+### 🗺 Roadmap
+
+- [x] Full 48-team FIFA 2026 format
+- [x] 528-player roster + 8-position classification
+- [x] Strength tiers + upset cap
+- [x] Champagne-gold share poster (1080×1620)
+- [x] 5 original champion taglines
+- [x] Bilingual + light/dark themes
+- [x] Shareable prediction URL (friends scan to see yours)
+- [x] Prediction history (last 5)
+- [ ] Pre-tournament squad refresh (2026)
+- [ ] PWA support (add to home screen)
+- [ ] Live results API (post-kickoff 2026)
+
+### 🙏 Credits
+
+- Flags: [FlagCDN](https://flagcdn.com/) (CC0)
+- Player photos: Wikipedia REST API
+- Poster rendering: [html2canvas](https://html2canvas.hertzen.com/) by [niklasvh](https://github.com/niklasvh)
+- Celebration: [canvas-confetti](https://github.com/catdad/canvas-confetti) by [catdad](https://github.com/catdad)
+- Player rosters: snapshot of 2024-2025 national-team squads (refreshed before 2026 kick-off)
+- Commentary: **original tribute to Chinese sports broadcasting**, not any specific commentator's work
+
+### 📄 License
+
+MIT — see [LICENSE](LICENSE).
 
 ---
 
 ## 中文
 
-一个用单文件 HTML 实现的 2026 FIFA 世界杯预测器。从小组赛模拟到决赛，自动统计射手榜和助攻榜，最后导出一张深墨绿 + 香槟金的"冠军预测海报"用于分享。
+一个用单文件 HTML 实现的 2026 FIFA 世界杯预测器。从小组赛模拟到决赛，决赛揭晓时金色路径逐轮点亮 + 五彩礼花，最后导出一张深墨绿 + 香槟金的"冠军预测海报"用于分享。
 
 **没有 npm install，没有 build pipeline，没有后端**——双击 `index.html` 就能跑。
 
@@ -69,9 +205,8 @@
 git clone https://github.com/gmliangjz/WorldCup2026.git
 
 # 2. 双击 index.html，或用任意静态服务器
-python -m http.server 8000
-# 或
-npx serve
+cd WorldCup2026
+python -m http.server 8000   # 或：npx serve
 ```
 
 或直接访问 **[Live Demo](https://gmliangjz.github.io/WorldCup2026/)**。
@@ -142,15 +277,6 @@ npx serve
 | **冷门传说** | 沙/卡/埃/波黑/巴拿马等 | *他们用九十分钟，让所有的预言安静下来……* | *Ninety minutes silenced every prediction…* |
 | **人间童话** | 海地/库拉索/佛得角 | *这些从未出现在任何冠军预测里的名字……* | *Names that never appeared in any forecast…* |
 
-### 🙏 致谢
-
-- 国旗资源：[FlagCDN](https://flagcdn.com/)（CC0）
-- 球员头像：Wikipedia REST API
-- 海报渲染：[html2canvas](https://html2canvas.hertzen.com/) by [niklasvh](https://github.com/niklasvh)
-- 庆祝效果：[canvas-confetti](https://github.com/catdad/canvas-confetti) by [catdad](https://github.com/catdad)
-- 球员数据：截至 2024-2025 国家队大名单 snapshot（2026 开赛前会更新）
-- 解说词文案：**原创致敬中国体育解说传统**，非任何具体解说员作品引用
-
 ### 🗺 路线图
 
 - [x] 完整 48 队 FIFA 2026 赛制
@@ -168,94 +294,6 @@ npx serve
 ### 📄 License
 
 MIT — 详见 [LICENSE](LICENSE)。
-
----
-
-## English
-
-A single-file HTML simulator for the 2026 FIFA World Cup. Predict from group stage to final, generate a champagne-gold champion poster, share with friends.
-
-**No npm install, no build pipeline, no backend** — just open `index.html`.
-
-### ✨ Features
-
-- **All 48 teams under FIFA 2026 format**: 12 groups × 4 teams + 8 best-third advancement, with the new H2H-first tie-breaker rule
-- **528 real player roster**: 48 teams × 11 players, classified into 8 positions (ST / W / AM / CM / DM / FB / CB / GK)
-- **Strength-tier engine + upset cap**: 5-tier team strength with auto-weighted scoring; prevents unrealistic blowouts like "Saudi 5-1 Brazil"
-- **Position-weighted goal distribution**: strikers score, attacking mids assist — matches real football roles
-- **Manual / semi-auto / full random**: every score input is yours to control, or one-click randomize everything
-- **Top scorers + assists**: leaderboard tallies your predictions, top 20 with Wikipedia headshots
-- **Champion path reveal**: post-final animation lights up R32 → Final progressively in gold + confetti
-- **Champagne-gold share poster**: 1080×1620 PNG, deep-forest-green base + champagne gold, 5-tier original commentary
-- **Bilingual i18n**: full Chinese / English toggle covering UI, team names, player names, and tagline
-- **Light / dark theme**: follows system or manual toggle
-- **localStorage persistence**: close the browser, predictions remain
-- **Responsive**: mobile / 1080p / desktop breakpoints
-
-### 🚀 Quick Start
-
-Open `index.html`. That's it. Or:
-
-```bash
-git clone https://github.com/gmliangjz/WorldCup2026.git
-cd WorldCup2026
-python -m http.server 8000   # or: npx serve
-```
-
-Or visit the **[Live Demo](https://gmliangjz.github.io/WorldCup2026/)**.
-
-### 🛠 Tech Stack
-
-Plain HTML / CSS / Vanilla JS + 2 CDN libraries:
-- [html2canvas](https://html2canvas.hertzen.com/) — poster screenshot
-- [canvas-confetti](https://github.com/catdad/canvas-confetti) — celebration burst
-
-Resources from Wikipedia REST API (player photos) and FlagCDN (flags).
-
-### 📐 Algorithm
-
-See [中文 § 算法说明](#📐-算法说明) for a detailed breakdown. TL;DR:
-- Each team gets a 1-5 strength tier
-- Score sampling uses a fixed probability table with strength-delta boost / nerf
-- Knockout upsets (≥ 2-tier difference) get capped to realistic scorelines (1-0 / 2-0 / 2-1)
-- Group ranking follows the **2026 FIFA tie-breaker** (H2H before goal difference — different from 2022!)
-
-### 📊 Scoring (activates post-tournament)
-
-This isn't just for fun — once the 2026 results are in, your bracket is scored automatically against reality:
-
-| Correct call | Points |
-|---|---|
-| Group result (W/D/L direction) | 3 |
-| Exact group scoreline (bonus) | +2 |
-| Team correctly reaching R16 | 5 / team |
-| Team correctly reaching QF | 8 / team |
-| Team correctly reaching SF | 12 / team |
-| Team correctly reaching Final | 16 / team |
-| Correct 3rd place | 15 |
-| Correct runner-up | 20 |
-| **Correct champion** | **30** |
-
-> The scoring logic (`SCORE_RULES` + `scorePrediction()`) is implemented and unit-tested; it stays dormant until real results are wired in (`ACTUAL_RESULTS.ready=false`), so nothing is scored before kickoff.
-
-### 📝 Champion Taglines (Original Tribute)
-
-Each champion tier triggers an original Chinese commentary-style tagline, with parallel English version. **These are original tributes to Chinese sports-broadcasting tradition — not quotations from any specific commentator.**
-
-See the table in [中文 § 五档冠军解说词](#-五档冠军解说词原创致敬).
-
-### 🙏 Credits
-
-- Flags: [FlagCDN](https://flagcdn.com/) (CC0)
-- Player photos: Wikipedia REST API
-- Poster rendering: [html2canvas](https://html2canvas.hertzen.com/)
-- Celebration: [canvas-confetti](https://github.com/catdad/canvas-confetti)
-- Player rosters: snapshot of 2024-2025 national team squads (will be refreshed before 2026 kick-off)
-- Commentary: **original tribute to Chinese sports broadcasting**, not any specific commentator's work
-
-### 📄 License
-
-MIT — see [LICENSE](LICENSE).
 
 ---
 
