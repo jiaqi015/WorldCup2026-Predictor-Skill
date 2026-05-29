@@ -29,6 +29,10 @@
 <p align="center"><sub>⚠️ Unofficial fan-made project · not affiliated with FIFA or the FIFA World Cup™ · 非官方粉丝作品，与 FIFA 无关</sub></p>
 
 <p align="center">
+  <img src="docs/demo.gif" alt="Champion reveal — gold path + confetti celebration" width="720">
+</p>
+
+<p align="center">
   <img src="docs/screenshot-poster.png" alt="Champion poster" width="280">
   <img src="docs/screenshot-bracket.png" alt="Knockout bracket" width="280">
   <img src="docs/screenshot-leaderboard.png" alt="Top scorers" width="280">
