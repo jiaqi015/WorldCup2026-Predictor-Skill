@@ -47,6 +47,17 @@ scorers and assists from the team roster.
 
 ## Odds Mode
 
+The current offline `COMPLETE_ODDS` snapshot is not a claim that every match
+has a directly observed three-way sportsbook market. ESPN sometimes exposes
+only one team moneyline plus the draw. In those cases the missing side is
+completed with the documented strength prior and stored as
+`derived_from_partial`. The UI labels these values as model-derived, and the
+prediction snapshot retains method, confidence, source type, and original
+market text.
+
+Completed matches have no reconstructed historical odds. Missing markets stay
+missing and fall back to the strength model.
+
 Odds mode accepts an optional decimal-odds market:
 
 ```js

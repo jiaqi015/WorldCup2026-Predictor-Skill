@@ -76,18 +76,22 @@ def check_photo_files_exist():
     }
 
 
-def check_espn_vs_placeholder():
-    """Count ESPN headshots vs placeholders."""
+def check_photo_sources():
+    """Count approved headshot and generated-avatar sources."""
     photo_map = load_json(PHOTO_MAP_FILE)
-    espn = sum(1 for v in photo_map.values() if v["source"] == "espn")
-    placeholder = sum(1 for v in photo_map.values() if v["source"] == "placeholder")
+    sources = {}
+    for item in photo_map.values():
+        source = item.get("source", "unknown")
+        sources[source] = sources.get(source, 0) + 1
+    approved = {"espn", "placeholder"}
+    unexpected = sorted(set(sources) - approved)
     total = len(photo_map)
 
     return {
         "name": "Photo Sources",
-        "pass": True,
-        "detail": f"ESPN: {espn}, Placeholder: {placeholder}, Total: {total}",
-        "failures": []
+        "pass": not unexpected,
+        "detail": f"{sources}, Total: {total}",
+        "failures": [f"unexpected source: {source}" for source in unexpected],
     }
 
 
@@ -228,7 +232,7 @@ def main():
         check_translation_coverage(),
         check_photo_coverage(),
         check_photo_files_exist(),
-        check_espn_vs_placeholder(),
+        check_photo_sources(),
         check_index_html_integrity(),
         check_squad_data_consistency(),
         check_source_manifest(),

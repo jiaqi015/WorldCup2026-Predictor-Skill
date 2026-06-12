@@ -1,0 +1,9 @@
+.git/
+.vercel/
+.vercel-tmp/
+.playwright-cli/
+tmp/
+output/
+__pycache__/
+*.pyc
+*.tmp

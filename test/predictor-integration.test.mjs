@@ -38,11 +38,41 @@ test("desktop mode controls are anchored in the page upper-left corner", () => {
 });
 
 test("shared match simulation uses the selected strategy and ranking provider", () => {
-  const rnd = html.match(/function rnd\(draw,hTeam,aTeam\)\{([\s\S]*?)\n\}/);
+  const rnd = html.match(/function rnd\(draw,hTeam,aTeam(?:,matchId)?\)\{([\s\S]*?)\n\}/);
   assert.ok(rnd, "rnd application adapter must exist");
   assert.match(rnd[1], /predictionMode:predictionMode/);
   assert.match(rnd[1], /gameplayMode:playMode/);
   assert.match(rnd[1], /rankings:MODEL_RANKING/);
+});
+
+test("shared match simulation passes match ids into complete odds lookup", () => {
+  assert.match(html, /function getGroupMatchId\(hTeam,aTeam\)/);
+  const rnd = html.match(/function rnd\(draw,hTeam,aTeam,matchId\)\{([\s\S]*?)\n\}/);
+  assert.ok(rnd, "rnd application adapter must accept an optional match id");
+  assert.match(rnd[1], /matchId:matchId\|\|getGroupMatchId\(hTeam,aTeam\)/);
+});
+
+test("scorer generation applies separate goal and assist threat multipliers", () => {
+  assert.match(html, /function weightedPick\(players,team,weights,fallback,type\)/);
+  assert.match(html, /weightedPick\(hp,m\.h,GOAL_W,3,"goal"\)/);
+  assert.match(html, /weightedPick\(pool,m\.h,ASSIST_W,3,"assist"\)/);
+  assert.match(html, /weightedPick\(hp,ht,GOAL_W,3,"goal"\)/);
+  assert.match(html, /weightedPick\(pool,ht,ASSIST_W,3,"assist"\)/);
+});
+
+test("group quick actions expose draw selection", () => {
+  assert.match(html, /quickDraw:"平"/);
+  assert.match(html, /quickDraw:"Draw"/);
+  assert.ok(html.includes("qpG(\\''+gk+'\\','+mi+',\\'d\\')"));
+});
+
+test("match odds display uses complete 1X2 odds when available", () => {
+  assert.match(html, /function getCompleteOdds\(matchId\)/);
+  assert.match(html, /function formatOdds\(odds,matchId\)/);
+  assert.match(html, /co&&co\.h/);
+  assert.match(html, /formatOdds\(m\.odds,m\.id\)/);
+  assert.match(html, /模型推导 1X2/);
+  assert.match(html, /co&&co\.m==="derived_from_partial"/);
 });
 
 test("offline ranking snapshot covers all 48 tournament teams", () => {

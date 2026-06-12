@@ -1,0 +1,318 @@
+{
+  "墨西哥": {
+    "elo": 1899,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 14 via log-linear regression"
+  },
+  "南非": {
+    "elo": 1793,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 60 via log-linear regression"
+  },
+  "韩国": {
+    "elo": 1805,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "捷克": {
+    "elo": 1823,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 40 via log-linear regression"
+  },
+  "加拿大": {
+    "elo": 1843,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 30 via log-linear regression"
+  },
+  "波黑": {
+    "elo": 1790,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 63 via log-linear regression"
+  },
+  "卡塔尔": {
+    "elo": 1796,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 58 via log-linear regression"
+  },
+  "瑞士": {
+    "elo": 1868,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "巴西": {
+    "elo": 1990,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "摩洛哥": {
+    "elo": 1918,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "海地": {
+    "elo": 1760,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 95 via log-linear regression"
+  },
+  "苏格兰": {
+    "elo": 1819,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 42 via log-linear regression"
+  },
+  "美国": {
+    "elo": 1885,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 17 via log-linear regression"
+  },
+  "巴拉圭": {
+    "elo": 1821,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 41 via log-linear regression"
+  },
+  "澳大利亚": {
+    "elo": 1785,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "土耳其": {
+    "elo": 1866,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 22 via log-linear regression"
+  },
+  "德国": {
+    "elo": 1940,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "库拉索": {
+    "elo": 1753,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 105 via log-linear regression"
+  },
+  "科特迪瓦": {
+    "elo": 1837,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 33 via log-linear regression"
+  },
+  "厄瓜多尔": {
+    "elo": 1798,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "荷兰": {
+    "elo": 1951,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "日本": {
+    "elo": 1845,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "瑞典": {
+    "elo": 1826,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 38 via log-linear regression"
+  },
+  "突尼斯": {
+    "elo": 1814,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 45 via log-linear regression"
+  },
+  "比利时": {
+    "elo": 1931,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 9 via log-linear regression"
+  },
+  "埃及": {
+    "elo": 1846,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 29 via log-linear regression"
+  },
+  "伊朗": {
+    "elo": 1818,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "新西兰": {
+    "elo": 1767,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 86 via log-linear regression"
+  },
+  "西班牙": {
+    "elo": 2090,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "佛得角": {
+    "elo": 1764,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 90 via log-linear regression"
+  },
+  "沙特": {
+    "elo": 1798,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 56 via log-linear regression"
+  },
+  "乌拉圭": {
+    "elo": 1882,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "法国": {
+    "elo": 2041,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "伊拉克": {
+    "elo": 1791,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 62 via log-linear regression"
+  },
+  "塞内加尔": {
+    "elo": 1832,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "挪威": {
+    "elo": 1841,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 31 via log-linear regression"
+  },
+  "阿根廷": {
+    "elo": 2047,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "阿尔及利亚": {
+    "elo": 1848,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 28 via log-linear regression"
+  },
+  "奥地利": {
+    "elo": 1780,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "约旦": {
+    "elo": 1788,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 64 via log-linear regression"
+  },
+  "葡萄牙": {
+    "elo": 1967,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "刚果金": {
+    "elo": 1812,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 46 via log-linear regression"
+  },
+  "乌兹别克": {
+    "elo": 1806,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 50 via log-linear regression"
+  },
+  "哥伦比亚": {
+    "elo": 1970,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "英格兰": {
+    "elo": 1974,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "克罗地亚": {
+    "elo": 1895,
+    "source": "existing_data",
+    "confidence": "high",
+    "as_of": "2026-06-02"
+  },
+  "加纳": {
+    "elo": 1765,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 88 via log-linear regression"
+  },
+  "巴拿马": {
+    "elo": 1834,
+    "source": "fifa_rank_regression",
+    "confidence": "low",
+    "as_of": "2026-06-13",
+    "notes": "Estimated from FIFA rank 34 via log-linear regression"
+  }
+}

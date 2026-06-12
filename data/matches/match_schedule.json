@@ -1,0 +1,2226 @@
+{
+  "760415": {
+    "id": "760415",
+    "date": "2026-06-11T19:00Z",
+    "stage": "group",
+    "group": "A",
+    "home": "墨西哥",
+    "away": "南非",
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
+  },
+  "760414": {
+    "id": "760414",
+    "date": "2026-06-12T02:00Z",
+    "stage": "group",
+    "group": "A",
+    "home": "韩国",
+    "away": "捷克",
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
+    },
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
+  },
+  "760416": {
+    "id": "760416",
+    "date": "2026-06-12T19:00Z",
+    "stage": "group",
+    "group": "B",
+    "home": "加拿大",
+    "away": "波黑",
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 250,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CAN -120"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760417": {
+    "id": "760417",
+    "date": "2026-06-13T01:00Z",
+    "stage": "group",
+    "group": "D",
+    "home": "美国",
+    "away": "巴拉圭",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 220,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "USA +110"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760420": {
+    "id": "760420",
+    "date": "2026-06-13T19:00Z",
+    "stage": "group",
+    "group": "B",
+    "home": "卡塔尔",
+    "away": "瑞士",
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 550,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "SUI -450"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760419": {
+    "id": "760419",
+    "date": "2026-06-13T22:00Z",
+    "stage": "group",
+    "group": "C",
+    "home": "巴西",
+    "away": "摩洛哥",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 290,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BRA -155"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760418": {
+    "id": "760418",
+    "date": "2026-06-14T01:00Z",
+    "stage": "group",
+    "group": "C",
+    "home": "海地",
+    "away": "苏格兰",
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 320,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "SCO -175"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760421": {
+    "id": "760421",
+    "date": "2026-06-14T04:00Z",
+    "stage": "group",
+    "group": "D",
+    "home": "澳大利亚",
+    "away": "土耳其",
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 280,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "TUR -140"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760422": {
+    "id": "760422",
+    "date": "2026-06-14T17:00Z",
+    "stage": "group",
+    "group": "E",
+    "home": "德国",
+    "away": "库拉索",
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 1500,
+      "spread": null,
+      "overUnder": 4.5,
+      "details": "GER -3000"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760425": {
+    "id": "760425",
+    "date": "2026-06-14T20:00Z",
+    "stage": "group",
+    "group": "F",
+    "home": "荷兰",
+    "away": "日本",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 250,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "NED -105"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760423": {
+    "id": "760423",
+    "date": "2026-06-14T23:00Z",
+    "stage": "group",
+    "group": "E",
+    "home": "科特迪瓦",
+    "away": "厄瓜多尔",
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 185,
+      "spread": null,
+      "overUnder": 1.5,
+      "details": "ECU +145"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760424": {
+    "id": "760424",
+    "date": "2026-06-15T02:00Z",
+    "stage": "group",
+    "group": "F",
+    "home": "瑞典",
+    "away": "突尼斯",
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 245,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "SWE -110"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760428": {
+    "id": "760428",
+    "date": "2026-06-15T16:00Z",
+    "stage": "group",
+    "group": "H",
+    "home": "西班牙",
+    "away": "佛得角",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 1100,
+      "spread": null,
+      "overUnder": 3.5,
+      "details": "ESP -1200"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760426": {
+    "id": "760426",
+    "date": "2026-06-15T19:00Z",
+    "stage": "group",
+    "group": "G",
+    "home": "比利时",
+    "away": "埃及",
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 295,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BEL -170"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760429": {
+    "id": "760429",
+    "date": "2026-06-15T22:00Z",
+    "stage": "group",
+    "group": "H",
+    "home": "沙特",
+    "away": "乌拉圭",
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 350,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "URU -225"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760427": {
+    "id": "760427",
+    "date": "2026-06-16T01:00Z",
+    "stage": "group",
+    "group": "G",
+    "home": "伊朗",
+    "away": "新西兰",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 250,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "IRN -120"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760432": {
+    "id": "760432",
+    "date": "2026-06-16T19:00Z",
+    "stage": "group",
+    "group": "I",
+    "home": "法国",
+    "away": "塞内加尔",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 340,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "FRA -210"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760430": {
+    "id": "760430",
+    "date": "2026-06-16T22:00Z",
+    "stage": "group",
+    "group": "I",
+    "home": "伊拉克",
+    "away": "挪威",
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 600,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "NOR -475"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760433": {
+    "id": "760433",
+    "date": "2026-06-17T01:00Z",
+    "stage": "group",
+    "group": "J",
+    "home": "阿根廷",
+    "away": "阿尔及利亚",
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 360,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ARG -245"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760431": {
+    "id": "760431",
+    "date": "2026-06-17T04:00Z",
+    "stage": "group",
+    "group": "J",
+    "home": "奥地利",
+    "away": "约旦",
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 450,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "AUT -295"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760435": {
+    "id": "760435",
+    "date": "2026-06-17T17:00Z",
+    "stage": "group",
+    "group": "K",
+    "home": "葡萄牙",
+    "away": "刚果金",
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 475,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "POR -360"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760437": {
+    "id": "760437",
+    "date": "2026-06-17T20:00Z",
+    "stage": "group",
+    "group": "L",
+    "home": "英格兰",
+    "away": "克罗地亚",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 285,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ENG -140"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760434": {
+    "id": "760434",
+    "date": "2026-06-17T23:00Z",
+    "stage": "group",
+    "group": "L",
+    "home": "加纳",
+    "away": "巴拿马",
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 240,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "GHA +115"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760436": {
+    "id": "760436",
+    "date": "2026-06-18T02:00Z",
+    "stage": "group",
+    "group": "K",
+    "home": "乌兹别克",
+    "away": "哥伦比亚",
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 370,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "COL -250"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760438": {
+    "id": "760438",
+    "date": "2026-06-18T16:00Z",
+    "stage": "group",
+    "group": "A",
+    "home": "捷克",
+    "away": "南非",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 280,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CZE -135"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760439": {
+    "id": "760439",
+    "date": "2026-06-18T19:00Z",
+    "stage": "group",
+    "group": "B",
+    "home": "瑞士",
+    "away": "波黑",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 310,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "SUI -160"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760440": {
+    "id": "760440",
+    "date": "2026-06-18T22:00Z",
+    "stage": "group",
+    "group": "B",
+    "home": "加拿大",
+    "away": "卡塔尔",
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 450,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CAN -330"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760441": {
+    "id": "760441",
+    "date": "2026-06-19T01:00Z",
+    "stage": "group",
+    "group": "A",
+    "home": "墨西哥",
+    "away": "韩国",
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 240,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "MEX +100"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760442": {
+    "id": "760442",
+    "date": "2026-06-19T19:00Z",
+    "stage": "group",
+    "group": "D",
+    "home": "美国",
+    "away": "澳大利亚",
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 295,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "USA -130"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760445": {
+    "id": "760445",
+    "date": "2026-06-19T22:00Z",
+    "stage": "group",
+    "group": "C",
+    "home": "苏格兰",
+    "away": "摩洛哥",
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 230,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "MAR +100"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760444": {
+    "id": "760444",
+    "date": "2026-06-20T00:30Z",
+    "stage": "group",
+    "group": "C",
+    "home": "巴西",
+    "away": "海地",
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 1200,
+      "spread": null,
+      "overUnder": 3.5,
+      "details": "BRA -1200"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760443": {
+    "id": "760443",
+    "date": "2026-06-20T03:00Z",
+    "stage": "group",
+    "group": "D",
+    "home": "土耳其",
+    "away": "巴拉圭",
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 220,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "TUR +125"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760447": {
+    "id": "760447",
+    "date": "2026-06-20T17:00Z",
+    "stage": "group",
+    "group": "F",
+    "home": "荷兰",
+    "away": "瑞典",
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 320,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "NED -155"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760448": {
+    "id": "760448",
+    "date": "2026-06-20T20:00Z",
+    "stage": "group",
+    "group": "E",
+    "home": "德国",
+    "away": "科特迪瓦",
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 340,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "GER -180"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760446": {
+    "id": "760446",
+    "date": "2026-06-21T00:00Z",
+    "stage": "group",
+    "group": "E",
+    "home": "厄瓜多尔",
+    "away": "库拉索",
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 650,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ECU -500"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760449": {
+    "id": "760449",
+    "date": "2026-06-21T04:00Z",
+    "stage": "group",
+    "group": "F",
+    "home": "突尼斯",
+    "away": "日本",
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 270,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "JPN -140"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760453": {
+    "id": "760453",
+    "date": "2026-06-21T16:00Z",
+    "stage": "group",
+    "group": "H",
+    "home": "西班牙",
+    "away": "沙特",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 1000,
+      "spread": null,
+      "overUnder": 3.5,
+      "details": "ESP -1000"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760451": {
+    "id": "760451",
+    "date": "2026-06-21T19:00Z",
+    "stage": "group",
+    "group": "G",
+    "home": "比利时",
+    "away": "伊朗",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 380,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BEL -245"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760450": {
+    "id": "760450",
+    "date": "2026-06-21T22:00Z",
+    "stage": "group",
+    "group": "H",
+    "home": "乌拉圭",
+    "away": "佛得角",
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 360,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "URU -225"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760452": {
+    "id": "760452",
+    "date": "2026-06-22T01:00Z",
+    "stage": "group",
+    "group": "G",
+    "home": "新西兰",
+    "away": "埃及",
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 285,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "EGY -130"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760456": {
+    "id": "760456",
+    "date": "2026-06-22T17:00Z",
+    "stage": "group",
+    "group": "J",
+    "home": "阿根廷",
+    "away": "奥地利",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 290,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ARG -155"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760457": {
+    "id": "760457",
+    "date": "2026-06-22T21:00Z",
+    "stage": "group",
+    "group": "I",
+    "home": "法国",
+    "away": "伊拉克",
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 800,
+      "spread": null,
+      "overUnder": 3.5,
+      "details": "FRA -800"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760454": {
+    "id": "760454",
+    "date": "2026-06-23T00:00Z",
+    "stage": "group",
+    "group": "I",
+    "home": "挪威",
+    "away": "塞内加尔",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 260,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "NOR +115"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760455": {
+    "id": "760455",
+    "date": "2026-06-23T03:00Z",
+    "stage": "group",
+    "group": "J",
+    "home": "约旦",
+    "away": "阿尔及利亚",
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 330,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ALG -190"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760461": {
+    "id": "760461",
+    "date": "2026-06-23T17:00Z",
+    "stage": "group",
+    "group": "K",
+    "home": "葡萄牙",
+    "away": "乌兹别克",
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 550,
+      "spread": null,
+      "overUnder": 3.5,
+      "details": "POR -425"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760458": {
+    "id": "760458",
+    "date": "2026-06-23T20:00Z",
+    "stage": "group",
+    "group": "L",
+    "home": "英格兰",
+    "away": "加纳",
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 450,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ENG -320"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760460": {
+    "id": "760460",
+    "date": "2026-06-23T23:00Z",
+    "stage": "group",
+    "group": "L",
+    "home": "巴拿马",
+    "away": "克罗地亚",
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 300,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CRO -180"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760459": {
+    "id": "760459",
+    "date": "2026-06-24T02:00Z",
+    "stage": "group",
+    "group": "K",
+    "home": "哥伦比亚",
+    "away": "刚果金",
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 340,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "COL -220"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760462": {
+    "id": "760462",
+    "date": "2026-06-24T19:00Z",
+    "stage": "group",
+    "group": "B",
+    "home": "波黑",
+    "away": "卡塔尔",
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 285,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BIH -155"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760463": {
+    "id": "760463",
+    "date": "2026-06-24T19:00Z",
+    "stage": "group",
+    "group": "B",
+    "home": "瑞士",
+    "away": "加拿大",
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 245,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "SUI +115"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760464": {
+    "id": "760464",
+    "date": "2026-06-24T22:00Z",
+    "stage": "group",
+    "group": "C",
+    "home": "摩洛哥",
+    "away": "海地",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 425,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "MAR -310"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760465": {
+    "id": "760465",
+    "date": "2026-06-24T22:00Z",
+    "stage": "group",
+    "group": "C",
+    "home": "苏格兰",
+    "away": "巴西",
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 400,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BRA -215"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760467": {
+    "id": "760467",
+    "date": "2026-06-25T01:00Z",
+    "stage": "group",
+    "group": "A",
+    "home": "捷克",
+    "away": "墨西哥",
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 260,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "MEX -120"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760466": {
+    "id": "760466",
+    "date": "2026-06-25T01:00Z",
+    "stage": "group",
+    "group": "A",
+    "home": "南非",
+    "away": "韩国",
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 310,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "KOR -165"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760473": {
+    "id": "760473",
+    "date": "2026-06-25T20:00Z",
+    "stage": "group",
+    "group": "E",
+    "home": "库拉索",
+    "away": "科特迪瓦",
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 600,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CIV -450"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760468": {
+    "id": "760468",
+    "date": "2026-06-25T20:00Z",
+    "stage": "group",
+    "group": "E",
+    "home": "厄瓜多尔",
+    "away": "德国",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 290,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "GER -135"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760471": {
+    "id": "760471",
+    "date": "2026-06-25T23:00Z",
+    "stage": "group",
+    "group": "F",
+    "home": "日本",
+    "away": "瑞典",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 245,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "JPN +110"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760472": {
+    "id": "760472",
+    "date": "2026-06-25T23:00Z",
+    "stage": "group",
+    "group": "F",
+    "home": "突尼斯",
+    "away": "荷兰",
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 340,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "NED -200"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760469": {
+    "id": "760469",
+    "date": "2026-06-26T02:00Z",
+    "stage": "group",
+    "group": "D",
+    "home": "巴拉圭",
+    "away": "澳大利亚",
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 230,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "PAR +115"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760470": {
+    "id": "760470",
+    "date": "2026-06-26T02:00Z",
+    "stage": "group",
+    "group": "D",
+    "home": "土耳其",
+    "away": "美国",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 255,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "USA +155"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760475": {
+    "id": "760475",
+    "date": "2026-06-26T19:00Z",
+    "stage": "group",
+    "group": "I",
+    "home": "挪威",
+    "away": "法国",
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 265,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "FRA -115"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760474": {
+    "id": "760474",
+    "date": "2026-06-26T19:00Z",
+    "stage": "group",
+    "group": "I",
+    "home": "塞内加尔",
+    "away": "伊拉克",
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 380,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "SEN -245"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760478": {
+    "id": "760478",
+    "date": "2026-06-27T00:00Z",
+    "stage": "group",
+    "group": "H",
+    "home": "佛得角",
+    "away": "沙特",
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 240,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CPV +140"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760479": {
+    "id": "760479",
+    "date": "2026-06-27T00:00Z",
+    "stage": "group",
+    "group": "H",
+    "home": "乌拉圭",
+    "away": "西班牙",
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 300,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ESP -155"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760476": {
+    "id": "760476",
+    "date": "2026-06-27T03:00Z",
+    "stage": "group",
+    "group": "G",
+    "home": "埃及",
+    "away": "伊朗",
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 205,
+      "spread": null,
+      "overUnder": 1.5,
+      "details": "EGY +130"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760477": {
+    "id": "760477",
+    "date": "2026-06-27T03:00Z",
+    "stage": "group",
+    "group": "G",
+    "home": "新西兰",
+    "away": "比利时",
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 500,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BEL -340"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760480": {
+    "id": "760480",
+    "date": "2026-06-27T21:00Z",
+    "stage": "group",
+    "group": "L",
+    "home": "克罗地亚",
+    "away": "加纳",
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 295,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CRO -155"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760485": {
+    "id": "760485",
+    "date": "2026-06-27T21:00Z",
+    "stage": "group",
+    "group": "L",
+    "home": "巴拿马",
+    "away": "英格兰",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 550,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ENG -340"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760481": {
+    "id": "760481",
+    "date": "2026-06-27T23:30Z",
+    "stage": "group",
+    "group": "K",
+    "home": "哥伦比亚",
+    "away": "葡萄牙",
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 235,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "POR +120"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760482": {
+    "id": "760482",
+    "date": "2026-06-27T23:30Z",
+    "stage": "group",
+    "group": "K",
+    "home": "刚果金",
+    "away": "乌兹别克",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 235,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "COD +135"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760484": {
+    "id": "760484",
+    "date": "2026-06-28T02:00Z",
+    "stage": "group",
+    "group": "J",
+    "home": "阿尔及利亚",
+    "away": "奥地利",
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 220,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "AUT +125"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760483": {
+    "id": "760483",
+    "date": "2026-06-28T02:00Z",
+    "stage": "group",
+    "group": "J",
+    "home": "约旦",
+    "away": "阿根廷",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 650,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ARG -525"
+    },
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760486": {
+    "id": "760486",
+    "date": "2026-06-28T19:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group A 2nd Place",
+    "away": "Group B 2nd Place",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760487": {
+    "id": "760487",
+    "date": "2026-06-29T17:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group C Winner",
+    "away": "Group F 2nd Place",
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760489": {
+    "id": "760489",
+    "date": "2026-06-29T20:30Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group E Winner",
+    "away": "Third Place Group A/B/C/D/F",
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760488": {
+    "id": "760488",
+    "date": "2026-06-30T01:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group F Winner",
+    "away": "Group C 2nd Place",
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760490": {
+    "id": "760490",
+    "date": "2026-06-30T17:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group E 2nd Place",
+    "away": "Group I 2nd Place",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760492": {
+    "id": "760492",
+    "date": "2026-06-30T21:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group I Winner",
+    "away": "Third Place Group C/D/F/G/H",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760491": {
+    "id": "760491",
+    "date": "2026-07-01T01:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group A Winner",
+    "away": "Third Place Group C/E/F/H/I",
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760495": {
+    "id": "760495",
+    "date": "2026-07-01T16:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group L Winner",
+    "away": "Third Place Group E/H/I/J/K",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760493": {
+    "id": "760493",
+    "date": "2026-07-01T20:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group G Winner",
+    "away": "Third Place Group A/E/H/I/J",
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760494": {
+    "id": "760494",
+    "date": "2026-07-02T00:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group D Winner",
+    "away": "Third Place Group B/E/F/I/J",
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760497": {
+    "id": "760497",
+    "date": "2026-07-02T19:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group H Winner",
+    "away": "Group J 2nd Place",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760496": {
+    "id": "760496",
+    "date": "2026-07-02T23:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group K 2nd Place",
+    "away": "Group L 2nd Place",
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760498": {
+    "id": "760498",
+    "date": "2026-07-03T03:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group B Winner",
+    "away": "Third Place Group E/F/G/I/J",
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760499": {
+    "id": "760499",
+    "date": "2026-07-03T18:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group D 2nd Place",
+    "away": "Group G 2nd Place",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760500": {
+    "id": "760500",
+    "date": "2026-07-03T22:00Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group J Winner",
+    "away": "Group H 2nd Place",
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760501": {
+    "id": "760501",
+    "date": "2026-07-04T01:30Z",
+    "stage": "R",
+    "group": null,
+    "home": "Group K Winner",
+    "away": "Third Place Group D/E/I/J/L",
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760502": {
+    "id": "760502",
+    "date": "2026-07-04T17:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 1 Winner",
+    "away": "Round of 32 3 Winner",
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760503": {
+    "id": "760503",
+    "date": "2026-07-04T21:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 2 Winner",
+    "away": "Round of 32 5 Winner",
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760504": {
+    "id": "760504",
+    "date": "2026-07-05T20:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 4 Winner",
+    "away": "Round of 32 6 Winner",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760505": {
+    "id": "760505",
+    "date": "2026-07-06T00:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 7 Winner",
+    "away": "Round of 32 8 Winner",
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760506": {
+    "id": "760506",
+    "date": "2026-07-06T19:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 11 Winner",
+    "away": "Round of 32 12 Winner",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760507": {
+    "id": "760507",
+    "date": "2026-07-07T00:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 9 Winner",
+    "away": "Round of 32 10 Winner",
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760509": {
+    "id": "760509",
+    "date": "2026-07-07T16:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 14 Winner",
+    "away": "Round of 32 16 Winner",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760508": {
+    "id": "760508",
+    "date": "2026-07-07T20:00Z",
+    "stage": "L",
+    "group": null,
+    "home": "Round of 32 13 Winner",
+    "away": "Round of 32 15 Winner",
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760510": {
+    "id": "760510",
+    "date": "2026-07-09T20:00Z",
+    "stage": "Q",
+    "group": null,
+    "home": "Round of 16 1 Winner",
+    "away": "Round of 16 2 Winner",
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760511": {
+    "id": "760511",
+    "date": "2026-07-10T19:00Z",
+    "stage": "Q",
+    "group": null,
+    "home": "Round of 16 5 Winner",
+    "away": "Round of 16 6 Winner",
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760512": {
+    "id": "760512",
+    "date": "2026-07-11T21:00Z",
+    "stage": "Q",
+    "group": null,
+    "home": "Round of 16 3 Winner",
+    "away": "Round of 16 4 Winner",
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760513": {
+    "id": "760513",
+    "date": "2026-07-12T01:00Z",
+    "stage": "Q",
+    "group": null,
+    "home": "Round of 16 7 Winner",
+    "away": "Round of 16 8 Winner",
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760514": {
+    "id": "760514",
+    "date": "2026-07-14T19:00Z",
+    "stage": "S",
+    "group": null,
+    "home": "Quarterfinal 1 Winner",
+    "away": "Quarterfinal 2 Winner",
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760515": {
+    "id": "760515",
+    "date": "2026-07-15T19:00Z",
+    "stage": "S",
+    "group": null,
+    "home": "Quarterfinal 3 Winner",
+    "away": "Quarterfinal 4 Winner",
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760516": {
+    "id": "760516",
+    "date": "2026-07-18T21:00Z",
+    "stage": "3RD",
+    "group": null,
+    "home": "Semifinal 1 Loser",
+    "away": "Semifinal 2 Loser",
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  },
+  "760517": {
+    "id": "760517",
+    "date": "2026-07-19T19:00Z",
+    "stage": "FINAL",
+    "group": null,
+    "home": "Semifinal 1 Winner",
+    "away": "Semifinal 2 Winner",
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    },
+    "odds": null,
+    "status": "STATUS_SCHEDULED",
+    "completed": false
+  }
+}

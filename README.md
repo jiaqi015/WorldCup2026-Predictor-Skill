@@ -114,7 +114,7 @@ python3 \
   --path skills/world-cup-2026-predictor
 ```
 
-Use `--ref v0.2.0` to pin a tagged release. The direct Skill installer does
+Use `--ref v0.3.0` to pin a tagged release. The direct Skill installer does
 not overwrite an existing installation, so Plugin installation is preferred
 for ongoing updates.
 
@@ -264,6 +264,12 @@ The predictor also carries a dated ESPN public roster snapshot for all 48
 teams: 1,248 players with squad number, position, age, nationality, and local
 photo metadata. It improves roster-aware simulation and player selection, but
 it is a source snapshot rather than a final FIFA registration list.
+
+The embedded schedule is a separately timestamped ESPN scoreboard snapshot.
+Three-way odds marked `derived_from_partial` are model completions of partial
+market fields, not directly observed complete sportsbook markets. Elo values
+marked `fifa_rank_regression` are low-confidence estimates and remain labeled
+as such throughout the generated prediction dataset.
 
 ```bash
 python3 scripts/fetch_squads.py

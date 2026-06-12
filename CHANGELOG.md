@@ -5,6 +5,34 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-06-12
+
+### Added
+
+- Complete 104-match ESPN schedule metadata with local-time, venue, status, and
+  completed-result integration.
+- Explicitly sourced prediction snapshots for FIFA ranking, observed or
+  estimated Elo, model-derived 1X2 completion, and player scoring/assist threat.
+- Group-stage draw quick action and a progress-aware knockout bracket lock.
+- Release validation for match coverage, source provenance, team identity, and
+  prediction-data confidence.
+
+### Changed
+
+- Blank predictions now adopt completed ESPN results while preserving manually
+  edited predictions.
+- The odds display identifies model-derived 1X2 values instead of presenting
+  them as directly observed sportsbook markets.
+- Generated player headshots use the existing per-player SVG fallback rather
+  than duplicated bitmap silhouettes.
+- Match and prediction embedding scripts are idempotent.
+
+### Fixed
+
+- Removed Denmark from the 48-team strength snapshot and restored South Africa.
+- Removed the invalid `JAM` to Jordan abbreviation mapping.
+- Downgraded FIFA-rank-regressed Elo values to low confidence.
+
 ## [0.2.0] - 2026-06-12
 
 ### Added

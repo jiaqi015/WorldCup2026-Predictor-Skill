@@ -5,8 +5,10 @@ Creates professional-looking circular avatars with team colors and initials.
 """
 
 import json
+import argparse
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
@@ -130,7 +132,27 @@ def generate_svg_avatar(en_name, team_en, jersey, position, size=200):
     return svg
 
 
+def avatar_key(value):
+    normalized = unicodedata.normalize("NFKD", value)
+    return "".join(ch.lower() for ch in normalized if ch.isalnum())
+
+
+def existing_avatar_paths():
+    return {
+        avatar_key(path.stem.removeprefix("avatar_")): path
+        for path in PHOTOS_DIR.glob("avatar_*.svg")
+    }
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--reset-non-espn",
+        action="store_true",
+        help="replace external or bitmap fallbacks with generated local SVG avatars",
+    )
+    args = parser.parse_args()
+
     print("=" * 60)
     print("Generate Placeholder Avatars")
     print("=" * 60)
@@ -148,6 +170,7 @@ def main():
             photo_mapping = json.load(f)
 
     PHOTOS_DIR.mkdir(parents=True, exist_ok=True)
+    avatar_paths = existing_avatar_paths()
 
     generated = 0
     skipped = 0
@@ -158,33 +181,33 @@ def main():
             total += 1
             pname = player["name"]
 
-            # Skip if already has a photo
-            if pname in photo_mapping:
+            current = photo_mapping.get(pname)
+            if current and (
+                not args.reset_non_espn or current.get("source") == "espn"
+            ):
                 skipped += 1
                 continue
 
             # Get team English name for colors
             team_en = team_name  # Already English in squads_partial.json
 
-            # Generate SVG
-            svg = generate_svg_avatar(
-                pname, team_en,
-                player.get("jersey", "0"),
-                player.get("position", "M")
-            )
-
-            # Save as SVG
-            safe_name = pname.replace(" ", "_").replace("/", "_").replace("'", "")
-            svg_filename = f"avatar_{safe_name}.svg"
-            svg_path = PHOTOS_DIR / svg_filename
-
-            with open(svg_path, "w", encoding="utf-8") as f:
-                f.write(svg)
+            svg_path = avatar_paths.get(avatar_key(pname))
+            if svg_path is None:
+                svg = generate_svg_avatar(
+                    pname,
+                    team_en,
+                    player.get("jersey", "0"),
+                    player.get("position", "M"),
+                )
+                safe_name = re.sub(r"[^\w.-]+", "_", pname, flags=re.UNICODE).strip("_")
+                svg_path = PHOTOS_DIR / f"avatar_{safe_name}.svg"
+                svg_path.write_text(svg, encoding="utf-8")
+                avatar_paths[avatar_key(pname)] = svg_path
 
             photo_mapping[pname] = {
                 "source": "placeholder",
-                "path": f"data/photos/{svg_filename}",
-                "athlete_id": None
+                "path": f"data/photos/{svg_path.name}",
+                "athlete_id": None,
             }
             generated += 1
 
@@ -206,7 +229,16 @@ def main():
     # Validation
     print("\n--- TDD Validation ---")
     checks = []
-    checks.append(("Full Coverage", len(photo_mapping) == total, f"{len(photo_mapping)}/{total}"))
+    unique_players = {
+        player["name"]
+        for team_data in squads.values()
+        for player in team_data.get("players", [])
+    }
+    checks.append((
+        "Full Coverage",
+        set(photo_mapping) == unique_players,
+        f"{len(photo_mapping)}/{len(unique_players)} unique players",
+    ))
     checks.append(("ESPN Photos", espn_count > 0, f"{espn_count}"))
     checks.append(("All Files Exist", all(
         (BASE_DIR / v["path"]).exists() for v in photo_mapping.values()
