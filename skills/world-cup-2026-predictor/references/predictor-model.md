@@ -20,6 +20,10 @@ The app is intentionally a single HTML file. Search these JavaScript variables b
 - `STRENGTH`: simulation strength tiers.
 - `R32D`, `R16P`, `QFP`, `SFP`: knockout topology.
 
+The current and proposed entity boundaries are documented in
+`docs/domain-model.md`. The machine-readable catalog is
+`data/schema/prediction-domain.v1.json`.
+
 Preserve these invariants:
 
 - 12 groups, 48 unique teams, 72 group matches.
@@ -33,11 +37,27 @@ Preserve these invariants:
 - `gm`: group predictions.
 - `ko`: knockout predictions.
 - `slog`: scorer and assist events.
+- `predictionMode`: random, strength odds, power ranking, or offline AI ensemble.
+- `playMode`: normal, clone, or chaos presentation/gameplay modifier.
+
+Keep the UI compatibility map intact: Normal excludes random, Fun allows every
+strategy, and Upset locks prediction to random.
 - `ACTUAL_RESULTS`: normalized completed results used for scoring.
 - `localStorage`: prediction, display, history, and live-result cache.
 - URL hash `#p=`: compact shared-prediction payload.
 
 Changing state shapes requires backward-compatible loading or an explicit version migration.
+
+## Research Evidence
+
+The Kimi report corpus is stored under
+`data/rag/kimi-world-cup-report/`. Retrieve from `chunks.jsonl`, preserve the
+page citation, and treat report-derived quantitative claims as source
+assertions until independently verified.
+
+Use `python3 scripts/search_report_rag.py "<query>"` for a local retrieval smoke
+test. For production RAG, embed the chunk `text` and retain chapter, section,
+keywords, content type, citation, and source hash as metadata.
 
 ## Live Results
 
@@ -64,9 +84,11 @@ After any behavior change:
 
 1. Run `scripts/sync_predictor_asset.py`.
 2. Run `scripts/validate_predictor.py`.
-3. Serve the app locally.
-4. Complete group and knockout randomization.
-5. Confirm the champion and Share button.
-6. Check browser console errors.
+3. Run the repository release check, including model and squad tests.
+4. Serve the app locally.
+5. Exercise every prediction model at least once.
+6. Complete group and knockout randomization.
+7. Confirm the champion and Share button.
+8. Check browser console errors.
 
 For live-result changes, also verify at least one completed event from the current ESPN payload maps into `ACTUAL_RESULTS`.

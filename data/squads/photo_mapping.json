@@ -1,0 +1,6237 @@
+{
+  "Ramiz Zerrouki": {
+    "source": "espn",
+    "path": "data/photos/290517.png",
+    "athlete_id": "290517"
+  },
+  "Gerónimo Rulli": {
+    "source": "espn",
+    "path": "data/photos/167192.png",
+    "athlete_id": "167192"
+  },
+  "Nicolás Tagliafico": {
+    "source": "espn",
+    "path": "data/photos/145190.png",
+    "athlete_id": "145190"
+  },
+  "Lisandro Martínez": {
+    "source": "espn",
+    "path": "data/photos/233937.png",
+    "athlete_id": "233937"
+  },
+  "Thiago Almada": {
+    "source": "espn",
+    "path": "data/photos/277208.png",
+    "athlete_id": "277208"
+  },
+  "Lionel Messi": {
+    "source": "espn",
+    "path": "data/photos/45843.png",
+    "athlete_id": "45843"
+  },
+  "Mathew Ryan": {
+    "source": "espn",
+    "path": "data/photos/141438.png",
+    "athlete_id": "141438"
+  },
+  "Milos Degenek": {
+    "source": "espn",
+    "path": "data/photos/159502.png",
+    "athlete_id": "159502"
+  },
+  "Phillipp Mwene": {
+    "source": "espn",
+    "path": "data/photos/239574.png",
+    "athlete_id": "239574"
+  },
+  "Alessandro Schöpf": {
+    "source": "espn",
+    "path": "data/photos/203868.png",
+    "athlete_id": "203868"
+  },
+  "Benjamin Tahirovic": {
+    "source": "espn",
+    "path": "data/photos/352660.png",
+    "athlete_id": "352660"
+  },
+  "Esmir Bajraktarevic": {
+    "source": "espn",
+    "path": "data/photos/325410.png",
+    "athlete_id": "325410"
+  },
+  "Maxime Crépeau": {
+    "source": "espn",
+    "path": "data/photos/159382.png",
+    "athlete_id": "159382"
+  },
+  "Dayne St. Clair": {
+    "source": "espn",
+    "path": "data/photos/231059.png",
+    "athlete_id": "231059"
+  },
+  "Richie Laryea": {
+    "source": "espn",
+    "path": "data/photos/230626.png",
+    "athlete_id": "230626"
+  },
+  "Alphonso Davies": {
+    "source": "espn",
+    "path": "data/photos/236721.png",
+    "athlete_id": "236721"
+  },
+  "Joel Waterman": {
+    "source": "espn",
+    "path": "data/photos/236890.png",
+    "athlete_id": "236890"
+  },
+  "Derek Cornelius": {
+    "source": "espn",
+    "path": "data/photos/238712.png",
+    "athlete_id": "238712"
+  },
+  "Alistair Johnston": {
+    "source": "espn",
+    "path": "data/photos/293691.png",
+    "athlete_id": "293691"
+  },
+  "Moïse Bombito": {
+    "source": "espn",
+    "path": "data/photos/358975.png",
+    "athlete_id": "358975"
+  },
+  "Jonathan Osorio": {
+    "source": "espn",
+    "path": "data/photos/184221.png",
+    "athlete_id": "184221"
+  },
+  "Mathieu Choinière": {
+    "source": "espn",
+    "path": "data/photos/274296.png",
+    "athlete_id": "274296"
+  },
+  "Nathan Saliba": {
+    "source": "espn",
+    "path": "data/photos/311163.png",
+    "athlete_id": "311163"
+  },
+  "Ali Ahmed": {
+    "source": "espn",
+    "path": "data/photos/340228.png",
+    "athlete_id": "340228"
+  },
+  "Jayden Nelson": {
+    "source": "espn",
+    "path": "data/photos/280612.png",
+    "athlete_id": "280612"
+  },
+  "Tajon Buchanan": {
+    "source": "espn",
+    "path": "data/photos/284769.png",
+    "athlete_id": "284769"
+  },
+  "Jacob Shaffelburg": {
+    "source": "espn",
+    "path": "data/photos/286214.png",
+    "athlete_id": "286214"
+  },
+  "Tani Oluwaseyi": {
+    "source": "espn",
+    "path": "data/photos/294039.png",
+    "athlete_id": "294039"
+  },
+  "CJ dos Santos": {
+    "source": "espn",
+    "path": "data/photos/265874.png",
+    "athlete_id": "265874"
+  },
+  "Steven Moreira": {
+    "source": "espn",
+    "path": "data/photos/180113.png",
+    "athlete_id": "180113"
+  },
+  "Laros Duarte": {
+    "source": "espn",
+    "path": "data/photos/222236.png",
+    "athlete_id": "222236"
+  },
+  "Jamiro Monteiro": {
+    "source": "espn",
+    "path": "data/photos/227441.png",
+    "athlete_id": "227441"
+  },
+  "Deroy Duarte": {
+    "source": "espn",
+    "path": "data/photos/246442.png",
+    "athlete_id": "246442"
+  },
+  "Santiago Arias": {
+    "source": "espn",
+    "path": "data/photos/164756.png",
+    "athlete_id": "164756"
+  },
+  "Andrés Gómez": {
+    "source": "espn",
+    "path": "data/photos/330924.png",
+    "athlete_id": "330924"
+  },
+  "Cucho Hernández": {
+    "source": "espn",
+    "path": "data/photos/336809.png",
+    "athlete_id": "336809"
+  },
+  "Samuel Moutoussamy": {
+    "source": "espn",
+    "path": "data/photos/260932.png",
+    "athlete_id": "260932"
+  },
+  "Dominik Kotarski": {
+    "source": "espn",
+    "path": "data/photos/239411.png",
+    "athlete_id": "239411"
+  },
+  "Ivor Pandur": {
+    "source": "espn",
+    "path": "data/photos/277234.png",
+    "athlete_id": "277234"
+  },
+  "Eloy Room": {
+    "source": "espn",
+    "path": "data/photos/127444.png",
+    "athlete_id": "127444"
+  },
+  "Joshua Brenet": {
+    "source": "espn",
+    "path": "data/photos/178433.png",
+    "athlete_id": "178433"
+  },
+  "Riechedly Bazoer": {
+    "source": "espn",
+    "path": "data/photos/188411.png",
+    "athlete_id": "188411"
+  },
+  "Sherel Floranus": {
+    "source": "espn",
+    "path": "data/photos/224786.png",
+    "athlete_id": "224786"
+  },
+  "Armando Obispo": {
+    "source": "espn",
+    "path": "data/photos/245918.png",
+    "athlete_id": "245918"
+  },
+  "Juriën Gaari": {
+    "source": "espn",
+    "path": "data/photos/246281.png",
+    "athlete_id": "246281"
+  },
+  "Shurandy Sambo": {
+    "source": "espn",
+    "path": "data/photos/301456.png",
+    "athlete_id": "301456"
+  },
+  "Kevin Felida": {
+    "source": "espn",
+    "path": "data/photos/262738.png",
+    "athlete_id": "262738"
+  },
+  "Godfried Roemeratoe": {
+    "source": "espn",
+    "path": "data/photos/273295.png",
+    "athlete_id": "273295"
+  },
+  "Jürgen Locadia": {
+    "source": "espn",
+    "path": "data/photos/167213.png",
+    "athlete_id": "167213"
+  },
+  "Sontje Hansen": {
+    "source": "espn",
+    "path": "data/photos/297299.png",
+    "athlete_id": "297299"
+  },
+  "Michal Sadílek": {
+    "source": "espn",
+    "path": "data/photos/249525.png",
+    "athlete_id": "249525"
+  },
+  "Alan Franco": {
+    "source": "espn",
+    "path": "data/photos/262111.png",
+    "athlete_id": "262111"
+  },
+  "Jordy Alcívar": {
+    "source": "espn",
+    "path": "data/photos/270829.png",
+    "athlete_id": "270829"
+  },
+  "Pedro Vite": {
+    "source": "espn",
+    "path": "data/photos/297150.png",
+    "athlete_id": "297150"
+  },
+  "Noni Madueke": {
+    "source": "espn",
+    "path": "data/photos/293236.png",
+    "athlete_id": "293236"
+  },
+  "Derrick Luckassen": {
+    "source": "espn",
+    "path": "data/photos/205737.png",
+    "athlete_id": "205737"
+  },
+  "Carlens Arcus": {
+    "source": "espn",
+    "path": "data/photos/218703.png",
+    "athlete_id": "218703"
+  },
+  "Derrick Etienne Jr.": {
+    "source": "espn",
+    "path": "data/photos/231098.png",
+    "athlete_id": "231098"
+  },
+  "Alireza Jahanbakhsh": {
+    "source": "espn",
+    "path": "data/photos/188055.png",
+    "athlete_id": "188055"
+  },
+  "Hussein Ali": {
+    "source": "espn",
+    "path": "data/photos/244679.png",
+    "athlete_id": "244679"
+  },
+  "Zidane Iqbal": {
+    "source": "espn",
+    "path": "data/photos/325549.png",
+    "athlete_id": "325549"
+  },
+  "Ibrahim Sangaré": {
+    "source": "espn",
+    "path": "data/photos/213718.png",
+    "athlete_id": "213718"
+  },
+  "Kou Itakura": {
+    "source": "espn",
+    "path": "data/photos/238033.png",
+    "athlete_id": "238033"
+  },
+  "Yukinari Sugawara": {
+    "source": "espn",
+    "path": "data/photos/265965.png",
+    "athlete_id": "265965"
+  },
+  "Ritsu Doan": {
+    "source": "espn",
+    "path": "data/photos/219627.png",
+    "athlete_id": "219627"
+  },
+  "Koki Ogawa": {
+    "source": "espn",
+    "path": "data/photos/238016.png",
+    "athlete_id": "238016"
+  },
+  "Edson Álvarez": {
+    "source": "espn",
+    "path": "data/photos/241627.png",
+    "athlete_id": "241627"
+  },
+  "Brian Gutiérrez": {
+    "source": "espn",
+    "path": "data/photos/303577.png",
+    "athlete_id": "303577"
+  },
+  "Obed Vargas": {
+    "source": "espn",
+    "path": "data/photos/318554.png",
+    "athlete_id": "318554"
+  },
+  "Santiago Gimenez": {
+    "source": "espn",
+    "path": "data/photos/260775.png",
+    "athlete_id": "260775"
+  },
+  "Noussair Mazraoui": {
+    "source": "espn",
+    "path": "data/photos/239350.png",
+    "athlete_id": "239350"
+  },
+  "Anass Salah-Eddine": {
+    "source": "espn",
+    "path": "data/photos/297296.png",
+    "athlete_id": "297296"
+  },
+  "Ismael Saibari": {
+    "source": "espn",
+    "path": "data/photos/304572.png",
+    "athlete_id": "304572"
+  },
+  "Robin Roefs": {
+    "source": "espn",
+    "path": "data/photos/301449.png",
+    "athlete_id": "301449"
+  },
+  "Denzel Dumfries": {
+    "source": "espn",
+    "path": "data/photos/213248.png",
+    "athlete_id": "213248"
+  },
+  "Lutsharel Geertruida": {
+    "source": "espn",
+    "path": "data/photos/264828.png",
+    "athlete_id": "264828"
+  },
+  "Jan Paul van Hecke": {
+    "source": "espn",
+    "path": "data/photos/282583.png",
+    "athlete_id": "282583"
+  },
+  "Jorrel Hato": {
+    "source": "espn",
+    "path": "data/photos/353951.png",
+    "athlete_id": "353951"
+  },
+  "Guus Til": {
+    "source": "espn",
+    "path": "data/photos/240965.png",
+    "athlete_id": "240965"
+  },
+  "Teun Koopmeiners": {
+    "source": "espn",
+    "path": "data/photos/258968.png",
+    "athlete_id": "258968"
+  },
+  "Tijjani Reijnders": {
+    "source": "espn",
+    "path": "data/photos/261328.png",
+    "athlete_id": "261328"
+  },
+  "Ryan Gravenberch": {
+    "source": "espn",
+    "path": "data/photos/274632.png",
+    "athlete_id": "274632"
+  },
+  "Mats Wieffer": {
+    "source": "espn",
+    "path": "data/photos/282186.png",
+    "athlete_id": "282186"
+  },
+  "Quinten Timber": {
+    "source": "espn",
+    "path": "data/photos/282230.png",
+    "athlete_id": "282230"
+  },
+  "Cody Gakpo": {
+    "source": "espn",
+    "path": "data/photos/249524.png",
+    "athlete_id": "249524"
+  },
+  "Noa Lang": {
+    "source": "espn",
+    "path": "data/photos/255344.png",
+    "athlete_id": "255344"
+  },
+  "Donyell Malen": {
+    "source": "espn",
+    "path": "data/photos/259481.png",
+    "athlete_id": "259481"
+  },
+  "Brian Brobbey": {
+    "source": "espn",
+    "path": "data/photos/282229.png",
+    "athlete_id": "282229"
+  },
+  "Michael Boxall": {
+    "source": "espn",
+    "path": "data/photos/101934.png",
+    "athlete_id": "101934"
+  },
+  "Tommy Smith": {
+    "source": "espn",
+    "path": "data/photos/103819.png",
+    "athlete_id": "103819"
+  },
+  "Ryan Thomas": {
+    "source": "espn",
+    "path": "data/photos/156146.png",
+    "athlete_id": "156146"
+  },
+  "Marcus Holmgren Pedersen": {
+    "source": "espn",
+    "path": "data/photos/129285.png",
+    "athlete_id": "129285"
+  },
+  "David Møller Wolfe": {
+    "source": "espn",
+    "path": "data/photos/313361.png",
+    "athlete_id": "313361"
+  },
+  "Fredrik Aursnes": {
+    "source": "espn",
+    "path": "data/photos/212900.png",
+    "athlete_id": "212900"
+  },
+  "Jørgen Strand Larsen": {
+    "source": "espn",
+    "path": "data/photos/252747.png",
+    "athlete_id": "252747"
+  },
+  "Fidel Escobar": {
+    "source": "espn",
+    "path": "data/photos/216418.png",
+    "athlete_id": "216418"
+  },
+  "Amir Murillo": {
+    "source": "espn",
+    "path": "data/photos/216420.png",
+    "athlete_id": "216420"
+  },
+  "Aníbal Godoy": {
+    "source": "espn",
+    "path": "data/photos/116825.png",
+    "athlete_id": "116825"
+  },
+  "Cristian Martínez": {
+    "source": "espn",
+    "path": "data/photos/176145.png",
+    "athlete_id": "176145"
+  },
+  "Adalberto Carrasquilla": {
+    "source": "espn",
+    "path": "data/photos/219508.png",
+    "athlete_id": "219508"
+  },
+  "Carlos Harvey": {
+    "source": "espn",
+    "path": "data/photos/285452.png",
+    "athlete_id": "285452"
+  },
+  "Alejandro Romero Gamarra": {
+    "source": "espn",
+    "path": "data/photos/188160.png",
+    "athlete_id": "188160"
+  },
+  "Andrés Cubas": {
+    "source": "espn",
+    "path": "data/photos/202501.png",
+    "athlete_id": "202501"
+  },
+  "Braian Ojeda": {
+    "source": "espn",
+    "path": "data/photos/265977.png",
+    "athlete_id": "265977"
+  },
+  "Miguel Almirón": {
+    "source": "espn",
+    "path": "data/photos/48128.png",
+    "athlete_id": "48128"
+  },
+  "Francisco Conceição": {
+    "source": "espn",
+    "path": "data/photos/312659.png",
+    "athlete_id": "312659"
+  },
+  "Kim Moon-Hwan": {
+    "source": "espn",
+    "path": "data/photos/280060.png",
+    "athlete_id": "280060"
+  },
+  "Hwang In-Beom": {
+    "source": "espn",
+    "path": "data/photos/280061.png",
+    "athlete_id": "280061"
+  },
+  "Gabriel Gudmundsson": {
+    "source": "espn",
+    "path": "data/photos/250166.png",
+    "athlete_id": "250166"
+  },
+  "Benjamin Nygren": {
+    "source": "espn",
+    "path": "data/photos/274522.png",
+    "athlete_id": "274522"
+  },
+  "Omar Rekik": {
+    "source": "espn",
+    "path": "data/photos/303848.png",
+    "athlete_id": "303848"
+  },
+  "Orkun Kökçü": {
+    "source": "espn",
+    "path": "data/photos/272700.png",
+    "athlete_id": "272700"
+  },
+  "Matt Freese": {
+    "source": "espn",
+    "path": "data/photos/252974.png",
+    "athlete_id": "252974"
+  },
+  "Chris Brady": {
+    "source": "espn",
+    "path": "data/photos/303693.png",
+    "athlete_id": "303693"
+  },
+  "Matt Turner": {
+    "source": "espn",
+    "path": "data/photos/303794.png",
+    "athlete_id": "303794"
+  },
+  "Mark McKenzie": {
+    "source": "espn",
+    "path": "data/photos/77072.png",
+    "athlete_id": "77072"
+  },
+  "Auston Trusty": {
+    "source": "espn",
+    "path": "data/photos/228619.png",
+    "athlete_id": "228619"
+  },
+  "Alex Freeman": {
+    "source": "espn",
+    "path": "data/photos/248276.png",
+    "athlete_id": "248276"
+  },
+  "Miles Robinson": {
+    "source": "espn",
+    "path": "data/photos/249768.png",
+    "athlete_id": "249768"
+  },
+  "Joe Scally": {
+    "source": "espn",
+    "path": "data/photos/272135.png",
+    "athlete_id": "272135"
+  },
+  "Chris Richards": {
+    "source": "espn",
+    "path": "data/photos/272585.png",
+    "athlete_id": "272585"
+  },
+  "Cristian Roldan": {
+    "source": "espn",
+    "path": "data/photos/216617.png",
+    "athlete_id": "216617"
+  },
+  "Tyler Adams": {
+    "source": "espn",
+    "path": "data/photos/222776.png",
+    "athlete_id": "222776"
+  },
+  "Brenden Aaronson": {
+    "source": "espn",
+    "path": "data/photos/259653.png",
+    "athlete_id": "259653"
+  },
+  "Sebastian Berhalter": {
+    "source": "espn",
+    "path": "data/photos/295771.png",
+    "athlete_id": "295771"
+  },
+  "Ricardo Pepi": {
+    "source": "espn",
+    "path": "data/photos/289120.png",
+    "athlete_id": "289120"
+  },
+  "Brian Rodríguez": {
+    "source": "espn",
+    "path": "data/photos/144325.png",
+    "athlete_id": "144325"
+  },
+  "Luca Zidane": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luca_Zidane.svg",
+    "athlete_id": null
+  },
+  "Oussama Benbot": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oussama_Benbot.svg",
+    "athlete_id": null
+  },
+  "Melvin Mastil": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Melvin_Mastil.svg",
+    "athlete_id": null
+  },
+  "Aïssa Mandi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aïssa_Mandi.svg",
+    "athlete_id": null
+  },
+  "Ramy Bensebaini": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ramy_Bensebaini.svg",
+    "athlete_id": null
+  },
+  "Rayan Aït-Nouri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rayan_Aït-Nouri.svg",
+    "athlete_id": null
+  },
+  "Mohamed Amine Tougai": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Amine_Tougai.svg",
+    "athlete_id": null
+  },
+  "Zineddine Belaïd": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zineddine_Belaïd.svg",
+    "athlete_id": null
+  },
+  "Samir Chergui": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Samir_Chergui.svg",
+    "athlete_id": null
+  },
+  "Jaouen Hadjam": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jaouen_Hadjam.svg",
+    "athlete_id": null
+  },
+  "Rafik Belghali": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rafik_Belghali.svg",
+    "athlete_id": null
+  },
+  "Achraf Abada": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Achraf_Abada.svg",
+    "athlete_id": null
+  },
+  "Nabil Bentaleb": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nabil_Bentaleb.svg",
+    "athlete_id": null
+  },
+  "Houssem Aouar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Houssem_Aouar.svg",
+    "athlete_id": null
+  },
+  "Hicham Boudaoui": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hicham_Boudaoui.svg",
+    "athlete_id": null
+  },
+  "Farès Chaïbi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Farès_Chaïbi.svg",
+    "athlete_id": null
+  },
+  "Yassine Titraoui": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yassine_Titraoui.svg",
+    "athlete_id": null
+  },
+  "Ibrahim Maza": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ibrahim_Maza.svg",
+    "athlete_id": null
+  },
+  "Riyad Mahrez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Riyad_Mahrez.svg",
+    "athlete_id": null
+  },
+  "Amine Gouiri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amine_Gouiri.svg",
+    "athlete_id": null
+  },
+  "Mohamed Amoura": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Amoura.svg",
+    "athlete_id": null
+  },
+  "Adil Boulbina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Adil_Boulbina.svg",
+    "athlete_id": null
+  },
+  "Anis Hadj Moussa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Anis_Hadj_Moussa.svg",
+    "athlete_id": null
+  },
+  "Nadhir Benbouali": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nadhir_Benbouali.svg",
+    "athlete_id": null
+  },
+  "Farès Ghedjemis": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Farès_Ghedjemis.svg",
+    "athlete_id": null
+  },
+  "Emiliano Martínez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Emiliano_Martínez.svg",
+    "athlete_id": null
+  },
+  "Juan Musso": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Juan_Musso.svg",
+    "athlete_id": null
+  },
+  "Cristian Romero": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cristian_Romero.svg",
+    "athlete_id": null
+  },
+  "Nicolás Otamendi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nicolás_Otamendi.svg",
+    "athlete_id": null
+  },
+  "Nahuel Molina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nahuel_Molina.svg",
+    "athlete_id": null
+  },
+  "Gonzalo Montiel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gonzalo_Montiel.svg",
+    "athlete_id": null
+  },
+  "Facundo Medina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Facundo_Medina.svg",
+    "athlete_id": null
+  },
+  "Leandro Paredes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leandro_Paredes.svg",
+    "athlete_id": null
+  },
+  "Rodrigo De Paul": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rodrigo_De_Paul.svg",
+    "athlete_id": null
+  },
+  "Giovani Lo Celso": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Giovani_Lo_Celso.svg",
+    "athlete_id": null
+  },
+  "Exequiel Palacios": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Exequiel_Palacios.svg",
+    "athlete_id": null
+  },
+  "Alexis Mac Allister": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexis_Mac_Allister.svg",
+    "athlete_id": null
+  },
+  "Enzo Fernández": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Enzo_Fernández.svg",
+    "athlete_id": null
+  },
+  "Valentín Barco": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Valentín_Barco.svg",
+    "athlete_id": null
+  },
+  "Nico González": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nico_González.svg",
+    "athlete_id": null
+  },
+  "Lautaro Martínez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lautaro_Martínez.svg",
+    "athlete_id": null
+  },
+  "Julián Álvarez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Julián_Álvarez.svg",
+    "athlete_id": null
+  },
+  "José Manuel López": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_José_Manuel_López.svg",
+    "athlete_id": null
+  },
+  "Giuliano Simeone": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Giuliano_Simeone.svg",
+    "athlete_id": null
+  },
+  "Nico Paz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nico_Paz.svg",
+    "athlete_id": null
+  },
+  "Leonardo Balerdi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leonardo_Balerdi.svg",
+    "athlete_id": null
+  },
+  "Paul Izzo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Paul_Izzo.svg",
+    "athlete_id": null
+  },
+  "Patrick Beach": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Patrick_Beach.svg",
+    "athlete_id": null
+  },
+  "Jason Geria": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jason_Geria.svg",
+    "athlete_id": null
+  },
+  "Aziz Behich": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aziz_Behich.svg",
+    "athlete_id": null
+  },
+  "Cameron Burgess": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cameron_Burgess.svg",
+    "athlete_id": null
+  },
+  "Harry Souttar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Harry_Souttar.svg",
+    "athlete_id": null
+  },
+  "Jacob Italiano": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jacob_Italiano.svg",
+    "athlete_id": null
+  },
+  "Kai Trewin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kai_Trewin.svg",
+    "athlete_id": null
+  },
+  "Jordan Bos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jordan_Bos.svg",
+    "athlete_id": null
+  },
+  "Alessandro Circati": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alessandro_Circati.svg",
+    "athlete_id": null
+  },
+  "Lucas Herrington": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lucas_Herrington.svg",
+    "athlete_id": null
+  },
+  "Jackson Irvine": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jackson_Irvine.svg",
+    "athlete_id": null
+  },
+  "Awer Mabil": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Awer_Mabil.svg",
+    "athlete_id": null
+  },
+  "Ajdin Hrustic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ajdin_Hrustic.svg",
+    "athlete_id": null
+  },
+  "Aiden O'Neill": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aiden_ONeill.svg",
+    "athlete_id": null
+  },
+  "Connor Metcalfe": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Connor_Metcalfe.svg",
+    "athlete_id": null
+  },
+  "Cameron Devlin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cameron_Devlin.svg",
+    "athlete_id": null
+  },
+  "Cristian Volpato": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cristian_Volpato.svg",
+    "athlete_id": null
+  },
+  "Paul Okon-Engstler": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Paul_Okon-Engstler.svg",
+    "athlete_id": null
+  },
+  "Mathew Leckie": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mathew_Leckie.svg",
+    "athlete_id": null
+  },
+  "Mohamed Toure": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Toure.svg",
+    "athlete_id": null
+  },
+  "Tete Yengi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tete_Yengi.svg",
+    "athlete_id": null
+  },
+  "Nishan Velupillay": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nishan_Velupillay.svg",
+    "athlete_id": null
+  },
+  "Nestory Irankunda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nestory_Irankunda.svg",
+    "athlete_id": null
+  },
+  "Alexander Schlager": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexander_Schlager.svg",
+    "athlete_id": null
+  },
+  "Patrick Pentz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Patrick_Pentz.svg",
+    "athlete_id": null
+  },
+  "Florian Wiegele": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Florian_Wiegele.svg",
+    "athlete_id": null
+  },
+  "David Alaba": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Alaba.svg",
+    "athlete_id": null
+  },
+  "Philipp Lienhart": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Philipp_Lienhart.svg",
+    "athlete_id": null
+  },
+  "Marco Friedl": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marco_Friedl.svg",
+    "athlete_id": null
+  },
+  "Stefan Posch": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Stefan_Posch.svg",
+    "athlete_id": null
+  },
+  "Kevin Danso": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kevin_Danso.svg",
+    "athlete_id": null
+  },
+  "Michael Svoboda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Michael_Svoboda.svg",
+    "athlete_id": null
+  },
+  "David Affengruber": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Affengruber.svg",
+    "athlete_id": null
+  },
+  "Alexander Prass": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexander_Prass.svg",
+    "athlete_id": null
+  },
+  "Konrad Laimer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Konrad_Laimer.svg",
+    "athlete_id": null
+  },
+  "Marcel Sabitzer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marcel_Sabitzer.svg",
+    "athlete_id": null
+  },
+  "Florian Grillitsch": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Florian_Grillitsch.svg",
+    "athlete_id": null
+  },
+  "Romano Schmid": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Romano_Schmid.svg",
+    "athlete_id": null
+  },
+  "Xaver Schlager": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Xaver_Schlager.svg",
+    "athlete_id": null
+  },
+  "Carney Chukwuemeka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Carney_Chukwuemeka.svg",
+    "athlete_id": null
+  },
+  "Patrick Wimmer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Patrick_Wimmer.svg",
+    "athlete_id": null
+  },
+  "Nicolas Seiwald": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nicolas_Seiwald.svg",
+    "athlete_id": null
+  },
+  "Paul Wanner": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Paul_Wanner.svg",
+    "athlete_id": null
+  },
+  "Marko Arnautovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marko_Arnautovic.svg",
+    "athlete_id": null
+  },
+  "Michael Gregoritsch": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Michael_Gregoritsch.svg",
+    "athlete_id": null
+  },
+  "Sasa Kalajdzic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sasa_Kalajdzic.svg",
+    "athlete_id": null
+  },
+  "Christoph Baumgartner": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Christoph_Baumgartner.svg",
+    "athlete_id": null
+  },
+  "Thibaut Courtois": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Thibaut_Courtois.svg",
+    "athlete_id": null
+  },
+  "Senne Lammens": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Senne_Lammens.svg",
+    "athlete_id": null
+  },
+  "Mike Penders": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mike_Penders.svg",
+    "athlete_id": null
+  },
+  "Thomas Meunier": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Thomas_Meunier.svg",
+    "athlete_id": null
+  },
+  "Brandon Mechele": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Brandon_Mechele.svg",
+    "athlete_id": null
+  },
+  "Timothy Castagne": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Timothy_Castagne.svg",
+    "athlete_id": null
+  },
+  "Maxim De Cuyper": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Maxim_De_Cuyper.svg",
+    "athlete_id": null
+  },
+  "Arthur Theate": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Arthur_Theate.svg",
+    "athlete_id": null
+  },
+  "Koni De Winter": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Koni_De_Winter.svg",
+    "athlete_id": null
+  },
+  "Zeno Debast": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zeno_Debast.svg",
+    "athlete_id": null
+  },
+  "Nathan Ngoy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nathan_Ngoy.svg",
+    "athlete_id": null
+  },
+  "Joaquin Seys": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joaquin_Seys.svg",
+    "athlete_id": null
+  },
+  "Kevin De Bruyne": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kevin_De_Bruyne.svg",
+    "athlete_id": null
+  },
+  "Axel Witsel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Axel_Witsel.svg",
+    "athlete_id": null
+  },
+  "Youri Tielemans": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Youri_Tielemans.svg",
+    "athlete_id": null
+  },
+  "Hans Vanaken": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hans_Vanaken.svg",
+    "athlete_id": null
+  },
+  "Nicolas Raskin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nicolas_Raskin.svg",
+    "athlete_id": null
+  },
+  "Amadou Onana": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amadou_Onana.svg",
+    "athlete_id": null
+  },
+  "Romelu Lukaku": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Romelu_Lukaku.svg",
+    "athlete_id": null
+  },
+  "Leandro Trossard": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leandro_Trossard.svg",
+    "athlete_id": null
+  },
+  "Dodi Lukébakio": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dodi_Lukébakio.svg",
+    "athlete_id": null
+  },
+  "Alexis Saelemaekers": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexis_Saelemaekers.svg",
+    "athlete_id": null
+  },
+  "Jérémy Doku": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jérémy_Doku.svg",
+    "athlete_id": null
+  },
+  "Charles De Ketelaere": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Charles_De_Ketelaere.svg",
+    "athlete_id": null
+  },
+  "Diego Moreira": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Diego_Moreira.svg",
+    "athlete_id": null
+  },
+  "Matias Fernandez-Pardo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matias_Fernandez-Pardo.svg",
+    "athlete_id": null
+  },
+  "Nikola Vasilj": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nikola_Vasilj.svg",
+    "athlete_id": null
+  },
+  "Martin Zlomislic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Martin_Zlomislic.svg",
+    "athlete_id": null
+  },
+  "Mladen Jurkas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mladen_Jurkas.svg",
+    "athlete_id": null
+  },
+  "Sead Kolasinac": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sead_Kolasinac.svg",
+    "athlete_id": null
+  },
+  "Nikola Katic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nikola_Katic.svg",
+    "athlete_id": null
+  },
+  "Dennis Hadzikadunic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dennis_Hadzikadunic.svg",
+    "athlete_id": null
+  },
+  "Nihad Mujakic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nihad_Mujakic.svg",
+    "athlete_id": null
+  },
+  "Stjepan Radeljic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Stjepan_Radeljic.svg",
+    "athlete_id": null
+  },
+  "Amar Dedic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amar_Dedic.svg",
+    "athlete_id": null
+  },
+  "Tarik Muharemovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tarik_Muharemovic.svg",
+    "athlete_id": null
+  },
+  "Nidal Celik": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nidal_Celik.svg",
+    "athlete_id": null
+  },
+  "Ivan Sunjic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ivan_Sunjic.svg",
+    "athlete_id": null
+  },
+  "Amir Hadziahmetovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amir_Hadziahmetovic.svg",
+    "athlete_id": null
+  },
+  "Dzenis Burnic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dzenis_Burnic.svg",
+    "athlete_id": null
+  },
+  "Armin Gigovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Armin_Gigovic.svg",
+    "athlete_id": null
+  },
+  "Ivan Basic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ivan_Basic.svg",
+    "athlete_id": null
+  },
+  "Amar Memic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amar_Memic.svg",
+    "athlete_id": null
+  },
+  "Ermin Mahmic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ermin_Mahmic.svg",
+    "athlete_id": null
+  },
+  "Edin Dzeko": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Edin_Dzeko.svg",
+    "athlete_id": null
+  },
+  "Haris Tabakovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Haris_Tabakovic.svg",
+    "athlete_id": null
+  },
+  "Ermedin Demirovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ermedin_Demirovic.svg",
+    "athlete_id": null
+  },
+  "Jovo Lukic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jovo_Lukic.svg",
+    "athlete_id": null
+  },
+  "Samed Bazdar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Samed_Bazdar.svg",
+    "athlete_id": null
+  },
+  "Kerim Alajbegovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kerim_Alajbegovic.svg",
+    "athlete_id": null
+  },
+  "Ederson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ederson.svg",
+    "athlete_id": null
+  },
+  "Alisson Becker": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alisson_Becker.svg",
+    "athlete_id": null
+  },
+  "Weverton": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Weverton.svg",
+    "athlete_id": null
+  },
+  "Alex Sandro": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alex_Sandro.svg",
+    "athlete_id": null
+  },
+  "Léo Pereira": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Léo_Pereira.svg",
+    "athlete_id": null
+  },
+  "Marquinhos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marquinhos.svg",
+    "athlete_id": null
+  },
+  "Danilo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Danilo.svg",
+    "athlete_id": null
+  },
+  "Douglas Santos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Douglas_Santos.svg",
+    "athlete_id": null
+  },
+  "Gabriel Magalhães": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gabriel_Magalhães.svg",
+    "athlete_id": null
+  },
+  "Bremer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bremer.svg",
+    "athlete_id": null
+  },
+  "Roger Ibañez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Roger_Ibañez.svg",
+    "athlete_id": null
+  },
+  "Casemiro": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Casemiro.svg",
+    "athlete_id": null
+  },
+  "Fabinho": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fabinho.svg",
+    "athlete_id": null
+  },
+  "Bruno Guimarães": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bruno_Guimarães.svg",
+    "athlete_id": null
+  },
+  "Lucas Paquetá": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lucas_Paquetá.svg",
+    "athlete_id": null
+  },
+  "Éderson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Éderson.svg",
+    "athlete_id": null
+  },
+  "Danilo Santos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Danilo_Santos.svg",
+    "athlete_id": null
+  },
+  "Neymar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Neymar.svg",
+    "athlete_id": null
+  },
+  "Raphinha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Raphinha.svg",
+    "athlete_id": null
+  },
+  "Vinícius Júnior": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Vinícius_Júnior.svg",
+    "athlete_id": null
+  },
+  "Matheus Cunha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matheus_Cunha.svg",
+    "athlete_id": null
+  },
+  "Gabriel Martinelli": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gabriel_Martinelli.svg",
+    "athlete_id": null
+  },
+  "Igor Thiago": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Igor_Thiago.svg",
+    "athlete_id": null
+  },
+  "Luiz Henrique": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luiz_Henrique.svg",
+    "athlete_id": null
+  },
+  "Endrick": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Endrick.svg",
+    "athlete_id": null
+  },
+  "Rayan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rayan.svg",
+    "athlete_id": null
+  },
+  "Owen Goodman": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Owen_Goodman.svg",
+    "athlete_id": null
+  },
+  "Alfie Jones": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alfie_Jones.svg",
+    "athlete_id": null
+  },
+  "Luc de Fougerolles": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luc_de_Fougerolles.svg",
+    "athlete_id": null
+  },
+  "Stephen Eustáquio": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Stephen_Eustáquio.svg",
+    "athlete_id": null
+  },
+  "Ismaël Koné": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ismaël_Koné.svg",
+    "athlete_id": null
+  },
+  "Niko Sigur": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Niko_Sigur.svg",
+    "athlete_id": null
+  },
+  "Cyle Larin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cyle_Larin.svg",
+    "athlete_id": null
+  },
+  "Liam Millar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Liam_Millar.svg",
+    "athlete_id": null
+  },
+  "Jonathan David": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jonathan_David.svg",
+    "athlete_id": null
+  },
+  "Promise David": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Promise_David.svg",
+    "athlete_id": null
+  },
+  "Vozinha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Vozinha.svg",
+    "athlete_id": null
+  },
+  "Márcio Rosa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Márcio_Rosa.svg",
+    "athlete_id": null
+  },
+  "Stopira": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Stopira.svg",
+    "athlete_id": null
+  },
+  "Diney Borges": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Diney_Borges.svg",
+    "athlete_id": null
+  },
+  "Pico Lopes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pico_Lopes.svg",
+    "athlete_id": null
+  },
+  "Logan Costa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Logan_Costa.svg",
+    "athlete_id": null
+  },
+  "Sidny Lopes Cabral": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sidny_Lopes_Cabral.svg",
+    "athlete_id": null
+  },
+  "Wagner Pina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Wagner_Pina.svg",
+    "athlete_id": null
+  },
+  "Kelvin Pires": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kelvin_Pires.svg",
+    "athlete_id": null
+  },
+  "Yannick Semedo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yannick_Semedo.svg",
+    "athlete_id": null
+  },
+  "Telmo Arcanjo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Telmo_Arcanjo.svg",
+    "athlete_id": null
+  },
+  "João Paulo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_João_Paulo.svg",
+    "athlete_id": null
+  },
+  "Kevin Pina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kevin_Pina.svg",
+    "athlete_id": null
+  },
+  "Ryan Mendes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ryan_Mendes.svg",
+    "athlete_id": null
+  },
+  "Garry Rodrigues": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Garry_Rodrigues.svg",
+    "athlete_id": null
+  },
+  "Nuno da Costa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nuno_da_Costa.svg",
+    "athlete_id": null
+  },
+  "Jovane Cabral": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jovane_Cabral.svg",
+    "athlete_id": null
+  },
+  "Willy Semedo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Willy_Semedo.svg",
+    "athlete_id": null
+  },
+  "Gilson Benchimol": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gilson_Benchimol.svg",
+    "athlete_id": null
+  },
+  "Dailon Livramento": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dailon_Livramento.svg",
+    "athlete_id": null
+  },
+  "Hélio Varela": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hélio_Varela.svg",
+    "athlete_id": null
+  },
+  "David Ospina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Ospina.svg",
+    "athlete_id": null
+  },
+  "Álvaro Montero": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Álvaro_Montero.svg",
+    "athlete_id": null
+  },
+  "Camilo Vargas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Camilo_Vargas.svg",
+    "athlete_id": null
+  },
+  "Daniel Muñoz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Daniel_Muñoz.svg",
+    "athlete_id": null
+  },
+  "Johan Mojica": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Johan_Mojica.svg",
+    "athlete_id": null
+  },
+  "Yerry Mina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yerry_Mina.svg",
+    "athlete_id": null
+  },
+  "Davinson Sánchez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Davinson_Sánchez.svg",
+    "athlete_id": null
+  },
+  "Deiver Machado": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Deiver_Machado.svg",
+    "athlete_id": null
+  },
+  "Jhon Lucumí": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jhon_Lucumí.svg",
+    "athlete_id": null
+  },
+  "Willer Ditta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Willer_Ditta.svg",
+    "athlete_id": null
+  },
+  "James Rodríguez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_James_Rodríguez.svg",
+    "athlete_id": null
+  },
+  "Juan Portilla": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Juan_Portilla.svg",
+    "athlete_id": null
+  },
+  "Juan Fernando Quintero": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Juan_Fernando_Quintero.svg",
+    "athlete_id": null
+  },
+  "Jefferson Lerma": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jefferson_Lerma.svg",
+    "athlete_id": null
+  },
+  "Jorge Carrascal": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jorge_Carrascal.svg",
+    "athlete_id": null
+  },
+  "Jhon Arias": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jhon_Arias.svg",
+    "athlete_id": null
+  },
+  "Jáminton Campaz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jáminton_Campaz.svg",
+    "athlete_id": null
+  },
+  "Richard Ríos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Richard_Ríos.svg",
+    "athlete_id": null
+  },
+  "Kevin Castaño": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kevin_Castaño.svg",
+    "athlete_id": null
+  },
+  "Gustavo Puerta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gustavo_Puerta.svg",
+    "athlete_id": null
+  },
+  "Jhon Córdoba": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jhon_Córdoba.svg",
+    "athlete_id": null
+  },
+  "Luis Díaz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luis_Díaz.svg",
+    "athlete_id": null
+  },
+  "Luis Suárez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luis_Suárez.svg",
+    "athlete_id": null
+  },
+  "Lionel Mpasi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lionel_Mpasi.svg",
+    "athlete_id": null
+  },
+  "Timothy Fayulu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Timothy_Fayulu.svg",
+    "athlete_id": null
+  },
+  "Matthieu Epolo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matthieu_Epolo.svg",
+    "athlete_id": null
+  },
+  "Arthur Masuaku": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Arthur_Masuaku.svg",
+    "athlete_id": null
+  },
+  "Chancel Mbemba": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Chancel_Mbemba.svg",
+    "athlete_id": null
+  },
+  "Joris Kayembe": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joris_Kayembe.svg",
+    "athlete_id": null
+  },
+  "Axel Tuanzebe": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Axel_Tuanzebe.svg",
+    "athlete_id": null
+  },
+  "Aaron Wan-Bissaka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aaron_Wan-Bissaka.svg",
+    "athlete_id": null
+  },
+  "Dylan Batubinsika": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dylan_Batubinsika.svg",
+    "athlete_id": null
+  },
+  "Gédéon Kalulu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gédéon_Kalulu.svg",
+    "athlete_id": null
+  },
+  "Steve Kapuadi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Steve_Kapuadi.svg",
+    "athlete_id": null
+  },
+  "Gaël Kakuta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gaël_Kakuta.svg",
+    "athlete_id": null
+  },
+  "Aaron Tshibola": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aaron_Tshibola.svg",
+    "athlete_id": null
+  },
+  "Théo Bongonda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Théo_Bongonda.svg",
+    "athlete_id": null
+  },
+  "Charles Pickel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Charles_Pickel.svg",
+    "athlete_id": null
+  },
+  "Edo Kayembe": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Edo_Kayembe.svg",
+    "athlete_id": null
+  },
+  "Noah Sadiki": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Noah_Sadiki.svg",
+    "athlete_id": null
+  },
+  "Ngal'ayel Mukau": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ngalayel_Mukau.svg",
+    "athlete_id": null
+  },
+  "Cédric Bakambu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cédric_Bakambu.svg",
+    "athlete_id": null
+  },
+  "Yoane Wissa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yoane_Wissa.svg",
+    "athlete_id": null
+  },
+  "Simon Banza": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Simon_Banza.svg",
+    "athlete_id": null
+  },
+  "Meschack Elia": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Meschack_Elia.svg",
+    "athlete_id": null
+  },
+  "Nathanaël Mbuku": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nathanaël_Mbuku.svg",
+    "athlete_id": null
+  },
+  "Fiston Mayele": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fiston_Mayele.svg",
+    "athlete_id": null
+  },
+  "Brian Cipenga": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Brian_Cipenga.svg",
+    "athlete_id": null
+  },
+  "Dominik Livakovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dominik_Livakovic.svg",
+    "athlete_id": null
+  },
+  "Duje Caleta-Car": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Duje_Caleta-Car.svg",
+    "athlete_id": null
+  },
+  "Martin Erlic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Martin_Erlic.svg",
+    "athlete_id": null
+  },
+  "Marin Pongracic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marin_Pongracic.svg",
+    "athlete_id": null
+  },
+  "Josip Stanisic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Josip_Stanisic.svg",
+    "athlete_id": null
+  },
+  "Josko Gvardiol": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Josko_Gvardiol.svg",
+    "athlete_id": null
+  },
+  "Josip Sutalo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Josip_Sutalo.svg",
+    "athlete_id": null
+  },
+  "Luka Vuskovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luka_Vuskovic.svg",
+    "athlete_id": null
+  },
+  "Luka Modric": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luka_Modric.svg",
+    "athlete_id": null
+  },
+  "Mateo Kovacic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mateo_Kovacic.svg",
+    "athlete_id": null
+  },
+  "Mario Pasalic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mario_Pasalic.svg",
+    "athlete_id": null
+  },
+  "Nikola Vlasic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nikola_Vlasic.svg",
+    "athlete_id": null
+  },
+  "Nikola Moro": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nikola_Moro.svg",
+    "athlete_id": null
+  },
+  "Kristijan Jakic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kristijan_Jakic.svg",
+    "athlete_id": null
+  },
+  "Luka Sucic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luka_Sucic.svg",
+    "athlete_id": null
+  },
+  "Martin Baturina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Martin_Baturina.svg",
+    "athlete_id": null
+  },
+  "Toni Fruk": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Toni_Fruk.svg",
+    "athlete_id": null
+  },
+  "Petar Sucic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Petar_Sucic.svg",
+    "athlete_id": null
+  },
+  "Ivan Perisic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ivan_Perisic.svg",
+    "athlete_id": null
+  },
+  "Andrej Kramaric": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Andrej_Kramaric.svg",
+    "athlete_id": null
+  },
+  "Ante Budimir": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ante_Budimir.svg",
+    "athlete_id": null
+  },
+  "Petar Musa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Petar_Musa.svg",
+    "athlete_id": null
+  },
+  "Igor Matanovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Igor_Matanovic.svg",
+    "athlete_id": null
+  },
+  "Marco Pasalic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marco_Pasalic.svg",
+    "athlete_id": null
+  },
+  "Trevor Doornbusch": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Trevor_Doornbusch.svg",
+    "athlete_id": null
+  },
+  "Tyrick Bodak": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tyrick_Bodak.svg",
+    "athlete_id": null
+  },
+  "Roshon van Eijma": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Roshon_van_Eijma.svg",
+    "athlete_id": null
+  },
+  "Livano Comenencia": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Livano_Comenencia.svg",
+    "athlete_id": null
+  },
+  "Deveron Fonville": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Deveron_Fonville.svg",
+    "athlete_id": null
+  },
+  "Leandro Bacuna": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leandro_Bacuna.svg",
+    "athlete_id": null
+  },
+  "Juninho Bacuna": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Juninho_Bacuna.svg",
+    "athlete_id": null
+  },
+  "Tahith Chong": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tahith_Chong.svg",
+    "athlete_id": null
+  },
+  "Ar'jany Martha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Arjany_Martha.svg",
+    "athlete_id": null
+  },
+  "Tyrese Noslin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tyrese_Noslin.svg",
+    "athlete_id": null
+  },
+  "Brandley Kuwas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Brandley_Kuwas.svg",
+    "athlete_id": null
+  },
+  "Gervane Kastaneer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gervane_Kastaneer.svg",
+    "athlete_id": null
+  },
+  "Kenji Gorré": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kenji_Gorré.svg",
+    "athlete_id": null
+  },
+  "Jearl Margaritha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jearl_Margaritha.svg",
+    "athlete_id": null
+  },
+  "Jeremy Antonisse": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jeremy_Antonisse.svg",
+    "athlete_id": null
+  },
+  "Jindrich Stanek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jindrich_Stanek.svg",
+    "athlete_id": null
+  },
+  "Matej Kovár": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matej_Kovár.svg",
+    "athlete_id": null
+  },
+  "Lukás Hornícek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lukás_Hornícek.svg",
+    "athlete_id": null
+  },
+  "Ladislav Krejcí": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ladislav_Krejcí.svg",
+    "athlete_id": null
+  },
+  "Vladimír Coufal": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Vladimír_Coufal.svg",
+    "athlete_id": null
+  },
+  "Jaroslav Zelený": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jaroslav_Zelený.svg",
+    "athlete_id": null
+  },
+  "Tomás Holes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tomás_Holes.svg",
+    "athlete_id": null
+  },
+  "David Zima": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Zima.svg",
+    "athlete_id": null
+  },
+  "Robin Hranác": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Robin_Hranác.svg",
+    "athlete_id": null
+  },
+  "David Jurásek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Jurásek.svg",
+    "athlete_id": null
+  },
+  "Stepán Chaloupek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Stepán_Chaloupek.svg",
+    "athlete_id": null
+  },
+  "Vladimír Darida": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Vladimír_Darida.svg",
+    "athlete_id": null
+  },
+  "Tomás Soucek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tomás_Soucek.svg",
+    "athlete_id": null
+  },
+  "Lukás Provod": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lukás_Provod.svg",
+    "athlete_id": null
+  },
+  "Lukás Cerv": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lukás_Cerv.svg",
+    "athlete_id": null
+  },
+  "Pavel Sulc": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pavel_Sulc.svg",
+    "athlete_id": null
+  },
+  "Denis Visinský": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Denis_Visinský.svg",
+    "athlete_id": null
+  },
+  "David Doudera": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Doudera.svg",
+    "athlete_id": null
+  },
+  "Alexandr Sojka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexandr_Sojka.svg",
+    "athlete_id": null
+  },
+  "Hugo Sochurek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hugo_Sochurek.svg",
+    "athlete_id": null
+  },
+  "Patrik Schick": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Patrik_Schick.svg",
+    "athlete_id": null
+  },
+  "Tomás Chorý": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tomás_Chorý.svg",
+    "athlete_id": null
+  },
+  "Adam Hlozek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Adam_Hlozek.svg",
+    "athlete_id": null
+  },
+  "Jan Kuchta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jan_Kuchta.svg",
+    "athlete_id": null
+  },
+  "Mojmír Chytil": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mojmír_Chytil.svg",
+    "athlete_id": null
+  },
+  "Gonzalo Valle": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gonzalo_Valle.svg",
+    "athlete_id": null
+  },
+  "Hernán Galíndez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hernán_Galíndez.svg",
+    "athlete_id": null
+  },
+  "Moisés Ramírez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Moisés_Ramírez.svg",
+    "athlete_id": null
+  },
+  "Pervis Estupiñán": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pervis_Estupiñán.svg",
+    "athlete_id": null
+  },
+  "Félix Torres": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Félix_Torres.svg",
+    "athlete_id": null
+  },
+  "Ángelo Preciado": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ángelo_Preciado.svg",
+    "athlete_id": null
+  },
+  "Jackson Porozo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jackson_Porozo.svg",
+    "athlete_id": null
+  },
+  "Willian Pacho": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Willian_Pacho.svg",
+    "athlete_id": null
+  },
+  "Piero Hincapié": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Piero_Hincapié.svg",
+    "athlete_id": null
+  },
+  "Yaimar Medina": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yaimar_Medina.svg",
+    "athlete_id": null
+  },
+  "Joel Ordóñez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joel_Ordóñez.svg",
+    "athlete_id": null
+  },
+  "Moisés Caicedo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Moisés_Caicedo.svg",
+    "athlete_id": null
+  },
+  "Denil Castillo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Denil_Castillo.svg",
+    "athlete_id": null
+  },
+  "Kendry Páez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kendry_Páez.svg",
+    "athlete_id": null
+  },
+  "Enner Valencia": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Enner_Valencia.svg",
+    "athlete_id": null
+  },
+  "Jordy Caicedo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jordy_Caicedo.svg",
+    "athlete_id": null
+  },
+  "John Yeboah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_John_Yeboah.svg",
+    "athlete_id": null
+  },
+  "Gonzalo Plata": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gonzalo_Plata.svg",
+    "athlete_id": null
+  },
+  "Kevin Rodríguez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kevin_Rodríguez.svg",
+    "athlete_id": null
+  },
+  "Anthony Valencia": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Anthony_Valencia.svg",
+    "athlete_id": null
+  },
+  "Nilson Angulo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nilson_Angulo.svg",
+    "athlete_id": null
+  },
+  "Alan Minda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alan_Minda.svg",
+    "athlete_id": null
+  },
+  "Jeremy Arévalo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jeremy_Arévalo.svg",
+    "athlete_id": null
+  },
+  "Mohamed El Shenawy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_El_Shenawy.svg",
+    "athlete_id": null
+  },
+  "Mahdy Soliman": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mahdy_Soliman.svg",
+    "athlete_id": null
+  },
+  "Mostafa Shoubir": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mostafa_Shoubir.svg",
+    "athlete_id": null
+  },
+  "Mohamed Hany": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Hany.svg",
+    "athlete_id": null
+  },
+  "Ramy Rabia": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ramy_Rabia.svg",
+    "athlete_id": null
+  },
+  "Karim Hafez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Karim_Hafez.svg",
+    "athlete_id": null
+  },
+  "Mohamed Abdelmoneim": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Abdelmoneim.svg",
+    "athlete_id": null
+  },
+  "Ahmed Fatouh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Fatouh.svg",
+    "athlete_id": null
+  },
+  "Yasser Ibrahim": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yasser_Ibrahim.svg",
+    "athlete_id": null
+  },
+  "Hossam Abdelmaguid": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hossam_Abdelmaguid.svg",
+    "athlete_id": null
+  },
+  "Tarek Alaa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tarek_Alaa.svg",
+    "athlete_id": null
+  },
+  "Hamdy Fathy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hamdy_Fathy.svg",
+    "athlete_id": null
+  },
+  "Nabil Donga": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nabil_Donga.svg",
+    "athlete_id": null
+  },
+  "Emam Ashour": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Emam_Ashour.svg",
+    "athlete_id": null
+  },
+  "Mahmoud Saber": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mahmoud_Saber.svg",
+    "athlete_id": null
+  },
+  "Mohanad Lashin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohanad_Lashin.svg",
+    "athlete_id": null
+  },
+  "Marawan Attia": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marawan_Attia.svg",
+    "athlete_id": null
+  },
+  "Mostafa Zico": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mostafa_Zico.svg",
+    "athlete_id": null
+  },
+  "Trézéguet": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Trézéguet.svg",
+    "athlete_id": null
+  },
+  "Mohamed Salah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Salah.svg",
+    "athlete_id": null
+  },
+  "Zizo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zizo.svg",
+    "athlete_id": null
+  },
+  "Haissem Hassan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Haissem_Hassan.svg",
+    "athlete_id": null
+  },
+  "Ibrahim Adel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ibrahim_Adel.svg",
+    "athlete_id": null
+  },
+  "Omar Marmoush": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Omar_Marmoush.svg",
+    "athlete_id": null
+  },
+  "Hamza Abdelkarim": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hamza_Abdelkarim.svg",
+    "athlete_id": null
+  },
+  "Mostafa Mohamed": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mostafa_Mohamed.svg",
+    "athlete_id": null
+  },
+  "Jordan Pickford": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jordan_Pickford.svg",
+    "athlete_id": null
+  },
+  "Dean Henderson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dean_Henderson.svg",
+    "athlete_id": null
+  },
+  "James Trafford": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_James_Trafford.svg",
+    "athlete_id": null
+  },
+  "John Stones": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_John_Stones.svg",
+    "athlete_id": null
+  },
+  "Reece James": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Reece_James.svg",
+    "athlete_id": null
+  },
+  "Dan Burn": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dan_Burn.svg",
+    "athlete_id": null
+  },
+  "Ezri Konsa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ezri_Konsa.svg",
+    "athlete_id": null
+  },
+  "Marc Guéhi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marc_Guéhi.svg",
+    "athlete_id": null
+  },
+  "Djed Spence": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Djed_Spence.svg",
+    "athlete_id": null
+  },
+  "Jarell Quansah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jarell_Quansah.svg",
+    "athlete_id": null
+  },
+  "Tino Livramento": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tino_Livramento.svg",
+    "athlete_id": null
+  },
+  "Nico O'Reilly": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nico_OReilly.svg",
+    "athlete_id": null
+  },
+  "Jordan Henderson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jordan_Henderson.svg",
+    "athlete_id": null
+  },
+  "Declan Rice": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Declan_Rice.svg",
+    "athlete_id": null
+  },
+  "Elliot Anderson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Elliot_Anderson.svg",
+    "athlete_id": null
+  },
+  "Eberechi Eze": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Eberechi_Eze.svg",
+    "athlete_id": null
+  },
+  "Morgan Rogers": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Morgan_Rogers.svg",
+    "athlete_id": null
+  },
+  "Jude Bellingham": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jude_Bellingham.svg",
+    "athlete_id": null
+  },
+  "Kobbie Mainoo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kobbie_Mainoo.svg",
+    "athlete_id": null
+  },
+  "Harry Kane": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Harry_Kane.svg",
+    "athlete_id": null
+  },
+  "Ivan Toney": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ivan_Toney.svg",
+    "athlete_id": null
+  },
+  "Ollie Watkins": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ollie_Watkins.svg",
+    "athlete_id": null
+  },
+  "Marcus Rashford": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marcus_Rashford.svg",
+    "athlete_id": null
+  },
+  "Anthony Gordon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Anthony_Gordon.svg",
+    "athlete_id": null
+  },
+  "Bukayo Saka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bukayo_Saka.svg",
+    "athlete_id": null
+  },
+  "Brice Samba": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Brice_Samba.svg",
+    "athlete_id": null
+  },
+  "Mike Maignan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mike_Maignan.svg",
+    "athlete_id": null
+  },
+  "Robin Risser": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Robin_Risser.svg",
+    "athlete_id": null
+  },
+  "Lucas Digne": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lucas_Digne.svg",
+    "athlete_id": null
+  },
+  "Lucas Hernández": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lucas_Hernández.svg",
+    "athlete_id": null
+  },
+  "Dayot Upamecano": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dayot_Upamecano.svg",
+    "athlete_id": null
+  },
+  "Jules Koundé": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jules_Koundé.svg",
+    "athlete_id": null
+  },
+  "Theo Hernández": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Theo_Hernández.svg",
+    "athlete_id": null
+  },
+  "Ibrahima Konaté": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ibrahima_Konaté.svg",
+    "athlete_id": null
+  },
+  "Maxence Lacroix": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Maxence_Lacroix.svg",
+    "athlete_id": null
+  },
+  "William Saliba": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_William_Saliba.svg",
+    "athlete_id": null
+  },
+  "Malo Gusto": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Malo_Gusto.svg",
+    "athlete_id": null
+  },
+  "N'Golo Kanté": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_NGolo_Kanté.svg",
+    "athlete_id": null
+  },
+  "Adrien Rabiot": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Adrien_Rabiot.svg",
+    "athlete_id": null
+  },
+  "Aurélien Tchouaméni": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aurélien_Tchouaméni.svg",
+    "athlete_id": null
+  },
+  "Manu Koné": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Manu_Koné.svg",
+    "athlete_id": null
+  },
+  "Michael Olise": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Michael_Olise.svg",
+    "athlete_id": null
+  },
+  "Rayan Cherki": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rayan_Cherki.svg",
+    "athlete_id": null
+  },
+  "Maghnes Akliouche": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Maghnes_Akliouche.svg",
+    "athlete_id": null
+  },
+  "Warren Zaïre-Emery": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Warren_Zaïre-Emery.svg",
+    "athlete_id": null
+  },
+  "Marcus Thuram": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marcus_Thuram.svg",
+    "athlete_id": null
+  },
+  "Ousmane Dembélé": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ousmane_Dembélé.svg",
+    "athlete_id": null
+  },
+  "Kylian Mbappé": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kylian_Mbappé.svg",
+    "athlete_id": null
+  },
+  "Jean-Philippe Mateta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jean-Philippe_Mateta.svg",
+    "athlete_id": null
+  },
+  "Bradley Barcola": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bradley_Barcola.svg",
+    "athlete_id": null
+  },
+  "Désiré Doué": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Désiré_Doué.svg",
+    "athlete_id": null
+  },
+  "Manuel Neuer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Manuel_Neuer.svg",
+    "athlete_id": null
+  },
+  "Oliver Baumann": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oliver_Baumann.svg",
+    "athlete_id": null
+  },
+  "Alexander Nübel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexander_Nübel.svg",
+    "athlete_id": null
+  },
+  "Nathaniel Brown": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nathaniel_Brown.svg",
+    "athlete_id": null
+  },
+  "Antonio Rüdiger": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Antonio_Rüdiger.svg",
+    "athlete_id": null
+  },
+  "Jonathan Tah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jonathan_Tah.svg",
+    "athlete_id": null
+  },
+  "Waldemar Anton": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Waldemar_Anton.svg",
+    "athlete_id": null
+  },
+  "David Raum": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Raum.svg",
+    "athlete_id": null
+  },
+  "Nico Schlotterbeck": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nico_Schlotterbeck.svg",
+    "athlete_id": null
+  },
+  "Malick Thiaw": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Malick_Thiaw.svg",
+    "athlete_id": null
+  },
+  "Pascal Gross": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pascal_Gross.svg",
+    "athlete_id": null
+  },
+  "Leon Goretzka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leon_Goretzka.svg",
+    "athlete_id": null
+  },
+  "Joshua Kimmich": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joshua_Kimmich.svg",
+    "athlete_id": null
+  },
+  "Nadiem Amiri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nadiem_Amiri.svg",
+    "athlete_id": null
+  },
+  "Felix Nmecha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Felix_Nmecha.svg",
+    "athlete_id": null
+  },
+  "Angelo Stiller": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Angelo_Stiller.svg",
+    "athlete_id": null
+  },
+  "Florian Wirtz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Florian_Wirtz.svg",
+    "athlete_id": null
+  },
+  "Jamal Musiala": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jamal_Musiala.svg",
+    "athlete_id": null
+  },
+  "Aleksandar Pavlovic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aleksandar_Pavlovic.svg",
+    "athlete_id": null
+  },
+  "Assan Ouédraogo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Assan_Ouédraogo.svg",
+    "athlete_id": null
+  },
+  "Leroy Sané": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leroy_Sané.svg",
+    "athlete_id": null
+  },
+  "Kai Havertz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kai_Havertz.svg",
+    "athlete_id": null
+  },
+  "Deniz Undav": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Deniz_Undav.svg",
+    "athlete_id": null
+  },
+  "Maximilian Beier": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Maximilian_Beier.svg",
+    "athlete_id": null
+  },
+  "Jamie Leweling": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jamie_Leweling.svg",
+    "athlete_id": null
+  },
+  "Nick Woltemade": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nick_Woltemade.svg",
+    "athlete_id": null
+  },
+  "Lawrence Ati Zigi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lawrence_Ati_Zigi.svg",
+    "athlete_id": null
+  },
+  "Joseph Anang": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joseph_Anang.svg",
+    "athlete_id": null
+  },
+  "Benjamin Asare": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Benjamin_Asare.svg",
+    "athlete_id": null
+  },
+  "Baba Rahman": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Baba_Rahman.svg",
+    "athlete_id": null
+  },
+  "Abdul Mumin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdul_Mumin.svg",
+    "athlete_id": null
+  },
+  "Jerome Opoku": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jerome_Opoku.svg",
+    "athlete_id": null
+  },
+  "Gideon Mensah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gideon_Mensah.svg",
+    "athlete_id": null
+  },
+  "Alidu Seidu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alidu_Seidu.svg",
+    "athlete_id": null
+  },
+  "Marvin Senaya": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marvin_Senaya.svg",
+    "athlete_id": null
+  },
+  "Jonas Adjetey": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jonas_Adjetey.svg",
+    "athlete_id": null
+  },
+  "Kojo Peprah Oppong": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kojo_Peprah_Oppong.svg",
+    "athlete_id": null
+  },
+  "Thomas Partey": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Thomas_Partey.svg",
+    "athlete_id": null
+  },
+  "Elisha Owusu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Elisha_Owusu.svg",
+    "athlete_id": null
+  },
+  "Kwasi Sibo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kwasi_Sibo.svg",
+    "athlete_id": null
+  },
+  "Augustine Boakye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Augustine_Boakye.svg",
+    "athlete_id": null
+  },
+  "Caleb Yirenkyi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Caleb_Yirenkyi.svg",
+    "athlete_id": null
+  },
+  "Jordan Ayew": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jordan_Ayew.svg",
+    "athlete_id": null
+  },
+  "Iñaki Williams": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Iñaki_Williams.svg",
+    "athlete_id": null
+  },
+  "Brandon Thomas-Asante": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Brandon_Thomas-Asante.svg",
+    "athlete_id": null
+  },
+  "Antoine Semenyo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Antoine_Semenyo.svg",
+    "athlete_id": null
+  },
+  "Kamaldeen Sulemana": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kamaldeen_Sulemana.svg",
+    "athlete_id": null
+  },
+  "Fatawu Issahaku": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fatawu_Issahaku.svg",
+    "athlete_id": null
+  },
+  "Ernest Nuamah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ernest_Nuamah.svg",
+    "athlete_id": null
+  },
+  "Christopher Bonsu Baah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Christopher_Bonsu_Baah.svg",
+    "athlete_id": null
+  },
+  "Prince Adu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Prince_Adu.svg",
+    "athlete_id": null
+  },
+  "Johny Placide": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Johny_Placide.svg",
+    "athlete_id": null
+  },
+  "Josué Duverger": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Josué_Duverger.svg",
+    "athlete_id": null
+  },
+  "Alexandre Pierre": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexandre_Pierre.svg",
+    "athlete_id": null
+  },
+  "Ricardo Adé": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ricardo_Adé.svg",
+    "athlete_id": null
+  },
+  "Markhus Lacroix": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Markhus_Lacroix.svg",
+    "athlete_id": null
+  },
+  "Jean-Kévin Duverne": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jean-Kévin_Duverne.svg",
+    "athlete_id": null
+  },
+  "Hannes Delcroix": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hannes_Delcroix.svg",
+    "athlete_id": null
+  },
+  "Martin Expérience": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Martin_Expérience.svg",
+    "athlete_id": null
+  },
+  "Wilguens Paugain": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Wilguens_Paugain.svg",
+    "athlete_id": null
+  },
+  "Keeto Thermoncy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Keeto_Thermoncy.svg",
+    "athlete_id": null
+  },
+  "Jean-Ricner Bellegarde": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jean-Ricner_Bellegarde.svg",
+    "athlete_id": null
+  },
+  "Leverton Pierre": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leverton_Pierre.svg",
+    "athlete_id": null
+  },
+  "Carl Sainté": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Carl_Sainté.svg",
+    "athlete_id": null
+  },
+  "Danley Jean Jacques": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Danley_Jean_Jacques.svg",
+    "athlete_id": null
+  },
+  "Dominique Simon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dominique_Simon.svg",
+    "athlete_id": null
+  },
+  "Woodensky Pierre": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Woodensky_Pierre.svg",
+    "athlete_id": null
+  },
+  "Duckens Nazon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Duckens_Nazon.svg",
+    "athlete_id": null
+  },
+  "Frantzdy Pierrot": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Frantzdy_Pierrot.svg",
+    "athlete_id": null
+  },
+  "Wilson Isidor": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Wilson_Isidor.svg",
+    "athlete_id": null
+  },
+  "Yassin Fortuné": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yassin_Fortuné.svg",
+    "athlete_id": null
+  },
+  "Louicius Deedson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Louicius_Deedson.svg",
+    "athlete_id": null
+  },
+  "Lenny Joseph": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lenny_Joseph.svg",
+    "athlete_id": null
+  },
+  "Josué Casimir": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Josué_Casimir.svg",
+    "athlete_id": null
+  },
+  "Ruben Providence": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ruben_Providence.svg",
+    "athlete_id": null
+  },
+  "Hossein Hosseini": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hossein_Hosseini.svg",
+    "athlete_id": null
+  },
+  "Alireza Beiranvand": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alireza_Beiranvand.svg",
+    "athlete_id": null
+  },
+  "Payam Niazmand": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Payam_Niazmand.svg",
+    "athlete_id": null
+  },
+  "Shoja Khalilzadeh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Shoja_Khalilzadeh.svg",
+    "athlete_id": null
+  },
+  "Ehsan Hajsafi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ehsan_Hajsafi.svg",
+    "athlete_id": null
+  },
+  "Ramin Rezaeian": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ramin_Rezaeian.svg",
+    "athlete_id": null
+  },
+  "Milad Mohammadi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Milad_Mohammadi.svg",
+    "athlete_id": null
+  },
+  "Hossein Kanani": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hossein_Kanani.svg",
+    "athlete_id": null
+  },
+  "Ali Nemati": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Nemati.svg",
+    "athlete_id": null
+  },
+  "Saleh Hardani": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Saleh_Hardani.svg",
+    "athlete_id": null
+  },
+  "Arya Yousefi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Arya_Yousefi.svg",
+    "athlete_id": null
+  },
+  "Danial Iri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Danial_Iri.svg",
+    "athlete_id": null
+  },
+  "Saeid Ezatolahi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Saeid_Ezatolahi.svg",
+    "athlete_id": null
+  },
+  "Mehdi Torabi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mehdi_Torabi.svg",
+    "athlete_id": null
+  },
+  "Saman Ghoddos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Saman_Ghoddos.svg",
+    "athlete_id": null
+  },
+  "Roozbeh Cheshmi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Roozbeh_Cheshmi.svg",
+    "athlete_id": null
+  },
+  "Mohammad Mohebbi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammad_Mohebbi.svg",
+    "athlete_id": null
+  },
+  "Mohammad Ghorbani": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammad_Ghorbani.svg",
+    "athlete_id": null
+  },
+  "Amirmohammad Razzaghinia": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amirmohammad_Razzaghinia.svg",
+    "athlete_id": null
+  },
+  "Mehdi Taremi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mehdi_Taremi.svg",
+    "athlete_id": null
+  },
+  "Ali Alipour": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Alipour.svg",
+    "athlete_id": null
+  },
+  "Mehdi Ghayedi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mehdi_Ghayedi.svg",
+    "athlete_id": null
+  },
+  "Amirhossein Hosseinzadeh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amirhossein_Hosseinzadeh.svg",
+    "athlete_id": null
+  },
+  "Dennis Dargahi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dennis_Dargahi.svg",
+    "athlete_id": null
+  },
+  "Shahriyar Moghanloo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Shahriyar_Moghanloo.svg",
+    "athlete_id": null
+  },
+  "Fahad Talib": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fahad_Talib.svg",
+    "athlete_id": null
+  },
+  "Jalal Hassan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jalal_Hassan.svg",
+    "athlete_id": null
+  },
+  "Ahmed Basil": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Basil.svg",
+    "athlete_id": null
+  },
+  "Frans Putros": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Frans_Putros.svg",
+    "athlete_id": null
+  },
+  "Rebin Sulaka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rebin_Sulaka.svg",
+    "athlete_id": null
+  },
+  "Munaf Younus": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Munaf_Younus.svg",
+    "athlete_id": null
+  },
+  "Merchas Doski": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Merchas_Doski.svg",
+    "athlete_id": null
+  },
+  "Ahmed Maknazi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Maknazi.svg",
+    "athlete_id": null
+  },
+  "Mustafa Saadoon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mustafa_Saadoon.svg",
+    "athlete_id": null
+  },
+  "Akam Hashim": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Akam_Hashim.svg",
+    "athlete_id": null
+  },
+  "Zaid Tahseen": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zaid_Tahseen.svg",
+    "athlete_id": null
+  },
+  "Ibrahim Bayesh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ibrahim_Bayesh.svg",
+    "athlete_id": null
+  },
+  "Kevin Yakob": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kevin_Yakob.svg",
+    "athlete_id": null
+  },
+  "Aimar Sher": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aimar_Sher.svg",
+    "athlete_id": null
+  },
+  "Amir Al-Ammari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amir_Al-Ammari.svg",
+    "athlete_id": null
+  },
+  "Marko Farji": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marko_Farji.svg",
+    "athlete_id": null
+  },
+  "Zaid Ismael": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zaid_Ismael.svg",
+    "athlete_id": null
+  },
+  "Aymen Hussein": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aymen_Hussein.svg",
+    "athlete_id": null
+  },
+  "Mohanad Ali": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohanad_Ali.svg",
+    "athlete_id": null
+  },
+  "Ali Yousif": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Yousif.svg",
+    "athlete_id": null
+  },
+  "Ali Jasim": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Jasim.svg",
+    "athlete_id": null
+  },
+  "Ahmed Qasim": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Qasim.svg",
+    "athlete_id": null
+  },
+  "Youssef Amyn": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Youssef_Amyn.svg",
+    "athlete_id": null
+  },
+  "Ali Al-Hamadi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Al-Hamadi.svg",
+    "athlete_id": null
+  },
+  "Alban Lafont": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alban_Lafont.svg",
+    "athlete_id": null
+  },
+  "Yahia Fofana": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yahia_Fofana.svg",
+    "athlete_id": null
+  },
+  "Mohamed Koné": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Koné.svg",
+    "athlete_id": null
+  },
+  "Evan Ndicka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Evan_Ndicka.svg",
+    "athlete_id": null
+  },
+  "Christopher Operi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Christopher_Operi.svg",
+    "athlete_id": null
+  },
+  "Ghislain Konan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ghislain_Konan.svg",
+    "athlete_id": null
+  },
+  "Odilon Kossounou": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Odilon_Kossounou.svg",
+    "athlete_id": null
+  },
+  "Wilfried Singo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Wilfried_Singo.svg",
+    "athlete_id": null
+  },
+  "Emmanuel Agbadou": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Emmanuel_Agbadou.svg",
+    "athlete_id": null
+  },
+  "Ousmane Diomande": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ousmane_Diomande.svg",
+    "athlete_id": null
+  },
+  "Guela Doué": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Guela_Doué.svg",
+    "athlete_id": null
+  },
+  "Seko Fofana": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Seko_Fofana.svg",
+    "athlete_id": null
+  },
+  "Jean Michaël Seri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jean_Michaël_Seri.svg",
+    "athlete_id": null
+  },
+  "Franck Kessié": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Franck_Kessié.svg",
+    "athlete_id": null
+  },
+  "Parfait Guiagon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Parfait_Guiagon.svg",
+    "athlete_id": null
+  },
+  "Christ Inao Oulaï": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Christ_Inao_Oulaï.svg",
+    "athlete_id": null
+  },
+  "Nicolas Pépé": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nicolas_Pépé.svg",
+    "athlete_id": null
+  },
+  "Evann Guessand": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Evann_Guessand.svg",
+    "athlete_id": null
+  },
+  "Amad Diallo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amad_Diallo.svg",
+    "athlete_id": null
+  },
+  "Ange-Yoan Bonny": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ange-Yoan_Bonny.svg",
+    "athlete_id": null
+  },
+  "Elye Wahi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Elye_Wahi.svg",
+    "athlete_id": null
+  },
+  "Simon Adingra": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Simon_Adingra.svg",
+    "athlete_id": null
+  },
+  "Oumar Diakité": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oumar_Diakité.svg",
+    "athlete_id": null
+  },
+  "Bazoumana Touré": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bazoumana_Touré.svg",
+    "athlete_id": null
+  },
+  "Yan Diomande": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yan_Diomande.svg",
+    "athlete_id": null
+  },
+  "Keisuke Osako": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Keisuke_Osako.svg",
+    "athlete_id": null
+  },
+  "Zion Suzuki": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zion_Suzuki.svg",
+    "athlete_id": null
+  },
+  "Tomoki Hayakawa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tomoki_Hayakawa.svg",
+    "athlete_id": null
+  },
+  "Hiroki Ito": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hiroki_Ito.svg",
+    "athlete_id": null
+  },
+  "Yuto Nagatomo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yuto_Nagatomo.svg",
+    "athlete_id": null
+  },
+  "Shogo Taniguchi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Shogo_Taniguchi.svg",
+    "athlete_id": null
+  },
+  "Takehiro Tomiyasu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Takehiro_Tomiyasu.svg",
+    "athlete_id": null
+  },
+  "Ayumu Seko": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ayumu_Seko.svg",
+    "athlete_id": null
+  },
+  "Tsuyoshi Watanabe": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tsuyoshi_Watanabe.svg",
+    "athlete_id": null
+  },
+  "Junnosuke Suzuki": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Junnosuke_Suzuki.svg",
+    "athlete_id": null
+  },
+  "Wataru Endo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Wataru_Endo.svg",
+    "athlete_id": null
+  },
+  "Daichi Kamada": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Daichi_Kamada.svg",
+    "athlete_id": null
+  },
+  "Ao Tanaka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ao_Tanaka.svg",
+    "athlete_id": null
+  },
+  "Yuito Suzuki": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yuito_Suzuki.svg",
+    "athlete_id": null
+  },
+  "Kaishu Sano": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kaishu_Sano.svg",
+    "athlete_id": null
+  },
+  "Junya Ito": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Junya_Ito.svg",
+    "athlete_id": null
+  },
+  "Takefusa Kubo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Takefusa_Kubo.svg",
+    "athlete_id": null
+  },
+  "Keito Nakamura": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Keito_Nakamura.svg",
+    "athlete_id": null
+  },
+  "Ayase Ueda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ayase_Ueda.svg",
+    "athlete_id": null
+  },
+  "Daizen Maeda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Daizen_Maeda.svg",
+    "athlete_id": null
+  },
+  "Keisuke Goto": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Keisuke_Goto.svg",
+    "athlete_id": null
+  },
+  "Kento Shiogai": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kento_Shiogai.svg",
+    "athlete_id": null
+  },
+  "Yazeed Abulaila": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yazeed_Abulaila.svg",
+    "athlete_id": null
+  },
+  "Abdallah Al-Fakhouri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdallah_Al-Fakhouri.svg",
+    "athlete_id": null
+  },
+  "Nour Bani Ateyah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nour_Bani_Ateyah.svg",
+    "athlete_id": null
+  },
+  "Ehsan Haddad": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ehsan_Haddad.svg",
+    "athlete_id": null
+  },
+  "Yazan Al-Arab": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yazan_Al-Arab.svg",
+    "athlete_id": null
+  },
+  "Mohammad Abualnadi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammad_Abualnadi.svg",
+    "athlete_id": null
+  },
+  "Saleem Obaid": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Saleem_Obaid.svg",
+    "athlete_id": null
+  },
+  "Abdallah Nasib": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdallah_Nasib.svg",
+    "athlete_id": null
+  },
+  "Mohannad Abu Taha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohannad_Abu_Taha.svg",
+    "athlete_id": null
+  },
+  "Mohammad Abu Hasheesh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammad_Abu_Hasheesh.svg",
+    "athlete_id": null
+  },
+  "Husam Abu Dahab": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Husam_Abu_Dahab.svg",
+    "athlete_id": null
+  },
+  "Saed Al-Rosan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Saed_Al-Rosan.svg",
+    "athlete_id": null
+  },
+  "Mohammad Abughoush": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammad_Abughoush.svg",
+    "athlete_id": null
+  },
+  "Anas Badawi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Anas_Badawi.svg",
+    "athlete_id": null
+  },
+  "Rajaei Ayed": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rajaei_Ayed.svg",
+    "athlete_id": null
+  },
+  "Noor Al-Rawabdeh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Noor_Al-Rawabdeh.svg",
+    "athlete_id": null
+  },
+  "Ibrahim Sadeh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ibrahim_Sadeh.svg",
+    "athlete_id": null
+  },
+  "Mohammad Al-Daoud": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammad_Al-Daoud.svg",
+    "athlete_id": null
+  },
+  "Nizar Al-Rashdan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nizar_Al-Rashdan.svg",
+    "athlete_id": null
+  },
+  "Amer Jamous": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Amer_Jamous.svg",
+    "athlete_id": null
+  },
+  "Mahmoud Al-Mardi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mahmoud_Al-Mardi.svg",
+    "athlete_id": null
+  },
+  "Mousa Al-Tamari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mousa_Al-Tamari.svg",
+    "athlete_id": null
+  },
+  "Mohammed Abu Zraiq": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammed_Abu_Zraiq.svg",
+    "athlete_id": null
+  },
+  "Ali Olwan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Olwan.svg",
+    "athlete_id": null
+  },
+  "Odeh Fakhoury": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Odeh_Fakhoury.svg",
+    "athlete_id": null
+  },
+  "Ali Azaizeh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Azaizeh.svg",
+    "athlete_id": null
+  },
+  "Guillermo Ochoa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Guillermo_Ochoa.svg",
+    "athlete_id": null
+  },
+  "Carlos Acevedo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Carlos_Acevedo.svg",
+    "athlete_id": null
+  },
+  "Raúl Rangel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Raúl_Rangel.svg",
+    "athlete_id": null
+  },
+  "Jesús Gallardo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jesús_Gallardo.svg",
+    "athlete_id": null
+  },
+  "Jorge Sánchez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jorge_Sánchez.svg",
+    "athlete_id": null
+  },
+  "César Montes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_César_Montes.svg",
+    "athlete_id": null
+  },
+  "Johan Vásquez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Johan_Vásquez.svg",
+    "athlete_id": null
+  },
+  "Israel Reyes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Israel_Reyes.svg",
+    "athlete_id": null
+  },
+  "Mateo Chávez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mateo_Chávez.svg",
+    "athlete_id": null
+  },
+  "Luis Chávez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luis_Chávez.svg",
+    "athlete_id": null
+  },
+  "Orbelín Pineda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Orbelín_Pineda.svg",
+    "athlete_id": null
+  },
+  "Luis Romo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luis_Romo.svg",
+    "athlete_id": null
+  },
+  "César Huerta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_César_Huerta.svg",
+    "athlete_id": null
+  },
+  "Érik Lira": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Érik_Lira.svg",
+    "athlete_id": null
+  },
+  "Álvaro Fidalgo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Álvaro_Fidalgo.svg",
+    "athlete_id": null
+  },
+  "Gilberto Mora": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gilberto_Mora.svg",
+    "athlete_id": null
+  },
+  "Raúl Jiménez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Raúl_Jiménez.svg",
+    "athlete_id": null
+  },
+  "Guillermo Martínez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Guillermo_Martínez.svg",
+    "athlete_id": null
+  },
+  "Roberto Alvarado": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Roberto_Alvarado.svg",
+    "athlete_id": null
+  },
+  "Alexis Vega": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexis_Vega.svg",
+    "athlete_id": null
+  },
+  "Julián Quiñones": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Julián_Quiñones.svg",
+    "athlete_id": null
+  },
+  "Armando González": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Armando_González.svg",
+    "athlete_id": null
+  },
+  "Yassine Bounou": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yassine_Bounou.svg",
+    "athlete_id": null
+  },
+  "Ahmed Reda Tagnaouti": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Reda_Tagnaouti.svg",
+    "athlete_id": null
+  },
+  "Munir El Kajoui": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Munir_El_Kajoui.svg",
+    "athlete_id": null
+  },
+  "Issa Diop": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Issa_Diop.svg",
+    "athlete_id": null
+  },
+  "Achraf Hakimi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Achraf_Hakimi.svg",
+    "athlete_id": null
+  },
+  "Nayef Aguerd": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nayef_Aguerd.svg",
+    "athlete_id": null
+  },
+  "Chadi Riad": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Chadi_Riad.svg",
+    "athlete_id": null
+  },
+  "Zakaria El Ouahdi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zakaria_El_Ouahdi.svg",
+    "athlete_id": null
+  },
+  "Redouane Halhal": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Redouane_Halhal.svg",
+    "athlete_id": null
+  },
+  "Youssef Belammari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Youssef_Belammari.svg",
+    "athlete_id": null
+  },
+  "Sofyan Amrabat": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sofyan_Amrabat.svg",
+    "athlete_id": null
+  },
+  "Brahim Díaz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Brahim_Díaz.svg",
+    "athlete_id": null
+  },
+  "Azzedine Ounahi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Azzedine_Ounahi.svg",
+    "athlete_id": null
+  },
+  "Neil El Aynaoui": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Neil_El_Aynaoui.svg",
+    "athlete_id": null
+  },
+  "Bilal El Khannouss": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bilal_El_Khannouss.svg",
+    "athlete_id": null
+  },
+  "Ayyoub Bouaddi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ayyoub_Bouaddi.svg",
+    "athlete_id": null
+  },
+  "Samir El Mourabet": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Samir_El_Mourabet.svg",
+    "athlete_id": null
+  },
+  "Ayoub El Kaabi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ayoub_El_Kaabi.svg",
+    "athlete_id": null
+  },
+  "Soufiane Rahimi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Soufiane_Rahimi.svg",
+    "athlete_id": null
+  },
+  "Abde Ezzalzouli": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abde_Ezzalzouli.svg",
+    "athlete_id": null
+  },
+  "Chemsdine Talbi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Chemsdine_Talbi.svg",
+    "athlete_id": null
+  },
+  "Gessime Yassine": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gessime_Yassine.svg",
+    "athlete_id": null
+  },
+  "Ayoube Amaimouni": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ayoube_Amaimouni.svg",
+    "athlete_id": null
+  },
+  "Mark Flekken": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mark_Flekken.svg",
+    "athlete_id": null
+  },
+  "Bart Verbruggen": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bart_Verbruggen.svg",
+    "athlete_id": null
+  },
+  "Virgil van Dijk": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Virgil_van_Dijk.svg",
+    "athlete_id": null
+  },
+  "Nathan Aké": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nathan_Aké.svg",
+    "athlete_id": null
+  },
+  "Micky van de Ven": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Micky_van_de_Ven.svg",
+    "athlete_id": null
+  },
+  "Marten de Roon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marten_de_Roon.svg",
+    "athlete_id": null
+  },
+  "Frenkie de Jong": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Frenkie_de_Jong.svg",
+    "athlete_id": null
+  },
+  "Memphis Depay": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Memphis_Depay.svg",
+    "athlete_id": null
+  },
+  "Wout Weghorst": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Wout_Weghorst.svg",
+    "athlete_id": null
+  },
+  "Justin Kluivert": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Justin_Kluivert.svg",
+    "athlete_id": null
+  },
+  "Crysencio Summerville": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Crysencio_Summerville.svg",
+    "athlete_id": null
+  },
+  "Max Crocombe": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Max_Crocombe.svg",
+    "athlete_id": null
+  },
+  "Michael Woud": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Michael_Woud.svg",
+    "athlete_id": null
+  },
+  "Alex Paulsen": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alex_Paulsen.svg",
+    "athlete_id": null
+  },
+  "Tim Payne": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tim_Payne.svg",
+    "athlete_id": null
+  },
+  "Francis de Vries": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Francis_de_Vries.svg",
+    "athlete_id": null
+  },
+  "Liberato Cacace": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Liberato_Cacace.svg",
+    "athlete_id": null
+  },
+  "Callan Elliot": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Callan_Elliot.svg",
+    "athlete_id": null
+  },
+  "Nando Pijnaker": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nando_Pijnaker.svg",
+    "athlete_id": null
+  },
+  "Finn Surman": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Finn_Surman.svg",
+    "athlete_id": null
+  },
+  "Tyler Bindon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tyler_Bindon.svg",
+    "athlete_id": null
+  },
+  "Alex Rufer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alex_Rufer.svg",
+    "athlete_id": null
+  },
+  "Callum McCowatt": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Callum_McCowatt.svg",
+    "athlete_id": null
+  },
+  "Sarpreet Singh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sarpreet_Singh.svg",
+    "athlete_id": null
+  },
+  "Joe Bell": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joe_Bell.svg",
+    "athlete_id": null
+  },
+  "Marko Stamenic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marko_Stamenic.svg",
+    "athlete_id": null
+  },
+  "Matthew Garbett": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matthew_Garbett.svg",
+    "athlete_id": null
+  },
+  "Lachlan Bayliss": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lachlan_Bayliss.svg",
+    "athlete_id": null
+  },
+  "Chris Wood": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Chris_Wood.svg",
+    "athlete_id": null
+  },
+  "Kosta Barbarouses": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kosta_Barbarouses.svg",
+    "athlete_id": null
+  },
+  "Elijah Just": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Elijah_Just.svg",
+    "athlete_id": null
+  },
+  "Ben Waine": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ben_Waine.svg",
+    "athlete_id": null
+  },
+  "Jesse Randall": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jesse_Randall.svg",
+    "athlete_id": null
+  },
+  "Ben Old": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ben_Old.svg",
+    "athlete_id": null
+  },
+  "Ørjan Nyland": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ørjan_Nyland.svg",
+    "athlete_id": null
+  },
+  "Egil Selvik": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Egil_Selvik.svg",
+    "athlete_id": null
+  },
+  "Sander Tangvik": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sander_Tangvik.svg",
+    "athlete_id": null
+  },
+  "Kristoffer Ajer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kristoffer_Ajer.svg",
+    "athlete_id": null
+  },
+  "Julian Ryerson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Julian_Ryerson.svg",
+    "athlete_id": null
+  },
+  "Fredrik André Bjørkan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fredrik_André_Bjørkan.svg",
+    "athlete_id": null
+  },
+  "Torbjørn Heggem": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Torbjørn_Heggem.svg",
+    "athlete_id": null
+  },
+  "Leo Østigard": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Leo_Østigard.svg",
+    "athlete_id": null
+  },
+  "Henrik Falchener": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Henrik_Falchener.svg",
+    "athlete_id": null
+  },
+  "Sondre Langas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sondre_Langas.svg",
+    "athlete_id": null
+  },
+  "Morten Thorsby": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Morten_Thorsby.svg",
+    "athlete_id": null
+  },
+  "Martin Ødegaard": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Martin_Ødegaard.svg",
+    "athlete_id": null
+  },
+  "Patrick Berg": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Patrick_Berg.svg",
+    "athlete_id": null
+  },
+  "Sander Berge": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sander_Berge.svg",
+    "athlete_id": null
+  },
+  "Jens Petter Hauge": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jens_Petter_Hauge.svg",
+    "athlete_id": null
+  },
+  "Kristian Thorstvedt": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kristian_Thorstvedt.svg",
+    "athlete_id": null
+  },
+  "Oscar Bobb": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oscar_Bobb.svg",
+    "athlete_id": null
+  },
+  "Thelo Aasgaard": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Thelo_Aasgaard.svg",
+    "athlete_id": null
+  },
+  "Antonio Nusa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Antonio_Nusa.svg",
+    "athlete_id": null
+  },
+  "Alexander Sørloth": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexander_Sørloth.svg",
+    "athlete_id": null
+  },
+  "Erling Haaland": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Erling_Haaland.svg",
+    "athlete_id": null
+  },
+  "Andreas Schjelderup": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Andreas_Schjelderup.svg",
+    "athlete_id": null
+  },
+  "Luis Mejía": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luis_Mejía.svg",
+    "athlete_id": null
+  },
+  "Orlando Mosquera": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Orlando_Mosquera.svg",
+    "athlete_id": null
+  },
+  "César Samudio": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_César_Samudio.svg",
+    "athlete_id": null
+  },
+  "Roderick Miller": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Roderick_Miller.svg",
+    "athlete_id": null
+  },
+  "Éric Davis": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Éric_Davis.svg",
+    "athlete_id": null
+  },
+  "Andrés Andrade": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Andrés_Andrade.svg",
+    "athlete_id": null
+  },
+  "César Blackman": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_César_Blackman.svg",
+    "athlete_id": null
+  },
+  "Jorge Gutiérrez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jorge_Gutiérrez.svg",
+    "athlete_id": null
+  },
+  "José Córdoba": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_José_Córdoba.svg",
+    "athlete_id": null
+  },
+  "Jiovany Ramos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jiovany_Ramos.svg",
+    "athlete_id": null
+  },
+  "Edgardo Fariña": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Edgardo_Fariña.svg",
+    "athlete_id": null
+  },
+  "Édgar Yoel Bárcenas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Édgar_Yoel_Bárcenas.svg",
+    "athlete_id": null
+  },
+  "José Luis Rodríguez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_José_Luis_Rodríguez.svg",
+    "athlete_id": null
+  },
+  "Alberto Quintero": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alberto_Quintero.svg",
+    "athlete_id": null
+  },
+  "Cecilio Waterman": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cecilio_Waterman.svg",
+    "athlete_id": null
+  },
+  "Ismael Díaz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ismael_Díaz.svg",
+    "athlete_id": null
+  },
+  "José Fajardo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_José_Fajardo.svg",
+    "athlete_id": null
+  },
+  "Tomás Rodríguez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tomás_Rodríguez.svg",
+    "athlete_id": null
+  },
+  "César Yanis": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_César_Yanis.svg",
+    "athlete_id": null
+  },
+  "Azarias Londoño": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Azarias_Londoño.svg",
+    "athlete_id": null
+  },
+  "Gatito Fernández": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gatito_Fernández.svg",
+    "athlete_id": null
+  },
+  "Gastón Olveira": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gastón_Olveira.svg",
+    "athlete_id": null
+  },
+  "Orlando Gil": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Orlando_Gil.svg",
+    "athlete_id": null
+  },
+  "Juan Cáceres": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Juan_Cáceres.svg",
+    "athlete_id": null
+  },
+  "Gustavo Gómez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gustavo_Gómez.svg",
+    "athlete_id": null
+  },
+  "Gustavo Velázquez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gustavo_Velázquez.svg",
+    "athlete_id": null
+  },
+  "Júnior Alonso": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Júnior_Alonso.svg",
+    "athlete_id": null
+  },
+  "Fabián Balbuena": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fabián_Balbuena.svg",
+    "athlete_id": null
+  },
+  "Omar Alderete": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Omar_Alderete.svg",
+    "athlete_id": null
+  },
+  "José Canale": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_José_Canale.svg",
+    "athlete_id": null
+  },
+  "Alexandro Maidana": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexandro_Maidana.svg",
+    "athlete_id": null
+  },
+  "Julio Enciso": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Julio_Enciso.svg",
+    "athlete_id": null
+  },
+  "Diego Gómez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Diego_Gómez.svg",
+    "athlete_id": null
+  },
+  "Mauricio": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mauricio.svg",
+    "athlete_id": null
+  },
+  "Matías Galarza": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matías_Galarza.svg",
+    "athlete_id": null
+  },
+  "Damián Bobadilla": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Damián_Bobadilla.svg",
+    "athlete_id": null
+  },
+  "Gustavo Caballero": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gustavo_Caballero.svg",
+    "athlete_id": null
+  },
+  "Antonio Sanabria": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Antonio_Sanabria.svg",
+    "athlete_id": null
+  },
+  "Gabriel Ávalos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gabriel_Ávalos.svg",
+    "athlete_id": null
+  },
+  "Alex Arce": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alex_Arce.svg",
+    "athlete_id": null
+  },
+  "Isidro Pitta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Isidro_Pitta.svg",
+    "athlete_id": null
+  },
+  "Ramón Sosa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ramón_Sosa.svg",
+    "athlete_id": null
+  },
+  "Rui Silva": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rui_Silva.svg",
+    "athlete_id": null
+  },
+  "José Sá": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_José_Sá.svg",
+    "athlete_id": null
+  },
+  "Diogo Costa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Diogo_Costa.svg",
+    "athlete_id": null
+  },
+  "João Cancelo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_João_Cancelo.svg",
+    "athlete_id": null
+  },
+  "Nélson Semedo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nélson_Semedo.svg",
+    "athlete_id": null
+  },
+  "Rúben Dias": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rúben_Dias.svg",
+    "athlete_id": null
+  },
+  "Diogo Dalot": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Diogo_Dalot.svg",
+    "athlete_id": null
+  },
+  "Nuno Mendes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nuno_Mendes.svg",
+    "athlete_id": null
+  },
+  "Gonçalo Inácio": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gonçalo_Inácio.svg",
+    "athlete_id": null
+  },
+  "Tomás Araújo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tomás_Araújo.svg",
+    "athlete_id": null
+  },
+  "Renato Veiga": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Renato_Veiga.svg",
+    "athlete_id": null
+  },
+  "Bruno Fernandes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bruno_Fernandes.svg",
+    "athlete_id": null
+  },
+  "Samú Costa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Samú_Costa.svg",
+    "athlete_id": null
+  },
+  "Bernardo Silva": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bernardo_Silva.svg",
+    "athlete_id": null
+  },
+  "Rúben Neves": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rúben_Neves.svg",
+    "athlete_id": null
+  },
+  "Vitinha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Vitinha.svg",
+    "athlete_id": null
+  },
+  "Matheus Nunes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matheus_Nunes.svg",
+    "athlete_id": null
+  },
+  "João Neves": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_João_Neves.svg",
+    "athlete_id": null
+  },
+  "Cristiano Ronaldo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cristiano_Ronaldo.svg",
+    "athlete_id": null
+  },
+  "Gonçalo Guedes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gonçalo_Guedes.svg",
+    "athlete_id": null
+  },
+  "Pedro Neto": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pedro_Neto.svg",
+    "athlete_id": null
+  },
+  "Rafael Leão": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rafael_Leão.svg",
+    "athlete_id": null
+  },
+  "Francisco Trincão": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Francisco_Trincão.svg",
+    "athlete_id": null
+  },
+  "João Félix": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_João_Félix.svg",
+    "athlete_id": null
+  },
+  "Gonçalo Ramos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gonçalo_Ramos.svg",
+    "athlete_id": null
+  },
+  "Meshaal Barsham": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Meshaal_Barsham.svg",
+    "athlete_id": null
+  },
+  "Salah Zakaria": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Salah_Zakaria.svg",
+    "athlete_id": null
+  },
+  "Mahmoud Abunada": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mahmoud_Abunada.svg",
+    "athlete_id": null
+  },
+  "Pedro Miguel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pedro_Miguel.svg",
+    "athlete_id": null
+  },
+  "Lucas Mendes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lucas_Mendes.svg",
+    "athlete_id": null
+  },
+  "Boualem Khoukhi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Boualem_Khoukhi.svg",
+    "athlete_id": null
+  },
+  "Sultan Al-Brake": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sultan_Al-Brake.svg",
+    "athlete_id": null
+  },
+  "Homam Ahmed": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Homam_Ahmed.svg",
+    "athlete_id": null
+  },
+  "Jassem Gaber": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jassem_Gaber.svg",
+    "athlete_id": null
+  },
+  "Ayoub Al-Oui": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ayoub_Al-Oui.svg",
+    "athlete_id": null
+  },
+  "Al-Hashmi Al-Hussain": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Al-Hashmi_Al-Hussain.svg",
+    "athlete_id": null
+  },
+  "Issa Laye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Issa_Laye.svg",
+    "athlete_id": null
+  },
+  "Abdulaziz Hatem": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdulaziz_Hatem.svg",
+    "athlete_id": null
+  },
+  "Karim Boudiaf": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Karim_Boudiaf.svg",
+    "athlete_id": null
+  },
+  "Assim Madibo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Assim_Madibo.svg",
+    "athlete_id": null
+  },
+  "Ahmed Fathy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Fathy.svg",
+    "athlete_id": null
+  },
+  "Mohamed Manai": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Manai.svg",
+    "athlete_id": null
+  },
+  "Edmílson Junior": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Edmílson_Junior.svg",
+    "athlete_id": null
+  },
+  "Mohammed Muntari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammed_Muntari.svg",
+    "athlete_id": null
+  },
+  "Almoez Ali": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Almoez_Ali.svg",
+    "athlete_id": null
+  },
+  "Akram Afif": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Akram_Afif.svg",
+    "athlete_id": null
+  },
+  "Hassan Al-Haydos": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hassan_Al-Haydos.svg",
+    "athlete_id": null
+  },
+  "Ahmed Alaaeldin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Alaaeldin.svg",
+    "athlete_id": null
+  },
+  "Yusuf Abdurisag": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yusuf_Abdurisag.svg",
+    "athlete_id": null
+  },
+  "Ahmed Al-Ganehi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Al-Ganehi.svg",
+    "athlete_id": null
+  },
+  "Tahsin Jamshid": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tahsin_Jamshid.svg",
+    "athlete_id": null
+  },
+  "Ahmed Al-Kassar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ahmed_Al-Kassar.svg",
+    "athlete_id": null
+  },
+  "Mohammed Al-Owais": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammed_Al-Owais.svg",
+    "athlete_id": null
+  },
+  "Nawaf Al-Aqidi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nawaf_Al-Aqidi.svg",
+    "athlete_id": null
+  },
+  "Hassan Kadish": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hassan_Kadish.svg",
+    "athlete_id": null
+  },
+  "Hassan Al-Tambakti": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hassan_Al-Tambakti.svg",
+    "athlete_id": null
+  },
+  "Abdulelah Al-Amri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdulelah_Al-Amri.svg",
+    "athlete_id": null
+  },
+  "Saud Abdulhamid": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Saud_Abdulhamid.svg",
+    "athlete_id": null
+  },
+  "Ali Lajami": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Lajami.svg",
+    "athlete_id": null
+  },
+  "Moteb Al-Harbi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Moteb_Al-Harbi.svg",
+    "athlete_id": null
+  },
+  "Nawaf Boushal": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nawaf_Boushal.svg",
+    "athlete_id": null
+  },
+  "Ali Majrashi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Majrashi.svg",
+    "athlete_id": null
+  },
+  "Jehad Thakri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jehad_Thakri.svg",
+    "athlete_id": null
+  },
+  "Salem Al-Dawsari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Salem_Al-Dawsari.svg",
+    "athlete_id": null
+  },
+  "Mohamed Kanno": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Kanno.svg",
+    "athlete_id": null
+  },
+  "Nasser Al-Dawsari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nasser_Al-Dawsari.svg",
+    "athlete_id": null
+  },
+  "Abdullah Al-Khaibari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdullah_Al-Khaibari.svg",
+    "athlete_id": null
+  },
+  "Aiman Yahya": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aiman_Yahya.svg",
+    "athlete_id": null
+  },
+  "Ziyad Al-Johani": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ziyad_Al-Johani.svg",
+    "athlete_id": null
+  },
+  "Musab Al-Juwayr": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Musab_Al-Juwayr.svg",
+    "athlete_id": null
+  },
+  "Ala Al-Hajji": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ala_Al-Hajji.svg",
+    "athlete_id": null
+  },
+  "Mohammed Abu Al-Shamat": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohammed_Abu_Al-Shamat.svg",
+    "athlete_id": null
+  },
+  "Saleh Al-Shehri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Saleh_Al-Shehri.svg",
+    "athlete_id": null
+  },
+  "Feras Al-Brikan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Feras_Al-Brikan.svg",
+    "athlete_id": null
+  },
+  "Sultan Mandash": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sultan_Mandash.svg",
+    "athlete_id": null
+  },
+  "Khalid Al-Ghannam": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Khalid_Al-Ghannam.svg",
+    "athlete_id": null
+  },
+  "Abdullah Al-Hamdan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdullah_Al-Hamdan.svg",
+    "athlete_id": null
+  },
+  "Liam Kelly": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Liam_Kelly.svg",
+    "athlete_id": null
+  },
+  "Craig Gordon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Craig_Gordon.svg",
+    "athlete_id": null
+  },
+  "Angus Gunn": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Angus_Gunn.svg",
+    "athlete_id": null
+  },
+  "Andy Robertson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Andy_Robertson.svg",
+    "athlete_id": null
+  },
+  "Grant Hanley": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Grant_Hanley.svg",
+    "athlete_id": null
+  },
+  "John Souttar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_John_Souttar.svg",
+    "athlete_id": null
+  },
+  "Scott McKenna": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Scott_McKenna.svg",
+    "athlete_id": null
+  },
+  "Jack Hendry": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jack_Hendry.svg",
+    "athlete_id": null
+  },
+  "Kieran Tierney": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kieran_Tierney.svg",
+    "athlete_id": null
+  },
+  "Anthony Ralston": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Anthony_Ralston.svg",
+    "athlete_id": null
+  },
+  "Dominic Hyam": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dominic_Hyam.svg",
+    "athlete_id": null
+  },
+  "Nathan Patterson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nathan_Patterson.svg",
+    "athlete_id": null
+  },
+  "Aaron Hickey": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aaron_Hickey.svg",
+    "athlete_id": null
+  },
+  "Ryan Christie": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ryan_Christie.svg",
+    "athlete_id": null
+  },
+  "Kenny McLean": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kenny_McLean.svg",
+    "athlete_id": null
+  },
+  "John McGinn": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_John_McGinn.svg",
+    "athlete_id": null
+  },
+  "Lewis Ferguson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lewis_Ferguson.svg",
+    "athlete_id": null
+  },
+  "Scott McTominay": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Scott_McTominay.svg",
+    "athlete_id": null
+  },
+  "Tyler Fletcher": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tyler_Fletcher.svg",
+    "athlete_id": null
+  },
+  "Lawrence Shankland": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lawrence_Shankland.svg",
+    "athlete_id": null
+  },
+  "Lyndon Dykes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lyndon_Dykes.svg",
+    "athlete_id": null
+  },
+  "Ché Adams": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ché_Adams.svg",
+    "athlete_id": null
+  },
+  "George Hirst": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_George_Hirst.svg",
+    "athlete_id": null
+  },
+  "Ross Stewart": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ross_Stewart.svg",
+    "athlete_id": null
+  },
+  "Ben Gannon-Doak": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ben_Gannon-Doak.svg",
+    "athlete_id": null
+  },
+  "Findlay Curtis": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Findlay_Curtis.svg",
+    "athlete_id": null
+  },
+  "Mory Diaw": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mory_Diaw.svg",
+    "athlete_id": null
+  },
+  "Édouard Mendy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Édouard_Mendy.svg",
+    "athlete_id": null
+  },
+  "Yehvann Diouf": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yehvann_Diouf.svg",
+    "athlete_id": null
+  },
+  "Kalidou Koulibaly": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kalidou_Koulibaly.svg",
+    "athlete_id": null
+  },
+  "Moussa Niakhaté": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Moussa_Niakhaté.svg",
+    "athlete_id": null
+  },
+  "Abdoulaye Seck": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdoulaye_Seck.svg",
+    "athlete_id": null
+  },
+  "Ismail Jakobs": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ismail_Jakobs.svg",
+    "athlete_id": null
+  },
+  "Antoine Mendy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Antoine_Mendy.svg",
+    "athlete_id": null
+  },
+  "Mamadou Sarr": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mamadou_Sarr.svg",
+    "athlete_id": null
+  },
+  "El Hadji Malick Diouf": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_El_Hadji_Malick_Diouf.svg",
+    "athlete_id": null
+  },
+  "Lamine Camara": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lamine_Camara.svg",
+    "athlete_id": null
+  },
+  "Idrissa Gueye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Idrissa_Gueye.svg",
+    "athlete_id": null
+  },
+  "Krépin Diatta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Krépin_Diatta.svg",
+    "athlete_id": null
+  },
+  "Pape Gueye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pape_Gueye.svg",
+    "athlete_id": null
+  },
+  "Pathé Ciss": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pathé_Ciss.svg",
+    "athlete_id": null
+  },
+  "Pape Matar Sarr": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pape_Matar_Sarr.svg",
+    "athlete_id": null
+  },
+  "Habib Diarra": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Habib_Diarra.svg",
+    "athlete_id": null
+  },
+  "Bara Sapoko Ndiaye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bara_Sapoko_Ndiaye.svg",
+    "athlete_id": null
+  },
+  "Sadio Mané": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sadio_Mané.svg",
+    "athlete_id": null
+  },
+  "Ismaïla Sarr": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ismaïla_Sarr.svg",
+    "athlete_id": null
+  },
+  "Cherif Ndiaye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cherif_Ndiaye.svg",
+    "athlete_id": null
+  },
+  "Iliman Ndiaye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Iliman_Ndiaye.svg",
+    "athlete_id": null
+  },
+  "Nicolas Jackson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nicolas_Jackson.svg",
+    "athlete_id": null
+  },
+  "Bamba Dieng": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bamba_Dieng.svg",
+    "athlete_id": null
+  },
+  "Assane Diao": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Assane_Diao.svg",
+    "athlete_id": null
+  },
+  "Ibrahim Mbaye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ibrahim_Mbaye.svg",
+    "athlete_id": null
+  },
+  "Ricardo Goss": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ricardo_Goss.svg",
+    "athlete_id": null
+  },
+  "Ronwen Williams": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ronwen_Williams.svg",
+    "athlete_id": null
+  },
+  "Sipho Chaine": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sipho_Chaine.svg",
+    "athlete_id": null
+  },
+  "Aubrey Modiba": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aubrey_Modiba.svg",
+    "athlete_id": null
+  },
+  "Nkosinathi Sibisi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nkosinathi_Sibisi.svg",
+    "athlete_id": null
+  },
+  "Khuliso Mudau": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Khuliso_Mudau.svg",
+    "athlete_id": null
+  },
+  "Bradley Cross": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bradley_Cross.svg",
+    "athlete_id": null
+  },
+  "Olwethu Makhanya": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Olwethu_Makhanya.svg",
+    "athlete_id": null
+  },
+  "Ime Okon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ime_Okon.svg",
+    "athlete_id": null
+  },
+  "Thabang Matuludi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Thabang_Matuludi.svg",
+    "athlete_id": null
+  },
+  "Samukele Kabini": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Samukele_Kabini.svg",
+    "athlete_id": null
+  },
+  "Khulumani Ndamane": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Khulumani_Ndamane.svg",
+    "athlete_id": null
+  },
+  "Mbekezeli Mbokazi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mbekezeli_Mbokazi.svg",
+    "athlete_id": null
+  },
+  "Themba Zwane": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Themba_Zwane.svg",
+    "athlete_id": null
+  },
+  "Sphephelo Sithole": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sphephelo_Sithole.svg",
+    "athlete_id": null
+  },
+  "Teboho Mokoena": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Teboho_Mokoena.svg",
+    "athlete_id": null
+  },
+  "Thalente Mbatha": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Thalente_Mbatha.svg",
+    "athlete_id": null
+  },
+  "Jayden Adams": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jayden_Adams.svg",
+    "athlete_id": null
+  },
+  "Kamogelo Sebelebele": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kamogelo_Sebelebele.svg",
+    "athlete_id": null
+  },
+  "Lyle Foster": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lyle_Foster.svg",
+    "athlete_id": null
+  },
+  "Oswin Appollis": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oswin_Appollis.svg",
+    "athlete_id": null
+  },
+  "Iqraam Rayners": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Iqraam_Rayners.svg",
+    "athlete_id": null
+  },
+  "Evidence Makgopa": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Evidence_Makgopa.svg",
+    "athlete_id": null
+  },
+  "Tshepang Moremi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tshepang_Moremi.svg",
+    "athlete_id": null
+  },
+  "Thapelo Maseko": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Thapelo_Maseko.svg",
+    "athlete_id": null
+  },
+  "Relebohile Mofokeng": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Relebohile_Mofokeng.svg",
+    "athlete_id": null
+  },
+  "Kim Seung-Gyu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kim_Seung-Gyu.svg",
+    "athlete_id": null
+  },
+  "Jo Hyeon-Woo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jo_Hyeon-Woo.svg",
+    "athlete_id": null
+  },
+  "Song Bum-Keun": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Song_Bum-Keun.svg",
+    "athlete_id": null
+  },
+  "Kim Min-Jae": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kim_Min-Jae.svg",
+    "athlete_id": null
+  },
+  "Kim Tae-Hyeon": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kim_Tae-Hyeon.svg",
+    "athlete_id": null
+  },
+  "Lee Tae-Seok": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lee_Tae-Seok.svg",
+    "athlete_id": null
+  },
+  "Lee Han-Beom": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lee_Han-Beom.svg",
+    "athlete_id": null
+  },
+  "Seol Young-Woo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Seol_Young-Woo.svg",
+    "athlete_id": null
+  },
+  "Lee Gi-Hyuk": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lee_Gi-Hyuk.svg",
+    "athlete_id": null
+  },
+  "Cho Wi-Je": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cho_Wi-Je.svg",
+    "athlete_id": null
+  },
+  "Kim Jin-Gyu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kim_Jin-Gyu.svg",
+    "athlete_id": null
+  },
+  "Lee Jae-Sung": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lee_Jae-Sung.svg",
+    "athlete_id": null
+  },
+  "Paik Seung-Ho": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Paik_Seung-Ho.svg",
+    "athlete_id": null
+  },
+  "Lee Dong-Gyeong": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lee_Dong-Gyeong.svg",
+    "athlete_id": null
+  },
+  "Lee Kang-In": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lee_Kang-In.svg",
+    "athlete_id": null
+  },
+  "Jens Castrop": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jens_Castrop.svg",
+    "athlete_id": null
+  },
+  "Park Jin-Seop": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Park_Jin-Seop.svg",
+    "athlete_id": null
+  },
+  "Bae Jun-Ho": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Bae_Jun-Ho.svg",
+    "athlete_id": null
+  },
+  "Son Heung-Min": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Son_Heung-Min.svg",
+    "athlete_id": null
+  },
+  "Hwang Hee-Chan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hwang_Hee-Chan.svg",
+    "athlete_id": null
+  },
+  "Eom Ji-Sung": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Eom_Ji-Sung.svg",
+    "athlete_id": null
+  },
+  "Oh Hyeon-Gyu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oh_Hyeon-Gyu.svg",
+    "athlete_id": null
+  },
+  "Cho Gue-Sung": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cho_Gue-Sung.svg",
+    "athlete_id": null
+  },
+  "Yang Hyun-Jun": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yang_Hyun-Jun.svg",
+    "athlete_id": null
+  },
+  "David Raya": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_David_Raya.svg",
+    "athlete_id": null
+  },
+  "Unai Simón": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Unai_Simón.svg",
+    "athlete_id": null
+  },
+  "Joan García": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joan_García.svg",
+    "athlete_id": null
+  },
+  "Eric García": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Eric_García.svg",
+    "athlete_id": null
+  },
+  "Aymeric Laporte": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aymeric_Laporte.svg",
+    "athlete_id": null
+  },
+  "Alejandro Grimaldo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alejandro_Grimaldo.svg",
+    "athlete_id": null
+  },
+  "Marc Cucurella": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marc_Cucurella.svg",
+    "athlete_id": null
+  },
+  "Pedro Porro": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pedro_Porro.svg",
+    "athlete_id": null
+  },
+  "Marc Pubill": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marc_Pubill.svg",
+    "athlete_id": null
+  },
+  "Pau Cubarsí": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pau_Cubarsí.svg",
+    "athlete_id": null
+  },
+  "Marcos Llorente": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marcos_Llorente.svg",
+    "athlete_id": null
+  },
+  "Mikel Merino": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mikel_Merino.svg",
+    "athlete_id": null
+  },
+  "Fabián Ruiz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fabián_Ruiz.svg",
+    "athlete_id": null
+  },
+  "Dani Olmo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dani_Olmo.svg",
+    "athlete_id": null
+  },
+  "Rodri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rodri.svg",
+    "athlete_id": null
+  },
+  "Pedri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Pedri.svg",
+    "athlete_id": null
+  },
+  "Martín Zubimendi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Martín_Zubimendi.svg",
+    "athlete_id": null
+  },
+  "Yéremy Pino": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yéremy_Pino.svg",
+    "athlete_id": null
+  },
+  "Álex Baena": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Álex_Baena.svg",
+    "athlete_id": null
+  },
+  "Gavi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gavi.svg",
+    "athlete_id": null
+  },
+  "Borja Iglesias": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Borja_Iglesias.svg",
+    "athlete_id": null
+  },
+  "Mikel Oyarzabal": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mikel_Oyarzabal.svg",
+    "athlete_id": null
+  },
+  "Ferran Torres": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ferran_Torres.svg",
+    "athlete_id": null
+  },
+  "Nico Williams": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nico_Williams.svg",
+    "athlete_id": null
+  },
+  "Lamine Yamal": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lamine_Yamal.svg",
+    "athlete_id": null
+  },
+  "Víctor Muñoz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Víctor_Muñoz.svg",
+    "athlete_id": null
+  },
+  "Kristoffer Nordfeldt": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kristoffer_Nordfeldt.svg",
+    "athlete_id": null
+  },
+  "Viktor Johansson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Viktor_Johansson.svg",
+    "athlete_id": null
+  },
+  "Jacob Widell Zetterström": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jacob_Widell_Zetterström.svg",
+    "athlete_id": null
+  },
+  "Carl Starfelt": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Carl_Starfelt.svg",
+    "athlete_id": null
+  },
+  "Eric Smith": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Eric_Smith.svg",
+    "athlete_id": null
+  },
+  "Victor Lindelöf": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Victor_Lindelöf.svg",
+    "athlete_id": null
+  },
+  "Hjalmar Ekdal": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hjalmar_Ekdal.svg",
+    "athlete_id": null
+  },
+  "Daniel Svensson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Daniel_Svensson.svg",
+    "athlete_id": null
+  },
+  "Isak Hien": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Isak_Hien.svg",
+    "athlete_id": null
+  },
+  "Gustaf Lagerbielke": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gustaf_Lagerbielke.svg",
+    "athlete_id": null
+  },
+  "Ken Sema": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ken_Sema.svg",
+    "athlete_id": null
+  },
+  "Mattias Svanberg": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mattias_Svanberg.svg",
+    "athlete_id": null
+  },
+  "Jesper Karlström": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jesper_Karlström.svg",
+    "athlete_id": null
+  },
+  "Yasin Ayari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yasin_Ayari.svg",
+    "athlete_id": null
+  },
+  "Herman Johansson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Herman_Johansson.svg",
+    "athlete_id": null
+  },
+  "Taha Ali": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Taha_Ali.svg",
+    "athlete_id": null
+  },
+  "Besfort Zeneli": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Besfort_Zeneli.svg",
+    "athlete_id": null
+  },
+  "Lucas Bergvall": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Lucas_Bergvall.svg",
+    "athlete_id": null
+  },
+  "Elliot Stroud": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Elliot_Stroud.svg",
+    "athlete_id": null
+  },
+  "Alexander Isak": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexander_Isak.svg",
+    "athlete_id": null
+  },
+  "Gustaf Nilsson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gustaf_Nilsson.svg",
+    "athlete_id": null
+  },
+  "Viktor Gyökeres": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Viktor_Gyökeres.svg",
+    "athlete_id": null
+  },
+  "Anthony Elanga": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Anthony_Elanga.svg",
+    "athlete_id": null
+  },
+  "Alexander Bernhardsson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alexander_Bernhardsson.svg",
+    "athlete_id": null
+  },
+  "Yvon Mvogo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yvon_Mvogo.svg",
+    "athlete_id": null
+  },
+  "Gregor Kobel": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Gregor_Kobel.svg",
+    "athlete_id": null
+  },
+  "Marvin Keller": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Marvin_Keller.svg",
+    "athlete_id": null
+  },
+  "Ricardo Rodríguez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ricardo_Rodríguez.svg",
+    "athlete_id": null
+  },
+  "Silvan Widmer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Silvan_Widmer.svg",
+    "athlete_id": null
+  },
+  "Nico Elvedi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nico_Elvedi.svg",
+    "athlete_id": null
+  },
+  "Manuel Akanji": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Manuel_Akanji.svg",
+    "athlete_id": null
+  },
+  "Eray Cömert": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Eray_Cömert.svg",
+    "athlete_id": null
+  },
+  "Miro Muheim": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Miro_Muheim.svg",
+    "athlete_id": null
+  },
+  "Aurèle Amenda": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aurèle_Amenda.svg",
+    "athlete_id": null
+  },
+  "Luca Jaquez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Luca_Jaquez.svg",
+    "athlete_id": null
+  },
+  "Granit Xhaka": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Granit_Xhaka.svg",
+    "athlete_id": null
+  },
+  "Remo Freuler": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Remo_Freuler.svg",
+    "athlete_id": null
+  },
+  "Djibril Sow": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Djibril_Sow.svg",
+    "athlete_id": null
+  },
+  "Denis Zakaria": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Denis_Zakaria.svg",
+    "athlete_id": null
+  },
+  "Christian Fassnacht": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Christian_Fassnacht.svg",
+    "athlete_id": null
+  },
+  "Michel Aebischer": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Michel_Aebischer.svg",
+    "athlete_id": null
+  },
+  "Rubén Vargas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rubén_Vargas.svg",
+    "athlete_id": null
+  },
+  "Ardon Jashari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ardon_Jashari.svg",
+    "athlete_id": null
+  },
+  "Fabian Rieder": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fabian_Rieder.svg",
+    "athlete_id": null
+  },
+  "Johan Manzambi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Johan_Manzambi.svg",
+    "athlete_id": null
+  },
+  "Breel Embolo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Breel_Embolo.svg",
+    "athlete_id": null
+  },
+  "Cedric Itten": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Cedric_Itten.svg",
+    "athlete_id": null
+  },
+  "Noah Okafor": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Noah_Okafor.svg",
+    "athlete_id": null
+  },
+  "Dan Ndoye": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dan_Ndoye.svg",
+    "athlete_id": null
+  },
+  "Zeki Amdouni": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zeki_Amdouni.svg",
+    "athlete_id": null
+  },
+  "Sabri Ben Hessen": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sabri_Ben_Hessen.svg",
+    "athlete_id": null
+  },
+  "Aymen Dahmen": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Aymen_Dahmen.svg",
+    "athlete_id": null
+  },
+  "Mouhib Chamakh": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mouhib_Chamakh.svg",
+    "athlete_id": null
+  },
+  "Dylan Bronn": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dylan_Bronn.svg",
+    "athlete_id": null
+  },
+  "Yan Valery": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yan_Valery.svg",
+    "athlete_id": null
+  },
+  "Montassar Talbi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Montassar_Talbi.svg",
+    "athlete_id": null
+  },
+  "Ali Abdi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ali_Abdi.svg",
+    "athlete_id": null
+  },
+  "Mohamed Amine Ben Hamida": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Amine_Ben_Hamida.svg",
+    "athlete_id": null
+  },
+  "Moutaz Neffati": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Moutaz_Neffati.svg",
+    "athlete_id": null
+  },
+  "Adem Arous": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Adem_Arous.svg",
+    "athlete_id": null
+  },
+  "Raed Chikhaoui": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Raed_Chikhaoui.svg",
+    "athlete_id": null
+  },
+  "Rani Khedira": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rani_Khedira.svg",
+    "athlete_id": null
+  },
+  "Ellyes Skhiri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ellyes_Skhiri.svg",
+    "athlete_id": null
+  },
+  "Mortadha Ben Ouanes": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mortadha_Ben_Ouanes.svg",
+    "athlete_id": null
+  },
+  "Mohamed Hadj Mahmoud": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mohamed_Hadj_Mahmoud.svg",
+    "athlete_id": null
+  },
+  "Hannibal Mejbri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hannibal_Mejbri.svg",
+    "athlete_id": null
+  },
+  "Anis Slimane": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Anis_Slimane.svg",
+    "athlete_id": null
+  },
+  "Elias Achouri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Elias_Achouri.svg",
+    "athlete_id": null
+  },
+  "Firas Chaouat": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Firas_Chaouat.svg",
+    "athlete_id": null
+  },
+  "Sebastian Tounekti": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sebastian_Tounekti.svg",
+    "athlete_id": null
+  },
+  "Ismaël Gharbi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ismaël_Gharbi.svg",
+    "athlete_id": null
+  },
+  "Elias Saad": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Elias_Saad.svg",
+    "athlete_id": null
+  },
+  "Hazem Mastouri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hazem_Mastouri.svg",
+    "athlete_id": null
+  },
+  "Khalil Ayari": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Khalil_Ayari.svg",
+    "athlete_id": null
+  },
+  "Rayan Elloumi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rayan_Elloumi.svg",
+    "athlete_id": null
+  },
+  "Mert Günok": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mert_Günok.svg",
+    "athlete_id": null
+  },
+  "Ugurcan Çakir": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ugurcan_Çakir.svg",
+    "athlete_id": null
+  },
+  "Altay Bayindir": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Altay_Bayindir.svg",
+    "athlete_id": null
+  },
+  "Kaan Ayhan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kaan_Ayhan.svg",
+    "athlete_id": null
+  },
+  "Abdülkerim Bardakçi": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdülkerim_Bardakçi.svg",
+    "athlete_id": null
+  },
+  "Çaglar Söyüncü": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Çaglar_Söyüncü.svg",
+    "athlete_id": null
+  },
+  "Ferdi Kadioglu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ferdi_Kadioglu.svg",
+    "athlete_id": null
+  },
+  "Mert Müldür": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mert_Müldür.svg",
+    "athlete_id": null
+  },
+  "Ozan Kabak": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ozan_Kabak.svg",
+    "athlete_id": null
+  },
+  "Merih Demiral": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Merih_Demiral.svg",
+    "athlete_id": null
+  },
+  "Zeki Çelik": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Zeki_Çelik.svg",
+    "athlete_id": null
+  },
+  "Eren Elmali": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Eren_Elmali.svg",
+    "athlete_id": null
+  },
+  "Samet Akaydin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Samet_Akaydin.svg",
+    "athlete_id": null
+  },
+  "Hakan Çalhanoglu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Hakan_Çalhanoglu.svg",
+    "athlete_id": null
+  },
+  "Irfan Can Kahveci": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Irfan_Can_Kahveci.svg",
+    "athlete_id": null
+  },
+  "Salih Özcan": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Salih_Özcan.svg",
+    "athlete_id": null
+  },
+  "Ismail Yüksek": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ismail_Yüksek.svg",
+    "athlete_id": null
+  },
+  "Arda Güler": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Arda_Güler.svg",
+    "athlete_id": null
+  },
+  "Can Uzun": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Can_Uzun.svg",
+    "athlete_id": null
+  },
+  "Yunus Akgün": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Yunus_Akgün.svg",
+    "athlete_id": null
+  },
+  "Kerem Aktürkoglu": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kerem_Aktürkoglu.svg",
+    "athlete_id": null
+  },
+  "Baris Alper Yilmaz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Baris_Alper_Yilmaz.svg",
+    "athlete_id": null
+  },
+  "Oguz Aydin": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oguz_Aydin.svg",
+    "athlete_id": null
+  },
+  "Deniz Gül": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Deniz_Gül.svg",
+    "athlete_id": null
+  },
+  "Kenan Yildiz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Kenan_Yildiz.svg",
+    "athlete_id": null
+  },
+  "Tim Ream": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Tim_Ream.svg",
+    "athlete_id": null
+  },
+  "Antonee Robinson": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Antonee_Robinson.svg",
+    "athlete_id": null
+  },
+  "Sergiño Dest": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sergiño_Dest.svg",
+    "athlete_id": null
+  },
+  "Christian Pulisic": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Christian_Pulisic.svg",
+    "athlete_id": null
+  },
+  "Weston McKennie": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Weston_McKennie.svg",
+    "athlete_id": null
+  },
+  "Giovanni Reyna": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Giovanni_Reyna.svg",
+    "athlete_id": null
+  },
+  "Malik Tillman": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Malik_Tillman.svg",
+    "athlete_id": null
+  },
+  "Max Arfsten": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Max_Arfsten.svg",
+    "athlete_id": null
+  },
+  "Alejandro Zendejas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Alejandro_Zendejas.svg",
+    "athlete_id": null
+  },
+  "Haji Wright": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Haji_Wright.svg",
+    "athlete_id": null
+  },
+  "Timothy Weah": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Timothy_Weah.svg",
+    "athlete_id": null
+  },
+  "Folarin Balogun": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Folarin_Balogun.svg",
+    "athlete_id": null
+  },
+  "Fernando Muslera": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Fernando_Muslera.svg",
+    "athlete_id": null
+  },
+  "Sergio Rochet": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sergio_Rochet.svg",
+    "athlete_id": null
+  },
+  "Santiago Mele": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Santiago_Mele.svg",
+    "athlete_id": null
+  },
+  "Guillermo Varela": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Guillermo_Varela.svg",
+    "athlete_id": null
+  },
+  "José María Giménez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_José_María_Giménez.svg",
+    "athlete_id": null
+  },
+  "Mathías Olivera": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Mathías_Olivera.svg",
+    "athlete_id": null
+  },
+  "Santiago Bueno": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Santiago_Bueno.svg",
+    "athlete_id": null
+  },
+  "Joaquín Piquerez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Joaquín_Piquerez.svg",
+    "athlete_id": null
+  },
+  "Matías Viña": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Matías_Viña.svg",
+    "athlete_id": null
+  },
+  "Ronald Araújo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Ronald_Araújo.svg",
+    "athlete_id": null
+  },
+  "Sebastián Cáceres": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sebastián_Cáceres.svg",
+    "athlete_id": null
+  },
+  "Giorgian de Arrascaeta": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Giorgian_de_Arrascaeta.svg",
+    "athlete_id": null
+  },
+  "Rodrigo Bentancur": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rodrigo_Bentancur.svg",
+    "athlete_id": null
+  },
+  "Federico Valverde": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Federico_Valverde.svg",
+    "athlete_id": null
+  },
+  "Manuel Ugarte": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Manuel_Ugarte.svg",
+    "athlete_id": null
+  },
+  "Nicolás de la Cruz": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Nicolás_de_la_Cruz.svg",
+    "athlete_id": null
+  },
+  "Maxi Araújo": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Maxi_Araújo.svg",
+    "athlete_id": null
+  },
+  "Rodrigo Zalazar": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rodrigo_Zalazar.svg",
+    "athlete_id": null
+  },
+  "Juan Manuel Sanabria": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Juan_Manuel_Sanabria.svg",
+    "athlete_id": null
+  },
+  "Facundo Pellistri": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Facundo_Pellistri.svg",
+    "athlete_id": null
+  },
+  "Rodrigo Aguirre": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rodrigo_Aguirre.svg",
+    "athlete_id": null
+  },
+  "Agustín Canobbio": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Agustín_Canobbio.svg",
+    "athlete_id": null
+  },
+  "Darwin Núñez": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Darwin_Núñez.svg",
+    "athlete_id": null
+  },
+  "Federico Viñas": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Federico_Viñas.svg",
+    "athlete_id": null
+  },
+  "Botirali Ergashev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Botirali_Ergashev.svg",
+    "athlete_id": null
+  },
+  "Utkir Yusupov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Utkir_Yusupov.svg",
+    "athlete_id": null
+  },
+  "Abduvohid Nematov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abduvohid_Nematov.svg",
+    "athlete_id": null
+  },
+  "Rustam Ashurmatov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Rustam_Ashurmatov.svg",
+    "athlete_id": null
+  },
+  "Farrukh Sayfiev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Farrukh_Sayfiev.svg",
+    "athlete_id": null
+  },
+  "Umar Eshmurodov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Umar_Eshmurodov.svg",
+    "athlete_id": null
+  },
+  "Khojiakbar Alijonov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Khojiakbar_Alijonov.svg",
+    "athlete_id": null
+  },
+  "Avazbek Ulmasaliyev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Avazbek_Ulmasaliyev.svg",
+    "athlete_id": null
+  },
+  "Sherzod Nasrullaev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sherzod_Nasrullaev.svg",
+    "athlete_id": null
+  },
+  "Abdukodir Khusanov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdukodir_Khusanov.svg",
+    "athlete_id": null
+  },
+  "Jakhongir Urozov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jakhongir_Urozov.svg",
+    "athlete_id": null
+  },
+  "Behruzjon Karimov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Behruzjon_Karimov.svg",
+    "athlete_id": null
+  },
+  "Jamshid Iskanderov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jamshid_Iskanderov.svg",
+    "athlete_id": null
+  },
+  "Jaloliddin Masharipov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Jaloliddin_Masharipov.svg",
+    "athlete_id": null
+  },
+  "Odiljon Xamrobekov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Odiljon_Xamrobekov.svg",
+    "athlete_id": null
+  },
+  "Dostonbek Khamdamov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Dostonbek_Khamdamov.svg",
+    "athlete_id": null
+  },
+  "Otabek Shukurov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Otabek_Shukurov.svg",
+    "athlete_id": null
+  },
+  "Azizjon Ganiev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Azizjon_Ganiev.svg",
+    "athlete_id": null
+  },
+  "Akmal Mozgovoy": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Akmal_Mozgovoy.svg",
+    "athlete_id": null
+  },
+  "Oston Urunov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Oston_Urunov.svg",
+    "athlete_id": null
+  },
+  "Abbosbek Fayzullaev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abbosbek_Fayzullaev.svg",
+    "athlete_id": null
+  },
+  "Abdulla Abdullaev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Abdulla_Abdullaev.svg",
+    "athlete_id": null
+  },
+  "Sherzod Esanov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Sherzod_Esanov.svg",
+    "athlete_id": null
+  },
+  "Igor Sergeev": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Igor_Sergeev.svg",
+    "athlete_id": null
+  },
+  "Eldor Shomurodov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Eldor_Shomurodov.svg",
+    "athlete_id": null
+  },
+  "Azizbek Amonov": {
+    "source": "placeholder",
+    "path": "data/photos/avatar_Azizbek_Amonov.svg",
+    "athlete_id": null
+  }
+}

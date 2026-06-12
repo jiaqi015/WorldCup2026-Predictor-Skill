@@ -27,6 +27,7 @@
   <a href="#install-from-the-command-line">Install</a> ·
   <a href="#run-the-web-app">Run Web App</a> ·
   <a href="#what-the-skill-does">Capabilities</a> ·
+  <a href="#research-data-and-rag">Research Data</a> ·
   <a href="#commands">Commands</a> ·
   <a href="#中文说明">中文说明</a>
 </p>
@@ -113,7 +114,7 @@ python3 \
   --path skills/world-cup-2026-predictor
 ```
 
-Use `--ref v0.1.1` to pin a tagged release. The direct Skill installer does
+Use `--ref v0.2.0` to pin a tagged release. The direct Skill installer does
 not overwrite an existing installation, so Plugin installation is preferred
 for ongoing updates.
 
@@ -236,6 +237,44 @@ python3 "$SKILL_DIR/scripts/sync_predictor_asset.py"
 python3 "$SKILL_DIR/scripts/sync_predictor_asset.py" --check
 ```
 
+## Research Data And RAG
+
+The repository includes a page-cited research corpus generated from the
+205-page Kimi World Cup report:
+
+- [Domain model](docs/domain-model.md)
+- [RAG corpus guide](docs/rag-corpus.md)
+- [Prediction architecture](docs/prediction-architecture.md)
+- `data/schema/prediction-domain.v1.json`
+- `data/rag/kimi-world-cup-report/chunks.jsonl`
+
+Regenerate, validate, and test retrieval:
+
+```bash
+python3 scripts/build_report_rag.py \
+  --source /Users/jiaqi/Downloads/Kimi_2026_World_Cup_Report.pdf
+python3 scripts/validate_rag_corpus.py
+python3 scripts/search_report_rag.py "Brier 校准 模型漂移"
+```
+
+Report-derived claims remain source assertions until independently verified.
+Every retrieved chunk carries a page citation and source PDF SHA-256.
+
+The predictor also carries a dated ESPN public roster snapshot for all 48
+teams: 1,248 players with squad number, position, age, nationality, and local
+photo metadata. It improves roster-aware simulation and player selection, but
+it is a source snapshot rather than a final FIFA registration list.
+
+```bash
+python3 scripts/fetch_squads.py
+python3 scripts/fix_squad_issues.py
+python3 scripts/crawl_photos.py
+python3 scripts/generate_avatars.py
+python3 scripts/update_index.py
+python3 skills/world-cup-2026-predictor/scripts/sync_predictor_asset.py
+python3 scripts/release_check.py
+```
+
 ## Repository Layout
 
 ```text
@@ -256,7 +295,14 @@ python3 "$SKILL_DIR/scripts/sync_predictor_asset.py" --check
 │       ├── sync_predictor_asset.py
 │       └── validate_predictor.py
 ├── index.html
-├── scripts/release_check.py
+├── data/
+│   ├── rag/kimi-world-cup-report/
+│   └── schema/prediction-domain.v1.json
+├── scripts/
+│   ├── build_report_rag.py
+│   ├── search_report_rag.py
+│   ├── validate_rag_corpus.py
+│   └── release_check.py
 ├── CHANGELOG.md
 ├── RELEASING.md
 ├── docs/
@@ -279,6 +325,10 @@ python3 "$SKILL_DIR/scripts/sync_predictor_asset.py" --check
 | `.codex-plugin/plugin.json` | Plugin identity, version, and install metadata |
 | `.agents/plugins/marketplace.json` | GitHub-backed Codex marketplace entry |
 | `scripts/release_check.py` | One-command release validation gate |
+| `docs/domain-model.md` | Current entities and the expanded forecast lifecycle |
+| `docs/rag-corpus.md` | Corpus generation, retrieval, and citation rules |
+| `data/rag/kimi-world-cup-report/` | Page and chunk JSONL for RAG ingestion |
+| `data/schema/prediction-domain.v1.json` | Machine-readable entity catalog |
 | `RELEASING.md` | Versioning, tagging, and publishing workflow |
 
 ## Predictor Model

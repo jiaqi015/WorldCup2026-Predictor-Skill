@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "source": "ESPN public site API",
+  "teams_endpoint": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/teams",
+  "roster_endpoint_template": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/teams/{team_id}/roster",
+  "fetched_at": "2026-06-12T08:12:30Z",
+  "team_count": 48,
+  "player_count": 1248,
+  "status": "source snapshot; not a final FIFA registration list"
+}

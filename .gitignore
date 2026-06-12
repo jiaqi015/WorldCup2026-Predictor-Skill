@@ -41,5 +41,8 @@ __pycache__/
 *.pyc
 
 # Backups
+*.backup
 *.backup-*
 *~
+.vercel/
+.vercel-tmp/

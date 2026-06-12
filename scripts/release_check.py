@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -16,6 +17,7 @@ SKILL = ROOT / "skills" / "world-cup-2026-predictor"
 PLUGIN_MANIFEST = ROOT / ".codex-plugin" / "plugin.json"
 MARKETPLACE = ROOT / ".agents" / "plugins" / "marketplace.json"
 REPO_SKILL_LINK = ROOT / ".agents" / "skills" / "world-cup-2026-predictor"
+DOMAIN_CATALOG = ROOT / "data" / "schema" / "prediction-domain.v1.json"
 SEMVER = re.compile(
     r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
     r"(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$"
@@ -81,6 +83,15 @@ def validate_metadata() -> str:
         fail("canonical skills/world-cup-2026-predictor directory is missing")
     if not REPO_SKILL_LINK.is_symlink() or REPO_SKILL_LINK.resolve() != SKILL.resolve():
         fail(".agents skill link must point to the canonical skill directory")
+
+    catalog = load_json(DOMAIN_CATALOG)
+    if catalog.get("schema_version") != 1:
+        fail("prediction domain catalog schema_version must be 1")
+    contexts = catalog.get("contexts")
+    if not isinstance(contexts, dict) or not all(
+        isinstance(entities, list) and entities for entities in contexts.values()
+    ):
+        fail("prediction domain catalog contexts must contain entity lists")
     return plugin["version"]
 
 
@@ -95,6 +106,16 @@ def main() -> int:
             ]
         )
         run([sys.executable, str(SKILL / "scripts" / "validate_predictor.py")])
+        run([sys.executable, str(ROOT / "scripts" / "validate_squads.py")])
+        run([sys.executable, str(ROOT / "scripts" / "validate_final.py")])
+        run([sys.executable, str(ROOT / "scripts" / "validate_rag_corpus.py")])
+        if shutil.which("node"):
+            tests = sorted(str(path) for path in (ROOT / "test").glob("*.test.mjs"))
+            if not tests:
+                fail("no Node.js tests found under test/")
+            run(["node", "--test", *tests])
+        else:
+            print("[SKIP] Node.js unavailable; skipped prediction engine tests.")
         optional_system_validator(
             "skill-creator/scripts/quick_validate.py",
             SKILL,

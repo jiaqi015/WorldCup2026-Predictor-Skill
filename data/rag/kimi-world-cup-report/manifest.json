@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "source_id": "kimi-2026-world-cup-report",
+  "title": "Kimi关于2026年世界杯赛事分析和预测报告",
+  "language": "zh-CN",
+  "report_date": "2026-06-05",
+  "generated_at": "2026-06-12T07:57:24.459705+00:00",
+  "source": {
+    "filename": "Kimi_2026_World_Cup_Report.pdf",
+    "path_at_generation": "/Users/jiaqi/Downloads/Kimi_2026_World_Cup_Report.pdf",
+    "sha256": "4a81782b2edcb5de8b47b88adac019106a93aabdf99bd35f24427c91601d6c60",
+    "page_count": 205
+  },
+  "artifacts": {
+    "pages": "pages.jsonl",
+    "chunks": "chunks.jsonl",
+    "sections": "sections.json",
+    "corpus": "corpus.md"
+  },
+  "chunking": {
+    "strategy": "page-bounded semantic sentence chunks",
+    "target_chars": 1200,
+    "overlap_chars": 160,
+    "chunk_count": 308
+  },
+  "usage_notes": [
+    "Treat quantitative claims as report assertions until independently verified.",
+    "Use citation and page fields when presenting retrieved claims.",
+    "Prefer chunks with data_provenance, uncertainty, or calibration keywords for model design questions."
+  ]
+}

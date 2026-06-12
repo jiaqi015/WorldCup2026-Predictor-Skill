@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "name": "world-cup-prediction-domain",
+  "description": "Machine-readable catalog for competition facts, observations, features, forecasts, and feedback.",
+  "contexts": {
+    "competition": [
+      "Tournament",
+      "Stage",
+      "Group",
+      "Team",
+      "Player",
+      "Coach",
+      "SquadSnapshot",
+      "CoachTenure",
+      "Match",
+      "Venue"
+    ],
+    "observations": [
+      "DataSource",
+      "Observation",
+      "RankingSnapshot",
+      "FormSnapshot",
+      "PlayerAvailability",
+      "MarketSnapshot",
+      "EnvironmentSnapshot",
+      "TravelContext"
+    ],
+    "features": [
+      "FeatureDefinition",
+      "FeatureValue",
+      "TeamMatchContext",
+      "TacticalProfile",
+      "MatchupAssessment"
+    ],
+    "forecasting": [
+      "ModelDefinition",
+      "ModelRun",
+      "AgentDefinition",
+      "AgentAnalysis",
+      "EvidenceClaim",
+      "SimulationBatch",
+      "Prediction",
+      "Scenario"
+    ],
+    "feedback": [
+      "MatchResult",
+      "UpdateEvent",
+      "PosteriorSnapshot",
+      "Attribution",
+      "CalibrationReport",
+      "DriftMetric"
+    ]
+  },
+  "entities": {
+    "Observation": {
+      "identity": ["id"],
+      "required": [
+        "subject_type",
+        "subject_id",
+        "metric",
+        "value",
+        "observed_at",
+        "source_id",
+        "verification_status"
+      ],
+      "temporal": ["observed_at", "effective_from", "effective_to"],
+      "lineage": ["source_id", "source_record_id"]
+    },
+    "FeatureValue": {
+      "identity": ["id"],
+      "required": [
+        "feature_definition_id",
+        "subject_id",
+        "as_of",
+        "value",
+        "input_observation_ids"
+      ],
+      "temporal": ["as_of", "computed_at"],
+      "lineage": ["feature_definition_id", "input_observation_ids"]
+    },
+    "TeamMatchContext": {
+      "identity": ["match_id", "team_id", "as_of"],
+      "required": [
+        "match_id",
+        "team_id",
+        "opponent_team_id",
+        "as_of",
+        "feature_value_ids"
+      ],
+      "immutable": true
+    },
+    "ModelRun": {
+      "identity": ["id"],
+      "required": [
+        "model_definition_id",
+        "as_of",
+        "code_version",
+        "data_snapshot_ids",
+        "seed",
+        "status"
+      ],
+      "lineage": ["model_definition_id", "data_snapshot_ids", "code_version"]
+    },
+    "EvidenceClaim": {
+      "identity": ["id"],
+      "required": [
+        "assertion",
+        "source_chunk_ids",
+        "verification_status",
+        "polarity"
+      ],
+      "lineage": ["source_chunk_ids"]
+    },
+    "Prediction": {
+      "identity": ["id"],
+      "required": [
+        "model_run_id",
+        "match_id",
+        "as_of",
+        "probabilities",
+        "uncertainty",
+        "evidence_claim_ids"
+      ],
+      "immutable": true,
+      "lineage": ["model_run_id", "evidence_claim_ids"]
+    },
+    "UpdateEvent": {
+      "identity": ["id"],
+      "required": ["event_type", "effective_at", "subject_ids", "observation_ids"],
+      "allowed_event_types": [
+        "match_result",
+        "injury",
+        "suspension",
+        "coach_change",
+        "weather_update",
+        "market_movement",
+        "data_correction"
+      ]
+    },
+    "CalibrationReport": {
+      "identity": ["id"],
+      "required": [
+        "model_definition_id",
+        "evaluation_window",
+        "sample_size",
+        "brier_score",
+        "ranked_probability_score",
+        "reliability_bins"
+      ]
+    }
+  },
+  "relationships": [
+    ["Tournament", "contains", "Stage"],
+    ["Stage", "contains", "Group"],
+    ["Tournament", "includes", "Team"],
+    ["Team", "has_snapshot", "SquadSnapshot"],
+    ["Match", "played_at", "Venue"],
+    ["Observation", "produced_by", "DataSource"],
+    ["FeatureValue", "derived_from", "Observation"],
+    ["TeamMatchContext", "contains", "FeatureValue"],
+    ["ModelRun", "consumes", "TeamMatchContext"],
+    ["AgentAnalysis", "cites", "EvidenceClaim"],
+    ["Prediction", "produced_by", "ModelRun"],
+    ["Prediction", "supported_by", "EvidenceClaim"],
+    ["MatchResult", "triggers", "UpdateEvent"],
+    ["UpdateEvent", "creates", "PosteriorSnapshot"],
+    ["Prediction", "evaluated_by", "CalibrationReport"]
+  ],
+  "invariants": [
+    "Facts, derived features, forecasts, and UI state are stored separately.",
+    "Every externally sourced value carries provenance and an as-of time.",
+    "Feature values reference their definition version and input observations.",
+    "Predictions are immutable and reproducible from a model run.",
+    "Report-derived evidence remains a source assertion until verified.",
+    "Post-match updates create a new posterior instead of mutating history."
+  ]
+}

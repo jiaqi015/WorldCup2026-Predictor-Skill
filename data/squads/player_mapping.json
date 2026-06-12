@@ -1,0 +1,9634 @@
+{
+  "Aïssa Mandi": {
+    "cn": "曼迪",
+    "team": "阿尔及利亚",
+    "jersey": "2",
+    "position": "D",
+    "age": 34
+  },
+  "Ramy Bensebaini": {
+    "cn": "贝纳西亚",
+    "team": "阿尔及利亚",
+    "jersey": "21",
+    "position": "D",
+    "age": 31
+  },
+  "Riyad Mahrez": {
+    "cn": "马赫雷斯",
+    "team": "阿尔及利亚",
+    "jersey": "7",
+    "position": "F",
+    "age": 35
+  },
+  "Cristian Romero": {
+    "cn": "罗梅罗",
+    "team": "阿根廷",
+    "jersey": "13",
+    "position": "D",
+    "age": 28
+  },
+  "Nicolás Otamendi": {
+    "cn": "奥塔门迪",
+    "team": "阿根廷",
+    "jersey": "19",
+    "position": "D",
+    "age": 38
+  },
+  "Nicolás Tagliafico": {
+    "cn": "塔利亚菲科",
+    "team": "阿根廷",
+    "jersey": "3",
+    "position": "D",
+    "age": 33
+  },
+  "Nahuel Molina": {
+    "cn": "莫利纳",
+    "team": "阿根廷",
+    "jersey": "26",
+    "position": "D",
+    "age": 28
+  },
+  "Rodrigo De Paul": {
+    "cn": "德保罗",
+    "team": "阿根廷",
+    "jersey": "7",
+    "position": "M",
+    "age": 32
+  },
+  "Alexis Mac Allister": {
+    "cn": "麦克阿利斯特",
+    "team": "阿根廷",
+    "jersey": "20",
+    "position": "M",
+    "age": 27
+  },
+  "Enzo Fernández": {
+    "cn": "恩索费尔南德斯",
+    "team": "阿根廷",
+    "jersey": "24",
+    "position": "M",
+    "age": 25
+  },
+  "Lionel Messi": {
+    "cn": "梅西",
+    "team": "阿根廷",
+    "jersey": "10",
+    "position": "F",
+    "age": 38
+  },
+  "Lautaro Martínez": {
+    "cn": "劳塔罗",
+    "team": "阿根廷",
+    "jersey": "22",
+    "position": "F",
+    "age": 28
+  },
+  "Julián Álvarez": {
+    "cn": "阿尔瓦雷斯",
+    "team": "阿根廷",
+    "jersey": "9",
+    "position": "F",
+    "age": 26
+  },
+  "Mathew Ryan": {
+    "cn": "瑞安",
+    "team": "澳大利亚",
+    "jersey": "1",
+    "position": "G",
+    "age": 34
+  },
+  "Harry Souttar": {
+    "cn": "苏塔尔",
+    "team": "澳大利亚",
+    "jersey": "19",
+    "position": "D",
+    "age": 27
+  },
+  "Jackson Irvine": {
+    "cn": "罗尔斯",
+    "team": "澳大利亚",
+    "jersey": "22",
+    "position": "M",
+    "age": 33
+  },
+  "Ajdin Hrustic": {
+    "cn": "赫鲁斯蒂奇",
+    "team": "澳大利亚",
+    "jersey": "10",
+    "position": "M",
+    "age": 29
+  },
+  "Aiden O'Neill": {
+    "cn": "莫伊",
+    "team": "澳大利亚",
+    "jersey": "13",
+    "position": "M",
+    "age": 27
+  },
+  "Connor Metcalfe": {
+    "cn": "欧文",
+    "team": "澳大利亚",
+    "jersey": "8",
+    "position": "M",
+    "age": 26
+  },
+  "Patrick Pentz": {
+    "cn": "佩恩施蒂纳",
+    "team": "奥地利",
+    "jersey": "13",
+    "position": "G",
+    "age": 29
+  },
+  "Philipp Lienhart": {
+    "cn": "林哈特",
+    "team": "奥地利",
+    "jersey": "15",
+    "position": "D",
+    "age": 29
+  },
+  "Stefan Posch": {
+    "cn": "波施",
+    "team": "奥地利",
+    "jersey": "5",
+    "position": "D",
+    "age": 29
+  },
+  "Phillipp Mwene": {
+    "cn": "姆韦内",
+    "team": "奥地利",
+    "jersey": "16",
+    "position": "D",
+    "age": 32
+  },
+  "Kevin Danso": {
+    "cn": "丹索",
+    "team": "奥地利",
+    "jersey": "3",
+    "position": "D",
+    "age": 27
+  },
+  "Konrad Laimer": {
+    "cn": "莱默尔",
+    "team": "奥地利",
+    "jersey": "20",
+    "position": "M",
+    "age": 29
+  },
+  "Marcel Sabitzer": {
+    "cn": "萨比策",
+    "team": "奥地利",
+    "jersey": "9",
+    "position": "M",
+    "age": 32
+  },
+  "Romano Schmid": {
+    "cn": "施密德",
+    "team": "奥地利",
+    "jersey": "18",
+    "position": "M",
+    "age": 26
+  },
+  "Nicolas Seiwald": {
+    "cn": "塞瓦尔德",
+    "team": "奥地利",
+    "jersey": "6",
+    "position": "M",
+    "age": 25
+  },
+  "Michael Gregoritsch": {
+    "cn": "格雷戈里奇",
+    "team": "奥地利",
+    "jersey": "11",
+    "position": "F",
+    "age": 32
+  },
+  "Thibaut Courtois": {
+    "cn": "库尔图瓦",
+    "team": "比利时",
+    "jersey": "1",
+    "position": "G",
+    "age": 34
+  },
+  "Timothy Castagne": {
+    "cn": "卡斯塔涅",
+    "team": "比利时",
+    "jersey": "21",
+    "position": "D",
+    "age": 30
+  },
+  "Maxim De Cuyper": {
+    "cn": "德凯珀",
+    "team": "比利时",
+    "jersey": "5",
+    "position": "D",
+    "age": 25
+  },
+  "Arthur Theate": {
+    "cn": "泰特",
+    "team": "比利时",
+    "jersey": "3",
+    "position": "D",
+    "age": 26
+  },
+  "Zeno Debast": {
+    "cn": "德巴斯特",
+    "team": "比利时",
+    "jersey": "2",
+    "position": "D",
+    "age": 22
+  },
+  "Kevin De Bruyne": {
+    "cn": "德布劳内",
+    "team": "比利时",
+    "jersey": "7",
+    "position": "M",
+    "age": 34
+  },
+  "Youri Tielemans": {
+    "cn": "蒂勒曼斯",
+    "team": "比利时",
+    "jersey": "8",
+    "position": "M",
+    "age": 29
+  },
+  "Amadou Onana": {
+    "cn": "奥纳纳",
+    "team": "比利时",
+    "jersey": "24",
+    "position": "M",
+    "age": 24
+  },
+  "Romelu Lukaku": {
+    "cn": "卢卡库",
+    "team": "比利时",
+    "jersey": "9",
+    "position": "F",
+    "age": 33
+  },
+  "Leandro Trossard": {
+    "cn": "特罗萨德",
+    "team": "比利时",
+    "jersey": "10",
+    "position": "F",
+    "age": 31
+  },
+  "Jérémy Doku": {
+    "cn": "多库",
+    "team": "比利时",
+    "jersey": "11",
+    "position": "F",
+    "age": 24
+  },
+  "Charles De Ketelaere": {
+    "cn": "德凯特拉雷",
+    "team": "比利时",
+    "jersey": "17",
+    "position": "F",
+    "age": 25
+  },
+  "Nikola Vasilj": {
+    "cn": "瓦西利",
+    "team": "波黑",
+    "jersey": "1",
+    "position": "G",
+    "age": 30
+  },
+  "Ederson": {
+    "cn": "埃德松",
+    "team": "巴西",
+    "jersey": "23",
+    "position": "G",
+    "age": 32
+  },
+  "Alisson Becker": {
+    "cn": "阿利松",
+    "team": "巴西",
+    "jersey": "1",
+    "position": "G",
+    "age": 33
+  },
+  "Alex Sandro": {
+    "cn": "阿莱士-桑德罗",
+    "team": "巴西",
+    "jersey": "6",
+    "position": "D",
+    "age": 35
+  },
+  "Marquinhos": {
+    "cn": "马尔基尼奥斯",
+    "team": "巴西",
+    "jersey": "4",
+    "position": "D",
+    "age": 32
+  },
+  "Danilo": {
+    "cn": "达尼洛",
+    "team": "巴西",
+    "jersey": "13",
+    "position": "D",
+    "age": 34
+  },
+  "Gabriel Magalhães": {
+    "cn": "加布里埃尔",
+    "team": "巴西",
+    "jersey": "3",
+    "position": "D",
+    "age": 28
+  },
+  "Bremer": {
+    "cn": "布雷默",
+    "team": "巴西",
+    "jersey": "14",
+    "position": "D",
+    "age": 29
+  },
+  "Casemiro": {
+    "cn": "卡塞米罗",
+    "team": "巴西",
+    "jersey": "5",
+    "position": "M",
+    "age": 34
+  },
+  "Bruno Guimarães": {
+    "cn": "吉马良斯",
+    "team": "巴西",
+    "jersey": "8",
+    "position": "M",
+    "age": 28
+  },
+  "Lucas Paquetá": {
+    "cn": "帕奎塔",
+    "team": "巴西",
+    "jersey": "20",
+    "position": "M",
+    "age": 28
+  },
+  "Neymar": {
+    "cn": "内马尔",
+    "team": "巴西",
+    "jersey": "10",
+    "position": "F",
+    "age": 34
+  },
+  "Raphinha": {
+    "cn": "拉菲尼亚",
+    "team": "巴西",
+    "jersey": "11",
+    "position": "F",
+    "age": 29
+  },
+  "Vinícius Júnior": {
+    "cn": "维尼修斯",
+    "team": "巴西",
+    "jersey": "7",
+    "position": "F",
+    "age": 25
+  },
+  "Endrick": {
+    "cn": "恩德里克",
+    "team": "巴西",
+    "jersey": "19",
+    "position": "F",
+    "age": 19
+  },
+  "Alphonso Davies": {
+    "cn": "戴维斯",
+    "team": "加拿大",
+    "jersey": "19",
+    "position": "D",
+    "age": 25
+  },
+  "Derek Cornelius": {
+    "cn": "科尼利乌斯",
+    "team": "加拿大",
+    "jersey": "13",
+    "position": "D",
+    "age": 28
+  },
+  "Alistair Johnston": {
+    "cn": "约翰斯顿",
+    "team": "加拿大",
+    "jersey": "2",
+    "position": "D",
+    "age": 27
+  },
+  "Jonathan Osorio": {
+    "cn": "奥索里奥",
+    "team": "加拿大",
+    "jersey": "21",
+    "position": "M",
+    "age": 33
+  },
+  "Stephen Eustáquio": {
+    "cn": "尤斯塔基奥",
+    "team": "加拿大",
+    "jersey": "7",
+    "position": "M",
+    "age": 29
+  },
+  "Cyle Larin": {
+    "cn": "拉林",
+    "team": "加拿大",
+    "jersey": "9",
+    "position": "F",
+    "age": 31
+  },
+  "Jonathan David": {
+    "cn": "戴维",
+    "team": "加拿大",
+    "jersey": "10",
+    "position": "F",
+    "age": 26
+  },
+  "Tajon Buchanan": {
+    "cn": "布坎南",
+    "team": "加拿大",
+    "jersey": "17",
+    "position": "F",
+    "age": 27
+  },
+  "Vozinha": {
+    "cn": "塔瓦雷斯",
+    "team": "佛得角",
+    "jersey": "1",
+    "position": "G",
+    "age": 40
+  },
+  "Stopira": {
+    "cn": "斯托皮拉",
+    "team": "佛得角",
+    "jersey": "2",
+    "position": "D",
+    "age": 38
+  },
+  "Steven Moreira": {
+    "cn": "莫雷拉",
+    "team": "佛得角",
+    "jersey": "22",
+    "position": "D",
+    "age": 31
+  },
+  "Logan Costa": {
+    "cn": "洛根-科斯塔",
+    "team": "佛得角",
+    "jersey": "5",
+    "position": "D",
+    "age": 25
+  },
+  "Deroy Duarte": {
+    "cn": "德罗伊-杜阿尔特",
+    "team": "佛得角",
+    "jersey": "14",
+    "position": "M",
+    "age": 26
+  },
+  "Kevin Pina": {
+    "cn": "凯文-皮纳",
+    "team": "佛得角",
+    "jersey": "6",
+    "position": "M",
+    "age": 29
+  },
+  "Ryan Mendes": {
+    "cn": "瑞安-门德斯",
+    "team": "佛得角",
+    "jersey": "20",
+    "position": "F",
+    "age": 36
+  },
+  "Garry Rodrigues": {
+    "cn": "加里-罗德里格斯",
+    "team": "佛得角",
+    "jersey": "11",
+    "position": "F",
+    "age": 35
+  },
+  "Camilo Vargas": {
+    "cn": "巴尔加斯",
+    "team": "哥伦比亚",
+    "jersey": "12",
+    "position": "G",
+    "age": 37
+  },
+  "Daniel Muñoz": {
+    "cn": "穆尼奥斯",
+    "team": "哥伦比亚",
+    "jersey": "2",
+    "position": "D",
+    "age": 30
+  },
+  "Santiago Arias": {
+    "cn": "阿里亚斯",
+    "team": "哥伦比亚",
+    "jersey": "4",
+    "position": "D",
+    "age": 34
+  },
+  "Davinson Sánchez": {
+    "cn": "达文森",
+    "team": "哥伦比亚",
+    "jersey": "23",
+    "position": "D",
+    "age": 29
+  },
+  "James Rodríguez": {
+    "cn": "哈梅斯",
+    "team": "哥伦比亚",
+    "jersey": "10",
+    "position": "M",
+    "age": 34
+  },
+  "Richard Ríos": {
+    "cn": "里奥斯",
+    "team": "哥伦比亚",
+    "jersey": "6",
+    "position": "M",
+    "age": 26
+  },
+  "Jhon Córdoba": {
+    "cn": "科尔多巴",
+    "team": "哥伦比亚",
+    "jersey": "9",
+    "position": "F",
+    "age": 33
+  },
+  "Luis Díaz": {
+    "cn": "路易斯迪亚斯",
+    "team": "哥伦比亚",
+    "jersey": "7",
+    "position": "F",
+    "age": 29
+  },
+  "Lionel Mpasi": {
+    "cn": "姆帕西",
+    "team": "刚果金",
+    "jersey": "1",
+    "position": "G",
+    "age": 31
+  },
+  "Arthur Masuaku": {
+    "cn": "马苏亚库",
+    "team": "刚果金",
+    "jersey": "26",
+    "position": "D",
+    "age": 32
+  },
+  "Chancel Mbemba": {
+    "cn": "姆本巴",
+    "team": "刚果金",
+    "jersey": "22",
+    "position": "D",
+    "age": 31
+  },
+  "Axel Tuanzebe": {
+    "cn": "图安泽贝",
+    "team": "刚果金",
+    "jersey": "4",
+    "position": "D",
+    "age": 28
+  },
+  "Aaron Wan-Bissaka": {
+    "cn": "万-比萨卡",
+    "team": "刚果金",
+    "jersey": "2",
+    "position": "D",
+    "age": 28
+  },
+  "Gaël Kakuta": {
+    "cn": "卡库塔",
+    "team": "刚果金",
+    "jersey": "11",
+    "position": "M",
+    "age": 34
+  },
+  "Théo Bongonda": {
+    "cn": "邦贡达",
+    "team": "刚果金",
+    "jersey": "10",
+    "position": "M",
+    "age": 30
+  },
+  "Charles Pickel": {
+    "cn": "皮克尔",
+    "team": "刚果金",
+    "jersey": "18",
+    "position": "M",
+    "age": 29
+  },
+  "Samuel Moutoussamy": {
+    "cn": "穆图萨米",
+    "team": "刚果金",
+    "jersey": "8",
+    "position": "M",
+    "age": 29
+  },
+  "Edo Kayembe": {
+    "cn": "埃多-卡延贝",
+    "team": "刚果金",
+    "jersey": "25",
+    "position": "M",
+    "age": 28
+  },
+  "Cédric Bakambu": {
+    "cn": "巴坎布",
+    "team": "刚果金",
+    "jersey": "17",
+    "position": "F",
+    "age": 35
+  },
+  "Yoane Wissa": {
+    "cn": "维萨",
+    "team": "刚果金",
+    "jersey": "20",
+    "position": "F",
+    "age": 29
+  },
+  "Ante Budimir": {
+    "cn": "布迪米尔",
+    "team": "克罗地亚",
+    "jersey": "11",
+    "position": "F",
+    "age": 34
+  },
+  "Eloy Room": {
+    "cn": "鲁姆",
+    "team": "库拉索",
+    "jersey": "1",
+    "position": "G",
+    "age": 37
+  },
+  "Sherel Floranus": {
+    "cn": "弗洛拉努斯",
+    "team": "库拉索",
+    "jersey": "5",
+    "position": "D",
+    "age": 27
+  },
+  "Roshon van Eijma": {
+    "cn": "范艾玛",
+    "team": "库拉索",
+    "jersey": "4",
+    "position": "D",
+    "age": 28
+  },
+  "Leandro Bacuna": {
+    "cn": "莱安德罗-巴库纳",
+    "team": "库拉索",
+    "jersey": "10",
+    "position": "M",
+    "age": 34
+  },
+  "Juninho Bacuna": {
+    "cn": "朱尼尼奥-巴库纳",
+    "team": "库拉索",
+    "jersey": "7",
+    "position": "M",
+    "age": 28
+  },
+  "Tahith Chong": {
+    "cn": "塔希斯-钟",
+    "team": "库拉索",
+    "jersey": "21",
+    "position": "M",
+    "age": 26
+  },
+  "Jürgen Locadia": {
+    "cn": "洛卡迪亚",
+    "team": "库拉索",
+    "jersey": "9",
+    "position": "F",
+    "age": 32
+  },
+  "Brandley Kuwas": {
+    "cn": "塞利斯",
+    "team": "库拉索",
+    "jersey": "17",
+    "position": "F",
+    "age": 33
+  },
+  "Sontje Hansen": {
+    "cn": "科梅嫩西亚",
+    "team": "库拉索",
+    "jersey": "12",
+    "position": "F",
+    "age": 24
+  },
+  "Patrik Schick": {
+    "cn": "希克",
+    "team": "捷克",
+    "jersey": "10",
+    "position": "F",
+    "age": 30
+  },
+  "Hernán Galíndez": {
+    "cn": "加拉尔萨",
+    "team": "厄瓜多尔",
+    "jersey": "1",
+    "position": "G",
+    "age": 39
+  },
+  "Ángelo Preciado": {
+    "cn": "普雷西亚多",
+    "team": "厄瓜多尔",
+    "jersey": "17",
+    "position": "D",
+    "age": 28
+  },
+  "Alan Franco": {
+    "cn": "多明格斯",
+    "team": "厄瓜多尔",
+    "jersey": "21",
+    "position": "M",
+    "age": 27
+  },
+  "Moisés Caicedo": {
+    "cn": "凯塞多",
+    "team": "厄瓜多尔",
+    "jersey": "23",
+    "position": "M",
+    "age": 24
+  },
+  "Kendry Páez": {
+    "cn": "帕埃斯",
+    "team": "厄瓜多尔",
+    "jersey": "10",
+    "position": "M",
+    "age": 19
+  },
+  "Enner Valencia": {
+    "cn": "巴伦西亚",
+    "team": "厄瓜多尔",
+    "jersey": "13",
+    "position": "F",
+    "age": 36
+  },
+  "Gonzalo Plata": {
+    "cn": "普拉塔",
+    "team": "厄瓜多尔",
+    "jersey": "19",
+    "position": "F",
+    "age": 25
+  },
+  "Mohamed Hany": {
+    "cn": "法图赫",
+    "team": "埃及",
+    "jersey": "3",
+    "position": "D",
+    "age": 30
+  },
+  "Mohamed Salah": {
+    "cn": "萨拉赫",
+    "team": "埃及",
+    "jersey": "10",
+    "position": "F",
+    "age": 33
+  },
+  "Omar Marmoush": {
+    "cn": "马莫什",
+    "team": "埃及",
+    "jersey": "22",
+    "position": "F",
+    "age": 27
+  },
+  "Jordan Pickford": {
+    "cn": "皮克福德",
+    "team": "英格兰",
+    "jersey": "1",
+    "position": "G",
+    "age": 32
+  },
+  "John Stones": {
+    "cn": "斯通斯",
+    "team": "英格兰",
+    "jersey": "5",
+    "position": "D",
+    "age": 32
+  },
+  "Reece James": {
+    "cn": "里斯-詹姆斯",
+    "team": "英格兰",
+    "jersey": "24",
+    "position": "D",
+    "age": 26
+  },
+  "Marc Guéhi": {
+    "cn": "圭希",
+    "team": "英格兰",
+    "jersey": "6",
+    "position": "D",
+    "age": 25
+  },
+  "Djed Spence": {
+    "cn": "斯彭斯",
+    "team": "英格兰",
+    "jersey": "25",
+    "position": "D",
+    "age": 25
+  },
+  "Declan Rice": {
+    "cn": "赖斯",
+    "team": "英格兰",
+    "jersey": "4",
+    "position": "M",
+    "age": 27
+  },
+  "Jude Bellingham": {
+    "cn": "贝林厄姆",
+    "team": "英格兰",
+    "jersey": "10",
+    "position": "M",
+    "age": 22
+  },
+  "Kobbie Mainoo": {
+    "cn": "梅努",
+    "team": "英格兰",
+    "jersey": "16",
+    "position": "M",
+    "age": 21
+  },
+  "Harry Kane": {
+    "cn": "凯恩",
+    "team": "英格兰",
+    "jersey": "9",
+    "position": "F",
+    "age": 32
+  },
+  "Marcus Rashford": {
+    "cn": "拉什福德",
+    "team": "英格兰",
+    "jersey": "11",
+    "position": "F",
+    "age": 28
+  },
+  "Bukayo Saka": {
+    "cn": "萨卡",
+    "team": "英格兰",
+    "jersey": "7",
+    "position": "F",
+    "age": 24
+  },
+  "Mike Maignan": {
+    "cn": "迈尼昂",
+    "team": "法国",
+    "jersey": "16",
+    "position": "G",
+    "age": 30
+  },
+  "Dayot Upamecano": {
+    "cn": "于帕梅卡诺",
+    "team": "法国",
+    "jersey": "4",
+    "position": "D",
+    "age": 27
+  },
+  "Jules Koundé": {
+    "cn": "孔德",
+    "team": "法国",
+    "jersey": "5",
+    "position": "D",
+    "age": 27
+  },
+  "William Saliba": {
+    "cn": "萨利巴",
+    "team": "法国",
+    "jersey": "17",
+    "position": "D",
+    "age": 25
+  },
+  "N'Golo Kanté": {
+    "cn": "坎特",
+    "team": "法国",
+    "jersey": "13",
+    "position": "M",
+    "age": 35
+  },
+  "Adrien Rabiot": {
+    "cn": "拉比奥",
+    "team": "法国",
+    "jersey": "14",
+    "position": "M",
+    "age": 31
+  },
+  "Aurélien Tchouaméni": {
+    "cn": "琼阿梅尼",
+    "team": "法国",
+    "jersey": "8",
+    "position": "M",
+    "age": 26
+  },
+  "Michael Olise": {
+    "cn": "奥利塞",
+    "team": "法国",
+    "jersey": "11",
+    "position": "M",
+    "age": 24
+  },
+  "Warren Zaïre-Emery": {
+    "cn": "埃梅里",
+    "team": "法国",
+    "jersey": "18",
+    "position": "M",
+    "age": 20
+  },
+  "Marcus Thuram": {
+    "cn": "图拉姆",
+    "team": "法国",
+    "jersey": "9",
+    "position": "F",
+    "age": 28
+  },
+  "Ousmane Dembélé": {
+    "cn": "登贝莱",
+    "team": "法国",
+    "jersey": "7",
+    "position": "F",
+    "age": 29
+  },
+  "Kylian Mbappé": {
+    "cn": "姆巴佩",
+    "team": "法国",
+    "jersey": "10",
+    "position": "F",
+    "age": 27
+  },
+  "Manuel Neuer": {
+    "cn": "诺伊尔",
+    "team": "德国",
+    "jersey": "1",
+    "position": "G",
+    "age": 40
+  },
+  "Antonio Rüdiger": {
+    "cn": "吕迪格",
+    "team": "德国",
+    "jersey": "2",
+    "position": "D",
+    "age": 33
+  },
+  "David Raum": {
+    "cn": "劳姆",
+    "team": "德国",
+    "jersey": "22",
+    "position": "D",
+    "age": 28
+  },
+  "Nico Schlotterbeck": {
+    "cn": "施洛特贝克",
+    "team": "德国",
+    "jersey": "15",
+    "position": "D",
+    "age": 26
+  },
+  "Leon Goretzka": {
+    "cn": "戈雷茨卡",
+    "team": "德国",
+    "jersey": "8",
+    "position": "M",
+    "age": 31
+  },
+  "Joshua Kimmich": {
+    "cn": "基米希",
+    "team": "德国",
+    "jersey": "6",
+    "position": "M",
+    "age": 31
+  },
+  "Florian Wirtz": {
+    "cn": "维尔茨",
+    "team": "德国",
+    "jersey": "17",
+    "position": "M",
+    "age": 23
+  },
+  "Jamal Musiala": {
+    "cn": "穆西亚拉",
+    "team": "德国",
+    "jersey": "10",
+    "position": "M",
+    "age": 23
+  },
+  "Leroy Sané": {
+    "cn": "萨内",
+    "team": "德国",
+    "jersey": "19",
+    "position": "F",
+    "age": 30
+  },
+  "Kai Havertz": {
+    "cn": "哈弗茨",
+    "team": "德国",
+    "jersey": "7",
+    "position": "F",
+    "age": 27
+  },
+  "Thomas Partey": {
+    "cn": "帕尔特",
+    "team": "加纳",
+    "jersey": "5",
+    "position": "M",
+    "age": 32
+  },
+  "Iñaki Williams": {
+    "cn": "伊尼亚基",
+    "team": "加纳",
+    "jersey": "19",
+    "position": "F",
+    "age": 31
+  },
+  "Kamaldeen Sulemana": {
+    "cn": "苏莱马纳",
+    "team": "加纳",
+    "jersey": "22",
+    "position": "F",
+    "age": 24
+  },
+  "Ernest Nuamah": {
+    "cn": "阿蒂苏",
+    "team": "加纳",
+    "jersey": "24",
+    "position": "F",
+    "age": 22
+  },
+  "Johny Placide": {
+    "cn": "圣弗洛尔",
+    "team": "海地",
+    "jersey": "1",
+    "position": "G",
+    "age": 38
+  },
+  "Carlens Arcus": {
+    "cn": "阿尔库斯",
+    "team": "海地",
+    "jersey": "2",
+    "position": "D",
+    "age": 29
+  },
+  "Hannes Delcroix": {
+    "cn": "德尔克鲁瓦",
+    "team": "海地",
+    "jersey": "5",
+    "position": "D",
+    "age": 27
+  },
+  "Carl Sainté": {
+    "cn": "塞莱曼",
+    "team": "海地",
+    "jersey": "6",
+    "position": "M",
+    "age": 23
+  },
+  "Duckens Nazon": {
+    "cn": "纳宗",
+    "team": "海地",
+    "jersey": "9",
+    "position": "F",
+    "age": 32
+  },
+  "Frantzdy Pierrot": {
+    "cn": "皮埃罗",
+    "team": "海地",
+    "jersey": "20",
+    "position": "F",
+    "age": 31
+  },
+  "Alireza Beiranvand": {
+    "cn": "贝兰万德",
+    "team": "伊朗",
+    "jersey": "1",
+    "position": "G",
+    "age": 33
+  },
+  "Ehsan Hajsafi": {
+    "cn": "哈吉萨菲",
+    "team": "伊朗",
+    "jersey": "3",
+    "position": "D",
+    "age": 36
+  },
+  "Milad Mohammadi": {
+    "cn": "穆罕默迪",
+    "team": "伊朗",
+    "jersey": "5",
+    "position": "D",
+    "age": 32
+  },
+  "Alireza Jahanbakhsh": {
+    "cn": "贾汗巴赫什",
+    "team": "伊朗",
+    "jersey": "7",
+    "position": "M",
+    "age": 32
+  },
+  "Saeid Ezatolahi": {
+    "cn": "易卜拉希米",
+    "team": "伊朗",
+    "jersey": "6",
+    "position": "M",
+    "age": 29
+  },
+  "Saman Ghoddos": {
+    "cn": "古多斯",
+    "team": "伊朗",
+    "jersey": "14",
+    "position": "M",
+    "age": 32
+  },
+  "Mehdi Taremi": {
+    "cn": "塔雷米",
+    "team": "伊朗",
+    "jersey": "9",
+    "position": "F",
+    "age": 33
+  },
+  "Jalal Hassan": {
+    "cn": "哈米德",
+    "team": "伊拉克",
+    "jersey": "12",
+    "position": "G",
+    "age": 35
+  },
+  "Ibrahim Bayesh": {
+    "cn": "易卜拉欣",
+    "team": "伊拉克",
+    "jersey": "8",
+    "position": "M",
+    "age": 26
+  },
+  "Aymen Hussein": {
+    "cn": "艾门",
+    "team": "伊拉克",
+    "jersey": "18",
+    "position": "F",
+    "age": 30
+  },
+  "Mohanad Ali": {
+    "cn": "穆罕纳德",
+    "team": "伊拉克",
+    "jersey": "10",
+    "position": "F",
+    "age": 25
+  },
+  "Yahia Fofana": {
+    "cn": "亚希亚-福法纳",
+    "team": "科特迪瓦",
+    "jersey": "1",
+    "position": "G",
+    "age": 25
+  },
+  "Ghislain Konan": {
+    "cn": "科南",
+    "team": "科特迪瓦",
+    "jersey": "3",
+    "position": "D",
+    "age": 30
+  },
+  "Wilfried Singo": {
+    "cn": "辛戈",
+    "team": "科特迪瓦",
+    "jersey": "5",
+    "position": "D",
+    "age": 25
+  },
+  "Ousmane Diomande": {
+    "cn": "迪奥曼德",
+    "team": "科特迪瓦",
+    "jersey": "2",
+    "position": "D",
+    "age": 22
+  },
+  "Seko Fofana": {
+    "cn": "塞科-福法纳",
+    "team": "科特迪瓦",
+    "jersey": "6",
+    "position": "M",
+    "age": 31
+  },
+  "Jean Michaël Seri": {
+    "cn": "塞里",
+    "team": "科特迪瓦",
+    "jersey": "4",
+    "position": "M",
+    "age": 34
+  },
+  "Franck Kessié": {
+    "cn": "凯西",
+    "team": "科特迪瓦",
+    "jersey": "8",
+    "position": "M",
+    "age": 29
+  },
+  "Ibrahim Sangaré": {
+    "cn": "桑加雷",
+    "team": "科特迪瓦",
+    "jersey": "18",
+    "position": "M",
+    "age": 28
+  },
+  "Nicolas Pépé": {
+    "cn": "佩佩",
+    "team": "科特迪瓦",
+    "jersey": "19",
+    "position": "F",
+    "age": 31
+  },
+  "Amad Diallo": {
+    "cn": "阿马德",
+    "team": "科特迪瓦",
+    "jersey": "15",
+    "position": "F",
+    "age": 23
+  },
+  "Simon Adingra": {
+    "cn": "阿丁格拉",
+    "team": "科特迪瓦",
+    "jersey": "10",
+    "position": "F",
+    "age": 24
+  },
+  "Zion Suzuki": {
+    "cn": "铃木彩艳",
+    "team": "日本",
+    "jersey": "1",
+    "position": "G",
+    "age": 23
+  },
+  "Hiroki Ito": {
+    "cn": "伊藤洋辉",
+    "team": "日本",
+    "jersey": "21",
+    "position": "D",
+    "age": 27
+  },
+  "Takehiro Tomiyasu": {
+    "cn": "富安健洋",
+    "team": "日本",
+    "jersey": "22",
+    "position": "D",
+    "age": 27
+  },
+  "Yukinari Sugawara": {
+    "cn": "菅原由势",
+    "team": "日本",
+    "jersey": "2",
+    "position": "D",
+    "age": 25
+  },
+  "Ritsu Doan": {
+    "cn": "堂安律",
+    "team": "日本",
+    "jersey": "10",
+    "position": "M",
+    "age": 27
+  },
+  "Ao Tanaka": {
+    "cn": "田中碧",
+    "team": "日本",
+    "jersey": "7",
+    "position": "M",
+    "age": 27
+  },
+  "Junya Ito": {
+    "cn": "伊东纯也",
+    "team": "日本",
+    "jersey": "14",
+    "position": "F",
+    "age": 33
+  },
+  "Takefusa Kubo": {
+    "cn": "久保建英",
+    "team": "日本",
+    "jersey": "8",
+    "position": "F",
+    "age": 25
+  },
+  "Keito Nakamura": {
+    "cn": "中村敬斗",
+    "team": "日本",
+    "jersey": "13",
+    "position": "F",
+    "age": 25
+  },
+  "Ayase Ueda": {
+    "cn": "上田绮世",
+    "team": "日本",
+    "jersey": "18",
+    "position": "F",
+    "age": 27
+  },
+  "Yazan Al-Arab": {
+    "cn": "谢菲",
+    "team": "约旦",
+    "jersey": "5",
+    "position": "D",
+    "age": 30
+  },
+  "Abdallah Nasib": {
+    "cn": "阿卜杜拉",
+    "team": "约旦",
+    "jersey": "3",
+    "position": "D",
+    "age": 32
+  },
+  "Noor Al-Rawabdeh": {
+    "cn": "达阿乌德",
+    "team": "约旦",
+    "jersey": "8",
+    "position": "M",
+    "age": 29
+  },
+  "Mousa Al-Tamari": {
+    "cn": "塔马里",
+    "team": "约旦",
+    "jersey": "10",
+    "position": "F",
+    "age": 29
+  },
+  "Ali Olwan": {
+    "cn": "塔阿马里",
+    "team": "约旦",
+    "jersey": "9",
+    "position": "F",
+    "age": 26
+  },
+  "Luis Romo": {
+    "cn": "罗莫",
+    "team": "墨西哥",
+    "jersey": "7",
+    "position": "M",
+    "age": 31
+  },
+  "Raúl Jiménez": {
+    "cn": "希门尼斯",
+    "team": "墨西哥",
+    "jersey": "9",
+    "position": "F",
+    "age": 35
+  },
+  "Alexis Vega": {
+    "cn": "维加",
+    "team": "墨西哥",
+    "jersey": "10",
+    "position": "F",
+    "age": 28
+  },
+  "Yassine Bounou": {
+    "cn": "布努",
+    "team": "摩洛哥",
+    "jersey": "1",
+    "position": "G",
+    "age": 35
+  },
+  "Noussair Mazraoui": {
+    "cn": "马兹拉维",
+    "team": "摩洛哥",
+    "jersey": "3",
+    "position": "D",
+    "age": 28
+  },
+  "Achraf Hakimi": {
+    "cn": "哈基米",
+    "team": "摩洛哥",
+    "jersey": "2",
+    "position": "D",
+    "age": 27
+  },
+  "Nayef Aguerd": {
+    "cn": "阿格尔德",
+    "team": "摩洛哥",
+    "jersey": "5",
+    "position": "D",
+    "age": 30
+  },
+  "Sofyan Amrabat": {
+    "cn": "阿姆拉巴特",
+    "team": "摩洛哥",
+    "jersey": "4",
+    "position": "M",
+    "age": 29
+  },
+  "Bart Verbruggen": {
+    "cn": "维尔布鲁根",
+    "team": "荷兰",
+    "jersey": "1",
+    "position": "G",
+    "age": 23
+  },
+  "Virgil van Dijk": {
+    "cn": "范戴克",
+    "team": "荷兰",
+    "jersey": "4",
+    "position": "D",
+    "age": 34
+  },
+  "Nathan Aké": {
+    "cn": "阿凯",
+    "team": "荷兰",
+    "jersey": "5",
+    "position": "D",
+    "age": 31
+  },
+  "Denzel Dumfries": {
+    "cn": "邓弗里斯",
+    "team": "荷兰",
+    "jersey": "22",
+    "position": "D",
+    "age": 30
+  },
+  "Micky van de Ven": {
+    "cn": "范德文",
+    "team": "荷兰",
+    "jersey": "15",
+    "position": "D",
+    "age": 25
+  },
+  "Frenkie de Jong": {
+    "cn": "德容",
+    "team": "荷兰",
+    "jersey": "21",
+    "position": "M",
+    "age": 29
+  },
+  "Tijjani Reijnders": {
+    "cn": "雷恩德斯",
+    "team": "荷兰",
+    "jersey": "14",
+    "position": "M",
+    "age": 27
+  },
+  "Ryan Gravenberch": {
+    "cn": "格拉文贝赫",
+    "team": "荷兰",
+    "jersey": "8",
+    "position": "M",
+    "age": 24
+  },
+  "Memphis Depay": {
+    "cn": "德佩",
+    "team": "荷兰",
+    "jersey": "10",
+    "position": "F",
+    "age": 32
+  },
+  "Cody Gakpo": {
+    "cn": "加克波",
+    "team": "荷兰",
+    "jersey": "11",
+    "position": "F",
+    "age": 27
+  },
+  "Max Crocombe": {
+    "cn": "克罗科姆",
+    "team": "新西兰",
+    "jersey": "1",
+    "position": "G",
+    "age": 32
+  },
+  "Michael Boxall": {
+    "cn": "博克索尔",
+    "team": "新西兰",
+    "jersey": "5",
+    "position": "D",
+    "age": 37
+  },
+  "Tommy Smith": {
+    "cn": "劳",
+    "team": "新西兰",
+    "jersey": "26",
+    "position": "D",
+    "age": 36
+  },
+  "Tim Payne": {
+    "cn": "佩恩",
+    "team": "新西兰",
+    "jersey": "2",
+    "position": "D",
+    "age": 32
+  },
+  "Liberato Cacace": {
+    "cn": "卡卡切",
+    "team": "新西兰",
+    "jersey": "13",
+    "position": "D",
+    "age": 25
+  },
+  "Tyler Bindon": {
+    "cn": "宾顿",
+    "team": "新西兰",
+    "jersey": "4",
+    "position": "D",
+    "age": 21
+  },
+  "Sarpreet Singh": {
+    "cn": "萨普里特-辛格",
+    "team": "新西兰",
+    "jersey": "10",
+    "position": "M",
+    "age": 27
+  },
+  "Joe Bell": {
+    "cn": "乔-贝尔",
+    "team": "新西兰",
+    "jersey": "6",
+    "position": "M",
+    "age": 27
+  },
+  "Matthew Garbett": {
+    "cn": "加贝特",
+    "team": "新西兰",
+    "jersey": "7",
+    "position": "M",
+    "age": 24
+  },
+  "Chris Wood": {
+    "cn": "克里斯-伍德",
+    "team": "新西兰",
+    "jersey": "9",
+    "position": "F",
+    "age": 34
+  },
+  "Elijah Just": {
+    "cn": "伊莱-贾斯特",
+    "team": "新西兰",
+    "jersey": "11",
+    "position": "F",
+    "age": 26
+  },
+  "Ørjan Nyland": {
+    "cn": "尼兰德",
+    "team": "挪威",
+    "jersey": "1",
+    "position": "G",
+    "age": 35
+  },
+  "Kristoffer Ajer": {
+    "cn": "阿杰尔",
+    "team": "挪威",
+    "jersey": "3",
+    "position": "D",
+    "age": 28
+  },
+  "Martin Ødegaard": {
+    "cn": "厄德高",
+    "team": "挪威",
+    "jersey": "10",
+    "position": "M",
+    "age": 27
+  },
+  "Sander Berge": {
+    "cn": "贝尔格",
+    "team": "挪威",
+    "jersey": "8",
+    "position": "M",
+    "age": 28
+  },
+  "Kristian Thorstvedt": {
+    "cn": "金",
+    "team": "挪威",
+    "jersey": "18",
+    "position": "M",
+    "age": 27
+  },
+  "Antonio Nusa": {
+    "cn": "努萨",
+    "team": "挪威",
+    "jersey": "20",
+    "position": "M",
+    "age": 21
+  },
+  "Alexander Sørloth": {
+    "cn": "瑟尔洛特",
+    "team": "挪威",
+    "jersey": "7",
+    "position": "F",
+    "age": 30
+  },
+  "Erling Haaland": {
+    "cn": "哈兰德",
+    "team": "挪威",
+    "jersey": "9",
+    "position": "F",
+    "age": 25
+  },
+  "Fidel Escobar": {
+    "cn": "埃斯科巴",
+    "team": "巴拿马",
+    "jersey": "4",
+    "position": "D",
+    "age": 31
+  },
+  "Aníbal Godoy": {
+    "cn": "戈多伊",
+    "team": "巴拿马",
+    "jersey": "20",
+    "position": "M",
+    "age": 36
+  },
+  "Adalberto Carrasquilla": {
+    "cn": "法哈尔多",
+    "team": "巴拿马",
+    "jersey": "8",
+    "position": "M",
+    "age": 27
+  },
+  "José Luis Rodríguez": {
+    "cn": "科珀斯",
+    "team": "巴拿马",
+    "jersey": "7",
+    "position": "M",
+    "age": 27
+  },
+  "Alberto Quintero": {
+    "cn": "卡里略",
+    "team": "巴拿马",
+    "jersey": "19",
+    "position": "F",
+    "age": 38
+  },
+  "José Fajardo": {
+    "cn": "佩尼多",
+    "team": "巴拿马",
+    "jersey": "17",
+    "position": "F",
+    "age": 32
+  },
+  "Gustavo Gómez": {
+    "cn": "戈麦斯",
+    "team": "巴拉圭",
+    "jersey": "15",
+    "position": "D",
+    "age": 33
+  },
+  "Julio Enciso": {
+    "cn": "恩西索",
+    "team": "巴拉圭",
+    "jersey": "19",
+    "position": "M",
+    "age": 22
+  },
+  "Andrés Cubas": {
+    "cn": "库巴斯",
+    "team": "巴拉圭",
+    "jersey": "14",
+    "position": "M",
+    "age": 30
+  },
+  "Miguel Almirón": {
+    "cn": "阿尔米隆",
+    "team": "巴拉圭",
+    "jersey": "10",
+    "position": "F",
+    "age": 32
+  },
+  "Antonio Sanabria": {
+    "cn": "萨纳布里亚",
+    "team": "巴拉圭",
+    "jersey": "9",
+    "position": "F",
+    "age": 30
+  },
+  "Ramón Sosa": {
+    "cn": "卡多索",
+    "team": "巴拉圭",
+    "jersey": "7",
+    "position": "F",
+    "age": 26
+  },
+  "Diogo Costa": {
+    "cn": "迪奥戈-科斯塔",
+    "team": "葡萄牙",
+    "jersey": "1",
+    "position": "G",
+    "age": 26
+  },
+  "João Cancelo": {
+    "cn": "坎塞洛",
+    "team": "葡萄牙",
+    "jersey": "20",
+    "position": "D",
+    "age": 32
+  },
+  "Rúben Dias": {
+    "cn": "鲁本-迪亚斯",
+    "team": "葡萄牙",
+    "jersey": "3",
+    "position": "D",
+    "age": 29
+  },
+  "Nuno Mendes": {
+    "cn": "努诺-门德斯",
+    "team": "葡萄牙",
+    "jersey": "25",
+    "position": "D",
+    "age": 23
+  },
+  "Gonçalo Inácio": {
+    "cn": "伊纳西奥",
+    "team": "葡萄牙",
+    "jersey": "14",
+    "position": "D",
+    "age": 24
+  },
+  "Bruno Fernandes": {
+    "cn": "B费",
+    "team": "葡萄牙",
+    "jersey": "8",
+    "position": "M",
+    "age": 31
+  },
+  "Bernardo Silva": {
+    "cn": "贝尔纳多",
+    "team": "葡萄牙",
+    "jersey": "10",
+    "position": "M",
+    "age": 31
+  },
+  "Vitinha": {
+    "cn": "维蒂尼亚",
+    "team": "葡萄牙",
+    "jersey": "23",
+    "position": "M",
+    "age": 26
+  },
+  "João Neves": {
+    "cn": "若昂-内维斯",
+    "team": "葡萄牙",
+    "jersey": "15",
+    "position": "M",
+    "age": 21
+  },
+  "Cristiano Ronaldo": {
+    "cn": "C罗",
+    "team": "葡萄牙",
+    "jersey": "7",
+    "position": "F",
+    "age": 41
+  },
+  "Rafael Leão": {
+    "cn": "莱奥",
+    "team": "葡萄牙",
+    "jersey": "17",
+    "position": "F",
+    "age": 27
+  },
+  "Meshaal Barsham": {
+    "cn": "巴尔沙姆",
+    "team": "卡塔尔",
+    "jersey": "22",
+    "position": "G",
+    "age": 28
+  },
+  "Boualem Khoukhi": {
+    "cn": "阿赫拉克",
+    "team": "卡塔尔",
+    "jersey": "16",
+    "position": "D",
+    "age": 35
+  },
+  "Abdulaziz Hatem": {
+    "cn": "穆内尔",
+    "team": "卡塔尔",
+    "jersey": "6",
+    "position": "M",
+    "age": 35
+  },
+  "Karim Boudiaf": {
+    "cn": "布迪亚夫",
+    "team": "卡塔尔",
+    "jersey": "12",
+    "position": "M",
+    "age": 35
+  },
+  "Assim Madibo": {
+    "cn": "马迪博",
+    "team": "卡塔尔",
+    "jersey": "23",
+    "position": "M",
+    "age": 29
+  },
+  "Almoez Ali": {
+    "cn": "阿里",
+    "team": "卡塔尔",
+    "jersey": "19",
+    "position": "F",
+    "age": 29
+  },
+  "Akram Afif": {
+    "cn": "阿菲夫",
+    "team": "卡塔尔",
+    "jersey": "11",
+    "position": "F",
+    "age": 29
+  },
+  "Hassan Al-Haydos": {
+    "cn": "海多斯",
+    "team": "卡塔尔",
+    "jersey": "10",
+    "position": "F",
+    "age": 35
+  },
+  "Mohammed Al-Owais": {
+    "cn": "奥瓦伊斯",
+    "team": "沙特",
+    "jersey": "21",
+    "position": "G",
+    "age": 34
+  },
+  "Saud Abdulhamid": {
+    "cn": "阿卜杜勒哈米德",
+    "team": "沙特",
+    "jersey": "12",
+    "position": "D",
+    "age": 26
+  },
+  "Salem Al-Dawsari": {
+    "cn": "道萨里",
+    "team": "沙特",
+    "jersey": "10",
+    "position": "M",
+    "age": 34
+  },
+  "Mohamed Kanno": {
+    "cn": "坎诺",
+    "team": "沙特",
+    "jersey": "23",
+    "position": "M",
+    "age": 31
+  },
+  "Abdullah Al-Khaibari": {
+    "cn": "布赖坎",
+    "team": "沙特",
+    "jersey": "15",
+    "position": "M",
+    "age": 29
+  },
+  "Saleh Al-Shehri": {
+    "cn": "谢赫里",
+    "team": "沙特",
+    "jersey": "11",
+    "position": "F",
+    "age": 32
+  },
+  "Angus Gunn": {
+    "cn": "古恩",
+    "team": "苏格兰",
+    "jersey": "1",
+    "position": "G",
+    "age": 30
+  },
+  "Grant Hanley": {
+    "cn": "汉利",
+    "team": "苏格兰",
+    "jersey": "5",
+    "position": "D",
+    "age": 34
+  },
+  "Jack Hendry": {
+    "cn": "亨德利",
+    "team": "苏格兰",
+    "jersey": "13",
+    "position": "D",
+    "age": 31
+  },
+  "Kieran Tierney": {
+    "cn": "蒂尔尼",
+    "team": "苏格兰",
+    "jersey": "6",
+    "position": "D",
+    "age": 29
+  },
+  "Nathan Patterson": {
+    "cn": "帕特森",
+    "team": "苏格兰",
+    "jersey": "22",
+    "position": "D",
+    "age": 24
+  },
+  "Aaron Hickey": {
+    "cn": "希基",
+    "team": "苏格兰",
+    "jersey": "2",
+    "position": "D",
+    "age": 24
+  },
+  "John McGinn": {
+    "cn": "麦金",
+    "team": "苏格兰",
+    "jersey": "7",
+    "position": "M",
+    "age": 31
+  },
+  "Scott McTominay": {
+    "cn": "麦克托米奈",
+    "team": "苏格兰",
+    "jersey": "4",
+    "position": "M",
+    "age": 29
+  },
+  "Lyndon Dykes": {
+    "cn": "戴克斯",
+    "team": "苏格兰",
+    "jersey": "9",
+    "position": "F",
+    "age": 30
+  },
+  "Édouard Mendy": {
+    "cn": "迪恩",
+    "team": "塞内加尔",
+    "jersey": "16",
+    "position": "G",
+    "age": 34
+  },
+  "Kalidou Koulibaly": {
+    "cn": "库利巴利",
+    "team": "塞内加尔",
+    "jersey": "3",
+    "position": "D",
+    "age": 34
+  },
+  "Idrissa Gueye": {
+    "cn": "盖耶",
+    "team": "塞内加尔",
+    "jersey": "5",
+    "position": "M",
+    "age": 36
+  },
+  "Pape Gueye": {
+    "cn": "雅库布斯",
+    "team": "塞内加尔",
+    "jersey": "26",
+    "position": "M",
+    "age": 27
+  },
+  "Sadio Mané": {
+    "cn": "马内",
+    "team": "塞内加尔",
+    "jersey": "10",
+    "position": "F",
+    "age": 34
+  },
+  "Ismaïla Sarr": {
+    "cn": "萨尔",
+    "team": "塞内加尔",
+    "jersey": "18",
+    "position": "F",
+    "age": 28
+  },
+  "Iliman Ndiaye": {
+    "cn": "恩迪亚耶",
+    "team": "塞内加尔",
+    "jersey": "13",
+    "position": "F",
+    "age": 26
+  },
+  "Ronwen Williams": {
+    "cn": "威廉姆斯",
+    "team": "南非",
+    "jersey": "1",
+    "position": "G",
+    "age": 34
+  },
+  "Aubrey Modiba": {
+    "cn": "霍尔",
+    "team": "南非",
+    "jersey": "6",
+    "position": "D",
+    "age": 30
+  },
+  "Khuliso Mudau": {
+    "cn": "科伊尼",
+    "team": "南非",
+    "jersey": "20",
+    "position": "D",
+    "age": 31
+  },
+  "Themba Zwane": {
+    "cn": "兹瓦内",
+    "team": "南非",
+    "jersey": "11",
+    "position": "M",
+    "age": 36
+  },
+  "Teboho Mokoena": {
+    "cn": "莫科纳",
+    "team": "南非",
+    "jersey": "4",
+    "position": "M",
+    "age": 29
+  },
+  "Lyle Foster": {
+    "cn": "福斯特",
+    "team": "南非",
+    "jersey": "9",
+    "position": "F",
+    "age": 25
+  },
+  "Evidence Makgopa": {
+    "cn": "马克戈帕",
+    "team": "南非",
+    "jersey": "17",
+    "position": "F",
+    "age": 26
+  },
+  "David Raya": {
+    "cn": "拉波尔塔",
+    "team": "西班牙",
+    "jersey": "1",
+    "position": "G",
+    "age": 30
+  },
+  "Unai Simón": {
+    "cn": "乌奈西蒙",
+    "team": "西班牙",
+    "jersey": "23",
+    "position": "G",
+    "age": 29
+  },
+  "Aymeric Laporte": {
+    "cn": "拉波尔特",
+    "team": "西班牙",
+    "jersey": "14",
+    "position": "D",
+    "age": 32
+  },
+  "Marc Cucurella": {
+    "cn": "库库雷利亚",
+    "team": "西班牙",
+    "jersey": "24",
+    "position": "D",
+    "age": 27
+  },
+  "Pedro Porro": {
+    "cn": "佩德罗-波罗",
+    "team": "西班牙",
+    "jersey": "12",
+    "position": "D",
+    "age": 26
+  },
+  "Pau Cubarsí": {
+    "cn": "库巴西",
+    "team": "西班牙",
+    "jersey": "22",
+    "position": "D",
+    "age": 19
+  },
+  "Dani Olmo": {
+    "cn": "奥尔莫",
+    "team": "西班牙",
+    "jersey": "10",
+    "position": "M",
+    "age": 28
+  },
+  "Rodri": {
+    "cn": "罗德里",
+    "team": "西班牙",
+    "jersey": "16",
+    "position": "M",
+    "age": 29
+  },
+  "Pedri": {
+    "cn": "佩德里",
+    "team": "西班牙",
+    "jersey": "20",
+    "position": "M",
+    "age": 23
+  },
+  "Mikel Oyarzabal": {
+    "cn": "奥亚萨瓦尔",
+    "team": "西班牙",
+    "jersey": "21",
+    "position": "F",
+    "age": 29
+  },
+  "Nico Williams": {
+    "cn": "尼科威廉斯",
+    "team": "西班牙",
+    "jersey": "17",
+    "position": "F",
+    "age": 23
+  },
+  "Lamine Yamal": {
+    "cn": "亚马尔",
+    "team": "西班牙",
+    "jersey": "19",
+    "position": "F",
+    "age": 18
+  },
+  "Viktor Johansson": {
+    "cn": "约翰松",
+    "team": "瑞典",
+    "jersey": "12",
+    "position": "G",
+    "age": 27
+  },
+  "Victor Lindelöf": {
+    "cn": "林德洛夫",
+    "team": "瑞典",
+    "jersey": "3",
+    "position": "D",
+    "age": 31
+  },
+  "Daniel Svensson": {
+    "cn": "奥尔松",
+    "team": "瑞典",
+    "jersey": "8",
+    "position": "D",
+    "age": 24
+  },
+  "Isak Hien": {
+    "cn": "希恩",
+    "team": "瑞典",
+    "jersey": "4",
+    "position": "D",
+    "age": 27
+  },
+  "Mattias Svanberg": {
+    "cn": "斯万贝里",
+    "team": "瑞典",
+    "jersey": "19",
+    "position": "M",
+    "age": 27
+  },
+  "Lucas Bergvall": {
+    "cn": "贝里瓦尔",
+    "team": "瑞典",
+    "jersey": "7",
+    "position": "M",
+    "age": 20
+  },
+  "Alexander Isak": {
+    "cn": "伊萨克",
+    "team": "瑞典",
+    "jersey": "9",
+    "position": "F",
+    "age": 26
+  },
+  "Viktor Gyökeres": {
+    "cn": "哲凯赖什",
+    "team": "瑞典",
+    "jersey": "17",
+    "position": "F",
+    "age": 28
+  },
+  "Anthony Elanga": {
+    "cn": "埃兰加",
+    "team": "瑞典",
+    "jersey": "11",
+    "position": "F",
+    "age": 24
+  },
+  "Ricardo Rodríguez": {
+    "cn": "罗德里格斯",
+    "team": "瑞士",
+    "jersey": "13",
+    "position": "D",
+    "age": 33
+  },
+  "Silvan Widmer": {
+    "cn": "维德默",
+    "team": "瑞士",
+    "jersey": "3",
+    "position": "D",
+    "age": 33
+  },
+  "Nico Elvedi": {
+    "cn": "埃尔韦迪",
+    "team": "瑞士",
+    "jersey": "4",
+    "position": "D",
+    "age": 29
+  },
+  "Manuel Akanji": {
+    "cn": "阿坎吉",
+    "team": "瑞士",
+    "jersey": "5",
+    "position": "D",
+    "age": 30
+  },
+  "Granit Xhaka": {
+    "cn": "扎卡",
+    "team": "瑞士",
+    "jersey": "10",
+    "position": "M",
+    "age": 33
+  },
+  "Remo Freuler": {
+    "cn": "弗罗伊勒",
+    "team": "瑞士",
+    "jersey": "8",
+    "position": "M",
+    "age": 34
+  },
+  "Breel Embolo": {
+    "cn": "恩博洛",
+    "team": "瑞士",
+    "jersey": "7",
+    "position": "F",
+    "age": 29
+  },
+  "Dan Ndoye": {
+    "cn": "恩多耶",
+    "team": "瑞士",
+    "jersey": "11",
+    "position": "F",
+    "age": 25
+  },
+  "Aymen Dahmen": {
+    "cn": "达门",
+    "team": "突尼斯",
+    "jersey": "16",
+    "position": "G",
+    "age": 29
+  },
+  "Yan Valery": {
+    "cn": "瓦莱里",
+    "team": "突尼斯",
+    "jersey": "20",
+    "position": "D",
+    "age": 27
+  },
+  "Montassar Talbi": {
+    "cn": "塔尔比",
+    "team": "突尼斯",
+    "jersey": "3",
+    "position": "D",
+    "age": 28
+  },
+  "Ali Abdi": {
+    "cn": "阿卜迪",
+    "team": "突尼斯",
+    "jersey": "2",
+    "position": "D",
+    "age": 32
+  },
+  "Omar Rekik": {
+    "cn": "塔尔比",
+    "team": "突尼斯",
+    "jersey": "4",
+    "position": "D",
+    "age": 24
+  },
+  "Ellyes Skhiri": {
+    "cn": "斯希里",
+    "team": "突尼斯",
+    "jersey": "17",
+    "position": "M",
+    "age": 31
+  },
+  "Hannibal Mejbri": {
+    "cn": "梅布里",
+    "team": "突尼斯",
+    "jersey": "10",
+    "position": "M",
+    "age": 23
+  },
+  "Elias Saad": {
+    "cn": "埃利亚斯-萨德",
+    "team": "突尼斯",
+    "jersey": "8",
+    "position": "F",
+    "age": 26
+  },
+  "Mert Müldür": {
+    "cn": "穆尔杜",
+    "team": "土耳其",
+    "jersey": "18",
+    "position": "D",
+    "age": 27
+  },
+  "Merih Demiral": {
+    "cn": "德米拉尔",
+    "team": "土耳其",
+    "jersey": "3",
+    "position": "D",
+    "age": 28
+  },
+  "Salih Özcan": {
+    "cn": "阿克居恩杜兹",
+    "team": "土耳其",
+    "jersey": "5",
+    "position": "M",
+    "age": 28
+  },
+  "Orkun Kökçü": {
+    "cn": "柯克曲",
+    "team": "土耳其",
+    "jersey": "6",
+    "position": "M",
+    "age": 25
+  },
+  "Arda Güler": {
+    "cn": "居莱尔",
+    "team": "土耳其",
+    "jersey": "8",
+    "position": "M",
+    "age": 21
+  },
+  "Matt Turner": {
+    "cn": "特纳",
+    "team": "美国",
+    "jersey": "1",
+    "position": "G",
+    "age": 31
+  },
+  "Antonee Robinson": {
+    "cn": "罗宾逊",
+    "team": "美国",
+    "jersey": "5",
+    "position": "D",
+    "age": 28
+  },
+  "Sergiño Dest": {
+    "cn": "德斯特",
+    "team": "美国",
+    "jersey": "2",
+    "position": "D",
+    "age": 25
+  },
+  "Chris Richards": {
+    "cn": "理查兹",
+    "team": "美国",
+    "jersey": "3",
+    "position": "D",
+    "age": 26
+  },
+  "Christian Pulisic": {
+    "cn": "普利西奇",
+    "team": "美国",
+    "jersey": "10",
+    "position": "M",
+    "age": 27
+  },
+  "Weston McKennie": {
+    "cn": "麦肯尼",
+    "team": "美国",
+    "jersey": "8",
+    "position": "M",
+    "age": 27
+  },
+  "Malik Tillman": {
+    "cn": "蒂尔曼",
+    "team": "美国",
+    "jersey": "17",
+    "position": "M",
+    "age": 24
+  },
+  "Timothy Weah": {
+    "cn": "韦阿",
+    "team": "美国",
+    "jersey": "21",
+    "position": "F",
+    "age": 26
+  },
+  "Folarin Balogun": {
+    "cn": "巴洛贡",
+    "team": "美国",
+    "jersey": "20",
+    "position": "F",
+    "age": 24
+  },
+  "Sergio Rochet": {
+    "cn": "罗切特",
+    "team": "乌拉圭",
+    "jersey": "1",
+    "position": "G",
+    "age": 33
+  },
+  "Mathías Olivera": {
+    "cn": "奥利维拉",
+    "team": "乌拉圭",
+    "jersey": "16",
+    "position": "D",
+    "age": 28
+  },
+  "Matías Viña": {
+    "cn": "维尼亚",
+    "team": "乌拉圭",
+    "jersey": "17",
+    "position": "D",
+    "age": 28
+  },
+  "Ronald Araújo": {
+    "cn": "阿劳霍",
+    "team": "乌拉圭",
+    "jersey": "4",
+    "position": "D",
+    "age": 27
+  },
+  "Giorgian de Arrascaeta": {
+    "cn": "德阿拉斯凯塔",
+    "team": "乌拉圭",
+    "jersey": "10",
+    "position": "M",
+    "age": 32
+  },
+  "Rodrigo Bentancur": {
+    "cn": "本坦库尔",
+    "team": "乌拉圭",
+    "jersey": "6",
+    "position": "M",
+    "age": 28
+  },
+  "Federico Valverde": {
+    "cn": "巴尔韦德",
+    "team": "乌拉圭",
+    "jersey": "8",
+    "position": "M",
+    "age": 27
+  },
+  "Facundo Pellistri": {
+    "cn": "佩利斯特里",
+    "team": "乌拉圭",
+    "jersey": "11",
+    "position": "M",
+    "age": 24
+  },
+  "Darwin Núñez": {
+    "cn": "努涅斯",
+    "team": "乌拉圭",
+    "jersey": "9",
+    "position": "F",
+    "age": 26
+  },
+  "Utkir Yusupov": {
+    "cn": "库瓦托夫",
+    "team": "乌兹别克",
+    "jersey": "1",
+    "position": "G",
+    "age": 35
+  },
+  "Khojiakbar Alijonov": {
+    "cn": "阿卜杜拉耶夫",
+    "team": "乌兹别克",
+    "jersey": "3",
+    "position": "D",
+    "age": 29
+  },
+  "Jaloliddin Masharipov": {
+    "cn": "马沙里波夫",
+    "team": "乌兹别克",
+    "jersey": "10",
+    "position": "M",
+    "age": 32
+  },
+  "Otabek Shukurov": {
+    "cn": "内马托夫",
+    "team": "乌兹别克",
+    "jersey": "7",
+    "position": "M",
+    "age": 29
+  },
+  "Abbosbek Fayzullaev": {
+    "cn": "贾洛利迪诺夫",
+    "team": "乌兹别克",
+    "jersey": "22",
+    "position": "M",
+    "age": 22
+  },
+  "Igor Sergeev": {
+    "cn": "霍尔马托夫",
+    "team": "乌兹别克",
+    "jersey": "21",
+    "position": "F",
+    "age": 33
+  },
+  "Eldor Shomurodov": {
+    "cn": "绍穆罗多夫",
+    "team": "乌兹别克",
+    "jersey": "14",
+    "position": "F",
+    "age": 30
+  },
+  "Emiliano Martínez (Argentina)": {
+    "cn": "大马丁",
+    "team": "Argentina",
+    "jersey": 23,
+    "position": "G",
+    "age": 33,
+    "disambiguated": true
+  },
+  "Emiliano Martínez (Uruguay)": {
+    "cn": "E·马丁内斯",
+    "team": "Uruguay",
+    "jersey": 15,
+    "position": "M",
+    "age": 26,
+    "disambiguated": true
+  },
+  "Luca Zidane": {
+    "cn": "卢卡·齐达内",
+    "team": "阿尔及利亚",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oussama Benbot": {
+    "cn": "乌萨马",
+    "team": "阿尔及利亚",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Melvin Mastil": {
+    "cn": "梅尔文",
+    "team": "阿尔及利亚",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rayan Aït-Nouri": {
+    "cn": "拉扬",
+    "team": "阿尔及利亚",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Amine Tougai": {
+    "cn": "穆罕默德AmineTougai",
+    "team": "阿尔及利亚",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zineddine Belaïd": {
+    "cn": "贝拉伊德",
+    "team": "阿尔及利亚",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Samir Chergui": {
+    "cn": "萨米尔",
+    "team": "阿尔及利亚",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jaouen Hadjam": {
+    "cn": "乔恩",
+    "team": "阿尔及利亚",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rafik Belghali": {
+    "cn": "拉菲克",
+    "team": "阿尔及利亚",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Achraf Abada": {
+    "cn": "阿什拉夫",
+    "team": "阿尔及利亚",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nabil Bentaleb": {
+    "cn": "纳比尔",
+    "team": "阿尔及利亚",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Houssem Aouar": {
+    "cn": "奥阿尔",
+    "team": "阿尔及利亚",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hicham Boudaoui": {
+    "cn": "布达维",
+    "team": "阿尔及利亚",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ramiz Zerrouki": {
+    "cn": "拉米兹",
+    "team": "阿尔及利亚",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Farès Chaïbi": {
+    "cn": "法雷斯",
+    "team": "阿尔及利亚",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yassine Titraoui": {
+    "cn": "亚辛",
+    "team": "阿尔及利亚",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ibrahim Maza": {
+    "cn": "易卜拉欣Maza",
+    "team": "阿尔及利亚",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amine Gouiri": {
+    "cn": "古伊里",
+    "team": "阿尔及利亚",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Amoura": {
+    "cn": "穆罕默德Amoura",
+    "team": "阿尔及利亚",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Adil Boulbina": {
+    "cn": "阿迪尔",
+    "team": "阿尔及利亚",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Anis Hadj Moussa": {
+    "cn": "阿尼斯",
+    "team": "阿尔及利亚",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nadhir Benbouali": {
+    "cn": "纳迪尔",
+    "team": "阿尔及利亚",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Farès Ghedjemis": {
+    "cn": "法雷斯",
+    "team": "阿尔及利亚",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gerónimo Rulli": {
+    "cn": "鲁利",
+    "team": "阿根廷",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Juan Musso": {
+    "cn": "穆索",
+    "team": "阿根廷",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gonzalo Montiel": {
+    "cn": "蒙蒂尔",
+    "team": "阿根廷",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lisandro Martínez": {
+    "cn": "Lisandro马丁内斯",
+    "team": "阿根廷",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Facundo Medina": {
+    "cn": "Facundo梅迪纳",
+    "team": "阿根廷",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Leandro Paredes": {
+    "cn": "帕雷德斯",
+    "team": "阿根廷",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Giovani Lo Celso": {
+    "cn": "乔瓦尼",
+    "team": "阿根廷",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Exequiel Palacios": {
+    "cn": "帕拉西奥斯",
+    "team": "阿根廷",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Thiago Almada": {
+    "cn": "蒂亚戈",
+    "team": "阿根廷",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Valentín Barco": {
+    "cn": "巴尔科",
+    "team": "阿根廷",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nico González": {
+    "cn": "Nico冈萨雷斯",
+    "team": "阿根廷",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "José Manuel López": {
+    "cn": "JoséManuel洛佩斯",
+    "team": "阿根廷",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Giuliano Simeone": {
+    "cn": "朱利亚诺·西蒙尼",
+    "team": "阿根廷",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nico Paz": {
+    "cn": "尼科",
+    "team": "阿根廷",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Paul Izzo": {
+    "cn": "保罗",
+    "team": "澳大利亚",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Patrick Beach": {
+    "cn": "帕特里克",
+    "team": "澳大利亚",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Milos Degenek": {
+    "cn": "德格内克",
+    "team": "澳大利亚",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jason Geria": {
+    "cn": "杰森",
+    "team": "澳大利亚",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Aziz Behich": {
+    "cn": "贝希赫",
+    "team": "澳大利亚",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cameron Burgess": {
+    "cn": "伯吉斯",
+    "team": "澳大利亚",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jacob Italiano": {
+    "cn": "雅各布",
+    "team": "澳大利亚",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kai Trewin": {
+    "cn": "凯",
+    "team": "澳大利亚",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jordan Bos": {
+    "cn": "乔丹",
+    "team": "澳大利亚",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alessandro Circati": {
+    "cn": "亚历山德罗",
+    "team": "澳大利亚",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lucas Herrington": {
+    "cn": "吕卡Herrington",
+    "team": "澳大利亚",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Awer Mabil": {
+    "cn": "马比尔",
+    "team": "澳大利亚",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cameron Devlin": {
+    "cn": "德夫林",
+    "team": "澳大利亚",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cristian Volpato": {
+    "cn": "克里斯蒂安",
+    "team": "澳大利亚",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Paul Okon-Engstler": {
+    "cn": "保罗",
+    "team": "澳大利亚",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mathew Leckie": {
+    "cn": "莱基",
+    "team": "澳大利亚",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Toure": {
+    "cn": "穆罕默德Toure",
+    "team": "澳大利亚",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tete Yengi": {
+    "cn": "特特",
+    "team": "澳大利亚",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nishan Velupillay": {
+    "cn": "韦卢皮莱",
+    "team": "澳大利亚",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nestory Irankunda": {
+    "cn": "伊朗昆达",
+    "team": "澳大利亚",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexander Schlager": {
+    "cn": "施拉格",
+    "team": "奥地利",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Florian Wiegele": {
+    "cn": "弗洛里安",
+    "team": "奥地利",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "David Alaba": {
+    "cn": "大卫Alaba",
+    "team": "奥地利",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marco Friedl": {
+    "cn": "马尔科",
+    "team": "奥地利",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Michael Svoboda": {
+    "cn": "迈克尔",
+    "team": "奥地利",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "David Affengruber": {
+    "cn": "大卫Affengruber",
+    "team": "奥地利",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexander Prass": {
+    "cn": "亚历山大",
+    "team": "奥地利",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alessandro Schöpf": {
+    "cn": "亚历山德罗",
+    "team": "奥地利",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Florian Grillitsch": {
+    "cn": "格里利奇",
+    "team": "奥地利",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Xaver Schlager": {
+    "cn": "施拉格",
+    "team": "奥地利",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Carney Chukwuemeka": {
+    "cn": "丘库韦梅卡",
+    "team": "奥地利",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Patrick Wimmer": {
+    "cn": "维默尔",
+    "team": "奥地利",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Paul Wanner": {
+    "cn": "保罗",
+    "team": "奥地利",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marko Arnautovic": {
+    "cn": "阿瑙托维奇",
+    "team": "奥地利",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sasa Kalajdzic": {
+    "cn": "卡拉伊季奇",
+    "team": "奥地利",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Senne Lammens": {
+    "cn": "拉门斯",
+    "team": "比利时",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mike Penders": {
+    "cn": "彭德斯",
+    "team": "比利时",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Thomas Meunier": {
+    "cn": "托马斯Meunier",
+    "team": "比利时",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brandon Mechele": {
+    "cn": "梅切莱",
+    "team": "比利时",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Koni De Winter": {
+    "cn": "德温特",
+    "team": "比利时",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nathan Ngoy": {
+    "cn": "内森",
+    "team": "比利时",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joaquin Seys": {
+    "cn": "塞伊斯",
+    "team": "比利时",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Axel Witsel": {
+    "cn": "维特塞尔",
+    "team": "比利时",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hans Vanaken": {
+    "cn": "瓦纳肯",
+    "team": "比利时",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nicolas Raskin": {
+    "cn": "尼古拉Raskin",
+    "team": "比利时",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dodi Lukébakio": {
+    "cn": "卢克巴基奥",
+    "team": "比利时",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexis Saelemaekers": {
+    "cn": "萨勒马克尔斯",
+    "team": "比利时",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Diego Moreira": {
+    "cn": "莫雷拉",
+    "team": "比利时",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Matias Fernandez-Pardo": {
+    "cn": "马蒂亚斯",
+    "team": "比利时",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Martin Zlomislic": {
+    "cn": "马丁Zlomislic",
+    "team": "波黑",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mladen Jurkas": {
+    "cn": "尤尔卡斯",
+    "team": "波黑",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sead Kolasinac": {
+    "cn": "科拉希纳茨",
+    "team": "波黑",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nikola Katic": {
+    "cn": "尼古拉",
+    "team": "波黑",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dennis Hadzikadunic": {
+    "cn": "丹尼斯",
+    "team": "波黑",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nihad Mujakic": {
+    "cn": "穆亚基奇",
+    "team": "波黑",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Stjepan Radeljic": {
+    "cn": "拉德利奇",
+    "team": "波黑",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amar Dedic": {
+    "cn": "德迪奇",
+    "team": "波黑",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tarik Muharemovic": {
+    "cn": "穆哈雷莫维奇",
+    "team": "波黑",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nidal Celik": {
+    "cn": "切利克",
+    "team": "波黑",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ivan Sunjic": {
+    "cn": "伊万",
+    "team": "波黑",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amir Hadziahmetovic": {
+    "cn": "阿米尔",
+    "team": "波黑",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dzenis Burnic": {
+    "cn": "布尔尼奇",
+    "team": "波黑",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Armin Gigovic": {
+    "cn": "吉戈维奇",
+    "team": "波黑",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ivan Basic": {
+    "cn": "伊万",
+    "team": "波黑",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amar Memic": {
+    "cn": "梅米奇",
+    "team": "波黑",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Benjamin Tahirovic": {
+    "cn": "本杰明",
+    "team": "波黑",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ermin Mahmic": {
+    "cn": "马赫米奇",
+    "team": "波黑",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Edin Dzeko": {
+    "cn": "哲科",
+    "team": "波黑",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Haris Tabakovic": {
+    "cn": "塔巴科维奇",
+    "team": "波黑",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ermedin Demirovic": {
+    "cn": "德米罗维奇",
+    "team": "波黑",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jovo Lukic": {
+    "cn": "卢基奇",
+    "team": "波黑",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Samed Bazdar": {
+    "cn": "巴兹达尔",
+    "team": "波黑",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Esmir Bajraktarevic": {
+    "cn": "巴伊拉克塔雷维奇",
+    "team": "波黑",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kerim Alajbegovic": {
+    "cn": "阿拉伊贝戈维奇",
+    "team": "波黑",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Weverton": {
+    "cn": "韦弗顿",
+    "team": "巴西",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Léo Pereira": {
+    "cn": "Léo佩雷拉",
+    "team": "巴西",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Douglas Santos": {
+    "cn": "Douglas桑托斯",
+    "team": "巴西",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Roger Ibañez": {
+    "cn": "伊巴涅斯",
+    "team": "巴西",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fabinho": {
+    "cn": "法比尼奥",
+    "team": "巴西",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Éderson": {
+    "cn": "埃德松",
+    "team": "巴西",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Danilo Santos": {
+    "cn": "Danilo桑托斯",
+    "team": "巴西",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Matheus Cunha": {
+    "cn": "库尼亚",
+    "team": "巴西",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gabriel Martinelli": {
+    "cn": "加布里埃尔",
+    "team": "巴西",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Igor Thiago": {
+    "cn": "蒂亚戈",
+    "team": "巴西",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luiz Henrique": {
+    "cn": "恩里克",
+    "team": "巴西",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rayan": {
+    "cn": "拉扬",
+    "team": "巴西",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Maxime Crépeau": {
+    "cn": "克雷波",
+    "team": "加拿大",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dayne St. Clair": {
+    "cn": "圣克莱尔",
+    "team": "加拿大",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Owen Goodman": {
+    "cn": "欧文",
+    "team": "加拿大",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Richie Laryea": {
+    "cn": "拉雷亚",
+    "team": "加拿大",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joel Waterman": {
+    "cn": "沃特曼",
+    "team": "加拿大",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alfie Jones": {
+    "cn": "Alfie琼斯",
+    "team": "加拿大",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Moïse Bombito": {
+    "cn": "邦比托",
+    "team": "加拿大",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luc de Fougerolles": {
+    "cn": "德富热罗尔",
+    "team": "加拿大",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mathieu Choinière": {
+    "cn": "舒瓦尼耶尔",
+    "team": "加拿大",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nathan Saliba": {
+    "cn": "萨利巴",
+    "team": "加拿大",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ismaël Koné": {
+    "cn": "科内",
+    "team": "加拿大",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Ahmed": {
+    "cn": "阿里艾哈迈德",
+    "team": "加拿大",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Niko Sigur": {
+    "cn": "西古尔",
+    "team": "加拿大",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Liam Millar": {
+    "cn": "利亚姆",
+    "team": "加拿大",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jayden Nelson": {
+    "cn": "Jayden纳尔逊",
+    "team": "加拿大",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jacob Shaffelburg": {
+    "cn": "雅各布",
+    "team": "加拿大",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tani Oluwaseyi": {
+    "cn": "奥卢瓦塞伊",
+    "team": "加拿大",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Promise David": {
+    "cn": "Promise大卫",
+    "team": "加拿大",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Márcio Rosa": {
+    "cn": "罗萨",
+    "team": "佛得角",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "CJ dos Santos": {
+    "cn": "CJdos桑托斯",
+    "team": "佛得角",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Diney Borges": {
+    "cn": "博尔赫斯",
+    "team": "佛得角",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pico Lopes": {
+    "cn": "Pico洛佩斯",
+    "team": "佛得角",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sidny Lopes Cabral": {
+    "cn": "Sidny洛佩斯Cabral",
+    "team": "佛得角",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Wagner Pina": {
+    "cn": "瓦格纳Pina",
+    "team": "佛得角",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kelvin Pires": {
+    "cn": "皮雷斯",
+    "team": "佛得角",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yannick Semedo": {
+    "cn": "塞梅多",
+    "team": "佛得角",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Laros Duarte": {
+    "cn": "杜阿尔特",
+    "team": "佛得角",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jamiro Monteiro": {
+    "cn": "Jamiro蒙泰罗",
+    "team": "佛得角",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Telmo Arcanjo": {
+    "cn": "阿尔坎若",
+    "team": "佛得角",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "João Paulo": {
+    "cn": "保罗",
+    "team": "佛得角",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nuno da Costa": {
+    "cn": "Nunoda科斯塔",
+    "team": "佛得角",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jovane Cabral": {
+    "cn": "卡布拉尔",
+    "team": "佛得角",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Willy Semedo": {
+    "cn": "塞梅多",
+    "team": "佛得角",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gilson Benchimol": {
+    "cn": "本希莫尔",
+    "team": "佛得角",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dailon Livramento": {
+    "cn": "利夫拉门托",
+    "team": "佛得角",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hélio Varela": {
+    "cn": "瓦雷拉",
+    "team": "佛得角",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "David Ospina": {
+    "cn": "大卫Ospina",
+    "team": "哥伦比亚",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Álvaro Montero": {
+    "cn": "蒙特罗",
+    "team": "哥伦比亚",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Johan Mojica": {
+    "cn": "莫希卡",
+    "team": "哥伦比亚",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yerry Mina": {
+    "cn": "米纳",
+    "team": "哥伦比亚",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Deiver Machado": {
+    "cn": "Deiver马查多",
+    "team": "哥伦比亚",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jhon Lucumí": {
+    "cn": "约翰",
+    "team": "哥伦比亚",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Willer Ditta": {
+    "cn": "迪塔",
+    "team": "哥伦比亚",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Juan Portilla": {
+    "cn": "胡安",
+    "team": "哥伦比亚",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Juan Fernando Quintero": {
+    "cn": "金特罗",
+    "team": "哥伦比亚",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jefferson Lerma": {
+    "cn": "莱尔马",
+    "team": "哥伦比亚",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jorge Carrascal": {
+    "cn": "豪尔赫",
+    "team": "哥伦比亚",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jhon Arias": {
+    "cn": "约翰",
+    "team": "哥伦比亚",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jáminton Campaz": {
+    "cn": "坎帕斯",
+    "team": "哥伦比亚",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kevin Castaño": {
+    "cn": "凯文",
+    "team": "哥伦比亚",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gustavo Puerta": {
+    "cn": "普埃尔塔",
+    "team": "哥伦比亚",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luis Suárez": {
+    "cn": "Luis苏亚雷斯",
+    "team": "哥伦比亚",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Andrés Gómez": {
+    "cn": "Andrés戈麦斯",
+    "team": "哥伦比亚",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cucho Hernández": {
+    "cn": "Cucho埃尔南德斯",
+    "team": "哥伦比亚",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Timothy Fayulu": {
+    "cn": "法尤卢",
+    "team": "刚果金",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Matthieu Epolo": {
+    "cn": "马修",
+    "team": "刚果金",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joris Kayembe": {
+    "cn": "约里斯",
+    "team": "刚果金",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dylan Batubinsika": {
+    "cn": "迪伦",
+    "team": "刚果金",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gédéon Kalulu": {
+    "cn": "热代翁",
+    "team": "刚果金",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Steve Kapuadi": {
+    "cn": "卡普阿迪",
+    "team": "刚果金",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Aaron Tshibola": {
+    "cn": "亚伦",
+    "team": "刚果金",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Noah Sadiki": {
+    "cn": "诺亚",
+    "team": "刚果金",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ngal'ayel Mukau": {
+    "cn": "穆考",
+    "team": "刚果金",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Simon Banza": {
+    "cn": "西蒙Banza",
+    "team": "刚果金",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Meschack Elia": {
+    "cn": "埃利亚",
+    "team": "刚果金",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nathanaël Mbuku": {
+    "cn": "姆布库",
+    "team": "刚果金",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fiston Mayele": {
+    "cn": "马耶莱",
+    "team": "刚果金",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brian Cipenga": {
+    "cn": "布莱恩",
+    "team": "刚果金",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dominik Livakovic": {
+    "cn": "利瓦科维奇",
+    "team": "克罗地亚",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dominik Kotarski": {
+    "cn": "科塔尔斯基",
+    "team": "克罗地亚",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ivor Pandur": {
+    "cn": "潘杜尔",
+    "team": "克罗地亚",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Duje Caleta-Car": {
+    "cn": "卡莱塔-卡尔",
+    "team": "克罗地亚",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Martin Erlic": {
+    "cn": "马丁Erlic",
+    "team": "克罗地亚",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marin Pongracic": {
+    "cn": "庞格拉契奇",
+    "team": "克罗地亚",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Josip Stanisic": {
+    "cn": "斯塔尼希奇",
+    "team": "克罗地亚",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Josko Gvardiol": {
+    "cn": "格瓦迪奥尔",
+    "team": "克罗地亚",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Josip Sutalo": {
+    "cn": "舒塔洛",
+    "team": "克罗地亚",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luka Vuskovic": {
+    "cn": "卢卡",
+    "team": "克罗地亚",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luka Modric": {
+    "cn": "莫德里奇",
+    "team": "克罗地亚",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mateo Kovacic": {
+    "cn": "科瓦契奇",
+    "team": "克罗地亚",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mario Pasalic": {
+    "cn": "帕萨利奇",
+    "team": "克罗地亚",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nikola Vlasic": {
+    "cn": "尼古拉",
+    "team": "克罗地亚",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nikola Moro": {
+    "cn": "尼古拉",
+    "team": "克罗地亚",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kristijan Jakic": {
+    "cn": "亚基奇",
+    "team": "克罗地亚",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luka Sucic": {
+    "cn": "苏契奇",
+    "team": "克罗地亚",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Martin Baturina": {
+    "cn": "马丁Baturina",
+    "team": "克罗地亚",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Toni Fruk": {
+    "cn": "弗鲁克",
+    "team": "克罗地亚",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Petar Sucic": {
+    "cn": "苏契奇",
+    "team": "克罗地亚",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ivan Perisic": {
+    "cn": "佩里西奇",
+    "team": "克罗地亚",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Andrej Kramaric": {
+    "cn": "克拉马里奇",
+    "team": "克罗地亚",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Petar Musa": {
+    "cn": "穆萨",
+    "team": "克罗地亚",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Igor Matanovic": {
+    "cn": "伊戈尔",
+    "team": "克罗地亚",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marco Pasalic": {
+    "cn": "帕萨利奇",
+    "team": "克罗地亚",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Trevor Doornbusch": {
+    "cn": "多恩布施",
+    "team": "库拉索",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tyrick Bodak": {
+    "cn": "博达克",
+    "team": "库拉索",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joshua Brenet": {
+    "cn": "布雷内特",
+    "team": "库拉索",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Riechedly Bazoer": {
+    "cn": "巴佐尔",
+    "team": "库拉索",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Armando Obispo": {
+    "cn": "奥比斯波",
+    "team": "库拉索",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Juriën Gaari": {
+    "cn": "加里",
+    "team": "库拉索",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Shurandy Sambo": {
+    "cn": "桑博",
+    "team": "库拉索",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Livano Comenencia": {
+    "cn": "科梅内西亚",
+    "team": "库拉索",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Deveron Fonville": {
+    "cn": "丰维尔",
+    "team": "库拉索",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kevin Felida": {
+    "cn": "凯文",
+    "team": "库拉索",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Godfried Roemeratoe": {
+    "cn": "罗梅拉图",
+    "team": "库拉索",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ar'jany Martha": {
+    "cn": "马尔塔",
+    "team": "库拉索",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tyrese Noslin": {
+    "cn": "诺斯林",
+    "team": "库拉索",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gervane Kastaneer": {
+    "cn": "卡斯塔尼尔",
+    "team": "库拉索",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kenji Gorré": {
+    "cn": "戈雷",
+    "team": "库拉索",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jearl Margaritha": {
+    "cn": "马尔加里塔",
+    "team": "库拉索",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jeremy Antonisse": {
+    "cn": "安东尼斯",
+    "team": "库拉索",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jindrich Stanek": {
+    "cn": "斯塔内克",
+    "team": "捷克",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Matej Kovár": {
+    "cn": "科瓦尔",
+    "team": "捷克",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lukás Hornícek": {
+    "cn": "霍尔尼切克",
+    "team": "捷克",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ladislav Krejcí": {
+    "cn": "克雷伊奇",
+    "team": "捷克",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Vladimír Coufal": {
+    "cn": "曹法尔",
+    "team": "捷克",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jaroslav Zelený": {
+    "cn": "泽莱尼",
+    "team": "捷克",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tomás Holes": {
+    "cn": "霍莱什",
+    "team": "捷克",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "David Zima": {
+    "cn": "大卫Zima",
+    "team": "捷克",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Robin Hranác": {
+    "cn": "罗宾Hranác",
+    "team": "捷克",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "David Jurásek": {
+    "cn": "大卫Jurásek",
+    "team": "捷克",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Stepán Chaloupek": {
+    "cn": "哈洛佩克",
+    "team": "捷克",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Vladimír Darida": {
+    "cn": "达里达",
+    "team": "捷克",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tomás Soucek": {
+    "cn": "绍切克",
+    "team": "捷克",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Michal Sadílek": {
+    "cn": "萨迪莱克",
+    "team": "捷克",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lukás Provod": {
+    "cn": "普罗沃德",
+    "team": "捷克",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lukás Cerv": {
+    "cn": "切尔夫",
+    "team": "捷克",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pavel Sulc": {
+    "cn": "舒尔茨",
+    "team": "捷克",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Denis Visinský": {
+    "cn": "丹尼斯",
+    "team": "捷克",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "David Doudera": {
+    "cn": "大卫Doudera",
+    "team": "捷克",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexandr Sojka": {
+    "cn": "索伊卡",
+    "team": "捷克",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hugo Sochurek": {
+    "cn": "于戈",
+    "team": "捷克",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tomás Chorý": {
+    "cn": "托马斯",
+    "team": "捷克",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Adam Hlozek": {
+    "cn": "赫洛热克",
+    "team": "捷克",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jan Kuchta": {
+    "cn": "库赫塔",
+    "team": "捷克",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mojmír Chytil": {
+    "cn": "奇蒂尔",
+    "team": "捷克",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gonzalo Valle": {
+    "cn": "冈萨洛",
+    "team": "厄瓜多尔",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Moisés Ramírez": {
+    "cn": "Moisés拉米雷斯",
+    "team": "厄瓜多尔",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pervis Estupiñán": {
+    "cn": "埃斯图皮尼安",
+    "team": "厄瓜多尔",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Félix Torres": {
+    "cn": "Félix托雷斯",
+    "team": "厄瓜多尔",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jackson Porozo": {
+    "cn": "杰克逊Porozo",
+    "team": "厄瓜多尔",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Willian Pacho": {
+    "cn": "威廉",
+    "team": "厄瓜多尔",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Piero Hincapié": {
+    "cn": "因卡皮耶",
+    "team": "厄瓜多尔",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yaimar Medina": {
+    "cn": "Yaimar梅迪纳",
+    "team": "厄瓜多尔",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joel Ordóñez": {
+    "cn": "乔尔",
+    "team": "厄瓜多尔",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jordy Alcívar": {
+    "cn": "阿尔西瓦尔",
+    "team": "厄瓜多尔",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pedro Vite": {
+    "cn": "佩德罗",
+    "team": "厄瓜多尔",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Denil Castillo": {
+    "cn": "Denil卡斯蒂略",
+    "team": "厄瓜多尔",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jordy Caicedo": {
+    "cn": "凯塞多",
+    "team": "厄瓜多尔",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "John Yeboah": {
+    "cn": "约翰",
+    "team": "厄瓜多尔",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kevin Rodríguez": {
+    "cn": "Kevin罗德里格斯",
+    "team": "厄瓜多尔",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Anthony Valencia": {
+    "cn": "巴伦西亚",
+    "team": "厄瓜多尔",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nilson Angulo": {
+    "cn": "安古洛",
+    "team": "厄瓜多尔",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alan Minda": {
+    "cn": "明达",
+    "team": "厄瓜多尔",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jeremy Arévalo": {
+    "cn": "阿雷瓦洛",
+    "team": "厄瓜多尔",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed El Shenawy": {
+    "cn": "穆罕默德ElShenawy",
+    "team": "埃及",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mahdy Soliman": {
+    "cn": "苏莱曼",
+    "team": "埃及",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mostafa Shoubir": {
+    "cn": "穆斯塔法",
+    "team": "埃及",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ramy Rabia": {
+    "cn": "拉比亚",
+    "team": "埃及",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Karim Hafez": {
+    "cn": "卡里姆",
+    "team": "埃及",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Abdelmoneim": {
+    "cn": "穆罕默德Abdelmoneim",
+    "team": "埃及",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Fatouh": {
+    "cn": "艾哈迈德Fatouh",
+    "team": "埃及",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yasser Ibrahim": {
+    "cn": "Yasser易卜拉欣",
+    "team": "埃及",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hossam Abdelmaguid": {
+    "cn": "阿卜杜勒马吉德",
+    "team": "埃及",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tarek Alaa": {
+    "cn": "塔里克",
+    "team": "埃及",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hamdy Fathy": {
+    "cn": "法蒂",
+    "team": "埃及",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nabil Donga": {
+    "cn": "纳比尔",
+    "team": "埃及",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Emam Ashour": {
+    "cn": "阿舒尔",
+    "team": "埃及",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mahmoud Saber": {
+    "cn": "马哈茂德",
+    "team": "埃及",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohanad Lashin": {
+    "cn": "穆哈纳德",
+    "team": "埃及",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marawan Attia": {
+    "cn": "阿提亚",
+    "team": "埃及",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mostafa Zico": {
+    "cn": "穆斯塔法",
+    "team": "埃及",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Trézéguet": {
+    "cn": "特雷泽盖",
+    "team": "埃及",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zizo": {
+    "cn": "齐佐",
+    "team": "埃及",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Haissem Hassan": {
+    "cn": "Haissem哈桑",
+    "team": "埃及",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ibrahim Adel": {
+    "cn": "易卜拉欣Adel",
+    "team": "埃及",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hamza Abdelkarim": {
+    "cn": "哈姆扎",
+    "team": "埃及",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dean Henderson": {
+    "cn": "亨德森",
+    "team": "英格兰",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "James Trafford": {
+    "cn": "詹姆斯Trafford",
+    "team": "英格兰",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dan Burn": {
+    "cn": "伯恩",
+    "team": "英格兰",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ezri Konsa": {
+    "cn": "孔萨",
+    "team": "英格兰",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jarell Quansah": {
+    "cn": "宽萨",
+    "team": "英格兰",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tino Livramento": {
+    "cn": "利夫拉门托",
+    "team": "英格兰",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nico O'Reilly": {
+    "cn": "尼科",
+    "team": "英格兰",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jordan Henderson": {
+    "cn": "乔丹",
+    "team": "英格兰",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Elliot Anderson": {
+    "cn": "Elliot安德森",
+    "team": "英格兰",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Eberechi Eze": {
+    "cn": "埃泽",
+    "team": "英格兰",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Morgan Rogers": {
+    "cn": "摩根罗杰斯",
+    "team": "英格兰",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ivan Toney": {
+    "cn": "托尼",
+    "team": "英格兰",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ollie Watkins": {
+    "cn": "沃特金斯",
+    "team": "英格兰",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Anthony Gordon": {
+    "cn": "戈登",
+    "team": "英格兰",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Noni Madueke": {
+    "cn": "马杜埃克",
+    "team": "英格兰",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brice Samba": {
+    "cn": "桑巴",
+    "team": "法国",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Robin Risser": {
+    "cn": "罗宾Risser",
+    "team": "法国",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lucas Digne": {
+    "cn": "吕卡Digne",
+    "team": "法国",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lucas Hernández": {
+    "cn": "吕卡埃尔南德斯",
+    "team": "法国",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Theo Hernández": {
+    "cn": "Theo埃尔南德斯",
+    "team": "法国",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ibrahima Konaté": {
+    "cn": "科纳泰",
+    "team": "法国",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Maxence Lacroix": {
+    "cn": "拉克鲁瓦",
+    "team": "法国",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Malo Gusto": {
+    "cn": "古斯托",
+    "team": "法国",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Manu Koné": {
+    "cn": "科内",
+    "team": "法国",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rayan Cherki": {
+    "cn": "拉扬",
+    "team": "法国",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Maghnes Akliouche": {
+    "cn": "阿克利乌什",
+    "team": "法国",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jean-Philippe Mateta": {
+    "cn": "马特塔",
+    "team": "法国",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Bradley Barcola": {
+    "cn": "巴尔科拉",
+    "team": "法国",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Désiré Doué": {
+    "cn": "杜埃",
+    "team": "法国",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oliver Baumann": {
+    "cn": "Oliver鲍曼",
+    "team": "德国",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexander Nübel": {
+    "cn": "努贝尔",
+    "team": "德国",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nathaniel Brown": {
+    "cn": "Nathaniel布朗",
+    "team": "德国",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jonathan Tah": {
+    "cn": "塔",
+    "team": "德国",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Waldemar Anton": {
+    "cn": "安东",
+    "team": "德国",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Malick Thiaw": {
+    "cn": "蒂亚乌",
+    "team": "德国",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pascal Gross": {
+    "cn": "Pascal格罗斯",
+    "team": "德国",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nadiem Amiri": {
+    "cn": "阿米里",
+    "team": "德国",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Felix Nmecha": {
+    "cn": "费利克斯",
+    "team": "德国",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Angelo Stiller": {
+    "cn": "安杰洛",
+    "team": "德国",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Aleksandar Pavlovic": {
+    "cn": "帕夫洛维奇",
+    "team": "德国",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Assan Ouédraogo": {
+    "cn": "韦德拉奥戈",
+    "team": "德国",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Deniz Undav": {
+    "cn": "翁达夫",
+    "team": "德国",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Maximilian Beier": {
+    "cn": "拜尔",
+    "team": "德国",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jamie Leweling": {
+    "cn": "勒韦林",
+    "team": "德国",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nick Woltemade": {
+    "cn": "沃尔特马德",
+    "team": "德国",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lawrence Ati Zigi": {
+    "cn": "齐吉",
+    "team": "加纳",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joseph Anang": {
+    "cn": "约瑟夫",
+    "team": "加纳",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Benjamin Asare": {
+    "cn": "本杰明",
+    "team": "加纳",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Baba Rahman": {
+    "cn": "巴巴·拉赫曼",
+    "team": "加纳",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Derrick Luckassen": {
+    "cn": "德里克",
+    "team": "加纳",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdul Mumin": {
+    "cn": "阿卜杜勒Mumin",
+    "team": "加纳",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jerome Opoku": {
+    "cn": "奥波库",
+    "team": "加纳",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gideon Mensah": {
+    "cn": "门萨",
+    "team": "加纳",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alidu Seidu": {
+    "cn": "塞杜",
+    "team": "加纳",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marvin Senaya": {
+    "cn": "塞纳亚",
+    "team": "加纳",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jonas Adjetey": {
+    "cn": "阿杰泰",
+    "team": "加纳",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kojo Peprah Oppong": {
+    "cn": "奥蓬",
+    "team": "加纳",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Elisha Owusu": {
+    "cn": "奥乌苏",
+    "team": "加纳",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kwasi Sibo": {
+    "cn": "西博",
+    "team": "加纳",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Augustine Boakye": {
+    "cn": "博阿基耶",
+    "team": "加纳",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Caleb Yirenkyi": {
+    "cn": "伊伦基",
+    "team": "加纳",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jordan Ayew": {
+    "cn": "乔丹·阿尤",
+    "team": "加纳",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brandon Thomas-Asante": {
+    "cn": "托马斯-阿桑特",
+    "team": "加纳",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Antoine Semenyo": {
+    "cn": "塞梅尼奥",
+    "team": "加纳",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fatawu Issahaku": {
+    "cn": "伊萨哈库",
+    "team": "加纳",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Christopher Bonsu Baah": {
+    "cn": "克里斯托弗",
+    "team": "加纳",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Prince Adu": {
+    "cn": "阿杜",
+    "team": "加纳",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Josué Duverger": {
+    "cn": "迪韦尔热",
+    "team": "海地",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexandre Pierre": {
+    "cn": "皮埃尔",
+    "team": "海地",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ricardo Adé": {
+    "cn": "里卡多",
+    "team": "海地",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Markhus Lacroix": {
+    "cn": "拉克鲁瓦",
+    "team": "海地",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jean-Kévin Duverne": {
+    "cn": "迪韦尔内",
+    "team": "海地",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Martin Expérience": {
+    "cn": "马丁Expérience",
+    "team": "海地",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Wilguens Paugain": {
+    "cn": "帕甘",
+    "team": "海地",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Keeto Thermoncy": {
+    "cn": "泰尔蒙西",
+    "team": "海地",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jean-Ricner Bellegarde": {
+    "cn": "贝勒加德",
+    "team": "海地",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Leverton Pierre": {
+    "cn": "皮埃尔",
+    "team": "海地",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Danley Jean Jacques": {
+    "cn": "让·雅克",
+    "team": "海地",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dominique Simon": {
+    "cn": "Dominique西蒙",
+    "team": "海地",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Woodensky Pierre": {
+    "cn": "皮埃尔",
+    "team": "海地",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Derrick Etienne Jr.": {
+    "cn": "德里克",
+    "team": "海地",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Wilson Isidor": {
+    "cn": "威尔逊Isidor",
+    "team": "海地",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yassin Fortuné": {
+    "cn": "亚辛",
+    "team": "海地",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Louicius Deedson": {
+    "cn": "迪德松",
+    "team": "海地",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lenny Joseph": {
+    "cn": "约瑟夫",
+    "team": "海地",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Josué Casimir": {
+    "cn": "卡西米尔",
+    "team": "海地",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ruben Providence": {
+    "cn": "鲁本",
+    "team": "海地",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hossein Hosseini": {
+    "cn": "侯赛尼",
+    "team": "伊朗",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Payam Niazmand": {
+    "cn": "尼亚兹曼德",
+    "team": "伊朗",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Shoja Khalilzadeh": {
+    "cn": "肖贾",
+    "team": "伊朗",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ramin Rezaeian": {
+    "cn": "拉明",
+    "team": "伊朗",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hossein Kanani": {
+    "cn": "侯赛尼",
+    "team": "伊朗",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Nemati": {
+    "cn": "阿里Nemati",
+    "team": "伊朗",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Saleh Hardani": {
+    "cn": "萨利赫Hardani",
+    "team": "伊朗",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Arya Yousefi": {
+    "cn": "尤塞菲",
+    "team": "伊朗",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Danial Iri": {
+    "cn": "伊里",
+    "team": "伊朗",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mehdi Torabi": {
+    "cn": "迈赫迪",
+    "team": "伊朗",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Roozbeh Cheshmi": {
+    "cn": "切什米",
+    "team": "伊朗",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammad Mohebbi": {
+    "cn": "穆罕默德",
+    "team": "伊朗",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammad Ghorbani": {
+    "cn": "穆罕默德",
+    "team": "伊朗",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amirmohammad Razzaghinia": {
+    "cn": "拉扎吉尼亚",
+    "team": "伊朗",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Alipour": {
+    "cn": "阿里Alipour",
+    "team": "伊朗",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mehdi Ghayedi": {
+    "cn": "迈赫迪",
+    "team": "伊朗",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amirhossein Hosseinzadeh": {
+    "cn": "侯赛因扎德",
+    "team": "伊朗",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dennis Dargahi": {
+    "cn": "丹尼斯",
+    "team": "伊朗",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Shahriyar Moghanloo": {
+    "cn": "莫甘卢",
+    "team": "伊朗",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fahad Talib": {
+    "cn": "法赫德Talib",
+    "team": "伊拉克",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Basil": {
+    "cn": "艾哈迈德Basil",
+    "team": "伊拉克",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Frans Putros": {
+    "cn": "普特罗斯",
+    "team": "伊拉克",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rebin Sulaka": {
+    "cn": "苏拉卡",
+    "team": "伊拉克",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hussein Ali": {
+    "cn": "侯赛因阿里",
+    "team": "伊拉克",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Munaf Younus": {
+    "cn": "穆纳夫",
+    "team": "伊拉克",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Merchas Doski": {
+    "cn": "梅尔查斯",
+    "team": "伊拉克",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Maknazi": {
+    "cn": "艾哈迈德Maknazi",
+    "team": "伊拉克",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mustafa Saadoon": {
+    "cn": "穆斯塔法",
+    "team": "伊拉克",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Akam Hashim": {
+    "cn": "哈希姆",
+    "team": "伊拉克",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zaid Tahseen": {
+    "cn": "扎伊德",
+    "team": "伊拉克",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kevin Yakob": {
+    "cn": "凯文",
+    "team": "伊拉克",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Aimar Sher": {
+    "cn": "谢尔",
+    "team": "伊拉克",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amir Al-Ammari": {
+    "cn": "阿米尔",
+    "team": "伊拉克",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zidane Iqbal": {
+    "cn": "齐达内·伊克巴尔",
+    "team": "伊拉克",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marko Farji": {
+    "cn": "马尔科",
+    "team": "伊拉克",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zaid Ismael": {
+    "cn": "伊斯梅尔",
+    "team": "伊拉克",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Yousif": {
+    "cn": "阿里Yousif",
+    "team": "伊拉克",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Jasim": {
+    "cn": "阿里Jasim",
+    "team": "伊拉克",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Qasim": {
+    "cn": "艾哈迈德Qasim",
+    "team": "伊拉克",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Youssef Amyn": {
+    "cn": "优素福Amyn",
+    "team": "伊拉克",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Al-Hamadi": {
+    "cn": "阿里Al-Hamadi",
+    "team": "伊拉克",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alban Lafont": {
+    "cn": "拉丰",
+    "team": "科特迪瓦",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Koné": {
+    "cn": "穆罕默德Koné",
+    "team": "科特迪瓦",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Evan Ndicka": {
+    "cn": "恩迪卡",
+    "team": "科特迪瓦",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Christopher Operi": {
+    "cn": "克里斯托弗",
+    "team": "科特迪瓦",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Odilon Kossounou": {
+    "cn": "科苏努",
+    "team": "科特迪瓦",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Emmanuel Agbadou": {
+    "cn": "阿格巴杜",
+    "team": "科特迪瓦",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Guela Doué": {
+    "cn": "杜埃",
+    "team": "科特迪瓦",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Parfait Guiagon": {
+    "cn": "吉亚贡",
+    "team": "科特迪瓦",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Christ Inao Oulaï": {
+    "cn": "乌拉伊",
+    "team": "科特迪瓦",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Evann Guessand": {
+    "cn": "盖桑德",
+    "team": "科特迪瓦",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ange-Yoan Bonny": {
+    "cn": "邦尼",
+    "team": "科特迪瓦",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Elye Wahi": {
+    "cn": "瓦希",
+    "team": "科特迪瓦",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oumar Diakité": {
+    "cn": "迪亚基特",
+    "team": "科特迪瓦",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Bazoumana Touré": {
+    "cn": "图雷",
+    "team": "科特迪瓦",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yan Diomande": {
+    "cn": "迪奥曼德",
+    "team": "科特迪瓦",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Keisuke Osako": {
+    "cn": "大迫",
+    "team": "日本",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tomoki Hayakawa": {
+    "cn": "早川友基",
+    "team": "日本",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yuto Nagatomo": {
+    "cn": "Yuto长友",
+    "team": "日本",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Shogo Taniguchi": {
+    "cn": "谷口",
+    "team": "日本",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kou Itakura": {
+    "cn": "Kou板仓",
+    "team": "日本",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ayumu Seko": {
+    "cn": "濑古步梦",
+    "team": "日本",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tsuyoshi Watanabe": {
+    "cn": "Tsuyoshi渡边",
+    "team": "日本",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Junnosuke Suzuki": {
+    "cn": "Junnosuke铃木",
+    "team": "日本",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Wataru Endo": {
+    "cn": "Wataru远藤",
+    "team": "日本",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Daichi Kamada": {
+    "cn": "Daichi镰田",
+    "team": "日本",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yuito Suzuki": {
+    "cn": "Yuito铃木",
+    "team": "日本",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kaishu Sano": {
+    "cn": "佐野海舟",
+    "team": "日本",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Koki Ogawa": {
+    "cn": "Koki小川",
+    "team": "日本",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Daizen Maeda": {
+    "cn": "Daizen前田",
+    "team": "日本",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Keisuke Goto": {
+    "cn": "后藤圭佑",
+    "team": "日本",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kento Shiogai": {
+    "cn": "盐贝健人",
+    "team": "日本",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yazeed Abulaila": {
+    "cn": "阿布莱拉",
+    "team": "约旦",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdallah Al-Fakhouri": {
+    "cn": "阿卜杜拉",
+    "team": "约旦",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nour Bani Ateyah": {
+    "cn": "巴尼·阿提亚",
+    "team": "约旦",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ehsan Haddad": {
+    "cn": "哈达德",
+    "team": "约旦",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammad Abualnadi": {
+    "cn": "穆罕默德",
+    "team": "约旦",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Saleem Obaid": {
+    "cn": "奥贝德",
+    "team": "约旦",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohannad Abu Taha": {
+    "cn": "塔哈",
+    "team": "约旦",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammad Abu Hasheesh": {
+    "cn": "穆罕默德",
+    "team": "约旦",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Husam Abu Dahab": {
+    "cn": "阿布·达哈布",
+    "team": "约旦",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Saed Al-Rosan": {
+    "cn": "罗桑",
+    "team": "约旦",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammad Abughoush": {
+    "cn": "穆罕默德",
+    "team": "约旦",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Anas Badawi": {
+    "cn": "巴达维",
+    "team": "约旦",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rajaei Ayed": {
+    "cn": "阿耶德",
+    "team": "约旦",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ibrahim Sadeh": {
+    "cn": "易卜拉欣Sadeh",
+    "team": "约旦",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammad Al-Daoud": {
+    "cn": "穆罕默德",
+    "team": "约旦",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nizar Al-Rashdan": {
+    "cn": "拉什丹",
+    "team": "约旦",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amer Jamous": {
+    "cn": "贾穆斯",
+    "team": "约旦",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mahmoud Al-Mardi": {
+    "cn": "马哈茂德",
+    "team": "约旦",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammed Abu Zraiq": {
+    "cn": "穆罕默德AbuZraiq",
+    "team": "约旦",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Odeh Fakhoury": {
+    "cn": "法库里",
+    "team": "约旦",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Azaizeh": {
+    "cn": "阿里Azaizeh",
+    "team": "约旦",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Guillermo Ochoa": {
+    "cn": "奥乔亚",
+    "team": "墨西哥",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Carlos Acevedo": {
+    "cn": "阿塞韦多",
+    "team": "墨西哥",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Raúl Rangel": {
+    "cn": "兰赫尔",
+    "team": "墨西哥",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jesús Gallardo": {
+    "cn": "加利亚多",
+    "team": "墨西哥",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jorge Sánchez": {
+    "cn": "Jorge桑切斯",
+    "team": "墨西哥",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "César Montes": {
+    "cn": "蒙特斯",
+    "team": "墨西哥",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Johan Vásquez": {
+    "cn": "巴斯克斯",
+    "team": "墨西哥",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Israel Reyes": {
+    "cn": "Israel雷耶斯",
+    "team": "墨西哥",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mateo Chávez": {
+    "cn": "马特奥",
+    "team": "墨西哥",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luis Chávez": {
+    "cn": "路易斯",
+    "team": "墨西哥",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Orbelín Pineda": {
+    "cn": "皮内达",
+    "team": "墨西哥",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Edson Álvarez": {
+    "cn": "阿尔瓦雷斯",
+    "team": "墨西哥",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "César Huerta": {
+    "cn": "塞萨尔",
+    "team": "墨西哥",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Érik Lira": {
+    "cn": "利拉",
+    "team": "墨西哥",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Álvaro Fidalgo": {
+    "cn": "菲达尔戈",
+    "team": "墨西哥",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brian Gutiérrez": {
+    "cn": "Brian古铁雷斯",
+    "team": "墨西哥",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Obed Vargas": {
+    "cn": "Obed巴尔加斯",
+    "team": "墨西哥",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gilberto Mora": {
+    "cn": "莫拉",
+    "team": "墨西哥",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Guillermo Martínez": {
+    "cn": "Guillermo马丁内斯",
+    "team": "墨西哥",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Roberto Alvarado": {
+    "cn": "罗伯托",
+    "team": "墨西哥",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Julián Quiñones": {
+    "cn": "朱利安",
+    "team": "墨西哥",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Santiago Gimenez": {
+    "cn": "希门尼斯",
+    "team": "墨西哥",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Armando González": {
+    "cn": "Armando冈萨雷斯",
+    "team": "墨西哥",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Reda Tagnaouti": {
+    "cn": "艾哈迈德RedaTagnaouti",
+    "team": "摩洛哥",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Munir El Kajoui": {
+    "cn": "穆尼尔",
+    "team": "摩洛哥",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Issa Diop": {
+    "cn": "迪奥普",
+    "team": "摩洛哥",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Anass Salah-Eddine": {
+    "cn": "萨拉赫-丁",
+    "team": "摩洛哥",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Chadi Riad": {
+    "cn": "里亚德",
+    "team": "摩洛哥",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zakaria El Ouahdi": {
+    "cn": "扎卡里亚",
+    "team": "摩洛哥",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Redouane Halhal": {
+    "cn": "哈尔哈尔",
+    "team": "摩洛哥",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Youssef Belammari": {
+    "cn": "优素福Belammari",
+    "team": "摩洛哥",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brahim Díaz": {
+    "cn": "Brahim迪亚斯",
+    "team": "摩洛哥",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Azzedine Ounahi": {
+    "cn": "乌纳希",
+    "team": "摩洛哥",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ismael Saibari": {
+    "cn": "伊斯梅尔",
+    "team": "摩洛哥",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Neil El Aynaoui": {
+    "cn": "艾纳维",
+    "team": "摩洛哥",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Bilal El Khannouss": {
+    "cn": "比拉尔",
+    "team": "摩洛哥",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ayyoub Bouaddi": {
+    "cn": "布阿迪",
+    "team": "摩洛哥",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Samir El Mourabet": {
+    "cn": "萨米尔",
+    "team": "摩洛哥",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ayoub El Kaabi": {
+    "cn": "阿尤布",
+    "team": "摩洛哥",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Soufiane Rahimi": {
+    "cn": "苏菲安",
+    "team": "摩洛哥",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abde Ezzalzouli": {
+    "cn": "阿布德",
+    "team": "摩洛哥",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Chemsdine Talbi": {
+    "cn": "塔尔比",
+    "team": "摩洛哥",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gessime Yassine": {
+    "cn": "亚辛",
+    "team": "摩洛哥",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ayoube Amaimouni": {
+    "cn": "艾穆尼",
+    "team": "摩洛哥",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mark Flekken": {
+    "cn": "弗莱肯",
+    "team": "荷兰",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Robin Roefs": {
+    "cn": "罗宾Roefs",
+    "team": "荷兰",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lutsharel Geertruida": {
+    "cn": "赫特鲁伊达",
+    "team": "荷兰",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jan Paul van Hecke": {
+    "cn": "扬",
+    "team": "荷兰",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jorrel Hato": {
+    "cn": "哈托",
+    "team": "荷兰",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marten de Roon": {
+    "cn": "德容",
+    "team": "荷兰",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Guus Til": {
+    "cn": "蒂尔",
+    "team": "荷兰",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Teun Koopmeiners": {
+    "cn": "库普梅纳斯",
+    "team": "荷兰",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mats Wieffer": {
+    "cn": "维弗尔",
+    "team": "荷兰",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Quinten Timber": {
+    "cn": "廷伯",
+    "team": "荷兰",
+    "jersey": "",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Wout Weghorst": {
+    "cn": "韦格霍斯特",
+    "team": "荷兰",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Justin Kluivert": {
+    "cn": "克鲁伊维特",
+    "team": "荷兰",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Noa Lang": {
+    "cn": "Noa朗",
+    "team": "荷兰",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Donyell Malen": {
+    "cn": "马伦",
+    "team": "荷兰",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brian Brobbey": {
+    "cn": "布罗比",
+    "team": "荷兰",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Crysencio Summerville": {
+    "cn": "萨默维尔",
+    "team": "荷兰",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Michael Woud": {
+    "cn": "迈克尔",
+    "team": "新西兰",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alex Paulsen": {
+    "cn": "亚历克斯",
+    "team": "新西兰",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Francis de Vries": {
+    "cn": "德弗里斯",
+    "team": "新西兰",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Callan Elliot": {
+    "cn": "埃利奥特",
+    "team": "新西兰",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nando Pijnaker": {
+    "cn": "皮纳克",
+    "team": "新西兰",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Finn Surman": {
+    "cn": "瑟尔曼",
+    "team": "新西兰",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ryan Thomas": {
+    "cn": "Ryan托马斯",
+    "team": "新西兰",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alex Rufer": {
+    "cn": "亚历克斯",
+    "team": "新西兰",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Callum McCowatt": {
+    "cn": "卡勒姆",
+    "team": "新西兰",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marko Stamenic": {
+    "cn": "马尔科",
+    "team": "新西兰",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lachlan Bayliss": {
+    "cn": "贝利斯",
+    "team": "新西兰",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kosta Barbarouses": {
+    "cn": "巴巴鲁塞斯",
+    "team": "新西兰",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ben Waine": {
+    "cn": "韦恩",
+    "team": "新西兰",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jesse Randall": {
+    "cn": "兰德尔",
+    "team": "新西兰",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ben Old": {
+    "cn": "奥尔德",
+    "team": "新西兰",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Egil Selvik": {
+    "cn": "塞尔维克",
+    "team": "挪威",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sander Tangvik": {
+    "cn": "唐维克",
+    "team": "挪威",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marcus Holmgren Pedersen": {
+    "cn": "MarcusHolmgren佩德森",
+    "team": "挪威",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Julian Ryerson": {
+    "cn": "里尔森",
+    "team": "挪威",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fredrik André Bjørkan": {
+    "cn": "Fredrik安德烈Bjørkan",
+    "team": "挪威",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Torbjørn Heggem": {
+    "cn": "海格姆",
+    "team": "挪威",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Leo Østigard": {
+    "cn": "奥斯蒂加德",
+    "team": "挪威",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Henrik Falchener": {
+    "cn": "法尔切纳",
+    "team": "挪威",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "David Møller Wolfe": {
+    "cn": "大卫MøllerWolfe",
+    "team": "挪威",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sondre Langas": {
+    "cn": "朗加斯",
+    "team": "挪威",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Morten Thorsby": {
+    "cn": "托尔斯比",
+    "team": "挪威",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Patrick Berg": {
+    "cn": "Patrick贝里",
+    "team": "挪威",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fredrik Aursnes": {
+    "cn": "奥尔斯内斯",
+    "team": "挪威",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jens Petter Hauge": {
+    "cn": "豪格",
+    "team": "挪威",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oscar Bobb": {
+    "cn": "奥斯卡",
+    "team": "挪威",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Thelo Aasgaard": {
+    "cn": "阿斯加德",
+    "team": "挪威",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jørgen Strand Larsen": {
+    "cn": "JørgenStrand拉森",
+    "team": "挪威",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Andreas Schjelderup": {
+    "cn": "谢尔德鲁普",
+    "team": "挪威",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luis Mejía": {
+    "cn": "路易斯",
+    "team": "巴拿马",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Orlando Mosquera": {
+    "cn": "莫斯克拉",
+    "team": "巴拿马",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "César Samudio": {
+    "cn": "塞萨尔",
+    "team": "巴拿马",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Roderick Miller": {
+    "cn": "Roderick米勒",
+    "team": "巴拿马",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Éric Davis": {
+    "cn": "Éric戴维斯",
+    "team": "巴拿马",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Andrés Andrade": {
+    "cn": "安德拉德",
+    "team": "巴拿马",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Amir Murillo": {
+    "cn": "阿米尔",
+    "team": "巴拿马",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "César Blackman": {
+    "cn": "塞萨尔",
+    "team": "巴拿马",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jorge Gutiérrez": {
+    "cn": "Jorge古铁雷斯",
+    "team": "巴拿马",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "José Córdoba": {
+    "cn": "何塞",
+    "team": "巴拿马",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jiovany Ramos": {
+    "cn": "Jiovany拉莫斯",
+    "team": "巴拿马",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Edgardo Fariña": {
+    "cn": "法里尼亚",
+    "team": "巴拿马",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cristian Martínez": {
+    "cn": "Cristian马丁内斯",
+    "team": "巴拿马",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Édgar Yoel Bárcenas": {
+    "cn": "巴尔塞纳斯",
+    "team": "巴拿马",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Carlos Harvey": {
+    "cn": "卡洛斯",
+    "team": "巴拿马",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cecilio Waterman": {
+    "cn": "沃特曼",
+    "team": "巴拿马",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ismael Díaz": {
+    "cn": "Ismael迪亚斯",
+    "team": "巴拿马",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tomás Rodríguez": {
+    "cn": "Tomás罗德里格斯",
+    "team": "巴拿马",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "César Yanis": {
+    "cn": "塞萨尔",
+    "team": "巴拿马",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Azarias Londoño": {
+    "cn": "隆多尼奥",
+    "team": "巴拿马",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gatito Fernández": {
+    "cn": "费尔南德斯",
+    "team": "巴拉圭",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gastón Olveira": {
+    "cn": "加斯顿",
+    "team": "巴拉圭",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Orlando Gil": {
+    "cn": "希尔",
+    "team": "巴拉圭",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Juan Cáceres": {
+    "cn": "卡塞雷斯",
+    "team": "巴拉圭",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gustavo Velázquez": {
+    "cn": "贝拉斯克斯",
+    "team": "巴拉圭",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Júnior Alonso": {
+    "cn": "Júnior阿隆索",
+    "team": "巴拉圭",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fabián Balbuena": {
+    "cn": "巴尔布埃纳",
+    "team": "巴拉圭",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Omar Alderete": {
+    "cn": "奥马尔Alderete",
+    "team": "巴拉圭",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "José Canale": {
+    "cn": "何塞",
+    "team": "巴拉圭",
+    "jersey": 1,
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexandro Maidana": {
+    "cn": "迈达纳",
+    "team": "巴拉圭",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alejandro Romero Gamarra": {
+    "cn": "Alejandro罗梅罗Gamarra",
+    "team": "巴拉圭",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Diego Gómez": {
+    "cn": "Diego戈麦斯",
+    "team": "巴拉圭",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Braian Ojeda": {
+    "cn": "奥赫达",
+    "team": "巴拉圭",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mauricio": {
+    "cn": "毛里西奥",
+    "team": "巴拉圭",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Matías Galarza": {
+    "cn": "马蒂亚斯",
+    "team": "巴拉圭",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Damián Bobadilla": {
+    "cn": "博巴迪利亚",
+    "team": "巴拉圭",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gustavo Caballero": {
+    "cn": "卡巴列罗",
+    "team": "巴拉圭",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gabriel Ávalos": {
+    "cn": "加布里埃尔",
+    "team": "巴拉圭",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alex Arce": {
+    "cn": "亚历克斯",
+    "team": "巴拉圭",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Isidro Pitta": {
+    "cn": "皮塔",
+    "team": "巴拉圭",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rui Silva": {
+    "cn": "Rui席尔瓦",
+    "team": "葡萄牙",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "José Sá": {
+    "cn": "何塞",
+    "team": "葡萄牙",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nélson Semedo": {
+    "cn": "塞梅多",
+    "team": "葡萄牙",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Diogo Dalot": {
+    "cn": "迪奥戈",
+    "team": "葡萄牙",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tomás Araújo": {
+    "cn": "Tomás阿劳霍",
+    "team": "葡萄牙",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Renato Veiga": {
+    "cn": "雷纳托",
+    "team": "葡萄牙",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Samú Costa": {
+    "cn": "Samú科斯塔",
+    "team": "葡萄牙",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rúben Neves": {
+    "cn": "Rúben内维斯",
+    "team": "葡萄牙",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Matheus Nunes": {
+    "cn": "Matheus努涅斯",
+    "team": "葡萄牙",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gonçalo Guedes": {
+    "cn": "贡萨洛",
+    "team": "葡萄牙",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pedro Neto": {
+    "cn": "佩德罗",
+    "team": "葡萄牙",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Francisco Trincão": {
+    "cn": "弗朗西斯科",
+    "team": "葡萄牙",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "João Félix": {
+    "cn": "若昂·费利克斯",
+    "team": "葡萄牙",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gonçalo Ramos": {
+    "cn": "Gonçalo拉莫斯",
+    "team": "葡萄牙",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Francisco Conceição": {
+    "cn": "弗朗西斯科",
+    "team": "葡萄牙",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Salah Zakaria": {
+    "cn": "扎卡里亚",
+    "team": "卡塔尔",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mahmoud Abunada": {
+    "cn": "马哈茂德",
+    "team": "卡塔尔",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pedro Miguel": {
+    "cn": "米格尔",
+    "team": "卡塔尔",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lucas Mendes": {
+    "cn": "吕卡门德斯",
+    "team": "卡塔尔",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sultan Al-Brake": {
+    "cn": "苏丹Al-Brake",
+    "team": "卡塔尔",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Homam Ahmed": {
+    "cn": "Homam艾哈迈德",
+    "team": "卡塔尔",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jassem Gaber": {
+    "cn": "贾比尔",
+    "team": "卡塔尔",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ayoub Al-Oui": {
+    "cn": "阿尤布",
+    "team": "卡塔尔",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Al-Hashmi Al-Hussain": {
+    "cn": "侯赛因",
+    "team": "卡塔尔",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Issa Laye": {
+    "cn": "拉耶",
+    "team": "卡塔尔",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Fathy": {
+    "cn": "艾哈迈德Fathy",
+    "team": "卡塔尔",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Manai": {
+    "cn": "穆罕默德Manai",
+    "team": "卡塔尔",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Edmílson Junior": {
+    "cn": "朱尼尔",
+    "team": "卡塔尔",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammed Muntari": {
+    "cn": "穆罕默德Muntari",
+    "team": "卡塔尔",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Alaaeldin": {
+    "cn": "艾哈迈德Alaaeldin",
+    "team": "卡塔尔",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yusuf Abdurisag": {
+    "cn": "优素福",
+    "team": "卡塔尔",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Al-Ganehi": {
+    "cn": "艾哈迈德Al-Ganehi",
+    "team": "卡塔尔",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tahsin Jamshid": {
+    "cn": "贾姆希德",
+    "team": "卡塔尔",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ahmed Al-Kassar": {
+    "cn": "艾哈迈德Al-Kassar",
+    "team": "沙特",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nawaf Al-Aqidi": {
+    "cn": "纳瓦夫Al-Aqidi",
+    "team": "沙特",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hassan Kadish": {
+    "cn": "哈桑Kadish",
+    "team": "沙特",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hassan Al-Tambakti": {
+    "cn": "哈桑Al-Tambakti",
+    "team": "沙特",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdulelah Al-Amri": {
+    "cn": "阿姆里",
+    "team": "沙特",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Lajami": {
+    "cn": "阿里Lajami",
+    "team": "沙特",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Moteb Al-Harbi": {
+    "cn": "哈尔比",
+    "team": "沙特",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nawaf Boushal": {
+    "cn": "纳瓦夫Boushal",
+    "team": "沙特",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ali Majrashi": {
+    "cn": "阿里Majrashi",
+    "team": "沙特",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jehad Thakri": {
+    "cn": "萨克里",
+    "team": "沙特",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nasser Al-Dawsari": {
+    "cn": "纳赛尔Al-Dawsari",
+    "team": "沙特",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Aiman Yahya": {
+    "cn": "叶海亚",
+    "team": "沙特",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ziyad Al-Johani": {
+    "cn": "朱哈尼",
+    "team": "沙特",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Musab Al-Juwayr": {
+    "cn": "朱韦尔",
+    "team": "沙特",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ala Al-Hajji": {
+    "cn": "哈吉",
+    "team": "沙特",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohammed Abu Al-Shamat": {
+    "cn": "穆罕默德AbuAl-Shamat",
+    "team": "沙特",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Feras Al-Brikan": {
+    "cn": "布里坎",
+    "team": "沙特",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sultan Mandash": {
+    "cn": "苏丹Mandash",
+    "team": "沙特",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Khalid Al-Ghannam": {
+    "cn": "哈立德Al-Ghannam",
+    "team": "沙特",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdullah Al-Hamdan": {
+    "cn": "阿卜杜拉Al-Hamdan",
+    "team": "沙特",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Liam Kelly": {
+    "cn": "利亚姆",
+    "team": "苏格兰",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Craig Gordon": {
+    "cn": "戈登",
+    "team": "苏格兰",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Andy Robertson": {
+    "cn": "罗伯逊",
+    "team": "苏格兰",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "John Souttar": {
+    "cn": "约翰",
+    "team": "苏格兰",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Scott McKenna": {
+    "cn": "斯科特McKenna",
+    "team": "苏格兰",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Anthony Ralston": {
+    "cn": "安东尼",
+    "team": "苏格兰",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dominic Hyam": {
+    "cn": "多米尼克",
+    "team": "苏格兰",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ryan Christie": {
+    "cn": "瑞安",
+    "team": "苏格兰",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kenny McLean": {
+    "cn": "麦克莱恩",
+    "team": "苏格兰",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lewis Ferguson": {
+    "cn": "刘易斯Ferguson",
+    "team": "苏格兰",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tyler Fletcher": {
+    "cn": "泰勒",
+    "team": "苏格兰",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lawrence Shankland": {
+    "cn": "劳伦斯",
+    "team": "苏格兰",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ché Adams": {
+    "cn": "Ché亚当斯",
+    "team": "苏格兰",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "George Hirst": {
+    "cn": "赫斯特",
+    "team": "苏格兰",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ross Stewart": {
+    "cn": "罗斯斯图尔特",
+    "team": "苏格兰",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ben Gannon-Doak": {
+    "cn": "加农-多克",
+    "team": "苏格兰",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Findlay Curtis": {
+    "cn": "柯蒂斯",
+    "team": "苏格兰",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mory Diaw": {
+    "cn": "迪奥",
+    "team": "塞内加尔",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yehvann Diouf": {
+    "cn": "迪乌夫",
+    "team": "塞内加尔",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Moussa Niakhaté": {
+    "cn": "尼亚凯特",
+    "team": "塞内加尔",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdoulaye Seck": {
+    "cn": "塞克",
+    "team": "塞内加尔",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ismail Jakobs": {
+    "cn": "伊斯梅尔Jakobs",
+    "team": "塞内加尔",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Antoine Mendy": {
+    "cn": "门迪",
+    "team": "塞内加尔",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mamadou Sarr": {
+    "cn": "萨尔",
+    "team": "塞内加尔",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "El Hadji Malick Diouf": {
+    "cn": "迪乌夫",
+    "team": "塞内加尔",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lamine Camara": {
+    "cn": "卡马拉",
+    "team": "塞内加尔",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Krépin Diatta": {
+    "cn": "迪亚塔",
+    "team": "塞内加尔",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pathé Ciss": {
+    "cn": "西斯",
+    "team": "塞内加尔",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Pape Matar Sarr": {
+    "cn": "帕佩·萨尔",
+    "team": "塞内加尔",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Habib Diarra": {
+    "cn": "迪亚拉",
+    "team": "塞内加尔",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Bara Sapoko Ndiaye": {
+    "cn": "恩迪亚耶",
+    "team": "塞内加尔",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cherif Ndiaye": {
+    "cn": "恩迪亚耶",
+    "team": "塞内加尔",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nicolas Jackson": {
+    "cn": "尼古拉杰克逊",
+    "team": "塞内加尔",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Bamba Dieng": {
+    "cn": "迪昂",
+    "team": "塞内加尔",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Assane Diao": {
+    "cn": "迪奥",
+    "team": "塞内加尔",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ibrahim Mbaye": {
+    "cn": "易卜拉欣Mbaye",
+    "team": "塞内加尔",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ricardo Goss": {
+    "cn": "里卡多",
+    "team": "南非",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sipho Chaine": {
+    "cn": "西波",
+    "team": "南非",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nkosinathi Sibisi": {
+    "cn": "恩科西纳提",
+    "team": "南非",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Bradley Cross": {
+    "cn": "布拉德利",
+    "team": "南非",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Olwethu Makhanya": {
+    "cn": "奥尔韦图",
+    "team": "南非",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ime Okon": {
+    "cn": "奥孔",
+    "team": "南非",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Thabang Matuludi": {
+    "cn": "唐邦",
+    "team": "南非",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Samukele Kabini": {
+    "cn": "卡比尼",
+    "team": "南非",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Khulumani Ndamane": {
+    "cn": "恩达马内",
+    "team": "南非",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mbekezeli Mbokazi": {
+    "cn": "姆博卡齐",
+    "team": "南非",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sphephelo Sithole": {
+    "cn": "斯菲佩洛",
+    "team": "南非",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Thalente Mbatha": {
+    "cn": "塔伦特",
+    "team": "南非",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jayden Adams": {
+    "cn": "Jayden亚当斯",
+    "team": "南非",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kamogelo Sebelebele": {
+    "cn": "塞贝莱贝莱",
+    "team": "南非",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oswin Appollis": {
+    "cn": "阿波利斯",
+    "team": "南非",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Iqraam Rayners": {
+    "cn": "雷纳斯",
+    "team": "南非",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tshepang Moremi": {
+    "cn": "莫雷米",
+    "team": "南非",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Thapelo Maseko": {
+    "cn": "塔佩洛",
+    "team": "南非",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Relebohile Mofokeng": {
+    "cn": "雷莱博希莱",
+    "team": "南非",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kim Seung-Gyu": {
+    "cn": "金Seung-Gyu",
+    "team": "韩国",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jo Hyeon-Woo": {
+    "cn": "赵Hyeon-Woo",
+    "team": "韩国",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Song Bum-Keun": {
+    "cn": "宋Bum-Keun",
+    "team": "韩国",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kim Min-Jae": {
+    "cn": "金Min-Jae",
+    "team": "韩国",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kim Moon-Hwan": {
+    "cn": "金Moon-Hwan",
+    "team": "韩国",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kim Tae-Hyeon": {
+    "cn": "金Tae-Hyeon",
+    "team": "韩国",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lee Tae-Seok": {
+    "cn": "李Tae-Seok",
+    "team": "韩国",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lee Han-Beom": {
+    "cn": "李Han-Beom",
+    "team": "韩国",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Seol Young-Woo": {
+    "cn": "薛英佑",
+    "team": "韩国",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lee Gi-Hyuk": {
+    "cn": "李Gi-Hyuk",
+    "team": "韩国",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cho Wi-Je": {
+    "cn": "赵Wi-Je",
+    "team": "韩国",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kim Jin-Gyu": {
+    "cn": "金Jin-Gyu",
+    "team": "韩国",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lee Jae-Sung": {
+    "cn": "李Jae-Sung",
+    "team": "韩国",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Paik Seung-Ho": {
+    "cn": "白升浩",
+    "team": "韩国",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lee Dong-Gyeong": {
+    "cn": "李Dong-Gyeong",
+    "team": "韩国",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Lee Kang-In": {
+    "cn": "李Kang-In",
+    "team": "韩国",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hwang In-Beom": {
+    "cn": "黄In-Beom",
+    "team": "韩国",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jens Castrop": {
+    "cn": "卡斯特罗普",
+    "team": "韩国",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Park Jin-Seop": {
+    "cn": "朴Jin-Seop",
+    "team": "韩国",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Bae Jun-Ho": {
+    "cn": "裴Jun-Ho",
+    "team": "韩国",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Son Heung-Min": {
+    "cn": "孙Heung-Min",
+    "team": "韩国",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hwang Hee-Chan": {
+    "cn": "黄Hee-Chan",
+    "team": "韩国",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Eom Ji-Sung": {
+    "cn": "严Ji-Sung",
+    "team": "韩国",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oh Hyeon-Gyu": {
+    "cn": "吴Hyeon-Gyu",
+    "team": "韩国",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cho Gue-Sung": {
+    "cn": "赵Gue-Sung",
+    "team": "韩国",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yang Hyun-Jun": {
+    "cn": "梁Hyun-Jun",
+    "team": "韩国",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joan García": {
+    "cn": "Joan加西亚",
+    "team": "西班牙",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Eric García": {
+    "cn": "Eric加西亚",
+    "team": "西班牙",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alejandro Grimaldo": {
+    "cn": "格里马尔多",
+    "team": "西班牙",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marc Pubill": {
+    "cn": "马克",
+    "team": "西班牙",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marcos Llorente": {
+    "cn": "马科斯",
+    "team": "西班牙",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mikel Merino": {
+    "cn": "梅里诺",
+    "team": "西班牙",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fabián Ruiz": {
+    "cn": "Fabián鲁伊斯",
+    "team": "西班牙",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Martín Zubimendi": {
+    "cn": "苏比门迪",
+    "team": "西班牙",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yéremy Pino": {
+    "cn": "耶雷米·皮诺",
+    "team": "西班牙",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Álex Baena": {
+    "cn": "巴埃纳",
+    "team": "西班牙",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gavi": {
+    "cn": "加维",
+    "team": "西班牙",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Borja Iglesias": {
+    "cn": "伊格莱西亚斯",
+    "team": "西班牙",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ferran Torres": {
+    "cn": "Ferran托雷斯",
+    "team": "西班牙",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Víctor Muñoz": {
+    "cn": "Víctor穆尼奥斯",
+    "team": "西班牙",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kristoffer Nordfeldt": {
+    "cn": "诺德费尔特",
+    "team": "瑞典",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jacob Widell Zetterström": {
+    "cn": "雅各布",
+    "team": "瑞典",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Carl Starfelt": {
+    "cn": "斯塔费尔特",
+    "team": "瑞典",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Eric Smith": {
+    "cn": "Eric史密斯",
+    "team": "瑞典",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gabriel Gudmundsson": {
+    "cn": "加布里埃尔",
+    "team": "瑞典",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hjalmar Ekdal": {
+    "cn": "埃克达尔",
+    "team": "瑞典",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gustaf Lagerbielke": {
+    "cn": "拉格尔比尔克",
+    "team": "瑞典",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ken Sema": {
+    "cn": "塞马",
+    "team": "瑞典",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jesper Karlström": {
+    "cn": "卡尔斯特伦",
+    "team": "瑞典",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yasin Ayari": {
+    "cn": "阿亚里",
+    "team": "瑞典",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Herman Johansson": {
+    "cn": "Herman约翰松",
+    "team": "瑞典",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Taha Ali": {
+    "cn": "Taha阿里",
+    "team": "瑞典",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Besfort Zeneli": {
+    "cn": "泽内利",
+    "team": "瑞典",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Elliot Stroud": {
+    "cn": "斯特劳德",
+    "team": "瑞典",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gustaf Nilsson": {
+    "cn": "Gustaf尼尔松",
+    "team": "瑞典",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Benjamin Nygren": {
+    "cn": "本杰明",
+    "team": "瑞典",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alexander Bernhardsson": {
+    "cn": "亚历山大",
+    "team": "瑞典",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yvon Mvogo": {
+    "cn": "姆沃戈",
+    "team": "瑞士",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Gregor Kobel": {
+    "cn": "科贝尔",
+    "team": "瑞士",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Marvin Keller": {
+    "cn": "凯勒",
+    "team": "瑞士",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Eray Cömert": {
+    "cn": "切尔特",
+    "team": "瑞士",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Miro Muheim": {
+    "cn": "穆海姆",
+    "team": "瑞士",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Aurèle Amenda": {
+    "cn": "阿门达",
+    "team": "瑞士",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Luca Jaquez": {
+    "cn": "雅凯兹",
+    "team": "瑞士",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Djibril Sow": {
+    "cn": "索乌",
+    "team": "瑞士",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Denis Zakaria": {
+    "cn": "扎卡里亚",
+    "team": "瑞士",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Christian Fassnacht": {
+    "cn": "克里斯蒂安",
+    "team": "瑞士",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Michel Aebischer": {
+    "cn": "米歇尔Aebischer",
+    "team": "瑞士",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rubén Vargas": {
+    "cn": "Rubén巴尔加斯",
+    "team": "瑞士",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ardon Jashari": {
+    "cn": "贾沙里",
+    "team": "瑞士",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fabian Rieder": {
+    "cn": "里德",
+    "team": "瑞士",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Johan Manzambi": {
+    "cn": "曼赞比",
+    "team": "瑞士",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cedric Itten": {
+    "cn": "伊滕",
+    "team": "瑞士",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Noah Okafor": {
+    "cn": "奥卡福",
+    "team": "瑞士",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zeki Amdouni": {
+    "cn": "阿姆杜尼",
+    "team": "瑞士",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sabri Ben Hessen": {
+    "cn": "本赫森",
+    "team": "突尼斯",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mouhib Chamakh": {
+    "cn": "沙马克",
+    "team": "突尼斯",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dylan Bronn": {
+    "cn": "迪伦",
+    "team": "突尼斯",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Amine Ben Hamida": {
+    "cn": "穆罕默德AmineBenHamida",
+    "team": "突尼斯",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Moutaz Neffati": {
+    "cn": "内法蒂",
+    "team": "突尼斯",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Adem Arous": {
+    "cn": "阿鲁斯",
+    "team": "突尼斯",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Raed Chikhaoui": {
+    "cn": "希卡维",
+    "team": "突尼斯",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rani Khedira": {
+    "cn": "赫迪拉",
+    "team": "突尼斯",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mortadha Ben Ouanes": {
+    "cn": "本瓦尼斯",
+    "team": "突尼斯",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mohamed Hadj Mahmoud": {
+    "cn": "穆罕默德HadjMahmoud",
+    "team": "突尼斯",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Anis Slimane": {
+    "cn": "阿尼斯",
+    "team": "突尼斯",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Elias Achouri": {
+    "cn": "伊莱亚斯",
+    "team": "突尼斯",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Firas Chaouat": {
+    "cn": "菲拉斯",
+    "team": "突尼斯",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sebastian Tounekti": {
+    "cn": "塞巴斯蒂安",
+    "team": "突尼斯",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ismaël Gharbi": {
+    "cn": "伊斯梅尔",
+    "team": "突尼斯",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hazem Mastouri": {
+    "cn": "马斯图里",
+    "team": "突尼斯",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Khalil Ayari": {
+    "cn": "阿亚里",
+    "team": "突尼斯",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rayan Elloumi": {
+    "cn": "拉扬",
+    "team": "突尼斯",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mert Günok": {
+    "cn": "居诺克",
+    "team": "土耳其",
+    "jersey": "1",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ugurcan Çakir": {
+    "cn": "恰克尔",
+    "team": "土耳其",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Altay Bayindir": {
+    "cn": "巴因迪尔",
+    "team": "土耳其",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kaan Ayhan": {
+    "cn": "卡安",
+    "team": "土耳其",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdülkerim Bardakçi": {
+    "cn": "巴尔达克奇",
+    "team": "土耳其",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Çaglar Söyüncü": {
+    "cn": "瑟云聚",
+    "team": "土耳其",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ferdi Kadioglu": {
+    "cn": "卡迪奥卢",
+    "team": "土耳其",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ozan Kabak": {
+    "cn": "卡巴克",
+    "team": "土耳其",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Zeki Çelik": {
+    "cn": "切利克",
+    "team": "土耳其",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Eren Elmali": {
+    "cn": "埃尔马勒",
+    "team": "土耳其",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Samet Akaydin": {
+    "cn": "阿卡伊丁",
+    "team": "土耳其",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Hakan Çalhanoglu": {
+    "cn": "恰尔汗奥卢",
+    "team": "土耳其",
+    "jersey": "10",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Irfan Can Kahveci": {
+    "cn": "卡赫维奇",
+    "team": "土耳其",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ismail Yüksek": {
+    "cn": "伊斯梅尔Yüksek",
+    "team": "土耳其",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Can Uzun": {
+    "cn": "詹",
+    "team": "土耳其",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Yunus Akgün": {
+    "cn": "阿克金",
+    "team": "土耳其",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kerem Aktürkoglu": {
+    "cn": "阿克蒂尔科卢",
+    "team": "土耳其",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Baris Alper Yilmaz": {
+    "cn": "伊尔马兹",
+    "team": "土耳其",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oguz Aydin": {
+    "cn": "艾登",
+    "team": "土耳其",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Deniz Gül": {
+    "cn": "居尔",
+    "team": "土耳其",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Kenan Yildiz": {
+    "cn": "耶尔德兹",
+    "team": "土耳其",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Matt Freese": {
+    "cn": "弗里斯",
+    "team": "美国",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Chris Brady": {
+    "cn": "克里斯",
+    "team": "美国",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mark McKenzie": {
+    "cn": "马克",
+    "team": "美国",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tim Ream": {
+    "cn": "蒂姆",
+    "team": "美国",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Auston Trusty": {
+    "cn": "特拉斯蒂",
+    "team": "美国",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alex Freeman": {
+    "cn": "亚历克斯",
+    "team": "美国",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Miles Robinson": {
+    "cn": "Miles罗宾逊",
+    "team": "美国",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joe Scally": {
+    "cn": "斯卡利",
+    "team": "美国",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Cristian Roldan": {
+    "cn": "克里斯蒂安",
+    "team": "美国",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Tyler Adams": {
+    "cn": "Tyler亚当斯",
+    "team": "美国",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brenden Aaronson": {
+    "cn": "阿伦森",
+    "team": "美国",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Giovanni Reyna": {
+    "cn": "雷纳",
+    "team": "美国",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sebastian Berhalter": {
+    "cn": "塞巴斯蒂安",
+    "team": "美国",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Max Arfsten": {
+    "cn": "马克斯",
+    "team": "美国",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Alejandro Zendejas": {
+    "cn": "亚历杭德罗",
+    "team": "美国",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Haji Wright": {
+    "cn": "Haji赖特",
+    "team": "美国",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Ricardo Pepi": {
+    "cn": "佩皮",
+    "team": "美国",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Fernando Muslera": {
+    "cn": "穆斯莱拉",
+    "team": "乌拉圭",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Santiago Mele": {
+    "cn": "梅莱",
+    "team": "乌拉圭",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Guillermo Varela": {
+    "cn": "瓦雷拉",
+    "team": "乌拉圭",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "José María Giménez": {
+    "cn": "希门尼斯",
+    "team": "乌拉圭",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Santiago Bueno": {
+    "cn": "布埃诺",
+    "team": "乌拉圭",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Joaquín Piquerez": {
+    "cn": "皮克雷斯",
+    "team": "乌拉圭",
+    "jersey": "22",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sebastián Cáceres": {
+    "cn": "卡塞雷斯",
+    "team": "乌拉圭",
+    "jersey": "3",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Manuel Ugarte": {
+    "cn": "乌加特",
+    "team": "乌拉圭",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Nicolás de la Cruz": {
+    "cn": "Nicolásdela克鲁斯",
+    "team": "乌拉圭",
+    "jersey": "7",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Maxi Araújo": {
+    "cn": "Maxi阿劳霍",
+    "team": "乌拉圭",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rodrigo Zalazar": {
+    "cn": "罗德里戈",
+    "team": "乌拉圭",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Juan Manuel Sanabria": {
+    "cn": "胡安",
+    "team": "乌拉圭",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Brian Rodríguez": {
+    "cn": "Brian罗德里格斯",
+    "team": "乌拉圭",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rodrigo Aguirre": {
+    "cn": "阿吉雷",
+    "team": "乌拉圭",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Agustín Canobbio": {
+    "cn": "坎诺比奥",
+    "team": "乌拉圭",
+    "jersey": "14",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Federico Viñas": {
+    "cn": "费德里科",
+    "team": "乌拉圭",
+    "jersey": "21",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Botirali Ergashev": {
+    "cn": "埃尔加舍夫",
+    "team": "乌兹别克",
+    "jersey": "16",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abduvohid Nematov": {
+    "cn": "涅马托夫",
+    "team": "乌兹别克",
+    "jersey": "12",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Rustam Ashurmatov": {
+    "cn": "阿舒尔马托夫",
+    "team": "乌兹别克",
+    "jersey": "5",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Farrukh Sayfiev": {
+    "cn": "赛菲耶夫",
+    "team": "乌兹别克",
+    "jersey": "4",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Umar Eshmurodov": {
+    "cn": "埃什穆罗多夫",
+    "team": "乌兹别克",
+    "jersey": "15",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Avazbek Ulmasaliyev": {
+    "cn": "乌尔马萨利耶夫",
+    "team": "乌兹别克",
+    "jersey": "25",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sherzod Nasrullaev": {
+    "cn": "纳斯鲁拉耶夫",
+    "team": "乌兹别克",
+    "jersey": "13",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdukodir Khusanov": {
+    "cn": "胡萨诺夫",
+    "team": "乌兹别克",
+    "jersey": "2",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jakhongir Urozov": {
+    "cn": "乌罗佐夫",
+    "team": "乌兹别克",
+    "jersey": "26",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Behruzjon Karimov": {
+    "cn": "卡里莫夫",
+    "team": "乌兹别克",
+    "jersey": "24",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Jamshid Iskanderov": {
+    "cn": "伊斯坎杰罗夫",
+    "team": "乌兹别克",
+    "jersey": "8",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Odiljon Xamrobekov": {
+    "cn": "哈姆罗贝科夫",
+    "team": "乌兹别克",
+    "jersey": "9",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Dostonbek Khamdamov": {
+    "cn": "哈姆达莫夫",
+    "team": "乌兹别克",
+    "jersey": "17",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Azizjon Ganiev": {
+    "cn": "加尼耶夫",
+    "team": "乌兹别克",
+    "jersey": "19",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Akmal Mozgovoy": {
+    "cn": "莫兹戈沃伊",
+    "team": "乌兹别克",
+    "jersey": "6",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Oston Urunov": {
+    "cn": "乌鲁诺夫",
+    "team": "乌兹别克",
+    "jersey": "11",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Abdulla Abdullaev": {
+    "cn": "阿卜杜拉耶夫",
+    "team": "乌兹别克",
+    "jersey": "18",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Sherzod Esanov": {
+    "cn": "埃萨诺夫",
+    "team": "乌兹别克",
+    "jersey": "23",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Azizbek Amonov": {
+    "cn": "阿莫诺夫",
+    "team": "乌兹别克",
+    "jersey": "20",
+    "position": null,
+    "age": null,
+    "auto_translated": true
+  },
+  "Mostafa Mohamed": {
+    "cn": "穆斯塔法·穆罕默德",
+    "team": "埃及",
+    "jersey": "9",
+    "position": "F",
+    "age": 28
+  },
+  "Christoph Baumgartner": {
+    "cn": "鲍姆加特纳",
+    "team": "奥地利",
+    "jersey": "9",
+    "position": "M",
+    "age": 26
+  },
+  "Leonardo Balerdi": {
+    "cn": "巴莱尔迪",
+    "team": "阿根廷",
+    "jersey": "2",
+    "position": "D",
+    "age": 26
+  },
+  "Emiliano Martínez": {
+    "cn": "大马丁",
+    "team": "阿根廷",
+    "jersey": "23",
+    "position": "G",
+    "age": 33,
+    "note": "Default to Argentina GK"
+  }
+}

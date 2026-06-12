@@ -1,0 +1,225 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import test from "node:test";
+
+function loadPredictionEngine() {
+  const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+  const match = html.match(/var PredictionEngine=\(function\(\)\{([\s\S]*?)\n\}\)\(\);/);
+  assert.ok(match, "PredictionEngine IIFE must be present in index.html");
+  return Function(`${match[0]}\nreturn PredictionEngine;`)();
+}
+
+function fixedRng(values) {
+  let index = 0;
+  return () => {
+    const value = values[index % values.length];
+    index += 1;
+    return value;
+  };
+}
+
+const strengths = {
+  "强队": 5,
+  "中队": 3,
+  "弱队": 1,
+};
+
+test("defines the architecture contracts for entities and prediction modes", () => {
+  const engine = loadPredictionEngine();
+
+  assert.equal(engine.ENGINE_SCHEMA_VERSION, 2);
+  assert.deepEqual(engine.PREDICTION_MODES.map((mode) => mode.id), [
+    "random",
+    "odds",
+    "worldRanking",
+    "aiReasoning",
+  ]);
+  assert.deepEqual(engine.GAMEPLAY_MODES.map((mode) => mode.id), [
+    "normal",
+    "clone",
+    "chaos",
+  ]);
+
+  const team = engine.createTeamEntity({
+    id: "arg",
+    name: "阿根廷",
+    strengthTier: 5,
+    worldRanking: 1,
+    coach: { name: "Scaloni" },
+    players: [{ id: "messi", name: "梅西", position: "前腰" }],
+  });
+  assert.equal(team.kind, "Team");
+  assert.equal(team.coach.kind, "Coach");
+  assert.equal(team.players[0].kind, "Player");
+
+  const match = engine.createMatchEntity({
+    id: "m1",
+    homeTeam: team,
+    awayTeam: engine.createTeamEntity({ id: "mex", name: "墨西哥" }),
+    stage: "group",
+  });
+  assert.equal(match.kind, "Match");
+  assert.equal(match.homeTeam.id, "arg");
+});
+
+test("normalizes decimal odds into implied probabilities", () => {
+  const engine = loadPredictionEngine();
+  const probabilities = engine.normalizeOddsMarket({
+    home: 2,
+    draw: 4,
+    away: 4,
+  });
+
+  assert.equal(Math.round(probabilities.home * 100), 50);
+  assert.equal(Math.round(probabilities.draw * 100), 25);
+  assert.equal(Math.round(probabilities.away * 100), 25);
+});
+
+test("odds mode gives the stronger team a higher no-draw win probability", () => {
+  const engine = loadPredictionEngine();
+  const probabilities = engine.estimateOutcomeProbabilities({
+    predictionMode: "odds",
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+  });
+
+  assert.ok(probabilities.home > probabilities.away);
+  assert.equal(probabilities.draw, 0);
+  assert.equal(Math.round((probabilities.home + probabilities.away) * 1000), 1000);
+  assert.ok(probabilities.home > 0.77 && probabilities.home < 0.80);
+});
+
+test("strength calibration follows the documented knockout curve", () => {
+  const engine = loadPredictionEngine();
+  const expected = [0.5, 0.579, 0.655, 0.723, 0.782];
+
+  for (let diff = 0; diff <= 4; diff += 1) {
+    const probabilities = engine.estimateOutcomeProbabilities({
+      predictionMode: "odds",
+      allowDraw: false,
+      homeTeam: { strengthTier: 3 + diff },
+      awayTeam: { strengthTier: 3 },
+    });
+    assert.ok(
+      Math.abs(probabilities.home - expected[diff]) < 0.006,
+      `strength difference ${diff} should stay calibrated`,
+    );
+  }
+});
+
+test("external odds override strength-only priors while preserving normalization", () => {
+  const engine = loadPredictionEngine();
+  const probabilities = engine.estimateOutcomeProbabilities({
+    predictionMode: "odds",
+    allowDraw: true,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+    oddsMarket: { home: 8, draw: 5, away: 1.5 },
+  });
+
+  assert.ok(probabilities.away > probabilities.home);
+  assert.equal(Math.round((probabilities.home + probabilities.draw + probabilities.away) * 1000), 1000);
+});
+
+test("chaos gameplay shifts odds-mode probability toward the underdog", () => {
+  const engine = loadPredictionEngine();
+  const normal = engine.estimateOutcomeProbabilities({
+    predictionMode: "odds",
+    gameplayMode: "normal",
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+  });
+  const chaos = engine.estimateOutcomeProbabilities({
+    predictionMode: "odds",
+    gameplayMode: "chaos",
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+  });
+
+  assert.ok(chaos.away > normal.away);
+});
+
+test("simulated knockout scores never draw and match the sampled outcome", () => {
+  const engine = loadPredictionEngine();
+  const result = engine.simulateMatch({
+    predictionMode: "odds",
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+    rng: fixedRng([0.01, 0.20, 0.10, 0.70, 0.30, 0.90]),
+  });
+
+  assert.notEqual(result.homeGoals, result.awayGoals);
+  assert.equal(result.outcome, result.homeGoals > result.awayGoals ? "home" : "away");
+  assert.ok(result.probabilities.home > result.probabilities.away);
+  assert.equal(result.kind, "Prediction");
+  assert.deepEqual(result.scoreline, {
+    home: result.homeGoals,
+    away: result.awayGoals,
+  });
+  assert.ok(result.halfTimeScore.home <= result.homeGoals);
+  assert.ok(result.halfTimeScore.away <= result.awayGoals);
+  assert.ok(Array.isArray(result.events));
+  assert.ok(Array.isArray(result.explain));
+});
+
+test("all prediction modes are implemented with a shared output contract", () => {
+  const engine = loadPredictionEngine();
+  for (const mode of engine.PREDICTION_MODES) {
+    assert.deepEqual(mode.capabilities, [
+      "winner",
+      "scoreline",
+      "goals",
+      "assists",
+      "cards",
+      "halfTimeScore",
+    ]);
+    assert.equal(mode.status, "implemented");
+  }
+});
+
+test("random mode is strength-neutral and ranking mode uses supplied ranks", () => {
+  const engine = loadPredictionEngine();
+  const random = engine.estimateOutcomeProbabilities({
+    predictionMode: "random",
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+  });
+  assert.equal(random.home, 0.5);
+  assert.equal(random.away, 0.5);
+
+  const ranked = engine.estimateOutcomeProbabilities({
+    predictionMode: "worldRanking",
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+    rankings: { 强队: 80, 弱队: 1 },
+  });
+  assert.ok(ranked.away > ranked.home);
+});
+
+test("AI mode accepts structured provider probabilities", () => {
+  const engine = loadPredictionEngine();
+  const probabilities = engine.estimateOutcomeProbabilities({
+    predictionMode: "aiReasoning",
+    allowDraw: true,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+    aiProbabilities: { home: 0.1, draw: 0.2, away: 0.7 },
+  });
+  assert.equal(Math.round(probabilities.home * 10), 1);
+  assert.equal(Math.round(probabilities.draw * 10), 2);
+  assert.equal(Math.round(probabilities.away * 10), 7);
+});
