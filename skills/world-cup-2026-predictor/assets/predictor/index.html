@@ -508,8 +508,8 @@ body.view-mode .mode-row{margin:18px 0 24px!important}
 
 <!-- Toolbar: music controls + theme toggle + language switch, unified pill style -->
 <div class="topbar-ctrl">
-<button class="ctrl-icon" id="skipBtn" onclick="skipSong()" title="Skip track">⏭</button>
-<button class="ctrl-icon music" id="musicBtn" onclick="toggleMusic()" title="Play / Pause"></button>
+<button class="ctrl-icon" id="skipBtn" onclick="skipSong()" title="Skip track" style="display:none">⏭</button>
+<button class="ctrl-icon music" id="musicBtn" onclick="toggleMusic()" title="Play / Pause" style="display:none"></button>
 <button class="ctrl-icon lang" id="langBtn" onclick="toggleLang()" title="Language / 语言">EN</button>
 <button class="ctrl-icon" id="themeBtn" onclick="toggleTheme()" title="Toggle theme">🌙</button>
 </div>
@@ -1260,8 +1260,8 @@ function clearState(){localStorage.removeItem("wc26_gm");localStorage.removeItem
 function modeControl(){
   var modes=[
     {k:"normal",zh:"普通模式",en:"Normal"},
-    {k:"clone", zh:"克隆模式",en:"Clone"},
-    {k:"chaos", zh:"混沌模式",en:"Chaos"}
+    {k:"clone", zh:"娱乐模式",en:"Fun"},
+    {k:"chaos", zh:"爆冷模式",en:"Upset"}
   ];
   var label=LANG==="en"?"Play mode":"玩法模式";
   var h='<div class="mode-row"><div class="play-mode '+playMode+'" role="group" aria-label="'+label+'">';
@@ -1333,8 +1333,8 @@ var I18N={
     ttSkip:"切歌",ttMusic:"播放 / 暂停",ttTheme:"切换主题",ttInfo:"玩法说明",
     histTitle:"我的历史预测",histClear:"清空",histLoad:"点击加载",
     histConfirmClear:"确认清空所有历史预测？",histEmpty:"暂无历史 — 完成一份淘汰赛后会自动保存",
-    modeChaos:"混沌模式",
-    modesInfoHTML:'<b>三种玩法模式</b><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">普通</span><span>强队更稳定，比分较真实，冷门有限。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">克隆</span><span>每队 11 人变身同一当家球星，射手榜进入"全员王牌"娱乐宇宙。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:#C8744A;min-width:40px">混沌</span><span>弱队爆冷大举增加，比分更夸张，可能反向虐杀强队。世界杯变剧本杀。</span></div>',
+    modeChaos:"爆冷模式",
+    modesInfoHTML:'<b>三种玩法模式</b><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">普通</span><span>强队更稳定，比分较真实，冷门有限。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">娱乐</span><span>每队 11 人变身同一当家球星，射手榜进入"全员王牌"娱乐宇宙。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:#C8744A;min-width:40px">爆冷</span><span>弱队爆冷概率大增，比分更夸张，可能反向虐杀强队。世界杯变剧本杀。</span></div>',
     btnRandAll:"🎲 一键随机全部",btnFillRemaining:"🎲 填充剩余",btnResetAll:"↺ 重置全部",btnClearSave:"🗑 清除存档",btnShare:"📤 分享预测",
     btnRandKO:"🎲 一键随机全部淘汰赛",btnResetKO:"↺ 重置全部",
     progressLabel:"小组赛进度",progressDone:"{done} / {total} 场 ({pct}%)",
@@ -1385,8 +1385,8 @@ var I18N={
     ttSkip:"Skip track",ttMusic:"Play / Pause",ttTheme:"Toggle theme",ttInfo:"How to play",
     histTitle:"Your history",histClear:"Clear",histLoad:"Click to load",
     histConfirmClear:"Clear all saved predictions?",histEmpty:"No history yet — finish a knockout and it auto-saves",
-    modeChaos:"Chaos",
-    modesInfoHTML:'<b>Three play modes</b><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:54px">Normal</span><span>Favourites stay stable, realistic scorelines, limited upsets.</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:54px">Clone</span><span>Every team becomes 11 copies of one star — leaderboards go full fantasy.</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:#C8744A;min-width:54px">Chaos</span><span>Upsets fly free, blowouts go both ways, the trophy path gets messy. Football turned screenplay.</span></div>',
+    modeChaos:"Upset",
+    modesInfoHTML:'<b>Three play modes</b><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:54px">Normal</span><span>Favourites stay stable, realistic scorelines, limited upsets.</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:54px">Fun</span><span>Every team becomes 11 copies of one star — leaderboards go full fantasy.</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:#C8744A;min-width:54px">Upset</span><span>Upsets skyrocket, blowouts go both ways, the trophy path gets wild. Football turned screenplay.</span></div>',
     btnRandAll:"🎲 Randomize All",btnFillRemaining:"🎲 Fill Remaining",btnResetAll:"↺ Reset All",btnClearSave:"🗑 Clear Save",btnShare:"📤 Share",
     btnRandKO:"🎲 Randomize All Knockouts",btnResetKO:"↺ Reset All",
     progressLabel:"Group stage progress",progressDone:"{done} / {total} matches ({pct}%)",
@@ -1590,7 +1590,7 @@ var bkScroll=bkEl?bkEl.scrollLeft:0;
 var te=document.getElementById("tabs"),ae=document.getElementById("app");
 var svgs={"groups":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg>',"knockout":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6h6v12H6"></path><path d="M12 12h6"></path><path d="M18 12l-3-3"></path><path d="M18 12l-3 3"></path></svg>',"scorers":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-4"></path></svg>',"baseline":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>'};
 var tabNames={"groups":T("tabGroups"),"knockout":T("tabKnockout"),"scorers":T("tabScorers"),"baseline":T("tabBaseline")};
-var ts=["groups","knockout","scorers","baseline"];
+var ts=["groups","knockout","scorers"];
 var th='<div class="tabs-inner">';for(var i=0;i<ts.length;i++)th+='<button class="'+(tab===ts[i]?"on":"")+'" onclick="tab=\''+ts[i]+'\';render()">'+svgs[ts[i]]+tabNames[ts[i]]+'</button>';
 th+='</div>';te.innerHTML=th;
 if(tab==="groups")rGroups(ae);else if(tab==="knockout")rKO(ae);else if(tab==="baseline")rBaseline(ae);else rScorers(ae);
