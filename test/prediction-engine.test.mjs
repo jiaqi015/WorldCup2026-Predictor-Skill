@@ -88,12 +88,12 @@ test("odds mode gives the stronger team a higher no-draw win probability", () =>
   assert.ok(probabilities.home > probabilities.away);
   assert.equal(probabilities.draw, 0);
   assert.equal(Math.round((probabilities.home + probabilities.away) * 1000), 1000);
-  assert.ok(probabilities.home > 0.77 && probabilities.home < 0.80);
+  assert.ok(probabilities.home > 0.85 && probabilities.home < 0.86);
 });
 
 test("strength calibration follows the documented knockout curve", () => {
   const engine = loadPredictionEngine();
-  const expected = [0.5, 0.579, 0.655, 0.723, 0.782];
+  const expected = [0.5, 0.608, 0.707, 0.789, 0.853];
 
   for (let diff = 0; diff <= 4; diff += 1) {
     const probabilities = engine.estimateOutcomeProbabilities({

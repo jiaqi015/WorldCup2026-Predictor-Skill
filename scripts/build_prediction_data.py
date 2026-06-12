@@ -8,6 +8,7 @@ Merges:
 - data/prediction/player_threats.json (Step 3)
 - data/rankings/fifa_rankings.json
 - data/matches/match_schedule.json
+- data/matches/match_details.json
 
 Computes:
 - Power scores (0-100) for all 48 teams
@@ -125,9 +126,11 @@ def main():
     odds_data = load_json(BASE / "data" / "matches" / "complete_odds.json")
     player_threats = load_json(BASE / "data" / "prediction" / "player_threats.json")
     match_schedule = load_json(BASE / "data" / "matches" / "match_schedule.json")
+    match_details = load_json(BASE / "data" / "matches" / "match_details.json")
 
     print(f"[build] Loaded: {len(elo_data)} Elo, {len(fifa_rank)} FIFA ranks, "
-          f"{len(odds_data)} odds, {len(player_threats)} players, {len(match_schedule)} matches")
+          f"{len(odds_data)} odds, {len(player_threats)} players, "
+          f"{len(match_schedule)} matches, {len(match_details)} completed details")
 
     # --- Build teams array ---
     # First, collect each team's implied win probabilities from odds
@@ -210,7 +213,20 @@ def main():
             "confidence": entry.get("confidence", "low"),
             "source_type": entry.get("source_type", "unknown"),
             "notes": entry.get("notes"),
+            "actual_result": None,
         }
+
+        detail = match_details.get(mid)
+        if detail:
+            match_record["actual_result"] = {
+                "home_score": detail.get("homeScore"),
+                "away_score": detail.get("awayScore"),
+                "attendance": detail.get("attendance"),
+                "referee": detail.get("referee"),
+                "events": detail.get("events", []),
+                "source": "ESPN summary API",
+                "source_url": f"https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event={mid}",
+            }
 
         if odds_entry:
             match_record["odds"] = {
@@ -242,6 +258,35 @@ def main():
                         )
 
         matches.append(match_record)
+
+    actual_match_events = []
+    for match_id, detail in match_details.items():
+        for event_index, event in enumerate(detail.get("events", [])):
+            if event.get("type") != "goal":
+                continue
+            record = {
+                "event_id": f"{match_id}:goal:{event_index}",
+                "match_id": match_id,
+                "event_type": "goal",
+                "minute": event.get("minute"),
+                "team_side": event.get("team"),
+                "team_cn": event.get("team_cn"),
+                "player_source_name": event.get("scorer_source_name"),
+                "player_display_name_cn": event.get("scorer_cn"),
+                "player_app_alias": event.get("scorer_app_alias"),
+                "player_mapping_status": event.get("scorer_mapping_status"),
+                "player_mapping_key": event.get("scorer_mapping_key"),
+                "player_jersey": event.get("scorer_jersey"),
+                "player_position": event.get("scorer_position"),
+                "assist_source_name": event.get("assist_source_name"),
+                "assist_display_name_cn": event.get("assist_cn"),
+                "assist_app_alias": event.get("assist_app_alias"),
+                "assist_mapping_status": event.get("assist_mapping_status"),
+                "source": "ESPN summary API",
+                "source_url": f"https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event={match_id}",
+                "as_of": today,
+            }
+            actual_match_events.append(record)
 
     # --- Build player_threats array (restructure from flat list to schema format) ---
     threats = []
@@ -307,6 +352,18 @@ def main():
             "missing_app_alias": missing_app_alias,
             "low_confidence_players": low_conf,
         },
+        "actual_match_events": {
+            "completed_matches": len(match_details),
+            "goal_events": len(actual_match_events),
+            "mapped_scorers": sum(
+                1 for event in actual_match_events
+                if event.get("player_mapping_status") == "matched_team_player"
+            ),
+            "source_only_scorers": [
+                event["player_source_name"] for event in actual_match_events
+                if event.get("player_mapping_status") != "matched_team_player"
+            ],
+        },
         "data_quality_notes": [],
     }
 
@@ -366,6 +423,14 @@ def main():
                 if val is not None and val <= 1.0:
                     validation_errors.append(f"{m['match_id']}: {side} = {val} <= 1.0")
 
+    for event in actual_match_events:
+        if not event.get("team_cn"):
+            validation_errors.append(f"{event['event_id']}: missing team")
+        if not event.get("player_source_name"):
+            validation_errors.append(f"{event['event_id']}: missing ESPN scorer name")
+        if event.get("player_mapping_status") not in ("matched_team_player", "source_only"):
+            validation_errors.append(f"{event['event_id']}: invalid player mapping status")
+
     # --- Assemble final JSON ---
     output = {
         "schema_version": 1,
@@ -378,6 +443,7 @@ def main():
         "teams": teams,
         "matches": matches,
         "player_threats": threats,
+        "actual_match_events": actual_match_events,
         "coverage_report": coverage_report,
         "validation_errors": validation_errors,
     }

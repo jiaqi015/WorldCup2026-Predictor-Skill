@@ -59,6 +59,51 @@ GROUPS = {
     "L": ["英格兰", "克罗地亚", "加纳", "巴拿马"]
 }
 
+VENUE_CN = {
+    "Estadio Banorte": "巴诺特体育场",
+    "Estadio Akron": "阿克伦体育场",
+    "BMO Field": "BMO球场",
+    "Levi's Stadium": "李维斯体育场",
+    "MetLife Stadium": "大都会人寿体育场",
+    "Gillette Stadium": "吉列体育场",
+    "SoFi Stadium": "SoFi体育场",
+    "BC Place": "卑诗体育馆",
+    "NRG Stadium": "NRG体育场",
+    "AT&T Stadium": "AT&T体育场",
+    "Lincoln Financial Field": "林肯金融球场",
+    "Estadio BBVA": "BBVA体育场",
+    "Mercedes-Benz Stadium": "梅赛德斯-奔驰体育场",
+    "Lumen Field": "流明球场",
+    "Hard Rock Stadium": "硬石体育场",
+    "GEHA Field at Arrowhead Stadium": "箭头体育场GEHA球场",
+}
+
+CITY_CN = {
+    "Mexico City": "墨西哥城",
+    "Guadalajara": "瓜达拉哈拉",
+    "Toronto": "多伦多",
+    "Santa Clara, California": "加利福尼亚州圣克拉拉",
+    "East Rutherford, New Jersey": "新泽西州东卢瑟福",
+    "Foxborough, Massachusetts": "马萨诸塞州福克斯伯勒",
+    "Inglewood, California": "加利福尼亚州英格尔伍德",
+    "Vancouver": "温哥华",
+    "Houston, Texas": "得克萨斯州休斯敦",
+    "Arlington, Texas": "得克萨斯州阿灵顿",
+    "Philadelphia, Pennsylvania": "宾夕法尼亚州费城",
+    "Guadalupe": "瓜达卢佩",
+    "Atlanta, Georgia": "佐治亚州亚特兰大",
+    "Seattle, Washington": "华盛顿州西雅图",
+    "Miami Gardens, Florida": "佛罗里达州迈阿密花园",
+    "Kansas City, Missouri": "密苏里州堪萨斯城",
+}
+
+COUNTRY_CN = {
+    "Mexico": "墨西哥",
+    "Canada": "加拿大",
+    "USA": "美国",
+    "United States": "美国",
+}
+
 def find_group(home_cn, away_cn):
     """Find which group a match belongs to based on team names."""
     for group, teams in GROUPS.items():
@@ -100,10 +145,16 @@ def main():
         venue_data = comp.get("venue", {})
         venue = None
         if venue_data:
+            venue_name = venue_data.get("fullName", "")
+            venue_city = venue_data.get("address", {}).get("city", "")
+            venue_country = venue_data.get("address", {}).get("country", "")
             venue = {
-                "name": venue_data.get("fullName", ""),
-                "city": venue_data.get("address", {}).get("city", ""),
-                "country": venue_data.get("address", {}).get("country", "")
+                "name": venue_name,
+                "name_cn": VENUE_CN.get(venue_name, venue_name),
+                "city": venue_city,
+                "city_cn": CITY_CN.get(venue_city, venue_city),
+                "country": venue_country,
+                "country_cn": COUNTRY_CN.get(venue_country, venue_country),
             }
 
         # Get teams

@@ -1,0 +1,924 @@
+{
+  "benchmark_version": 2,
+  "run_at": "2026-06-12T17:21:41.056Z",
+  "config": {
+    "matches": 15,
+    "sims_per_match": 100,
+    "total_sims": 1500
+  },
+  "summary": {
+    "brier_score": {
+      "value": 0.0009289354673083754,
+      "grade": "EXCELLENT"
+    },
+    "kl_divergence": {
+      "value": 0.0052529964019686765,
+      "grade": "EXCELLENT"
+    },
+    "goal_rate_delta": {
+      "value": 0.19999999999999998,
+      "grade": "EXCELLENT"
+    },
+    "completed_match_hit": {
+      "correct": 1,
+      "total": 2
+    },
+    "player_threat_spearman": {
+      "goal": 0.786725483447244,
+      "assist": 0.6436698149142095
+    },
+    "verdict": "PASS",
+    "criteria": [
+      {
+        "name": "Brier < 0.05",
+        "pass": true
+      },
+      {
+        "name": "KL < 0.15",
+        "pass": true
+      },
+      {
+        "name": "Goal Δ < 0.8",
+        "pass": true
+      },
+      {
+        "name": "Completed ≥ 1/2",
+        "pass": true
+      },
+      {
+        "name": "KO Fav ≥ 70%",
+        "pass": true
+      },
+      {
+        "name": "Goal Spearman > 0.3",
+        "pass": true
+      }
+    ]
+  },
+  "strength_gradient": {
+    "diff=1": {
+      "home": 0.43000000000000005,
+      "draw": 0.17250000000000001,
+      "away": 0.39749999999999996,
+      "n": 4
+    },
+    "diff=0": {
+      "home": 0.32999999999999996,
+      "draw": 0.22599999999999998,
+      "away": 0.44400000000000006,
+      "n": 5
+    },
+    "diff=3": {
+      "home": 0.3933333333333333,
+      "draw": 0.19000000000000003,
+      "away": 0.4166666666666667,
+      "n": 3
+    },
+    "diff=2": {
+      "home": 0.5333333333333333,
+      "draw": 0.13333333333333333,
+      "away": 0.3333333333333333,
+      "n": 3
+    }
+  },
+  "knockout_stage": {
+    "n_sims": 100,
+    "favorite_win_rate_avg": 0.702,
+    "close_match_consistent": 5,
+    "close_match_total": 5,
+    "avg_goals": 2.3020000000000005,
+    "matches": [
+      {
+        "home": "阿根廷",
+        "away": "奥地利",
+        "label": "ARG vs AUT (diff=2.3)",
+        "expect": "阿根廷",
+        "fav_win_rate": 0.72,
+        "avg_goals": 2.5,
+        "winner_freq": {
+          "阿根廷": 72,
+          "奥地利": 28
+        }
+      },
+      {
+        "home": "西班牙",
+        "away": "佛得角",
+        "label": "ESP vs CPV (diff=3.2)",
+        "expect": "西班牙",
+        "fav_win_rate": 0.79,
+        "avg_goals": 2.4,
+        "winner_freq": {
+          "西班牙": 79,
+          "佛得角": 21
+        }
+      },
+      {
+        "home": "法国",
+        "away": "伊拉克",
+        "label": "FRA vs IRQ (diff=2.4)",
+        "expect": "法国",
+        "fav_win_rate": 0.71,
+        "avg_goals": 2.26,
+        "winner_freq": {
+          "伊拉克": 29,
+          "法国": 71
+        }
+      },
+      {
+        "home": "英格兰",
+        "away": "加纳",
+        "label": "ENG vs GHA (diff=2.1)",
+        "expect": "英格兰",
+        "fav_win_rate": 0.75,
+        "avg_goals": 2.61,
+        "winner_freq": {
+          "英格兰": 75,
+          "加纳": 25
+        }
+      },
+      {
+        "home": "德国",
+        "away": "科特迪瓦",
+        "label": "GER vs CIV (diff=1.2)",
+        "expect": "德国",
+        "fav_win_rate": 0.54,
+        "avg_goals": 2.39,
+        "winner_freq": {
+          "科特迪瓦": 46,
+          "德国": 54
+        }
+      },
+      {
+        "home": "荷兰",
+        "away": "日本",
+        "label": "NED vs JPN (diff=0.6)",
+        "expect": null,
+        "fav_win_rate": null,
+        "avg_goals": 2.1,
+        "winner_freq": {
+          "荷兰": 51,
+          "日本": 49
+        }
+      },
+      {
+        "home": "比利时",
+        "away": "德国",
+        "label": "BEL vs GER (diff=0.2)",
+        "expect": null,
+        "fav_win_rate": null,
+        "avg_goals": 1.86,
+        "winner_freq": {
+          "比利时": 52,
+          "德国": 48
+        }
+      },
+      {
+        "home": "巴西",
+        "away": "阿根廷",
+        "label": "BRA vs ARG (diff=0.7)",
+        "expect": null,
+        "fav_win_rate": null,
+        "avg_goals": 2.37,
+        "winner_freq": {
+          "阿根廷": 61,
+          "巴西": 39
+        }
+      },
+      {
+        "home": "墨西哥",
+        "away": "韩国",
+        "label": "MEX vs KOR (diff=0.5)",
+        "expect": null,
+        "fav_win_rate": null,
+        "avg_goals": 2.44,
+        "winner_freq": {
+          "韩国": 45,
+          "墨西哥": 55
+        }
+      },
+      {
+        "home": "巴拉圭",
+        "away": "澳大利亚",
+        "label": "PAR vs AUS (diff=0.0)",
+        "expect": null,
+        "fav_win_rate": null,
+        "avg_goals": 2.09,
+        "winner_freq": {
+          "澳大利亚": 47,
+          "巴拉圭": 53
+        }
+      }
+    ]
+  },
+  "per_match": [
+    {
+      "match_id": "760415",
+      "home": "墨西哥",
+      "away": "南非",
+      "category": "completed",
+      "strength_diff": 0.9999999999999998,
+      "odds": null,
+      "sim_prob": {
+        "home": 0.45,
+        "draw": 0.19,
+        "away": 0.36
+      },
+      "brier": 0,
+      "kl": 0,
+      "avg_goals": 2.39,
+      "over_under": null,
+      "goal_delta": null,
+      "completed": {
+        "actual": "home",
+        "simFreq": 0.45,
+        "simMax": "home",
+        "correct": true
+      },
+      "top_scorers": [
+        {
+          "name": "维加",
+          "count": 37,
+          "goal_threat": 1.9,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "阿尔瓦雷斯",
+          "count": 35,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "福斯特",
+          "count": 31,
+          "goal_threat": 1.6,
+          "assist_threat": 1.1
+        }
+      ]
+    },
+    {
+      "match_id": "760414",
+      "home": "韩国",
+      "away": "捷克",
+      "category": "completed",
+      "strength_diff": 0,
+      "odds": null,
+      "sim_prob": {
+        "home": 0.31,
+        "draw": 0.29,
+        "away": 0.4
+      },
+      "brier": 0,
+      "kl": 0,
+      "avg_goals": 2.42,
+      "over_under": null,
+      "goal_delta": null,
+      "completed": {
+        "actual": "home",
+        "simFreq": 0.31,
+        "simMax": "away",
+        "correct": false
+      },
+      "top_scorers": [
+        {
+          "name": "库赫塔",
+          "count": 40,
+          "goal_threat": 1.9,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "希克",
+          "count": 36,
+          "goal_threat": 2.4,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "孙Heung-Min",
+          "count": 31,
+          "goal_threat": 2.4,
+          "assist_threat": 1.7
+        }
+      ]
+    },
+    {
+      "match_id": "760443",
+      "home": "西班牙",
+      "away": "佛得角",
+      "category": "mismatch",
+      "strength_diff": 3.2,
+      "odds": {
+        "home": 0.3699355211240497,
+        "draw": 0.26012895775190076,
+        "away": 0.3699355211240497
+      },
+      "sim_prob": {
+        "home": 0.36,
+        "draw": 0.24,
+        "away": 0.4
+      },
+      "brier": 0.000469254136755569,
+      "kl": 0.002116579658956518,
+      "avg_goals": 2.7,
+      "over_under": 2.5,
+      "goal_delta": 0.20000000000000018,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "Ferran托雷斯",
+          "count": 43,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "加里-罗德里格斯",
+          "count": 30,
+          "goal_threat": 0.6,
+          "assist_threat": 0.5
+        },
+        {
+          "name": "本希莫尔",
+          "count": 21,
+          "goal_threat": 0.6,
+          "assist_threat": 0.6
+        }
+      ]
+    },
+    {
+      "match_id": "760440",
+      "home": "巴西",
+      "away": "海地",
+      "category": "mismatch",
+      "strength_diff": 2.5,
+      "odds": {
+        "home": 0.5093891269572408,
+        "draw": 0.12067714895209555,
+        "away": 0.36993372409066366
+      },
+      "sim_prob": {
+        "home": 0.49,
+        "draw": 0.15,
+        "away": 0.36
+      },
+      "brier": 0.0004448155706836751,
+      "kl": 0.0035880383427739724,
+      "avg_goals": 2.23,
+      "over_under": 2.5,
+      "goal_delta": -0.27,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "拉菲尼亚",
+          "count": 30,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "纳宗",
+          "count": 29,
+          "goal_threat": 0.8,
+          "assist_threat": 0.6
+        },
+        {
+          "name": "内马尔",
+          "count": 24,
+          "goal_threat": 3.8,
+          "assist_threat": 2.7
+        }
+      ]
+    },
+    {
+      "match_id": "760446",
+      "home": "法国",
+      "away": "伊拉克",
+      "category": "mismatch",
+      "strength_diff": 2.4000000000000004,
+      "odds": {
+        "home": 0.5927143444311193,
+        "draw": 0.09481406211409998,
+        "away": 0.3124715934547807
+      },
+      "sim_prob": {
+        "home": 0.58,
+        "draw": 0.08,
+        "away": 0.34
+      },
+      "brier": 0.0003796413858508069,
+      "kl": 0.002578141355656694,
+      "avg_goals": 2.41,
+      "over_under": 2.5,
+      "goal_delta": -0.08999999999999986,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "图拉姆",
+          "count": 40,
+          "goal_threat": 4,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "登贝莱",
+          "count": 33,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "姆巴佩",
+          "count": 32,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        }
+      ]
+    },
+    {
+      "match_id": "760453",
+      "home": "阿根廷",
+      "away": "奥地利",
+      "category": "medium",
+      "strength_diff": 2.3,
+      "odds": {
+        "home": 0.6743479162772148,
+        "draw": 0.06743933912193065,
+        "away": 0.25821274460085447
+      },
+      "sim_prob": {
+        "home": 0.72,
+        "draw": 0.08,
+        "away": 0.2
+      },
+      "brier": 0.0018768688612967866,
+      "kl": 0.010273000119137454,
+      "avg_goals": 2.57,
+      "over_under": 3.5,
+      "goal_delta": -0.9300000000000002,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "阿尔瓦雷斯",
+          "count": 55,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "梅西",
+          "count": 36,
+          "goal_threat": 3,
+          "assist_threat": 2.1
+        },
+        {
+          "name": "阿瑙托维奇",
+          "count": 25,
+          "goal_threat": 1.9,
+          "assist_threat": 1.4
+        }
+      ]
+    },
+    {
+      "match_id": "760435",
+      "home": "德国",
+      "away": "科特迪瓦",
+      "category": "medium",
+      "strength_diff": 1.2000000000000002,
+      "odds": {
+        "home": 0.6230223026631891,
+        "draw": 0.13843981666543248,
+        "away": 0.23853788067137846
+      },
+      "sim_prob": {
+        "home": 0.57,
+        "draw": 0.17,
+        "away": 0.26
+      },
+      "brier": 0.0014226774392981148,
+      "kl": 0.006434059599303252,
+      "avg_goals": 2.48,
+      "over_under": 2.5,
+      "goal_delta": -0.020000000000000018,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "迪奥曼德",
+          "count": 45,
+          "goal_threat": 1.8,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "哈弗茨",
+          "count": 34,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "沃尔特马德",
+          "count": 32,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        }
+      ]
+    },
+    {
+      "match_id": "760460",
+      "home": "英格兰",
+      "away": "加纳",
+      "category": "medium",
+      "strength_diff": 2.0999999999999996,
+      "odds": {
+        "home": 0.27516158667378426,
+        "draw": 0.20295051876852688,
+        "away": 0.5218878945576889
+      },
+      "sim_prob": {
+        "home": 0.3,
+        "draw": 0.24,
+        "away": 0.46
+      },
+      "brier": 0.001939907442956276,
+      "kl": 0.008065352707196799,
+      "avg_goals": 2.64,
+      "over_under": 2.5,
+      "goal_delta": 0.14000000000000012,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "凯恩",
+          "count": 41,
+          "goal_threat": 4,
+          "assist_threat": 3
+        },
+        {
+          "name": "托马斯-阿桑特",
+          "count": 29,
+          "goal_threat": 1.9,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "塞梅尼奥",
+          "count": 28,
+          "goal_threat": 1.9,
+          "assist_threat": 1.7
+        }
+      ]
+    },
+    {
+      "match_id": "760417",
+      "home": "巴拉圭",
+      "away": "澳大利亚",
+      "category": "close",
+      "strength_diff": 0,
+      "odds": {
+        "home": 0.37648809523809523,
+        "draw": 0.24702380952380953,
+        "away": 0.37648809523809523
+      },
+      "sim_prob": {
+        "home": 0.4,
+        "draw": 0.27,
+        "away": 0.33
+      },
+      "brier": 0.0010806193310657596,
+      "kl": 0.0048422315731968535,
+      "avg_goals": 2.35,
+      "over_under": 2.5,
+      "goal_delta": -0.1499999999999999,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "莱基",
+          "count": 40,
+          "goal_threat": 2.2,
+          "assist_threat": 1.5
+        },
+        {
+          "name": "阿尔米隆",
+          "count": 35,
+          "goal_threat": 2.5,
+          "assist_threat": 1.8
+        },
+        {
+          "name": "穆罕默德Toure",
+          "count": 35,
+          "goal_threat": 1.8,
+          "assist_threat": 1.7
+        }
+      ]
+    },
+    {
+      "match_id": "760429",
+      "home": "瑞典",
+      "away": "突尼斯",
+      "category": "close",
+      "strength_diff": 0.10000000000000009,
+      "odds": {
+        "home": 0.2852771330173389,
+        "draw": 0.17365341285616062,
+        "away": 0.5410694541265004
+      },
+      "sim_prob": {
+        "home": 0.27,
+        "draw": 0.18,
+        "away": 0.55
+      },
+      "brier": 0.00011780820373416495,
+      "kl": 0.000610401701892813,
+      "avg_goals": 2.22,
+      "over_under": 2.5,
+      "goal_delta": -0.2799999999999998,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "伊斯梅尔",
+          "count": 37,
+          "goal_threat": 1.8,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "伊萨克",
+          "count": 33,
+          "goal_threat": 2.4,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "马斯图里",
+          "count": 28,
+          "goal_threat": 1.9,
+          "assist_threat": 1.7
+        }
+      ]
+    },
+    {
+      "match_id": "760436",
+      "home": "科特迪瓦",
+      "away": "厄瓜多尔",
+      "category": "close",
+      "strength_diff": 0,
+      "odds": {
+        "home": 0.2889075285334222,
+        "draw": 0.16319715297113993,
+        "away": 0.5478953184954379
+      },
+      "sim_prob": {
+        "home": 0.3,
+        "draw": 0.18,
+        "away": 0.52
+      },
+      "brier": 0.00039450912849134465,
+      "kl": 0.0017527114895763071,
+      "avg_goals": 2.59,
+      "over_under": 2.5,
+      "goal_delta": 0.08999999999999986,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "迪奥曼德",
+          "count": 51,
+          "goal_threat": 1.8,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "巴伦西亚",
+          "count": 38,
+          "goal_threat": 2.1,
+          "assist_threat": 1.5
+        },
+        {
+          "name": "Kevin罗德里格斯",
+          "count": 34,
+          "goal_threat": 1.9,
+          "assist_threat": 1.7
+        }
+      ]
+    },
+    {
+      "match_id": "760462",
+      "home": "加纳",
+      "away": "巴拿马",
+      "category": "close",
+      "strength_diff": 0.19999999999999996,
+      "odds": {
+        "home": 0.4119823021687096,
+        "draw": 0.1760353956625807,
+        "away": 0.4119823021687096
+      },
+      "sim_prob": {
+        "home": 0.37,
+        "draw": 0.21,
+        "away": 0.42
+      },
+      "brier": 0.000993463840565387,
+      "kl": 0.0052815083038507925,
+      "avg_goals": 2.57,
+      "over_under": 2.5,
+      "goal_delta": 0.06999999999999984,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "塞萨尔",
+          "count": 34,
+          "goal_threat": 1.3,
+          "assist_threat": 1.2
+        },
+        {
+          "name": "伊萨哈库",
+          "count": 31,
+          "goal_threat": 1.8,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "乔丹·阿尤",
+          "count": 29,
+          "goal_threat": 1.8,
+          "assist_threat": 1.6
+        }
+      ]
+    },
+    {
+      "match_id": "760455",
+      "home": "约旦",
+      "away": "阿根廷",
+      "category": "away_fav",
+      "strength_diff": 2.8,
+      "odds": {
+        "home": 0.3489121766399024,
+        "draw": 0.17055812694012626,
+        "away": 0.48052969641997134
+      },
+      "sim_prob": {
+        "home": 0.33,
+        "draw": 0.18,
+        "away": 0.49
+      },
+      "brier": 0.0001788353473451811,
+      "kl": 0.000876054735966825,
+      "avg_goals": 2.68,
+      "over_under": 2.5,
+      "goal_delta": 0.18000000000000016,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "梅西",
+          "count": 42,
+          "goal_threat": 3,
+          "assist_threat": 2.1
+        },
+        {
+          "name": "阿尔瓦雷斯",
+          "count": 42,
+          "goal_threat": 3.1,
+          "assist_threat": 2.9
+        },
+        {
+          "name": "塔阿马里",
+          "count": 24,
+          "goal_threat": 1.2,
+          "assist_threat": 1.1
+        }
+      ]
+    },
+    {
+      "match_id": "760420",
+      "home": "卡塔尔",
+      "away": "瑞士",
+      "category": "away_fav",
+      "strength_diff": 0.8,
+      "odds": {
+        "home": 0.3793397064233558,
+        "draw": 0.09822588075952515,
+        "away": 0.5224344128171191
+      },
+      "sim_prob": {
+        "home": 0.35,
+        "draw": 0.16,
+        "away": 0.49
+      },
+      "brier": 0.001909617105245471,
+      "kl": 0.016096590334927625,
+      "avg_goals": 2.37,
+      "over_under": 2.5,
+      "goal_delta": -0.1299999999999999,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "恩博洛",
+          "count": 50,
+          "goal_threat": 2.4,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "恩多耶",
+          "count": 28,
+          "goal_threat": 1.9,
+          "assist_threat": 1.7
+        },
+        {
+          "name": "朱尼尔",
+          "count": 27,
+          "goal_threat": 1.6,
+          "assist_threat": 1.1
+        }
+      ]
+    },
+    {
+      "match_id": "760449",
+      "home": "沙特",
+      "away": "乌拉圭",
+      "category": "away_fav",
+      "strength_diff": 1.2,
+      "odds": {
+        "home": 0.3316417974658475,
+        "draw": 0.21157427409215618,
+        "away": 0.45678392844199645
+      },
+      "sim_prob": {
+        "home": 0.35,
+        "draw": 0.17,
+        "away": 0.48
+      },
+      "brier": 0.0008681432817203437,
+      "kl": 0.00577428330315689,
+      "avg_goals": 2.45,
+      "over_under": 2.5,
+      "goal_delta": -0.04999999999999982,
+      "completed": null,
+      "top_scorers": [
+        {
+          "name": "努涅斯",
+          "count": 39,
+          "goal_threat": 2.5,
+          "assist_threat": 2.3
+        },
+        {
+          "name": "谢赫里",
+          "count": 35,
+          "goal_threat": 1.7,
+          "assist_threat": 1.2
+        },
+        {
+          "name": "布里坎",
+          "count": 22,
+          "goal_threat": 1.2,
+          "assist_threat": 1.1
+        }
+      ]
+    }
+  ],
+  "top_scorers_global": [
+    {
+      "name": "阿尔瓦雷斯",
+      "count": 277,
+      "goal_threat": 3.1,
+      "assist_threat": 2.9
+    },
+    {
+      "name": "迪奥曼德",
+      "count": 173,
+      "goal_threat": 1.8,
+      "assist_threat": 1.7
+    },
+    {
+      "name": "梅西",
+      "count": 154,
+      "goal_threat": 3,
+      "assist_threat": 2.1
+    },
+    {
+      "name": "Ferran托雷斯",
+      "count": 91,
+      "goal_threat": 3.1,
+      "assist_threat": 2.9
+    },
+    {
+      "name": "恩博洛",
+      "count": 91,
+      "goal_threat": 2.4,
+      "assist_threat": 1.7
+    },
+    {
+      "name": "托马斯-阿桑特",
+      "count": 89,
+      "goal_threat": 1.9,
+      "assist_threat": 1.7
+    },
+    {
+      "name": "努涅斯",
+      "count": 89,
+      "goal_threat": 2.5,
+      "assist_threat": 2.3
+    },
+    {
+      "name": "莱基",
+      "count": 86,
+      "goal_threat": 2.2,
+      "assist_threat": 1.5
+    },
+    {
+      "name": "图拉姆",
+      "count": 85,
+      "goal_threat": 4,
+      "assist_threat": 2.9
+    },
+    {
+      "name": "伊萨哈库",
+      "count": 81,
+      "goal_threat": 1.8,
+      "assist_threat": 1.7
+    }
+  ]
+}

@@ -2421,7 +2421,153 @@
       "as_of": "2026-06-13",
       "confidence": "high",
       "source_type": "unavailable",
-      "notes": "Match already completed"
+      "notes": "Match already completed",
+      "actual_result": {
+        "home_score": 2,
+        "away_score": 0,
+        "attendance": 80824,
+        "referee": "Wilton Pereira Sampaio",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "9'",
+            "team": "home",
+            "team_cn": "墨西哥",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Julián Quiñones",
+            "scorer_cn": "胡利安·基尼奥内斯",
+            "scorer_app_alias": "朱利安",
+            "scorer_team_cn": "墨西哥",
+            "scorer_jersey": "16",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Julián Quiñones",
+            "assist_source_name": "Érik Lira",
+            "assist_cn": "埃里克·利拉",
+            "assist_app_alias": "利拉",
+            "assist_team_cn": "墨西哥",
+            "assist_jersey": "6",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Érik Lira"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "17'",
+            "team": "away",
+            "team_cn": "南非",
+            "source": "ESPN summary API",
+            "player_source_name": "Teboho Mokoena",
+            "player_cn": "莫科纳",
+            "player_app_alias": "莫科纳",
+            "player_team_cn": "南非",
+            "player_jersey": "4",
+            "player_position": "M",
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Teboho Mokoena"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "23'",
+            "team": "home",
+            "team_cn": "墨西哥",
+            "source": "ESPN summary API",
+            "player_source_name": "Brian Gutiérrez",
+            "player_cn": "Brian古铁雷斯",
+            "player_app_alias": "Brian古铁雷斯",
+            "player_team_cn": "墨西哥",
+            "player_jersey": "26",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Brian Gutiérrez"
+          },
+          {
+            "type": "redCard",
+            "minute": "49'",
+            "team": "away",
+            "team_cn": "南非",
+            "source": "ESPN summary API",
+            "player_source_name": "Sphephelo Sithole",
+            "player_cn": "斯菲佩洛",
+            "player_app_alias": "斯菲佩洛",
+            "player_team_cn": "南非",
+            "player_jersey": "13",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Sphephelo Sithole"
+          },
+          {
+            "type": "goal",
+            "minute": "67'",
+            "team": "home",
+            "team_cn": "墨西哥",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Raúl Jiménez",
+            "scorer_cn": "劳尔·希门尼斯",
+            "scorer_app_alias": "希门尼斯",
+            "scorer_team_cn": "墨西哥",
+            "scorer_jersey": "9",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Raúl Jiménez",
+            "assist_source_name": "Roberto Alvarado",
+            "assist_cn": "罗伯托·阿尔瓦拉多",
+            "assist_app_alias": "罗伯托",
+            "assist_team_cn": "墨西哥",
+            "assist_jersey": "25",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Roberto Alvarado"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "74'",
+            "team": "away",
+            "team_cn": "南非",
+            "source": "ESPN summary API",
+            "player_source_name": "Nkosinathi Sibisi",
+            "player_cn": "恩科西纳提",
+            "player_app_alias": "恩科西纳提",
+            "player_team_cn": "南非",
+            "player_jersey": "19",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Nkosinathi Sibisi"
+          },
+          {
+            "type": "redCard",
+            "minute": "84'",
+            "team": "away",
+            "team_cn": "南非",
+            "source": "ESPN summary API",
+            "player_source_name": "Themba Zwane",
+            "player_cn": "兹瓦内",
+            "player_app_alias": "兹瓦内",
+            "player_team_cn": "南非",
+            "player_jersey": "11",
+            "player_position": "M",
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Themba Zwane"
+          },
+          {
+            "type": "redCard",
+            "minute": "90'+2'",
+            "team": "home",
+            "team_cn": "墨西哥",
+            "source": "ESPN summary API",
+            "player_source_name": "César Montes",
+            "player_cn": "蒙特斯",
+            "player_app_alias": "蒙特斯",
+            "player_team_cn": "墨西哥",
+            "player_jersey": "3",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "César Montes"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415"
+      }
     },
     {
       "match_id": "760414",
@@ -2435,7 +2581,101 @@
       "as_of": "2026-06-13",
       "confidence": "high",
       "source_type": "unavailable",
-      "notes": "Match already completed"
+      "notes": "Match already completed",
+      "actual_result": {
+        "home_score": 2,
+        "away_score": 1,
+        "attendance": 44985,
+        "referee": "Amin Omar",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "59'",
+            "team": "away",
+            "team_cn": "捷克",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Ladislav Krejcí",
+            "scorer_cn": "拉迪斯拉夫·克雷伊奇",
+            "scorer_app_alias": "克雷伊奇",
+            "scorer_team_cn": "捷克",
+            "scorer_jersey": "7",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Ladislav Krejcí",
+            "assist_source_name": "Vladimír Coufal",
+            "assist_cn": "弗拉迪米尔·曹法尔",
+            "assist_app_alias": "曹法尔",
+            "assist_team_cn": "捷克",
+            "assist_jersey": "5",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Vladimír Coufal"
+          },
+          {
+            "type": "goal",
+            "minute": "67'",
+            "team": "home",
+            "team_cn": "韩国",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Hwang In-Beom",
+            "scorer_cn": "黄仁范",
+            "scorer_app_alias": "黄In-Beom",
+            "scorer_team_cn": "韩国",
+            "scorer_jersey": "6",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Hwang In-Beom",
+            "assist_source_name": "Lee Kang-In",
+            "assist_cn": "李刚仁",
+            "assist_app_alias": "李Kang-In",
+            "assist_team_cn": "韩国",
+            "assist_jersey": "19",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Lee Kang-In"
+          },
+          {
+            "type": "goal",
+            "minute": "80'",
+            "team": "home",
+            "team_cn": "韩国",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Oh Hyeon-Gyu",
+            "scorer_cn": "吴贤揆",
+            "scorer_app_alias": "吴Hyeon-Gyu",
+            "scorer_team_cn": "韩国",
+            "scorer_jersey": "18",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Oh Hyeon-Gyu",
+            "assist_source_name": "Hwang In-Beom",
+            "assist_cn": "黄仁范",
+            "assist_app_alias": "黄In-Beom",
+            "assist_team_cn": "韩国",
+            "assist_jersey": "6",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Hwang In-Beom"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "90'+6'",
+            "team": "home",
+            "team_cn": "韩国",
+            "source": "ESPN summary API",
+            "player_source_name": "Lee Gi-Hyuk",
+            "player_cn": "李Gi-Hyuk",
+            "player_app_alias": "李Gi-Hyuk",
+            "player_team_cn": "韩国",
+            "player_jersey": "3",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Lee Gi-Hyuk"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414"
+      }
     },
     {
       "match_id": "760416",
@@ -2467,7 +2707,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -120"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -120",
+      "actual_result": null
     },
     {
       "match_id": "760417",
@@ -2499,7 +2740,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +110"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +110",
+      "actual_result": null
     },
     {
       "match_id": "760420",
@@ -2531,7 +2773,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -450"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -450",
+      "actual_result": null
     },
     {
       "match_id": "760419",
@@ -2563,7 +2806,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -155"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -155",
+      "actual_result": null
     },
     {
       "match_id": "760418",
@@ -2595,7 +2839,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SCO -175"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SCO -175",
+      "actual_result": null
     },
     {
       "match_id": "760421",
@@ -2627,7 +2872,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR -140"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR -140",
+      "actual_result": null
     },
     {
       "match_id": "760422",
@@ -2659,7 +2905,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -3000"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -3000",
+      "actual_result": null
     },
     {
       "match_id": "760425",
@@ -2691,7 +2938,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -105"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -105",
+      "actual_result": null
     },
     {
       "match_id": "760423",
@@ -2723,7 +2971,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU +145"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU +145",
+      "actual_result": null
     },
     {
       "match_id": "760424",
@@ -2755,7 +3004,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SWE -110"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SWE -110",
+      "actual_result": null
     },
     {
       "match_id": "760428",
@@ -2787,7 +3037,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1200"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1200",
+      "actual_result": null
     },
     {
       "match_id": "760426",
@@ -2819,7 +3070,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -170"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -170",
+      "actual_result": null
     },
     {
       "match_id": "760429",
@@ -2851,7 +3103,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
+      "actual_result": null
     },
     {
       "match_id": "760427",
@@ -2883,7 +3136,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: IRN -120"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: IRN -120",
+      "actual_result": null
     },
     {
       "match_id": "760432",
@@ -2915,7 +3169,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -210"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -210",
+      "actual_result": null
     },
     {
       "match_id": "760430",
@@ -2947,7 +3202,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR -475"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR -475",
+      "actual_result": null
     },
     {
       "match_id": "760433",
@@ -2979,7 +3235,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -245"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -245",
+      "actual_result": null
     },
     {
       "match_id": "760431",
@@ -3011,7 +3268,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT -295"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT -295",
+      "actual_result": null
     },
     {
       "match_id": "760435",
@@ -3043,7 +3301,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -360"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -360",
+      "actual_result": null
     },
     {
       "match_id": "760437",
@@ -3075,7 +3334,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -140"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -140",
+      "actual_result": null
     },
     {
       "match_id": "760434",
@@ -3107,7 +3367,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GHA +115"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GHA +115",
+      "actual_result": null
     },
     {
       "match_id": "760436",
@@ -3139,7 +3400,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -250"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -250",
+      "actual_result": null
     },
     {
       "match_id": "760438",
@@ -3171,7 +3433,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CZE -135"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CZE -135",
+      "actual_result": null
     },
     {
       "match_id": "760439",
@@ -3203,7 +3466,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -160"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -160",
+      "actual_result": null
     },
     {
       "match_id": "760440",
@@ -3235,7 +3499,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -330"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -330",
+      "actual_result": null
     },
     {
       "match_id": "760441",
@@ -3267,7 +3532,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX +100"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX +100",
+      "actual_result": null
     },
     {
       "match_id": "760442",
@@ -3299,7 +3565,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA -130"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA -130",
+      "actual_result": null
     },
     {
       "match_id": "760445",
@@ -3331,7 +3598,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR +100"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR +100",
+      "actual_result": null
     },
     {
       "match_id": "760444",
@@ -3363,7 +3631,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -1200"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -1200",
+      "actual_result": null
     },
     {
       "match_id": "760443",
@@ -3395,7 +3664,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR +125"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR +125",
+      "actual_result": null
     },
     {
       "match_id": "760447",
@@ -3427,7 +3697,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -155"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -155",
+      "actual_result": null
     },
     {
       "match_id": "760448",
@@ -3459,7 +3730,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -180"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -180",
+      "actual_result": null
     },
     {
       "match_id": "760446",
@@ -3491,7 +3763,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU -500"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU -500",
+      "actual_result": null
     },
     {
       "match_id": "760449",
@@ -3523,7 +3796,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN -140"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN -140",
+      "actual_result": null
     },
     {
       "match_id": "760453",
@@ -3555,7 +3829,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1000"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1000",
+      "actual_result": null
     },
     {
       "match_id": "760451",
@@ -3587,7 +3862,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -245"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -245",
+      "actual_result": null
     },
     {
       "match_id": "760450",
@@ -3619,7 +3895,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
+      "actual_result": null
     },
     {
       "match_id": "760452",
@@ -3651,7 +3928,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY -130"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY -130",
+      "actual_result": null
     },
     {
       "match_id": "760456",
@@ -3683,7 +3961,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -155"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -155",
+      "actual_result": null
     },
     {
       "match_id": "760457",
@@ -3715,7 +3994,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -800"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -800",
+      "actual_result": null
     },
     {
       "match_id": "760454",
@@ -3747,7 +4027,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR +115"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR +115",
+      "actual_result": null
     },
     {
       "match_id": "760455",
@@ -3779,7 +4060,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ALG -190"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ALG -190",
+      "actual_result": null
     },
     {
       "match_id": "760461",
@@ -3811,7 +4093,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -425"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -425",
+      "actual_result": null
     },
     {
       "match_id": "760458",
@@ -3843,7 +4126,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -320"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -320",
+      "actual_result": null
     },
     {
       "match_id": "760460",
@@ -3875,7 +4159,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -180"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -180",
+      "actual_result": null
     },
     {
       "match_id": "760459",
@@ -3907,7 +4192,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -220"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -220",
+      "actual_result": null
     },
     {
       "match_id": "760462",
@@ -3939,7 +4225,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BIH -155"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BIH -155",
+      "actual_result": null
     },
     {
       "match_id": "760463",
@@ -3971,7 +4258,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI +115"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI +115",
+      "actual_result": null
     },
     {
       "match_id": "760464",
@@ -4003,7 +4291,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR -310"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR -310",
+      "actual_result": null
     },
     {
       "match_id": "760465",
@@ -4035,7 +4324,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -215"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -215",
+      "actual_result": null
     },
     {
       "match_id": "760467",
@@ -4067,7 +4357,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX -120"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX -120",
+      "actual_result": null
     },
     {
       "match_id": "760466",
@@ -4099,7 +4390,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: KOR -165"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: KOR -165",
+      "actual_result": null
     },
     {
       "match_id": "760473",
@@ -4131,7 +4423,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CIV -450"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CIV -450",
+      "actual_result": null
     },
     {
       "match_id": "760468",
@@ -4163,7 +4456,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -135"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -135",
+      "actual_result": null
     },
     {
       "match_id": "760471",
@@ -4195,7 +4489,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN +110"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN +110",
+      "actual_result": null
     },
     {
       "match_id": "760472",
@@ -4227,7 +4522,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -200"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -200",
+      "actual_result": null
     },
     {
       "match_id": "760469",
@@ -4259,7 +4555,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: PAR +115"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: PAR +115",
+      "actual_result": null
     },
     {
       "match_id": "760470",
@@ -4291,7 +4588,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +155"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +155",
+      "actual_result": null
     },
     {
       "match_id": "760475",
@@ -4323,7 +4621,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -115"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -115",
+      "actual_result": null
     },
     {
       "match_id": "760474",
@@ -4355,7 +4654,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SEN -245"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SEN -245",
+      "actual_result": null
     },
     {
       "match_id": "760478",
@@ -4387,7 +4687,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CPV +140"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CPV +140",
+      "actual_result": null
     },
     {
       "match_id": "760479",
@@ -4419,7 +4720,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -155"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -155",
+      "actual_result": null
     },
     {
       "match_id": "760476",
@@ -4451,7 +4753,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY +130"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY +130",
+      "actual_result": null
     },
     {
       "match_id": "760477",
@@ -4483,7 +4786,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -340"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -340",
+      "actual_result": null
     },
     {
       "match_id": "760480",
@@ -4515,7 +4819,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -155"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -155",
+      "actual_result": null
     },
     {
       "match_id": "760485",
@@ -4547,7 +4852,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -340"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -340",
+      "actual_result": null
     },
     {
       "match_id": "760481",
@@ -4579,7 +4885,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR +120"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR +120",
+      "actual_result": null
     },
     {
       "match_id": "760482",
@@ -4611,7 +4918,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COD +135"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COD +135",
+      "actual_result": null
     },
     {
       "match_id": "760484",
@@ -4643,7 +4951,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT +125"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT +125",
+      "actual_result": null
     },
     {
       "match_id": "760483",
@@ -4675,7 +4984,8 @@
       "as_of": "2026-06-13",
       "confidence": "medium",
       "source_type": "derived",
-      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -525"
+      "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -525",
+      "actual_result": null
     }
   ],
   "player_threats": [
@@ -21890,6 +22200,118 @@
       "confidence": "medium"
     }
   ],
+  "actual_match_events": [
+    {
+      "event_id": "760415:goal:0",
+      "match_id": "760415",
+      "event_type": "goal",
+      "minute": "9'",
+      "team_side": "home",
+      "team_cn": "墨西哥",
+      "player_source_name": "Julián Quiñones",
+      "player_display_name_cn": "胡利安·基尼奥内斯",
+      "player_app_alias": "朱利安",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Julián Quiñones",
+      "player_jersey": "16",
+      "player_position": null,
+      "assist_source_name": "Érik Lira",
+      "assist_display_name_cn": "埃里克·利拉",
+      "assist_app_alias": "利拉",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
+      "as_of": "2026-06-13"
+    },
+    {
+      "event_id": "760415:goal:4",
+      "match_id": "760415",
+      "event_type": "goal",
+      "minute": "67'",
+      "team_side": "home",
+      "team_cn": "墨西哥",
+      "player_source_name": "Raúl Jiménez",
+      "player_display_name_cn": "劳尔·希门尼斯",
+      "player_app_alias": "希门尼斯",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Raúl Jiménez",
+      "player_jersey": "9",
+      "player_position": "F",
+      "assist_source_name": "Roberto Alvarado",
+      "assist_display_name_cn": "罗伯托·阿尔瓦拉多",
+      "assist_app_alias": "罗伯托",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
+      "as_of": "2026-06-13"
+    },
+    {
+      "event_id": "760414:goal:0",
+      "match_id": "760414",
+      "event_type": "goal",
+      "minute": "59'",
+      "team_side": "away",
+      "team_cn": "捷克",
+      "player_source_name": "Ladislav Krejcí",
+      "player_display_name_cn": "拉迪斯拉夫·克雷伊奇",
+      "player_app_alias": "克雷伊奇",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Ladislav Krejcí",
+      "player_jersey": "7",
+      "player_position": null,
+      "assist_source_name": "Vladimír Coufal",
+      "assist_display_name_cn": "弗拉迪米尔·曹法尔",
+      "assist_app_alias": "曹法尔",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
+      "as_of": "2026-06-13"
+    },
+    {
+      "event_id": "760414:goal:1",
+      "match_id": "760414",
+      "event_type": "goal",
+      "minute": "67'",
+      "team_side": "home",
+      "team_cn": "韩国",
+      "player_source_name": "Hwang In-Beom",
+      "player_display_name_cn": "黄仁范",
+      "player_app_alias": "黄In-Beom",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Hwang In-Beom",
+      "player_jersey": "6",
+      "player_position": null,
+      "assist_source_name": "Lee Kang-In",
+      "assist_display_name_cn": "李刚仁",
+      "assist_app_alias": "李Kang-In",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
+      "as_of": "2026-06-13"
+    },
+    {
+      "event_id": "760414:goal:2",
+      "match_id": "760414",
+      "event_type": "goal",
+      "minute": "80'",
+      "team_side": "home",
+      "team_cn": "韩国",
+      "player_source_name": "Oh Hyeon-Gyu",
+      "player_display_name_cn": "吴贤揆",
+      "player_app_alias": "吴Hyeon-Gyu",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Oh Hyeon-Gyu",
+      "player_jersey": "18",
+      "player_position": null,
+      "assist_source_name": "Hwang In-Beom",
+      "assist_display_name_cn": "黄仁范",
+      "assist_app_alias": "黄In-Beom",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
+      "as_of": "2026-06-13"
+    }
+  ],
   "coverage_report": {
     "teams": {
       "expected_count": 48,
@@ -22027,6 +22449,12 @@
         "Jamiro蒙泰罗",
         "加里-罗德里格斯"
       ]
+    },
+    "actual_match_events": {
+      "completed_matches": 2,
+      "goal_events": 5,
+      "mapped_scorers": 5,
+      "source_only_scorers": []
     },
     "data_quality_notes": [
       "28 teams have estimated Elo (from FIFA rank regression)",

@@ -7,6 +7,9 @@ Adds/updates:
 - POWER_SCORES: new variable
 - PLAYER_THREATS_MAP: new variable (goal + assist multipliers)
 - COMPLETE_ODDS: new variable (decimal odds per match)
+- MATCH_SCHEDULE: ESPN fixture snapshot, including bilingual venue fields
+- MATCH_DETAILS: completed match events, including team-scoped player mappings
+- MATCH_DATA_META: source manifest for the match snapshot
 - weightedPick: modified to use PLAYER_THREATS_MAP
 - normalizeOddsMarket: modified to try COMPLETE_ODDS
 - TEAM_STRENGTH_TIERS: sync with corrected JSON
@@ -25,6 +28,9 @@ ELO_FILE = BASE / "data" / "rankings" / "elo_ratings_full.json"
 ODDS_FILE = BASE / "data" / "matches" / "complete_odds.json"
 THREATS_FILE = BASE / "data" / "prediction" / "player_threats.json"
 STRENGTH_TIERS_FILE = BASE / "data" / "rankings" / "team_strength_tiers.json"
+MATCH_SCHEDULE_FILE = BASE / "data" / "matches" / "match_schedule.json"
+MATCH_DETAILS_FILE = BASE / "data" / "matches" / "match_details.json"
+MATCH_MANIFEST_FILE = BASE / "data" / "matches" / "manifest.json"
 
 
 def load_json(path):
@@ -55,6 +61,9 @@ def main():
     odds_data = load_json(ODDS_FILE)
     threats_list = load_json(THREATS_FILE)
     strength_tiers = load_json(STRENGTH_TIERS_FILE)
+    match_schedule = load_json(MATCH_SCHEDULE_FILE)
+    match_details = load_json(MATCH_DETAILS_FILE)
+    match_manifest = load_json(MATCH_MANIFEST_FILE)
 
     # Build ELO_RATINGS (all 48 teams, simple {team: elo} format)
     elo_ratings = {}
@@ -94,12 +103,18 @@ def main():
     threats_js = to_minified_js(player_threats_map)
     odds_js = to_minified_js(complete_odds)
     tiers_js = to_minified_js(strength_tiers)
+    schedule_js = to_minified_js(match_schedule)
+    details_js = to_minified_js(match_details)
+    manifest_js = to_minified_js(match_manifest)
 
     print(f"[embed] ELO_RATINGS: {len(elo_ratings)} teams")
     print(f"[embed] POWER_SCORES: {len(power_scores)} teams")
     print(f"[embed] PLAYER_THREATS_MAP: {len(player_threats_map)} players")
     print(f"[embed] COMPLETE_ODDS: {len(complete_odds)} matches")
     print(f"[embed] TEAM_STRENGTH_TIERS: synced")
+    print(f"[embed] MATCH_SCHEDULE: {len(match_schedule)} matches")
+    print(f"[embed] MATCH_DETAILS: {len(match_details)} completed matches")
+    print("[embed] MATCH_DATA_META: synced")
 
     # Read index.html
     html = INDEX_FILE.read_text(encoding="utf-8")
@@ -111,9 +126,13 @@ def main():
     html = upsert_var(html, "POWER_SCORES", power_js)
     html = upsert_var(html, "PLAYER_THREATS_MAP", threats_js)
     html = upsert_var(html, "COMPLETE_ODDS", odds_js)
+    html = upsert_var(html, "MATCH_SCHEDULE", schedule_js)
+    html = upsert_var(html, "MATCH_DETAILS", details_js)
+    html = upsert_var(html, "MATCH_DATA_META", manifest_js)
     changes.append(
         "ELO_RATINGS, TEAM_STRENGTH_TIERS, POWER_SCORES, "
-        "PLAYER_THREATS_MAP, COMPLETE_ODDS (idempotent)"
+        "PLAYER_THREATS_MAP, COMPLETE_ODDS, MATCH_SCHEDULE, "
+        "MATCH_DETAILS, MATCH_DATA_META (idempotent)"
     )
 
     # 4. Modify weightedPick to use PLAYER_THREATS_MAP

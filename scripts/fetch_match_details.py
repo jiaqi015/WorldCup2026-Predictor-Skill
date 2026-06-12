@@ -10,6 +10,7 @@ import os
 import sys
 import urllib.request
 import time
+import unicodedata
 
 # English to Chinese team name mapping
 TEAM_CN = {
@@ -29,25 +30,96 @@ TEAM_CN = {
     "Panama": "巴拿马"
 }
 
-# Player name mapping (English to Chinese) - loaded from player_mapping.json
-PLAYER_CN = {}
+# Player name mapping (English to project player metadata).
+PLAYER_DATA = {}
+PLAYER_DATA_NORMALIZED = {}
+
+PLAYER_DISPLAY_CN = {
+    "Julián Quiñones": "胡利安·基尼奥内斯",
+    "Érik Lira": "埃里克·利拉",
+    "Raúl Jiménez": "劳尔·希门尼斯",
+    "Roberto Alvarado": "罗伯托·阿尔瓦拉多",
+    "Ladislav Krejcí": "拉迪斯拉夫·克雷伊奇",
+    "Ladislav Krejčí": "拉迪斯拉夫·克雷伊奇",
+    "Vladimír Coufal": "弗拉迪米尔·曹法尔",
+    "Hwang In-Beom": "黄仁范",
+    "Lee Kang-In": "李刚仁",
+    "Oh Hyeon-Gyu": "吴贤揆",
+}
+
+
+def normalize_name(value):
+    """Normalize accents and punctuation for conservative alias matching."""
+    value = unicodedata.normalize("NFKD", value or "")
+    value = "".join(char for char in value if not unicodedata.combining(char))
+    return "".join(char.lower() for char in value if char.isalnum())
 
 def load_player_mapping():
     """Load player name mapping from JSON file."""
-    global PLAYER_CN
+    global PLAYER_DATA, PLAYER_DATA_NORMALIZED
     mapping_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "squads", "player_mapping.json")
     if os.path.exists(mapping_path):
         with open(mapping_path, "r", encoding="utf-8") as f:
             data = json.load(f)
             for eng_name, info in data.items():
-                if isinstance(info, dict) and "cn" in info:
-                    PLAYER_CN[eng_name] = info["cn"]
-                elif isinstance(info, str):
-                    PLAYER_CN[eng_name] = info
+                if isinstance(info, str):
+                    info = {"cn": info}
+                if not isinstance(info, dict):
+                    continue
+                PLAYER_DATA[eng_name] = info
+                PLAYER_DATA_NORMALIZED.setdefault(normalize_name(eng_name), []).append((eng_name, info))
 
-def get_player_cn(eng_name):
-    """Get Chinese name for a player, fallback to English name."""
-    return PLAYER_CN.get(eng_name, eng_name)
+
+def resolve_player(source_name, expected_team):
+    """Resolve an ESPN participant against the project mapping within one team."""
+    display_cn = PLAYER_DISPLAY_CN.get(source_name)
+    candidates = []
+    if source_name in PLAYER_DATA:
+        candidates.append((source_name, PLAYER_DATA[source_name]))
+    candidates.extend(PLAYER_DATA_NORMALIZED.get(normalize_name(source_name), []))
+
+    seen = set()
+    for mapped_name, info in candidates:
+        candidate_key = (mapped_name, info.get("team"))
+        if candidate_key in seen:
+            continue
+        seen.add(candidate_key)
+        if info.get("team") != expected_team:
+            continue
+        alias = info.get("cn") or source_name
+        return {
+            "source_name": source_name,
+            "display_name_cn": display_cn or alias,
+            "app_alias": alias,
+            "team_cn": expected_team,
+            "jersey": info.get("jersey"),
+            "position": info.get("position"),
+            "mapping_status": "matched_team_player",
+            "mapping_key": mapped_name,
+        }
+
+    return {
+        "source_name": source_name,
+        "display_name_cn": display_cn or source_name,
+        "app_alias": None,
+        "team_cn": expected_team,
+        "jersey": None,
+        "position": None,
+        "mapping_status": "source_only",
+        "mapping_key": None,
+    }
+
+
+def add_player_fields(target, prefix, resolved):
+    """Flatten player metadata into an event for simple static embedding."""
+    target[f"{prefix}_source_name"] = resolved["source_name"]
+    target[f"{prefix}_cn"] = resolved["display_name_cn"]
+    target[f"{prefix}_app_alias"] = resolved["app_alias"]
+    target[f"{prefix}_team_cn"] = resolved["team_cn"]
+    target[f"{prefix}_jersey"] = resolved["jersey"]
+    target[f"{prefix}_position"] = resolved["position"]
+    target[f"{prefix}_mapping_status"] = resolved["mapping_status"]
+    target[f"{prefix}_mapping_key"] = resolved["mapping_key"]
 
 def fetch_json(url):
     """Fetch JSON from URL with retry logic."""
@@ -63,7 +135,7 @@ def fetch_json(url):
                 print(f"  ERROR fetching {url}: {e}", file=sys.stderr)
                 return None
 
-def parse_key_events(key_events, home_team_id):
+def parse_key_events(key_events, home_team_id, home_team_cn, away_team_cn):
     """Parse key events to extract goals, cards, etc."""
     events = []
     for event in key_events:
@@ -79,6 +151,7 @@ def parse_key_events(key_events, home_team_id):
 
             team_id = event.get("team", {}).get("id", "")
             team_cn = "home" if team_id == home_team_id else "away"
+            expected_team = home_team_cn if team_cn == "home" else away_team_cn
 
             clock = event.get("clock", {}).get("displayValue", "")
 
@@ -86,12 +159,12 @@ def parse_key_events(key_events, home_team_id):
                 "type": "goal",
                 "minute": clock,
                 "team": team_cn,
-                "scorer": scorer,
-                "scorer_cn": get_player_cn(scorer)
+                "team_cn": expected_team,
+                "source": "ESPN summary API",
             }
+            add_player_fields(goal_event, "scorer", resolve_player(scorer, expected_team))
             if assister:
-                goal_event["assist"] = assister
-                goal_event["assist_cn"] = get_player_cn(assister)
+                add_player_fields(goal_event, "assist", resolve_player(assister, expected_team))
 
             events.append(goal_event)
 
@@ -101,15 +174,18 @@ def parse_key_events(key_events, home_team_id):
             player = participants[0].get("athlete", {}).get("displayName", "") if participants else ""
             team_id = event.get("team", {}).get("id", "")
             team_cn = "home" if team_id == home_team_id else "away"
+            expected_team = home_team_cn if team_cn == "home" else away_team_cn
             clock = event.get("clock", {}).get("displayValue", "")
 
-            events.append({
+            card_event = {
                 "type": "yellowCard",
                 "minute": clock,
                 "team": team_cn,
-                "player": player,
-                "player_cn": get_player_cn(player)
-            })
+                "team_cn": expected_team,
+                "source": "ESPN summary API",
+            }
+            add_player_fields(card_event, "player", resolve_player(player, expected_team))
+            events.append(card_event)
 
         # Red card (type 93)
         elif type_id == "93":
@@ -117,15 +193,18 @@ def parse_key_events(key_events, home_team_id):
             player = participants[0].get("athlete", {}).get("displayName", "") if participants else ""
             team_id = event.get("team", {}).get("id", "")
             team_cn = "home" if team_id == home_team_id else "away"
+            expected_team = home_team_cn if team_cn == "home" else away_team_cn
             clock = event.get("clock", {}).get("displayValue", "")
 
-            events.append({
+            card_event = {
                 "type": "redCard",
                 "minute": clock,
                 "team": team_cn,
-                "player": player,
-                "player_cn": get_player_cn(player)
-            })
+                "team_cn": expected_team,
+                "source": "ESPN summary API",
+            }
+            add_player_fields(card_event, "player", resolve_player(player, expected_team))
+            events.append(card_event)
 
     return events
 
@@ -169,7 +248,7 @@ def parse_team_stats(boxscore, home_team_id):
 def main():
     # Load player mapping
     load_player_mapping()
-    print(f"Loaded {len(PLAYER_CN)} player name mappings")
+    print(f"Loaded {len(PLAYER_DATA)} player name mappings")
 
     # Load match schedule
     schedule_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "matches", "match_schedule.json")
@@ -231,13 +310,16 @@ def main():
 
         # Parse key events
         key_events = summary.get("keyEvents", [])
-        events = parse_key_events(key_events, home_team_id)
+        events = parse_key_events(key_events, home_team_id, home_cn, away_cn)
 
         # Parse team stats
         boxscore = summary.get("boxscore", {})
         stats = parse_team_stats(boxscore, home_team_id)
 
         details[match_id] = {
+            "matchId": match_id,
+            "homeTeamCn": home_cn,
+            "awayTeamCn": away_cn,
             "homeScore": home_score,
             "awayScore": away_score,
             "attendance": attendance,

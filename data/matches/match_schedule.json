@@ -8,8 +8,11 @@
     "away": "南非",
     "venue": {
       "name": "Estadio Banorte",
+      "name_cn": "巴诺特体育场",
       "city": "Mexico City",
-      "country": "Mexico"
+      "city_cn": "墨西哥城",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": null,
     "status": "STATUS_FULL_TIME",
@@ -24,8 +27,11 @@
     "away": "捷克",
     "venue": {
       "name": "Estadio Akron",
+      "name_cn": "阿克伦体育场",
       "city": "Guadalajara",
-      "country": "Mexico"
+      "city_cn": "瓜达拉哈拉",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": null,
     "status": "STATUS_FULL_TIME",
@@ -40,17 +46,20 @@
     "away": "波黑",
     "venue": {
       "name": "BMO Field",
+      "name_cn": "BMO球场",
       "city": "Toronto",
-      "country": "Canada"
+      "city_cn": "多伦多",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 250,
+      "drawML": 255,
       "spread": null,
       "overUnder": 2.5,
-      "details": "CAN -120"
+      "details": "CAN -125"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -64,8 +73,11 @@
     "away": "巴拉圭",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -74,7 +86,7 @@
       "drawML": 220,
       "spread": null,
       "overUnder": 2.5,
-      "details": "USA +110"
+      "details": "USA +115"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -88,8 +100,11 @@
     "away": "瑞士",
     "venue": {
       "name": "Levi's Stadium",
+      "name_cn": "李维斯体育场",
       "city": "Santa Clara, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州圣克拉拉",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -112,8 +127,11 @@
     "away": "摩洛哥",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -136,8 +154,11 @@
     "away": "苏格兰",
     "venue": {
       "name": "Gillette Stadium",
+      "name_cn": "吉列体育场",
       "city": "Foxborough, Massachusetts",
-      "country": "USA"
+      "city_cn": "马萨诸塞州福克斯伯勒",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -160,8 +181,11 @@
     "away": "土耳其",
     "venue": {
       "name": "BC Place",
+      "name_cn": "卑诗体育馆",
       "city": "Vancouver",
-      "country": "Canada"
+      "city_cn": "温哥华",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -184,8 +208,11 @@
     "away": "库拉索",
     "venue": {
       "name": "NRG Stadium",
+      "name_cn": "NRG体育场",
       "city": "Houston, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州休斯敦",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -208,8 +235,11 @@
     "away": "日本",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -232,8 +262,11 @@
     "away": "厄瓜多尔",
     "venue": {
       "name": "Lincoln Financial Field",
+      "name_cn": "林肯金融球场",
       "city": "Philadelphia, Pennsylvania",
-      "country": "USA"
+      "city_cn": "宾夕法尼亚州费城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -256,8 +289,11 @@
     "away": "突尼斯",
     "venue": {
       "name": "Estadio BBVA",
+      "name_cn": "BBVA体育场",
       "city": "Guadalupe",
-      "country": "Mexico"
+      "city_cn": "瓜达卢佩",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -280,8 +316,11 @@
     "away": "佛得角",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -304,8 +343,11 @@
     "away": "埃及",
     "venue": {
       "name": "Lumen Field",
+      "name_cn": "流明球场",
       "city": "Seattle, Washington",
-      "country": "USA"
+      "city_cn": "华盛顿州西雅图",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -328,8 +370,11 @@
     "away": "乌拉圭",
     "venue": {
       "name": "Hard Rock Stadium",
+      "name_cn": "硬石体育场",
       "city": "Miami Gardens, Florida",
-      "country": "USA"
+      "city_cn": "佛罗里达州迈阿密花园",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -352,8 +397,11 @@
     "away": "新西兰",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -376,8 +424,11 @@
     "away": "塞内加尔",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -400,8 +451,11 @@
     "away": "挪威",
     "venue": {
       "name": "Gillette Stadium",
+      "name_cn": "吉列体育场",
       "city": "Foxborough, Massachusetts",
-      "country": "USA"
+      "city_cn": "马萨诸塞州福克斯伯勒",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -424,8 +478,11 @@
     "away": "阿尔及利亚",
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
+      "name_cn": "箭头体育场GEHA球场",
       "city": "Kansas City, Missouri",
-      "country": "USA"
+      "city_cn": "密苏里州堪萨斯城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -448,8 +505,11 @@
     "away": "约旦",
     "venue": {
       "name": "Levi's Stadium",
+      "name_cn": "李维斯体育场",
       "city": "Santa Clara, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州圣克拉拉",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -472,8 +532,11 @@
     "away": "刚果金",
     "venue": {
       "name": "NRG Stadium",
+      "name_cn": "NRG体育场",
       "city": "Houston, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州休斯敦",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -496,8 +559,11 @@
     "away": "克罗地亚",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -520,8 +586,11 @@
     "away": "巴拿马",
     "venue": {
       "name": "BMO Field",
+      "name_cn": "BMO球场",
       "city": "Toronto",
-      "country": "Canada"
+      "city_cn": "多伦多",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -544,8 +613,11 @@
     "away": "哥伦比亚",
     "venue": {
       "name": "Estadio Banorte",
+      "name_cn": "巴诺特体育场",
       "city": "Mexico City",
-      "country": "Mexico"
+      "city_cn": "墨西哥城",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -568,8 +640,11 @@
     "away": "南非",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -592,8 +667,11 @@
     "away": "波黑",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -616,8 +694,11 @@
     "away": "卡塔尔",
     "venue": {
       "name": "BC Place",
+      "name_cn": "卑诗体育馆",
       "city": "Vancouver",
-      "country": "Canada"
+      "city_cn": "温哥华",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -640,8 +721,11 @@
     "away": "韩国",
     "venue": {
       "name": "Estadio Akron",
+      "name_cn": "阿克伦体育场",
       "city": "Guadalajara",
-      "country": "Mexico"
+      "city_cn": "瓜达拉哈拉",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -664,8 +748,11 @@
     "away": "澳大利亚",
     "venue": {
       "name": "Lumen Field",
+      "name_cn": "流明球场",
       "city": "Seattle, Washington",
-      "country": "USA"
+      "city_cn": "华盛顿州西雅图",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -688,8 +775,11 @@
     "away": "摩洛哥",
     "venue": {
       "name": "Gillette Stadium",
+      "name_cn": "吉列体育场",
       "city": "Foxborough, Massachusetts",
-      "country": "USA"
+      "city_cn": "马萨诸塞州福克斯伯勒",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -712,8 +802,11 @@
     "away": "海地",
     "venue": {
       "name": "Lincoln Financial Field",
+      "name_cn": "林肯金融球场",
       "city": "Philadelphia, Pennsylvania",
-      "country": "USA"
+      "city_cn": "宾夕法尼亚州费城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -736,8 +829,11 @@
     "away": "巴拉圭",
     "venue": {
       "name": "Levi's Stadium",
+      "name_cn": "李维斯体育场",
       "city": "Santa Clara, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州圣克拉拉",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -760,8 +856,11 @@
     "away": "瑞典",
     "venue": {
       "name": "NRG Stadium",
+      "name_cn": "NRG体育场",
       "city": "Houston, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州休斯敦",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -784,8 +883,11 @@
     "away": "科特迪瓦",
     "venue": {
       "name": "BMO Field",
+      "name_cn": "BMO球场",
       "city": "Toronto",
-      "country": "Canada"
+      "city_cn": "多伦多",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -808,8 +910,11 @@
     "away": "库拉索",
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
+      "name_cn": "箭头体育场GEHA球场",
       "city": "Kansas City, Missouri",
-      "country": "USA"
+      "city_cn": "密苏里州堪萨斯城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -832,8 +937,11 @@
     "away": "日本",
     "venue": {
       "name": "Estadio BBVA",
+      "name_cn": "BBVA体育场",
       "city": "Guadalupe",
-      "country": "Mexico"
+      "city_cn": "瓜达卢佩",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -856,8 +964,11 @@
     "away": "沙特",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -880,8 +991,11 @@
     "away": "伊朗",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -904,8 +1018,11 @@
     "away": "佛得角",
     "venue": {
       "name": "Hard Rock Stadium",
+      "name_cn": "硬石体育场",
       "city": "Miami Gardens, Florida",
-      "country": "USA"
+      "city_cn": "佛罗里达州迈阿密花园",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -928,8 +1045,11 @@
     "away": "埃及",
     "venue": {
       "name": "BC Place",
+      "name_cn": "卑诗体育馆",
       "city": "Vancouver",
-      "country": "Canada"
+      "city_cn": "温哥华",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -952,8 +1072,11 @@
     "away": "奥地利",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -976,8 +1099,11 @@
     "away": "伊拉克",
     "venue": {
       "name": "Lincoln Financial Field",
+      "name_cn": "林肯金融球场",
       "city": "Philadelphia, Pennsylvania",
-      "country": "USA"
+      "city_cn": "宾夕法尼亚州费城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1000,8 +1126,11 @@
     "away": "塞内加尔",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1024,8 +1153,11 @@
     "away": "阿尔及利亚",
     "venue": {
       "name": "Levi's Stadium",
+      "name_cn": "李维斯体育场",
       "city": "Santa Clara, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州圣克拉拉",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1048,8 +1180,11 @@
     "away": "乌兹别克",
     "venue": {
       "name": "NRG Stadium",
+      "name_cn": "NRG体育场",
       "city": "Houston, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州休斯敦",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1072,8 +1207,11 @@
     "away": "加纳",
     "venue": {
       "name": "Gillette Stadium",
+      "name_cn": "吉列体育场",
       "city": "Foxborough, Massachusetts",
-      "country": "USA"
+      "city_cn": "马萨诸塞州福克斯伯勒",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1096,8 +1234,11 @@
     "away": "克罗地亚",
     "venue": {
       "name": "BMO Field",
+      "name_cn": "BMO球场",
       "city": "Toronto",
-      "country": "Canada"
+      "city_cn": "多伦多",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1120,8 +1261,11 @@
     "away": "刚果金",
     "venue": {
       "name": "Estadio Akron",
+      "name_cn": "阿克伦体育场",
       "city": "Guadalajara",
-      "country": "Mexico"
+      "city_cn": "瓜达拉哈拉",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1144,8 +1288,11 @@
     "away": "卡塔尔",
     "venue": {
       "name": "Lumen Field",
+      "name_cn": "流明球场",
       "city": "Seattle, Washington",
-      "country": "USA"
+      "city_cn": "华盛顿州西雅图",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1168,8 +1315,11 @@
     "away": "加拿大",
     "venue": {
       "name": "BC Place",
+      "name_cn": "卑诗体育馆",
       "city": "Vancouver",
-      "country": "Canada"
+      "city_cn": "温哥华",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1192,17 +1342,20 @@
     "away": "海地",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 425,
+      "drawML": 400,
       "spread": null,
       "overUnder": 2.5,
-      "details": "MAR -310"
+      "details": "MAR -280"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1216,8 +1369,11 @@
     "away": "巴西",
     "venue": {
       "name": "Hard Rock Stadium",
+      "name_cn": "硬石体育场",
       "city": "Miami Gardens, Florida",
-      "country": "USA"
+      "city_cn": "佛罗里达州迈阿密花园",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1240,8 +1396,11 @@
     "away": "墨西哥",
     "venue": {
       "name": "Estadio Banorte",
+      "name_cn": "巴诺特体育场",
       "city": "Mexico City",
-      "country": "Mexico"
+      "city_cn": "墨西哥城",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1264,8 +1423,11 @@
     "away": "韩国",
     "venue": {
       "name": "Estadio BBVA",
+      "name_cn": "BBVA体育场",
       "city": "Guadalupe",
-      "country": "Mexico"
+      "city_cn": "瓜达卢佩",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1288,8 +1450,11 @@
     "away": "科特迪瓦",
     "venue": {
       "name": "Lincoln Financial Field",
+      "name_cn": "林肯金融球场",
       "city": "Philadelphia, Pennsylvania",
-      "country": "USA"
+      "city_cn": "宾夕法尼亚州费城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1312,8 +1477,11 @@
     "away": "德国",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1336,8 +1504,11 @@
     "away": "瑞典",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1360,8 +1531,11 @@
     "away": "荷兰",
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
+      "name_cn": "箭头体育场GEHA球场",
       "city": "Kansas City, Missouri",
-      "country": "USA"
+      "city_cn": "密苏里州堪萨斯城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1384,8 +1558,11 @@
     "away": "澳大利亚",
     "venue": {
       "name": "Levi's Stadium",
+      "name_cn": "李维斯体育场",
       "city": "Santa Clara, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州圣克拉拉",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1408,8 +1585,11 @@
     "away": "美国",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1432,8 +1612,11 @@
     "away": "法国",
     "venue": {
       "name": "Gillette Stadium",
+      "name_cn": "吉列体育场",
       "city": "Foxborough, Massachusetts",
-      "country": "USA"
+      "city_cn": "马萨诸塞州福克斯伯勒",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1456,8 +1639,11 @@
     "away": "伊拉克",
     "venue": {
       "name": "BMO Field",
+      "name_cn": "BMO球场",
       "city": "Toronto",
-      "country": "Canada"
+      "city_cn": "多伦多",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1480,17 +1666,20 @@
     "away": "沙特",
     "venue": {
       "name": "NRG Stadium",
+      "name_cn": "NRG体育场",
       "city": "Houston, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州休斯敦",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 240,
+      "drawML": 260,
       "spread": null,
       "overUnder": 2.5,
-      "details": "CPV +140"
+      "details": "CPV +125"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1504,8 +1693,11 @@
     "away": "西班牙",
     "venue": {
       "name": "Estadio Akron",
+      "name_cn": "阿克伦体育场",
       "city": "Guadalajara",
-      "country": "Mexico"
+      "city_cn": "瓜达拉哈拉",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1528,8 +1720,11 @@
     "away": "伊朗",
     "venue": {
       "name": "Lumen Field",
+      "name_cn": "流明球场",
       "city": "Seattle, Washington",
-      "country": "USA"
+      "city_cn": "华盛顿州西雅图",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1552,8 +1747,11 @@
     "away": "比利时",
     "venue": {
       "name": "BC Place",
+      "name_cn": "卑诗体育馆",
       "city": "Vancouver",
-      "country": "Canada"
+      "city_cn": "温哥华",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1576,8 +1774,11 @@
     "away": "加纳",
     "venue": {
       "name": "Lincoln Financial Field",
+      "name_cn": "林肯金融球场",
       "city": "Philadelphia, Pennsylvania",
-      "country": "USA"
+      "city_cn": "宾夕法尼亚州费城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1600,8 +1801,11 @@
     "away": "英格兰",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1624,8 +1828,11 @@
     "away": "葡萄牙",
     "venue": {
       "name": "Hard Rock Stadium",
+      "name_cn": "硬石体育场",
       "city": "Miami Gardens, Florida",
-      "country": "USA"
+      "city_cn": "佛罗里达州迈阿密花园",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1648,8 +1855,11 @@
     "away": "乌兹别克",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1672,8 +1882,11 @@
     "away": "奥地利",
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
+      "name_cn": "箭头体育场GEHA球场",
       "city": "Kansas City, Missouri",
-      "country": "USA"
+      "city_cn": "密苏里州堪萨斯城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1696,8 +1909,11 @@
     "away": "阿根廷",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": {
       "provider": "DraftKings",
@@ -1720,8 +1936,11 @@
     "away": "Group B 2nd Place",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1736,8 +1955,11 @@
     "away": "Group F 2nd Place",
     "venue": {
       "name": "NRG Stadium",
+      "name_cn": "NRG体育场",
       "city": "Houston, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州休斯敦",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1752,8 +1974,11 @@
     "away": "Third Place Group A/B/C/D/F",
     "venue": {
       "name": "Gillette Stadium",
+      "name_cn": "吉列体育场",
       "city": "Foxborough, Massachusetts",
-      "country": "USA"
+      "city_cn": "马萨诸塞州福克斯伯勒",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1768,8 +1993,11 @@
     "away": "Group C 2nd Place",
     "venue": {
       "name": "Estadio BBVA",
+      "name_cn": "BBVA体育场",
       "city": "Guadalupe",
-      "country": "Mexico"
+      "city_cn": "瓜达卢佩",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1784,8 +2012,11 @@
     "away": "Group I 2nd Place",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1800,8 +2031,11 @@
     "away": "Third Place Group C/D/F/G/H",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1816,8 +2050,11 @@
     "away": "Third Place Group C/E/F/H/I",
     "venue": {
       "name": "Estadio Banorte",
+      "name_cn": "巴诺特体育场",
       "city": "Mexico City",
-      "country": "Mexico"
+      "city_cn": "墨西哥城",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1832,8 +2069,11 @@
     "away": "Third Place Group E/H/I/J/K",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1848,8 +2088,11 @@
     "away": "Third Place Group A/E/H/I/J",
     "venue": {
       "name": "Lumen Field",
+      "name_cn": "流明球场",
       "city": "Seattle, Washington",
-      "country": "USA"
+      "city_cn": "华盛顿州西雅图",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1864,8 +2107,11 @@
     "away": "Third Place Group B/E/F/I/J",
     "venue": {
       "name": "Levi's Stadium",
+      "name_cn": "李维斯体育场",
       "city": "Santa Clara, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州圣克拉拉",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1880,8 +2126,11 @@
     "away": "Group J 2nd Place",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1896,8 +2145,11 @@
     "away": "Group L 2nd Place",
     "venue": {
       "name": "BMO Field",
+      "name_cn": "BMO球场",
       "city": "Toronto",
-      "country": "Canada"
+      "city_cn": "多伦多",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1912,8 +2164,11 @@
     "away": "Third Place Group E/F/G/I/J",
     "venue": {
       "name": "BC Place",
+      "name_cn": "卑诗体育馆",
       "city": "Vancouver",
-      "country": "Canada"
+      "city_cn": "温哥华",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1928,8 +2183,11 @@
     "away": "Group G 2nd Place",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1944,8 +2202,11 @@
     "away": "Group H 2nd Place",
     "venue": {
       "name": "Hard Rock Stadium",
+      "name_cn": "硬石体育场",
       "city": "Miami Gardens, Florida",
-      "country": "USA"
+      "city_cn": "佛罗里达州迈阿密花园",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1960,8 +2221,11 @@
     "away": "Third Place Group D/E/I/J/L",
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
+      "name_cn": "箭头体育场GEHA球场",
       "city": "Kansas City, Missouri",
-      "country": "USA"
+      "city_cn": "密苏里州堪萨斯城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1976,8 +2240,11 @@
     "away": "Round of 32 3 Winner",
     "venue": {
       "name": "NRG Stadium",
+      "name_cn": "NRG体育场",
       "city": "Houston, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州休斯敦",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -1992,8 +2259,11 @@
     "away": "Round of 32 5 Winner",
     "venue": {
       "name": "Lincoln Financial Field",
+      "name_cn": "林肯金融球场",
       "city": "Philadelphia, Pennsylvania",
-      "country": "USA"
+      "city_cn": "宾夕法尼亚州费城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2008,8 +2278,11 @@
     "away": "Round of 32 6 Winner",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2024,8 +2297,11 @@
     "away": "Round of 32 8 Winner",
     "venue": {
       "name": "Estadio Banorte",
+      "name_cn": "巴诺特体育场",
       "city": "Mexico City",
-      "country": "Mexico"
+      "city_cn": "墨西哥城",
+      "country": "Mexico",
+      "country_cn": "墨西哥"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2040,8 +2316,11 @@
     "away": "Round of 32 12 Winner",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2056,8 +2335,11 @@
     "away": "Round of 32 10 Winner",
     "venue": {
       "name": "Lumen Field",
+      "name_cn": "流明球场",
       "city": "Seattle, Washington",
-      "country": "USA"
+      "city_cn": "华盛顿州西雅图",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2072,8 +2354,11 @@
     "away": "Round of 32 16 Winner",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2088,8 +2373,11 @@
     "away": "Round of 32 15 Winner",
     "venue": {
       "name": "BC Place",
+      "name_cn": "卑诗体育馆",
       "city": "Vancouver",
-      "country": "Canada"
+      "city_cn": "温哥华",
+      "country": "Canada",
+      "country_cn": "加拿大"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2104,8 +2392,11 @@
     "away": "Round of 16 2 Winner",
     "venue": {
       "name": "Gillette Stadium",
+      "name_cn": "吉列体育场",
       "city": "Foxborough, Massachusetts",
-      "country": "USA"
+      "city_cn": "马萨诸塞州福克斯伯勒",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2120,8 +2411,11 @@
     "away": "Round of 16 6 Winner",
     "venue": {
       "name": "SoFi Stadium",
+      "name_cn": "SoFi体育场",
       "city": "Inglewood, California",
-      "country": "USA"
+      "city_cn": "加利福尼亚州英格尔伍德",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2136,8 +2430,11 @@
     "away": "Round of 16 4 Winner",
     "venue": {
       "name": "Hard Rock Stadium",
+      "name_cn": "硬石体育场",
       "city": "Miami Gardens, Florida",
-      "country": "USA"
+      "city_cn": "佛罗里达州迈阿密花园",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2152,8 +2449,11 @@
     "away": "Round of 16 8 Winner",
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
+      "name_cn": "箭头体育场GEHA球场",
       "city": "Kansas City, Missouri",
-      "country": "USA"
+      "city_cn": "密苏里州堪萨斯城",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2168,8 +2468,11 @@
     "away": "Quarterfinal 2 Winner",
     "venue": {
       "name": "AT&T Stadium",
+      "name_cn": "AT&T体育场",
       "city": "Arlington, Texas",
-      "country": "USA"
+      "city_cn": "得克萨斯州阿灵顿",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2184,8 +2487,11 @@
     "away": "Quarterfinal 4 Winner",
     "venue": {
       "name": "Mercedes-Benz Stadium",
+      "name_cn": "梅赛德斯-奔驰体育场",
       "city": "Atlanta, Georgia",
-      "country": "USA"
+      "city_cn": "佐治亚州亚特兰大",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2200,8 +2506,11 @@
     "away": "Semifinal 2 Loser",
     "venue": {
       "name": "Hard Rock Stadium",
+      "name_cn": "硬石体育场",
       "city": "Miami Gardens, Florida",
-      "country": "USA"
+      "city_cn": "佛罗里达州迈阿密花园",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
@@ -2216,8 +2525,11 @@
     "away": "Semifinal 2 Winner",
     "venue": {
       "name": "MetLife Stadium",
+      "name_cn": "大都会人寿体育场",
       "city": "East Rutherford, New Jersey",
-      "country": "USA"
+      "city_cn": "新泽西州东卢瑟福",
+      "country": "USA",
+      "country_cn": "美国"
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",

@@ -82,7 +82,8 @@ def main():
         ("function enrichGMWithData()", "enrichGMWithData function"),
         ("function formatMatchTime(", "formatMatchTime function"),
         ("function formatVenue(", "formatVenue function"),
-        ("function formatOdds(", "formatOdds function"),
+        ("function getOutcomeOdds(", "getOutcomeOdds function"),
+        ("function outcomeButtonHTML(", "outcomeButtonHTML function"),
         ("function getMatchExtra(", "getMatchExtra function"),
     ]
     for pattern, desc in functions:
@@ -104,6 +105,18 @@ def main():
     ]
     for pattern, desc in css_patterns:
         all_passed = check_content_contains(content, pattern, desc) and all_passed
+
+    print("\n7b. RETIRED ODDS SUMMARY:")
+    retired_patterns = [
+        ("模型推导赔率", "Chinese derived-odds summary text"),
+        ("Model-derived odds", "English derived-odds summary text"),
+    ]
+    for pattern, desc in retired_patterns:
+        if pattern in content:
+            print(f"✗ {desc}: should not appear")
+            all_passed = False
+        else:
+            print(f"✓ {desc} removed")
 
     # Check data integration
     print("\n8. DATA INTEGRATION:")
@@ -137,7 +150,7 @@ def main():
     print("=" * 60)
 
     # Count checks
-    total_checks = len(data_files) + len(script_files) + len(static_vars) + len(functions) + len(calls) + len(css_patterns) + len(integrations) + 1  # +1 for predictor sync
+    total_checks = len(data_files) + len(script_files) + len(static_vars) + len(functions) + len(calls) + len(css_patterns) + len(retired_patterns) + len(integrations) + 1  # +1 for predictor sync
     passed_checks = total_checks if all_passed else 0
 
     print(f"\nTotal checks: {total_checks}")
