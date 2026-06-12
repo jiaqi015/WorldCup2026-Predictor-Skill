@@ -113,7 +113,7 @@ python3 \
   --path skills/world-cup-2026-predictor
 ```
 
-Use `--ref v0.1.0` to pin a tagged release. The direct Skill installer does
+Use `--ref v0.1.1` to pin a tagged release. The direct Skill installer does
 not overwrite an existing installation, so Plugin installation is preferred
 for ongoing updates.
 

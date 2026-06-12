@@ -5,6 +5,13 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-06-12
+
+### Changed
+
+- New visitors now see the predictor in Chinese by default.
+- Existing visitors keep their saved language preference.
+
 ## [0.1.0] - 2026-06-12
 
 ### Added

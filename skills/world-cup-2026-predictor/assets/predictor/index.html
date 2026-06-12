@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -1313,10 +1313,9 @@ function toggleTheme(){theme=theme==="dark"?"light":"dark";localStorage.setItem(
 applyTheme();
 
 // ── I18N (zh / en) ──
-// Persisted to localStorage; on first visit detects browser language.
-// Default language: English (GitHub-facing audience is mostly international).
-// Returning visitors keep their saved choice via localStorage.
-var LANG=localStorage.getItem("wc26_lang")||"en";
+// Persisted to localStorage.
+// Default language: Chinese. Returning visitors keep their saved choice.
+var LANG=localStorage.getItem("wc26_lang")||"zh";
 document.documentElement.lang=(LANG==="zh")?"zh-CN":"en";
 var I18N={
   zh:{
