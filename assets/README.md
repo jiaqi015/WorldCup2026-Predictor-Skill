@@ -1,29 +1,45 @@
-# `assets/` — local audio (optional)
+# Optional Local Audio
 
-The app has a background-music player, but **no audio is bundled** with this
-repository — copyrighted tracks (e.g. official World Cup songs) must never be
-committed to a public repo. They'd risk a DMCA takedown and bloat the page.
+The predictor includes background-music controls, but the repository and Codex
+Skill intentionally ship without audio files.
 
-## To enable music locally
+This keeps the project:
 
-Drop your own audio files here, named exactly:
+- legally safer for public GitHub distribution;
+- small enough to clone and install quickly;
+- usable without media licenses or external audio services.
 
-```
+## Enable Audio In The Root Web App
+
+Add audio files you have the right to use:
+
+```text
 assets/music-1.mp3
 assets/music-2.mp3
 assets/music-3.mp3
 assets/music-4.mp3
 ```
 
-Use tracks you have the rights to (your own, royalty-free, or CC0). The player
-loads them lazily (`<audio preload="none">`) — nothing is fetched until you
-click the music button.
+Supported local formats include MP3, WAV, M4A, and OGG. These files are ignored
+by Git and must not be committed.
 
-If no files are present, the music button simply shows a toast
-("Add MP3 files to assets/ to enable music") and the rest of the app works fine.
+## Enable Audio In The Skill App
 
-## Why these are git-ignored
+In this source repository, the Skill serves its bundled application from:
 
-`.gitignore` excludes `assets/*.mp3` / `*.wav` / `*.m4a` / `*.ogg` so your local
-tracks stay on your machine and never get pushed. This file (`README.md`) is the
-only thing in `assets/` that's committed.
+```text
+skills/world-cup-2026-predictor/assets/predictor/
+```
+
+For a local-only source checkout, place licensed tracks under:
+
+```text
+skills/world-cup-2026-predictor/assets/predictor/assets/
+```
+
+Use the same `music-1` through `music-4` filenames. Keep these files local and
+out of commits.
+
+Audio is optional. If no files are present, the predictor displays a short
+notice and every prediction, scoring, sharing, and validation feature continues
+to work.

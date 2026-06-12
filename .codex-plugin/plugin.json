@@ -1,0 +1,39 @@
+{
+  "name": "world-cup-2026-predictor",
+  "version": "0.1.0",
+  "description": "Build, launch, score, validate, and maintain an interactive 48-team World Cup 2026 predictor.",
+  "author": {
+    "name": "jiaqi015",
+    "url": "https://github.com/jiaqi015"
+  },
+  "homepage": "https://github.com/jiaqi015/WorldCup2026-Predictor-Skill",
+  "repository": "https://github.com/jiaqi015/WorldCup2026-Predictor-Skill",
+  "license": "MIT",
+  "keywords": [
+    "world-cup",
+    "football",
+    "prediction",
+    "bracket",
+    "codex-skill"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "World Cup 2026 Predictor",
+    "shortDescription": "Build and score a complete World Cup bracket.",
+    "longDescription": "Launch the interactive 48-team predictor, generate brackets, inspect live results, score predictions, and validate tournament data.",
+    "developerName": "jiaqi015",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Data lookup",
+      "Validation"
+    ],
+    "websiteURL": "https://github.com/jiaqi015/WorldCup2026-Predictor-Skill",
+    "defaultPrompt": [
+      "Launch the World Cup 2026 predictor and generate a complete bracket.",
+      "Check the latest completed World Cup matches.",
+      "Validate the predictor data and bundled app."
+    ],
+    "brandColor": "#146B4A"
+  }
+}

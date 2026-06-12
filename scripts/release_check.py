@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+"""Run repository checks required before publishing a plugin release."""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SKILL = ROOT / "skills" / "world-cup-2026-predictor"
+PLUGIN_MANIFEST = ROOT / ".codex-plugin" / "plugin.json"
+MARKETPLACE = ROOT / ".agents" / "plugins" / "marketplace.json"
+REPO_SKILL_LINK = ROOT / ".agents" / "skills" / "world-cup-2026-predictor"
+SEMVER = re.compile(
+    r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
+    r"(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$"
+)
+
+
+def fail(message: str) -> None:
+    raise RuntimeError(message)
+
+
+def load_json(path: Path) -> dict:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(f"{path.relative_to(ROOT)} is not valid JSON: {exc}")
+    if not isinstance(payload, dict):
+        fail(f"{path.relative_to(ROOT)} must contain a JSON object")
+    return payload
+
+
+def run(command: list[str]) -> None:
+    print("+", " ".join(command), flush=True)
+    subprocess.run(command, cwd=ROOT, check=True)
+
+
+def optional_system_validator(relative_path: str, target: Path) -> None:
+    codex_home = Path(os.environ.get("CODEX_HOME", Path.home() / ".codex"))
+    validator = codex_home / "skills" / ".system" / relative_path
+    if validator.is_file():
+        run([sys.executable, str(validator), str(target)])
+    else:
+        print(f"[SKIP] Optional Codex validator not found: {validator}")
+
+
+def validate_metadata() -> str:
+    plugin = load_json(PLUGIN_MANIFEST)
+    required = ("name", "version", "description", "author", "skills", "interface")
+    missing = [key for key in required if not plugin.get(key)]
+    if missing:
+        fail(f"plugin.json is missing required fields: {', '.join(missing)}")
+    if plugin["name"] != "world-cup-2026-predictor":
+        fail("plugin.json name must remain stable")
+    if not isinstance(plugin["version"], str) or not SEMVER.fullmatch(plugin["version"]):
+        fail("plugin.json version must be strict semantic versioning")
+    if plugin["skills"] != "./skills/":
+        fail("plugin.json skills must be ./skills/")
+
+    marketplace = load_json(MARKETPLACE)
+    plugins = marketplace.get("plugins")
+    if marketplace.get("name") != "world-cup-2026" or not isinstance(plugins, list):
+        fail("marketplace.json has an invalid name or plugins list")
+    entry = next(
+        (item for item in plugins if item.get("name") == plugin["name"]),
+        None,
+    )
+    if not entry:
+        fail("marketplace.json does not expose the plugin")
+    source = entry.get("source", {})
+    if source.get("source") != "url" or source.get("ref") != "main":
+        fail("marketplace plugin source must track the main branch")
+
+    if not SKILL.is_dir():
+        fail("canonical skills/world-cup-2026-predictor directory is missing")
+    if not REPO_SKILL_LINK.is_symlink() or REPO_SKILL_LINK.resolve() != SKILL.resolve():
+        fail(".agents skill link must point to the canonical skill directory")
+    return plugin["version"]
+
+
+def main() -> int:
+    try:
+        version = validate_metadata()
+        run(
+            [
+                sys.executable,
+                str(SKILL / "scripts" / "sync_predictor_asset.py"),
+                "--check",
+            ]
+        )
+        run([sys.executable, str(SKILL / "scripts" / "validate_predictor.py")])
+        optional_system_validator(
+            "skill-creator/scripts/quick_validate.py",
+            SKILL,
+        )
+        optional_system_validator(
+            "plugin-creator/scripts/validate_plugin.py",
+            ROOT,
+        )
+    except (RuntimeError, subprocess.CalledProcessError) as exc:
+        print(f"[ERROR] {exc}", file=sys.stderr)
+        return 1
+
+    print(f"Release checks passed for version {version}.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

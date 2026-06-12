@@ -1,0 +1,21 @@
+{
+  "name": "world-cup-2026",
+  "interface": {
+    "displayName": "World Cup 2026"
+  },
+  "plugins": [
+    {
+      "name": "world-cup-2026-predictor",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jiaqi015/WorldCup2026-Predictor-Skill.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

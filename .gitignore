@@ -27,16 +27,18 @@ build/
 .env.*.local
 
 # Local audio (NOT bundled — copyright). Users drop their own tracks into assets/.
-assets/*.mp3
-assets/*.wav
-assets/*.m4a
-assets/*.ogg
+**/assets/*.mp3
+**/assets/*.wav
+**/assets/*.m4a
+**/assets/*.ogg
 
 # Temporary verification artefacts
 check_*.js
 verify_*.js
 test_*.js
 *.tmp
+__pycache__/
+*.pyc
 
 # Backups
 *.backup-*
