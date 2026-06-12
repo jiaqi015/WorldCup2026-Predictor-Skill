@@ -5,6 +5,22 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-06-13
+
+### Changed
+
+- Moved each group-stage 1X2 decimal odd directly onto its matching Home, Draw,
+  or Away quick-action button.
+- Kept model-derived provenance and totals metadata visible without repeating
+  the three decimal values in a separate row.
+- Added responsive two-line outcome-button styling for Chinese and English.
+
+### Validation
+
+- Added an integration regression test for all three outcome-button odds.
+- Verified the priced quick action still writes a valid result in the browser.
+- Verified the dark desktop layout, English labels, and browser console.
+
 ## [0.3.0] - 2026-06-12
 
 ### Added

@@ -106,6 +106,9 @@ tr:last-child td{border-bottom:none}
 .match-actions{display:inline-flex;align-self:center;gap:0;margin-top:0;border:1px solid var(--line-delicate);border-radius:100px;background:var(--bg-card);overflow:hidden;box-shadow:0 4px 12px rgba(18,20,23,0.04)}
 .match-actions .b{border:0;border-radius:0;background:transparent;box-shadow:none;min-width:64px}
 .match-actions .b+.b{border-left:1px solid var(--line-delicate)}
+.match-actions .outcome-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.05}
+.outcome-name{font-size:10px;font-weight:700}
+.outcome-odds{color:var(--ink-dark);font-size:11px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.1px}
 .scorer-actions{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:0;margin-bottom:2px}
 .scorer-actions .b{padding:6px 11px;font-size:10px;background:var(--bg-soft);display:inline-flex;align-items:center;gap:4px}
 .b{padding:8px 16px;border-radius:100px;border:1px solid var(--line-delicate);background:var(--bg-card);color:var(--ink-medium);font-size:12px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit}
@@ -400,7 +403,9 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
   .mr-teams .tn{font-size:12px!important;gap:5px!important}
   .mr-teams input{width:36px!important;height:36px!important;font-size:15px!important;border-radius:8px!important}
   .btns{gap:4px;margin-top:10px}
-  .match-actions .b{min-width:52px;padding:6px 10px;font-size:10px}
+  .match-actions .b{min-width:52px;padding:6px 9px;font-size:10px}
+  .match-actions .outcome-choice{min-width:58px}
+  .outcome-name{font-size:9px}.outcome-odds{font-size:10px}
   .b{padding:5px 10px;font-size:10px}
   .topbar{gap:6px;margin:10px 0 16px}
   .topbar button{padding:9px 14px;font-size:12px;border-radius:20px}
@@ -720,17 +725,24 @@ function formatVenue(venue){
 function getCompleteOdds(matchId){
   return (typeof COMPLETE_ODDS!=="undefined"&&matchId&&COMPLETE_ODDS[matchId])?COMPLETE_ODDS[matchId]:null;
 }
+function getOutcomeOdds(odds,matchId){
+  var co=getCompleteOdds(matchId);
+  odds=odds||{};
+  var h=odds.h||odds.home||(co&&co.h),d=odds.d||odds.draw||(co&&co.d),a=odds.a||odds.away||(co&&co.a);
+  return h&&d&&a?{h:Number(h),d:Number(d),a:Number(a),derived:!!(co&&co.m==="derived_from_partial")}:null;
+}
+function outcomeButtonHTML(label,odd){
+  var value=Number(odd);
+  return '<span class="outcome-name">'+label+'</span>'+
+    (Number.isFinite(value)&&value>0?'<span class="outcome-odds">'+value.toFixed(2)+'</span>':"");
+}
 function formatOdds(odds,matchId){
   var co=getCompleteOdds(matchId);
   if(!odds&&!co)return "";
   odds=odds||{};
   var parts=[];
-  var h=odds.h||odds.home||(co&&co.h),d=odds.d||odds.draw||(co&&co.d),a=odds.a||odds.away||(co&&co.a);
-  if(h&&d&&a){
-    var derived=co&&co.m==="derived_from_partial";
-    var label=derived?(LANG==="en"?"Model-derived 1X2":"模型推导 1X2"):"1X2";
-    parts.push(label+" "+Number(h).toFixed(2)+"/"+Number(d).toFixed(2)+"/"+Number(a).toFixed(2));
-  }
+  var outcomeOdds=getOutcomeOdds(odds,matchId);
+  if(outcomeOdds)parts.push(outcomeOdds.derived?(LANG==="en"?"Model-derived odds":"模型推导赔率"):(LANG==="en"?"1X2 odds":"1X2 赔率"));
   if(odds.overUnder)parts.push("O/U "+odds.overUnder);
   if(odds.spread)parts.push("AH "+(odds.spread>0?"+":"")+odds.spread);
   return parts.join(" | ");
@@ -1883,6 +1895,7 @@ for(var mi=0;mi<gm[gk].length;mi++){var m=gm[gk][mi],sc=m.hs!==""&&m.as!=="",act
 h+='<div class="mr"><div class="mr-teams"><span class="tn r">'+fi(m.h,"fls")+" "+tn(m.h)+'</span><input value="'+m.hs+'" oninput="uGM(\''+gk+'\','+mi+',\'hs\',this.value)" onblur="uGMDone()" inputmode="numeric" placeholder="-"><span class="sep">-</span><input value="'+m.as+'" oninput="uGM(\''+gk+'\','+mi+',\'as\',this.value)" onblur="uGMDone()" inputmode="numeric" placeholder="-"><span class="tn">'+fi(m.a,"fls")+" "+tn(m.a)+'</span></div>';
 var extra=getMatchExtra(m);
 if(extra)h+='<div class="match-extra">'+extra+'</div>';
+var outcomeOdds=getOutcomeOdds(m.odds,m.id);
 var oddsText=formatOdds(m.odds,m.id);
 if(oddsText)h+='<div class="match-extra">'+oddsText+'</div>';
 if(actual){
@@ -1894,7 +1907,7 @@ var scorerBtns="";
 if(hGoals>0)scorerBtns+='<button class="b" onclick="oS(\''+m.h+'\',\'group\',\''+gk+'\','+mi+',\'h\')">'+fi(m.h,"fls")+' ⚽</button>';
 if(aGoals>0)scorerBtns+='<button class="b" onclick="oS(\''+m.a+'\',\'group\',\''+gk+'\','+mi+',\'a\')">'+fi(m.a,"fls")+' ⚽</button>';
 if(scorerBtns)h+='<div class="scorer-actions">'+scorerBtns+'</div>';}
-h+='<div class="match-actions"><button class="b bw" onclick="qpG(\''+gk+'\','+mi+',\'h\')">'+T("quickHome")+'</button><button class="b bd" onclick="qpG(\''+gk+'\','+mi+',\'d\')">'+T("quickDraw")+'</button><button class="b bw" onclick="qpG(\''+gk+'\','+mi+',\'a\')">'+T("quickAway")+'</button><button class="b br" onclick="rmG(\''+gk+'\','+mi+')">'+T("quickSim")+'</button></div>';
+h+='<div class="match-actions"><button class="b bw outcome-choice" onclick="qpG(\''+gk+'\','+mi+',\'h\')">'+outcomeButtonHTML(T("quickHome"),outcomeOdds&&outcomeOdds.h)+'</button><button class="b bd outcome-choice" onclick="qpG(\''+gk+'\','+mi+',\'d\')">'+outcomeButtonHTML(T("quickDraw"),outcomeOdds&&outcomeOdds.d)+'</button><button class="b bw outcome-choice" onclick="qpG(\''+gk+'\','+mi+',\'a\')">'+outcomeButtonHTML(T("quickAway"),outcomeOdds&&outcomeOdds.a)+'</button><button class="b br" onclick="rmG(\''+gk+'\','+mi+')">'+T("quickSim")+'</button></div>';
 h+='</div>';}
 return h;}
 

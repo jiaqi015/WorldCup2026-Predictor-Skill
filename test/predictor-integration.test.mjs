@@ -66,12 +66,18 @@ test("group quick actions expose draw selection", () => {
   assert.ok(html.includes("qpG(\\''+gk+'\\','+mi+',\\'d\\')"));
 });
 
-test("match odds display uses complete 1X2 odds when available", () => {
+test("group outcome buttons mount complete 1X2 odds when available", () => {
   assert.match(html, /function getCompleteOdds\(matchId\)/);
+  assert.match(html, /function getOutcomeOdds\(odds,matchId\)/);
+  assert.match(html, /function outcomeButtonHTML\(label,odd\)/);
   assert.match(html, /function formatOdds\(odds,matchId\)/);
   assert.match(html, /co&&co\.h/);
   assert.match(html, /formatOdds\(m\.odds,m\.id\)/);
-  assert.match(html, /模型推导 1X2/);
+  assert.match(html, /outcomeButtonHTML\(T\("quickHome"\),outcomeOdds&&outcomeOdds\.h\)/);
+  assert.match(html, /outcomeButtonHTML\(T\("quickDraw"\),outcomeOdds&&outcomeOdds\.d\)/);
+  assert.match(html, /outcomeButtonHTML\(T\("quickAway"\),outcomeOdds&&outcomeOdds\.a\)/);
+  assert.match(html, /class="outcome-odds"/);
+  assert.match(html, /模型推导赔率/);
   assert.match(html, /co&&co\.m==="derived_from_partial"/);
 });
 
