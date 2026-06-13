@@ -181,7 +181,7 @@ SHARE_QR_URL="https://www.cameraclaw.cn/2026"
 
 ## Verified Live Redeploy
 
-A fresh production deployment was performed from this repo on 2026-06-13.
+A fresh production deployment was performed from this repo on 2026-06-13 (with SOFIFA photo integration).
 
 Command:
 
@@ -193,18 +193,18 @@ vercel --prod --yes
 Result:
 
 ```text
-Production: https://world-cup-2026-demo-2wldpirpw-jiaqis-projects-c634fd33.vercel.app
+Production: https://world-cup-2026-demo-3p2c4rwbn-jiaqis-projects-c634fd33.vercel.app
 Aliased: https://world-cup-2026-demo.vercel.app
 ```
 
 Inspection result:
 
 ```text
-id: dpl_2APbE4qUWeAwHnhNzUw9x2wz3cKD
+id: dpl_EMmzHaRGXamtCuRx7HGn8WbaeCD1
 name: world-cup-2026-demo
 target: production
 status: Ready
-created: Sat Jun 13 2026 12:15:52 GMT+0800
+created: Sat Jun 13 2026 13:06:59 GMT+0800
 ```
 
 Public URL verification after that deployment:
