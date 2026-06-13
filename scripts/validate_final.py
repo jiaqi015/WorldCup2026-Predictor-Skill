@@ -103,8 +103,8 @@ def check_index_html_integrity():
     issues = []
     if "var PHOTO_MAP={" not in content:
         issues.append("Missing PHOTO_MAP variable")
-    if "PHOTO_MAP[pn]" not in content:
-        issues.append("loadPhotos doesn't use PHOTO_MAP")
+    if "PHOTO_MAP[" not in content:
+        issues.append("Missing PHOTO_MAP lookup in loadPhotos/getPhotoUrl")
     if "wikipedia.org" in content:
         issues.append("Still references Wikipedia API")
     if "🏆" in content:
