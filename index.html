@@ -726,6 +726,244 @@ function loadPhotos(team,cb){
   }
   if(cb)cb();
 }
+function initGM(){var g={};for(var k in GD){var ts=GD[k];var pp=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];g[k]=[];for(var p=0;p<pp.length;p++)g[k].push({h:ts[pp[p][0]],a:ts[pp[p][1]],hs:"",as:"",hg:[],ag:[]});}return g;}
+
+// Enrich gm with real match data (venue, time, odds) from MATCH_SCHEDULE
+function enrichGMWithData(){
+  for(var grp in gm){
+    for(var i=0;i<gm[grp].length;i++){
+      var m=gm[grp][i];
+      // Find matching match in schedule
+      for(var id in MATCH_SCHEDULE){
+        var ms=MATCH_SCHEDULE[id];
+        if(ms.group===grp && ms.home===m.h && ms.away===m.a){
+          m.id=id;
+          m.date=ms.date;
+          m.venue=ms.venue;
+          m.odds=ms.odds;
+          break;
+        }
+      }
+    }
+  }
+}
+
+function formatMatchTime(dateStr){
+  if(!dateStr)return "";
+  var d=new Date(dateStr);
+  if(isNaN(d.getTime()))return "";
+  return d.toLocaleString(LANG==="en"?"en-US":"zh-CN",{
+    timeZone:"Asia/Shanghai",
+    month:"numeric",
+    day:"numeric",
+    hour:"2-digit",
+    minute:"2-digit",
+    hour12:false
+  });
+}
+function formatVenue(venue){
+  if(!venue)return "";
+  if(typeof venue==="string")return venue;
+  var name=LANG==="zh"?(venue.name_cn||venue.fullName||venue.name):(venue.fullName||venue.name||venue.name_cn)||"";
+  var city=LANG==="zh"?(venue.city_cn||(venue.address&&venue.address.city)||venue.city):((venue.address&&venue.address.city)||venue.city||venue.city_cn)||"";
+  return name+(city?" · "+city:"");
+}
+function getActualGoalEvents(matchId){
+  var details=matchId&&typeof MATCH_DETAILS!=="undefined"?MATCH_DETAILS[matchId]:null;
+  if(!details||!Array.isArray(details.events))return [];
+  return details.events.filter(function(event){return event.type==="goal";});
+}
+function actualEventPlayerName(event,prefix){
+  if(LANG==="en")return event[prefix+"_source_name"]||event[prefix]||event[prefix+"_cn"]||"";
+  return event[prefix+"_cn"]||event[prefix+"_app_alias"]||event[prefix+"_source_name"]||event[prefix]||"";
+}
+function renderActualGoalEvents(matchId){
+  var goals=getActualGoalEvents(matchId);
+  if(!goals.length)return "";
+  var mapped=0,h='<div class="actual-goals"><div class="actual-goals-head"><span>'+T("actualGoalsTitle")+'</span>';
+  for(var i=0;i<goals.length;i++)if(goals[i].scorer_mapping_status==="matched_team_player")mapped++;
+  h+='<span>'+T("actualMapped",{mapped:mapped,total:goals.length})+'</span></div>';
+  for(var j=0;j<goals.length;j++){
+    var event=goals[j],scorer=actualEventPlayerName(event,"scorer"),assist=actualEventPlayerName(event,"assist");
+    h+='<div class="actual-goal" data-mapping-status="'+escHtml(event.scorer_mapping_status||"source_only")+'"><span class="actual-goal-minute">'+escHtml(event.minute||"")+'</span><span><span class="actual-goal-player">'+escHtml(scorer)+'</span>';
+    if(assist)h+='<span class="actual-goal-assist">'+T("assistLabel")+': '+escHtml(assist)+'</span>';
+    h+='</span></div>';
+  }
+  return h+'</div>';
+}
+function getCompleteOdds(matchId){
+  return (typeof COMPLETE_ODDS!=="undefined"&&matchId&&COMPLETE_ODDS[matchId])?COMPLETE_ODDS[matchId]:null;
+}
+function getOutcomeOdds(odds,matchId){
+  var co=getCompleteOdds(matchId);
+  odds=odds||{};
+  var h=odds.h||odds.home||(co&&co.h),d=odds.d||odds.draw||(co&&co.d),a=odds.a||odds.away||(co&&co.a);
+  return h&&d&&a?{h:Number(h),d:Number(d),a:Number(a),derived:!!(co&&co.m==="derived_from_partial")}:null;
+}
+function outcomeButtonHTML(label,odd){
+  var value=Number(odd);
+  return '<span class="outcome-name">'+label+'</span>'+
+    (Number.isFinite(value)&&value>0?'<span class="outcome-odds">'+value.toFixed(2)+'</span>':"");
+}
+function getMatchExtra(m){
+  var parts=[];
+  if(m.date)parts.push(formatMatchTime(m.date));
+  if(m.venue)parts.push(formatVenue(m.venue));
+  var status=matchStatusInfo(m,getActualGroupResultByMatch(m));
+  parts.push('<span class="match-status '+status.cls+'">'+status.label+'</span>');
+  return parts.join(" · ");
+}
+function matchStatusInfo(m,actual){
+  if(actual||m.completed||m.status==="STATUS_FULL_TIME")return {label:LANG==="en"?"FT":"已赛",cls:"done"};
+  if(m.status&&m.status!=="STATUS_SCHEDULED")return {label:LANG==="en"?"Live":"进行中",cls:"live"};
+  return {label:LANG==="en"?"Scheduled":"未赛",cls:""};
+}
+
+gm=initGM();
+enrichGMWithData();
+// localStorage restore
+function saveState(){if(isViewMode)return;try{localStorage.setItem("wc26_gm",JSON.stringify(gm));localStorage.setItem("wc26_ko",JSON.stringify(ko));localStorage.setItem("wc26_slog",JSON.stringify(slog));localStorage.setItem("wc26_play_mode",playMode);localStorage.setItem("wc26_prediction_mode",predictionMode);/* tab not saved */localStorage.setItem("wc26_expG",expG||"");}catch(e){}}
+function loadState(){
+  try{
+    // ── First: check URL hash for shared prediction ──
+    var hash=window.location.hash;
+    if(hash&&hash.indexOf("#p=")===0){
+      if(deserializeState(hash.substring(3))){
+        isViewMode=true;
+        document.body.classList.add("view-mode");
+        showViewBanner();
+        return; // skip localStorage restore — we're viewing a guest prediction
+      }
+    }
+    // ── Otherwise: restore from localStorage ──
+    var g=localStorage.getItem("wc26_gm");if(g){gm=JSON.parse(g);}
+    var k=localStorage.getItem("wc26_ko");if(k){ko=JSON.parse(k);}
+    var s=localStorage.getItem("wc26_slog");if(s){slog=JSON.parse(s);}
+    /* tab always starts on groups */
+    var e=localStorage.getItem("wc26_expG");if(e)expG=e||null;
+    /* Prime celebration tracker so reopening the page doesn't re-fire confetti for a champion saved last session */
+    if(ko&&ko["FINAL"]&&ko["FINAL"].w)lastCelebratedChamp=ko["FINAL"].w;
+  }catch(e){}
+  enrichGMWithData();
+}
+// ─── SHARED-PREDICTION STATE ENCODING ───
+// Lets a friend open a URL like  https://site/#p=<encoded>  and see your prediction.
+// Format: URL-safe base64 of compact JSON. Version-tagged so we can evolve later.
+//
+// v2 format (split scorers / assisters so the leaderboard reconstructs correctly):
+//   gm[grp][i] = [hs, as, hg_scorers, hg_assisters, ag_scorers, ag_assisters]   (or 0 if unplayed)
+//   ko[kid]    = [winnerIdx, loserIdx, h, a, scorerPairs, assisterPairs]
+// Scorer/assister tuples are player indices into PL[team]; pairs are [teamIdx, playerIdx].
+// autoScore creates separate hg/ag entries for each goal AND each assist (g:1,a:0 vs g:0,a:1),
+// so we must preserve that distinction or rScorers can't reconstruct the leaderboards.
+var SHARE_STATE_VERSION=2;
+var isViewMode=false;
+function serializeState(){
+  try{
+    var teams=Object.keys(PL);
+    function tIdx(name){return teams.indexOf(name);}
+    function pIdx(team,player){if(!player)return -1;var roster=PL[team]||[];return roster.indexOf(player);}
+    var g={};
+    for(var grp in gm){
+      var arr=[];
+      for(var i=0;i<gm[grp].length;i++){
+        var m=gm[grp][i];
+        if(m.hs===""||m.as===""){arr.push(0);continue;}
+        // Split entries by g/a flag — autoScore pushes one entry per goal + one per assist.
+        var hgS=(m.hg||[]).filter(function(gl){return gl.g===1;}).map(function(gl){return pIdx(m.h,gl.p);});
+        var hgA=(m.hg||[]).filter(function(gl){return gl.a===1;}).map(function(gl){return pIdx(m.h,gl.p);});
+        var agS=(m.ag||[]).filter(function(gl){return gl.g===1;}).map(function(gl){return pIdx(m.a,gl.p);});
+        var agA=(m.ag||[]).filter(function(gl){return gl.a===1;}).map(function(gl){return pIdx(m.a,gl.p);});
+        arr.push([parseInt(m.hs)||0,parseInt(m.as)||0,hgS,hgA,agS,agA]);
+      }
+      g[grp]=arr;
+    }
+    var k={};
+    for(var kid in ko){
+      var ks=ko[kid];
+      if(!ks||!ks.w)continue;
+      var matchScorers=slog.filter(function(s){return s.mid===kid&&s.g===1;}).map(function(s){return [tIdx(s.t),pIdx(s.t,s.p)];});
+      var matchAssists =slog.filter(function(s){return s.mid===kid&&s.a===1;}).map(function(s){return [tIdx(s.t),pIdx(s.t,s.p)];});
+      k[kid]=[tIdx(ks.w),tIdx(ks.l),ks.h,ks.a,matchScorers,matchAssists];
+    }
+    var json=JSON.stringify({v:SHARE_STATE_VERSION,g:g,k:k});
+    return btoa(unescape(encodeURIComponent(json))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+  }catch(e){console.error("serializeState failed:",e);return null;}
+}
+function deserializeState(encoded){
+  if(!encoded)return false;
+  try{
+    var b64=encoded.replace(/-/g,"+").replace(/_/g,"/");
+    while(b64.length%4)b64+="=";
+    var json=decodeURIComponent(escape(atob(b64)));
+    var data=JSON.parse(json);
+    if(!data||data.v!==SHARE_STATE_VERSION)return false;
+    var teams=Object.keys(PL);
+    // Restore gm from compact format
+    gm=initGM();
+enrichGMWithData();
+    for(var grp in data.g){
+      if(!gm[grp])continue;
+      var arr=data.g[grp];
+      for(var i=0;i<arr.length&&i<gm[grp].length;i++){
+        var entry=arr[i];
+        if(!entry||entry===0)continue;
+        var hs=entry[0],as=entry[1],hgS=entry[2]||[],hgA=entry[3]||[],agS=entry[4]||[],agA=entry[5]||[];
+        gm[grp][i].hs=String(hs);
+        gm[grp][i].as=String(as);
+        var ht=gm[grp][i].h,at=gm[grp][i].a;
+        var hg=[],ag=[];
+        for(var ii=0;ii<hgS.length;ii++){var pn=(PL[ht]||[])[hgS[ii]];if(pn)hg.push({p:pn,t:ht,g:1,a:0});}
+        for(var ii=0;ii<hgA.length;ii++){var pn=(PL[ht]||[])[hgA[ii]];if(pn)hg.push({p:pn,t:ht,g:0,a:1});}
+        for(var ii=0;ii<agS.length;ii++){var pn=(PL[at]||[])[agS[ii]];if(pn)ag.push({p:pn,t:at,g:1,a:0});}
+        for(var ii=0;ii<agA.length;ii++){var pn=(PL[at]||[])[agA[ii]];if(pn)ag.push({p:pn,t:at,g:0,a:1});}
+        gm[grp][i].hg=hg;gm[grp][i].ag=ag;
+      }
+    }
+    // Restore ko + slog with proper g/a flags so rScorers can rebuild leaderboards correctly.
+    ko={};slog=[];
+    for(var kid in data.k){
+      var e2=data.k[kid];
+      if(!e2)continue;
+      var wIdx=e2[0],lIdx=e2[1],hScore=e2[2],aScore=e2[3];
+      var matchScorers=e2[4]||[],matchAssists=e2[5]||[];
+      var wTeam=teams[wIdx],lTeam=teams[lIdx];
+      if(!wTeam||!lTeam)continue;
+      ko[kid]={w:wTeam,l:lTeam,h:hScore,a:aScore};
+      for(var s2=0;s2<matchScorers.length;s2++){
+        var ti=matchScorers[s2][0],pi=matchScorers[s2][1];
+        var team=teams[ti];
+        if(team&&PL[team]&&PL[team][pi])slog.push({mid:kid,t:team,p:PL[team][pi],g:1,a:0});
+      }
+      for(var s2=0;s2<matchAssists.length;s2++){
+        var ti=matchAssists[s2][0],pi=matchAssists[s2][1];
+        var team=teams[ti];
+        if(team&&PL[team]&&PL[team][pi])slog.push({mid:kid,t:team,p:PL[team][pi],g:0,a:1});
+      }
+    }
+    if(ko["FINAL"]&&ko["FINAL"].w)lastCelebratedChamp=ko["FINAL"].w;
+    return true;
+  }catch(e){console.error("deserializeState failed:",e);return false;}
+}
+// ─── BASELINE PREDICTION ───
+// A hand-crafted reference prediction based on strength tiers. Not an "expert" forecast,
+// not a bookmaker line — just what the strength-tier engine would naturally produce.
+// Champion: Argentina (5-tier), South American narrative, advances through expected opponents.
+// Author's own prediction. Portugal lifts the trophy beating progressively tougher opponents
+// (4-tier → 4-tier → 5-tier → 5-tier → 5-tier), which respects seeding logic (no top seeds in R32).
+// Golden Boot goes to Mbappé — France reaches the final but loses (a 2022 echo).
+var BASELINE={
+  champion:"葡萄牙",
+  third:"巴西",
+  topScorer:{player:"姆巴佩",team:"法国",goals:8},
+  path:[
+    {stage:"R32",opp:"日本",   us:3,them:1},
+    {stage:"R16",opp:"乌拉圭", us:2,them:1},
+    {stage:"QF", opp:"西班牙", us:2,them:1},
+    {stage:"SF", opp:"阿根廷", us:2,them:1},
+    {stage:"F",  opp:"法国",   us:3,them:2}
+  ]
+};
 // ─── P1.5: REAL-RESULT SCORING MODEL ───
 // Skeleton for post-tournament scoring. ACTUAL_RESULTS stays empty (ready:false) until the
 // cup starts (2026-06-11), then gets populated from the ESPN scoreboard API (P2).
