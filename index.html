@@ -819,6 +819,7 @@ function matchStatusInfo(m,actual){
   return {label:LANG==="en"?"Scheduled":"未赛",cls:""};
 }
 
+var tab="groups",expG=null,gm={},ko={},slog=[],playMode=localStorage.getItem("wc26_play_mode")||"normal",predictionMode=normalizePredictionMode(localStorage.getItem("wc26_play_mode")||"normal",localStorage.getItem("wc26_prediction_mode")||"strength");
 gm=initGM();
 enrichGMWithData();
 // localStorage restore
