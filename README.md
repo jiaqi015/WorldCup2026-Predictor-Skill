@@ -333,7 +333,8 @@ python3 scripts/release_check.py
 │   ├── build_report_rag.py
 │   ├── search_report_rag.py
 │   ├── validate_rag_corpus.py
-│   └── release_check.py
+│   ├── release_check.py
+│   └── verify_public_deployment.py
 ├── CHANGELOG.md
 ├── RELEASING.md
 ├── docs/
@@ -356,6 +357,7 @@ python3 scripts/release_check.py
 | `.codex-plugin/plugin.json` | Plugin identity, version, and install metadata |
 | `.agents/plugins/marketplace.json` | GitHub-backed Codex marketplace entry |
 | `scripts/release_check.py` | One-command release validation gate |
+| `scripts/verify_public_deployment.py` | Post-deploy check for the public HTML and player-photo routes |
 | `scripts/manage_local_preview.sh` | Install and manage the persistent macOS local preview |
 | `scripts/serve_local.mjs` | Zero-dependency static server used by the local LaunchAgent |
 | `docs/domain-model.md` | Current entities and the expanded forecast lifecycle |

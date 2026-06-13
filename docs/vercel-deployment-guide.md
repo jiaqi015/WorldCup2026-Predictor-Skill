@@ -10,9 +10,10 @@ This document records the actual deployment shape for this repository. Follow it
 - Demo Vercel project ID: `prj_qzcOzoyZGfFno1U9GdsFXkVf35BF`
 - Vercel owner/team: `jiaqis-projects-c634fd33`
 - Demo production alias: `https://world-cup-2026-demo.vercel.app`
+- Public origin domain: `https://worldcup-origin.cameraclaw.cn`
 - Public user URL: `https://www.cameraclaw.cn/2026`
 - Public domain owner project: `ai-image-workshop`
-- `www.cameraclaw.cn` is not directly bound to the demo project. It belongs to `ai-image-workshop`, which routes `/2026` to the demo production alias.
+- `www.cameraclaw.cn` is not directly bound to the demo project. It belongs to `ai-image-workshop`, which routes `/2026` to the public origin domain.
 
 ## Deployment Truth
 
@@ -40,10 +41,34 @@ The deployed `/2026` page is therefore:
 Browser
   -> https://www.cameraclaw.cn/2026
   -> Vercel project: ai-image-workshop
-  -> /2026 route
-  -> world-cup-2026-demo production alias
+  -> /2026 project routes
+  -> https://worldcup-origin.cameraclaw.cn
+  -> Vercel project: world-cup-2026-demo
   -> current demo HTML
 ```
+
+The custom origin domain is intentional. The default `*.vercel.app` production
+alias is protected by Vercel Authentication for this team, while custom domains
+remain public. Rewriting the parent site to the protected alias can leave a
+cached HTML page working while uncached images return 404.
+
+The live project routes on `ai-image-workshop` must be:
+
+```text
+World Cup 2026 Demo Root
+  source: /2026
+  syntax: equals
+  destination: https://worldcup-origin.cameraclaw.cn/
+
+World Cup 2026 Demo Assets
+  source: ^/2026/(.*)$
+  syntax: regex
+  destination: https://worldcup-origin.cameraclaw.cn/$1
+```
+
+Use the regex capture form for the asset route. The earlier
+`/2026/:path* -> .../:path*` project route matched requests but did not forward
+the captured path correctly, causing all nested static assets to return 404.
 
 ## Important Behavior
 
@@ -122,6 +147,14 @@ Domain: www.cameraclaw.cn
 Nameservers: ns1.vercel-dns.com, ns2.vercel-dns.com
 ```
 
+Verify both project routes:
+
+```bash
+VERCEL_PROJECT_ID=prj_ebkuBLBd5BHFWgiVjX9oVZ7BmiAL \
+VERCEL_ORG_ID=team_9GNanVcNnMhytR1TP8zPmvpF \
+vercel routes list --expand
+```
+
 ## Verify Latest Deployment
 
 List recent deployments:
@@ -168,15 +201,23 @@ Then verify the body is the World Cup demo:
 
 ```bash
 curl -L --max-time 20 https://www.cameraclaw.cn/2026 \
-  | rg "2026 World Cup Predictor|2026 世界杯|SHARE_QR_URL"
+  | rg "2026 世界杯|var GD=|var PHOTO_MAP="
 ```
 
 Expected markers:
 
 ```text
-2026 World Cup Predictor
 2026 世界杯
-SHARE_QR_URL="https://www.cameraclaw.cn/2026"
+var GD=
+var PHOTO_MAP=
+```
+
+Run the repository's public deployment check. It verifies the HTML plus
+representative ESPN, SOFIFA, and SVG player images through the real `/2026`
+route:
+
+```bash
+python3 scripts/verify_public_deployment.py
 ```
 
 ## Verified Live Redeploy
@@ -215,7 +256,8 @@ server: Vercel
 content-type: text/html; charset=utf-8
 ```
 
-The returned HTML included current demo markers, including `SHARE_QR_URL="https://www.cameraclaw.cn/2026"`.
+The returned HTML included current demo markers, including `var GD=` and
+`var PHOTO_MAP=`.
 
 ## Common Mistakes
 
@@ -224,6 +266,8 @@ The returned HTML included current demo markers, including `SHARE_QR_URL="https:
 - Do not assume GitHub push equals production deployment. This project has been deployed by Vercel CLI from the local working tree.
 - Do not commit `.vercel/`. It contains local Vercel project linking metadata and should stay ignored.
 - Do not delete the `ai-image-workshop` route for `/2026`; that route is why the public URL works.
+- Do not point the parent routes back to the protected `*.vercel.app` alias.
+- Do not replace the regex asset route with `/2026/:path*`; nested assets must preserve the captured path.
 
 ## Safe Redeploy Checklist
 
@@ -255,9 +299,7 @@ The returned HTML included current demo markers, including `SHARE_QR_URL="https:
 5. Confirm the public path works.
 
    ```bash
-   curl -I -L --max-time 20 https://www.cameraclaw.cn/2026
-   curl -L --max-time 20 https://www.cameraclaw.cn/2026 \
-     | rg "2026 World Cup Predictor|2026 世界杯|SHARE_QR_URL"
+   python3 scripts/verify_public_deployment.py
    ```
 
 6. If README, share links, or QR URLs changed, make sure they still point to:

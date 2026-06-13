@@ -151,6 +151,37 @@ test("group progress uses the liquid glass progress component", () => {
   assert.doesNotMatch(html, /max-width:400px;margin:0 auto 16px;text-align:center/);
 });
 
+test("knockout toolbar can simulate the bracket one round at a time", () => {
+  assert.match(html, /btnSimR32:"模拟32强",btnSimR16:"模拟16强",btnSimQF:"模拟8强",btnSimSF:"模拟半决赛"/);
+  assert.match(html, /btnSimFinals:"模拟决赛及季军赛",btnKODone:"淘汰赛已完成"/);
+  assert.match(html, /function getNextKOSimulationLabel\(\)/);
+  assert.match(html, /keys=\["btnSimR32","btnSimR16","btnSimQF","btnSimSF","btnSimFinals"\]/);
+  assert.match(html, /class="btn-next-round" onclick="raKONext\(\)"/);
+  assert.match(html, /onclick="raKONext\(\)"/);
+  assert.match(html, /function getKORounds\(\)/);
+  assert.match(html, /function raKONext\(\)/);
+  assert.match(html, /\{id:"3RD",ht:ko\["S1"\]\?ko\["S1"\]\.l:null/);
+  assert.match(html, /\{id:"FINAL",ht:ko\["S1"\]\?ko\["S1"\]\.w:null/);
+});
+
+test("round-by-round simulation is visually prioritized", () => {
+  assert.match(html, /\.btn-next-round\{background:var\(--accent-gold\)/);
+  assert.match(html, /body\.dark \.btn-next-round\{background:var\(--accent-gold\)/);
+});
+
+test("knockout winners have a compact inline marker", () => {
+  assert.match(html, /\.bk-row \.name\.w::after\{content:"✓"/);
+  assert.match(html, /\.bk-row \.name\.w\{padding-right:13px/);
+  assert.match(html, /\.bk-row\.is-cp \.name\.w::after\{color:var\(--accent-gold-dark\)\}/);
+});
+
+test("knockout round labels are three times larger without enlarging final labels", () => {
+  assert.match(html, /\.bk-title\.stage-label\{font-size:2\.25rem/);
+  assert.match(html, /\.bk-title\.stage-label\{font-size:1\.875rem\}/);
+  assert.match(html, /<div class="bk-title stage-label">'\+title\+'<\/div>/);
+  assert.match(html, /r32:"R32",r16:"R16",qf:"QF",sf:"SF"/);
+});
+
 test("venue metadata follows the active language", () => {
   assert.match(html, /LANG==="zh"\?\(venue\.name_cn\|\|venue\.fullName\|\|venue\.name\)/);
   assert.match(html, /LANG==="zh"\?\(venue\.city_cn\|\|\(venue\.address&&venue\.address\.city\)\|\|venue\.city\)/);
