@@ -147,12 +147,19 @@ def generate_new_variables(squads, mapping):
         source_photos = json.load(f)
     display_photos = {}
     for team_en, team_data in squads.items():
+        team_cn = TEAM_CN_MAP.get(team_en, team_en)
         for player in team_data.get('players', []):
             en_name = player['name']
             cn_name = get_player_cn_name(en_name, mapping, team_en)
             photo = source_photos.get(f"{en_name} ({team_en})") or source_photos.get(en_name)
-            if photo:
-                display_photos[cn_name] = photo["path"]
+            if not photo:
+                continue
+            path = photo["path"]
+            # Always emit team-qualified key — front-end prefers it for cross-team collisions.
+            display_photos[f"{team_cn}|{cn_name}"] = path
+            # Also emit bare key as a fallback (last-write-wins on collisions; the
+            # team-qualified key above guarantees per-team accuracy regardless).
+            display_photos[cn_name] = path
     lines.append("\nvar PHOTO_MAP=" + json.dumps(display_photos, ensure_ascii=False, separators=(",", ":")) + ";")
 
     return '\n'.join(lines)
