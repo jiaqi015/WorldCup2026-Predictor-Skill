@@ -181,6 +181,7 @@ def update_index_file(new_vars):
     pos_match = re.search(r'var POS=\{[^;]+\};', new_vars)
     if pos_match:
         content = re.sub(r'var POS=\{[^;]+\};', pos_match.group(0), content, flags=re.DOTALL)
+        content = content.replace('};nction getPos(player,team){', '};function getPos(player,team){')
 
     # Replace STAR_PLAYER variable
     star_match = re.search(r'var STAR_PLAYER=\{[^;]+\};', new_vars)

@@ -33,12 +33,18 @@ test("gameplay modes constrain compatible prediction strategies", () => {
   );
   assert.match(
     html,
-    /if\(play==="normal"\)return\["odds","worldRanking","aiReasoning"\]/,
+    /if\(play==="normal"\)return\["strength","ensemble"\]/,
   );
   assert.match(
     html,
-    /return\["random","odds","worldRanking","aiReasoning"\]/,
+    /return\["random","strength","ensemble"\]/,
   );
+  assert.match(html, /if\(mode==="odds"\|\|mode==="worldRanking"\)mode="strength"/);
+  assert.match(html, /if\(mode==="aiReasoning"\)mode="ensemble"/);
+  assert.match(html, /\{k:"strength",zh:"实力模型",en:"Strength model"\}/);
+  assert.match(html, /\{k:"ensemble",zh:"综合模型",en:"Ensemble model"\}/);
+  assert.doesNotMatch(html, /\{k:"worldRanking",zh:"综合排名"/);
+  assert.doesNotMatch(html, /\{k:"aiReasoning",zh:"AI 综合"/);
   assert.match(
     html,
     /var nextPredictionMode=normalizePredictionMode\(mode,predictionMode\)/,
@@ -135,6 +141,14 @@ test("group matches render chronologically without changing fixture identity", (
   assert.match(html, /function chronologicalGroupMatches\(gk\)/);
   assert.match(html, /return Date\.parse\(left\.m\.date\|\|""\)-Date\.parse\(right\.m\.date\|\|""\)/);
   assert.match(html, /var mi=ordered\[oi\]\.mi,m=ordered\[oi\]\.m/);
+});
+
+test("group progress uses the liquid glass progress component", () => {
+  assert.match(html, /class="group-progress/);
+  assert.match(html, /class="group-progress-liquid"/);
+  assert.match(html, /role="progressbar"/);
+  assert.match(html, /aria-valuenow="'\+doneM\+'"/);
+  assert.doesNotMatch(html, /max-width:400px;margin:0 auto 16px;text-align:center/);
 });
 
 test("venue metadata follows the active language", () => {

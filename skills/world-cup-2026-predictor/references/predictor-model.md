@@ -37,11 +37,13 @@ Preserve these invariants:
 - `gm`: group predictions.
 - `ko`: knockout predictions.
 - `slog`: scorer and assist events.
-- `predictionMode`: random, strength odds, power ranking, or offline AI ensemble.
+- `predictionMode`: random baseline, consolidated strength model, or
+  uncertainty-calibrated ensemble model. Legacy `odds` and `worldRanking`
+  values migrate to `strength`; `aiReasoning` migrates to `ensemble`.
 - `playMode`: normal, clone, or chaos presentation/gameplay modifier.
 
-Keep the UI compatibility map intact: Normal excludes random, Fun allows every
-strategy, and Upset locks prediction to random.
+Keep the UI compatibility map intact: Normal offers strength and ensemble, Fun
+also allows the random baseline, and Upset locks prediction to random.
 - `ACTUAL_RESULTS`: normalized completed results used for scoring.
 - `localStorage`: prediction, display, history, and live-result cache.
 - URL hash `#p=`: compact shared-prediction payload.

@@ -27,12 +27,11 @@ const strengths = {
 test("defines the architecture contracts for entities and prediction modes", () => {
   const engine = loadPredictionEngine();
 
-  assert.equal(engine.ENGINE_SCHEMA_VERSION, 2);
+  assert.equal(engine.ENGINE_SCHEMA_VERSION, 3);
   assert.deepEqual(engine.PREDICTION_MODES.map((mode) => mode.id), [
     "random",
-    "odds",
-    "worldRanking",
-    "aiReasoning",
+    "strength",
+    "ensemble",
   ]);
   assert.deepEqual(engine.GAMEPLAY_MODES.map((mode) => mode.id), [
     "normal",
@@ -75,10 +74,10 @@ test("normalizes decimal odds into implied probabilities", () => {
   assert.equal(Math.round(probabilities.away * 100), 25);
 });
 
-test("odds mode gives the stronger team a higher no-draw win probability", () => {
+test("strength mode gives the stronger team a higher no-draw win probability", () => {
   const engine = loadPredictionEngine();
   const probabilities = engine.estimateOutcomeProbabilities({
-    predictionMode: "odds",
+    predictionMode: "strength",
     allowDraw: false,
     homeTeam: "强队",
     awayTeam: "弱队",
@@ -97,7 +96,7 @@ test("strength calibration follows the documented knockout curve", () => {
 
   for (let diff = 0; diff <= 4; diff += 1) {
     const probabilities = engine.estimateOutcomeProbabilities({
-      predictionMode: "odds",
+      predictionMode: "strength",
       allowDraw: false,
       homeTeam: { strengthTier: 3 + diff },
       awayTeam: { strengthTier: 3 },
@@ -109,25 +108,31 @@ test("strength calibration follows the documented knockout curve", () => {
   }
 });
 
-test("external odds override strength-only priors while preserving normalization", () => {
+test("strength mode blends market, strength, and ranking inputs", () => {
   const engine = loadPredictionEngine();
   const probabilities = engine.estimateOutcomeProbabilities({
-    predictionMode: "odds",
+    predictionMode: "strength",
     allowDraw: true,
     homeTeam: "强队",
     awayTeam: "弱队",
     strengths,
+    rankings: { 强队: 1, 弱队: 80 },
     oddsMarket: { home: 8, draw: 5, away: 1.5 },
   });
 
-  assert.ok(probabilities.away > probabilities.home);
+  const marketOnly = engine.normalizeOddsMarket({ home: 8, draw: 5, away: 1.5 });
+  assert.ok(probabilities.away > probabilities.home, "market signal should remain meaningful");
+  assert.ok(
+    probabilities.away < marketOnly.away,
+    "team strength and ranking should temper an extreme market signal",
+  );
   assert.equal(Math.round((probabilities.home + probabilities.draw + probabilities.away) * 1000), 1000);
 });
 
-test("chaos gameplay shifts odds-mode probability toward the underdog", () => {
+test("chaos gameplay shifts strength-mode probability toward the underdog", () => {
   const engine = loadPredictionEngine();
   const normal = engine.estimateOutcomeProbabilities({
-    predictionMode: "odds",
+    predictionMode: "strength",
     gameplayMode: "normal",
     allowDraw: false,
     homeTeam: "强队",
@@ -135,7 +140,7 @@ test("chaos gameplay shifts odds-mode probability toward the underdog", () => {
     strengths,
   });
   const chaos = engine.estimateOutcomeProbabilities({
-    predictionMode: "odds",
+    predictionMode: "strength",
     gameplayMode: "chaos",
     allowDraw: false,
     homeTeam: "强队",
@@ -149,7 +154,7 @@ test("chaos gameplay shifts odds-mode probability toward the underdog", () => {
 test("simulated knockout scores never draw and match the sampled outcome", () => {
   const engine = loadPredictionEngine();
   const result = engine.simulateMatch({
-    predictionMode: "odds",
+    predictionMode: "strength",
     allowDraw: false,
     homeTeam: "强队",
     awayTeam: "弱队",
@@ -186,7 +191,7 @@ test("all prediction modes are implemented with a shared output contract", () =>
   }
 });
 
-test("random mode is strength-neutral and ranking mode uses supplied ranks", () => {
+test("random mode is strength-neutral and strength mode uses supplied ranks", () => {
   const engine = loadPredictionEngine();
   const random = engine.estimateOutcomeProbabilities({
     predictionMode: "random",
@@ -199,20 +204,20 @@ test("random mode is strength-neutral and ranking mode uses supplied ranks", () 
   assert.equal(random.away, 0.5);
 
   const ranked = engine.estimateOutcomeProbabilities({
-    predictionMode: "worldRanking",
+    predictionMode: "strength",
     allowDraw: false,
-    homeTeam: "强队",
-    awayTeam: "弱队",
-    strengths,
-    rankings: { 强队: 80, 弱队: 1 },
+    homeTeam: "同级甲",
+    awayTeam: "同级乙",
+    strengths: { 同级甲: 3, 同级乙: 3 },
+    rankings: { 同级甲: 80, 同级乙: 1 },
   });
   assert.ok(ranked.away > ranked.home);
 });
 
-test("AI mode accepts structured provider probabilities", () => {
+test("ensemble mode accepts structured provider probabilities", () => {
   const engine = loadPredictionEngine();
   const probabilities = engine.estimateOutcomeProbabilities({
-    predictionMode: "aiReasoning",
+    predictionMode: "ensemble",
     allowDraw: true,
     homeTeam: "强队",
     awayTeam: "弱队",
@@ -222,4 +227,49 @@ test("AI mode accepts structured provider probabilities", () => {
   assert.equal(Math.round(probabilities.home * 10), 1);
   assert.equal(Math.round(probabilities.draw * 10), 2);
   assert.equal(Math.round(probabilities.away * 10), 7);
+});
+
+test("ensemble calibration is distinct from the strength model", () => {
+  const engine = loadPredictionEngine();
+  const options = {
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+    rankings: { 强队: 1, 弱队: 80 },
+  };
+  const strength = engine.estimateOutcomeProbabilities({
+    ...options,
+    predictionMode: "strength",
+  });
+  const ensemble = engine.estimateOutcomeProbabilities({
+    ...options,
+    predictionMode: "ensemble",
+  });
+
+  assert.ok(ensemble.home < strength.home);
+  assert.ok(ensemble.home > 0.5);
+});
+
+test("legacy prediction mode ids migrate to the consolidated strategies", () => {
+  const engine = loadPredictionEngine();
+  const options = {
+    allowDraw: false,
+    homeTeam: "强队",
+    awayTeam: "弱队",
+    strengths,
+    rankings: { 强队: 1, 弱队: 80 },
+  };
+  assert.deepEqual(
+    engine.estimateOutcomeProbabilities({ ...options, predictionMode: "odds" }),
+    engine.estimateOutcomeProbabilities({ ...options, predictionMode: "strength" }),
+  );
+  assert.deepEqual(
+    engine.estimateOutcomeProbabilities({ ...options, predictionMode: "worldRanking" }),
+    engine.estimateOutcomeProbabilities({ ...options, predictionMode: "strength" }),
+  );
+  assert.deepEqual(
+    engine.estimateOutcomeProbabilities({ ...options, predictionMode: "aiReasoning" }),
+    engine.estimateOutcomeProbabilities({ ...options, predictionMode: "ensemble" }),
+  );
 });

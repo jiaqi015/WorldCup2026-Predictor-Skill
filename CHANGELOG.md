@@ -5,6 +5,20 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+### Changed
+
+- Consolidated the overlapping strength-odds and power-ranking strategies into
+  one `Strength model`.
+- Renamed the offline AI-labelled strategy to `Ensemble model` so the UI no
+  longer implies that the static app calls an online AI service.
+- Added backward-compatible migration for saved `odds`, `worldRanking`, and
+  `aiReasoning` mode identifiers.
+- Documented the strength blend and uncertainty-calibration weights.
+
+### Validation
+
+- Added regression coverage for strategy distinctness and legacy mode migration.
+
 ## [0.3.1] - 2026-06-13
 
 ### Changed

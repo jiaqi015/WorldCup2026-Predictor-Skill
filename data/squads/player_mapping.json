@@ -1364,6 +1364,13 @@
     "position": "F",
     "age": 35
   },
+  "Raúl Jiménez (Mexico)": {
+    "cn": "希门尼斯MEX",
+    "team": "墨西哥",
+    "jersey": "9",
+    "position": "F",
+    "age": 35
+  },
   "Alexis Vega": {
     "cn": "维加",
     "team": "墨西哥",
@@ -6521,6 +6528,13 @@
     "position": null,
     "age": null,
     "auto_translated": true
+  },
+  "Santiago Gimenez (Mexico)": {
+    "cn": "希门尼斯MEX2",
+    "team": "墨西哥",
+    "jersey": "11",
+    "position": "F",
+    "age": null
   },
   "Armando González": {
     "cn": "Armando冈萨雷斯",

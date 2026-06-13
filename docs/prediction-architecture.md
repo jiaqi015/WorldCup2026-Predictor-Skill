@@ -28,9 +28,10 @@ The current legacy data tables (`GD`, `PL`, `POS`, `FC`, `TEAM_EN`, `STRENGTH`) 
 `PredictionEngine.PREDICTION_MODES` defines the extension points:
 
 - `random`: pure random baseline that intentionally ignores team strength.
-- `odds`: calibrated strength prior with optional external decimal odds.
-- `worldRanking`: bundled offline power-ranking snapshot.
-- `aiReasoning`: offline ensemble of strength, ranking, and uncertainty, with optional structured provider probabilities.
+- `strength`: the primary football model. It blends team strength, the bundled
+  power-ranking snapshot, and available decimal 1X2 odds.
+- `ensemble`: uncertainty-calibrated output built on the strength model, with an
+  optional structured probability input from a connected provider.
 
 All modes return the same output contract:
 
@@ -45,7 +46,7 @@ The result also includes normalized probabilities and an explanation trail. Goal
 are aggregate simulation events; the presentation layer continues to assign named
 scorers and assists from the team roster.
 
-## Odds Mode
+## Strength Model
 
 The current offline `COMPLETE_ODDS` snapshot is not a claim that every match
 has a directly observed three-way sportsbook market. ESPN sometimes exposes
@@ -56,19 +57,31 @@ prediction snapshot retains method, confidence, source type, and original
 market text.
 
 Completed matches have no reconstructed historical odds. Missing markets stay
-missing and fall back to the strength model.
+missing; the model then blends the team strength and ranking priors.
 
-Odds mode accepts an optional decimal-odds market:
+The strength model accepts an optional decimal-odds market:
 
 ```js
 { home: 2.1, draw: 3.4, away: 3.8 }
 ```
 
-The engine converts decimal odds to implied probabilities with `1 / odds`, normalizes overround, and samples the match outcome from that distribution.
+The engine converts decimal odds to implied probabilities with `1 / odds` and
+normalizes overround. When available, the final prior weights market odds at
+60%, team strength at 25%, and ranking at 15%. Without a usable market, team
+strength receives 70% and ranking receives 30%.
 
-When live odds are not available, odds mode falls back to a strength-derived synthetic market. This keeps the app deterministic in shape and ready for a future odds provider without blocking current offline use.
+This consolidation replaces the former separate `odds` and `worldRanking`
+strategies. Those legacy IDs migrate to `strength` when old local state is read.
 
 For knockout matches, `allowDraw:false` removes the draw bucket and normalizes home/away probabilities.
+
+## Ensemble Model
+
+The ensemble model is deliberately not labelled as online AI. In the static app
+it takes the strength-model probabilities at 85% and a neutral uncertainty prior
+at 15%, which prevents false precision. A connected host can instead supply
+structured provider probabilities. The legacy `aiReasoning` mode ID migrates to
+`ensemble`.
 
 ## Gameplay Mapping
 
@@ -81,8 +94,8 @@ The existing UI modes are not prediction modes. They are modifiers on top of the
 The prediction-model selector and gameplay selector are persisted independently,
 with a deliberate compatibility map:
 
-- `normal`: strength odds, power ranking, or AI ensemble.
-- `clone`: all four prediction strategies.
+- `normal`: strength model or ensemble model.
+- `clone`: random baseline, strength model, or ensemble model.
 - `chaos`: random baseline only.
 
 Changing gameplay mode automatically selects the first compatible strategy when
@@ -94,7 +107,7 @@ Provider modules should adapt external data into the engine inputs instead of ch
 
 - `OddsProvider`: fetch and normalize bookmaker odds by match.
 - `RankingProvider`: fetch FIFA/world ranking snapshots.
-- `AIReasoningProvider`: return structured probabilities with citations and explanation.
+- `ProbabilityProvider`: return structured probabilities with citations and explanation.
 - `SquadProvider`: update teams, players, coaches, injuries, and cards-related priors.
 
 The static app works without providers. A connected host can call providers at the

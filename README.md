@@ -134,6 +134,31 @@ The root `index.html` can also be opened directly or served with any static
 HTTP server. The public demo is available at
 [www.cameraclaw.cn/2026](https://www.cameraclaw.cn/2026).
 
+### Keep The Local Preview Running On macOS
+
+Install the repository preview as a per-user LaunchAgent:
+
+```bash
+./scripts/manage_local_preview.sh install
+```
+
+The preview then stays available at
+[http://localhost:8765](http://localhost:8765), starts automatically after
+login, and restarts if the server exits. It serves the canonical root
+`index.html`, so local edits appear after a browser refresh.
+
+Common maintenance commands:
+
+```bash
+./scripts/manage_local_preview.sh status
+./scripts/manage_local_preview.sh restart
+./scripts/manage_local_preview.sh logs
+./scripts/manage_local_preview.sh stop
+./scripts/manage_local_preview.sh uninstall
+```
+
+Set `WORLD_CUP_PREVIEW_PORT` during `install` to use a different port.
+
 ## What The Skill Does
 
 ### Interactive Prediction
@@ -331,6 +356,8 @@ python3 scripts/release_check.py
 | `.codex-plugin/plugin.json` | Plugin identity, version, and install metadata |
 | `.agents/plugins/marketplace.json` | GitHub-backed Codex marketplace entry |
 | `scripts/release_check.py` | One-command release validation gate |
+| `scripts/manage_local_preview.sh` | Install and manage the persistent macOS local preview |
+| `scripts/serve_local.mjs` | Zero-dependency static server used by the local LaunchAgent |
 | `docs/domain-model.md` | Current entities and the expanded forecast lifecycle |
 | `docs/rag-corpus.md` | Corpus generation, retrieval, and citation rules |
 | `data/rag/kimi-world-cup-report/` | Page and chunk JSONL for RAG ingestion |
