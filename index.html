@@ -1722,7 +1722,8 @@ function applyGameplay(probabilities,homeStrength,awayStrength,gameplayMode,allo
   var p={home:probabilities.home||0,draw:allowDraw?(probabilities.draw||0):0,away:probabilities.away||0};
   var diff=homeStrength-awayStrength,absDiff=Math.abs(diff);
   if(mode.id==="chaos"&&absDiff>0){
-    var shift=clamp(0.10+absDiff*0.04,0,0.26);
+    // Tuned: lower base + slope keeps upsets visible without flipping outcomes wholesale.
+    var shift=clamp(0.05+absDiff*0.022,0,0.16);
     if(diff>0){p.home=Math.max(0,p.home-shift);p.away+=shift;}
     else{p.away=Math.max(0,p.away-shift);p.home+=shift;}
     if(allowDraw)p.draw=Math.max(0,p.draw-0.03);
@@ -1755,8 +1756,9 @@ function estimateOutcomeProbabilities(options){
 }
 function strengthPrior(homeStrength,awayStrength,allowDraw){
   var diff=homeStrength-awayStrength;
-  var h=Math.exp(diff*0.22),a=Math.exp(-diff*0.22);
-  var d=allowDraw?Math.max(0.38,0.60-Math.abs(diff)*0.06):0;
+  // exponent tuned so the top-10 sides reach the QF in ≥55% of normal+strength simulations.
+  var h=Math.exp(diff*0.85),a=Math.exp(-diff*0.85);
+  var d=allowDraw?Math.max(0.22,0.44-Math.abs(diff)*0.07):0;
   return{home:h,draw:d,away:a};
 }
 function sampleOutcome(probabilities,rng){
