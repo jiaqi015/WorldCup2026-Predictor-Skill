@@ -22,6 +22,15 @@ MAPPING_FILE = BASE / "data" / "squads" / "player_mapping.json"
 INDEX_FILE = BASE / "index.html"
 OUTPUT_FILE = BASE / "data" / "prediction" / "player_threats.json"
 
+# Optional: STAR_FORM_DB with 2024-25 club season G/A and minutes share for ~80 elite players.
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from star_form_db import STAR_FORM_DB, starter_factor
+except ImportError:
+    STAR_FORM_DB = {}
+    def starter_factor(idx, position):
+        return 1.0
+
 TEAMS_48 = [
     "墨西哥","南非","韩国","捷克","加拿大","波黑","卡塔尔","瑞士",
     "巴西","摩洛哥","海地","苏格兰","美国","巴拉圭","澳大利亚","土耳其",
@@ -246,24 +255,49 @@ def compute_age_factor(age):
     return 1.0
 
 
-def compute_goal_threat(position, team_tier, age, is_star):
-    """Compute goal threat multiplier."""
+def compute_goal_threat(position, team_tier, age, is_star, form_g=None, mins_share=None, starter_idx=None):
+    """Compute goal threat multiplier with optional 2024-25 form data.
+
+    Final formula (v2):
+        threat = clamp(
+            base_pos                           # 0..1 by position class
+          * age_factor                         # 0.7..1.05
+          * (0.6 + team_tier/5*0.6)            # tier 1 → 0.72, tier 5 → 1.20
+          * star_bonus                         # 1.0 / 1.4
+          * form_factor                        # 1.0 (no data) ~ 4.0 (40+ club goals)
+          * mins_factor                        # 0.4 .. 1.3
+          * starter_idx_factor                 # 0.6 (def) .. 1.3 (attack core)
+          * 5.0,                               # global gain
+          0.1, 6.0)
+    """
     base = GOAL_W.get(position, 0) / 9.0
     age_factor = compute_age_factor(age)
-    team_factor = team_tier / 5.0
-    star_bonus = 1.3 if is_star else 1.0
-    multiplier = base * age_factor * team_factor * star_bonus * 4.0
-    return round(max(0.1, min(4.0, multiplier)), 1)
+    team_factor = 0.6 + team_tier / 5.0 * 0.6
+    star_bonus = 1.4 if is_star else 1.0
+    # Form: 0 club goals → 1.0×, 15 → 1.5×, 30 → 2.5×, 40+ → ~3.7× (cap 40 / 15 + 1)
+    form_factor = 1.0
+    if form_g is not None:
+        form_factor = 1.0 + min(form_g, 40) / 15.0
+    # Minutes-share factor: 90% → 1.3, 70% → 1.1, 50% → 0.9, 30% → 0.7
+    mins_factor = (0.4 + mins_share) if mins_share is not None else 1.0
+    sf = starter_factor(starter_idx, position) if starter_idx is not None else 1.0
+    multiplier = base * age_factor * team_factor * star_bonus * form_factor * mins_factor * sf * 5.0
+    return round(max(0.1, min(6.0, multiplier)), 1)
 
 
-def compute_assist_threat(position, team_tier, age, is_star):
-    """Compute assist threat multiplier."""
+def compute_assist_threat(position, team_tier, age, is_star, form_a=None, mins_share=None, starter_idx=None):
+    """Compute assist threat multiplier (mirror of goal_threat)."""
     base = ASSIST_W.get(position, 0) / 7.0
     age_factor = compute_age_factor(age)
-    team_factor = team_tier / 5.0
-    playmaker_bonus = 1.2 if (position in ("前腰", "中前卫") and is_star) else 1.0
-    multiplier = base * age_factor * team_factor * playmaker_bonus * 4.0
-    return round(max(0.1, min(4.0, multiplier)), 1)
+    team_factor = 0.6 + team_tier / 5.0 * 0.6
+    playmaker_bonus = 1.3 if (position in ("前腰", "中前卫") and is_star) else 1.0
+    form_factor = 1.0
+    if form_a is not None:
+        form_factor = 1.0 + min(form_a, 25) / 10.0
+    mins_factor = (0.4 + mins_share) if mins_share is not None else 1.0
+    sf = starter_factor(starter_idx, position) if starter_idx is not None else 1.0
+    multiplier = base * age_factor * team_factor * playmaker_bonus * form_factor * mins_factor * sf * 5.0
+    return round(max(0.1, min(6.0, multiplier)), 1)
 
 
 def select_players(team_cn, pl_data, pos_data, squads_data, mapping_data, star_data, strength):
@@ -280,7 +314,7 @@ def select_players(team_cn, pl_data, pos_data, squads_data, mapping_data, star_d
     star_name = star_data.get(team_cn, "")
 
     # Tier 1: All simulation players (they appear in matches)
-    for p_cn in sim_players:
+    for idx, p_cn in enumerate(sim_players):
         if p_cn in seen_names or not p_cn:
             continue
         seen_names.add(p_cn)
@@ -293,8 +327,16 @@ def select_players(team_cn, pl_data, pos_data, squads_data, mapping_data, star_d
         if pos == "门将":
             continue
 
-        goal = compute_goal_threat(pos, tier, age, is_star)
-        assist = compute_assist_threat(pos, tier, age, is_star)
+        # Look up 2024-25 form (with team-qualified collision handling)
+        form_entry = STAR_FORM_DB.get(p_cn)
+        if form_entry and form_entry.get("nation") and form_entry["nation"] != team_cn:
+            form_entry = None  # collision: name appears in form_db but for a different team
+        form_g = form_entry["g"] if form_entry else None
+        form_a = form_entry["a"] if form_entry else None
+        mins_share = form_entry["mins"] if form_entry else None
+
+        goal = compute_goal_threat(pos, tier, age, is_star, form_g, mins_share, idx)
+        assist = compute_assist_threat(pos, tier, age, is_star, form_a, mins_share, idx)
 
         players.append({
             "team_cn": team_cn,
@@ -481,9 +523,9 @@ def main():
     for p in all_players:
         gt = p["goal_threat"]["multiplier"]
         at = p["assist_threat"]["multiplier"]
-        if not (0.0 <= gt <= 4.0):
+        if not (0.0 <= gt <= 6.0):
             errors.append(f"{p['player_name_app_alias']}: goal_threat {gt} out of range")
-        if not (0.0 <= at <= 4.0):
+        if not (0.0 <= at <= 6.0):
             errors.append(f"{p['player_name_app_alias']}: assist_threat {at} out of range")
         if p["goal_threat"]["confidence"] not in ("high", "medium", "low"):
             errors.append(f"{p['player_name_app_alias']}: bad confidence")

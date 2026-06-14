@@ -403,9 +403,9 @@ def main():
     for p in threats:
         gt = p["goal_threat"]["multiplier"]
         at = p["assist_threat"]["multiplier"]
-        if not (0.0 <= gt <= 4.0):
+        if not (0.0 <= gt <= 6.0):
             validation_errors.append(f"{p['player_name_app_alias']}: goal_threat {gt} out of range")
-        if not (0.0 <= at <= 4.0):
+        if not (0.0 <= at <= 6.0):
             validation_errors.append(f"{p['player_name_app_alias']}: assist_threat {at} out of range")
         if p["goal_threat"]["confidence"] not in ("high", "medium", "low"):
             validation_errors.append(f"{p['player_name_app_alias']}: bad goal confidence")

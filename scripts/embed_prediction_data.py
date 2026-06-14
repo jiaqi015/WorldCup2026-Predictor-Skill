@@ -75,15 +75,23 @@ def main():
     for t in prediction["teams"]:
         power_scores[t["team_cn"]] = t["power_score_0_100"]
 
-    # Build PLAYER_THREATS_MAP (Chinese name -> {goal: multiplier, assist: multiplier})
+    # Build PLAYER_THREATS_MAP (team-qualified `team|player` key + bare key fallback).
+    # Cross-team同名球员（"阿尔瓦雷斯"在阿根廷+墨西哥）需要 team-qualified 区分；
+    # weightedPick 优先 PLAYER_THREATS_MAP[team+"|"+player]，再 fallback bare key。
     player_threats_map = {}
     for p in prediction["player_threats"]:
         alias = p["player_name_app_alias"]
-        if alias:
-            player_threats_map[alias] = {
-                "g": p["goal_threat"]["multiplier"],
-                "a": p["assist_threat"]["multiplier"],
-            }
+        team_cn = p.get("team_cn", "")
+        if not alias:
+            continue
+        entry = {
+            "g": p["goal_threat"]["multiplier"],
+            "a": p["assist_threat"]["multiplier"],
+        }
+        if team_cn:
+            player_threats_map[f"{team_cn}|{alias}"] = entry
+        # Bare key (last write wins on collisions; the team-qualified key above is precise).
+        player_threats_map[alias] = entry
 
     # Build COMPLETE_ODDS (match_id -> {home: decimal, draw: decimal, away: decimal})
     complete_odds = {}
