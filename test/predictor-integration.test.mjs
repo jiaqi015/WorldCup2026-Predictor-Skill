@@ -224,12 +224,32 @@ test("knockout winners have a compact inline marker", () => {
 });
 
 test("knockout round labels use a balanced scale with a larger final title", () => {
-  assert.match(html, /\.bk-title\.stage-label\{font-size:2rem/);
-  assert.match(html, /\.bk-title\.stage-label\{font-size:1\.65rem\}/);
-  assert.match(html, /\.bk-round\.final-col>\.bk-title\{font-size:1\.35rem/);
-  assert.match(html, /\.bk-round\.final-col>\.bk-title\{font-size:1\.15rem\}/);
+  assert.match(html, /\.bk-title\.stage-label\{font-size:1\.35rem/);
+  assert.match(html, /\.bk-title\.stage-label\{font-size:1\.05rem\}/);
+  assert.match(html, /\.bk-round\.final-col>\.bk-title\.final-title\{font-size:1\.7rem/);
+  assert.match(html, /\.bk-round\.final-col \.bk-title\.third-title\{font-size:1\.45rem/);
+  assert.match(html, /\.bk-round\.final-col>\.bk-title\.final-title\{font-size:1\.35rem\}/);
+  assert.match(html, /\.bk-round\.final-col \.bk-title\.third-title\{font-size:1\.15rem\}/);
   assert.match(html, /<div class="bk-title stage-label">'\+title\+'<\/div>/);
+  assert.match(html, /<div class="bk-title final-title">'\+cupIcon\(\)\+' '\+T\("finalLabel"\)/);
+  assert.match(html, /<div class="bk-title third-title">'\+T\("third"\)/);
   assert.match(html, /r32:"R32",r16:"R16",qf:"QF",sf:"SF"/);
+});
+
+test("stats tab has a distinct selected state and non-recursive photo priming", () => {
+  assert.match(html, /\.tabs button\.tab-scorers\.on\{background:linear-gradient/);
+  assert.match(html, /class="tab-'\+ts\[i\]\+\(tab===ts\[i\]\?" on":""\)/);
+  assert.match(html, /function primeLeaderboardPhotos\(items\)/);
+  assert.match(html, /photoCache\[qk\]=PHOTO_MAP\[qk\]\|\|PHOTO_MAP\[item\.p\]\|\|null/);
+  assert.match(html, /primeLeaderboardPhotos\(goals\.concat\(assists\)\);/);
+  assert.doesNotMatch(html, /pending<=0&&tab==="scorers"\)render\(\)/);
+});
+
+test("stats leaderboard includes actual scorers and assists exactly once", () => {
+  assert.match(html, /function addActual\(events\)/);
+  assert.match(html, /e\.scorer_app_alias\|\|e\.scorer_cn/);
+  assert.match(html, /e\.assist_app_alias\|\|e\.assist_cn/);
+  assert.match(html, /match\.predictionSource==="actual"&&match\.actualEvents&&match\.actualEvents\.length/);
 });
 
 test("venue metadata follows the active language", () => {

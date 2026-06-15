@@ -16,7 +16,7 @@ sb.window.localStorage=sb.localStorage; sb.window.document=sb.document; sb.windo
 vm.createContext(sb);
 try { vm.runInContext(main, sb, { timeout: 6000 }); } catch(e) { console.log('Init err:',e.message); }
 
-const {GD, R32D, R16P, QFP, SFP, STRENGTH, MODEL_RANKING, WW, PredictionEngine, PL, POS, EN, STAR_PLAYER, PLAYER_THREATS_MAP, PHOTO_MAP, photoCache, getPos, getPhotoUrl, loadPhotos, pn, fi, pos_t} = sb;
+const {GD, R32D, R16P, QFP, SFP, STRENGTH, MODEL_RANKING, WW, PredictionEngine, PL, POS, EN, STAR_PLAYER, PLAYER_THREATS_MAP, PHOTO_MAP, photoCache, MATCH_DETAILS, getPos, getPhotoUrl, loadPhotos, pn, fi, pos_t, rScorers} = sb;
 
 let totalAsserts = 0, totalFailures = 0;
 function assert(name, cond, detail) {
@@ -103,6 +103,41 @@ assert('G2.1 PL 完整性', plNotInPl.length===0, `${plNotInPl.length}: ${plNotI
 assert('G2.2 getPos 命中率 100%', posMisses.length===0, `${posMisses.length}: ${posMisses.slice(0,5).join(' | ')}`);
 assert('G2.3 getPhotoUrl 命中率 100%', photoMisses.length===0, `${photoMisses.length}: ${photoMisses.slice(0,5).join(' | ')}`);
 assert('G2.4 EN 命中率 100%', enMisses.length===0, `${enMisses.length}: ${enMisses.slice(0,5).join(' | ')}`);
+
+let actualPosMisses = [], actualPhotoMisses = [], actualEnMisses = [];
+for (const details of Object.values(MATCH_DETAILS || {})) {
+  for (const event of details.events || []) {
+    if (event.type !== 'goal') continue;
+    for (const role of ['scorer', 'assist']) {
+      const player = event[`${role}_app_alias`];
+      const team = event[`${role}_team_cn`];
+      if (!player || !team) continue;
+      if (!(POS && POS[team] && POS[team][player])) actualPosMisses.push(`${team}|${player}`);
+      if (!getPhotoUrl(player, team)) actualPhotoMisses.push(`${team}|${player}`);
+      if (!EN[player]) actualEnMisses.push(`${team}|${player}`);
+    }
+  }
+}
+assert('G2.5 真实进球球员位置命中率 100%', actualPosMisses.length===0, `${actualPosMisses.length}: ${actualPosMisses.slice(0,5).join(' | ')}`);
+assert('G2.6 真实进球球员头像命中率 100%', actualPhotoMisses.length===0, `${actualPhotoMisses.length}: ${actualPhotoMisses.slice(0,5).join(' | ')}`);
+assert('G2.7 真实进球球员英文名命中率 100%', actualEnMisses.length===0, `${actualEnMisses.length}: ${actualEnMisses.slice(0,5).join(' | ')}`);
+
+let leaderboardError = null;
+try {
+  fakeEl.innerHTML = '';
+  rScorers(fakeEl);
+} catch (error) {
+  leaderboardError = error;
+}
+assert('G2.8 数据榜运行时不递归爆栈', !leaderboardError, leaderboardError?.message || '');
+assert(
+  'G2.9 数据榜真实球员姓名位置头像国家队已接入',
+  fakeEl.innerHTML.includes('黄仁范') &&
+    fakeEl.innerHTML.includes('中前卫') &&
+    fakeEl.innerHTML.includes(getPhotoUrl('黄仁范', '韩国')) &&
+    fakeEl.innerHTML.includes('alt="韩国"'),
+  `name=${fakeEl.innerHTML.includes('黄仁范')} pos=${fakeEl.innerHTML.includes('中前卫')} photo=${fakeEl.innerHTML.includes(getPhotoUrl('黄仁范', '韩国'))} team=${fakeEl.innerHTML.includes('alt="韩国"')}`
+);
 
 const KEEP_MIXED = new Set([
   'B费', 'C罗', '希门尼斯MEX', '希门尼斯',
