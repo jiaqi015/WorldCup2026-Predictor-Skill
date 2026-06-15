@@ -195,23 +195,24 @@ body.dark .t3i.nq{color:var(--ink-medium)}
 .modal h3{font-size:20px;font-weight:800;letter-spacing:-0.5px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center}
 .modal h3 button{background:none;border:none;color:var(--ink-light);font-size:24px;cursor:pointer}
 .modal p{color:var(--ink-medium);font-size:15px;line-height:1.6;margin:0 0 12px}
-.share-result-modal{width:min(900px,calc(100vw - 32px));max-width:none;max-height:92vh;padding:0;overflow:hidden;text-align:left}
+.share-result-modal{width:min(1120px,calc(100vw - 32px));max-width:none;max-height:92vh;padding:0;overflow:hidden;text-align:left}
 .share-result-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:22px 24px 16px;border-bottom:1px solid var(--line-delicate)}
 .share-result-kicker{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent-gold);margin-bottom:6px}
 .share-result-title{font-size:22px;font-weight:850;letter-spacing:-0.6px;color:var(--ink-dark);line-height:1.15}
 .share-result-close{background:transparent;border:none;color:var(--ink-light);font-size:24px;line-height:1;cursor:pointer;padding:2px 0 0 12px}
-.share-result-body{display:flex;flex-direction:column;background:var(--bg-card)}
-.share-preview-panel{display:flex;justify-content:center;align-items:center;padding:22px;background:linear-gradient(180deg,#0A1510,#050907)}
-.share-preview-frame{max-height:calc(92vh - 170px);overflow:auto;border-radius:18px;border:1px solid rgba(229,194,106,0.26);box-shadow:0 22px 70px rgba(0,0,0,0.34),0 0 0 1px rgba(255,255,255,0.04)}
-.share-preview-frame img{display:block;width:min(430px,100%);height:auto}
-.share-side-panel{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;padding:16px 18px;background:var(--bg-card);border-top:1px solid var(--line-delicate)}
-.share-side-copy{display:flex;align-items:center;gap:12px;min-width:0}
-.share-side-copy p{margin:0;color:var(--ink-medium);font-size:13px;line-height:1.5}
+.share-result-body{display:grid;grid-template-columns:minmax(0,1fr) 312px;background:var(--bg-card)}
+.share-preview-panel{display:flex;justify-content:center;align-items:center;padding:24px;background:linear-gradient(180deg,#0A1510,#050907)}
+.share-preview-frame{width:min(720px,100%);max-height:calc(92vh - 170px);overflow:auto;border-radius:22px;border:1px solid rgba(229,194,106,0.26);box-shadow:0 22px 70px rgba(0,0,0,0.34),0 0 0 1px rgba(255,255,255,0.04)}
+.share-preview-frame img{display:block;width:100%;max-width:100%;height:auto}
+.share-side-panel{display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:24px 22px;background:linear-gradient(180deg,var(--bg-card),var(--bg-soft));border-left:1px solid var(--line-delicate)}
+.share-side-copy{display:grid;gap:10px;min-width:0;align-content:start}
+.share-side-copy p{margin:0;color:var(--ink-medium);font-size:13px;line-height:1.55;max-width:28ch}
+.share-side-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--ink-light)}
 .share-url-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--line-delicate);color:var(--ink-dark);font-weight:850;font-size:14px;letter-spacing:0.2px;white-space:nowrap}
-.share-modal-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
-.share-download-link,.share-copy-btn{display:flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border-radius:100px;text-decoration:none;font-weight:800;font-size:13px;font-family:inherit;line-height:1.25;text-align:center}
+.share-modal-actions{display:flex;flex-direction:column;gap:10px}
+.share-download-link,.share-copy-btn,.share-modal-actions .b{display:flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border-radius:100px;text-decoration:none;font-weight:800;font-size:13px;font-family:inherit;line-height:1.25;text-align:center;width:100%}
 .share-download-link{background:var(--ink-dark);color:var(--bg-card)}
-.share-copy-btn{background:#E5C26A;color:#07110C;border:none;cursor:pointer;max-width:280px;white-space:normal}
+.share-copy-btn{background:#E5C26A;color:#07110C;border:none;cursor:pointer;white-space:nowrap}
 .share-modal-actions .b{min-height:40px;border-radius:100px}
 body.dark .share-result-modal{box-shadow:0 28px 70px rgba(0,0,0,0.5)}
 body.dark .share-url-chip{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.10)}
@@ -223,12 +224,13 @@ body.dark .share-url-chip{background:rgba(255,255,255,0.05);border-color:rgba(25
   .share-result-body{display:block}
   .share-preview-panel{padding:16px}
   .share-preview-frame{max-height:58vh}
-  .share-preview-frame img{width:min(360px,100%)}
-  .share-side-panel{display:block;padding:16px}
+  .share-preview-frame img{width:100%}
+  .share-side-panel{display:block;padding:16px;border-left:none;border-top:1px solid var(--line-delicate)}
   .share-side-copy{display:grid;gap:8px;margin-bottom:12px}
+  .share-side-copy p{max-width:none}
   .share-url-chip{width:100%}
   .share-modal-actions{display:grid;gap:9px}
-  .share-copy-btn{max-width:none}
+  .share-download-link,.share-copy-btn,.share-modal-actions .b{width:100%}
 }
 .gg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
 .kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
@@ -415,43 +417,51 @@ body.dark .toast{background:rgba(255,255,255,0.9);color:#121417}
 /* (Removed dead .exporting-image + .share-footer rules — old full-page-screenshot share, replaced by the off-screen SHARE POSTER below.) */
 
 /* ─── SHARE POSTER ─── */
-/* Off-screen render target: 540×810 base + html2canvas scale:2 → 1080×1620 PNG.
-   Background: matte dark forest green (#07110C). Bright gold (#E5C26A) reserved for
-   champion name, divider, tagline, and the 5-stage path gradient. */
-.poster{width:540px;height:810px;background:#07110C;padding:42px 40px 28px;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;color:#E4E4E7;position:relative;overflow:hidden;display:flex;flex-direction:column}
+/* Off-screen render target: 900×560 base + html2canvas scale:2 → 1800×1120 PNG.
+   Landscape composition fills the canvas with a hero column and a route column.
+   Background: matte dark forest green (#07110C). Bright gold (#E5C26A) remains the
+   champion accent, route emphasis, and URL focus. */
+.poster{width:900px;height:560px;background:
+  radial-gradient(120% 120% at 14% 14%,rgba(229,194,106,0.11) 0%,rgba(229,194,106,0.03) 22%,transparent 42%),
+  linear-gradient(135deg,#07110C 0%,#08130D 44%,#050907 100%);
+  padding:32px 34px 26px;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;color:#E4E4E7;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,0.97fr);grid-template-rows:auto 1fr auto;gap:18px 28px}
+.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(229,194,106,0.06),transparent 36%);pointer-events:none}
 .poster *{box-sizing:border-box}
-.poster .poster-top{margin-bottom:24px}
+.poster .poster-top{grid-column:1/-1;display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.poster .poster-top-copy{min-width:0}
 .poster .poster-tag{font-size:11px;letter-spacing:2.5px;color:#7A8E83;font-weight:700;margin-bottom:6px}
-.poster .poster-title{font-size:20px;color:#E4E4E7;font-weight:600;letter-spacing:0.5px}
-.poster .poster-champ-box{margin-bottom:14px}
+.poster .poster-title{font-size:20px;color:#E4E4E7;font-weight:650;letter-spacing:0.5px}
+.poster .poster-top-url{display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;border-radius:999px;border:1px solid rgba(229,194,106,0.24);background:rgba(255,255,255,0.02);color:#E5C26A;font-size:13px;font-weight:850;letter-spacing:0.25px;white-space:nowrap;align-self:flex-start}
+.poster .poster-hero{display:flex;flex-direction:column;justify-content:space-between;gap:18px;min-width:0;position:relative;z-index:1}
+.poster .poster-champ-box{margin-bottom:2px}
 .poster .poster-champ-label{font-size:10px;letter-spacing:3px;color:#7A8E83;font-weight:800;margin-bottom:8px}
-/* justify-content:center balances the [flag + name] unit so short names (伊朗, 巴西, USA)
-   don't leave a 100px blank on the right. Long names still fit (max-width caps name + ellipsis safety). */
-.poster .poster-champ-headline{display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-.poster .poster-champ-flag{display:block;width:150px;height:100px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-right:18px;box-shadow:0 4px 16px rgba(0,0,0,0.55)}
-.poster .poster-champ-name{color:#E5C26A;font-weight:800;letter-spacing:-0.5px;line-height:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:292px;flex-shrink:1}
-.poster .poster-champ-tier{font-size:16px;color:#A1A1AA;letter-spacing:1.5px;font-weight:500}
-.poster .poster-divider{width:100%;height:1px;background:rgba(229,194,106,0.5);margin-bottom:16px}
-.poster .poster-path{margin-bottom:14px}
-/* Path rows: each round gets its own box; border opacity grades from R32 (faint) → FINAL (full bright gold + glow). */
-.poster .poster-path-row{position:relative;display:flex;align-items:center;height:38px;padding:0 14px;border-radius:8px;margin-bottom:5px;border:1px solid rgba(229,194,106,0.18);background:rgba(255,255,255,0.01);overflow:hidden}
+.poster .poster-champ-headline{display:grid;gap:14px;margin-bottom:12px}
+.poster .poster-champ-flag{display:block;width:170px;height:110px;object-fit:cover;border-radius:10px;flex-shrink:0;box-shadow:0 4px 18px rgba(0,0,0,0.55)}
+.poster .poster-champ-name{color:#E5C26A;font-weight:850;letter-spacing:-0.6px;line-height:0.98;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;flex-shrink:1}
+.poster .poster-champ-tier{font-size:16px;color:#A1A1AA;letter-spacing:1.3px;font-weight:500}
+.poster .poster-conclusion{max-width:23ch;font-size:18px;font-style:italic;color:#E5C26A;line-height:1.45;letter-spacing:0.4px;white-space:pre-line;margin-top:auto}
+.poster .poster-path-panel{display:flex;flex-direction:column;justify-content:flex-start;min-width:0;padding-top:4px;position:relative;z-index:1}
+.poster .poster-path-label{font-size:11px;letter-spacing:2.6px;color:#7A8E83;font-weight:800;margin-bottom:12px;text-transform:uppercase}
+.poster .poster-path{display:flex;flex-direction:column;gap:8px}
+/* Each round gets its own full-width card; border opacity grades from R32 (faint)
+   to FINAL (full bright gold + glow) without using a side stripe. */
+.poster .poster-path-row{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;min-height:56px;padding:12px 14px;border-radius:12px;border:1px solid rgba(229,194,106,0.18);background:rgba(255,255,255,0.015);overflow:hidden;gap:12px}
 .poster .poster-path-row:last-child{margin-bottom:0}
 .poster .poster-path-row.stage-1{border-color:rgba(229,194,106,0.18)}
 .poster .poster-path-row.stage-2{border-color:rgba(229,194,106,0.38)}
 .poster .poster-path-row.stage-3{border-color:rgba(229,194,106,0.62);background:rgba(229,194,106,0.025)}
 .poster .poster-path-row.stage-4{border-color:rgba(229,194,106,0.85);background:rgba(229,194,106,0.06);box-shadow:0 0 10px rgba(229,194,106,0.18)}
-.poster .poster-path-row.stage-5{border-color:#E5C26A;background:rgba(229,194,106,0.035);box-shadow:0 0 0 1px rgba(229,194,106,0.36),0 0 14px rgba(229,194,106,0.28)}
+.poster .poster-path-row.stage-5{border-color:#E5C26A;background:rgba(229,194,106,0.05);box-shadow:0 0 0 1px rgba(229,194,106,0.36),0 0 14px rgba(229,194,106,0.28)}
 .poster .poster-path-row.stage-5 .path-stage,.poster .poster-path-row.stage-5 .path-score{color:#E5C26A}
 .poster .path-stage{width:64px;font-size:12px;color:#7A8E83;font-weight:500;letter-spacing:0.3px;flex-shrink:0}
 .poster .path-match{flex:1;font-size:14px;color:#E4E4E7;font-weight:500;display:flex;align-items:center;min-width:0}
 .poster .path-match .mini-flag{width:20px;height:14px;object-fit:cover;border-radius:1px;opacity:0.85;margin-right:8px;display:inline-block;flex-shrink:0}
 .poster .path-match .path-opp{display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .poster .path-score{font-size:15px;color:#E4E4E7;font-weight:600;font-family:"SF Mono","Menlo","Consolas",monospace;letter-spacing:0.5px;flex-shrink:0;margin-left:8px}
-.poster .poster-conclusion{flex:1;display:flex;align-items:center;justify-content:center;font-size:20px;font-style:italic;color:#E5C26A;line-height:1.6;letter-spacing:0.6px;text-align:center;padding:0 8px;white-space:pre-line}
-.poster .poster-footer{flex-shrink:0;height:118px;border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;display:flex;align-items:center;justify-content:center;text-align:center}
+.poster .poster-footer{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;position:relative;z-index:1}
 .poster .footer-left{width:100%;min-width:0}
 .poster .footer-url-label{font-size:11px;color:#7A8E83;font-weight:700;letter-spacing:2.2px;margin-bottom:8px;text-transform:uppercase}
-.poster .footer-url{font-size:22px;color:#E5C26A;font-weight:800;font-family:"SF Mono","Menlo","Consolas",monospace;letter-spacing:0.6px;margin-bottom:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.poster .footer-url{font-size:24px;color:#E5C26A;font-weight:850;font-family:"SF Mono","Menlo","Consolas",monospace;letter-spacing:0.6px;margin-bottom:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .poster .footer-notice{font-size:12px;color:#A1A1AA;letter-spacing:0.6px}
 
 /* ─── LOGO (header trophy badge) ─── */
@@ -470,8 +480,9 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
 .skel-grid-item{display:flex;flex-direction:column;align-items:center;padding:8px 4px;gap:6px}
 .skel-circle{width:44px;height:44px;border-radius:50%}
 .skel-bar-sm{height:8px;width:42px}
-/* Poster skeleton container — proportions match the real 540×810 share poster scaled down */
+/* Poster skeleton container — proportions match the real share poster scaled down */
 .poster-skel{width:260px;background:#07110C;padding:20px 18px;border-radius:12px;margin:0 auto;box-shadow:0 12px 36px rgba(0,0,0,0.25)}
+.poster-skel-landscape{width:300px;max-width:100%;aspect-ratio:900/560}
 
 /* Small screen adaptation */
 @media(max-width:400px){
@@ -1723,9 +1734,9 @@ var I18N={
     pickedAssister:"已选助攻",
     sharingTitle:"生成夺冠路线图...",
     sharingDesc:"正在渲染淘汰赛对阵海报",
-    btnCopyLink:"复制分享链接（点击可查看你预测全部赛程）",linkCopied:"✓ 已复制!",linkFailed:"复制失败",
+    btnCopyLink:"复制链接",linkCopied:"✓ 已复制!",linkFailed:"复制失败",
     viewModeText:"这是一份分享的预测",viewModeAction:"我也来预测一份",
-    posterModalTitle:"长按保存海报",posterModalKicker:"专属预测海报",posterModalDesc:"复制链接可查看完整赛程预测。",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
+    posterModalTitle:"长按保存海报",posterModalKicker:"专属预测海报",posterModalDesc:"完整赛程链接",posterModalActionHint:"复制链接给朋友，对方可查看你的完整赛程预测。",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
     groupMatchesTitle:"{g}组 · 比赛 & 比分",groupMatchesHint:"（ 完赛结果已带入，可模拟后手动修改结果 ）",
     pickManually:"🎯 改为手动选择进球",
     mustFinishHint:"💡 选完全部进球后会自动关闭"
@@ -1779,9 +1790,9 @@ var I18N={
     pickedAssister:"Assister picked",
     sharingTitle:"Building your bracket poster...",
     sharingDesc:"Rendering the knockout image",
-    btnCopyLink:"Copy share link (view full schedule)",linkCopied:"✓ Copied!",linkFailed:"Copy failed",
+    btnCopyLink:"Copy link",linkCopied:"✓ Copied!",linkFailed:"Copy failed",
     viewModeText:"You're viewing a shared prediction",viewModeAction:"Make your own prediction",
-    posterModalTitle:"Long-press to save",posterModalKicker:"Personal bracket poster",posterModalDesc:"Copy the link to show the full schedule prediction.",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
+    posterModalTitle:"Long-press to save",posterModalKicker:"Personal bracket poster",posterModalDesc:"Full bracket link",posterModalActionHint:"Copy the link so others can view your complete schedule prediction.",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
     groupMatchesTitle:"Group {g} · Matches & Scores",groupMatchesHint:"(completed results are filled; simulate or edit manually)",
     pickManually:"🎯 Pick scorers manually",
     mustFinishHint:"💡 Modal will close once every goal is picked"
@@ -2864,10 +2875,10 @@ function buildPosterHTML(champ){
   var champName=en?(TEAM_EN[champ]||champ).toUpperCase():champ;
   var champStr=champName;
   var vw=posterVisualWidth(champStr);
-  // Flag 150px + 18 gap = 168 reserved. Container ≈ 460px ⇒ 292 px for name text.
-  // Dynamic font: 292/vw is the largest size that fits, capped at 96, floored at 28,
+  // Landscape hero stacks flag over name, leaving roughly 390px for the champion text.
+  // Dynamic font: 390/vw is the largest size that fits, capped at 92, floored at 34,
   // rounded to even integers for visual cleanliness. Always fits — no ladder, no overflow.
-  var champFontSize = Math.min(96, Math.max(28, Math.floor(292/vw/2)*2));
+  var champFontSize = Math.min(92, Math.max(34, Math.floor(390/vw/2)*2));
   var url=getShareUrl();
   var topTag=en?"2026 FIFA WORLD CUP · MY PICK":"2026 FIFA WORLD CUP · 我的预测";
   var topTitle=en?"United · Mexico · Canada":"美加墨世界杯";
@@ -2875,9 +2886,13 @@ function buildPosterHTML(champ){
   var footerNotice=en?"Open the URL and build your bracket":"打开网址，生成你的世界杯预测";
   var h='<div class="poster">';
   h+='<div class="poster-top">';
+  h+='<div class="poster-top-copy">';
   h+='<div class="poster-tag">'+escHtml(topTag)+'</div>';
   h+='<div class="poster-title">'+escHtml(topTitle)+'</div>';
   h+='</div>';
+  h+='<div class="poster-top-url">www.cameraclaw.cn/2026</div>';
+  h+='</div>';
+  h+='<div class="poster-hero">';
   h+='<div class="poster-champ-box">';
   h+='<div class="poster-champ-label">THE CHAMPION</div>';
   h+='<div class="poster-champ-headline">';
@@ -2888,7 +2903,14 @@ function buildPosterHTML(champ){
   h+='</div>';
   h+='<div class="poster-champ-tier">'+escHtml(tierLabel)+'</div>';
   h+='</div>';
-  h+='<div class="poster-divider"></div>';
+  // Tagline font auto-shrinks for long multi-line taglines (e.g. the 3-line tier-3 English version)
+  // so it does not crowd the footer in the fixed-height landscape poster.
+  var tlLen=tagline.length;
+  var tlFont=tlLen>200?13:(tlLen>130?15:(tlLen>90?16:18));
+  h+='<div class="poster-conclusion" style="font-size:'+tlFont+'px">'+escHtml(tagline)+'</div>';
+  h+='</div>';
+  h+='<div class="poster-path-panel">';
+  h+='<div class="poster-path-label">'+(en?"CHAMPION PATH":"夺冠路线")+'</div>';
   h+='<div class="poster-path">';
   for(var i=0;i<path.length;i++){
     var p=path[i];
@@ -2900,11 +2922,7 @@ function buildPosterHTML(champ){
     h+='</div>';
   }
   h+='</div>';
-  // Tagline font auto-shrinks for long multi-line taglines (e.g. the 3-line tier-3 English version)
-  // so they don't push the footer off the bottom of the fixed-height poster.
-  var tlLen=tagline.length;
-  var tlFont=tlLen>200?14:(tlLen>130?16:(tlLen>90?18:20));
-  h+='<div class="poster-conclusion" style="font-size:'+tlFont+'px">'+escHtml(tagline)+'</div>';
+  h+='</div>';
   h+='<div class="poster-footer">';
   h+='<div class="footer-left">';
   h+='<div class="footer-url-label">'+escHtml(footerLabel)+'</div>';
@@ -2923,9 +2941,9 @@ function buildPosterHTML(champ){
     return;
   }
   // Loading state
-  // Mini-poster skeleton — proportions roughly match the real 540×810 share poster.
+  // Mini-poster skeleton — proportions roughly match the real 900×560 share poster.
   // Gives users a visual cue for what's being built (vs static "Loading..." text).
-  var posterSkel='<div class="poster-skel">'+
+  var posterSkel='<div class="poster-skel poster-skel-landscape">'+
     '<div class="skel on-dark" style="height:7px;width:60%;margin-bottom:5px"></div>'+
     '<div class="skel on-dark" style="height:13px;width:75%;margin-bottom:16px"></div>'+
     '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">'+
@@ -2946,11 +2964,11 @@ function buildPosterHTML(champ){
     mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal" style="text-align:center;padding:40px" onclick="event.stopPropagation()"><p style="color:red">'+T("shareLibFail")+'</p><button class="b" onclick="cM()" style="margin-top:16px">'+T("btnCloseModal")+'</button></div></div>';
     return;
   }
-  // Build off-screen 540×810 poster DOM. html2canvas scale:2 → 1080×1620 PNG.
+  // Build off-screen 900×560 poster DOM. html2canvas scale:2 → 1800×1120 PNG.
   // position:fixed + left:-99999px keeps it rendered but invisible; display:none would make
   // the canvas blank (html2canvas can't capture undisplayed elements).
   var wrap=document.createElement("div");
-  wrap.style.cssText="position:fixed;left:-99999px;top:0;width:540px;height:810px;z-index:-9999;";
+  wrap.style.cssText="position:fixed;left:-99999px;top:0;width:900px;height:560px;z-index:-9999;";
   wrap.innerHTML=buildPosterHTML(champ);
   document.body.appendChild(wrap);
   // Brief delay lets flag images start loading before capture
@@ -2960,12 +2978,12 @@ function buildPosterHTML(champ){
       useCORS:true,
       backgroundColor:null,
       logging:false,
-      width:540,
-      height:810
+      width:900,
+      height:560
     }).then(function(canvas){
       document.body.removeChild(wrap);
       var imgUrl=canvas.toDataURL("image/png");
-      mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal share-result-modal" onclick="event.stopPropagation()"><div class="share-result-head"><div><div class="share-result-kicker">'+T("posterModalKicker")+'</div><div class="share-result-title">'+T("posterModalTitle")+'</div></div><button class="share-result-close" onclick="cM()" aria-label="'+T("btnCloseModal")+'">✕</button></div><div class="share-result-body"><div class="share-preview-panel"><div class="share-preview-frame"><img src="'+imgUrl+'" alt="'+T("posterModalTitle")+'"></div></div><div class="share-side-panel"><div class="share-side-copy"><div class="share-url-chip">www.cameraclaw.cn/2026</div></div><div class="share-modal-actions"><a class="share-download-link" href="'+imgUrl+'" download="worldcup2026-prediction.png">'+T("btnDownloadPoster")+'</a><button id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink()">'+T("btnCopyLink")+'</button><button class="b" onclick="cM()">'+T("btnCloseModal")+'</button></div></div></div></div></div>';
+      mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal share-result-modal" onclick="event.stopPropagation()"><div class="share-result-head"><div><div class="share-result-kicker">'+T("posterModalKicker")+'</div><div class="share-result-title">'+T("posterModalTitle")+'</div></div><button class="share-result-close" onclick="cM()" aria-label="'+T("btnCloseModal")+'">✕</button></div><div class="share-result-body"><div class="share-preview-panel"><div class="share-preview-frame"><img src="'+imgUrl+'" alt="'+T("posterModalTitle")+'"></div></div><div class="share-side-panel"><div class="share-side-copy"><div class="share-side-label">'+T("posterModalDesc")+'</div><div class="share-url-chip">www.cameraclaw.cn/2026</div><p>'+T("posterModalActionHint")+'</p></div><div class="share-modal-actions"><button id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink()">'+T("btnCopyLink")+'</button><a class="share-download-link" href="'+imgUrl+'" download="worldcup2026-prediction.png">'+T("btnDownloadPoster")+'</a><button class="b" onclick="cM()">'+T("btnCloseModal")+'</button></div></div></div></div></div>';
     }).catch(function(e){
       if(wrap.parentNode)wrap.parentNode.removeChild(wrap);
       mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal" style="text-align:center;padding:40px" onclick="event.stopPropagation()"><p style="color:red">'+T("shareGenFail")+e.message+'</p><button class="b" onclick="cM()" style="margin-top:16px">'+T("btnCloseModal")+'</button></div></div>';

@@ -147,7 +147,7 @@ test("poster sharing emphasizes URL and keeps modal actions plain", () => {
   assert.doesNotMatch(html, /btnDownloadPoster:"💾/);
   assert.doesNotMatch(html, /btnCopyLink:"🔗/);
   assert.match(html, /btnDownloadPoster:"保存海报"/);
-  assert.match(html, /btnCopyLink:"复制分享链接（点击可查看你预测全部赛程）"/);
+  assert.match(html, /btnCopyLink:"复制链接"/);
   assert.match(html, /btnShare:"分享我的专属预测海报&链接"/);
 });
 
@@ -172,21 +172,23 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.share-cta\{animation:none\}\}/);
   assert.match(html, /body\.dark \.share-cta/);
   assert.match(html, /class="btn-rand share-cta" onclick="genShareCard\(\)"/);
-  assert.match(html, /\.share-copy-btn\{[^}]*white-space:normal/);
+  assert.match(html, /\.share-copy-btn\{[^}]*white-space:nowrap/);
   assert.match(html, /id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink\(\)"/);
-  assert.match(html, /btnCopyLink:"Copy share link \(view full schedule\)"/);
+  assert.match(html, /btnCopyLink:"Copy link"/);
   assert.match(html, /btnShare:"Share my poster & link"/);
 });
 
-test("share poster modal uses the larger preview layout", () => {
-  assert.match(html, /\.share-result-modal\{[^}]*width:min\(900px,calc\(100vw - 32px\)\)[^}]*max-height:92vh/);
-  assert.match(html, /\.share-result-body\{[^}]*display:flex;flex-direction:column/);
-  assert.match(html, /\.share-side-panel\{[^}]*grid-template-columns:auto minmax\(0,1fr\)/);
-  assert.match(html, /\.share-preview-frame img\{[^}]*width:min\(430px,100%\)/);
+test("share poster modal uses a designed landscape preview and side actions", () => {
+  assert.match(html, /\.share-result-modal\{[^}]*width:min\(1120px,calc\(100vw - 32px\)\)[^}]*max-height:92vh/);
+  assert.match(html, /\.share-result-body\{[^}]*display:grid;grid-template-columns:minmax\(0,1fr\) 312px/);
+  assert.match(html, /\.share-side-panel\{[^}]*flex-direction:column/);
+  assert.match(html, /\.share-preview-frame\{[^}]*width:min\(720px,100%\)/);
+  assert.match(html, /\.poster\{width:900px;height:560px/);
+  assert.match(html, /width:900,\s*height:560/);
   assert.match(html, /class="modal share-result-modal"/);
   assert.match(html, /class="share-preview-panel"/);
   assert.match(html, /class="share-side-panel"/);
-  assert.doesNotMatch(html, /\+T\("posterModalDesc"\)\+/);
+  assert.match(html, /T\("posterModalActionHint"\)/);
   assert.doesNotMatch(html, /posterModalUrlHint/);
   assert.doesNotMatch(html, /海报已突出网址/);
   assert.doesNotMatch(html, /style="max-width:520px;text-align:center;padding:24px"/);
