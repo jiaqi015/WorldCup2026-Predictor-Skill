@@ -44,23 +44,6 @@ TEAM_EN_NAMES = {
     "英格兰": "England", "克罗地亚": "Croatia", "加纳": "Ghana", "巴拿马": "Panama"
 }
 
-# Position mapping (English to Chinese)
-POSITION_MAP = {
-    "Goalkeeper": "门将",
-    "Defender": "后卫",
-    "Midfielder": "中场",
-    "Forward": "前锋",
-    "Left Winger": "边锋",
-    "Right Winger": "边锋",
-    "Centre-Forward": "中锋",
-    "Attacking Midfield": "前腰",
-    "Defensive Midfield": "后腰",
-    "Central Midfield": "中前卫",
-    "Left-Back": "边卫",
-    "Right-Back": "边卫",
-    "Centre-Back": "中卫"
-}
-
 
 def fetch_with_retry(url, headers=None, max_retries=3, timeout=15):
     """Fetch URL with retry logic."""

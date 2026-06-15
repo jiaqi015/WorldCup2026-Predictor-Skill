@@ -6856,8 +6856,43 @@
     {
       "team_cn": "韩国",
       "team_en": "South Korea",
-      "player_name_source": "金",
-      "player_name_app_alias": "金",
+      "player_name_source": "李",
+      "player_name_app_alias": "李",
+      "position": "中卫",
+      "role_tags": [
+        "aerial_set_piece_threat"
+      ],
+      "goal_threat": {
+        "multiplier": 0.6,
+        "basis": [
+          "position_weight"
+        ],
+        "confidence": "high"
+      },
+      "assist_threat": {
+        "multiplier": 0.8,
+        "basis": [
+          "position_weight"
+        ],
+        "confidence": "high"
+      },
+      "star_tier": "squad_regular",
+      "rationale": "Balanced attacking contributor (goal 0.6, assist 0.8); Position: 中卫",
+      "sources": [
+        {
+          "name": "ESPN squads / embedded simulation roster",
+          "url": null,
+          "as_of": "2026-06-12",
+          "source_type": "observed"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "team_cn": "韩国",
+      "team_en": "South Korea",
+      "player_name_source": "黄仁范",
+      "player_name_app_alias": "黄仁范",
       "position": "中前卫",
       "role_tags": [
         "box_to_box"
@@ -6879,79 +6914,6 @@
       },
       "star_tier": "squad_regular",
       "rationale": "Primary creative threat (multiplier 3.4), moderate goal threat (2.1); Position: 中前卫",
-      "sources": [
-        {
-          "name": "ESPN squads / embedded simulation roster",
-          "url": null,
-          "as_of": "2026-06-12",
-          "source_type": "observed"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "team_cn": "韩国",
-      "team_en": "South Korea",
-      "player_name_source": "李",
-      "player_name_app_alias": "李",
-      "position": "中前卫",
-      "role_tags": [
-        "box_to_box"
-      ],
-      "goal_threat": {
-        "multiplier": 2.3,
-        "basis": [
-          "position_weight"
-        ],
-        "confidence": "high"
-      },
-      "assist_threat": {
-        "multiplier": 3.8,
-        "basis": [
-          "position_weight",
-          "creative_position"
-        ],
-        "confidence": "high"
-      },
-      "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 3.8), moderate goal threat (2.3); Position: 中前卫",
-      "sources": [
-        {
-          "name": "ESPN squads / embedded simulation roster",
-          "url": null,
-          "as_of": "2026-06-12",
-          "source_type": "observed"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "team_cn": "韩国",
-      "team_en": "South Korea",
-      "player_name_source": "黄",
-      "player_name_app_alias": "黄",
-      "position": "边锋",
-      "role_tags": [
-        "winger"
-      ],
-      "goal_threat": {
-        "multiplier": 3.7,
-        "basis": [
-          "position_weight",
-          "goal_scoring_position"
-        ],
-        "confidence": "high"
-      },
-      "assist_threat": {
-        "multiplier": 3.4,
-        "basis": [
-          "position_weight",
-          "creative_position"
-        ],
-        "confidence": "high"
-      },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.7, assist 3.4); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -7076,23 +7038,24 @@
       "confidence": "medium"
     },
     {
-      "team_cn": "捷克",
-      "team_en": "Czechia",
-      "player_name_source": "大卫",
-      "player_name_app_alias": "大卫",
-      "position": "中前卫",
+      "team_cn": "韩国",
+      "team_en": "South Korea",
+      "player_name_source": "黄",
+      "player_name_app_alias": "黄",
+      "position": "边锋",
       "role_tags": [
-        "box_to_box"
+        "winger"
       ],
       "goal_threat": {
-        "multiplier": 2.3,
+        "multiplier": 3.2,
         "basis": [
-          "position_weight"
+          "position_weight",
+          "goal_scoring_position"
         ],
         "confidence": "high"
       },
       "assist_threat": {
-        "multiplier": 3.8,
+        "multiplier": 2.9,
         "basis": [
           "position_weight",
           "creative_position"
@@ -7100,7 +7063,42 @@
         "confidence": "high"
       },
       "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 3.8), moderate goal threat (2.3); Position: 中前卫",
+      "rationale": "Balanced attacking contributor (goal 3.2, assist 2.9); Position: 边锋",
+      "sources": [
+        {
+          "name": "ESPN squads / embedded simulation roster",
+          "url": null,
+          "as_of": "2026-06-12",
+          "source_type": "observed"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "team_cn": "捷克",
+      "team_en": "Czechia",
+      "player_name_source": "大卫",
+      "player_name_app_alias": "大卫",
+      "position": "中卫",
+      "role_tags": [
+        "aerial_set_piece_threat"
+      ],
+      "goal_threat": {
+        "multiplier": 0.6,
+        "basis": [
+          "position_weight"
+        ],
+        "confidence": "high"
+      },
+      "assist_threat": {
+        "multiplier": 0.8,
+        "basis": [
+          "position_weight"
+        ],
+        "confidence": "high"
+      },
+      "star_tier": "squad_regular",
+      "rationale": "Balanced attacking contributor (goal 0.6, assist 0.8); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -8925,28 +8923,26 @@
       "team_en": "Brazil",
       "player_name_source": "加布里埃尔",
       "player_name_app_alias": "加布里埃尔",
-      "position": "边锋",
+      "position": "中卫",
       "role_tags": [
-        "winger"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 5.1,
+        "multiplier": 0.7,
         "basis": [
-          "position_weight",
-          "goal_scoring_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
       "assist_threat": {
-        "multiplier": 4.7,
+        "multiplier": 0.9,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
-      "star_tier": "secondary_attacker",
-      "rationale": "Balanced attacking contributor (goal 5.1, assist 4.7); Position: 边锋",
+      "star_tier": "squad_regular",
+      "rationale": "Balanced attacking contributor (goal 0.7, assist 0.9); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -9507,13 +9503,15 @@
       "player_name_app_alias": "苏菲安",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 3.6,
+        "multiplier": 5.0,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -9521,12 +9519,13 @@
         "multiplier": 3.3,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "secondary_attacker",
-      "rationale": "Balanced attacking contributor (goal 3.6, assist 3.3); Position: 边锋",
+      "star_tier": "world_class_creator",
+      "rationale": "Primary star player; Primary goal threat (multiplier 5.0), lower creation value (3.3); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -10262,13 +10261,15 @@
       "player_name_app_alias": "亚当斯",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 3.2,
+        "multiplier": 4.4,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -10276,12 +10277,13 @@
         "multiplier": 2.9,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.2, assist 2.9); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 4.4), lower creation value (2.9); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -10583,13 +10585,15 @@
       "player_name_app_alias": "佩皮",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 3.2,
+        "multiplier": 4.4,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -10597,12 +10601,13 @@
         "multiplier": 2.9,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.2, assist 2.9); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 4.4), lower creation value (2.9); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -11736,13 +11741,15 @@
       "player_name_app_alias": "耶尔德兹",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 3.1,
+        "multiplier": 4.3,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -11750,12 +11757,13 @@
         "multiplier": 2.8,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.1, assist 2.8); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 4.3), lower creation value (2.8); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -12096,13 +12104,15 @@
       "player_name_app_alias": "沃尔特马德",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 4.0,
+        "multiplier": 5.6,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -12110,12 +12120,13 @@
         "multiplier": 3.6,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "secondary_attacker",
-      "rationale": "Balanced attacking contributor (goal 4.0, assist 3.6); Position: 边锋",
+      "star_tier": "world_class_creator",
+      "rationale": "Primary star player; Primary goal threat (multiplier 5.6), lower creation value (3.6); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -12491,28 +12502,29 @@
       "team_en": "Ivory Coast",
       "player_name_source": "迪奥曼德",
       "player_name_app_alias": "迪奥曼德",
-      "position": "边锋",
+      "position": "中卫",
       "role_tags": [
-        "winger"
+        "aerial_set_piece_threat",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 4.0,
+        "multiplier": 0.8,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "star_player_status"
         ],
         "confidence": "high"
       },
       "assist_threat": {
-        "multiplier": 3.7,
+        "multiplier": 0.7,
         "basis": [
           "position_weight",
-          "creative_position"
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 4.0, assist 3.7); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Balanced attacking contributor (goal 0.8, assist 0.7); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -13863,13 +13875,15 @@
       "player_name_app_alias": "前田",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 3.6,
+        "multiplier": 5.0,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -13877,12 +13891,13 @@
         "multiplier": 3.3,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "secondary_attacker",
-      "rationale": "Balanced attacking contributor (goal 3.6, assist 3.3); Position: 边锋",
+      "star_tier": "world_class_creator",
+      "rationale": "Primary star player; Primary goal threat (multiplier 5.0), lower creation value (3.3); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -14547,13 +14562,15 @@
       "player_name_app_alias": "伊斯梅尔",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 3.1,
+        "multiplier": 4.4,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -14561,12 +14578,13 @@
         "multiplier": 2.9,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.1, assist 2.9); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 4.4), lower creation value (2.9); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -14942,65 +14960,28 @@
     {
       "team_cn": "埃及",
       "team_en": "Egypt",
-      "player_name_source": "穆罕默德",
-      "player_name_app_alias": "穆罕默德",
+      "player_name_source": "易卜拉欣",
+      "player_name_app_alias": "易卜拉欣",
       "position": "中卫",
       "role_tags": [
         "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 0.4,
-        "basis": [
-          "position_weight"
-        ],
-        "confidence": "medium"
-      },
-      "assist_threat": {
         "multiplier": 0.5,
         "basis": [
           "position_weight"
         ],
         "confidence": "medium"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 0.4, assist 0.5); Position: 中卫",
-      "sources": [
-        {
-          "name": "ESPN squads / embedded simulation roster",
-          "url": null,
-          "as_of": "2026-06-12",
-          "source_type": "observed"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "team_cn": "埃及",
-      "team_en": "Egypt",
-      "player_name_source": "易卜拉欣",
-      "player_name_app_alias": "易卜拉欣",
-      "position": "边锋",
-      "role_tags": [
-        "winger"
-      ],
-      "goal_threat": {
-        "multiplier": 3.6,
-        "basis": [
-          "position_weight",
-          "goal_scoring_position"
-        ],
-        "confidence": "medium"
-      },
       "assist_threat": {
-        "multiplier": 3.3,
+        "multiplier": 0.7,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "medium"
       },
       "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.6, assist 3.3); Position: 边锋",
+      "rationale": "Balanced attacking contributor (goal 0.5, assist 0.7); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -16209,13 +16190,15 @@
       "player_name_app_alias": "托雷斯",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 4.7,
+        "multiplier": 6.0,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -16223,12 +16206,13 @@
         "multiplier": 4.3,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "secondary_attacker",
-      "rationale": "Balanced attacking contributor (goal 4.7, assist 4.3); Position: 边锋",
+      "star_tier": "world_class_creator",
+      "rationale": "Primary star player; Primary goal threat (multiplier 6.0), lower creation value (4.3); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -16712,13 +16696,15 @@
       "player_name_app_alias": "加里-罗德里格斯",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 2.1,
+        "multiplier": 3.0,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
@@ -16726,12 +16712,13 @@
         "multiplier": 2.0,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 2.1, assist 2.0); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 3.0), lower creation value (2.0); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -16741,41 +16728,6 @@
         }
       ],
       "confidence": "low"
-    },
-    {
-      "team_cn": "沙特",
-      "team_en": "Saudi Arabia",
-      "player_name_source": "纳瓦夫",
-      "player_name_app_alias": "纳瓦夫",
-      "position": "中卫",
-      "role_tags": [
-        "aerial_set_piece_threat"
-      ],
-      "goal_threat": {
-        "multiplier": 0.5,
-        "basis": [
-          "position_weight"
-        ],
-        "confidence": "medium"
-      },
-      "assist_threat": {
-        "multiplier": 0.7,
-        "basis": [
-          "position_weight"
-        ],
-        "confidence": "medium"
-      },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 0.5, assist 0.7); Position: 中卫",
-      "sources": [
-        {
-          "name": "ESPN squads / embedded simulation roster",
-          "url": null,
-          "as_of": "2026-06-12",
-          "source_type": "observed"
-        }
-      ],
-      "confidence": "medium"
     },
     {
       "team_cn": "沙特",
@@ -17178,27 +17130,26 @@
       "team_en": "Uruguay",
       "player_name_source": "阿劳霍",
       "player_name_app_alias": "阿劳霍",
-      "position": "中前卫",
+      "position": "中卫",
       "role_tags": [
-        "box_to_box"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 2.7,
+        "multiplier": 0.7,
         "basis": [
           "position_weight"
         ],
         "confidence": "high"
       },
       "assist_threat": {
-        "multiplier": 4.4,
+        "multiplier": 0.9,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
       "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 4.4), moderate goal threat (2.7); Position: 中前卫",
+      "rationale": "Balanced attacking contributor (goal 0.7, assist 0.9); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -17360,13 +17311,15 @@
       "player_name_app_alias": "努涅斯",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
         "multiplier": 6.0,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -17374,12 +17327,13 @@
         "multiplier": 4.8,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "secondary_attacker",
-      "rationale": "Primary goal threat (multiplier 6.0), lower creation value (4.8); Position: 边锋",
+      "star_tier": "world_class_creator",
+      "rationale": "Primary star player; Primary goal threat (multiplier 6.0), lower creation value (4.8); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -18153,13 +18107,15 @@
       "player_name_app_alias": "艾哈迈德",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 2.8,
+        "multiplier": 3.9,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
@@ -18167,47 +18123,13 @@
         "multiplier": 2.5,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 2.8, assist 2.5); Position: 边锋",
-      "sources": [
-        {
-          "name": "ESPN squads / embedded simulation roster",
-          "url": null,
-          "as_of": "2026-06-12",
-          "source_type": "observed"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "team_cn": "塞内加尔",
-      "team_en": "Senegal",
-      "player_name_source": "迪乌夫",
-      "player_name_app_alias": "迪乌夫",
-      "position": "中卫",
-      "role_tags": [
-        "aerial_set_piece_threat"
-      ],
-      "goal_threat": {
-        "multiplier": 0.6,
-        "basis": [
-          "position_weight"
-        ],
-        "confidence": "high"
-      },
-      "assist_threat": {
-        "multiplier": 0.8,
-        "basis": [
-          "position_weight"
-        ],
-        "confidence": "high"
-      },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 0.6, assist 0.8); Position: 中卫",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 3.9), lower creation value (2.5); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -18223,28 +18145,26 @@
       "team_en": "Senegal",
       "player_name_source": "萨尔",
       "player_name_app_alias": "萨尔",
-      "position": "边锋",
+      "position": "中卫",
       "role_tags": [
-        "winger"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 3.9,
+        "multiplier": 0.6,
         "basis": [
-          "position_weight",
-          "goal_scoring_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
       "assist_threat": {
-        "multiplier": 3.6,
+        "multiplier": 0.7,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
       "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.9, assist 3.6); Position: 边锋",
+      "rationale": "Balanced attacking contributor (goal 0.6, assist 0.7); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -19383,28 +19303,26 @@
       "team_en": "Algeria",
       "player_name_source": "穆罕默德",
       "player_name_app_alias": "穆罕默德",
-      "position": "边锋",
+      "position": "中卫",
       "role_tags": [
-        "winger"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 4.1,
+        "multiplier": 0.6,
         "basis": [
-          "position_weight",
-          "goal_scoring_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
       "assist_threat": {
-        "multiplier": 3.8,
+        "multiplier": 0.8,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
       "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 4.1, assist 3.8); Position: 边锋",
+      "rationale": "Balanced attacking contributor (goal 0.6, assist 0.8); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -19604,15 +19522,14 @@
       "team_en": "Algeria",
       "player_name_source": "法雷斯",
       "player_name_app_alias": "法雷斯",
-      "position": "边锋",
+      "position": "中前卫",
       "role_tags": [
-        "winger"
+        "box_to_box"
       ],
       "goal_threat": {
-        "multiplier": 3.2,
+        "multiplier": 1.8,
         "basis": [
-          "position_weight",
-          "goal_scoring_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
@@ -19625,7 +19542,7 @@
         "confidence": "high"
       },
       "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.2, assist 2.9); Position: 边锋",
+      "rationale": "Primary creative threat (multiplier 2.9), moderate goal threat (1.8); Position: 中前卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -19663,42 +19580,6 @@
       },
       "star_tier": "squad_regular",
       "rationale": "Balanced attacking contributor (goal 3.2, assist 2.9); Position: 边锋",
-      "sources": [
-        {
-          "name": "ESPN squads / embedded simulation roster",
-          "url": null,
-          "as_of": "2026-06-12",
-          "source_type": "observed"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "team_cn": "奥地利",
-      "team_en": "Austria",
-      "player_name_source": "施拉格",
-      "player_name_app_alias": "施拉格",
-      "position": "中前卫",
-      "role_tags": [
-        "box_to_box"
-      ],
-      "goal_threat": {
-        "multiplier": 2.3,
-        "basis": [
-          "position_weight"
-        ],
-        "confidence": "high"
-      },
-      "assist_threat": {
-        "multiplier": 3.8,
-        "basis": [
-          "position_weight",
-          "creative_position"
-        ],
-        "confidence": "high"
-      },
-      "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 3.8), moderate goal threat (2.3); Position: 中前卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -20004,28 +19885,26 @@
       "team_en": "Jordan",
       "player_name_source": "穆罕默德",
       "player_name_app_alias": "穆罕默德",
-      "position": "边锋",
+      "position": "中卫",
       "role_tags": [
-        "winger"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 3.6,
+        "multiplier": 0.5,
         "basis": [
-          "position_weight",
-          "goal_scoring_position"
+          "position_weight"
         ],
         "confidence": "medium"
       },
       "assist_threat": {
-        "multiplier": 3.3,
+        "multiplier": 0.7,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "medium"
       },
       "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.6, assist 3.3); Position: 边锋",
+      "rationale": "Balanced attacking contributor (goal 0.5, assist 0.7); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -20294,13 +20173,15 @@
       "player_name_app_alias": "法库里",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 2.7,
+        "multiplier": 3.7,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
@@ -20308,12 +20189,13 @@
         "multiplier": 2.4,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 2.7, assist 2.4); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 3.7), lower creation value (2.4); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -21015,25 +20897,28 @@
       "player_name_app_alias": "卡库塔",
       "position": "中前卫",
       "role_tags": [
-        "box_to_box"
+        "box_to_box",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 1.5,
+        "multiplier": 2.1,
         "basis": [
-          "position_weight"
+          "position_weight",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
       "assist_threat": {
-        "multiplier": 2.4,
+        "multiplier": 3.1,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 2.4), moderate goal threat (1.5); Position: 中前卫",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary creative threat (multiplier 3.1), moderate goal threat (2.1); Position: 中前卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -21084,27 +20969,26 @@
       "team_en": "Uzbekistan",
       "player_name_source": "阿卜杜拉耶夫",
       "player_name_app_alias": "阿卜杜拉耶夫",
-      "position": "中前卫",
+      "position": "中卫",
       "role_tags": [
-        "box_to_box"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 2.1,
+        "multiplier": 0.5,
         "basis": [
           "position_weight"
         ],
         "confidence": "medium"
       },
       "assist_threat": {
-        "multiplier": 3.3,
+        "multiplier": 0.7,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "medium"
       },
       "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 3.3), moderate goal threat (2.1); Position: 中前卫",
+      "rationale": "Balanced attacking contributor (goal 0.5, assist 0.7); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -21372,25 +21256,28 @@
       "player_name_app_alias": "乌鲁诺夫",
       "position": "中前卫",
       "role_tags": [
-        "box_to_box"
+        "box_to_box",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 1.6,
+        "multiplier": 2.2,
         "basis": [
-          "position_weight"
+          "position_weight",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
       "assist_threat": {
-        "multiplier": 2.5,
+        "multiplier": 3.3,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 2.5), moderate goal threat (1.6); Position: 中前卫",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary creative threat (multiplier 3.3), moderate goal threat (2.2); Position: 中前卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -21441,27 +21328,26 @@
       "team_en": "Colombia",
       "player_name_source": "约翰",
       "player_name_app_alias": "约翰",
-      "position": "中前卫",
+      "position": "中卫",
       "role_tags": [
-        "box_to_box"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 2.6,
+        "multiplier": 0.7,
         "basis": [
           "position_weight"
         ],
         "confidence": "high"
       },
       "assist_threat": {
-        "multiplier": 4.2,
+        "multiplier": 0.8,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "high"
       },
       "star_tier": "squad_regular",
-      "rationale": "Primary creative threat (multiplier 4.2), moderate goal threat (2.6); Position: 中前卫",
+      "rationale": "Balanced attacking contributor (goal 0.7, assist 0.8); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -22344,13 +22230,15 @@
       "player_name_app_alias": "克拉马里奇",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
         "multiplier": 6.0,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -22358,12 +22246,13 @@
         "multiplier": 5.8,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "secondary_attacker",
-      "rationale": "Balanced attacking contributor (goal 6.0, assist 5.8); Position: 边锋",
+      "star_tier": "world_class_creator",
+      "rationale": "Primary star player; Balanced attacking contributor (goal 6.0, assist 5.8); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -22778,13 +22667,15 @@
       "player_name_app_alias": "塞梅尼奥",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 3.2,
+        "multiplier": 4.4,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
@@ -22792,12 +22683,13 @@
         "multiplier": 2.9,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "high"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.2, assist 2.9); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 4.4), lower creation value (2.9); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -22813,28 +22705,26 @@
       "team_en": "Panama",
       "player_name_source": "塞萨尔",
       "player_name_app_alias": "塞萨尔",
-      "position": "边锋",
+      "position": "中卫",
       "role_tags": [
-        "winger"
+        "aerial_set_piece_threat"
       ],
       "goal_threat": {
-        "multiplier": 3.8,
+        "multiplier": 0.5,
         "basis": [
-          "position_weight",
-          "goal_scoring_position"
+          "position_weight"
         ],
         "confidence": "medium"
       },
       "assist_threat": {
-        "multiplier": 3.5,
+        "multiplier": 0.7,
         "basis": [
-          "position_weight",
-          "creative_position"
+          "position_weight"
         ],
         "confidence": "medium"
       },
       "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 3.8, assist 3.5); Position: 边锋",
+      "rationale": "Balanced attacking contributor (goal 0.5, assist 0.7); Position: 中卫",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -23102,13 +22992,15 @@
       "player_name_app_alias": "迪亚斯",
       "position": "边锋",
       "role_tags": [
-        "winger"
+        "winger",
+        "veteran_star"
       ],
       "goal_threat": {
-        "multiplier": 2.8,
+        "multiplier": 3.9,
         "basis": [
           "position_weight",
-          "goal_scoring_position"
+          "goal_scoring_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
@@ -23116,12 +23008,13 @@
         "multiplier": 2.5,
         "basis": [
           "position_weight",
-          "creative_position"
+          "creative_position",
+          "star_player_status"
         ],
         "confidence": "medium"
       },
-      "star_tier": "squad_regular",
-      "rationale": "Balanced attacking contributor (goal 2.8, assist 2.5); Position: 边锋",
+      "star_tier": "national_team_core",
+      "rationale": "Primary star player; Primary goal threat (multiplier 3.9), lower creation value (2.5); Position: 边锋",
       "sources": [
         {
           "name": "ESPN squads / embedded simulation roster",
@@ -23949,7 +23842,7 @@
       "matches_with_over_under": 70
     },
     "player_threats": {
-      "total_players": 472,
+      "total_players": 468,
       "players_per_team": {
         "墨西哥": 10,
         "南非": 10,
@@ -23976,20 +23869,20 @@
         "瑞典": 10,
         "突尼斯": 9,
         "比利时": 10,
-        "埃及": 10,
+        "埃及": 9,
         "伊朗": 10,
         "新西兰": 10,
         "西班牙": 10,
         "佛得角": 10,
-        "沙特": 10,
+        "沙特": 9,
         "乌拉圭": 10,
         "法国": 10,
         "伊拉克": 10,
-        "塞内加尔": 11,
+        "塞内加尔": 10,
         "挪威": 10,
         "阿根廷": 10,
         "阿尔及利亚": 10,
-        "奥地利": 9,
+        "奥地利": 8,
         "约旦": 9,
         "葡萄牙": 10,
         "刚果金": 10,
@@ -24043,7 +23936,7 @@
     },
     "data_quality_notes": [
       "28 teams have estimated Elo (from FIFA rank regression)",
-      "Player count (472) exceeds 200 target; all non-GK simulation roster players included for better simulation coverage"
+      "Player count (468) exceeds 200 target; all non-GK simulation roster players included for better simulation coverage"
     ]
   },
   "validation_errors": []

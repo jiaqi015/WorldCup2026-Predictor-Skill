@@ -49,3 +49,6 @@ __pycache__/
 .playwright-cli/
 tmp/
 output/
+
+# Local ESPN endpoint research (raw responses are large and not release inputs)
+espn-probe/

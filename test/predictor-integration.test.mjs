@@ -161,7 +161,7 @@ test("poster sharing emphasizes URL and keeps modal actions plain", () => {
   assert.match(html, /btnCopyShort:"复制"/);
   assert.match(html, /btnShare:"分享我的专属预测 海报&链接"/);
   assert.match(html, /posterModalActionHint:"复制链接给朋友，邀请她也来预测"/);
-  assert.match(html, /posterModalTitle:"分享完整预测"/);
+  assert.match(html, /posterModalTitle:"分享预测结果"/);
   assert.doesNotMatch(html, /<div class="share-result-kicker">/);
   assert.doesNotMatch(html, /posterModalTitle:"长按保存海报"/);
 });
@@ -191,6 +191,8 @@ test("poster route includes a compact group-stage explanation before knockouts",
   assert.match(html, /h\+='<div class="poster-path-row group-stage">';/);
   assert.match(html, /groupSummary\.text/);
   assert.match(html, /groupSummary\.stat/);
+  assert.match(html, /stat:s\.p\+" "\+T\("pts"\)\+" · "\+s\.w\+"-"\+s\.d\+"-"\+s\.l/);
+  assert.doesNotMatch(html, /stat:s\.p\+" pts · "/);
 });
 
 test("shared prediction links use a shorter schedule hash while preserving old links", () => {
@@ -223,21 +225,23 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink\(\)"/);
   assert.match(html, /btnCopyLink:"Copy link \(full simulation plan\)"/);
   assert.match(html, /btnCopyShort:"Copy"/);
-  assert.match(html, /posterModalTitle:"Share full prediction"/);
+  assert.match(html, /posterModalTitle:"Share prediction results"/);
   assert.match(html, /btnShare:"Share my poster & link"/);
 });
 
 test("share poster modal uses a designed landscape preview and side actions", () => {
-  assert.match(html, /\.share-result-modal\{[^}]*width:min\(1220px,calc\(100vw - 12px\)\)[^}]*max-height:92vh/);
+  assert.match(html, /\.share-result-modal\{[^}]*width:min\(1320px,calc\(100vw - 24px\)\)[^}]*max-height:94vh/);
   assert.match(html, /\.share-result-modal\{[^}]*background:linear-gradient\(180deg,#08110D 0%,#050806 100%\)/);
   assert.match(html, /\.share-result-head\{[^}]*align-items:center[^}]*padding:12px 20px 10px/);
-  assert.match(html, /\.share-result-body\{[^}]*display:grid;grid-template-columns:minmax\(0,1.52fr\) 356px/);
+  assert.match(html, /\.share-result-body\{[^}]*display:grid;grid-template-columns:minmax\(0,1.64fr\) 372px;min-height:clamp\(560px,72vh,660px\)/);
   assert.match(html, /\.share-side-panel\{[^}]*flex-direction:column/);
-  assert.match(html, /\.share-preview-frame\{[^}]*width:min\(820px,100%\)/);
+  assert.match(html, /\.share-preview-frame\{[^}]*width:min\(900px,100%\)/);
   assert.match(html, /\.share-url-chip\{[^}]*overflow:hidden;text-overflow:ellipsis/);
   assert.match(html, /\.share-url-copy\{[^}]*border:1px solid rgba\(229,194,106,0\.26\)/);
-  assert.match(html, /\.poster\{width:900px;height:560px/);
-  assert.match(html, /width:900,\s*height:560/);
+  assert.match(html, /\.poster\{width:900px;height:640px/);
+  assert.match(html, /width:900,\s*height:640/);
+  assert.match(html, /\.poster \.poster-hero\{[^}]*justify-content:flex-start/);
+  assert.match(html, /\.poster \.poster-conclusion\{[^}]*margin-top:22px/);
   assert.match(html, /class="modal share-result-modal"/);
   assert.match(html, /class="share-preview-panel"/);
   assert.match(html, /class="share-side-panel"/);
@@ -281,6 +285,8 @@ test("group match panel title keeps completed-result guidance readable", () => {
 });
 
 test("group simulation toolbar prioritizes remaining matches before full re-simulation", () => {
+  assert.match(html, /hintExpandGroup:"点击小组右侧模拟"/);
+  assert.match(html, /hintExpandGroup:"Select a group, then simulate on the right"/);
   assert.match(html, /btnRandAll:"⚡ 重新模拟全部",btnFillRemaining:"✨ 模拟补全剩余"/);
   assert.match(html, /btnRandAll:"⚡ Re-simulate All",btnFillRemaining:"✨ Simulate Remaining"/);
   assert.match(html, /var h='<div class="topbar">'\+fillBtn\+'<button class="btn-rand btn-rand-secondary" onclick="raG\(\)">'\+T\("btnRandAll"\)/);

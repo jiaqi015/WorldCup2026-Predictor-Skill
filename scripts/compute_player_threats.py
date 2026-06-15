@@ -31,6 +31,8 @@ except ImportError:
     def starter_factor(idx, position):
         return 1.0
 
+from player_positions import normalize_espn_position
+
 TEAMS_48 = [
     "墨西哥","南非","韩国","捷克","加拿大","波黑","卡塔尔","瑞士",
     "巴西","摩洛哥","海地","苏格兰","美国","巴拉圭","澳大利亚","土耳其",
@@ -78,10 +80,6 @@ ESPN_TO_CN = {
 # Position weights (from index.html)
 GOAL_W = {"中锋": 9, "边锋": 7, "前腰": 7, "中前卫": 4, "后腰": 2, "边卫": 3, "中卫": 1, "门将": 0}
 ASSIST_W = {"中锋": 3, "边锋": 5, "前腰": 7, "中前卫": 5, "后腰": 4, "边卫": 4, "中卫": 1, "门将": 0}
-
-# Position mapping from ESPN position codes
-POS_MAP = {"G": "门将", "D": "中卫", "M": "中前卫", "F": "中锋"}
-
 
 def extract_js_var(html, var_name):
     """Extract a JS variable value from index.html using regex."""
@@ -213,8 +211,8 @@ def load_embedded_data():
 def get_position(player_cn, team_cn, pos_data, squads_data, mapping_data):
     """
     Get a player's position. Priority:
-    1. POS embedded data (8-tier Chinese position)
-    2. ESPN squad data (G/D/M/F -> mapped to Chinese)
+    1. POS embedded data (reviewed Chinese position when available)
+    2. ESPN squad data (G/D/M/F -> conservative Chinese fallback)
     3. Default: 中前卫
     """
     # Try POS data first
@@ -229,7 +227,7 @@ def get_position(player_cn, team_cn, pos_data, squads_data, mapping_data):
             cn_name = cn_info.get("cn", "") if isinstance(cn_info, dict) else ""
             if cn_name == player_cn:
                 espn_pos = p.get("position", "M")
-                return POS_MAP.get(espn_pos, "中前卫")
+                return normalize_espn_position(espn_pos)
 
     return "中前卫"
 
@@ -381,7 +379,7 @@ def select_players(team_cn, pl_data, pos_data, squads_data, mapping_data, star_d
                 if cn_name in seen_names or not cn_name:
                     continue
                 espn_pos = p.get("position", "M")
-                pos = POS_MAP.get(espn_pos, "中前卫")
+                pos = normalize_espn_position(espn_pos)
                 if pos == "门将":
                     continue
                 seen_names.add(cn_name)

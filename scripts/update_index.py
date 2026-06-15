@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
+from player_positions import normalize_espn_position
+
 # Paths
 SQUADS_FILE = Path(__file__).parent.parent / "data" / "squads" / "squads_partial.json"
 MAPPING_FILE = Path(__file__).parent.parent / "data" / "squads" / "player_mapping.json"
@@ -34,14 +36,6 @@ TEAM_CN_MAP = {
     "South Korea": "韩国", "Spain": "西班牙", "Sweden": "瑞典",
     "Switzerland": "瑞士", "Tunisia": "突尼斯", "Türkiye": "土耳其",
     "United States": "美国", "Uruguay": "乌拉圭", "Uzbekistan": "乌兹别克"
-}
-
-# Position mapping (ESPN -> Chinese)
-POS_MAP = {
-    "G": "门将",
-    "D": "中卫",
-    "M": "中前卫",
-    "F": "边锋"
 }
 
 # Product-curated team icons for entertainment mode. Values use the same
@@ -97,6 +91,13 @@ def generate_new_variables(squads, mapping):
     """Generate new JavaScript variables."""
     lines = []
 
+    def get_jersey(player):
+        jersey = player.get('jersey', '')
+        try:
+            return int(jersey) if jersey else 99
+        except (ValueError, TypeError):
+            return 99
+
     # Generate PL (player list - 11 starters per team)
     lines.append("// Generated from official ESPN World Cup 2026 data")
     lines.append(f"// Updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
@@ -107,14 +108,6 @@ def generate_new_variables(squads, mapping):
     for team_en, team_data in squads.items():
         team_cn = TEAM_CN_MAP.get(team_en, team_en)
         players = team_data.get('players', [])
-
-        # Sort by jersey, take first 11 as starters
-        def get_jersey(p):
-            j = p.get('jersey', '')
-            try:
-                return int(j) if j else 99
-            except (ValueError, TypeError):
-                return 99
 
         sorted_players = sorted(players, key=get_jersey)
         starters = sorted_players[:11]
@@ -143,12 +136,22 @@ def generate_new_variables(squads, mapping):
     pos_entries = []
     for team_en, team_data in squads.items():
         team_cn = TEAM_CN_MAP.get(team_en, team_en)
-        player_pos = []
-        for p in team_data.get('players', []):
+        players = team_data.get('players', [])
+        sorted_players = sorted(players, key=get_jersey)
+        starters = sorted_players[:11]
+        remaining = [player for player in players if player not in starters]
+        player_pos = {}
+        # PL aliases can collide within a team. Prioritize the selected starter
+        # so a reserve with the same localized name cannot overwrite its role.
+        for p in starters + remaining:
             cn = get_player_cn_name(p['name'], mapping, team_en)
-            pos = POS_MAP.get(p.get('position', ''), '中前卫')
-            player_pos.append(f'{json.dumps(cn, ensure_ascii=False)}:{json.dumps(pos, ensure_ascii=False)}')
-        pos_entries.append(f'"{team_cn}":{{{",".join(player_pos)}}}')
+            pos = normalize_espn_position(p.get('position', ''))
+            player_pos.setdefault(cn, pos)
+        encoded_positions = (
+            f'{json.dumps(name, ensure_ascii=False)}:{json.dumps(pos, ensure_ascii=False)}'
+            for name, pos in player_pos.items()
+        )
+        pos_entries.append(f'"{team_cn}":{{{",".join(encoded_positions)}}}')
     lines.append(','.join(pos_entries))
     lines.append('};')
 
