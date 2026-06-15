@@ -1,0 +1,390 @@
+{
+  "run_date": "2026-06-15",
+  "matches_tested": 12,
+  "simulations_per_match": 10000,
+  "seed": 42,
+  "matches": [
+    {
+      "matchId": "760415",
+      "home": "墨西哥",
+      "away": "南非",
+      "actual": "2-0",
+      "old_model": {
+        "p_home": 0.7404,
+        "p_draw": 0.1263,
+        "p_away": 0.1333,
+        "avg_goals": 2.4,
+        "brier": 0.1011,
+        "log_loss": 0.3006,
+        "rps": 0.0426,
+        "goals_mae": 0.4
+      },
+      "new_model": {
+        "p_home": 0.6517,
+        "p_draw": 0.2032,
+        "p_away": 0.1451,
+        "avg_goals": 2.87,
+        "brier": 0.1837,
+        "log_loss": 0.4282,
+        "rps": 0.0712,
+        "goals_mae": 0.87
+      }
+    },
+    {
+      "matchId": "760414",
+      "home": "韩国",
+      "away": "捷克",
+      "actual": "2-1",
+      "old_model": {
+        "p_home": 0.4132,
+        "p_draw": 0.174,
+        "p_away": 0.4128,
+        "avg_goals": 2.33,
+        "brier": 0.545,
+        "log_loss": 0.8838,
+        "rps": 0.2574,
+        "goals_mae": 0.67
+      },
+      "new_model": {
+        "p_home": 0.3627,
+        "p_draw": 0.2668,
+        "p_away": 0.3705,
+        "avg_goals": 2.6,
+        "brier": 0.6146,
+        "log_loss": 1.0142,
+        "rps": 0.2717,
+        "goals_mae": 0.4
+      }
+    },
+    {
+      "matchId": "760416",
+      "home": "加拿大",
+      "away": "波黑",
+      "actual": "1-1",
+      "old_model": {
+        "p_home": 0.622,
+        "p_draw": 0.1564,
+        "p_away": 0.2216,
+        "avg_goals": 2.4,
+        "brier": 1.1477,
+        "log_loss": 1.8553,
+        "rps": 0.218,
+        "goals_mae": 0.4
+      },
+      "new_model": {
+        "p_home": 0.5425,
+        "p_draw": 0.2415,
+        "p_away": 0.216,
+        "avg_goals": 2.69,
+        "brier": 0.9163,
+        "log_loss": 1.4209,
+        "rps": 0.1705,
+        "goals_mae": 0.69
+      }
+    },
+    {
+      "matchId": "760417",
+      "home": "美国",
+      "away": "巴拉圭",
+      "actual": "4-1",
+      "old_model": {
+        "p_home": 0.5845,
+        "p_draw": 0.1591,
+        "p_away": 0.2564,
+        "avg_goals": 2.4,
+        "brier": 0.2637,
+        "log_loss": 0.537,
+        "rps": 0.1192,
+        "goals_mae": 2.6
+      },
+      "new_model": {
+        "p_home": 0.5092,
+        "p_draw": 0.251,
+        "p_away": 0.2398,
+        "avg_goals": 2.68,
+        "brier": 0.3614,
+        "log_loss": 0.6749,
+        "rps": 0.1492,
+        "goals_mae": 2.32
+      }
+    },
+    {
+      "matchId": "760420",
+      "home": "卡塔尔",
+      "away": "瑞士",
+      "actual": "1-1",
+      "old_model": {
+        "p_home": 0.172,
+        "p_draw": 0.1353,
+        "p_away": 0.6927,
+        "avg_goals": 2.37,
+        "brier": 1.2571,
+        "log_loss": 2.0003,
+        "rps": 0.2547,
+        "goals_mae": 0.37
+      },
+      "new_model": {
+        "p_home": 0.1854,
+        "p_draw": 0.2211,
+        "p_away": 0.5935,
+        "avg_goals": 2.78,
+        "brier": 0.9933,
+        "log_loss": 1.5091,
+        "rps": 0.1933,
+        "goals_mae": 0.78
+      }
+    },
+    {
+      "matchId": "760419",
+      "home": "巴西",
+      "away": "摩洛哥",
+      "actual": "1-1",
+      "old_model": {
+        "p_home": 0.5845,
+        "p_draw": 0.1591,
+        "p_away": 0.2564,
+        "avg_goals": 2.4,
+        "brier": 1.1145,
+        "log_loss": 1.8382,
+        "rps": 0.2037,
+        "goals_mae": 0.4
+      },
+      "new_model": {
+        "p_home": 0.5092,
+        "p_draw": 0.251,
+        "p_away": 0.2398,
+        "avg_goals": 2.68,
+        "brier": 0.8778,
+        "log_loss": 1.3823,
+        "rps": 0.1584,
+        "goals_mae": 0.68
+      }
+    },
+    {
+      "matchId": "760418",
+      "home": "海地",
+      "away": "苏格兰",
+      "actual": "0-1",
+      "old_model": {
+        "p_home": 0.1548,
+        "p_draw": 0.127,
+        "p_away": 0.7182,
+        "avg_goals": 2.37,
+        "brier": 0.1195,
+        "log_loss": 0.331,
+        "rps": 0.0517,
+        "goals_mae": 1.37
+      },
+      "new_model": {
+        "p_home": 0.1599,
+        "p_draw": 0.2164,
+        "p_away": 0.6237,
+        "avg_goals": 2.82,
+        "brier": 0.214,
+        "log_loss": 0.4721,
+        "rps": 0.0836,
+        "goals_mae": 1.82
+      }
+    },
+    {
+      "matchId": "760421",
+      "home": "澳大利亚",
+      "away": "土耳其",
+      "actual": "2-0",
+      "old_model": {
+        "p_home": 0.3121,
+        "p_draw": 0.1698,
+        "p_away": 0.5181,
+        "avg_goals": 2.35,
+        "brier": 0.7705,
+        "log_loss": 1.1644,
+        "rps": 0.3708,
+        "goals_mae": 0.35
+      },
+      "new_model": {
+        "p_home": 0.2941,
+        "p_draw": 0.2505,
+        "p_away": 0.4554,
+        "avg_goals": 2.62,
+        "brier": 0.7684,
+        "log_loss": 1.2238,
+        "rps": 0.3528,
+        "goals_mae": 0.62
+      }
+    },
+    {
+      "matchId": "760422",
+      "home": "德国",
+      "away": "库拉索",
+      "actual": "7-1",
+      "old_model": {
+        "p_home": 0.936,
+        "p_draw": 0.0411,
+        "p_away": 0.0229,
+        "avg_goals": 2.49,
+        "brier": 0.0063,
+        "log_loss": 0.0661,
+        "rps": 0.0023,
+        "goals_mae": 5.51
+      },
+      "new_model": {
+        "p_home": 0.908,
+        "p_draw": 0.0673,
+        "p_away": 0.0247,
+        "avg_goals": 3.97,
+        "brier": 0.0136,
+        "log_loss": 0.0965,
+        "rps": 0.0045,
+        "goals_mae": 4.03
+      }
+    },
+    {
+      "matchId": "760425",
+      "home": "荷兰",
+      "away": "日本",
+      "actual": "2-2",
+      "old_model": {
+        "p_home": 0.622,
+        "p_draw": 0.1564,
+        "p_away": 0.2216,
+        "avg_goals": 2.4,
+        "brier": 1.1477,
+        "log_loss": 1.8553,
+        "rps": 0.218,
+        "goals_mae": 1.6
+      },
+      "new_model": {
+        "p_home": 0.5425,
+        "p_draw": 0.2415,
+        "p_away": 0.216,
+        "avg_goals": 2.69,
+        "brier": 0.9163,
+        "log_loss": 1.4209,
+        "rps": 0.1705,
+        "goals_mae": 1.31
+      }
+    },
+    {
+      "matchId": "760423",
+      "home": "科特迪瓦",
+      "away": "厄瓜多尔",
+      "actual": "1-0",
+      "old_model": {
+        "p_home": 0.4132,
+        "p_draw": 0.174,
+        "p_away": 0.4128,
+        "avg_goals": 2.33,
+        "brier": 0.545,
+        "log_loss": 0.8838,
+        "rps": 0.2574,
+        "goals_mae": 1.33
+      },
+      "new_model": {
+        "p_home": 0.3627,
+        "p_draw": 0.2668,
+        "p_away": 0.3705,
+        "avg_goals": 2.6,
+        "brier": 0.6146,
+        "log_loss": 1.0142,
+        "rps": 0.2717,
+        "goals_mae": 1.6
+      }
+    },
+    {
+      "matchId": "760424",
+      "home": "瑞典",
+      "away": "突尼斯",
+      "actual": "5-1",
+      "old_model": {
+        "p_home": 0.4469,
+        "p_draw": 0.1755,
+        "p_away": 0.3776,
+        "avg_goals": 2.35,
+        "brier": 0.4793,
+        "log_loss": 0.8054,
+        "rps": 0.2243,
+        "goals_mae": 3.65
+      },
+      "new_model": {
+        "p_home": 0.3869,
+        "p_draw": 0.2643,
+        "p_away": 0.3488,
+        "avg_goals": 2.6,
+        "brier": 0.5674,
+        "log_loss": 0.9496,
+        "rps": 0.2488,
+        "goals_mae": 3.4
+      }
+    }
+  ],
+  "aggregate": {
+    "old_model": {
+      "avg_rps": 0.185,
+      "avg_goals_mae": 1.55
+    },
+    "new_model": {
+      "avg_rps": 0.1788,
+      "avg_goals_mae": 1.54
+    }
+  },
+  "grid_search": [
+    {
+      "base_total": 2.4,
+      "k": 0.35,
+      "avg_rps": 0.18,
+      "avg_goals_mae": 1.54
+    },
+    {
+      "base_total": 2.4,
+      "k": 0.45,
+      "avg_rps": 0.1782,
+      "avg_goals_mae": 1.51
+    },
+    {
+      "base_total": 2.4,
+      "k": 0.55,
+      "avg_rps": 0.1767,
+      "avg_goals_mae": 1.48
+    },
+    {
+      "base_total": 2.6,
+      "k": 0.35,
+      "avg_rps": 0.18,
+      "avg_goals_mae": 1.57
+    },
+    {
+      "base_total": 2.6,
+      "k": 0.45,
+      "avg_rps": 0.1788,
+      "avg_goals_mae": 1.54
+    },
+    {
+      "base_total": 2.6,
+      "k": 0.55,
+      "avg_rps": 0.1797,
+      "avg_goals_mae": 1.51
+    },
+    {
+      "base_total": 2.8,
+      "k": 0.35,
+      "avg_rps": 0.1809,
+      "avg_goals_mae": 1.6
+    },
+    {
+      "base_total": 2.8,
+      "k": 0.45,
+      "avg_rps": 0.1793,
+      "avg_goals_mae": 1.57
+    },
+    {
+      "base_total": 2.8,
+      "k": 0.55,
+      "avg_rps": 0.1806,
+      "avg_goals_mae": 1.53
+    }
+  ],
+  "best_params": {
+    "POISSON_BASE_TOTAL": 2.4,
+    "POISSON_SUPREMACY_K": 0.55
+  }
+}

@@ -2,9 +2,9 @@
   "schema_version": 1,
   "source": "ESPN public scoreboard API",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260611-20260719&limit=200",
-  "fetched_at": "2026-06-12T17:18:02.151669+00:00",
+  "fetched_at": "2026-06-15T13:28:37.012208+00:00",
   "tournament": "FIFA World Cup 2026",
   "match_count": 104,
-  "completed_count": 2,
+  "completed_count": 12,
   "status": "Live external snapshot. ESPN fields, status values, and odds availability may change without notice."
 }

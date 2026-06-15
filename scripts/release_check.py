@@ -52,6 +52,41 @@ def optional_system_validator(relative_path: str, target: Path) -> None:
         print(f"[SKIP] Optional Codex validator not found: {validator}")
 
 
+def extract_js_object(source: str, name: str) -> str:
+    """Extract the raw JSON text of a JS variable from HTML source."""
+    marker = f"var {name}="
+    start = source.find(marker)
+    if start < 0:
+        raise ValueError(f"missing JavaScript variable: {name}")
+    start += len(marker)
+    opening = source[start]
+    if opening not in "[{":
+        raise ValueError(f"{name} is not an object or array literal")
+    closing = "}" if opening == "{" else "]"
+    depth = 0
+    quote = None
+    escaped = False
+    for index in range(start, len(source)):
+        char = source[index]
+        if quote:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == quote:
+                quote = None
+            continue
+        if char in "\"'":
+            quote = char
+        elif char == opening:
+            depth += 1
+        elif char == closing:
+            depth -= 1
+            if depth == 0:
+                return source[start : index + 1]
+    raise ValueError(f"unterminated JavaScript value: {name}")
+
+
 def validate_metadata() -> str:
     plugin = load_json(PLUGIN_MANIFEST)
     required = ("name", "version", "description", "author", "skills", "interface")
@@ -95,6 +130,34 @@ def validate_metadata() -> str:
     return plugin["version"]
 
 
+def validate_match_data_consistency() -> None:
+    """Verify completed match count is identical across all 4 data sources."""
+    manifest = load_json(ROOT / "data" / "matches" / "manifest.json")
+    details = load_json(ROOT / "data" / "matches" / "match_details.json")
+
+    manifest_count = manifest.get("completed_count", -1)
+    details_count = len(details)
+
+    html_source = (ROOT / "index.html").read_text(encoding="utf-8")
+    embedded_count = len(json.loads(extract_js_object(html_source, "MATCH_DETAILS")))
+
+    skill_path = SKILL / "assets" / "predictor" / "index.html"
+    if skill_path.is_file():
+        skill_source = skill_path.read_text(encoding="utf-8")
+        skill_count = len(json.loads(extract_js_object(skill_source, "MATCH_DETAILS")))
+    else:
+        skill_count = -2
+
+    if not (manifest_count == details_count == embedded_count == skill_count):
+        fail(
+            f"match data drift: "
+            f"manifest.completed_count={manifest_count}, "
+            f"match_details.json={details_count}, "
+            f"embedded MATCH_DETAILS={embedded_count}, "
+            f"bundled MATCH_DETAILS={skill_count}"
+        )
+
+
 def main() -> int:
     try:
         version = validate_metadata()
@@ -111,6 +174,7 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "validate_rag_corpus.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_match_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_prediction_data.py")])
+        validate_match_data_consistency()
         if shutil.which("node"):
             tests = sorted(str(path) for path in (ROOT / "test").glob("*.test.mjs"))
             if not tests:
