@@ -174,6 +174,8 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "validate_rag_corpus.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_match_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_prediction_data.py")])
+        run([sys.executable, str(ROOT / "scripts" / "test_refresh_results.py")])
+        run([sys.executable, str(ROOT / "scripts" / "test_fetch_analysis_data.py")])
         validate_match_data_consistency()
         if shutil.which("node"):
             tests = sorted(str(path) for path in (ROOT / "test").glob("*.test.mjs"))

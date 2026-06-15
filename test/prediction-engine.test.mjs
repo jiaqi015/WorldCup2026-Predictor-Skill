@@ -18,6 +18,14 @@ function fixedRng(values) {
   };
 }
 
+function seededRng(seed = 123456789) {
+  let state = seed >>> 0;
+  return () => {
+    state = (1664525 * state + 1013904223) >>> 0;
+    return state / 0x100000000;
+  };
+}
+
 const strengths = {
   "强队": 5,
   "中队": 3,
@@ -229,6 +237,36 @@ test("ensemble mode accepts structured provider probabilities", () => {
   assert.equal(Math.round(probabilities.home * 10), 1);
   assert.equal(Math.round(probabilities.draw * 10), 2);
   assert.equal(Math.round(probabilities.away * 10), 7);
+});
+
+test("ensemble provider probabilities drive simulated score outcomes", () => {
+  const engine = loadPredictionEngine();
+  assert.equal(engine.POISSON_BASE_TOTAL, 2.4);
+  const rng = seededRng(20260616);
+  const counts = { home: 0, draw: 0, away: 0 };
+  const simulations = 2000;
+  for (let i = 0; i < simulations; i += 1) {
+    const result = engine.simulateMatch({
+      predictionMode: "ensemble",
+      allowDraw: true,
+      homeTeam: "强队",
+      awayTeam: "弱队",
+      strengths,
+      aiProbabilities: { home: 0.05, draw: 0.1, away: 0.85 },
+      rng,
+    });
+    counts[result.outcome] += 1;
+    assert.equal(
+      result.outcome,
+      result.homeGoals > result.awayGoals
+        ? "home"
+        : result.awayGoals > result.homeGoals
+          ? "away"
+          : "draw",
+    );
+  }
+  assert.ok(counts.away / simulations > 0.8, JSON.stringify(counts));
+  assert.ok(counts.home / simulations < 0.1, JSON.stringify(counts));
 });
 
 test("ensemble calibration is distinct from the strength model", () => {

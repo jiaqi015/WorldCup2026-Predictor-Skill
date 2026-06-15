@@ -1561,6 +1561,21 @@
     "events": [
       {
         "type": "goal",
+        "minute": "7'",
+        "team": "home",
+        "team_cn": "瑞典",
+        "source": "ESPN summary API",
+        "scorer_source_name": "Yasin Ayari",
+        "scorer_cn": "阿亚里",
+        "scorer_app_alias": "阿亚里",
+        "scorer_team_cn": "瑞典",
+        "scorer_jersey": "18",
+        "scorer_position": null,
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Yasin Ayari"
+      },
+      {
+        "type": "goal",
         "minute": "30'",
         "team": "home",
         "team_cn": "瑞典",

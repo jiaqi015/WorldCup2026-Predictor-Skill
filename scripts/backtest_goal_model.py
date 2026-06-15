@@ -12,6 +12,7 @@ import os
 import random
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -73,6 +74,39 @@ def compute_lambdas(hs: float, as_: float, base_total: float, k: float):
     la = max(0.15, min(5.0, (base_total / 2) * math.exp(-k * diff)))
     return lh, la
 
+def strength_probabilities(hs: float, as_: float) -> dict:
+    diff = hs - as_
+    home = math.exp(diff * 0.85)
+    away = math.exp(-diff * 0.85)
+    draw = max(0.22, 0.44 - abs(diff) * 0.07)
+    total = home + draw + away
+    return {"home": home / total, "draw": draw / total, "away": away / total}
+
+def sample_outcome(probabilities: dict, rng) -> str:
+    value = rng()
+    if value < probabilities["home"]:
+        return "home"
+    if value < probabilities["home"] + probabilities["draw"]:
+        return "draw"
+    return "away"
+
+def sample_conditional_scoreline(lh: float, la: float, outcome: str, rng):
+    h = a = 0
+    for _ in range(32):
+        h = max(0, min(9, sample_poisson(lh, rng)))
+        a = max(0, min(9, sample_poisson(la, rng)))
+        actual = "home" if h > a else "away" if a > h else "draw"
+        if actual == outcome:
+            return h, a
+    if outcome == "draw":
+        d = max(0, min(9, round((h + a) / 2)))
+        return d, d
+    if outcome == "home":
+        a = max(0, min(8, a))
+        return max(1, min(9, max(h, a + 1))), a
+    h = max(0, min(8, h))
+    return h, max(1, min(9, max(a, h + 1)))
+
 def simulate_old(strengths, home, away, rng, N=10000):
     """Old model: fixed distribution + outcome override."""
     hs = strengths.get(home, 3.0)
@@ -109,15 +143,16 @@ def simulate_old(strengths, home, away, rng, N=10000):
         results.append((h, a))
     return results
 
-def simulate_new(strengths, home, away, rng, base_total=2.6, k=0.45, N=10000):
-    """New model: dual Poisson."""
+def simulate_new(strengths, home, away, rng, base_total=2.4, k=0.45, N=10000):
+    """Runtime model: 1X2 outcome followed by conditional dual-Poisson score."""
     hs = strengths.get(home, 3.0)
     as_ = strengths.get(away, 3.0)
     lh, la = compute_lambdas(hs, as_, base_total, k)
+    probabilities = strength_probabilities(hs, as_)
     results = []
     for _ in range(N):
-        h = max(0, min(9, sample_poisson(lh, rng)))
-        a = max(0, min(9, sample_poisson(la, rng)))
+        outcome = sample_outcome(probabilities, rng)
+        h, a = sample_conditional_scoreline(lh, la, outcome, rng)
         results.append((h, a))
     return results
 
@@ -276,7 +311,7 @@ def main():
 
     # Write output
     output = {
-        "run_date": "2026-06-15",
+        "run_date": date.today().isoformat(),
         "matches_tested": len(matches),
         "simulations_per_match": N,
         "seed": seed,

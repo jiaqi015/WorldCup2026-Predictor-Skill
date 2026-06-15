@@ -64,6 +64,11 @@ test("shared match simulation uses the selected strategy and ranking provider", 
   assert.match(rnd[1], /predictionMode:predictionMode/);
   assert.match(rnd[1], /gameplayMode:playMode/);
   assert.match(rnd[1], /rankings:MODEL_RANKING/);
+  assert.match(html, /var sampledOutcome=sampleOutcome\(probabilities,rng\)/);
+  assert.match(
+    html,
+    /sampleConditionalScoreline\(lambdas,sampledOutcome,rng\)/,
+  );
 });
 
 test("shared match simulation passes match ids into complete odds lookup", () => {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-15",
+  "generated_at": "2026-06-16",
   "data_scope": {
     "tournament": "FIFA World Cup 2026",
     "team_count": 48,
@@ -2418,7 +2418,7 @@
       "away_team_cn": "南非",
       "odds": null,
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "high",
       "source_type": "unavailable",
       "notes": "Match already completed",
@@ -2578,7 +2578,7 @@
       "away_team_cn": "捷克",
       "odds": null,
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "high",
       "source_type": "unavailable",
       "notes": "Match already completed",
@@ -2704,7 +2704,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -120",
@@ -2867,7 +2867,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +110",
@@ -3091,7 +3091,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -450",
@@ -3178,7 +3178,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -155",
@@ -3296,7 +3296,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SCO -175",
@@ -3413,7 +3413,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR -140",
@@ -3508,7 +3508,7 @@
         "over_under_goals": 4.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -3000",
@@ -3680,7 +3680,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -105",
@@ -3859,7 +3859,7 @@
         "over_under_goals": 1.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU +145",
@@ -3984,7 +3984,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SWE -110",
@@ -3994,6 +3994,21 @@
         "attendance": 50987,
         "referee": "Yael Falcón Pérez",
         "events": [
+          {
+            "type": "goal",
+            "minute": "7'",
+            "team": "home",
+            "team_cn": "瑞典",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Yasin Ayari",
+            "scorer_cn": "阿亚里",
+            "scorer_app_alias": "阿亚里",
+            "scorer_team_cn": "瑞典",
+            "scorer_jersey": "18",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Yasin Ayari"
+          },
           {
             "type": "goal",
             "minute": "30'",
@@ -4156,7 +4171,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1200",
@@ -4189,7 +4204,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -170",
@@ -4222,7 +4237,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
@@ -4255,7 +4270,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: IRN -120",
@@ -4288,7 +4303,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -210",
@@ -4321,7 +4336,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR -475",
@@ -4354,7 +4369,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -245",
@@ -4387,7 +4402,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT -295",
@@ -4420,7 +4435,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -360",
@@ -4453,7 +4468,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -140",
@@ -4486,7 +4501,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GHA +115",
@@ -4519,7 +4534,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -250",
@@ -4552,7 +4567,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CZE -135",
@@ -4585,7 +4600,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -160",
@@ -4618,7 +4633,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -330",
@@ -4651,7 +4666,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX +100",
@@ -4684,7 +4699,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA -130",
@@ -4717,7 +4732,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR +100",
@@ -4750,7 +4765,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -1200",
@@ -4783,7 +4798,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR +125",
@@ -4816,7 +4831,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -155",
@@ -4849,7 +4864,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -180",
@@ -4882,7 +4897,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU -500",
@@ -4915,7 +4930,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN -140",
@@ -4948,7 +4963,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1000",
@@ -4981,7 +4996,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -245",
@@ -5014,7 +5029,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
@@ -5047,7 +5062,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY -130",
@@ -5080,7 +5095,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -155",
@@ -5113,7 +5128,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -800",
@@ -5146,7 +5161,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR +115",
@@ -5179,7 +5194,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ALG -190",
@@ -5212,7 +5227,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -425",
@@ -5245,7 +5260,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -320",
@@ -5278,7 +5293,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -180",
@@ -5311,7 +5326,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -220",
@@ -5344,7 +5359,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BIH -155",
@@ -5377,7 +5392,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI +115",
@@ -5410,7 +5425,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR -310",
@@ -5443,7 +5458,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -215",
@@ -5476,7 +5491,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX -120",
@@ -5509,7 +5524,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: KOR -165",
@@ -5542,7 +5557,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CIV -450",
@@ -5575,7 +5590,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -135",
@@ -5608,7 +5623,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN +110",
@@ -5641,7 +5656,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -200",
@@ -5674,7 +5689,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: PAR +115",
@@ -5707,7 +5722,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +155",
@@ -5740,7 +5755,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -115",
@@ -5773,7 +5788,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SEN -245",
@@ -5806,7 +5821,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CPV +140",
@@ -5839,7 +5854,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -155",
@@ -5872,7 +5887,7 @@
         "over_under_goals": 1.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY +130",
@@ -5905,7 +5920,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -340",
@@ -5938,7 +5953,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -155",
@@ -5971,7 +5986,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -340",
@@ -6004,7 +6019,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR +120",
@@ -6037,7 +6052,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COD +135",
@@ -6070,7 +6085,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT +125",
@@ -6103,7 +6118,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-15",
+      "as_of": "2026-06-16",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -525",
@@ -23175,7 +23190,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760415:goal:4",
@@ -23197,7 +23212,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760414:goal:0",
@@ -23219,7 +23234,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760414:goal:1",
@@ -23241,7 +23256,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760414:goal:2",
@@ -23263,7 +23278,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760416:goal:1",
@@ -23285,7 +23300,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760416",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760416:goal:5",
@@ -23307,7 +23322,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760416",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760417:goal:1",
@@ -23329,7 +23344,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760417:goal:2",
@@ -23351,7 +23366,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760417:goal:5",
@@ -23373,7 +23388,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760417:goal:9",
@@ -23395,7 +23410,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760419:goal:0",
@@ -23417,7 +23432,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760419",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760419:goal:1",
@@ -23439,7 +23454,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760419",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760418:goal:0",
@@ -23461,7 +23476,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760418",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760421:goal:0",
@@ -23483,7 +23498,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760421",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760421:goal:1",
@@ -23505,7 +23520,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760421",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760422:goal:0",
@@ -23527,7 +23542,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760422:goal:1",
@@ -23549,7 +23564,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760422:goal:2",
@@ -23571,7 +23586,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760422:goal:3",
@@ -23593,7 +23608,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760422:goal:4",
@@ -23615,7 +23630,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760422:goal:5",
@@ -23637,7 +23652,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760425:goal:0",
@@ -23659,7 +23674,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760425:goal:1",
@@ -23681,7 +23696,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760425:goal:3",
@@ -23703,7 +23718,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760425:goal:5",
@@ -23725,7 +23740,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760423:goal:4",
@@ -23747,10 +23762,32 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760423",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
       "event_id": "760424:goal:0",
+      "match_id": "760424",
+      "event_type": "goal",
+      "minute": "7'",
+      "team_side": "home",
+      "team_cn": "瑞典",
+      "player_source_name": "Yasin Ayari",
+      "player_display_name_cn": "阿亚里",
+      "player_app_alias": "阿亚里",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Yasin Ayari",
+      "player_jersey": "18",
+      "player_position": null,
+      "assist_source_name": null,
+      "assist_display_name_cn": null,
+      "assist_app_alias": null,
+      "assist_mapping_status": null,
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
+      "as_of": "2026-06-16"
+    },
+    {
+      "event_id": "760424:goal:1",
       "match_id": "760424",
       "event_type": "goal",
       "minute": "30'",
@@ -23769,10 +23806,10 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
-      "event_id": "760424:goal:1",
+      "event_id": "760424:goal:2",
       "match_id": "760424",
       "event_type": "goal",
       "minute": "43'",
@@ -23791,10 +23828,10 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
-      "event_id": "760424:goal:3",
+      "event_id": "760424:goal:4",
       "match_id": "760424",
       "event_type": "goal",
       "minute": "59'",
@@ -23813,10 +23850,10 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
-      "event_id": "760424:goal:4",
+      "event_id": "760424:goal:5",
       "match_id": "760424",
       "event_type": "goal",
       "minute": "84'",
@@ -23835,10 +23872,10 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     },
     {
-      "event_id": "760424:goal:5",
+      "event_id": "760424:goal:6",
       "match_id": "760424",
       "event_type": "goal",
       "minute": "90'+6'",
@@ -23857,7 +23894,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-15"
+      "as_of": "2026-06-16"
     }
   ],
   "coverage_report": {
@@ -24000,8 +24037,8 @@
     },
     "actual_match_events": {
       "completed_matches": 12,
-      "goal_events": 32,
-      "mapped_scorers": 32,
+      "goal_events": 33,
+      "mapped_scorers": 33,
       "source_only_scorers": []
     },
     "data_quality_notes": [
