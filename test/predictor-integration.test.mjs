@@ -147,7 +147,35 @@ test("poster sharing emphasizes URL and keeps modal actions plain", () => {
   assert.doesNotMatch(html, /btnDownloadPoster:"💾/);
   assert.doesNotMatch(html, /btnCopyLink:"🔗/);
   assert.match(html, /btnDownloadPoster:"保存海报"/);
-  assert.match(html, /btnCopyLink:"复制分享链接"/);
+  assert.match(html, /btnCopyLink:"复制分享链接（点击可查看你预测全部赛程）"/);
+  assert.match(html, /btnShare:"分享我的专属预测海报&链接"/);
+});
+
+test("shared prediction links use a shorter schedule hash while preserving old links", () => {
+  assert.match(html, /var SHORT_SHARE_STATE_VERSION=3/);
+  assert.match(html, /function serializeShortState\(\)/);
+  assert.match(html, /function deserializeShortState\(encoded\)/);
+  assert.match(html, /hash&&hash\.indexOf\("#s="\)===0/);
+  assert.match(html, /hash&&hash\.indexOf\("#p="\)===0/);
+  assert.match(html, /return location\.origin\+location\.pathname\+"\#s="\+encoded/);
+  assert.match(html, /return encoded\?location\.origin\+location\.pathname\+"\#p="\+encoded:null/);
+  assert.match(html, /var url=getSharePredictionUrl\(\)/);
+  assert.ok(
+    html.indexOf("function T(key,vars)") < html.indexOf("loadState();"),
+    "shared-view banner needs translations before loadState runs",
+  );
+  assert.match(html, /if\(isViewMode\)\{showViewBanner\(\);applyViewModeLockdown\(\);\}/);
+});
+
+test("share actions guide clicks and keep long copy text readable", () => {
+  assert.match(html, /\.share-cta\{[^}]*animation:shareCtaPulse/);
+  assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.share-cta\{animation:none\}\}/);
+  assert.match(html, /body\.dark \.share-cta/);
+  assert.match(html, /class="btn-rand share-cta" onclick="genShareCard\(\)"/);
+  assert.match(html, /\.share-copy-btn\{[^}]*white-space:normal/);
+  assert.match(html, /id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink\(\)"/);
+  assert.match(html, /btnCopyLink:"Copy share link \(view full schedule\)"/);
+  assert.match(html, /btnShare:"Share my poster & link"/);
 });
 
 test("group matches render chronologically without changing fixture identity", () => {
