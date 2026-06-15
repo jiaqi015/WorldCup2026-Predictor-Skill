@@ -44,6 +44,29 @@ POS_MAP = {
     "F": "边锋"
 }
 
+# Product-curated team icons for entertainment mode. Values use the same
+# localized labels as PL and are accepted only while they remain in the 11.
+STAR_PLAYER_OVERRIDES = {
+    "佛得角": "加里-罗德里格斯",
+    "刚果金": "卡库塔",
+    "克罗地亚": "克拉马里奇",
+    "德国": "沃尔特马德",
+    "加纳": "塞梅尼奥",
+    "伊拉克": "艾哈迈德",
+    "科特迪瓦": "迪奥曼德",
+    "日本": "前田",
+    "约旦": "法库里",
+    "摩洛哥": "苏菲安",
+    "巴拿马": "迪亚斯",
+    "苏格兰": "亚当斯",
+    "西班牙": "托雷斯",
+    "突尼斯": "伊斯梅尔",
+    "土耳其": "耶尔德兹",
+    "美国": "佩皮",
+    "乌拉圭": "努涅斯",
+    "乌兹别克": "乌鲁诺夫",
+}
+
 
 def load_data():
     """Load squad data and player mapping."""
@@ -80,6 +103,7 @@ def generate_new_variables(squads, mapping):
     lines.append("var PL={")
 
     pl_entries = []
+    pl_data = {}  # team_cn -> [cn_names], used to keep STAR_PLAYER in PL
     for team_en, team_data in squads.items():
         team_cn = TEAM_CN_MAP.get(team_en, team_en)
         players = team_data.get('players', [])
@@ -95,8 +119,9 @@ def generate_new_variables(squads, mapping):
         sorted_players = sorted(players, key=get_jersey)
         starters = sorted_players[:11]
 
-        player_names = [json.dumps(get_player_cn_name(p["name"], mapping, team_en), ensure_ascii=False) for p in starters]
-        pl_entries.append(f'"{team_cn}":[{",".join(player_names)}]')
+        player_names = [get_player_cn_name(p["name"], mapping, team_en) for p in starters]
+        pl_data[team_cn] = player_names
+        pl_entries.append(f'"{team_cn}":[{",".join(json.dumps(n, ensure_ascii=False) for n in player_names)}]')
 
     lines.append(','.join(pl_entries))
     lines.append('};')
@@ -127,18 +152,27 @@ def generate_new_variables(squads, mapping):
     lines.append(','.join(pos_entries))
     lines.append('};')
 
-    # Generate STAR_PLAYER
+    # Generate STAR_PLAYER. Curated choices preserve product intent across
+    # refreshes; every choice is still constrained to the generated PL 11.
     lines.append("\nvar STAR_PLAYER={")
     star_entries = []
     for team_en, team_data in squads.items():
         team_cn = TEAM_CN_MAP.get(team_en, team_en)
-        players = team_data.get('players', [])
-        # Pick first forward or first player as star
-        forwards = [p for p in players if p.get('position') == 'F']
-        star = forwards[0] if forwards else players[0] if players else None
-        if star:
-            cn = get_player_cn_name(star['name'], mapping, team_en)
-            star_entries.append(f'{json.dumps(team_cn, ensure_ascii=False)}:{json.dumps(cn, ensure_ascii=False)}')
+        starters = pl_data.get(team_cn, [])
+        curated = STAR_PLAYER_OVERRIDES.get(team_cn)
+        full_players = team_data.get('players', [])
+        forward_in_pl = []
+        for p in full_players:
+            if p.get('position') == 'F':
+                cn = get_player_cn_name(p['name'], mapping, team_en)
+                if cn in starters:
+                    forward_in_pl.append(cn)
+        if curated in starters:
+            star_cn = curated
+        else:
+            star_cn = forward_in_pl[0] if forward_in_pl else (starters[0] if starters else None)
+        if star_cn:
+            star_entries.append(f'{json.dumps(team_cn, ensure_ascii=False)}:{json.dumps(star_cn, ensure_ascii=False)}')
     lines.append(','.join(star_entries))
     lines.append('};')
 
@@ -173,7 +207,8 @@ def update_index_file(new_vars):
 
     # Replace PL variable
     content = re.sub(
-        r'var PL=\{[^;]+\};',
+        r'(?:(?:// Generated from official ESPN World Cup 2026 data\n'
+        r'// Updated: [^\n]+\n)+)?var PL=\{[^;]+\};',
         new_vars.split('var EN=')[0].strip(),
         content,
         flags=re.DOTALL

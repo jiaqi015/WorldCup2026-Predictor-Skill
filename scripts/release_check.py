@@ -38,9 +38,9 @@ def load_json(path: Path) -> dict:
     return payload
 
 
-def run(command: list[str]) -> None:
+def run(command: list[str], cwd: Path | None = None) -> None:
     print("+", " ".join(command), flush=True)
-    subprocess.run(command, cwd=ROOT, check=True)
+    subprocess.run(command, cwd=cwd or ROOT, check=True)
 
 
 def optional_system_validator(relative_path: str, target: Path) -> None:
@@ -115,7 +115,9 @@ def main() -> int:
             tests = sorted(str(path) for path in (ROOT / "test").glob("*.test.mjs"))
             if not tests:
                 fail("no Node.js tests found under test/")
-            run(["node", "--test", *tests])
+            # Node 24+ requires the test runner to scan an explicit dir.
+            # Run from the test/ directory so the file pattern is picked up.
+            run(["node", "--test"], cwd=ROOT / "test")
         else:
             print("[SKIP] Node.js unavailable; skipped prediction engine tests.")
         optional_system_validator(

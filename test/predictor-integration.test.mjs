@@ -161,6 +161,7 @@ test("group progress uses the liquid glass progress component", () => {
   assert.match(html, /class="group-progress-liquid"/);
   assert.match(html, /role="progressbar"/);
   assert.match(html, /aria-valuenow="'\+doneM\+'"/);
+  assert.match(html, /width:min\(620px,calc\(100% - 32px\)\)/);
   assert.match(html, /rgba\(154,205,226,0\.34\)/);
   assert.match(html, /rgba\(92,158,190,0\.24\)/);
   assert.doesNotMatch(html, /max-width:400px;margin:0 auto 16px;text-align:center/);
@@ -169,7 +170,14 @@ test("group progress uses the liquid glass progress component", () => {
 test("group simulation toolbar prioritizes remaining matches before full re-simulation", () => {
   assert.match(html, /btnRandAll:"⚡ 重新模拟全部",btnFillRemaining:"✨ 模拟补全剩余"/);
   assert.match(html, /btnRandAll:"⚡ Re-simulate All",btnFillRemaining:"✨ Simulate Remaining"/);
-  assert.match(html, /var h='<div class="topbar">'\+fillBtn\+'<button class="btn-rand" onclick="raG\(\)">'\+T\("btnRandAll"\)/);
+  assert.match(html, /var h='<div class="topbar">'\+fillBtn\+'<button class="btn-rand btn-rand-secondary" onclick="raG\(\)">'\+T\("btnRandAll"\)/);
+  assert.match(html, /\.btn-rand-secondary\{background:linear-gradient\(180deg,#2A2D32,#1A1D21\)/);
+});
+
+test("play mode labels and selected entertainment color stay intentional", () => {
+  assert.match(html, /\{k:"normal",zh:"标准模式",en:"Standard"\}/);
+  assert.doesNotMatch(html, /\{k:"normal",zh:"普通模式"/);
+  assert.match(html, /\.play-mode\.clone::before\{[^}]*rgba\(124,207,255,0\.82\)[^}]*rgba\(172,136,255,0\.68\)/);
 });
 
 test("entire group cards are selectable without hijacking nested controls", () => {

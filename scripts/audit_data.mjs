@@ -119,6 +119,13 @@ let mixedStar = [];
 for (const t of Object.keys(STAR_PLAYER)) { const s = STAR_PLAYER[t]; if (!isCleanDisplayName(s)) mixedStar.push(`STAR[${t}]=${s}`); }
 assert('G3.2 STAR_PLAYER 值全中文或白名单', mixedStar.length===0, `${mixedStar.length}: ${mixedStar.slice(0,5).join(' | ')}`);
 
+let starOutsidePl = [];
+for (const t of Object.keys(STAR_PLAYER)) {
+  const star = STAR_PLAYER[t];
+  if (!(PL[t] || []).includes(star)) starOutsidePl.push(`STAR[${t}]=${star}`);
+}
+assert('G3.2b STAR_PLAYER 均属于球队首发名单', starOutsidePl.length===0, `${starOutsidePl.length}: ${starOutsidePl.slice(0,5).join(' | ')}`);
+
 let mixedEn = [];
 for (const k of Object.keys(EN)) if (!isCleanDisplayName(k)) mixedEn.push(k);
 assert('G3.3 EN 键全中文或白名单', mixedEn.length===0, `${mixedEn.length}: ${mixedEn.slice(0,5).join(' | ')}`);

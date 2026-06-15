@@ -133,13 +133,15 @@ body.dark .group-reset{color:#E2DDDD}
 .topbar button.dim{opacity:1;cursor:not-allowed;background:var(--bg-soft)!important;color:var(--ink-light)!important;border:1px solid var(--line-delicate)!important;box-shadow:none!important}
 .topbar button.dim:hover{transform:none}
 .btn-rand{background:var(--ink-dark);color:var(--bg-card);box-shadow:0 8px 16px rgba(0,0,0,0.1);border:1px solid var(--ink-dark)}
+.btn-rand-secondary{background:linear-gradient(180deg,#2A2D32,#1A1D21);border-color:#24282D;box-shadow:0 7px 15px rgba(0,0,0,0.085);color:#fff}
 .btn-next-round{background:var(--accent-gold);color:#2A2108;box-shadow:0 8px 18px rgba(229,181,71,0.24);border:1px solid var(--accent-gold)}
 .btn-next-round:hover{transform:translateY(-1px)}
 .btn-reset{background:var(--bg-soft);color:var(--ink-dark);border:1px solid var(--line-delicate)}
 .play-mode{position:relative;display:grid;grid-template-columns:1fr 1fr 1fr;width:210px;padding:3px;border-radius:100px;background:rgba(255,255,255,0.78);border:1px solid rgba(200,204,212,0.72);box-shadow:0 8px 24px rgba(18,20,23,0.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .play-mode::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px) / 3);border-radius:100px;background:rgba(255,255,255,0.72);box-shadow:0 8px 18px rgba(18,20,23,0.12),inset 0 1px 0 rgba(255,255,255,0.82);transition:transform 0.32s cubic-bezier(0.2,0.8,0.2,1)}
-.play-mode.clone::before{transform:translateX(100%)}
+.play-mode.clone::before{transform:translateX(100%);background:linear-gradient(135deg,rgba(124,207,255,0.82),rgba(172,136,255,0.68));box-shadow:0 8px 18px rgba(89,128,255,0.18),inset 0 1px 0 rgba(255,255,255,0.78)}
 .play-mode.chaos::before{transform:translateX(200%);background:linear-gradient(135deg,rgba(255,180,140,0.85),rgba(245,150,120,0.75));box-shadow:0 8px 18px rgba(220,100,60,0.18),inset 0 1px 0 rgba(255,255,255,0.65)}
+body.dark .play-mode.clone::before{background:linear-gradient(135deg,rgba(67,151,195,0.54),rgba(124,89,196,0.46));box-shadow:0 8px 18px rgba(64,120,210,0.14),inset 0 1px 0 rgba(255,255,255,0.16)}
 body.dark .play-mode.chaos::before{background:linear-gradient(135deg,rgba(180,90,60,0.62),rgba(150,70,50,0.5))}
 .play-mode button{position:relative;z-index:1;height:28px;border:0;border-radius:100px;background:transparent;color:var(--ink-medium);font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:color 0.2s ease}
 .play-mode button.on{color:var(--ink-dark)}
@@ -158,6 +160,7 @@ body.dark .predict-mode{background:rgba(255,255,255,0.05);border-color:rgba(255,
 body.dark .predict-mode select{background-color:rgba(255,255,255,0.08);color:var(--ink-dark);border-color:rgba(255,255,255,0.10);color-scheme:dark;background-image:linear-gradient(45deg,transparent 50%,var(--ink-medium) 50%),linear-gradient(135deg,var(--ink-medium) 50%,transparent 50%)}
 body.dark .predict-mode option{background:#0C1A12;color:#ECEFE8}
 body.dark .btn-rand{background:linear-gradient(180deg,#16291D,#0E1C14);color:var(--ink-dark);box-shadow:0 4px 12px rgba(0,0,0,0.4),inset 0 1px 0 rgba(229,194,106,0.10);border:1px solid #24382B}
+body.dark .btn-rand-secondary{background:linear-gradient(180deg,#203827,#15261B);border-color:#2C4432;box-shadow:0 4px 12px rgba(0,0,0,0.34),inset 0 1px 0 rgba(229,194,106,0.08)}
 body.dark .btn-next-round{background:var(--accent-gold);color:#241B05;box-shadow:0 6px 18px rgba(229,194,106,0.18);border-color:var(--accent-gold)}
 body.dark .btn-reset{background:transparent;color:var(--ink-medium);border:1px solid var(--line-delicate)}
 body.dark .btn-reset:hover{background:var(--bg-soft);color:var(--ink-dark)}
@@ -190,7 +193,7 @@ body.dark .t3i.nq{color:var(--ink-medium)}
 .status-mark{width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#059669;color:white;font-size:11px;font-weight:800;line-height:1;flex-shrink:0}
 body.dark .status.ok{background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.20);color:#6EE7B7;box-shadow:none}
 body.dark .status-mark{background:#10B981;color:#07110C}
-.group-progress{--progress:0%;position:relative;width:min(520px,calc(100% - 32px));height:26px;margin:0 auto 18px;overflow:hidden;border-radius:999px;border:1px solid rgba(93,155,184,0.26);background:linear-gradient(180deg,rgba(255,255,255,0.42),rgba(230,242,248,0.22));box-shadow:inset 0 1px 0 rgba(255,255,255,0.86),inset 0 -8px 18px rgba(93,155,184,0.055),0 5px 16px rgba(18,20,23,0.035);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);isolation:isolate}
+.group-progress{--progress:0%;position:relative;width:min(620px,calc(100% - 32px));height:26px;margin:0 auto 18px;overflow:hidden;border-radius:999px;border:1px solid rgba(93,155,184,0.26);background:linear-gradient(180deg,rgba(255,255,255,0.42),rgba(230,242,248,0.22));box-shadow:inset 0 1px 0 rgba(255,255,255,0.86),inset 0 -8px 18px rgba(93,155,184,0.055),0 5px 16px rgba(18,20,23,0.035);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);isolation:isolate}
 .group-progress::after{content:"";position:absolute;left:1px;right:1px;top:1px;height:45%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.54),transparent);pointer-events:none;z-index:3}
 .group-progress-liquid{position:absolute;z-index:0;left:0;bottom:0;width:var(--progress);height:100%;border-radius:999px;background:linear-gradient(90deg,rgba(154,205,226,0.34),rgba(92,158,190,0.24));box-shadow:inset 0 1px 0 rgba(255,255,255,0.46),inset -1px 0 0 rgba(62,126,158,0.18),0 0 14px rgba(92,158,190,0.10);transition:width 0.55s cubic-bezier(0.16,1,0.3,1)}
 .group-progress-liquid::before,.group-progress-liquid::after{display:none}
@@ -602,31 +605,13 @@ var FC={"墨西哥":"mx","南非":"za","韩国":"kr","捷克":"cz","加拿大":"
 function fi(t,s){var c=FC[t];if(!c)return "";var sz=s||"fl";return '<img class="'+sz+'" src="https://flagcdn.com/w40/'+c+'.png" alt="'+t+'" onerror="this.style.display=\'none\'">';}
 var GD={A:["墨西哥","南非","韩国","捷克"],B:["加拿大","波黑","卡塔尔","瑞士"],C:["巴西","摩洛哥","海地","苏格兰"],D:["美国","巴拉圭","澳大利亚","土耳其"],E:["德国","库拉索","科特迪瓦","厄瓜多尔"],F:["荷兰","日本","瑞典","突尼斯"],G:["比利时","埃及","伊朗","新西兰"],H:["西班牙","佛得角","沙特","乌拉圭"],I:["法国","伊拉克","塞内加尔","挪威"],J:["阿根廷","阿尔及利亚","奥地利","约旦"],K:["葡萄牙","刚果金","乌兹别克","哥伦比亚"],L:["英格兰","克罗地亚","加纳","巴拿马"]};
 // Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-12 15:57
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-13 00:01
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-13 09:29
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-13 09:41
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-13 13:05
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-13 22:33
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-13 22:40
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-14 22:24
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-15 12:23
-// Generated from official ESPN World Cup 2026 data
-// Updated: 2026-06-15 12:24
+// Updated: 2026-06-15 13:28
 var PL={
 "阿尔及利亚":["梅尔文","曼迪","阿什拉夫","穆罕默德","贝拉伊德","拉米兹","马赫雷斯","奥阿尔","古伊里","法雷斯","阿尼斯"],"阿根廷":["穆索","巴莱尔迪","塔利亚菲科","蒙蒂尔","帕雷德斯","马丁内斯","德保罗","巴尔科","阿尔瓦雷斯","梅西","乔瓦尼"],"澳大利亚":["瑞安","德格内克","亚历山德罗","雅各布","乔丹","杰森","莱基","欧文","穆罕默德","赫鲁斯蒂奇","马比尔"],"奥地利":["施拉格","大卫","丹索","施拉格","波施","塞瓦尔德","阿瑙托维奇","大卫","萨比策","格里利奇","格雷戈里奇"],"比利时":["库尔图瓦","德巴斯特","泰特","梅切莱","德凯珀","维特塞尔","德布劳内","蒂勒曼斯","卢卡库","特罗萨德","多库"],"波黑":["瓦西利","穆亚基奇","丹尼斯","穆哈雷莫维奇","科拉希纳茨","本杰明","德迪奇","吉戈维奇","巴兹达尔","德米罗维奇","哲科"],"巴西":["阿利松","埃德松","加布里埃尔","马尔基尼奥斯","卡塞米罗","阿莱士-桑德罗","维尼修斯","吉马良斯","库尼亚","内马尔","拉菲尼亚"],"加拿大":["圣克莱尔","约翰斯顿","琼斯","德富热罗尔","沃特曼","舒瓦尼耶尔","尤斯塔基奥","科内","拉林","戴维","利亚姆"],"佛得角":["塔瓦雷斯","斯托皮拉","博尔赫斯","洛佩斯","洛根-科斯塔","凯文-皮纳","卡布拉尔","保罗","本希莫尔","蒙泰罗","加里-罗德里格斯"],"哥伦比亚":["大卫","穆尼奥斯","约翰","阿里亚斯","凯文","里奥斯","路易斯迪亚斯","豪尔赫","科尔多巴","哈梅斯","约翰"],"刚果金":["姆帕西","万-比萨卡","卡普阿迪","图安泽贝","迪伦","穆考","姆布库","穆图萨米","布莱恩","邦贡达","卡库塔"],"克罗地亚":["利瓦科维奇","斯塔尼希奇","庞格拉契奇","格瓦迪奥尔","卡莱塔-卡尔","舒塔洛","尼古拉","科瓦契奇","克拉马里奇","莫德里奇","布迪米尔"],"库拉索":["鲁姆","桑博","加里","范艾玛","弗洛拉努斯","罗梅拉图","朱尼尼奥-巴库纳","科梅内西亚","洛卡迪亚","莱安德罗-巴库纳","安东尼斯"],"捷克":["科瓦尔","大卫","霍莱什","罗宾","曹法尔","哈洛佩克","克雷伊奇","达里达","赫洛热克","希克","库赫塔"],"厄瓜多尔":["加拉尔萨","托雷斯","因卡皮耶","乔尔","阿尔西瓦尔","威廉","埃斯图皮尼安","巴伦西亚","约翰","帕埃斯","罗德里格斯"],"埃及":["穆罕默德","易卜拉欣","法图赫","阿卜杜勒马吉德","拉比亚","穆罕默德","特雷泽盖","阿舒尔","哈姆扎","萨拉赫","穆斯塔法"],"英格兰":["皮克福德","孔萨","尼科","赖斯","斯通斯","圭希","萨卡","安德森","凯恩","贝林厄姆","拉什福德"],"法国":["桑巴","古斯托","吕卡","于帕梅卡诺","孔德","科内","登贝莱","琼阿梅尼","图拉姆","姆巴佩","奥利塞"],"德国":["诺伊尔","吕迪格","安东","塔","帕夫洛维奇","基米希","哈弗茨","戈雷茨卡","勒韦林","穆西亚拉","沃尔特马德"],"加纳":["齐吉","塞杜","伊伦基","阿杰泰","帕尔特","阿卜杜勒","伊萨哈库","西博","乔丹·阿尤","托马斯-阿桑特","塞梅尼奥"],"海地":["圣弗洛尔","阿尔库斯","泰尔蒙西","里卡多","德尔克鲁瓦","塞莱曼","德里克","马丁","纳宗","贝勒加德","迪德松"],"伊朗":["贝兰万德","萨利赫","哈吉萨菲","肖贾","穆罕默迪","易卜拉希米","贾汗巴赫什","穆罕默德","塔雷米","迈赫迪","阿里"],"伊拉克":["法赫德","苏拉卡","侯赛因阿里","扎伊德","哈希姆","穆纳夫","优素福","易卜拉欣","阿里","穆罕纳德","艾哈迈德"],"科特迪瓦":["亚希亚-福法纳","迪奥曼德","科南","塞里","辛戈","塞科-福法纳","科苏努","凯西","邦尼","阿丁格拉","迪奥曼德"],"日本":["铃木彩艳","菅原由势","谷口","板仓","长友","远藤","田中碧","久保建英","后藤圭佑","堂安律","前田"],"约旦":["阿布莱拉","穆罕默德","阿卜杜拉","阿布·达哈布","谢菲","贾穆斯","穆罕默德","达阿乌德","塔阿马里","塔马里","法库里"],"墨西哥":["兰赫尔","桑切斯","蒙特斯","阿尔瓦雷斯","巴斯克斯","利拉","罗莫","菲达尔戈","希门尼斯MEX","维加","希门尼斯"],"摩洛哥":["布努","哈基米","马兹拉维","阿姆拉巴特","阿格尔德","布阿迪","塔尔比","乌纳希","苏菲安","迪亚斯","伊斯梅尔"],"荷兰":["维尔布鲁根","赫特鲁伊达","德容","范戴克","阿凯","扬","克鲁伊维特","格拉文贝赫","韦格霍斯特","德佩","加克波"],"新西兰":["克罗科姆","佩恩","德弗里斯","宾顿","博克索尔","乔-贝尔","加贝特","马尔科","克里斯-伍德","萨普里特-辛格","伊莱-贾斯特"],"挪威":["尼兰德","托尔斯比","阿杰尔","奥斯蒂加德","大卫","贝里","瑟尔洛特","贝尔格","哈兰德","厄德高","拉森"],"巴拿马":["路易斯","塞萨尔","何塞","埃斯科巴","法里尼亚","马丁内斯","科珀斯","法哈尔多","罗德里格斯","迪亚斯","巴尔塞纳斯"],"巴拉圭":["费尔南德斯","何塞","贝拉斯克斯","奥马尔","巴尔布埃纳","阿隆索","卡多索","戈麦斯","萨纳布里亚","阿尔米隆","毛里西奥"],"葡萄牙":["迪奥戈-科斯塔","塞梅多","鲁本-迪亚斯","阿劳霍","迪奥戈","努涅斯","C罗","B费","拉莫斯","贝尔纳多","若昂·费利克斯"],"卡塔尔":["马哈茂德","米格尔","吕卡门德斯","拉耶","贾比尔","穆内尔","艾哈迈德","朱尼尔","穆罕默德","海多斯","阿菲夫"],"沙特":["纳瓦夫","阿里","阿里","阿姆里","哈桑","纳赛尔","朱韦尔","叶海亚","布里坎","道萨里","谢赫里"],"苏格兰":["古恩","希基","罗伯逊","麦克托米奈","汉利","蒂尔尼","麦金","泰勒","戴克斯","亚当斯","瑞安"],"塞内加尔":["迪乌夫","萨尔","库利巴利","塞克","盖耶","西斯","迪奥","卡马拉","迪昂","马内","尼古拉杰克逊"],"南非":["威廉姆斯","唐邦","恩达马内","莫科纳","塔伦特","霍尔","阿波利斯","莫雷米","福斯特","雷莱博希莱","兹瓦内"],"韩国":["金","李","李","金","金","黄","孙","白升浩","赵","李","黄"],"西班牙":["拉波尔塔","马克","格里马尔多","加西亚","马科斯","梅里诺","托雷斯","鲁伊斯","加维","奥尔莫","耶雷米·皮诺"],"瑞典":["雅各布","拉格尔比尔克","林德洛夫","希恩","加布里埃尔","约翰松","贝里瓦尔","奥尔松","伊萨克","本杰明","埃兰加"],"瑞士":["科贝尔","穆海姆","维德默","埃尔韦迪","阿坎吉","扎卡里亚","恩博洛","弗罗伊勒","曼赞比","扎卡","恩多耶"],"突尼斯":["沙马克","阿卜迪","塔尔比","塔尔比","阿鲁斯","迪伦","伊莱亚斯","埃利亚斯-萨德","马斯图里","梅布里","伊斯梅尔"],"土耳其":["居诺克","切利克","德米拉尔","瑟云聚","阿克居恩杜兹","柯克曲","阿克蒂尔科卢","居莱尔","居尔","恰尔汗奥卢","耶尔德兹"],"美国":["特纳","德斯特","理查兹","亚当斯","罗宾逊","特拉斯蒂","雷纳","麦肯尼","佩皮","普利西奇","阿伦森"],"乌拉圭":["罗切特","希门尼斯","卡塞雷斯","阿劳霍","乌加特","本坦库尔","克鲁斯","巴尔韦德","努涅斯","德阿拉斯凯塔","佩利斯特里"],"乌兹别克":["库瓦托夫","胡萨诺夫","阿卜杜拉耶夫","赛菲耶夫","阿舒尔马托夫","莫兹戈沃伊","内马托夫","伊斯坎杰罗夫","哈姆罗贝科夫","马沙里波夫","乌鲁诺夫"]
 };
 
 var STAR_PLAYER={
-"阿尔及利亚":"马赫雷斯","阿根廷":"梅西","澳大利亚":"莱基","奥地利":"阿瑙托维奇","比利时":"卢卡库","波黑":"哲科","巴西":"内马尔","加拿大":"拉林","佛得角":"瑞安-门德斯","哥伦比亚":"科尔多巴","刚果金":"巴坎布","克罗地亚":"佩里西奇","库拉索":"洛卡迪亚","捷克":"希克","厄瓜多尔":"巴伦西亚","埃及":"特雷泽盖","英格兰":"凯恩","法国":"图拉姆","德国":"萨内","加纳":"博阿基耶","海地":"纳宗","伊朗":"塔雷米","伊拉克":"艾门","科特迪瓦":"佩佩","日本":"伊东纯也","约旦":"马哈茂德","墨西哥":"希门尼斯MEX","摩洛哥":"阿尤布","荷兰":"德佩","新西兰":"克里斯-伍德","挪威":"瑟尔洛特","巴拿马":"卡里略","巴拉圭":"阿尔米隆","葡萄牙":"C罗","卡塔尔":"朱尼尔","沙特":"谢赫里","苏格兰":"劳伦斯","塞内加尔":"马内","南非":"福斯特","韩国":"孙","西班牙":"伊格莱西亚斯","瑞典":"伊萨克","瑞士":"恩博洛","突尼斯":"菲拉斯","土耳其":"阿克金","美国":"亚历杭德罗","乌拉圭":"罗德里格斯","乌兹别克":"霍尔马托夫"
+"阿尔及利亚":"马赫雷斯","阿根廷":"梅西","澳大利亚":"莱基","奥地利":"阿瑙托维奇","比利时":"卢卡库","波黑":"哲科","巴西":"内马尔","加拿大":"拉林","佛得角":"加里-罗德里格斯","哥伦比亚":"科尔多巴","刚果金":"卡库塔","克罗地亚":"克拉马里奇","库拉索":"洛卡迪亚","捷克":"希克","厄瓜多尔":"巴伦西亚","埃及":"特雷泽盖","英格兰":"凯恩","法国":"图拉姆","德国":"沃尔特马德","加纳":"塞梅尼奥","海地":"纳宗","伊朗":"塔雷米","伊拉克":"艾哈迈德","科特迪瓦":"迪奥曼德","日本":"前田","约旦":"法库里","墨西哥":"希门尼斯MEX","摩洛哥":"苏菲安","荷兰":"德佩","新西兰":"克里斯-伍德","挪威":"瑟尔洛特","巴拿马":"迪亚斯","巴拉圭":"阿尔米隆","葡萄牙":"C罗","卡塔尔":"朱尼尔","沙特":"谢赫里","苏格兰":"亚当斯","塞内加尔":"马内","南非":"福斯特","韩国":"孙","西班牙":"托雷斯","瑞典":"伊萨克","瑞士":"恩博洛","突尼斯":"伊斯梅尔","土耳其":"耶尔德兹","美国":"佩皮","乌拉圭":"努涅斯","乌兹别克":"乌鲁诺夫"
 };
 
 // === REAL DATA: Rankings, Venues, Coaches, Match Schedule ===
@@ -1419,7 +1404,7 @@ function normalizePredictionMode(play,mode){
 }
 function modeControl(){
   var modes=[
-    {k:"normal",zh:"普通模式",en:"Normal"},
+    {k:"normal",zh:"标准模式",en:"Standard"},
     {k:"clone", zh:"娱乐模式",en:"Fun"},
     {k:"chaos", zh:"爆冷模式",en:"Upset"}
   ];
@@ -1539,7 +1524,7 @@ var I18N={
     histTitle:"历史预测",histClear:"清空",histLoad:"点击加载",
     histConfirmClear:"确认清空所有历史预测？",histEmpty:"暂无历史 — 完成一份淘汰赛后会自动保存",
     modeChaos:"爆冷模式",
-    modesInfoHTML:'<b>三种玩法模式</b><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">普通</span><span>强队更稳定，比分较真实，冷门有限。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">娱乐</span><span>每队 11 人变身同一当家球星，射手榜进入"全员王牌"娱乐宇宙。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:#C8744A;min-width:40px">爆冷</span><span>弱队爆冷概率大增，比分更夸张，可能反向虐杀强队。世界杯变剧本杀。</span></div>',
+    modesInfoHTML:'<b>三种玩法模式</b><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">标准</span><span>强队更稳定，比分较真实，冷门有限。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:var(--ink-dark);min-width:40px">娱乐</span><span>每队 11 人变身同一当家球星，射手榜进入"全员王牌"娱乐宇宙。</span></div><div style="margin-top:6px;display:flex;gap:6px"><span style="font-weight:700;color:#C8744A;min-width:40px">爆冷</span><span>弱队爆冷概率大增，比分更夸张，可能反向虐杀强队。世界杯变剧本杀。</span></div>',
     btnRandAll:"⚡ 重新模拟全部",btnFillRemaining:"✨ 模拟补全剩余",btnResetAll:"↺ 重置全部",btnClearSave:"清除存档",btnShare:"分享预测海报",
     btnSimR32:"模拟32强",btnSimR16:"模拟16强",btnSimQF:"模拟8强",btnSimSF:"模拟半决赛",btnSimFinals:"模拟决赛及季军赛",btnKODone:"淘汰赛已完成",
     btnRandKO:"模拟全部淘汰赛",btnResetKO:"↺ 重置全部",
@@ -1986,7 +1971,7 @@ if(!expG||!GD[expG]){
 var hasFilled=false,hasRemaining=false;for(var gk0 in gm){for(var mi0=0;mi0<gm[gk0].length;mi0++){var mm0=gm[gk0][mi0];if(mm0.hs!==""&&mm0.as!=="")hasFilled=true;else hasRemaining=true;}}
 var canFillRemaining=hasFilled&&hasRemaining;
 var fillBtn=canFillRemaining?'<button class="btn-rand" onclick="raGRemaining()">'+T("btnFillRemaining")+'</button>':'<button class="btn-rand dim" disabled>'+T("btnFillRemaining")+'</button>';
-var h='<div class="topbar">'+fillBtn+'<button class="btn-rand" onclick="raG()">'+T("btnRandAll")+'</button><button class="btn-reset" onclick="rsaG()">'+T("btnResetAll")+'</button><button class="btn-reset" onclick="clearState()">'+T("btnClearSave")+'</button></div>';
+var h='<div class="topbar">'+fillBtn+'<button class="btn-rand btn-rand-secondary" onclick="raG()">'+T("btnRandAll")+'</button><button class="btn-reset" onclick="rsaG()">'+T("btnResetAll")+'</button><button class="btn-reset" onclick="clearState()">'+T("btnClearSave")+'</button></div>';
 h+='<div class="group-progress'+(pct>=100?' is-complete':'')+'" style="--progress:'+pct+'%" role="progressbar" aria-valuemin="0" aria-valuemax="'+totalM+'" aria-valuenow="'+doneM+'" aria-label="'+T("progressLabel")+'"><div class="group-progress-liquid"></div><div class="group-progress-copy"><span>'+T("progressLabel")+'</span><strong>'+T("progressDone",{done:doneM,total:totalM,pct:pct})+'</strong></div></div>';
 if(ad)h+='<div class="status ok"><span class="status-mark">✓</span><span>'+T("groupsComplete")+'</span></div>';
 else h+='<div class="status">'+T("hintExpandGroup")+'</div>';
