@@ -141,6 +141,11 @@ test("poster sharing emphasizes URL and keeps modal actions plain", () => {
   assert.match(html, /function championPosterTier\(team\)/);
   assert.match(html, /Math\.round\(raw\)/);
   assert.match(html, /var tier=championPosterTier\(champ\)/);
+  assert.match(html, /var TEAM_POSTER_LINES=\{/);
+  assert.match(html, /function posterPathDifficulty\(champ,path\)/);
+  assert.match(html, /function selectPosterTagline\(champ,path,en,tier\)/);
+  assert.match(html, /var tagline=selectPosterTagline\(champ,path,en,tier\)/);
+  assert.doesNotMatch(html, /var tagline=en\?\(EN_TAGLINE\[tier\]\|\|""\):\(TAGLINE\[tier\]\|\|""\)/);
   assert.match(html, /<div class="footer-url-label">/);
   assert.match(html, /www\.cameraclaw\.cn\/2026/);
   assert.doesNotMatch(html, /<div class="footer-right">\+qrHTML/);
@@ -154,6 +159,24 @@ test("poster sharing emphasizes URL and keeps modal actions plain", () => {
   assert.match(html, /posterModalTitle:"分享完整预测"/);
   assert.doesNotMatch(html, /<div class="share-result-kicker">/);
   assert.doesNotMatch(html, /posterModalTitle:"长按保存海报"/);
+});
+
+test("poster conclusions include three Chinese variants for every team", () => {
+  const teamLinesMatch = html.match(/var TEAM_POSTER_LINES=(\{[\s\S]*?\});\nfunction posterPathDifficulty/);
+  assert.ok(teamLinesMatch, "TEAM_POSTER_LINES table should be present");
+  const table = Function(`"use strict"; return (${teamLinesMatch[1]});`)();
+  const teamMatch = html.match(/var STRENGTH=(\{[^;]+\});/);
+  assert.ok(teamMatch, "STRENGTH table should be present");
+  const teams = Object.keys(Function(`"use strict"; return (${teamMatch[1]});`)());
+  assert.equal(teams.length, 48);
+  for (const team of teams) {
+    assert.ok(Array.isArray(table[team]), `${team} should have poster lines`);
+    assert.equal(table[team].length, 3, `${team} should have three poster lines`);
+    for (const line of table[team]) {
+      assert.match(line, /^“.+”$/, `${team} line should keep poster quote style`);
+      assert.ok(line.length <= 34, `${team} line is too long: ${line}`);
+    }
+  }
 });
 
 test("shared prediction links use a shorter schedule hash while preserving old links", () => {
