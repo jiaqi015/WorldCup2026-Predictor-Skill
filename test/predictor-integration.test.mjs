@@ -179,15 +179,25 @@ test("share actions guide clicks and keep long copy text readable", () => {
 });
 
 test("share poster modal uses the larger preview layout", () => {
-  assert.match(html, /\.share-result-modal\{[^}]*width:min\(980px,calc\(100vw - 32px\)\)[^}]*max-height:92vh/);
-  assert.match(html, /\.share-result-body\{[^}]*grid-template-columns:minmax\(340px,1fr\) 300px/);
+  assert.match(html, /\.share-result-modal\{[^}]*width:min\(900px,calc\(100vw - 32px\)\)[^}]*max-height:92vh/);
+  assert.match(html, /\.share-result-body\{[^}]*display:flex;flex-direction:column/);
+  assert.match(html, /\.share-side-panel\{[^}]*grid-template-columns:auto minmax\(0,1fr\)/);
   assert.match(html, /\.share-preview-frame img\{[^}]*width:min\(430px,100%\)/);
   assert.match(html, /class="modal share-result-modal"/);
   assert.match(html, /class="share-preview-panel"/);
   assert.match(html, /class="share-side-panel"/);
-  assert.match(html, /posterModalDesc:"保存海报发给朋友，或复制链接让对方查看你的完整赛程预测。"/);
-  assert.match(html, /posterModalUrlHint:"海报已突出网址"/);
+  assert.doesNotMatch(html, /\+T\("posterModalDesc"\)\+/);
+  assert.doesNotMatch(html, /posterModalUrlHint/);
+  assert.doesNotMatch(html, /海报已突出网址/);
   assert.doesNotMatch(html, /style="max-width:520px;text-align:center;padding:24px"/);
+});
+
+test("knockout tab gently guides users after group stage completion", () => {
+  assert.match(html, /\.tabs button\.tab-guide\{[^}]*animation:tabGuidePulse/);
+  assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.tabs button\.tab-guide,\.tabs button\.tab-guide svg\{animation:none\}\}/);
+  assert.match(html, /var guideKO=tab==="groups"&&allDone\(\)&&!\(ko&&ko\.FINAL&&ko\.FINAL\.w\)/);
+  assert.match(html, /ts\[i\]==="knockout"&&guideKO\?" tab-guide":""/);
+  assert.match(html, /class="tab-guide-badge">→<\/span>/);
 });
 
 test("group matches render chronologically without changing fixture identity", () => {
@@ -286,7 +296,8 @@ test("knockout round labels use a balanced scale with a larger final title", () 
 
 test("stats tab has a distinct selected state and non-recursive photo priming", () => {
   assert.match(html, /\.tabs button\.tab-scorers\.on\{background:linear-gradient/);
-  assert.match(html, /class="tab-'\+ts\[i\]\+\(tab===ts\[i\]\?" on":""\)/);
+  assert.match(html, /var cls='tab-'\+ts\[i\]\+\(tab===ts\[i\]\?" on":""\)/);
+  assert.match(html, /<button class="'\+cls\+'"/);
   assert.match(html, /function primeLeaderboardPhotos\(items\)/);
   assert.match(html, /photoCache\[qk\]=PHOTO_MAP\[qk\]\|\|PHOTO_MAP\[item\.p\]\|\|null/);
   assert.match(html, /primeLeaderboardPhotos\(goals\.concat\(assists\)\);/);

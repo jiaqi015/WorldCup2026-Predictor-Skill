@@ -70,6 +70,12 @@ body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif
 .tabs button{padding:10px 14px;border-radius:100px;border:none;background:var(--bg-soft);color:var(--ink-medium);font-weight:600;cursor:pointer;font-size:14px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);font-family:inherit;flex:1;justify-content:center;white-space:nowrap}
 .tabs button.on{background:var(--bg-card);color:var(--ink-dark);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 .tabs button.tab-scorers.on{background:linear-gradient(135deg,rgba(225,239,249,0.96),rgba(235,230,249,0.92))}
+.tabs button.tab-guide{position:relative;background:var(--bg-card);color:var(--ink-dark);box-shadow:0 0 0 1px rgba(229,194,106,0.32),0 8px 20px rgba(229,194,106,0.16);animation:tabGuidePulse 2.2s ease-in-out infinite}
+.tabs button.tab-guide svg{color:var(--accent-gold);animation:tabGuideArrow 1.35s ease-in-out infinite}
+.tab-guide-badge{position:absolute;top:-8px;right:10px;min-width:18px;height:18px;padding:0 6px;border-radius:999px;background:var(--accent-gold);color:#241B05;font-size:9px;font-weight:900;line-height:18px;box-shadow:0 4px 10px rgba(229,194,106,0.28)}
+@keyframes tabGuidePulse{0%,100%{box-shadow:0 0 0 1px rgba(229,194,106,0.28),0 8px 18px rgba(229,194,106,0.12)}50%{box-shadow:0 0 0 2px rgba(229,194,106,0.44),0 12px 24px rgba(229,194,106,0.20)}}
+@keyframes tabGuideArrow{0%,100%{transform:translateX(0)}50%{transform:translateX(2px)}}
+@media (prefers-reduced-motion:reduce){.tabs button.tab-guide,.tabs button.tab-guide svg{animation:none}}
 .main{padding:0 8px 24px;max-width:960px;margin:0 auto}
 .fl,.fls{border-radius:50%;object-fit:cover;vertical-align:middle;background:var(--bg-card);box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06)}
 .fl{width:28px;height:28px}.fls{width:20px;height:20px}
@@ -189,23 +195,23 @@ body.dark .t3i.nq{color:var(--ink-medium)}
 .modal h3{font-size:20px;font-weight:800;letter-spacing:-0.5px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center}
 .modal h3 button{background:none;border:none;color:var(--ink-light);font-size:24px;cursor:pointer}
 .modal p{color:var(--ink-medium);font-size:15px;line-height:1.6;margin:0 0 12px}
-.share-result-modal{width:min(980px,calc(100vw - 32px));max-width:none;max-height:92vh;padding:0;overflow:hidden;text-align:left}
+.share-result-modal{width:min(900px,calc(100vw - 32px));max-width:none;max-height:92vh;padding:0;overflow:hidden;text-align:left}
 .share-result-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:22px 24px 16px;border-bottom:1px solid var(--line-delicate)}
 .share-result-kicker{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent-gold);margin-bottom:6px}
 .share-result-title{font-size:22px;font-weight:850;letter-spacing:-0.6px;color:var(--ink-dark);line-height:1.15}
 .share-result-close{background:transparent;border:none;color:var(--ink-light);font-size:24px;line-height:1;cursor:pointer;padding:2px 0 0 12px}
-.share-result-body{display:grid;grid-template-columns:minmax(340px,1fr) 300px;gap:0;align-items:stretch}
-.share-preview-panel{display:flex;justify-content:center;align-items:center;padding:24px;background:linear-gradient(180deg,#0A1510,#050907)}
-.share-preview-frame{max-height:calc(92vh - 132px);overflow:auto;border-radius:18px;border:1px solid rgba(229,194,106,0.26);box-shadow:0 22px 70px rgba(0,0,0,0.34),0 0 0 1px rgba(255,255,255,0.04)}
+.share-result-body{display:flex;flex-direction:column;background:var(--bg-card)}
+.share-preview-panel{display:flex;justify-content:center;align-items:center;padding:22px;background:linear-gradient(180deg,#0A1510,#050907)}
+.share-preview-frame{max-height:calc(92vh - 170px);overflow:auto;border-radius:18px;border:1px solid rgba(229,194,106,0.26);box-shadow:0 22px 70px rgba(0,0,0,0.34),0 0 0 1px rgba(255,255,255,0.04)}
 .share-preview-frame img{display:block;width:min(430px,100%);height:auto}
-.share-side-panel{display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:24px;background:var(--bg-card)}
-.share-side-copy{display:grid;gap:12px}
-.share-side-copy p{margin:0;color:var(--ink-medium);font-size:14px;line-height:1.65}
-.share-url-chip{display:block;padding:12px 14px;border-radius:14px;background:var(--bg-soft);border:1px solid var(--line-delicate);color:var(--ink-dark);font-weight:850;font-size:15px;letter-spacing:0.2px;text-align:center}
-.share-modal-actions{display:grid;gap:10px}
+.share-side-panel{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;padding:16px 18px;background:var(--bg-card);border-top:1px solid var(--line-delicate)}
+.share-side-copy{display:flex;align-items:center;gap:12px;min-width:0}
+.share-side-copy p{margin:0;color:var(--ink-medium);font-size:13px;line-height:1.5}
+.share-url-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--line-delicate);color:var(--ink-dark);font-weight:850;font-size:14px;letter-spacing:0.2px;white-space:nowrap}
+.share-modal-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
 .share-download-link,.share-copy-btn{display:flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border-radius:100px;text-decoration:none;font-weight:800;font-size:13px;font-family:inherit;line-height:1.25;text-align:center}
 .share-download-link{background:var(--ink-dark);color:var(--bg-card)}
-.share-copy-btn{background:#E5C26A;color:#07110C;border:none;cursor:pointer;max-width:100%;white-space:normal}
+.share-copy-btn{background:#E5C26A;color:#07110C;border:none;cursor:pointer;max-width:280px;white-space:normal}
 .share-modal-actions .b{min-height:40px;border-radius:100px}
 body.dark .share-result-modal{box-shadow:0 28px 70px rgba(0,0,0,0.5)}
 body.dark .share-url-chip{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.10)}
@@ -218,7 +224,11 @@ body.dark .share-url-chip{background:rgba(255,255,255,0.05);border-color:rgba(25
   .share-preview-panel{padding:16px}
   .share-preview-frame{max-height:58vh}
   .share-preview-frame img{width:min(360px,100%)}
-  .share-side-panel{padding:18px}
+  .share-side-panel{display:block;padding:16px}
+  .share-side-copy{display:grid;gap:8px;margin-bottom:12px}
+  .share-url-chip{width:100%}
+  .share-modal-actions{display:grid;gap:9px}
+  .share-copy-btn{max-width:none}
 }
 .gg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
 .kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
@@ -382,6 +392,7 @@ body.dark .tabs-inner{background:rgba(255,255,255,0.04);border:1px solid rgba(25
 body.dark .tabs button{background:transparent;color:var(--ink-medium)}
 body.dark .tabs button.on{background:rgba(255,255,255,0.08);color:var(--ink-dark)}
 body.dark .tabs button.tab-scorers.on{background:linear-gradient(135deg,rgba(85,143,171,0.20),rgba(117,91,156,0.18))}
+body.dark .tabs button.tab-guide{background:rgba(229,194,106,0.12);color:#F8E8A7;box-shadow:0 0 0 1px rgba(229,194,106,0.36),0 10px 24px rgba(229,194,106,0.16)}
 .tabs button{display:flex;align-items:center;gap:8px}
 .tabs button svg{width:16px;height:16px;transition:transform 0.3s ease}
 .tabs button.on svg{transform:scale(1.15);color:var(--ink-dark)}
@@ -1714,7 +1725,7 @@ var I18N={
     sharingDesc:"正在渲染淘汰赛对阵海报",
     btnCopyLink:"复制分享链接（点击可查看你预测全部赛程）",linkCopied:"✓ 已复制!",linkFailed:"复制失败",
     viewModeText:"这是一份分享的预测",viewModeAction:"我也来预测一份",
-    posterModalTitle:"长按保存海报",posterModalKicker:"专属预测海报",posterModalDesc:"保存海报发给朋友，或复制链接让对方查看你的完整赛程预测。",posterModalUrlHint:"海报已突出网址",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
+    posterModalTitle:"长按保存海报",posterModalKicker:"专属预测海报",posterModalDesc:"复制链接可查看完整赛程预测。",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
     groupMatchesTitle:"{g}组 · 比赛 & 比分",groupMatchesHint:"（ 完赛结果已带入，可模拟后手动修改结果 ）",
     pickManually:"🎯 改为手动选择进球",
     mustFinishHint:"💡 选完全部进球后会自动关闭"
@@ -1770,7 +1781,7 @@ var I18N={
     sharingDesc:"Rendering the knockout image",
     btnCopyLink:"Copy share link (view full schedule)",linkCopied:"✓ Copied!",linkFailed:"Copy failed",
     viewModeText:"You're viewing a shared prediction",viewModeAction:"Make your own prediction",
-    posterModalTitle:"Long-press to save",posterModalKicker:"Personal bracket poster",posterModalDesc:"Save the poster for sharing, or copy the link so others can view your full schedule prediction.",posterModalUrlHint:"URL is featured on the poster",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
+    posterModalTitle:"Long-press to save",posterModalKicker:"Personal bracket poster",posterModalDesc:"Copy the link to show the full schedule prediction.",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
     groupMatchesTitle:"Group {g} · Matches & Scores",groupMatchesHint:"(completed results are filled; simulate or edit manually)",
     pickManually:"🎯 Pick scorers manually",
     mustFinishHint:"💡 Modal will close once every goal is picked"
@@ -2108,7 +2119,8 @@ var te=document.getElementById("tabs"),ae=document.getElementById("app");
 var svgs={"groups":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg>',"knockout":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6h6v12H6"></path><path d="M12 12h6"></path><path d="M18 12l-3-3"></path><path d="M18 12l-3 3"></path></svg>',"scorers":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-4"></path></svg>',"baseline":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>'};
 var tabNames={"groups":T("tabGroups"),"knockout":T("tabKnockout"),"scorers":T("tabScorers"),"baseline":T("tabBaseline")};
 var ts=["groups","knockout","scorers"];
-var th='<div class="tabs-inner">';for(var i=0;i<ts.length;i++)th+='<button class="tab-'+ts[i]+(tab===ts[i]?" on":"")+'" onclick="tab=\''+ts[i]+'\';render()">'+svgs[ts[i]]+tabNames[ts[i]]+'</button>';
+var guideKO=tab==="groups"&&allDone()&&!(ko&&ko.FINAL&&ko.FINAL.w);
+var th='<div class="tabs-inner">';for(var i=0;i<ts.length;i++){var cls='tab-'+ts[i]+(tab===ts[i]?" on":"")+(ts[i]==="knockout"&&guideKO?" tab-guide":"");var badge=(ts[i]==="knockout"&&guideKO)?'<span class="tab-guide-badge">→</span>':'';th+='<button class="'+cls+'" onclick="tab=\''+ts[i]+'\';render()">'+svgs[ts[i]]+tabNames[ts[i]]+badge+'</button>';}
 th+='</div>';te.innerHTML=th;
 renderModeControl();
 if(tab==="groups")rGroups(ae);else if(tab==="knockout")rKO(ae);else if(tab==="baseline")rBaseline(ae);else rScorers(ae);
@@ -2953,7 +2965,7 @@ function buildPosterHTML(champ){
     }).then(function(canvas){
       document.body.removeChild(wrap);
       var imgUrl=canvas.toDataURL("image/png");
-      mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal share-result-modal" onclick="event.stopPropagation()"><div class="share-result-head"><div><div class="share-result-kicker">'+T("posterModalKicker")+'</div><div class="share-result-title">'+T("posterModalTitle")+'</div></div><button class="share-result-close" onclick="cM()" aria-label="'+T("btnCloseModal")+'">✕</button></div><div class="share-result-body"><div class="share-preview-panel"><div class="share-preview-frame"><img src="'+imgUrl+'" alt="'+T("posterModalTitle")+'"></div></div><div class="share-side-panel"><div class="share-side-copy"><p>'+T("posterModalDesc")+'</p><div class="share-url-chip">www.cameraclaw.cn/2026</div><p>'+T("posterModalUrlHint")+'</p></div><div class="share-modal-actions"><a class="share-download-link" href="'+imgUrl+'" download="worldcup2026-prediction.png">'+T("btnDownloadPoster")+'</a><button id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink()">'+T("btnCopyLink")+'</button><button class="b" onclick="cM()">'+T("btnCloseModal")+'</button></div></div></div></div></div>';
+      mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal share-result-modal" onclick="event.stopPropagation()"><div class="share-result-head"><div><div class="share-result-kicker">'+T("posterModalKicker")+'</div><div class="share-result-title">'+T("posterModalTitle")+'</div></div><button class="share-result-close" onclick="cM()" aria-label="'+T("btnCloseModal")+'">✕</button></div><div class="share-result-body"><div class="share-preview-panel"><div class="share-preview-frame"><img src="'+imgUrl+'" alt="'+T("posterModalTitle")+'"></div></div><div class="share-side-panel"><div class="share-side-copy"><div class="share-url-chip">www.cameraclaw.cn/2026</div></div><div class="share-modal-actions"><a class="share-download-link" href="'+imgUrl+'" download="worldcup2026-prediction.png">'+T("btnDownloadPoster")+'</a><button id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink()">'+T("btnCopyLink")+'</button><button class="b" onclick="cM()">'+T("btnCloseModal")+'</button></div></div></div></div></div>';
     }).catch(function(e){
       if(wrap.parentNode)wrap.parentNode.removeChild(wrap);
       mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal" style="text-align:center;padding:40px" onclick="event.stopPropagation()"><p style="color:red">'+T("shareGenFail")+e.message+'</p><button class="b" onclick="cM()" style="margin-top:16px">'+T("btnCloseModal")+'</button></div></div>';
