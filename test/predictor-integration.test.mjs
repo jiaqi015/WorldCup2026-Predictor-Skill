@@ -251,10 +251,10 @@ test("entire group cards are selectable without hijacking nested controls", () =
   assert.match(html, /function keyGroupCard\(ev,gk\)/);
 });
 
-test("champion route stays on one horizontal line", () => {
-  assert.match(html, /\.cp-route\{[^}]*max-width:min\(1040px,calc\(100vw - 96px\)\)/);
-  assert.match(html, /\.cp-route \.cr-s\{[^}]*flex-wrap:nowrap/);
-  assert.match(html, /\.cp-route \.cr-s\{[^}]*overflow-x:auto/);
+test("champion route uses a wider no-scroll layout", () => {
+  assert.match(html, /\.cp-route\{[^}]*max-width:min\(1360px,calc\(100vw - 64px\)\)/);
+  assert.match(html, /\.cp-route \.cr-s\{[^}]*flex-wrap:wrap/);
+  assert.match(html, /\.cp-route \.cr-s\{[^}]*overflow:visible/);
   assert.match(html, /\.cp-route \.cr-step\{[^}]*white-space:nowrap/);
   assert.match(html, /\.cp-route \.cr-arrow\{[^}]*flex:0 0 auto/);
 });
