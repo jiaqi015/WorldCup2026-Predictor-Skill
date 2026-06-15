@@ -242,6 +242,10 @@ test("stats tab has a distinct selected state and non-recursive photo priming", 
   assert.match(html, /function primeLeaderboardPhotos\(items\)/);
   assert.match(html, /photoCache\[qk\]=PHOTO_MAP\[qk\]\|\|PHOTO_MAP\[item\.p\]\|\|null/);
   assert.match(html, /primeLeaderboardPhotos\(goals\.concat\(assists\)\);/);
+  assert.match(html, /function resolvePhotoUrl\(path\)/);
+  assert.match(html, /location\.hostname==="www\.cameraclaw\.cn"/);
+  assert.match(html, /https:\/\/worldcup-origin\.cameraclaw\.cn\//);
+  assert.match(html, /return resolvePhotoUrl\(path\)/);
   assert.doesNotMatch(html, /pending<=0&&tab==="scorers"\)render\(\)/);
 });
 
