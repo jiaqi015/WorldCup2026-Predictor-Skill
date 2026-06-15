@@ -189,9 +189,37 @@ body.dark .t3i.nq{color:var(--ink-medium)}
 .modal h3{font-size:20px;font-weight:800;letter-spacing:-0.5px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center}
 .modal h3 button{background:none;border:none;color:var(--ink-light);font-size:24px;cursor:pointer}
 .modal p{color:var(--ink-medium);font-size:15px;line-height:1.6;margin:0 0 12px}
-.share-modal-actions{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.share-download-link{padding:11px 20px;background:var(--ink-dark);color:var(--bg-card);border-radius:100px;text-decoration:none;font-weight:700;font-size:13px}
-.share-copy-btn{padding:11px 18px;background:#E5C26A;color:#07110C;border:none;border-radius:100px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit;max-width:100%;line-height:1.25;white-space:normal}
+.share-result-modal{width:min(980px,calc(100vw - 32px));max-width:none;max-height:92vh;padding:0;overflow:hidden;text-align:left}
+.share-result-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:22px 24px 16px;border-bottom:1px solid var(--line-delicate)}
+.share-result-kicker{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent-gold);margin-bottom:6px}
+.share-result-title{font-size:22px;font-weight:850;letter-spacing:-0.6px;color:var(--ink-dark);line-height:1.15}
+.share-result-close{background:transparent;border:none;color:var(--ink-light);font-size:24px;line-height:1;cursor:pointer;padding:2px 0 0 12px}
+.share-result-body{display:grid;grid-template-columns:minmax(340px,1fr) 300px;gap:0;align-items:stretch}
+.share-preview-panel{display:flex;justify-content:center;align-items:center;padding:24px;background:linear-gradient(180deg,#0A1510,#050907)}
+.share-preview-frame{max-height:calc(92vh - 132px);overflow:auto;border-radius:18px;border:1px solid rgba(229,194,106,0.26);box-shadow:0 22px 70px rgba(0,0,0,0.34),0 0 0 1px rgba(255,255,255,0.04)}
+.share-preview-frame img{display:block;width:min(430px,100%);height:auto}
+.share-side-panel{display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:24px;background:var(--bg-card)}
+.share-side-copy{display:grid;gap:12px}
+.share-side-copy p{margin:0;color:var(--ink-medium);font-size:14px;line-height:1.65}
+.share-url-chip{display:block;padding:12px 14px;border-radius:14px;background:var(--bg-soft);border:1px solid var(--line-delicate);color:var(--ink-dark);font-weight:850;font-size:15px;letter-spacing:0.2px;text-align:center}
+.share-modal-actions{display:grid;gap:10px}
+.share-download-link,.share-copy-btn{display:flex;align-items:center;justify-content:center;min-height:44px;padding:12px 18px;border-radius:100px;text-decoration:none;font-weight:800;font-size:13px;font-family:inherit;line-height:1.25;text-align:center}
+.share-download-link{background:var(--ink-dark);color:var(--bg-card)}
+.share-copy-btn{background:#E5C26A;color:#07110C;border:none;cursor:pointer;max-width:100%;white-space:normal}
+.share-modal-actions .b{min-height:40px;border-radius:100px}
+body.dark .share-result-modal{box-shadow:0 28px 70px rgba(0,0,0,0.5)}
+body.dark .share-url-chip{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.10)}
+@media(max-width:760px){
+  .modal-bg{padding:12px}
+  .share-result-modal{width:100%;max-height:92vh;overflow:auto}
+  .share-result-head{padding:18px 18px 14px}
+  .share-result-title{font-size:20px}
+  .share-result-body{display:block}
+  .share-preview-panel{padding:16px}
+  .share-preview-frame{max-height:58vh}
+  .share-preview-frame img{width:min(360px,100%)}
+  .share-side-panel{padding:18px}
+}
 .gg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
 .kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .lb-card{background:var(--bg-card);border-radius:20px;padding:20px;box-shadow:var(--shadow-float)}
@@ -1686,7 +1714,7 @@ var I18N={
     sharingDesc:"正在渲染淘汰赛对阵海报",
     btnCopyLink:"复制分享链接（点击可查看你预测全部赛程）",linkCopied:"✓ 已复制!",linkFailed:"复制失败",
     viewModeText:"这是一份分享的预测",viewModeAction:"我也来预测一份",
-    posterModalTitle:"长按保存海报",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
+    posterModalTitle:"长按保存海报",posterModalKicker:"专属预测海报",posterModalDesc:"保存海报发给朋友，或复制链接让对方查看你的完整赛程预测。",posterModalUrlHint:"海报已突出网址",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
     groupMatchesTitle:"{g}组 · 比赛 & 比分",groupMatchesHint:"（ 完赛结果已带入，可模拟后手动修改结果 ）",
     pickManually:"🎯 改为手动选择进球",
     mustFinishHint:"💡 选完全部进球后会自动关闭"
@@ -1742,7 +1770,7 @@ var I18N={
     sharingDesc:"Rendering the knockout image",
     btnCopyLink:"Copy share link (view full schedule)",linkCopied:"✓ Copied!",linkFailed:"Copy failed",
     viewModeText:"You're viewing a shared prediction",viewModeAction:"Make your own prediction",
-    posterModalTitle:"Long-press to save",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
+    posterModalTitle:"Long-press to save",posterModalKicker:"Personal bracket poster",posterModalDesc:"Save the poster for sharing, or copy the link so others can view your full schedule prediction.",posterModalUrlHint:"URL is featured on the poster",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
     groupMatchesTitle:"Group {g} · Matches & Scores",groupMatchesHint:"(completed results are filled; simulate or edit manually)",
     pickManually:"🎯 Pick scorers manually",
     mustFinishHint:"💡 Modal will close once every goal is picked"
@@ -2925,7 +2953,7 @@ function buildPosterHTML(champ){
     }).then(function(canvas){
       document.body.removeChild(wrap);
       var imgUrl=canvas.toDataURL("image/png");
-      mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal" onclick="event.stopPropagation()" style="max-width:520px;text-align:center;padding:24px"><h3 style="margin:0 0 12px">'+T("posterModalTitle")+' <button onclick="cM()">✕</button></h3><div style="overflow:auto;max-height:60vh;border-radius:12px;border:1px solid var(--line-delicate)"><img src="'+imgUrl+'" style="width:100%;display:block"></div><div class="share-modal-actions"><a class="share-download-link" href="'+imgUrl+'" download="worldcup2026-prediction.png">'+T("btnDownloadPoster")+'</a><button id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink()">'+T("btnCopyLink")+'</button><button class="b" onclick="cM()">'+T("btnCloseModal")+'</button></div></div></div>';
+      mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal share-result-modal" onclick="event.stopPropagation()"><div class="share-result-head"><div><div class="share-result-kicker">'+T("posterModalKicker")+'</div><div class="share-result-title">'+T("posterModalTitle")+'</div></div><button class="share-result-close" onclick="cM()" aria-label="'+T("btnCloseModal")+'">✕</button></div><div class="share-result-body"><div class="share-preview-panel"><div class="share-preview-frame"><img src="'+imgUrl+'" alt="'+T("posterModalTitle")+'"></div></div><div class="share-side-panel"><div class="share-side-copy"><p>'+T("posterModalDesc")+'</p><div class="share-url-chip">www.cameraclaw.cn/2026</div><p>'+T("posterModalUrlHint")+'</p></div><div class="share-modal-actions"><a class="share-download-link" href="'+imgUrl+'" download="worldcup2026-prediction.png">'+T("btnDownloadPoster")+'</a><button id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink()">'+T("btnCopyLink")+'</button><button class="b" onclick="cM()">'+T("btnCloseModal")+'</button></div></div></div></div></div>';
     }).catch(function(e){
       if(wrap.parentNode)wrap.parentNode.removeChild(wrap);
       mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal" style="text-align:center;padding:40px" onclick="event.stopPropagation()"><p style="color:red">'+T("shareGenFail")+e.message+'</p><button class="b" onclick="cM()" style="margin-top:16px">'+T("btnCloseModal")+'</button></div></div>';

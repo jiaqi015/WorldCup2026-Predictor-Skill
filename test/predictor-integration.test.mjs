@@ -178,6 +178,18 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /btnShare:"Share my poster & link"/);
 });
 
+test("share poster modal uses the larger preview layout", () => {
+  assert.match(html, /\.share-result-modal\{[^}]*width:min\(980px,calc\(100vw - 32px\)\)[^}]*max-height:92vh/);
+  assert.match(html, /\.share-result-body\{[^}]*grid-template-columns:minmax\(340px,1fr\) 300px/);
+  assert.match(html, /\.share-preview-frame img\{[^}]*width:min\(430px,100%\)/);
+  assert.match(html, /class="modal share-result-modal"/);
+  assert.match(html, /class="share-preview-panel"/);
+  assert.match(html, /class="share-side-panel"/);
+  assert.match(html, /posterModalDesc:"保存海报发给朋友，或复制链接让对方查看你的完整赛程预测。"/);
+  assert.match(html, /posterModalUrlHint:"海报已突出网址"/);
+  assert.doesNotMatch(html, /style="max-width:520px;text-align:center;padding:24px"/);
+});
+
 test("group matches render chronologically without changing fixture identity", () => {
   assert.match(html, /function chronologicalGroupMatches\(gk\)/);
   assert.match(html, /return Date\.parse\(left\.m\.date\|\|""\)-Date\.parse\(right\.m\.date\|\|""\)/);
