@@ -122,6 +122,19 @@ test("completed match goal events are team-scoped and enter prediction data", ()
   );
   assert.match(html, /function renderActualGoalEvents\(matchId\)/);
   assert.match(html, /actualGoalsTitle/);
+  assert.match(html, /function actualEventTeamBadge\(team\)/);
+  assert.match(html, /class="actual-goal-team"/);
+  assert.match(html, /actualEventTeamName\(event,"scorer"\)/);
+  assert.match(html, /actualEventTeamName\(event,"assist"\)/);
+});
+
+test("embedded completed results default into blank group score inputs", () => {
+  assert.match(html, /md&&md\.homeScore!=null&&md\.awayScore!=null/);
+  assert.match(html, /m\.actualHs=String\(md\.homeScore\)/);
+  assert.match(html, /m\.actualAs=String\(md\.awayScore\)/);
+  assert.match(html, /var hasLive=!!\(ACTUAL_RESULTS\.ready&&ACTUAL_RESULTS\.groups\)/);
+  assert.match(html, /loadState\(\);\napplyActualResultsToBlankPredictions\(\);/);
+  assert.match(html, /function rsG\(gk\)[\s\S]*applyActualResultsToBlankPredictions\(\);render\(\);/);
 });
 
 test("poster sharing emphasizes URL and keeps modal actions plain", () => {
@@ -148,7 +161,34 @@ test("group progress uses the liquid glass progress component", () => {
   assert.match(html, /class="group-progress-liquid"/);
   assert.match(html, /role="progressbar"/);
   assert.match(html, /aria-valuenow="'\+doneM\+'"/);
+  assert.match(html, /rgba\(154,205,226,0\.34\)/);
+  assert.match(html, /rgba\(92,158,190,0\.24\)/);
   assert.doesNotMatch(html, /max-width:400px;margin:0 auto 16px;text-align:center/);
+});
+
+test("group simulation toolbar prioritizes remaining matches before full re-simulation", () => {
+  assert.match(html, /btnRandAll:"⚡ 重新模拟全部",btnFillRemaining:"✨ 模拟补全剩余"/);
+  assert.match(html, /btnRandAll:"⚡ Re-simulate All",btnFillRemaining:"✨ Simulate Remaining"/);
+  assert.match(html, /var h='<div class="topbar">'\+fillBtn\+'<button class="btn-rand" onclick="raG\(\)">'\+T\("btnRandAll"\)/);
+});
+
+test("entire group cards are selectable without hijacking nested controls", () => {
+  assert.match(html, /\.card\{[^}]*cursor:pointer/);
+  assert.match(html, /\.card:focus-visible\{outline:2px solid var\(--ink-dark\)/);
+  assert.match(html, /role="button" tabindex="0" aria-pressed="/);
+  assert.match(html, /onclick="toggleGroupCard\(event,/);
+  assert.match(html, /onkeydown="keyGroupCard\(event,/);
+  assert.match(html, /function targetIsCardControl\(target\)/);
+  assert.match(html, /closest\("button,input,select,textarea,a,label"\)/);
+  assert.match(html, /function keyGroupCard\(ev,gk\)/);
+});
+
+test("champion route stays on one horizontal line", () => {
+  assert.match(html, /\.cp-route\{[^}]*max-width:min\(1040px,calc\(100vw - 96px\)\)/);
+  assert.match(html, /\.cp-route \.cr-s\{[^}]*flex-wrap:nowrap/);
+  assert.match(html, /\.cp-route \.cr-s\{[^}]*overflow-x:auto/);
+  assert.match(html, /\.cp-route \.cr-step\{[^}]*white-space:nowrap/);
+  assert.match(html, /\.cp-route \.cr-arrow\{[^}]*flex:0 0 auto/);
 });
 
 test("knockout toolbar can simulate the bracket one round at a time", () => {
@@ -175,9 +215,11 @@ test("knockout winners have a compact inline marker", () => {
   assert.match(html, /\.bk-row\.is-cp \.name\.w::after\{color:var\(--accent-gold-dark\)\}/);
 });
 
-test("knockout round labels are three times larger without enlarging final labels", () => {
-  assert.match(html, /\.bk-title\.stage-label\{font-size:2\.25rem/);
-  assert.match(html, /\.bk-title\.stage-label\{font-size:1\.875rem\}/);
+test("knockout round labels use a balanced scale with a larger final title", () => {
+  assert.match(html, /\.bk-title\.stage-label\{font-size:2rem/);
+  assert.match(html, /\.bk-title\.stage-label\{font-size:1\.65rem\}/);
+  assert.match(html, /\.bk-round\.final-col>\.bk-title\{font-size:1\.35rem/);
+  assert.match(html, /\.bk-round\.final-col>\.bk-title\{font-size:1\.15rem\}/);
   assert.match(html, /<div class="bk-title stage-label">'\+title\+'<\/div>/);
   assert.match(html, /r32:"R32",r16:"R16",qf:"QF",sf:"SF"/);
 });
