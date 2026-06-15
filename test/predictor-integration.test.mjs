@@ -179,6 +179,15 @@ test("poster conclusions include three Chinese variants for every team", () => {
   }
 });
 
+test("poster route includes a compact group-stage explanation before knockouts", () => {
+  assert.match(html, /function getPosterGroupSummary\(champ\)/);
+  assert.match(html, /group-stage/);
+  assert.match(html, /champRouteTitle/);
+  assert.match(html, /h\+='<div class="poster-path-row group-stage">';/);
+  assert.match(html, /groupSummary\.text/);
+  assert.match(html, /groupSummary\.stat/);
+});
+
 test("shared prediction links use a shorter schedule hash while preserving old links", () => {
   assert.match(html, /var SHORT_SHARE_STATE_VERSION=3/);
   assert.match(html, /function serializeShortState\(\)/);

@@ -450,11 +450,15 @@ body.dark .toast{background:rgba(255,255,255,0.9);color:#121417}
 .poster .poster-conclusion{max-width:23ch;font-size:18px;font-style:italic;color:#E5C26A;line-height:1.45;letter-spacing:0.4px;white-space:pre-line;margin-top:auto}
 .poster .poster-path-panel{display:flex;flex-direction:column;justify-content:flex-start;min-width:0;padding-top:4px;position:relative;z-index:1}
 .poster .poster-path-label{font-size:11px;letter-spacing:2.6px;color:#7A8E83;font-weight:800;margin-bottom:12px;text-transform:uppercase}
-.poster .poster-path{display:flex;flex-direction:column;gap:8px}
+.poster .poster-path{display:flex;flex-direction:column;gap:7px}
 /* Each round gets its own full-width card; border opacity grades from R32 (faint)
    to FINAL (full bright gold + glow) without using a side stripe. */
-.poster .poster-path-row{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;min-height:56px;padding:12px 14px;border-radius:12px;border:1px solid rgba(229,194,106,0.18);background:rgba(255,255,255,0.015);overflow:hidden;gap:12px}
+.poster .poster-path-row{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;min-height:52px;padding:11px 14px;border-radius:12px;border:1px solid rgba(229,194,106,0.18);background:rgba(255,255,255,0.015);overflow:hidden;gap:12px}
 .poster .poster-path-row:last-child{margin-bottom:0}
+.poster .poster-path-row.group-stage{min-height:44px;padding:9px 14px;border-color:rgba(122,142,131,0.28);background:rgba(122,142,131,0.045)}
+.poster .poster-path-row.group-stage .path-stage{font-size:11px;color:#92A398;font-weight:800;letter-spacing:1.1px}
+.poster .poster-path-row.group-stage .path-match{font-size:13px;color:#BAC4BD}
+.poster .poster-path-row.group-stage .path-score{font-size:11px;color:#E5C26A;background:rgba(229,194,106,0.08);border:1px solid rgba(229,194,106,0.18);padding:3px 8px;border-radius:999px;letter-spacing:0.9px}
 .poster .poster-path-row.stage-1{border-color:rgba(229,194,106,0.18)}
 .poster .poster-path-row.stage-2{border-color:rgba(229,194,106,0.38)}
 .poster .poster-path-row.stage-3{border-color:rgba(229,194,106,0.62);background:rgba(229,194,106,0.025)}
@@ -2936,6 +2940,23 @@ function getPosterChampionPath(champ){
   }
   return path;
 }
+function getPosterGroupSummary(champ){
+  var g=TEAM_GROUP[champ];
+  if(!g||!GD[g]||!gm[g])return null;
+  var standings=calcS(GD[g],gm[g]);
+  for(var i=0;i<standings.length;i++){
+    var s=standings[i];
+    if(s.t===champ){
+      var en=(LANG==="en");
+      return {
+        stage:en?"GROUP":"小组赛",
+        text:en?("Group "+g+" · #"+(i+1)): (g+"组 · 第"+(i+1)+"名晋级"),
+        stat:s.p+" pts · "+s.w+"-"+s.d+"-"+s.l
+      };
+    }
+  }
+  return null;
+}
 function escHtml(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 // Estimate visual width in CJK-character units (CJK ≈ 1 unit, ASCII ≈ 0.85).
 // 0.85 over-estimates ASCII on purpose: bold uppercase Latin (esp. M/W, and the
@@ -3001,6 +3022,14 @@ function buildPosterHTML(champ){
   h+='<div class="poster-path-panel">';
   h+='<div class="poster-path-label">'+(en?"CHAMPION PATH":"夺冠路线")+'</div>';
   h+='<div class="poster-path">';
+  var groupSummary=getPosterGroupSummary(champ);
+  if(groupSummary){
+    h+='<div class="poster-path-row group-stage">';
+    h+='<span class="path-stage">'+escHtml(groupSummary.stage)+'</span>';
+    h+='<span class="path-match"><span class="path-opp">'+escHtml(groupSummary.text)+'</span></span>';
+    h+='<span class="path-score">'+escHtml(groupSummary.stat)+'</span>';
+    h+='</div>';
+  }
   for(var i=0;i<path.length;i++){
     var p=path[i];
     // stage-1..5: progressive gold border from R32 (faint) to FINAL (full).
