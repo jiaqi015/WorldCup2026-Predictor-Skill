@@ -241,6 +241,8 @@ body.dark .ko-lock-bar{background:rgba(255,255,255,0.08)}
 .split-right{display:block;width:440px;flex-shrink:0;position:sticky;top:100px;max-height:calc(100vh - 120px);overflow-y:auto;padding:0 8px}
 .split-right::-webkit-scrollbar{display:none}
 .split-right h3{margin:0 0 16px;font-size:16px;color:var(--ink-dark);font-weight:700}
+.group-match-title{line-height:1.35}
+.group-match-title-note{display:block;margin-top:6px;color:var(--ink-light);font-size:12px;font-weight:600;line-height:1.45;letter-spacing:0}
 .hdr{padding:48px 20px 32px}.hdr h1{font-size:32px}
 }
 .bk-wrap{overflow-x:auto;padding:16px 0 40px;-webkit-overflow-scrolling:touch}
@@ -1685,7 +1687,7 @@ var I18N={
     btnCopyLink:"复制分享链接（点击可查看你预测全部赛程）",linkCopied:"✓ 已复制!",linkFailed:"复制失败",
     viewModeText:"这是一份分享的预测",viewModeAction:"我也来预测一份",
     posterModalTitle:"长按保存海报",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
-    groupMatchesTitle:"{g}组 · 比赛 & 比分（ 可模拟后手动修改结果 ）",
+    groupMatchesTitle:"{g}组 · 比赛 & 比分",groupMatchesHint:"（ 完赛结果已带入，可模拟后手动修改结果 ）",
     pickManually:"🎯 改为手动选择进球",
     mustFinishHint:"💡 选完全部进球后会自动关闭"
   },
@@ -1741,7 +1743,7 @@ var I18N={
     btnCopyLink:"Copy share link (view full schedule)",linkCopied:"✓ Copied!",linkFailed:"Copy failed",
     viewModeText:"You're viewing a shared prediction",viewModeAction:"Make your own prediction",
     posterModalTitle:"Long-press to save",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
-    groupMatchesTitle:"Group {g} · Matches & Scores (editable after simulation)",
+    groupMatchesTitle:"Group {g} · Matches & Scores",groupMatchesHint:"(completed results are filled; simulate or edit manually)",
     pickManually:"🎯 Pick scorers manually",
     mustFinishHint:"💡 Modal will close once every goal is picked"
   }
@@ -2123,7 +2125,7 @@ h+='</div>';}
 h+='</div></div>';
 // Right panel for desktop
 h+='<div class="split-right">';
-if(expG){h+='<h3>'+T("groupMatchesTitle",{g:expG})+'</h3>'+matchHTML;}
+if(expG){h+='<h3 class="group-match-title"><span>'+T("groupMatchesTitle",{g:expG})+'</span><span class="group-match-title-note">'+T("groupMatchesHint")+'</span></h3>'+matchHTML;}
 else{h+='<div style="text-align:center;padding:40px 20px;color:var(--ink-light)"><div style="font-size:32px;margin-bottom:8px">👈</div><p>'+T("selectGroupLine1")+'<br>'+T("selectGroupLine2")+'</p></div>';}
 h+='</div></div>';
 if(ad){var t3=getT3(st);h+='<div class="t3-box"><div class="card" style="padding:14px"><h3>'+T("t3Title")+'</h3><div class="t3g">';for(var ti=0;ti<t3.length;ti++){var tt=t3[ti];h+='<div class="t3i '+(ti<8?"q":"nq")+'"><span style="font-weight:700;min-width:14px">'+(ti+1)+'</span>'+fi(tt.t,"fls")+" "+tn(tt.t)+'<span style="margin-left:auto;opacity:.6">'+tt.p+T("pts")+'</span></div>';}h+='</div></div></div>';}

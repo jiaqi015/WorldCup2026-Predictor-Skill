@@ -195,6 +195,14 @@ test("group progress uses the liquid glass progress component", () => {
   assert.doesNotMatch(html, /max-width:400px;margin:0 auto 16px;text-align:center/);
 });
 
+test("group match panel title keeps completed-result guidance readable", () => {
+  assert.match(html, /groupMatchesTitle:"\{g\}组 · 比赛 & 比分",groupMatchesHint:"（ 完赛结果已带入，可模拟后手动修改结果 ）"/);
+  assert.match(html, /groupMatchesTitle:"Group \{g\} · Matches & Scores",groupMatchesHint:"\(completed results are filled; simulate or edit manually\)"/);
+  assert.match(html, /<h3 class="group-match-title"><span>'\+T\("groupMatchesTitle",\{g:expG\}\)\+'<\/span><span class="group-match-title-note">'\+T\("groupMatchesHint"\)/);
+  assert.match(html, /\.group-match-title-note\{[^}]*display:block/);
+  assert.match(html, /\.group-match-title-note\{[^}]*font-size:12px/);
+});
+
 test("group simulation toolbar prioritizes remaining matches before full re-simulation", () => {
   assert.match(html, /btnRandAll:"⚡ 重新模拟全部",btnFillRemaining:"✨ 模拟补全剩余"/);
   assert.match(html, /btnRandAll:"⚡ Re-simulate All",btnFillRemaining:"✨ Simulate Remaining"/);
