@@ -1,0 +1,1871 @@
+{
+  "generated_at": "2026-06-16",
+  "source": "Aggregated from data/analysis/match_xg.json + match scorelines",
+  "matches_aggregated": 12,
+  "player_xg": [
+    {
+      "player_source": "Son Heung-Min",
+      "player_app_alias": "孙",
+      "team_cn": "韩国",
+      "shots": 6,
+      "xg_total": 1.014,
+      "xgot_total": 0.304,
+      "goals": 0,
+      "xg_overperformance": -1.01
+    },
+    {
+      "player_source": "Raúl Jiménez",
+      "player_app_alias": "劳尔·希门尼斯",
+      "team_cn": "墨西哥",
+      "shots": 4,
+      "xg_total": 0.844,
+      "xgot_total": 1.153,
+      "goals": 1,
+      "xg_overperformance": 0.16
+    },
+    {
+      "player_source": "Leroy Sané",
+      "player_app_alias": "萨内",
+      "team_cn": "德国",
+      "shots": 3,
+      "xg_total": 0.821,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.82
+    },
+    {
+      "player_source": "Ismael Saibari",
+      "player_app_alias": "伊斯梅尔",
+      "team_cn": "摩洛哥",
+      "shots": 3,
+      "xg_total": 0.707,
+      "xgot_total": 0.269,
+      "goals": 1,
+      "xg_overperformance": 0.29
+    },
+    {
+      "player_source": "Jovo Lukic",
+      "player_app_alias": "卢基奇",
+      "team_cn": "波黑",
+      "shots": 3,
+      "xg_total": 0.689,
+      "xgot_total": 0.993,
+      "goals": 1,
+      "xg_overperformance": 0.31
+    },
+    {
+      "player_source": "Igor Thiago",
+      "player_app_alias": "蒂亚戈",
+      "team_cn": "巴西",
+      "shots": 2,
+      "xg_total": 0.665,
+      "xgot_total": 0.153,
+      "goals": 0,
+      "xg_overperformance": -0.67
+    },
+    {
+      "player_source": "Frantzdy Pierrot",
+      "player_app_alias": "皮埃罗",
+      "team_cn": "海地",
+      "shots": 3,
+      "xg_total": 0.649,
+      "xgot_total": 0.105,
+      "goals": 0,
+      "xg_overperformance": -0.65
+    },
+    {
+      "player_source": "Malik Tillman",
+      "player_app_alias": "蒂尔曼",
+      "team_cn": "美国",
+      "shots": 5,
+      "xg_total": 0.647,
+      "xgot_total": 0.276,
+      "goals": 0,
+      "xg_overperformance": -0.65
+    },
+    {
+      "player_source": "Viktor Gyökeres",
+      "player_app_alias": "哲凯赖什",
+      "team_cn": "瑞典",
+      "shots": 5,
+      "xg_total": 0.632,
+      "xgot_total": 0.582,
+      "goals": 1,
+      "xg_overperformance": 0.37
+    },
+    {
+      "player_source": "Ché Adams",
+      "player_app_alias": "亚当斯",
+      "team_cn": "苏格兰",
+      "shots": 2,
+      "xg_total": 0.608,
+      "xgot_total": 0.846,
+      "goals": 0,
+      "xg_overperformance": -0.61
+    },
+    {
+      "player_source": "Alessandro Circati",
+      "player_app_alias": "亚历山德罗",
+      "team_cn": "澳大利亚",
+      "shots": 1,
+      "xg_total": 0.507,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.51
+    },
+    {
+      "player_source": "Deniz Undav",
+      "player_app_alias": "翁达夫",
+      "team_cn": "德国",
+      "shots": 1,
+      "xg_total": 0.502,
+      "xgot_total": 0.988,
+      "goals": 1,
+      "xg_overperformance": 0.5
+    },
+    {
+      "player_source": "Elye Wahi",
+      "player_app_alias": "瓦希",
+      "team_cn": "科特迪瓦",
+      "shots": 2,
+      "xg_total": 0.493,
+      "xgot_total": 0.269,
+      "goals": 0,
+      "xg_overperformance": -0.49
+    },
+    {
+      "player_source": "Folarin Balogun",
+      "player_app_alias": "巴洛贡",
+      "team_cn": "美国",
+      "shots": 5,
+      "xg_total": 0.468,
+      "xgot_total": 1.645,
+      "goals": 2,
+      "xg_overperformance": 1.53
+    },
+    {
+      "player_source": "Nestory Irankunda",
+      "player_app_alias": "伊朗昆达",
+      "team_cn": "澳大利亚",
+      "shots": 2,
+      "xg_total": 0.451,
+      "xgot_total": 0.849,
+      "goals": 1,
+      "xg_overperformance": 0.55
+    },
+    {
+      "player_source": "Lee Jae-Sung",
+      "player_app_alias": "李",
+      "team_cn": "韩国",
+      "shots": 2,
+      "xg_total": 0.445,
+      "xgot_total": 0.242,
+      "goals": 0,
+      "xg_overperformance": -0.45
+    },
+    {
+      "player_source": "Nathaniel Brown",
+      "player_app_alias": "布朗",
+      "team_cn": "德国",
+      "shots": 2,
+      "xg_total": 0.424,
+      "xgot_total": 0.242,
+      "goals": 1,
+      "xg_overperformance": 0.58
+    },
+    {
+      "player_source": "Rubén Vargas",
+      "player_app_alias": "巴尔加斯",
+      "team_cn": "瑞士",
+      "shots": 4,
+      "xg_total": 0.409,
+      "xgot_total": 0.073,
+      "goals": 0,
+      "xg_overperformance": -0.41
+    },
+    {
+      "player_source": "Dan Ndoye",
+      "player_app_alias": "恩多耶",
+      "team_cn": "瑞士",
+      "shots": 6,
+      "xg_total": 0.401,
+      "xgot_total": 0.31,
+      "goals": 0,
+      "xg_overperformance": -0.4
+    },
+    {
+      "player_source": "Aleksandar Pavlovic",
+      "player_app_alias": "帕夫洛维奇",
+      "team_cn": "德国",
+      "shots": 3,
+      "xg_total": 0.398,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.4
+    },
+    {
+      "player_source": "Jonathan David",
+      "player_app_alias": "戴维",
+      "team_cn": "加拿大",
+      "shots": 3,
+      "xg_total": 0.389,
+      "xgot_total": 0.111,
+      "goals": 0,
+      "xg_overperformance": -0.39
+    },
+    {
+      "player_source": "Edmílson Junior",
+      "player_app_alias": "朱尼尔",
+      "team_cn": "卡塔尔",
+      "shots": 2,
+      "xg_total": 0.386,
+      "xgot_total": 0.381,
+      "goals": 0,
+      "xg_overperformance": -0.39
+    },
+    {
+      "player_source": "Tani Oluwaseyi",
+      "player_app_alias": "奥卢瓦塞伊",
+      "team_cn": "加拿大",
+      "shots": 3,
+      "xg_total": 0.378,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.38
+    },
+    {
+      "player_source": "Oh Hyeon-Gyu",
+      "player_app_alias": "吴贤揆",
+      "team_cn": "韩国",
+      "shots": 1,
+      "xg_total": 0.373,
+      "xgot_total": 0.569,
+      "goals": 1,
+      "xg_overperformance": 0.63
+    },
+    {
+      "player_source": "Julián Quiñones",
+      "player_app_alias": "胡利安·基尼奥内斯",
+      "team_cn": "墨西哥",
+      "shots": 5,
+      "xg_total": 0.37,
+      "xgot_total": 0.126,
+      "goals": 1,
+      "xg_overperformance": 0.63
+    },
+    {
+      "player_source": "Alan Minda",
+      "player_app_alias": "明达",
+      "team_cn": "厄瓜多尔",
+      "shots": 2,
+      "xg_total": 0.37,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.37
+    },
+    {
+      "player_source": "Hwang In-Beom",
+      "player_app_alias": "黄仁范",
+      "team_cn": "韩国",
+      "shots": 3,
+      "xg_total": 0.359,
+      "xgot_total": 0.906,
+      "goals": 1,
+      "xg_overperformance": 0.64
+    },
+    {
+      "player_source": "Breel Embolo",
+      "player_app_alias": "恩博洛",
+      "team_cn": "瑞士",
+      "shots": 3,
+      "xg_total": 0.355,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.35
+    },
+    {
+      "player_source": "Alexander Isak",
+      "player_app_alias": "伊萨克",
+      "team_cn": "瑞典",
+      "shots": 3,
+      "xg_total": 0.319,
+      "xgot_total": 0.437,
+      "goals": 1,
+      "xg_overperformance": 0.68
+    },
+    {
+      "player_source": "Nico Elvedi",
+      "player_app_alias": "埃尔韦迪",
+      "team_cn": "瑞士",
+      "shots": 2,
+      "xg_total": 0.311,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.31
+    },
+    {
+      "player_source": "Nico Schlotterbeck",
+      "player_app_alias": "施洛特贝克",
+      "team_cn": "德国",
+      "shots": 2,
+      "xg_total": 0.309,
+      "xgot_total": 1.014,
+      "goals": 1,
+      "xg_overperformance": 0.69
+    },
+    {
+      "player_source": "Jamal Musiala",
+      "player_app_alias": "穆西亚拉",
+      "team_cn": "德国",
+      "shots": 3,
+      "xg_total": 0.29,
+      "xgot_total": 0.559,
+      "goals": 1,
+      "xg_overperformance": 0.71
+    },
+    {
+      "player_source": "Kerem Aktürkoglu",
+      "player_app_alias": "阿克蒂尔科卢",
+      "team_cn": "土耳其",
+      "shots": 3,
+      "xg_total": 0.286,
+      "xgot_total": 0.172,
+      "goals": 0,
+      "xg_overperformance": -0.29
+    },
+    {
+      "player_source": "Tomás Soucek",
+      "player_app_alias": "绍切克",
+      "team_cn": "捷克",
+      "shots": 1,
+      "xg_total": 0.279,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.28
+    },
+    {
+      "player_source": "Seko Fofana",
+      "player_app_alias": "塞科-福法纳",
+      "team_cn": "科特迪瓦",
+      "shots": 4,
+      "xg_total": 0.269,
+      "xgot_total": 0.071,
+      "goals": 0,
+      "xg_overperformance": -0.27
+    },
+    {
+      "player_source": "Denis Zakaria",
+      "player_app_alias": "扎卡里亚",
+      "team_cn": "瑞士",
+      "shots": 2,
+      "xg_total": 0.267,
+      "xgot_total": 0.182,
+      "goals": 0,
+      "xg_overperformance": -0.27
+    },
+    {
+      "player_source": "Manuel Akanji",
+      "player_app_alias": "阿坎吉",
+      "team_cn": "瑞士",
+      "shots": 2,
+      "xg_total": 0.266,
+      "xgot_total": 0.354,
+      "goals": 0,
+      "xg_overperformance": -0.27
+    },
+    {
+      "player_source": "Arda Güler",
+      "player_app_alias": "居莱尔",
+      "team_cn": "土耳其",
+      "shots": 8,
+      "xg_total": 0.262,
+      "xgot_total": 0.264,
+      "goals": 0,
+      "xg_overperformance": -0.26
+    },
+    {
+      "player_source": "Felix Nmecha",
+      "player_app_alias": "费利克斯",
+      "team_cn": "德国",
+      "shots": 4,
+      "xg_total": 0.262,
+      "xgot_total": 0.803,
+      "goals": 1,
+      "xg_overperformance": 0.74
+    },
+    {
+      "player_source": "Richie Laryea",
+      "player_app_alias": "拉雷亚",
+      "team_cn": "加拿大",
+      "shots": 1,
+      "xg_total": 0.257,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.26
+    },
+    {
+      "player_source": "Michel Aebischer",
+      "player_app_alias": "米歇尔",
+      "team_cn": "瑞士",
+      "shots": 1,
+      "xg_total": 0.236,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.24
+    },
+    {
+      "player_source": "Kenan Yildiz",
+      "player_app_alias": "耶尔德兹",
+      "team_cn": "土耳其",
+      "shots": 6,
+      "xg_total": 0.23,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.23
+    },
+    {
+      "player_source": "John McGinn",
+      "player_app_alias": "麦金",
+      "team_cn": "苏格兰",
+      "shots": 2,
+      "xg_total": 0.228,
+      "xgot_total": 0.337,
+      "goals": 1,
+      "xg_overperformance": 0.77
+    },
+    {
+      "player_source": "Kai Havertz",
+      "player_app_alias": "哈弗茨",
+      "team_cn": "德国",
+      "shots": 3,
+      "xg_total": 0.224,
+      "xgot_total": 0.529,
+      "goals": 1,
+      "xg_overperformance": 0.78
+    },
+    {
+      "player_source": "Nicolas Pépé",
+      "player_app_alias": "佩佩",
+      "team_cn": "科特迪瓦",
+      "shots": 2,
+      "xg_total": 0.224,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.22
+    },
+    {
+      "player_source": "Maurício",
+      "player_app_alias": "毛里西奥",
+      "team_cn": "巴拉圭",
+      "shots": 1,
+      "xg_total": 0.217,
+      "xgot_total": 0.417,
+      "goals": 1,
+      "xg_overperformance": 0.78
+    },
+    {
+      "player_source": "Neil El Aynaoui",
+      "player_app_alias": "艾纳维",
+      "team_cn": "摩洛哥",
+      "shots": 3,
+      "xg_total": 0.217,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.22
+    },
+    {
+      "player_source": "Ladislav Krejcí",
+      "player_app_alias": "拉迪斯拉夫·克雷伊奇",
+      "team_cn": "捷克",
+      "shots": 1,
+      "xg_total": 0.215,
+      "xgot_total": 0.584,
+      "goals": 1,
+      "xg_overperformance": 0.79
+    },
+    {
+      "player_source": "Cyle Larin",
+      "player_app_alias": "拉林",
+      "team_cn": "加拿大",
+      "shots": 2,
+      "xg_total": 0.214,
+      "xgot_total": 0.642,
+      "goals": 1,
+      "xg_overperformance": 0.79
+    },
+    {
+      "player_source": "Donyell Malen",
+      "player_app_alias": "马伦",
+      "team_cn": "荷兰",
+      "shots": 2,
+      "xg_total": 0.209,
+      "xgot_total": 0.339,
+      "goals": 0,
+      "xg_overperformance": -0.21
+    },
+    {
+      "player_source": "Diego Gómez",
+      "player_app_alias": "戈麦斯",
+      "team_cn": "巴拉圭",
+      "shots": 4,
+      "xg_total": 0.202,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.2
+    },
+    {
+      "player_source": "Yan Diomande",
+      "player_app_alias": "迪奥曼德",
+      "team_cn": "科特迪瓦",
+      "shots": 2,
+      "xg_total": 0.202,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.2
+    },
+    {
+      "player_source": "Joel Ordóñez",
+      "player_app_alias": "乔尔",
+      "team_cn": "厄瓜多尔",
+      "shots": 2,
+      "xg_total": 0.2,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.2
+    },
+    {
+      "player_source": "Cody Gakpo",
+      "player_app_alias": "加克波",
+      "team_cn": "荷兰",
+      "shots": 2,
+      "xg_total": 0.195,
+      "xgot_total": 0.21,
+      "goals": 0,
+      "xg_overperformance": -0.2
+    },
+    {
+      "player_source": "Brian Gutiérrez",
+      "player_app_alias": "古铁雷斯",
+      "team_cn": "墨西哥",
+      "shots": 4,
+      "xg_total": 0.193,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.19
+    },
+    {
+      "player_source": "Amad Diallo",
+      "player_app_alias": "阿马德",
+      "team_cn": "科特迪瓦",
+      "shots": 2,
+      "xg_total": 0.193,
+      "xgot_total": 0.877,
+      "goals": 1,
+      "xg_overperformance": 0.81
+    },
+    {
+      "player_source": "Leandro Bacuna",
+      "player_app_alias": "莱安德罗-巴库纳",
+      "team_cn": "库拉索",
+      "shots": 2,
+      "xg_total": 0.191,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.19
+    },
+    {
+      "player_source": "Achraf Hakimi",
+      "player_app_alias": "哈基米",
+      "team_cn": "摩洛哥",
+      "shots": 3,
+      "xg_total": 0.181,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.18
+    },
+    {
+      "player_source": "Tarik Muharemovic",
+      "player_app_alias": "穆哈雷莫维奇",
+      "team_cn": "波黑",
+      "shots": 1,
+      "xg_total": 0.18,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.18
+    },
+    {
+      "player_source": "Lucas Paquetá",
+      "player_app_alias": "帕奎塔",
+      "team_cn": "巴西",
+      "shots": 2,
+      "xg_total": 0.176,
+      "xgot_total": 0.542,
+      "goals": 0,
+      "xg_overperformance": -0.18
+    },
+    {
+      "player_source": "Adam Hlozek",
+      "player_app_alias": "赫洛热克",
+      "team_cn": "捷克",
+      "shots": 2,
+      "xg_total": 0.175,
+      "xgot_total": 0.751,
+      "goals": 0,
+      "xg_overperformance": -0.17
+    },
+    {
+      "player_source": "Florian Wirtz",
+      "player_app_alias": "维尔茨",
+      "team_cn": "德国",
+      "shots": 3,
+      "xg_total": 0.175,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.17
+    },
+    {
+      "player_source": "Hakan Çalhanoglu",
+      "player_app_alias": "恰尔汗奥卢",
+      "team_cn": "土耳其",
+      "shots": 5,
+      "xg_total": 0.166,
+      "xgot_total": 0.597,
+      "goals": 0,
+      "xg_overperformance": -0.17
+    },
+    {
+      "player_source": "Scott McTominay",
+      "player_app_alias": "麦克托米奈",
+      "team_cn": "苏格兰",
+      "shots": 2,
+      "xg_total": 0.16,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.16
+    },
+    {
+      "player_source": "Jean-Ricner Bellegarde",
+      "player_app_alias": "贝勒加德",
+      "team_cn": "海地",
+      "shots": 3,
+      "xg_total": 0.16,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.16
+    },
+    {
+      "player_source": "Piero Hincapié",
+      "player_app_alias": "因卡皮耶",
+      "team_cn": "厄瓜多尔",
+      "shots": 1,
+      "xg_total": 0.16,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.16
+    },
+    {
+      "player_source": "Teun Koopmeiners",
+      "player_app_alias": "库普梅纳斯",
+      "team_cn": "荷兰",
+      "shots": 2,
+      "xg_total": 0.157,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.16
+    },
+    {
+      "player_source": "Yukinari Sugawara",
+      "player_app_alias": "菅原由势",
+      "team_cn": "日本",
+      "shots": 1,
+      "xg_total": 0.156,
+      "xgot_total": 0.28,
+      "goals": 0,
+      "xg_overperformance": -0.16
+    },
+    {
+      "player_source": "Montassar Talbi",
+      "player_app_alias": "塔尔比",
+      "team_cn": "突尼斯",
+      "shots": 1,
+      "xg_total": 0.153,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.15
+    },
+    {
+      "player_source": "Michal Sadílek",
+      "player_app_alias": "萨迪莱克",
+      "team_cn": "捷克",
+      "shots": 2,
+      "xg_total": 0.15,
+      "xgot_total": 0.736,
+      "goals": 0,
+      "xg_overperformance": -0.15
+    },
+    {
+      "player_source": "Raphinha",
+      "player_app_alias": "拉菲尼亚",
+      "team_cn": "巴西",
+      "shots": 2,
+      "xg_total": 0.15,
+      "xgot_total": 0.119,
+      "goals": 0,
+      "xg_overperformance": -0.15
+    },
+    {
+      "player_source": "Ismail Yüksek",
+      "player_app_alias": "伊斯梅尔",
+      "team_cn": "土耳其",
+      "shots": 3,
+      "xg_total": 0.147,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.15
+    },
+    {
+      "player_source": "Ayoube Amaimouni",
+      "player_app_alias": "艾穆尼",
+      "team_cn": "摩洛哥",
+      "shots": 1,
+      "xg_total": 0.145,
+      "xgot_total": 0.268,
+      "goals": 0,
+      "xg_overperformance": -0.14
+    },
+    {
+      "player_source": "Daichi Kamada",
+      "player_app_alias": "镰田",
+      "team_cn": "日本",
+      "shots": 1,
+      "xg_total": 0.14,
+      "xgot_total": 0.656,
+      "goals": 1,
+      "xg_overperformance": 0.86
+    },
+    {
+      "player_source": "John Yeboah",
+      "player_app_alias": "约翰",
+      "team_cn": "厄瓜多尔",
+      "shots": 3,
+      "xg_total": 0.136,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.14
+    },
+    {
+      "player_source": "Victor Lindelöf",
+      "player_app_alias": "林德洛夫",
+      "team_cn": "瑞典",
+      "shots": 1,
+      "xg_total": 0.136,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.14
+    },
+    {
+      "player_source": "Miro Muheim",
+      "player_app_alias": "Miro Muheim",
+      "team_cn": "卡塔尔",
+      "shots": 1,
+      "xg_total": 0.125,
+      "xgot_total": 0.75,
+      "goals": 0,
+      "xg_overperformance": -0.12
+    },
+    {
+      "player_source": "Jan Paul van Hecke",
+      "player_app_alias": "扬",
+      "team_cn": "荷兰",
+      "shots": 1,
+      "xg_total": 0.121,
+      "xgot_total": 0.752,
+      "goals": 0,
+      "xg_overperformance": -0.12
+    },
+    {
+      "player_source": "Ricardo Pepi",
+      "player_app_alias": "佩皮",
+      "team_cn": "美国",
+      "shots": 1,
+      "xg_total": 0.115,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.12
+    },
+    {
+      "player_source": "Ahmed Alaaeldin",
+      "player_app_alias": "艾哈迈德",
+      "team_cn": "卡塔尔",
+      "shots": 1,
+      "xg_total": 0.113,
+      "xgot_total": 0.083,
+      "goals": 0,
+      "xg_overperformance": -0.11
+    },
+    {
+      "player_source": "Lawrence Shankland",
+      "player_app_alias": "劳伦斯",
+      "team_cn": "苏格兰",
+      "shots": 2,
+      "xg_total": 0.106,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.11
+    },
+    {
+      "player_source": "Ruben Providence",
+      "player_app_alias": "鲁本",
+      "team_cn": "海地",
+      "shots": 3,
+      "xg_total": 0.106,
+      "xgot_total": 0.118,
+      "goals": 0,
+      "xg_overperformance": -0.11
+    },
+    {
+      "player_source": "Zeki Çelik",
+      "player_app_alias": "切利克",
+      "team_cn": "土耳其",
+      "shots": 1,
+      "xg_total": 0.102,
+      "xgot_total": 0.215,
+      "goals": 0,
+      "xg_overperformance": -0.1
+    },
+    {
+      "player_source": "Brahim Díaz",
+      "player_app_alias": "迪亚斯",
+      "team_cn": "摩洛哥",
+      "shots": 3,
+      "xg_total": 0.1,
+      "xgot_total": 0.204,
+      "goals": 0,
+      "xg_overperformance": -0.1
+    },
+    {
+      "player_source": "Ayase Ueda",
+      "player_app_alias": "上田绮世",
+      "team_cn": "日本",
+      "shots": 1,
+      "xg_total": 0.098,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.1
+    },
+    {
+      "player_source": "Lucas Bergvall",
+      "player_app_alias": "贝里瓦尔",
+      "team_cn": "瑞典",
+      "shots": 1,
+      "xg_total": 0.095,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.1
+    },
+    {
+      "player_source": "Marquinhos",
+      "player_app_alias": "马尔基尼奥斯",
+      "team_cn": "巴西",
+      "shots": 2,
+      "xg_total": 0.094,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.09
+    },
+    {
+      "player_source": "Livano Comenencia",
+      "player_app_alias": "科梅内西亚",
+      "team_cn": "库拉索",
+      "shots": 2,
+      "xg_total": 0.094,
+      "xgot_total": 0.296,
+      "goals": 1,
+      "xg_overperformance": 0.91
+    },
+    {
+      "player_source": "Danilo Santos",
+      "player_app_alias": "桑托斯",
+      "team_cn": "巴西",
+      "shots": 2,
+      "xg_total": 0.089,
+      "xgot_total": 0.022,
+      "goals": 0,
+      "xg_overperformance": -0.09
+    },
+    {
+      "player_source": "Mattias Svanberg",
+      "player_app_alias": "斯万贝里",
+      "team_cn": "瑞典",
+      "shots": 1,
+      "xg_total": 0.086,
+      "xgot_total": 0.704,
+      "goals": 1,
+      "xg_overperformance": 0.91
+    },
+    {
+      "player_source": "Keito Nakamura",
+      "player_app_alias": "中村敬斗",
+      "team_cn": "日本",
+      "shots": 3,
+      "xg_total": 0.083,
+      "xgot_total": 0.388,
+      "goals": 1,
+      "xg_overperformance": 0.92
+    },
+    {
+      "player_source": "Jordan Bos",
+      "player_app_alias": "乔丹",
+      "team_cn": "澳大利亚",
+      "shots": 2,
+      "xg_total": 0.081,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.08
+    },
+    {
+      "player_source": "Vinícius Júnior",
+      "player_app_alias": "维尼修斯",
+      "team_cn": "巴西",
+      "shots": 1,
+      "xg_total": 0.08,
+      "xgot_total": 0.539,
+      "goals": 1,
+      "xg_overperformance": 0.92
+    },
+    {
+      "player_source": "Issa Laye",
+      "player_app_alias": "拉耶",
+      "team_cn": "卡塔尔",
+      "shots": 1,
+      "xg_total": 0.079,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.08
+    },
+    {
+      "player_source": "Giovanni Reyna",
+      "player_app_alias": "雷纳",
+      "team_cn": "美国",
+      "shots": 1,
+      "xg_total": 0.077,
+      "xgot_total": 0.621,
+      "goals": 1,
+      "xg_overperformance": 0.92
+    },
+    {
+      "player_source": "Orkun Kökçü",
+      "player_app_alias": "柯克曲",
+      "team_cn": "土耳其",
+      "shots": 1,
+      "xg_total": 0.073,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.07
+    },
+    {
+      "player_source": "Miguel Almirón",
+      "player_app_alias": "阿尔米隆",
+      "team_cn": "巴拉圭",
+      "shots": 2,
+      "xg_total": 0.069,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.07
+    },
+    {
+      "player_source": "Yasin Ayari",
+      "player_app_alias": "阿亚里",
+      "team_cn": "瑞典",
+      "shots": 2,
+      "xg_total": 0.069,
+      "xgot_total": 0.394,
+      "goals": 2,
+      "xg_overperformance": 1.93
+    },
+    {
+      "player_source": "Johan Manzambi",
+      "player_app_alias": "曼赞比",
+      "team_cn": "瑞士",
+      "shots": 2,
+      "xg_total": 0.064,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.06
+    },
+    {
+      "player_source": "Ghislain Konan",
+      "player_app_alias": "科南",
+      "team_cn": "科特迪瓦",
+      "shots": 1,
+      "xg_total": 0.064,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.06
+    },
+    {
+      "player_source": "Derek Cornelius",
+      "player_app_alias": "科尼利乌斯",
+      "team_cn": "加拿大",
+      "shots": 1,
+      "xg_total": 0.06,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.06
+    },
+    {
+      "player_source": "Virgil van Dijk",
+      "player_app_alias": "范戴克",
+      "team_cn": "荷兰",
+      "shots": 1,
+      "xg_total": 0.06,
+      "xgot_total": 0.354,
+      "goals": 1,
+      "xg_overperformance": 0.94
+    },
+    {
+      "player_source": "Kim Jin-Gyu",
+      "player_app_alias": "金",
+      "team_cn": "韩国",
+      "shots": 1,
+      "xg_total": 0.059,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.06
+    },
+    {
+      "player_source": "Ben Gannon-Doak",
+      "player_app_alias": "加农-多克",
+      "team_cn": "苏格兰",
+      "shots": 2,
+      "xg_total": 0.059,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.06
+    },
+    {
+      "player_source": "Alistair Johnston",
+      "player_app_alias": "约翰斯顿",
+      "team_cn": "加拿大",
+      "shots": 1,
+      "xg_total": 0.057,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.06
+    },
+    {
+      "player_source": "Mohamed Toure",
+      "player_app_alias": "穆罕默德",
+      "team_cn": "澳大利亚",
+      "shots": 1,
+      "xg_total": 0.055,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.06
+    },
+    {
+      "player_source": "Fabian Rieder",
+      "player_app_alias": "里德",
+      "team_cn": "瑞士",
+      "shots": 1,
+      "xg_total": 0.054,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Koki Ogawa",
+      "player_app_alias": "小川",
+      "team_cn": "日本",
+      "shots": 2,
+      "xg_total": 0.053,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Amar Memic",
+      "player_app_alias": "梅米奇",
+      "team_cn": "波黑",
+      "shots": 1,
+      "xg_total": 0.052,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Wilfried Singo",
+      "player_app_alias": "辛戈",
+      "team_cn": "科特迪瓦",
+      "shots": 1,
+      "xg_total": 0.052,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Pedro Vite",
+      "player_app_alias": "佩德罗",
+      "team_cn": "厄瓜多尔",
+      "shots": 1,
+      "xg_total": 0.051,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Timothy Weah",
+      "player_app_alias": "韦阿",
+      "team_cn": "美国",
+      "shots": 2,
+      "xg_total": 0.05,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Granit Xhaka",
+      "player_app_alias": "扎卡",
+      "team_cn": "瑞士",
+      "shots": 2,
+      "xg_total": 0.048,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Gonzalo Plata",
+      "player_app_alias": "普拉塔",
+      "team_cn": "厄瓜多尔",
+      "shots": 1,
+      "xg_total": 0.048,
+      "xgot_total": 0.032,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Tahith Chong",
+      "player_app_alias": "塔希斯-钟",
+      "team_cn": "库拉索",
+      "shots": 1,
+      "xg_total": 0.046,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.05
+    },
+    {
+      "player_source": "Ferdi Kadioglu",
+      "player_app_alias": "卡迪奥卢",
+      "team_cn": "土耳其",
+      "shots": 1,
+      "xg_total": 0.045,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Julio Enciso",
+      "player_app_alias": "恩西索",
+      "team_cn": "巴拉圭",
+      "shots": 2,
+      "xg_total": 0.044,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Lyle Foster",
+      "player_app_alias": "福斯特",
+      "team_cn": "南非",
+      "shots": 1,
+      "xg_total": 0.043,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Lee Han-Beom",
+      "player_app_alias": "李",
+      "team_cn": "韩国",
+      "shots": 1,
+      "xg_total": 0.043,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Chris Richards",
+      "player_app_alias": "理查兹",
+      "team_cn": "美国",
+      "shots": 1,
+      "xg_total": 0.042,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Louicius Deedson",
+      "player_app_alias": "迪德松",
+      "team_cn": "海地",
+      "shots": 1,
+      "xg_total": 0.042,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Wilson Isidor",
+      "player_app_alias": "威尔逊",
+      "team_cn": "海地",
+      "shots": 2,
+      "xg_total": 0.04,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Harry Souttar",
+      "player_app_alias": "苏塔尔",
+      "team_cn": "澳大利亚",
+      "shots": 1,
+      "xg_total": 0.037,
+      "xgot_total": 0.083,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Jearl Margaritha",
+      "player_app_alias": "马尔加里塔",
+      "team_cn": "库拉索",
+      "shots": 1,
+      "xg_total": 0.037,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Jesús Gallardo",
+      "player_app_alias": "加利亚多",
+      "team_cn": "墨西哥",
+      "shots": 2,
+      "xg_total": 0.035,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Promise David",
+      "player_app_alias": "大卫",
+      "team_cn": "加拿大",
+      "shots": 1,
+      "xg_total": 0.035,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.04
+    },
+    {
+      "player_source": "Hiroki Ito",
+      "player_app_alias": "伊藤洋辉",
+      "team_cn": "日本",
+      "shots": 1,
+      "xg_total": 0.032,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Omar Rekik",
+      "player_app_alias": "塔尔比",
+      "team_cn": "突尼斯",
+      "shots": 1,
+      "xg_total": 0.032,
+      "xgot_total": 0.329,
+      "goals": 1,
+      "xg_overperformance": 0.97
+    },
+    {
+      "player_source": "Elias Saad",
+      "player_app_alias": "埃利亚斯-萨德",
+      "team_cn": "突尼斯",
+      "shots": 1,
+      "xg_total": 0.03,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "David Raum",
+      "player_app_alias": "劳姆",
+      "team_cn": "德国",
+      "shots": 1,
+      "xg_total": 0.029,
+      "xgot_total": 0.249,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Enner Valencia",
+      "player_app_alias": "巴伦西亚",
+      "team_cn": "厄瓜多尔",
+      "shots": 1,
+      "xg_total": 0.029,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Takefusa Kubo",
+      "player_app_alias": "久保建英",
+      "team_cn": "日本",
+      "shots": 1,
+      "xg_total": 0.028,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Hannibal Mejbri",
+      "player_app_alias": "梅布里",
+      "team_cn": "突尼斯",
+      "shots": 1,
+      "xg_total": 0.028,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Ricardo Adé",
+      "player_app_alias": "里卡多",
+      "team_cn": "海地",
+      "shots": 1,
+      "xg_total": 0.027,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Abdülkerim Bardakçi",
+      "player_app_alias": "巴尔达克奇",
+      "team_cn": "土耳其",
+      "shots": 1,
+      "xg_total": 0.027,
+      "xgot_total": 0.209,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Connor Metcalfe",
+      "player_app_alias": "欧文",
+      "team_cn": "澳大利亚",
+      "shots": 1,
+      "xg_total": 0.027,
+      "xgot_total": 0.146,
+      "goals": 1,
+      "xg_overperformance": 0.97
+    },
+    {
+      "player_source": "Sontje Hansen",
+      "player_app_alias": "科梅嫩西亚",
+      "team_cn": "库拉索",
+      "shots": 1,
+      "xg_total": 0.026,
+      "xgot_total": 0.205,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Ismaël Koné",
+      "player_app_alias": "科内",
+      "team_cn": "加拿大",
+      "shots": 1,
+      "xg_total": 0.025,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Christ Inao Oulaï",
+      "player_app_alias": "乌拉伊",
+      "team_cn": "科特迪瓦",
+      "shots": 2,
+      "xg_total": 0.025,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.03
+    },
+    {
+      "player_source": "Zeki Amdouni",
+      "player_app_alias": "阿姆杜尼",
+      "team_cn": "瑞士",
+      "shots": 1,
+      "xg_total": 0.024,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Bilal El Khannouss",
+      "player_app_alias": "比拉尔",
+      "team_cn": "摩洛哥",
+      "shots": 1,
+      "xg_total": 0.023,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Micky van de Ven",
+      "player_app_alias": "范德文",
+      "team_cn": "荷兰",
+      "shots": 1,
+      "xg_total": 0.023,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Merih Demiral",
+      "player_app_alias": "德米拉尔",
+      "team_cn": "土耳其",
+      "shots": 1,
+      "xg_total": 0.022,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Johan Vásquez",
+      "player_app_alias": "巴斯克斯",
+      "team_cn": "墨西哥",
+      "shots": 1,
+      "xg_total": 0.021,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Martin Expérience",
+      "player_app_alias": "马丁",
+      "team_cn": "海地",
+      "shots": 1,
+      "xg_total": 0.021,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Rani Khedira",
+      "player_app_alias": "赫迪拉",
+      "team_cn": "突尼斯",
+      "shots": 1,
+      "xg_total": 0.021,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Sebastian Berhalter",
+      "player_app_alias": "塞巴斯蒂安",
+      "team_cn": "美国",
+      "shots": 1,
+      "xg_total": 0.02,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Karim Boudiaf",
+      "player_app_alias": "布迪亚夫",
+      "team_cn": "卡塔尔",
+      "shots": 1,
+      "xg_total": 0.02,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Jacob Italiano",
+      "player_app_alias": "雅各布",
+      "team_cn": "澳大利亚",
+      "shots": 1,
+      "xg_total": 0.02,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Crysencio Summerville",
+      "player_app_alias": "萨默维尔",
+      "team_cn": "荷兰",
+      "shots": 1,
+      "xg_total": 0.019,
+      "xgot_total": 0.506,
+      "goals": 1,
+      "xg_overperformance": 0.98
+    },
+    {
+      "player_source": "Moisés Caicedo",
+      "player_app_alias": "凯塞多",
+      "team_cn": "厄瓜多尔",
+      "shots": 1,
+      "xg_total": 0.019,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Aubrey Modiba",
+      "player_app_alias": "霍尔",
+      "team_cn": "南非",
+      "shots": 1,
+      "xg_total": 0.016,
+      "xgot_total": 0.053,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Lee Kang-In",
+      "player_app_alias": "李刚仁",
+      "team_cn": "韩国",
+      "shots": 1,
+      "xg_total": 0.016,
+      "xgot_total": 0.041,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Benjamin Tahirovic",
+      "player_app_alias": "本杰明",
+      "team_cn": "波黑",
+      "shots": 1,
+      "xg_total": 0.016,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Ermedin Demirovic",
+      "player_app_alias": "德米罗维奇",
+      "team_cn": "波黑",
+      "shots": 1,
+      "xg_total": 0.016,
+      "xgot_total": 0.009,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Stephen Eustáquio",
+      "player_app_alias": "尤斯塔基奥",
+      "team_cn": "加拿大",
+      "shots": 1,
+      "xg_total": 0.016,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.02
+    },
+    {
+      "player_source": "Juninho Bacuna",
+      "player_app_alias": "朱尼尼奥-巴库纳",
+      "team_cn": "库拉索",
+      "shots": 1,
+      "xg_total": 0.015,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Mbekezeli Mbokazi",
+      "player_app_alias": "姆博卡齐",
+      "team_cn": "南非",
+      "shots": 1,
+      "xg_total": 0.014,
+      "xgot_total": 0.076,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Israel Reyes",
+      "player_app_alias": "雷耶斯",
+      "team_cn": "墨西哥",
+      "shots": 1,
+      "xg_total": 0.014,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Elias Achouri",
+      "player_app_alias": "伊莱亚斯",
+      "team_cn": "突尼斯",
+      "shots": 1,
+      "xg_total": 0.014,
+      "xgot_total": 0.018,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Josué Casimir",
+      "player_app_alias": "卡西米尔",
+      "team_cn": "海地",
+      "shots": 1,
+      "xg_total": 0.013,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Ardon Jashari",
+      "player_app_alias": "贾沙里",
+      "team_cn": "瑞士",
+      "shots": 1,
+      "xg_total": 0.012,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Dzenis Burnic",
+      "player_app_alias": "布尔尼奇",
+      "team_cn": "波黑",
+      "shots": 1,
+      "xg_total": 0.01,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Pavel Sulc",
+      "player_app_alias": "舒尔茨",
+      "team_cn": "捷克",
+      "shots": 1,
+      "xg_total": 0.007,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Bruno Guimarães",
+      "player_app_alias": "吉马良斯",
+      "team_cn": "巴西",
+      "shots": 1,
+      "xg_total": 0.007,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Homam Ahmed",
+      "player_app_alias": "艾哈迈德",
+      "team_cn": "卡塔尔",
+      "shots": 1,
+      "xg_total": 0.006,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": -0.01
+    },
+    {
+      "player_source": "Damián Bobadilla",
+      "player_app_alias": "Damián Bobadilla",
+      "team_cn": "美国",
+      "shots": 1,
+      "xg_total": 0.0,
+      "xgot_total": 0.0,
+      "goals": 0,
+      "xg_overperformance": 0.0
+    }
+  ],
+  "team_aggregate": [
+    {
+      "team_cn": "德国",
+      "matches": 1,
+      "xg_for": 4.299,
+      "xg_against": 0.409,
+      "goals_for": 7,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "瑞士",
+      "matches": 1,
+      "xg_for": 3.235,
+      "xg_against": 0.729,
+      "goals_for": 1,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "韩国",
+      "matches": 1,
+      "xg_for": 2.309,
+      "xg_against": 0.846,
+      "goals_for": 2,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "科特迪瓦",
+      "matches": 1,
+      "xg_for": 1.522,
+      "xg_against": 1.013,
+      "goals_for": 1,
+      "goals_against": 0
+    },
+    {
+      "team_cn": "加拿大",
+      "matches": 1,
+      "xg_for": 1.501,
+      "xg_against": 1.045,
+      "goals_for": 1,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "墨西哥",
+      "matches": 1,
+      "xg_for": 1.477,
+      "xg_against": 0.073,
+      "goals_for": 2,
+      "goals_against": 0
+    },
+    {
+      "team_cn": "土耳其",
+      "matches": 1,
+      "xg_for": 1.445,
+      "xg_against": 1.178,
+      "goals_for": 0,
+      "goals_against": 2
+    },
+    {
+      "team_cn": "美国",
+      "matches": 1,
+      "xg_for": 1.419,
+      "xg_against": 0.532,
+      "goals_for": 4,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "摩洛哥",
+      "matches": 1,
+      "xg_for": 1.373,
+      "xg_against": 1.317,
+      "goals_for": 1,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "瑞典",
+      "matches": 1,
+      "xg_for": 1.337,
+      "xg_against": 0.278,
+      "goals_for": 5,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "巴西",
+      "matches": 1,
+      "xg_for": 1.317,
+      "xg_against": 1.373,
+      "goals_for": 1,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "澳大利亚",
+      "matches": 1,
+      "xg_for": 1.178,
+      "xg_against": 1.445,
+      "goals_for": 2,
+      "goals_against": 0
+    },
+    {
+      "team_cn": "苏格兰",
+      "matches": 1,
+      "xg_for": 1.161,
+      "xg_against": 1.058,
+      "goals_for": 1,
+      "goals_against": 0
+    },
+    {
+      "team_cn": "海地",
+      "matches": 1,
+      "xg_for": 1.058,
+      "xg_against": 1.161,
+      "goals_for": 0,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "波黑",
+      "matches": 1,
+      "xg_for": 1.045,
+      "xg_against": 1.501,
+      "goals_for": 1,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "厄瓜多尔",
+      "matches": 1,
+      "xg_for": 1.013,
+      "xg_against": 1.522,
+      "goals_for": 0,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "荷兰",
+      "matches": 1,
+      "xg_for": 0.889,
+      "xg_against": 0.59,
+      "goals_for": 2,
+      "goals_against": 2
+    },
+    {
+      "team_cn": "捷克",
+      "matches": 1,
+      "xg_for": 0.846,
+      "xg_against": 2.309,
+      "goals_for": 1,
+      "goals_against": 2
+    },
+    {
+      "team_cn": "卡塔尔",
+      "matches": 1,
+      "xg_for": 0.729,
+      "xg_against": 3.235,
+      "goals_for": 1,
+      "goals_against": 1
+    },
+    {
+      "team_cn": "日本",
+      "matches": 1,
+      "xg_for": 0.59,
+      "xg_against": 0.889,
+      "goals_for": 2,
+      "goals_against": 2
+    },
+    {
+      "team_cn": "巴拉圭",
+      "matches": 1,
+      "xg_for": 0.532,
+      "xg_against": 1.419,
+      "goals_for": 1,
+      "goals_against": 4
+    },
+    {
+      "team_cn": "库拉索",
+      "matches": 1,
+      "xg_for": 0.409,
+      "xg_against": 4.299,
+      "goals_for": 1,
+      "goals_against": 7
+    },
+    {
+      "team_cn": "突尼斯",
+      "matches": 1,
+      "xg_for": 0.278,
+      "xg_against": 1.337,
+      "goals_for": 1,
+      "goals_against": 5
+    },
+    {
+      "team_cn": "南非",
+      "matches": 1,
+      "xg_for": 0.073,
+      "xg_against": 1.477,
+      "goals_for": 0,
+      "goals_against": 2
+    }
+  ]
+}

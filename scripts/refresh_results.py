@@ -13,9 +13,10 @@ Usage:
 Pipeline steps (full mode):
     1. fetch_match_data.py       -> match_schedule.json + manifest.json
     2. fetch_match_details.py    -> match_details.json
-    3. build_prediction_data.py  -> data/prediction/prediction_data_v1.json
-    4. update_match_data.py      -> index.html (embeds MATCH_DETAILS, MATCH_DATA_META, etc.)
-    5. sync_predictor_asset.py   -> skills/.../assets/predictor/index.html
+    3. fetch_analysis_data.py    -> data/analysis/{match_xg,match_momentum,match_team_stats}.json
+    4. build_prediction_data.py  -> data/prediction/prediction_data_v1.json
+    5. update_match_data.py      -> index.html (embeds MATCH_DETAILS, MATCH_DATA_META, etc.)
+    6. sync_predictor_asset.py   -> skills/.../assets/predictor/index.html
 
 Exit codes:
     0  All data consistent (or --check passed)
@@ -48,6 +49,7 @@ SKILL_SCRIPTS = ROOT / "skills" / "world-cup-2026-predictor" / "scripts"
 PIPELINE_STEPS_NETWORK = [
     [sys.executable, str(ROOT / "scripts" / "fetch_match_data.py")],
     [sys.executable, str(ROOT / "scripts" / "fetch_match_details.py")],
+    [sys.executable, str(ROOT / "scripts" / "fetch_analysis_data.py")],
 ]
 PIPELINE_STEPS_LOCAL = [
     [sys.executable, str(ROOT / "scripts" / "build_prediction_data.py")],
