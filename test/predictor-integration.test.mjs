@@ -277,10 +277,13 @@ test("round-by-round simulation is visually prioritized", () => {
   assert.match(html, /body\.dark \.btn-next-round\{background:var\(--accent-gold\)/);
 });
 
-test("knockout winners have a compact inline marker", () => {
-  assert.match(html, /\.bk-row \.name\.w::after\{content:"✓"/);
-  assert.match(html, /\.bk-row \.name\.w\{padding-right:13px/);
-  assert.match(html, /\.bk-row\.is-cp \.name\.w::after\{color:var\(--accent-gold-dark\)\}/);
+test("knockout match rows align flag, team, winner marker, and score columns", () => {
+  assert.match(html, /\.bk-row\{display:grid;grid-template-columns:18px minmax\(0,1fr\) 12px 24px/);
+  assert.match(html, /\.bk-row \.win-mark\{[^}]*justify-content:center/);
+  assert.match(html, /\.bk-row \.win-mark\.on\{opacity:\.82\}/);
+  assert.match(html, /\.bk-row \.sc\{[^}]*text-align:right/);
+  assert.match(html, /\.bk-row\.is-cp \.win-mark\.on\{color:var\(--accent-gold-dark\)\}/);
+  assert.match(html, /<span class="win-mark'\+\(hw\?" on":""\)\+'">✓<\/span><span class="sc">'\+r\.h\+'<\/span>/);
 });
 
 test("knockout round labels use a balanced scale with a larger final title", () => {

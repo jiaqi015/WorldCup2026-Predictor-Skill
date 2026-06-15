@@ -310,12 +310,13 @@ body.dark .ko-lock-bar{background:rgba(255,255,255,0.08)}
 .bk-m{background:var(--bg-card);border-radius:12px;border:1px solid var(--line-delicate);box-shadow:var(--shadow-card);margin:8px 0;padding:10px 12px;font-size:13px;position:relative;min-height:60px;display:flex;flex-direction:column;justify-content:center}
 .bk-m.won{border-color:var(--line-delicate)}
 .bk-m.wait{opacity:0.4}
-.bk-row{display:flex;align-items:center;gap:10px;padding:3px 0}
-.bk-row img{width:16px;height:16px;border-radius:50%}
-.bk-row .name{position:relative;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500;color:var(--ink-medium);font-size:12px}
-.bk-row .name.w{padding-right:13px;color:var(--ink-dark);font-weight:700}
-.bk-row .name.w::after{content:"✓";position:absolute;right:0;top:50%;transform:translateY(-52%);color:var(--accent-success);font-size:9px;font-weight:900;line-height:1;opacity:.82}
-.bk-row .sc{font-weight:800;font-size:14px;min-width:24px;text-align:center}
+.bk-row{display:grid;grid-template-columns:18px minmax(0,1fr) 12px 24px;align-items:center;column-gap:6px;padding:3px 0}
+.bk-row img{width:16px;height:16px;border-radius:50%;justify-self:center}
+.bk-row .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500;color:var(--ink-medium);font-size:12px;min-width:0}
+.bk-row .name.w{color:var(--ink-dark);font-weight:700}
+.bk-row .win-mark{display:flex;align-items:center;justify-content:center;color:var(--accent-success);font-size:9px;font-weight:900;line-height:1;opacity:0}
+.bk-row .win-mark.on{opacity:.82}
+.bk-row .sc{font-weight:800;font-size:14px;min-width:24px;text-align:right;justify-self:end;font-variant-numeric:tabular-nums}
 .bk-vs{display:none}
 .bk-act{display:flex;gap:6px;justify-content:center;margin-top:8px;border-top:1px solid var(--line-delicate);padding-top:8px}
 .bk-act button{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:var(--bg-soft);color:var(--ink-medium);font-family:inherit}
@@ -326,7 +327,7 @@ body.dark .ko-lock-bar{background:rgba(255,255,255,0.08)}
 .bk-m.on-cp.is-final::after{content:'';position:absolute;left:50%;bottom:-10px;width:2px;height:10px;background:linear-gradient(180deg,#E5B547,rgba(229,181,71,0.4));transform:translateX(-50%);border-radius:2px;box-shadow:0 0 6px rgba(229,181,71,0.4);transition:opacity 0.48s ease}
 .bk-row.is-cp{background:linear-gradient(90deg,rgba(229,181,71,0.18),rgba(229,181,71,0.04) 70%,transparent);border-radius:6px;margin:-1px 0;padding:3px 6px;transition:background 0.48s ease}
 .bk-row.is-cp .name{color:var(--accent-gold-dark)}
-.bk-row.is-cp .name.w::after{color:var(--accent-gold-dark)}
+.bk-row.is-cp .win-mark.on{color:var(--accent-gold-dark)}
 /* Pre-reveal state for champion-path reveal animation (round-by-round) */
 .bk-m.on-cp.pre-anim{border-color:var(--line-delicate);box-shadow:var(--shadow-card)}
 .bk-m.on-cp.pre-anim .bk-row.is-cp{background:transparent}
@@ -514,9 +515,11 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
   .bk-round{min-width:120px!important;padding:0}
   .bk-round.final-col{padding:0 2px}
   .bk-m{padding:6px 8px;font-size:10px;min-height:44px;margin:4px 0}
+  .bk-row{grid-template-columns:16px minmax(0,1fr) 10px 18px;column-gap:4px}
   .bk-row .name{font-size:10px}
   .bk-row img{width:14px;height:14px}
-  .bk-row .sc{font-size:12px;min-width:16px}
+  .bk-row .win-mark{font-size:8px}
+  .bk-row .sc{font-size:12px;min-width:18px}
   .bk-title{font-size:10px;margin-bottom:12px}
   .bk-title.stage-label{font-size:1.05rem}
   .bk-round.final-col>.bk-title.final-title{font-size:1.35rem}
@@ -539,9 +542,10 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
   .bk-conn-r .bk-conn-pair::before{left:6px}
   .bk-conn-pair::after{width:6px}
   .bk-m{padding:8px 10px;font-size:12px;min-height:56px;margin:6px 0}
-  .bk-row{gap:8px;padding:2px 0}
+  .bk-row{grid-template-columns:16px minmax(0,1fr) 11px 22px;column-gap:5px;padding:2px 0}
   .bk-row .name{font-size:11px}
-  .bk-row .sc{font-size:13px;min-width:20px}
+  .bk-row .win-mark{font-size:8.5px}
+  .bk-row .sc{font-size:13px;min-width:22px}
   .bk-row img{width:14px;height:14px}
   .bk-act{margin-top:6px;padding-top:6px}
   .bk-act button{padding:3px 8px;font-size:10px}
@@ -2357,10 +2361,11 @@ var r=ko[m.id];var ht=m.ht,at=m.at;
 if(!ht||!at)return '<div class="bk-m wait"><div class="bk-row"><span class="name" style="text-align:center;color:var(--ink-light)">?</span></div><div class="bk-vs">vs</div><div class="bk-row"><span class="name" style="text-align:center;color:var(--ink-light)">?</span></div></div>';
 var onPath=cp&&cp.set[m.id];
 var htCp=onPath&&ht===cp.champ,atCp=onPath&&at===cp.champ;
+var hw=r&&r.w===ht,aw=r&&r.w===at;
 var h='<div class="bk-m'+(r?" won":"")+(onPath?" on-cp":"")+(onPath&&m.id==="FINAL"?" is-final":"")+'" data-mid="'+m.id+'">';
-h+='<div class="bk-row'+(htCp?" is-cp":"")+'">'+fi(ht,"fls")+' <span class="name'+(r&&r.w===ht?" w":"")+'">'+tn(ht)+'</span>'+(r?'<span class="sc">'+r.h+'</span>':'')+'</div>';
+h+='<div class="bk-row'+(htCp?" is-cp":"")+'">'+fi(ht,"fls")+' <span class="name'+(hw?" w":"")+'">'+tn(ht)+'</span>'+(r?'<span class="win-mark'+(hw?" on":"")+'">✓</span><span class="sc">'+r.h+'</span>':'')+'</div>';
 h+='<div class="bk-vs">vs</div>';
-h+='<div class="bk-row'+(atCp?" is-cp":"")+'">'+fi(at,"fls")+' <span class="name'+(r&&r.w===at?" w":"")+'">'+tn(at)+'</span>'+(r?'<span class="sc">'+r.a+'</span>':'')+'</div>';
+h+='<div class="bk-row'+(atCp?" is-cp":"")+'">'+fi(at,"fls")+' <span class="name'+(aw?" w":"")+'">'+tn(at)+'</span>'+(r?'<span class="win-mark'+(aw?" on":"")+'">✓</span><span class="sc">'+r.a+'</span>':'')+'</div>';
 if(!r){h+='<div class="bk-act"><button class="bkw" onclick="qpKO(\''+m.id+'\',\''+ht+'\',\''+at+'\',\''+ht+'\')">'+tn(ht)+'</button><button class="bkw" onclick="qpKO(\''+m.id+'\',\''+ht+'\',\''+at+'\',\''+at+'\')">'+tn(at)+'</button><button class="bkr" onclick="rnKO(\''+m.id+'\',\''+ht+'\',\''+at+'\')">🎲</button></div>';}
 else{h+='<div class="bk-act"><button class="bkx" onclick="delKO(\''+m.id+'\')">↺</button></div>';}
 return h+'</div>';}
