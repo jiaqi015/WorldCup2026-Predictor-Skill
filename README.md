@@ -1,383 +1,150 @@
-<p align="center">
-  <img src="docs/banner.png" alt="World Cup 2026 Predictor Skill" width="760">
-</p>
+# 2026 World Cup Predictor
 
-<h1 align="center">World Cup 2026 Predictor Skill</h1>
+> A single-file 2026 World Cup simulator, shareable bracket poster, live-result scorer, and Codex skill for maintaining the whole prediction workflow.
 
 <p align="center">
-  <strong>A Codex skill for building, launching, scoring, and maintaining a complete 48-team World Cup bracket.</strong>
-</p>
-
-<p align="center">
-  Codex workflow + interactive web app + live ESPN results
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Web_App-bundled-1f8f5f?style=flat-square">
-  <img src="https://img.shields.io/badge/Codex-Agent_Skill-111827?style=flat-square">
-  <img src="https://img.shields.io/badge/World_Cup-48_teams-d6aa48?style=flat-square">
-  <img src="https://img.shields.io/badge/ESPN-live_results-cb2027?style=flat-square">
-  <a href="https://www.cameraclaw.cn/2026"><img src="https://img.shields.io/badge/Demo-live-0f766e?style=flat-square"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2563eb?style=flat-square"></a>
-</p>
-
-<p align="center">
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="https://www.cameraclaw.cn/2026">Live Demo</a> ·
-  <a href="#install-from-the-command-line">Install</a> ·
-  <a href="#run-the-web-app">Run Web App</a> ·
-  <a href="#what-the-skill-does">Capabilities</a> ·
-  <a href="#research-data-and-rag">Research Data</a> ·
-  <a href="#commands">Commands</a> ·
+  <a href="https://www.cameraclaw.cn/2026"><strong>Live Demo</strong></a>
+  ·
+  <a href="#quick-start">Quick Start</a>
+  ·
+  <a href="#screenshots">Screenshots</a>
+  ·
+  <a href="#model-and-data">Model & Data</a>
+  ·
+  <a href="#codex-skill">Codex Skill</a>
+  ·
   <a href="#中文说明">中文说明</a>
 </p>
 
 <p align="center">
-  <sub>Unofficial fan project. Not affiliated with FIFA or the FIFA World Cup.</sub>
+  <img src="https://img.shields.io/badge/World_Cup_2026-48_teams-d6aa48?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Matches-104-111827?style=for-the-badge">
+  <img src="https://img.shields.io/badge/App-single_file_HTML-0f766e?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Codex-Skill-2563eb?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-64748b?style=for-the-badge">
 </p>
 
----
+<p align="center">
+  <img src="docs/readme-groups.jpg" alt="2026 World Cup predictor group stage screen" width="900">
+</p>
 
-## What This Repository Is
+This project is both a polished browser app and an installable Codex skill. The app lets you simulate all 72 group matches, build the 32-team knockout bracket, inspect scorers and assists, generate a champion poster, copy a short share link, and later score predictions against completed ESPN results.
 
-This repository is an installable **Codex Agent Skill** with a bundled,
-single-file World Cup predictor.
+It is an unofficial fan and software project. It is not affiliated with FIFA, and it is not betting advice.
 
-The skill gives Codex a repeatable workflow to:
+## Highlights
 
-- launch an interactive 2026 World Cup bracket;
-- generate or complete group-stage and knockout predictions;
-- fetch current completed matches from ESPN's public scoreboard feed;
-- explain and inspect the prediction scoring model;
-- validate all 48 teams, 528 roster slots, mappings, and JavaScript syntax;
-- maintain the simulator without allowing the source app and bundled Skill app
-  to drift apart.
+- Complete 2026 format: 48 teams, 12 groups, 104 total matches.
+- One-click simulation for groups, knockout rounds, or the full tournament.
+- Three gameplay modes: Standard, Fun, and Upset.
+- Three prediction modes: Random baseline, Strength model, and Ensemble model.
+- Real completed results can be embedded and shown as actual score context.
+- Player-level goal and assist leaderboards.
+- Shareable champion poster plus compact `#s=` prediction links.
+- Bilingual Chinese/English UI with light/dark themes.
+- Live-result utility backed by ESPN's public scoreboard feed.
+- Codex skill packaging for launch, validation, live checks, and maintenance.
+- Deterministic validation suite for teams, squads, data, JavaScript, and plugin packaging.
 
-The same browser application is available from the repository root and is
-bundled inside the Skill for standalone local use.
+## Live Demo
+
+Open the current public build:
+
+[https://www.cameraclaw.cn/2026](https://www.cameraclaw.cn/2026)
+
+The app is static. All prediction state lives in the browser through local storage or URL hashes. No backend is required for normal play.
+
+## Screenshots
+
+| Group stage and live result context | Knockout bracket |
+|---|---|
+| <img src="docs/readme-groups.jpg" alt="Group stage with match details" width="100%"> | <img src="docs/readme-knockout.jpg" alt="Knockout bracket" width="100%"> |
+
+| Scorers and assists | Share poster and short link |
+|---|---|
+| <img src="docs/readme-stats.jpg" alt="Scorer and assist leaderboard" width="100%"> | <img src="docs/readme-share.jpg" alt="Share poster modal" width="100%"> |
+
+Older generated media is still kept in `docs/` for release notes and historical comparison:
+
+- `docs/banner.png`
+- `docs/demo.gif`
+- `docs/screenshot-bracket.png`
+- `docs/screenshot-leaderboard.png`
+- `docs/screenshot-poster.png`
 
 ## Quick Start
-
-### Use It In This Repository
 
 ```bash
 git clone https://github.com/jiaqi015/WorldCup2026-Predictor-Skill.git
 cd WorldCup2026-Predictor-Skill
 ```
 
-Open this repository in Codex and invoke:
-
-```text
-$world-cup-2026-predictor launch the interactive bracket
-```
-
-Codex discovers the checked-in Skill from:
-
-```text
-.agents/skills/world-cup-2026-predictor/
-```
-
-The repository keeps the canonical distributable copy at
-`skills/world-cup-2026-predictor/`. The `.agents/skills/` entry is a symlink
-used for repo-scoped Codex discovery.
-
-## Install From The Command Line
-
-### Recommended: Install The Plugin
-
-The plugin is the sustainable distribution path because Codex tracks its
-marketplace, semantic version, and installed cache:
+Run a local preview:
 
 ```bash
-codex plugin marketplace add jiaqi015/WorldCup2026-Predictor-Skill --ref main
-codex plugin add world-cup-2026-predictor@world-cup-2026
+python3 -m http.server 8765
 ```
 
-Start a new Codex thread, then invoke `$world-cup-2026-predictor`.
+Open:
 
-To receive a later release:
+[http://localhost:8765](http://localhost:8765)
 
-```bash
-codex plugin marketplace upgrade world-cup-2026
-codex plugin add world-cup-2026-predictor@world-cup-2026
-```
-
-### Alternative: Install Only The Skill
-
-Codex's built-in installer can download the Skill directly from this GitHub
-repository without a manual ZIP download:
-
-```bash
-python3 \
-  "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
-  --repo jiaqi015/WorldCup2026-Predictor-Skill \
-  --path skills/world-cup-2026-predictor
-```
-
-Use `--ref v0.3.1` to pin a tagged release. The direct Skill installer does
-not overwrite an existing installation, so Plugin installation is preferred
-for ongoing updates.
-
-## Run The Web App
-
-Launch the copy bundled with the Skill:
-
-```bash
-python3 \
-  skills/world-cup-2026-predictor/scripts/serve_predictor.py \
-  --port 8000
-```
-
-Then open [http://127.0.0.1:8000](http://127.0.0.1:8000).
-
-The root `index.html` can also be opened directly or served with any static
-HTTP server. The public demo is available at
-[www.cameraclaw.cn/2026](https://www.cameraclaw.cn/2026).
-
-### Keep The Local Preview Running On macOS
-
-Install the repository preview as a per-user LaunchAgent:
+For the persistent macOS preview used during development:
 
 ```bash
 ./scripts/manage_local_preview.sh install
-```
-
-The preview then stays available at
-[http://localhost:8765](http://localhost:8765), starts automatically after
-login, and restarts if the server exits. It serves the canonical root
-`index.html`, so local edits appear after a browser refresh.
-
-Common maintenance commands:
-
-```bash
 ./scripts/manage_local_preview.sh status
-./scripts/manage_local_preview.sh restart
 ./scripts/manage_local_preview.sh logs
-./scripts/manage_local_preview.sh stop
-./scripts/manage_local_preview.sh uninstall
 ```
 
-Set `WORLD_CUP_PREVIEW_PORT` during `install` to use a different port.
+The persistent preview serves the canonical root `index.html`.
 
-## What The Skill Does
+## How To Use The App
 
-### Interactive Prediction
+1. Choose a gameplay mode: Standard, Fun, or Upset.
+2. Pick a prediction model: Random baseline, Strength model, or Ensemble model.
+3. Simulate or manually edit group-stage scores.
+4. Open the knockout tab and simulate one round at a time, or simulate the whole bracket.
+5. Inspect the Data tab for top scorers and assists.
+6. Generate a champion poster and copy the short share link.
+7. When real results are available, compare the prediction against completed matches.
 
-The bundled app supports:
+The app autosaves in local storage. Shared links open in a read-only view, so recipients can inspect the bracket without mutating the original prediction.
 
-- the complete 48-team, 12-group tournament format;
-- all 72 group matches and the 32-team knockout bracket;
-- manual scores, one-match randomization, and full-bracket randomization;
-- Normal, Clone, and Chaos simulation modes;
-- strength-weighted scores and controlled knockout upsets;
-- position-weighted scorers and assists;
-- top-scorer and assist leaderboards;
-- bilingual UI and light/dark themes;
-- local autosave and shareable prediction URLs;
-- a 1080 x 1620 champion poster with a QR code;
-- live scoring against completed tournament results.
+## Model And Data
 
-### Live Result Checks
+The predictor combines a compact browser engine with richer offline data artifacts.
 
-The Skill queries ESPN's public World Cup scoreboard feed and can return:
+### Runtime Prediction Engine
 
-- scheduled match count;
-- completed match count;
-- completed scores and stages;
-- upcoming fixtures;
-- machine-readable JSON for follow-on analysis.
+- `random`: neutral baseline for comparison.
+- `strength`: blends team strength, rankings, and available market-style context.
+- `ensemble`: adds uncertainty calibration and provider-style probability inputs.
+- Standard mode keeps favorites more stable.
+- Fun mode can clone star-player behavior for entertainment scenarios.
+- Upset mode increases chaos and underdog paths.
 
-Current or live claims must always come from a fresh fetch. The ESPN endpoint,
-stage IDs, team spellings, and payload shape are treated as external contracts
-that may change.
+Scores are sampled with mode-specific calibration. Goal scorers and assists use position weights plus separated goal-threat and assist-threat multipliers.
 
-### Validation And Maintenance
+### Embedded Tournament Data
 
-The validator checks:
+- 12 groups and 48 teams in `GD`.
+- 72 fixed group fixtures.
+- 32-team knockout topology through `R32D`, `R16P`, `QFP`, and `SFP`.
+- 528-player simulation roster embedded in `index.html`.
+- 1,248-player squad snapshot under `data/`.
+- Match schedule, match details, actual-result snapshots, rankings, odds completions, Elo estimates, and player threat maps under `data/`.
 
-- valid Skill metadata;
-- 12 groups and 48 unique teams;
-- exactly 11 simulation players per team;
-- complete flag, English-name, and position mappings;
-- the ESPN integration marker and 104-match scoring model;
-- inline JavaScript syntax when Node.js is available;
-- byte-for-byte synchronization between the root app and bundled Skill asset.
+Important accuracy notes:
 
-## Example Prompts
+- Some Elo values are marked as low-confidence FIFA-rank regression estimates.
+- Some three-way odds are model completions of partial source fields.
+- Player and squad data is a dated simulation snapshot, not a final FIFA registration list.
+- ESPN public payloads are external contracts and can change.
 
-```text
-$world-cup-2026-predictor launch the predictor and generate a complete bracket
+## Real Result Scoring
 
-$world-cup-2026-predictor check the latest completed World Cup matches
-
-$world-cup-2026-predictor explain how my bracket is scored against real results
-
-$world-cup-2026-predictor validate the teams, squads, positions, and ESPN mappings
-
-$world-cup-2026-predictor update the simulator after a squad or API change
-```
-
-The simulation is for entertainment and software experimentation. It is not a
-factual forecast or betting recommendation.
-
-## Commands
-
-Set the Skill directory when running commands from the repository root:
-
-```bash
-SKILL_DIR="skills/world-cup-2026-predictor"
-```
-
-### Launch The Bundled App
-
-```bash
-python3 "$SKILL_DIR/scripts/serve_predictor.py" --port 8000
-```
-
-Then open [http://127.0.0.1:8000](http://127.0.0.1:8000).
-
-### Fetch Current Results
-
-```bash
-python3 "$SKILL_DIR/scripts/live_results.py"
-python3 "$SKILL_DIR/scripts/live_results.py" --json
-```
-
-### Validate The Skill And Predictor
-
-```bash
-python3 "$SKILL_DIR/scripts/validate_predictor.py"
-python3 scripts/release_check.py
-git diff --check
-```
-
-### Synchronize The Bundled App
-
-The root `index.html` is the canonical web application and the source intended
-for a future GitHub Pages deployment. After editing it, update the copy shipped
-inside the Skill:
-
-```bash
-python3 "$SKILL_DIR/scripts/sync_predictor_asset.py"
-python3 "$SKILL_DIR/scripts/sync_predictor_asset.py" --check
-```
-
-## Research Data And RAG
-
-The repository includes a page-cited research corpus generated from the
-205-page Kimi World Cup report:
-
-- [Domain model](docs/domain-model.md)
-- [RAG corpus guide](docs/rag-corpus.md)
-- [Prediction architecture](docs/prediction-architecture.md)
-- `data/schema/prediction-domain.v1.json`
-- `data/rag/kimi-world-cup-report/chunks.jsonl`
-
-Regenerate, validate, and test retrieval:
-
-```bash
-python3 scripts/build_report_rag.py \
-  --source /Users/jiaqi/Downloads/Kimi_2026_World_Cup_Report.pdf
-python3 scripts/validate_rag_corpus.py
-python3 scripts/search_report_rag.py "Brier 校准 模型漂移"
-```
-
-Report-derived claims remain source assertions until independently verified.
-Every retrieved chunk carries a page citation and source PDF SHA-256.
-
-The predictor also carries a dated ESPN public roster snapshot for all 48
-teams: 1,248 players with squad number, position, age, nationality, and local
-photo metadata. It improves roster-aware simulation and player selection, but
-it is a source snapshot rather than a final FIFA registration list.
-
-The embedded schedule is a separately timestamped ESPN scoreboard snapshot.
-Three-way odds marked `derived_from_partial` are model completions of partial
-market fields, not directly observed complete sportsbook markets. Elo values
-marked `fifa_rank_regression` are low-confidence estimates and remain labeled
-as such throughout the generated prediction dataset.
-
-```bash
-python3 scripts/fetch_squads.py
-python3 scripts/fix_squad_issues.py
-python3 scripts/crawl_photos.py
-python3 scripts/generate_avatars.py
-python3 scripts/update_index.py
-python3 skills/world-cup-2026-predictor/scripts/sync_predictor_asset.py
-python3 scripts/release_check.py
-```
-
-## Repository Layout
-
-```text
-.
-├── .agents/
-│   ├── plugins/marketplace.json
-│   └── skills/world-cup-2026-predictor -> ../../skills/world-cup-2026-predictor
-├── .codex-plugin/plugin.json
-├── .github/workflows/validate.yml
-├── skills/world-cup-2026-predictor/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   ├── assets/predictor/index.html
-│   ├── references/predictor-model.md
-│   └── scripts/
-│       ├── live_results.py
-│       ├── serve_predictor.py
-│       ├── sync_predictor_asset.py
-│       └── validate_predictor.py
-├── index.html
-├── data/
-│   ├── rag/kimi-world-cup-report/
-│   └── schema/prediction-domain.v1.json
-├── scripts/
-│   ├── build_report_rag.py
-│   ├── search_report_rag.py
-│   ├── validate_rag_corpus.py
-│   ├── release_check.py
-│   └── verify_public_deployment.py
-├── CHANGELOG.md
-├── RELEASING.md
-├── docs/
-├── assets/
-├── LICENSE
-└── NOTICE.md
-```
-
-| Path | Purpose |
-|---|---|
-| `SKILL.md` | Trigger scope and operational workflow for Codex |
-| `agents/openai.yaml` | Skill display metadata and default prompt |
-| `assets/predictor/index.html` | Self-contained app shipped with the Skill |
-| `references/predictor-model.md` | Data model, invariants, and maintenance notes |
-| `scripts/serve_predictor.py` | Local static server for the bundled app |
-| `scripts/live_results.py` | Fresh ESPN result and fixture lookup |
-| `scripts/validate_predictor.py` | Deterministic structural validation |
-| `scripts/sync_predictor_asset.py` | Root app to Skill asset synchronization |
-| `/index.html` | Canonical web app and future GitHub Pages source |
-| `.codex-plugin/plugin.json` | Plugin identity, version, and install metadata |
-| `.agents/plugins/marketplace.json` | GitHub-backed Codex marketplace entry |
-| `scripts/release_check.py` | One-command release validation gate |
-| `scripts/verify_public_deployment.py` | Post-deploy check for the public HTML and player-photo routes |
-| `scripts/manage_local_preview.sh` | Install and manage the persistent macOS local preview |
-| `scripts/serve_local.mjs` | Zero-dependency static server used by the local LaunchAgent |
-| `docs/domain-model.md` | Current entities and the expanded forecast lifecycle |
-| `docs/rag-corpus.md` | Corpus generation, retrieval, and citation rules |
-| `data/rag/kimi-world-cup-report/` | Page and chunk JSONL for RAG ingestion |
-| `data/schema/prediction-domain.v1.json` | Machine-readable entity catalog |
-| `RELEASING.md` | Versioning, tagging, and publishing workflow |
-
-## Predictor Model
-
-The simulator uses:
-
-- five team-strength tiers;
-- a score distribution weighted by strength difference;
-- decisive knockout matches;
-- an upset score cap in Normal mode;
-- position-aware scorer and assist selection;
-- head-to-head criteria before overall goal difference in group ranking.
-
-Live prediction scoring awards:
+Predictions can be scored once real results are available.
 
 | Correct prediction | Points |
 |---|---:|
@@ -391,102 +158,43 @@ Live prediction scoring awards:
 | Runner-up | 20 |
 | Champion | 30 |
 
-Group games are compared by fixed fixture slot. Knockout progress is compared
-by the set of teams reaching each round, so scoring remains valid even when the
-predicted and real matchups differ.
+Group games are compared by fixed fixture slot. Knockout scoring compares which teams reach each round, so it still works when the predicted and real matchups differ.
 
-## Demo
+## Codex Skill
 
-<p align="center">
-  <img src="docs/demo.gif" alt="Champion path reveal" width="720">
-</p>
-
-<p align="center">
-  <img src="docs/screenshot-bracket.png" alt="Knockout bracket" width="760">
-</p>
-
-<p align="center">
-  <img src="docs/screenshot-poster.png" alt="Champion poster" width="320">
-  <br>
-  <img src="docs/screenshot-leaderboard.png" alt="Scorer and assist leaderboards" width="760">
-</p>
-
-## Development Workflow
-
-1. Edit the canonical root `index.html`.
-2. Synchronize the bundled Skill asset.
-3. Run `python3 scripts/release_check.py` and `git diff --check`.
-4. Launch the bundled app, not only the root app.
-5. Complete all 72 group matches and the knockout bracket.
-6. Confirm a champion appears and Share becomes enabled.
-7. Check browser warnings and errors.
-8. For ESPN changes, verify at least one completed event maps into
-   `ACTUAL_RESULTS`.
-
-Use semantic versioning, update `CHANGELOG.md`, and follow
-[RELEASING.md](RELEASING.md) for every published release. Never change a
-published plugin without bumping `.codex-plugin/plugin.json`; Codex caches
-plugins by marketplace, name, and version.
-
-Do not commit copyrighted music. The predictor is designed to work without
-bundled audio.
-
-## Data And Accuracy Notes
-
-- Team and player data is a simulation-oriented 2024-2026 snapshot.
-- Final official 2026 squads should be rechecked before relying on individual
-  player names.
-- Live results depend on ESPN's public, unauthenticated endpoint.
-- Player photos and flags are loaded at runtime from Wikipedia and FlagCDN.
-- Poster generation and confetti use `html2canvas` and `canvas-confetti`.
-- The core prediction engine remains client-side and requires no backend.
-
-## Roadmap
-
-- [x] Repo-scoped Codex Skill
-- [x] Bundled standalone predictor
-- [x] Local launch command
-- [x] Live ESPN result command
-- [x] Structural and JavaScript validation
-- [x] Root app and Skill asset synchronization
-- [x] Full browser smoke test
-- [x] Codex plugin packaging and GitHub marketplace
-- [x] Semantic versioning, changelog, release gate, and CI
-- [ ] Final official 2026 squad refresh
-- [x] Public demo deployment at `www.cameraclaw.cn/2026`
-- [ ] PWA support
-
-## 中文说明
-
-这是一个以 **Codex Skill 为主、交互式网页预测器为内置工具** 的
-2026 世界杯项目。
-
-Skill 名称：
+This repository includes an installable Codex skill:
 
 ```text
 $world-cup-2026-predictor
 ```
 
-它可以让 Codex：
+Use it inside Codex for tasks such as:
 
-- 启动完整的 48 队世界杯预测器；
-- 自动或手动生成小组赛与淘汰赛结果；
-- 查询 ESPN 当前已完成比赛和后续赛程；
-- 按真实赛果计算预测得分；
-- 检查 48 队、528 个阵容槽位、位置和名称映射；
-- 在修改球队、阵容、算法或 API 后执行完整验证；
-- 保证 GitHub Pages 页面与 Skill 内置网页保持同步。
+```text
+$world-cup-2026-predictor launch the predictor and generate a complete bracket
 
-### 中文快速开始
+$world-cup-2026-predictor check the latest completed World Cup matches
 
-推荐使用 Plugin 安装，这样后续版本升级有明确的 marketplace 和版本号：
+$world-cup-2026-predictor explain how my bracket is scored against real results
+
+$world-cup-2026-predictor validate the teams, squads, positions, and ESPN mappings
+```
+
+### Install As A Codex Plugin
 
 ```bash
 codex plugin marketplace add jiaqi015/WorldCup2026-Predictor-Skill --ref main
 codex plugin add world-cup-2026-predictor@world-cup-2026
 ```
 
-只安装单个 Skill：
+Upgrade later:
+
+```bash
+codex plugin marketplace upgrade world-cup-2026
+codex plugin add world-cup-2026-predictor@world-cup-2026
+```
+
+### Install Only The Skill
 
 ```bash
 python3 \
@@ -495,48 +203,195 @@ python3 \
   --path skills/world-cup-2026-predictor
 ```
 
-在仓库内开发：
+## Developer Workflow
+
+Root `index.html` is canonical. The bundled skill app must be synced after any app change.
+
+```bash
+python3 skills/world-cup-2026-predictor/scripts/sync_predictor_asset.py
+python3 skills/world-cup-2026-predictor/scripts/validate_predictor.py
+python3 scripts/release_check.py
+git diff --check
+```
+
+Useful development commands:
+
+```bash
+python3 scripts/validate_match_data.py
+python3 scripts/validate_prediction_data.py
+python3 scripts/validate_squads.py
+node --test
+```
+
+Live-result check:
+
+```bash
+python3 skills/world-cup-2026-predictor/scripts/live_results.py
+python3 skills/world-cup-2026-predictor/scripts/live_results.py --json
+```
+
+Deploy the current working tree to the existing Vercel project:
+
+```bash
+vercel --prod --yes
+```
+
+After deploy, verify the actual public route:
+
+```bash
+python3 scripts/verify_public_deployment.py
+```
+
+## Repository Layout
+
+```text
+.
+├── index.html
+├── data/
+│   ├── matches/
+│   ├── prediction/
+│   ├── rag/kimi-world-cup-report/
+│   ├── rankings/
+│   ├── schema/prediction-domain.v1.json
+│   └── squads/
+├── docs/
+│   ├── domain-model.md
+│   ├── prediction-architecture.md
+│   ├── rag-corpus.md
+│   └── readme-*.jpg
+├── scripts/
+│   ├── build_prediction_data.py
+│   ├── embed_prediction_data.py
+│   ├── live-data and validation helpers
+│   └── release_check.py
+├── skills/world-cup-2026-predictor/
+│   ├── SKILL.md
+│   ├── assets/predictor/index.html
+│   ├── references/predictor-model.md
+│   └── scripts/
+├── test/
+├── CHANGELOG.md
+├── RELEASING.md
+├── LICENSE
+└── NOTICE.md
+```
+
+Key files:
+
+| Path | Purpose |
+|---|---|
+| `index.html` | Canonical single-file web app |
+| `skills/world-cup-2026-predictor/assets/predictor/index.html` | Bundled app shipped with the Codex skill |
+| `skills/world-cup-2026-predictor/SKILL.md` | Skill trigger scope and operational workflow |
+| `skills/world-cup-2026-predictor/references/predictor-model.md` | Model invariants and maintenance notes |
+| `data/prediction/prediction_data_v1.json` | Generated prediction dataset |
+| `data/matches/` | Schedule and match detail snapshots |
+| `data/schema/prediction-domain.v1.json` | Machine-readable domain catalog |
+| `scripts/release_check.py` | Main release validation gate |
+| `scripts/embed_prediction_data.py` | Embeds generated data into `index.html` |
+| `scripts/manage_local_preview.sh` | Persistent local preview manager |
+
+## Research Corpus
+
+The repository includes a page-cited RAG corpus generated from a 205-page World Cup report.
+
+```bash
+python3 scripts/validate_rag_corpus.py
+python3 scripts/search_report_rag.py "Brier calibration model drift"
+```
+
+See:
+
+- [Domain model](docs/domain-model.md)
+- [Prediction architecture](docs/prediction-architecture.md)
+- [RAG corpus guide](docs/rag-corpus.md)
+- `data/rag/kimi-world-cup-report/chunks.jsonl`
+
+Report-derived claims remain source assertions until independently verified. Retrieved chunks retain page citation and source hash metadata.
+
+## Release Checklist
+
+1. Edit root `index.html` or data/scripts.
+2. Sync the bundled skill asset.
+3. Run `python3 scripts/release_check.py`.
+4. Run `git diff --check`.
+5. Browser-test the changed flow locally.
+6. Commit and push.
+7. Deploy with `vercel --prod --yes`.
+8. Verify `https://www.cameraclaw.cn/2026`, not only the Vercel deployment URL.
+
+See [RELEASING.md](RELEASING.md) for semantic versioning, plugin publishing, and tag rules.
+
+## Roadmap
+
+- [x] Complete 48-team browser predictor
+- [x] One-click group and knockout simulation
+- [x] Strength and ensemble prediction modes
+- [x] Player goal and assist threat weighting
+- [x] Champion poster and short share links
+- [x] Live-result and scoring integration
+- [x] Codex skill packaging
+- [x] Public Vercel deployment
+- [x] Release validation and CI
+- [ ] Final official 2026 squad refresh
+- [ ] PWA/offline install support
+
+## 中文说明
+
+这是一个完整的 2026 世界杯预测器，也是一个可安装的 Codex Skill。
+
+你可以：
+
+- 模拟 48 队、12 个小组、104 场比赛；
+- 自动或手动填写小组赛比分；
+- 生成 32 强到决赛的完整淘汰赛路径；
+- 查看射手榜和助攻榜；
+- 生成冠军海报并复制短分享链接；
+- 在真实赛果更新后计算预测得分；
+- 让 Codex 负责启动、验证、抓取赛果、维护数据和部署。
+
+在线体验：
+
+[https://www.cameraclaw.cn/2026](https://www.cameraclaw.cn/2026)
+
+本地运行：
 
 ```bash
 git clone https://github.com/jiaqi015/WorldCup2026-Predictor-Skill.git
 cd WorldCup2026-Predictor-Skill
+python3 -m http.server 8765
 ```
 
-在 Codex 中输入：
+然后打开：
+
+[http://localhost:8765](http://localhost:8765)
+
+Codex Skill：
 
 ```text
-$world-cup-2026-predictor 启动预测器并生成一套完整对阵
-```
-
-查询当前赛果：
-
-```text
+$world-cup-2026-predictor 启动预测器并生成完整预测
 $world-cup-2026-predictor 查询最新已结束的世界杯比赛
+$world-cup-2026-predictor 验证球队、阵容、位置和 ESPN 映射
 ```
 
-直接运行工具：
+维护命令：
 
 ```bash
-SKILL_DIR="skills/world-cup-2026-predictor"
-python3 "$SKILL_DIR/scripts/serve_predictor.py" --port 8000
-python3 "$SKILL_DIR/scripts/live_results.py"
-python3 "$SKILL_DIR/scripts/validate_predictor.py"
+python3 skills/world-cup-2026-predictor/scripts/sync_predictor_asset.py
+python3 skills/world-cup-2026-predictor/scripts/validate_predictor.py
 python3 scripts/release_check.py
+git diff --check
 ```
-
-长期迭代遵循 `RELEASING.md`：修改、同步、验证、更新
-`CHANGELOG.md`、提升语义化版本、打 `vX.Y.Z` 标签并发布。
 
 预测结果仅用于娱乐和软件实验，不构成事实预测或投注建议。
 
 ## Credits
 
-- Match data: ESPN public scoreboard feed
+- Match data and live results: ESPN public scoreboard feed
 - Flags: [FlagCDN](https://flagcdn.com/)
-- Player photos: Wikipedia REST API
 - Poster rendering: [html2canvas](https://html2canvas.hertzen.com/)
-- Celebration: [canvas-confetti](https://github.com/catdad/canvas-confetti)
-- Commentary: original tribute text, not quotations from a specific commentator
+- Celebration effects: [canvas-confetti](https://github.com/catdad/canvas-confetti)
+- Browser automation and maintenance workflow: Codex skill tooling
 
 ## License
 
