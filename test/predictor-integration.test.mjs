@@ -150,6 +150,10 @@ test("poster sharing emphasizes URL and keeps modal actions plain", () => {
   assert.match(html, /btnCopyLink:"复制链接（本次模拟完整方案）"/);
   assert.match(html, /btnCopyShort:"复制"/);
   assert.match(html, /btnShare:"分享我的专属预测 海报&链接"/);
+  assert.match(html, /posterModalActionHint:"复制链接给朋友，邀请她也来预测"/);
+  assert.match(html, /posterModalTitle:"分享完整预测"/);
+  assert.doesNotMatch(html, /<div class="share-result-kicker">/);
+  assert.doesNotMatch(html, /posterModalTitle:"长按保存海报"/);
 });
 
 test("shared prediction links use a shorter schedule hash while preserving old links", () => {
@@ -175,22 +179,24 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /body\.dark \.share-cta/);
   assert.match(html, /class="btn-rand share-cta" onclick="genShareCard\(\)"/);
   assert.match(html, /\.share-copy-btn\{[^}]*white-space:normal/);
-  assert.match(html, /\.share-url-row\{[^}]*grid-template-columns:minmax\(0,1fr\) 48px/);
-  assert.match(html, /\.share-url-copy\{[^}]*min-height:56px/);
+  assert.match(html, /\.share-url-row\{[^}]*grid-template-columns:minmax\(0,1fr\) 44px/);
+  assert.match(html, /\.share-url-copy\{[^}]*min-height:54px/);
   assert.match(html, /class="share-url-row"/);
   assert.match(html, /class="share-url-copy" onclick="copyShareLink\(\)"/);
   assert.match(html, /id="copyShareLinkBtn" class="share-copy-btn" onclick="copyShareLink\(\)"/);
   assert.match(html, /btnCopyLink:"Copy link \(full simulation plan\)"/);
   assert.match(html, /btnCopyShort:"Copy"/);
+  assert.match(html, /posterModalTitle:"Share full prediction"/);
   assert.match(html, /btnShare:"Share my poster & link"/);
 });
 
 test("share poster modal uses a designed landscape preview and side actions", () => {
-  assert.match(html, /\.share-result-modal\{[^}]*width:min\(1180px,calc\(100vw - 24px\)\)[^}]*max-height:92vh/);
+  assert.match(html, /\.share-result-modal\{[^}]*width:min\(1220px,calc\(100vw - 12px\)\)[^}]*max-height:92vh/);
   assert.match(html, /\.share-result-modal\{[^}]*background:linear-gradient\(180deg,#08110D 0%,#050806 100%\)/);
-  assert.match(html, /\.share-result-body\{[^}]*display:grid;grid-template-columns:minmax\(0,1.48fr\) 342px/);
+  assert.match(html, /\.share-result-head\{[^}]*align-items:center[^}]*padding:12px 20px 10px/);
+  assert.match(html, /\.share-result-body\{[^}]*display:grid;grid-template-columns:minmax\(0,1.52fr\) 356px/);
   assert.match(html, /\.share-side-panel\{[^}]*flex-direction:column/);
-  assert.match(html, /\.share-preview-frame\{[^}]*width:min\(760px,100%\)/);
+  assert.match(html, /\.share-preview-frame\{[^}]*width:min\(820px,100%\)/);
   assert.match(html, /\.share-url-chip\{[^}]*overflow:hidden;text-overflow:ellipsis/);
   assert.match(html, /\.share-url-copy\{[^}]*border:1px solid rgba\(229,194,106,0\.26\)/);
   assert.match(html, /\.poster\{width:900px;height:560px/);
