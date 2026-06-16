@@ -187,6 +187,7 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "validate_squads.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_final.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_rag_corpus.py")])
+        run([sys.executable, str(ROOT / "scripts" / "audit_source_lineage.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_match_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_prediction_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_refresh_results.py")])

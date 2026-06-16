@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Fetch player photos from TheSportsDB API for remaining placeholders."""
+"""Find or fetch player photos from TheSportsDB API for remaining placeholders.
+
+The default mode is a read-only dry run. Use --write when you intentionally
+want to update data/squads/photo_mapping.json and commit the downloaded assets.
+"""
 import argparse
 import json
 import os
@@ -106,21 +110,37 @@ def determine_ext(url):
 
 def main():
     parser = argparse.ArgumentParser(description="Fetch player photos from TheSportsDB")
-    parser.add_argument("--dry-run", action="store_true", help="Don't download, just show matches")
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        help="Download images and update photo_mapping.json. Default is dry-run.",
+    )
     parser.add_argument("--batch-size", type=int, default=20, help="Batch size for progress reporting")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        help="Process at most N placeholder players. Useful for smoke tests.",
+    )
     args = parser.parse_args()
+    dry_run = not args.write
 
     mapping = load_mapping()
     placeholders = get_placeholders(mapping)
     print(f"[TheSportsDB] {len(placeholders)} placeholder players to process")
+    if dry_run:
+        print("[DRY] No files will be written. Re-run with --write to update assets.")
 
     found = 0
     misses = []
     names = list(placeholders.keys())
+    if args.limit:
+        names = names[: args.limit]
+        print(f"[LIMIT] Processing first {len(names)} names")
 
     for i in range(0, len(names), args.batch_size):
         batch = names[i : i + args.batch_size]
-        print(f"  Batch {i // args.batch_size + 1}: {len(batch)} names...")
+        print(f"  Batch {i // args.batch_size + 1}: {len(batch)} names...", flush=True)
 
         for name in batch:
             pic_url = query_sportsdb(name)
@@ -132,7 +152,7 @@ def main():
 
                 if fpath.exists() and fpath.stat().st_size > 2000:
                     found += 1
-                elif args.dry_run:
+                elif dry_run:
                     found += 1
                     print(f"    [DRY] {name} -> {pic_url}")
                 elif download_image(pic_url, str(fpath)):
@@ -152,7 +172,7 @@ def main():
 
             time.sleep(REQUEST_DELAY)
 
-        if not args.dry_run:
+        if not dry_run:
             save_mapping(mapping)
         print(f"    Found {found} so far, {len(misses)} misses")
 
@@ -161,7 +181,7 @@ def main():
     print(f"  Found: {found}")
     print(f"  Not found: {len(misses)}")
 
-    if not args.dry_run:
+    if not dry_run:
         save_mapping(mapping)
 
     return 0 if found > 0 else 1
