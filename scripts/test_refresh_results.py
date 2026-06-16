@@ -144,6 +144,10 @@ def _make_temp_data(tmpdir, details_count, manifest_count, html_count, bundled_c
     details = {f"m{i}": {"homeTeamCn": "A", "awayTeamCn": "B"} for i in range(details_count)}
     (match_dir / "match_details.json").write_text(json.dumps(details), encoding="utf-8")
 
+    # match_schedule.json
+    schedule = {f"m{i}": {"completed": True} for i in range(manifest_count)}
+    (match_dir / "match_schedule.json").write_text(json.dumps(schedule), encoding="utf-8")
+
     # manifest.json
     manifest = {"completed_count": manifest_count, "match_count": 100}
     (match_dir / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
@@ -219,6 +223,19 @@ def test_assert_consistency():
              mock.patch.object(rr, "SKILL_HTML", skill_html):
             ok, counts = rr.assert_consistency()
             report("all zero → ok", ok)
+
+    # 2.6 Same counts but wrong IDs
+    with tempfile.TemporaryDirectory() as tmpdir:
+        match_dir, index_html, skill_html = _make_temp_data(tmpdir, 2, 2, 2, 2)
+        (match_dir / "match_details.json").write_text(
+            json.dumps({"m0": {}, "wrong": {}}), encoding="utf-8"
+        )
+        with mock.patch.object(rr, "MATCH_DIR", match_dir), \
+             mock.patch.object(rr, "INDEX_HTML", index_html), \
+             mock.patch.object(rr, "SKILL_HTML", skill_html):
+            ok, counts = rr.assert_consistency()
+            report("same count but wrong detail IDs → not ok", not ok)
+            report("schedule id set is exposed", counts["schedule_ids"] == {"m0", "m1"})
 
 
 # ═══════════════════════════════════════════════════════════════════

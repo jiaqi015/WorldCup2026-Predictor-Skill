@@ -126,11 +126,32 @@ test("completed match goal events are team-scoped and enter prediction data", ()
     goals.length,
   );
   assert.match(html, /function renderActualGoalEvents\(matchId\)/);
+  assert.match(html, /function getActualGoalExpectedCount\(matchId,goals\)/);
   assert.match(html, /actualGoalsTitle/);
+  assert.match(html, /actualGoalsPartial/);
+  assert.match(html, /T\("actualMapped",\{mapped:mapped,total:expected\|\|goals\.length\}\)/);
+  assert.match(html, /if\(expected>goals\.length\)h\+='<div class="actual-goals-note">'\+T\("actualGoalsPartial"/);
   assert.match(html, /function actualEventTeamBadge\(team\)/);
   assert.match(html, /class="actual-goal-team"/);
   assert.match(html, /actualEventTeamName\(event,"scorer"\)/);
   assert.match(html, /actualEventTeamName\(event,"assist"\)/);
+});
+
+test("completed match details expose partial ESPN goal-event coverage", () => {
+  const partials = Object.values(matchDetails).filter(
+    (detail) => detail.expectedGoalCount > detail.goalEventCount,
+  );
+  assert.ok(partials.length > 0);
+  assert.ok(
+    partials.every((detail) => detail.goalEventsStatus === "partial"),
+  );
+  const saudiUruguay = matchDetails["760429"];
+  assert.ok(saudiUruguay);
+  assert.equal(saudiUruguay.homeTeamCn, "沙特");
+  assert.equal(saudiUruguay.awayTeamCn, "乌拉圭");
+  assert.equal(saudiUruguay.expectedGoalCount, 2);
+  assert.equal(saudiUruguay.goalEventCount, 1);
+  assert.equal(saudiUruguay.goalEventsStatus, "partial");
 });
 
 test("embedded completed results default into blank group score inputs", () => {
@@ -219,6 +240,7 @@ test("shared prediction links use a shorter schedule hash while preserving old l
     "shared-view banner needs translations before loadState runs",
   );
   assert.match(html, /if\(isViewMode\)\{showViewBanner\(\);applyViewModeLockdown\(\);\}/);
+  assert.doesNotMatch(html, /class="vb-icon"|👁/);
 });
 
 test("share actions guide clicks and keep long copy text readable", () => {

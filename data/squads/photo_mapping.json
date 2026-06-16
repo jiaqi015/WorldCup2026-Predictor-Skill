@@ -740,8 +740,8 @@
     "athlete_id": null
   },
   "Adil Boulbina": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Adil_Boulbina.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Adil_Boulbina.jpg",
     "athlete_id": null
   },
   "Anis Hadj Moussa": {
@@ -750,8 +750,8 @@
     "athlete_id": null
   },
   "Nadhir Benbouali": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Nadhir_Benbouali.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Nadhir_Benbouali.jpg",
     "athlete_id": null
   },
   "Farès Ghedjemis": {
@@ -1600,8 +1600,8 @@
     "athlete_id": null
   },
   "Ryan Mendes": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Ryan_Mendes.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Ryan_Mendes.jpg",
     "athlete_id": null
   },
   "Garry Rodrigues": {
@@ -1625,8 +1625,8 @@
     "athlete_id": "242395"
   },
   "Gilson Benchimol": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Gilson_Benchimol.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Gilson_Benchimol.jpg",
     "athlete_id": null
   },
   "Dailon Livramento": {
@@ -1675,8 +1675,8 @@
     "athlete_id": "220793"
   },
   "Deiver Machado": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Deiver_Machado.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Deiver_Machado.jpg",
     "athlete_id": null
   },
   "Jhon Lucumí": {
@@ -2315,8 +2315,8 @@
     "athlete_id": "199151"
   },
   "Mohamed El Shenawy": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Mohamed_El_Shenawy.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Mohamed_El_Shenawy.jpg",
     "athlete_id": null
   },
   "Mahdy Soliman": {
@@ -2370,8 +2370,8 @@
     "athlete_id": null
   },
   "Hamdy Fathy": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Hamdy_Fathy.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Hamdy_Fathy.jpg",
     "athlete_id": null
   },
   "Nabil Donga": {
@@ -2955,8 +2955,8 @@
     "athlete_id": null
   },
   "Johny Placide": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Johny_Placide.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Johny_Placide.jpg",
     "athlete_id": null
   },
   "Josué Duverger": {
@@ -3185,8 +3185,8 @@
     "athlete_id": null
   },
   "Amirhossein Hosseinzadeh": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Amirhossein_Hosseinzadeh.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Amirhossein_Hosseinzadeh.jpg",
     "athlete_id": null
   },
   "Dennis Dargahi": {
@@ -3205,8 +3205,8 @@
     "athlete_id": null
   },
   "Jalal Hassan": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Jalal_Hassan.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Jalal_Hassan.jpg",
     "athlete_id": null
   },
   "Ahmed Basil": {
@@ -3560,8 +3560,8 @@
     "athlete_id": null
   },
   "Abdallah Al-Fakhouri": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Abdallah_Al-Fakhouri.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Abdallah_Al-Fakhouri.jpg",
     "athlete_id": null
   },
   "Nour Bani Ateyah": {
@@ -3575,8 +3575,8 @@
     "athlete_id": null
   },
   "Yazan Al-Arab": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Yazan_Al-Arab.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Yazan_Al-Arab.jpg",
     "athlete_id": null
   },
   "Mohammad Abualnadi": {
@@ -3610,8 +3610,8 @@
     "athlete_id": null
   },
   "Saed Al-Rosan": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Saed_Al-Rosan.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Saed_Al-Rosan.jpg",
     "athlete_id": null
   },
   "Mohammad Abughoush": {
@@ -3750,8 +3750,8 @@
     "athlete_id": "246289"
   },
   "Érik Lira": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Érik_Lira.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Erik_Lira.png",
     "athlete_id": null
   },
   "Álvaro Fidalgo": {
@@ -4090,8 +4090,8 @@
     "athlete_id": "247611"
   },
   "Sander Tangvik": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Sander_Tangvik.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Sander_Tangvik.jpg",
     "athlete_id": null
   },
   "Kristoffer Ajer": {
@@ -4165,8 +4165,8 @@
     "athlete_id": null
   },
   "Thelo Aasgaard": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Thelo_Aasgaard.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Thelo_Aasgaard.jpg",
     "athlete_id": null
   },
   "Antonio Nusa": {
@@ -4185,8 +4185,8 @@
     "athlete_id": null
   },
   "Andreas Schjelderup": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Andreas_Schjelderup.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Andreas_Schjelderup.jpg",
     "athlete_id": null
   },
   "Luis Mejía": {
@@ -4365,8 +4365,8 @@
     "athlete_id": null
   },
   "Damián Bobadilla": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Damián_Bobadilla.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Damian_Bobadilla.jpg",
     "athlete_id": null
   },
   "Gustavo Caballero": {
@@ -4525,8 +4525,8 @@
     "athlete_id": null
   },
   "Meshaal Barsham": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Meshaal_Barsham.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Meshaal_Barsham.jpg",
     "athlete_id": null
   },
   "Salah Zakaria": {
@@ -4905,13 +4905,13 @@
     "athlete_id": "212392"
   },
   "Ben Gannon-Doak": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Ben_Gannon-Doak.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Ben_Gannon-Doak.jpg",
     "athlete_id": null
   },
   "Findlay Curtis": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Findlay_Curtis.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Findlay_Curtis.jpg",
     "athlete_id": null
   },
   "Mory Diaw": {
@@ -5380,8 +5380,8 @@
     "athlete_id": "248148"
   },
   "Yéremy Pino": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Yéremy_Pino.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Yeremy_Pino.jpg",
     "athlete_id": null
   },
   "Álex Baena": {
@@ -5860,8 +5860,8 @@
     "athlete_id": null
   },
   "Samet Akaydin": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Samet_Akaydin.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Samet_Akaydin.jpg",
     "athlete_id": null
   },
   "Hakan Çalhanoglu": {
@@ -5885,8 +5885,8 @@
     "athlete_id": null
   },
   "Arda Güler": {
-    "source": "placeholder",
-    "path": "data/photos/avatar_Arda_Güler.svg",
+    "source": "wikipedia",
+    "path": "data/photos/wikipedia_Arda_Guler.jpg",
     "athlete_id": null
   },
   "Can Uzun": {

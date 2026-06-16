@@ -108,6 +108,11 @@ def count_manifest() -> int:
     return int(manifest["completed_count"])
 
 
+def completed_schedule_ids() -> set:
+    schedule = json.loads((MATCH_DIR / "match_schedule.json").read_text(encoding="utf-8"))
+    return {mid for mid, match in schedule.items() if match.get("completed")}
+
+
 def count_details_file() -> int:
     details = json.loads((MATCH_DIR / "match_details.json").read_text(encoding="utf-8"))
     return len(details)
@@ -124,14 +129,23 @@ def count_html_matches(html_path: Path) -> int:
     return len(json.loads(raw))
 
 
+def html_match_ids(html_path: Path) -> set:
+    source = html_path.read_text(encoding="utf-8")
+    raw = extract_js_value(source, "MATCH_DETAILS")
+    return set(json.loads(raw).keys())
+
+
 def get_all_counts() -> dict:
     """Return completed match counts from all 4 sources plus the ID set."""
     return {
         "manifest": count_manifest(),
+        "schedule_ids": completed_schedule_ids(),
         "file": count_details_file(),
         "html": count_html_matches(INDEX_HTML),
         "bundled": count_html_matches(SKILL_HTML),
         "ids": details_ids(),
+        "html_ids": html_match_ids(INDEX_HTML),
+        "bundled_ids": html_match_ids(SKILL_HTML),
     }
 
 
@@ -164,7 +178,9 @@ def assert_consistency() -> tuple:
     """Verify 4-way consistency. Returns (ok, counts_dict)."""
     counts = get_all_counts()
     values = [counts["manifest"], counts["file"], counts["html"], counts["bundled"]]
-    ok = len(set(values)) == 1
+    expected_ids = counts["schedule_ids"]
+    id_sets = [counts["ids"], counts["html_ids"], counts["bundled_ids"]]
+    ok = len(set(values)) == 1 and all(ids == expected_ids for ids in id_sets)
     if ok:
         print(f"[OK] Consistency verified: {values[0]} completed matches across all 4 sources")
     else:
@@ -173,6 +189,18 @@ def assert_consistency() -> tuple:
         print(f"  match_details.json keys  = {counts['file']}", file=sys.stderr)
         print(f"  index.html MATCH_DETAILS = {counts['html']}", file=sys.stderr)
         print(f"  bundled MATCH_DETAILS    = {counts['bundled']}", file=sys.stderr)
+        missing_file = sorted(expected_ids - counts["ids"])
+        extra_file = sorted(counts["ids"] - expected_ids)
+        missing_html = sorted(expected_ids - counts["html_ids"])
+        missing_bundled = sorted(expected_ids - counts["bundled_ids"])
+        if missing_file:
+            print(f"  missing details for completed schedule ids = {', '.join(missing_file)}", file=sys.stderr)
+        if extra_file:
+            print(f"  extra detail ids not completed in schedule = {', '.join(extra_file)}", file=sys.stderr)
+        if missing_html:
+            print(f"  missing index.html MATCH_DETAILS ids = {', '.join(missing_html)}", file=sys.stderr)
+        if missing_bundled:
+            print(f"  missing bundled MATCH_DETAILS ids = {', '.join(missing_bundled)}", file=sys.stderr)
     return ok, counts
 
 

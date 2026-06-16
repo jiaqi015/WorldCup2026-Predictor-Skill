@@ -242,17 +242,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 1000,
-      "spread": null,
-      "overUnder": 3.5,
-      "details": "ESP -1000"
-    },
-    "status": "STATUS_FIRST_HALF",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760426": {
     "id": "760426",
@@ -269,17 +261,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 295,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "BEL -170"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760429": {
     "id": "760429",
@@ -296,17 +280,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 350,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "URU -235"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760427": {
     "id": "760427",
@@ -323,17 +299,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 255,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "IRN -130"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760432": {
     "id": "760432",
@@ -354,10 +322,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 350,
+      "drawML": 340,
       "spread": null,
       "overUnder": 2.5,
-      "details": "FRA -215"
+      "details": "FRA -195"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -384,7 +352,7 @@
       "drawML": 600,
       "spread": null,
       "overUnder": 2.5,
-      "details": "NOR -525"
+      "details": "NOR -500"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -411,7 +379,7 @@
       "drawML": 360,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ARG -245"
+      "details": "ARG -235"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -438,7 +406,7 @@
       "drawML": 425,
       "spread": null,
       "overUnder": 2.5,
-      "details": "AUT -280"
+      "details": "AUT -270"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -465,7 +433,7 @@
       "drawML": 475,
       "spread": null,
       "overUnder": 2.5,
-      "details": "POR -350"
+      "details": "POR -360"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -597,10 +565,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 320,
+      "drawML": 310,
       "spread": null,
       "overUnder": 2.5,
-      "details": "SUI -175"
+      "details": "SUI -170"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -708,7 +676,7 @@
       "drawML": 265,
       "spread": null,
       "overUnder": 2.5,
-      "details": "MAR -130"
+      "details": "MAR -135"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -843,7 +811,7 @@
       "drawML": 1000,
       "spread": null,
       "overUnder": 3.5,
-      "details": "ECU -1000"
+      "details": "ECU -1100"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -894,10 +862,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 1000,
+      "drawML": 950,
       "spread": null,
       "overUnder": 3.5,
-      "details": "ESP -1000"
+      "details": "ESP -900"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -921,10 +889,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 390,
+      "drawML": 370,
       "spread": null,
       "overUnder": 2.5,
-      "details": "BEL -255"
+      "details": "BEL -235"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -948,10 +916,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 360,
+      "drawML": 320,
       "spread": null,
       "overUnder": 2.5,
-      "details": "URU -225"
+      "details": "URU -205"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -975,10 +943,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 290,
+      "drawML": 310,
       "spread": null,
       "overUnder": 2.5,
-      "details": "EGY -130"
+      "details": "EGY -160"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1596,10 +1564,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 295,
+      "drawML": 275,
       "spread": null,
       "overUnder": 2.5,
-      "details": "CPV +145"
+      "details": "KSA +145"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1623,10 +1591,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 300,
+      "drawML": 330,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ESP -155"
+      "details": "ESP -185"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1650,10 +1618,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 210,
+      "drawML": 215,
       "spread": null,
       "overUnder": 1.5,
-      "details": "EGY +125"
+      "details": "EGY +110"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1677,10 +1645,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 475,
+      "drawML": 550,
       "spread": null,
       "overUnder": 2.5,
-      "details": "BEL -340"
+      "details": "BEL -450"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false

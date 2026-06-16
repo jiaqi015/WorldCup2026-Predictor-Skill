@@ -311,6 +311,14 @@ def main():
         # Parse key events
         key_events = summary.get("keyEvents", [])
         events = parse_key_events(key_events, home_team_id, home_cn, away_cn)
+        expected_goal_count = home_score + away_score
+        goal_event_count = sum(1 for e in events if e.get("type") == "goal")
+        if goal_event_count == expected_goal_count:
+            goal_events_status = "complete"
+        elif goal_event_count < expected_goal_count:
+            goal_events_status = "partial"
+        else:
+            goal_events_status = "extra"
 
         # Parse team stats
         boxscore = summary.get("boxscore", {})
@@ -324,12 +332,15 @@ def main():
             "awayScore": away_score,
             "attendance": attendance,
             "referee": referee,
+            "expectedGoalCount": expected_goal_count,
+            "goalEventCount": goal_event_count,
+            "goalEventsStatus": goal_events_status,
             "events": events,
             "stats": stats
         }
 
         print(f"  Score: {home_score}-{away_score}")
-        print(f"  Events: {len(events)} (goals: {sum(1 for e in events if e['type'] == 'goal')})")
+        print(f"  Events: {len(events)} (goals: {goal_event_count}/{expected_goal_count}, {goal_events_status})")
         if referee:
             print(f"  Referee: {referee}")
         if attendance:
