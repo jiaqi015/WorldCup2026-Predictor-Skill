@@ -197,7 +197,17 @@ test("poster route includes a compact group-stage explanation before knockouts",
 
 test("shared prediction links use a shorter schedule hash while preserving old links", () => {
   assert.match(html, /var SHORT_SHARE_STATE_VERSION=3/);
+  assert.match(html, /var RAW_SHORT_SHARE_STATE_VERSION="4"/);
+  assert.match(html, /var PACKED_SHORT_SHARE_STATE_VERSION="5"/);
+  assert.match(html, /var SHORT_SHARE_PACK_ALPHABET=/);
   assert.match(html, /function serializeShortState\(\)/);
+  assert.match(html, /return PACKED_SHORT_SHARE_STATE_VERSION\+bitsToShareText\(bits\)/);
+  assert.match(html, /function deserializePackedShortState\(encoded\)/);
+  assert.match(html, /function deserializeRawShortState\(encoded\)/);
+  assert.match(html, /function deserializeShortParts\(gPart,kPart\)/);
+  assert.match(html, /if\(deserializePackedShortState\(encoded\)\)return true/);
+  assert.match(html, /if\(deserializeRawShortState\(encoded\)\)return true/);
+  assert.match(html, /rebuildAllScorers\(\);/);
   assert.match(html, /function deserializeShortState\(encoded\)/);
   assert.match(html, /hash&&hash\.indexOf\("#s="\)===0/);
   assert.match(html, /hash&&hash\.indexOf\("#p="\)===0/);
@@ -254,9 +264,20 @@ test("share poster modal uses a designed landscape preview and side actions", ()
 test("knockout tab gently guides users after group stage completion", () => {
   assert.match(html, /\.tabs button\.tab-guide\{[^}]*animation:tabGuidePulse/);
   assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.tabs button\.tab-guide,\.tabs button\.tab-guide svg\{animation:none\}\}/);
-  assert.match(html, /var guideKO=tab==="groups"&&allDone\(\)&&!\(ko&&ko\.FINAL&&ko\.FINAL\.w\)/);
+  assert.match(html, /var groupDone=allDone\(\),knockoutDone=!!\(ko&&ko\.FINAL&&ko\.FINAL\.w\)/);
+  assert.match(html, /var guideKO=tab==="groups"&&groupDone&&!knockoutDone/);
   assert.match(html, /ts\[i\]==="knockout"&&guideKO\?" tab-guide":""/);
   assert.match(html, /class="tab-guide-badge">→<\/span>/);
+});
+
+test("completed group and knockout tabs get subtle completion markers", () => {
+  assert.match(html, /tabComplete:"已完成"/);
+  assert.match(html, /tabComplete:"Completed"/);
+  assert.match(html, /\.tab-done-badge\{display:inline-flex[^}]*radial-gradient/);
+  assert.match(html, /var done=\(ts\[i\]==="groups"&&groupDone\)\|\|\(ts\[i\]==="knockout"&&knockoutDone\)/);
+  assert.match(html, /\(done\?" tab-complete":""\)/);
+  assert.match(html, /class="tab-done-badge" aria-label="'\+T\("tabComplete"\)\+'"/);
+  assert.doesNotMatch(html, /class="tab-done-badge"[^>]*>✓<\/span>/);
 });
 
 test("group matches render chronologically without changing fixture identity", () => {

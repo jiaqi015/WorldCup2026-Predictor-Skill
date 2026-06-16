@@ -83,7 +83,7 @@ def check_photo_sources():
     for item in photo_map.values():
         source = item.get("source", "unknown")
         sources[source] = sources.get(source, 0) + 1
-    approved = {"espn", "placeholder", "sofifa"}
+    approved = {"espn", "placeholder", "sofifa", "wikidata"}
     unexpected = sorted(set(sources) - approved)
     total = len(photo_map)
 
