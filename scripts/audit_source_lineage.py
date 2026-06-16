@@ -15,6 +15,10 @@ INDEX_HTML = ROOT / "index.html"
 SKILL_HTML = (
     ROOT / "skills" / "world-cup-2026-predictor" / "assets" / "predictor" / "index.html"
 )
+SCRIPTS_DIR = ROOT / "scripts"
+sys.path.insert(0, str(SCRIPTS_DIR))
+
+from update_index import TEAM_CN_MAP, get_player_cn_name  # noqa: E402
 
 EMBEDDED_JSON_SOURCES = {
     "FIFA_RANKINGS": ROOT / "data" / "rankings" / "fifa_rankings.json",
@@ -102,6 +106,40 @@ def assert_embeds_match_files(errors: list[str]) -> None:
     else:
         if embedded_odds != expected_odds:
             fail("COMPLETE_ODDS: embedded compact odds differ from prediction_data_v1.json", errors)
+
+    expected_photos = expected_photo_map()
+    for source_name, source in (("index.html", html), ("skill asset", skill_html)):
+        try:
+            embedded_photos = extract_js_value(source, "PHOTO_MAP")
+        except (ValueError, json.JSONDecodeError) as exc:
+            fail(f"PHOTO_MAP: cannot parse embedded value in {source_name}: {exc}", errors)
+            continue
+        if embedded_photos != expected_photos:
+            fail(
+                f"PHOTO_MAP: embedded value in {source_name} differs from "
+                "data/squads/photo_mapping.json",
+                errors,
+            )
+
+
+def expected_photo_map() -> dict[str, str]:
+    squads = load_json(ROOT / "data" / "squads" / "squads_partial.json")
+    mapping = load_json(ROOT / "data" / "squads" / "player_mapping.json")
+    source_photos = load_json(ROOT / "data" / "squads" / "photo_mapping.json")
+    display_photos: dict[str, str] = {}
+
+    for team_en, team_data in squads.items():
+        team_cn = TEAM_CN_MAP.get(team_en, team_en)
+        for player in team_data.get("players", []):
+            en_name = player["name"]
+            cn_name = get_player_cn_name(en_name, mapping, team_en)
+            photo = source_photos.get(f"{en_name} ({team_en})") or source_photos.get(en_name)
+            if not photo:
+                continue
+            path = photo["path"]
+            display_photos[f"{team_cn}|{cn_name}"] = path
+            display_photos[cn_name] = path
+    return display_photos
 
 
 def assert_match_lineage(errors: list[str]) -> None:
