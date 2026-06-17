@@ -74,6 +74,22 @@ Older generated media is still kept in `docs/` for release notes and historical 
 
 ## Quick Start
 
+### Browser mode vs Codex Skill mode
+
+There are two supported ways to use this project:
+
+| Mode | Best for | Start here |
+| --- | --- | --- |
+| Browser mode | Playing the predictor directly, editing scores, sharing a bracket, and checking the score tab. | Open the live site or run the static app locally. |
+| Codex Skill mode | Asking Codex to guide, generate, score, inspect, repair, validate, or explain the workflow. | Use `$world-cup-2026-predictor` followed by a natural-language task. |
+
+Install -> Learn -> Use:
+
+1. Install or open: use the live site for browser play, or install the Codex plugin/skill for agent-assisted workflows.
+2. Learn the commands: read the examples below, use the plugin prompt chips, or open the in-app `?` help.
+3. Use the workflow: ask Codex for guided play, one-shot simulation, live results, scoring, or maintenance review.
+4. Verify the result: browser workflows end with a champion/share/score state; skill workflows end with source output, tests, or validators.
+
 ```bash
 git clone https://github.com/jiaqi015/WorldCup2026-Predictor-Skill.git
 cd WorldCup2026-Predictor-Skill
@@ -171,14 +187,26 @@ $world-cup-2026-predictor
 Use it inside Codex for tasks such as:
 
 ```text
-$world-cup-2026-predictor launch the predictor and generate a complete bracket
+$world-cup-2026-predictor launch the predictor and guide me through a complete bracket
 
-$world-cup-2026-predictor check the latest completed World Cup matches
+$world-cup-2026-predictor generate a full tournament prediction and summarize the champion path
 
-$world-cup-2026-predictor explain how my bracket is scored against real results
+$world-cup-2026-predictor check the latest completed World Cup matches from ESPN
 
-$world-cup-2026-predictor validate the teams, squads, positions, and ESPN mappings
+$world-cup-2026-predictor explain or score my bracket against real results
+
+$world-cup-2026-predictor review, repair, and validate the predictor data and bundled app
 ```
+
+Useful skill play styles:
+
+| Style | What Codex should do |
+| --- | --- |
+| Guided play | Launch the app, keep the browser open, and walk through group stage, knockout, scorer selection, and sharing. |
+| One-shot simulation | Complete all 72 group matches and every knockout match, then report champion, runner-up, third place, and share status. |
+| Live-results check | Fetch ESPN's current scoreboard feed and report source, fetch time, completed count, and relevant matches. |
+| Scoring explainer | Explain or calculate group, knockout, and podium points against real results. |
+| Maintenance review | Inspect app/data/skill drift, patch the canonical source, sync the bundled asset, and run validation. |
 
 ### Install As A Codex Plugin
 
@@ -350,6 +378,20 @@ See [RELEASING.md](RELEASING.md) for semantic versioning, plugin publishing, and
 - 在真实赛果更新后计算预测得分；
 - 让 Codex 负责启动、验证、抓取赛果、维护数据和部署。
 
+双模式使用路径：
+
+| 模式 | 适合谁 | 从哪开始 |
+| --- | --- | --- |
+| 浏览器模式 | 直接玩预测器、改比分、生成海报、查看评分。 | 打开线上地址，或本地运行静态页面。 |
+| Codex Skill 模式 | 让 Codex 陪玩、一键生成、查赛果、解释计分、CR/修复/验证。 | 使用 `$world-cup-2026-predictor` 加一句自然语言任务。 |
+
+安装 -> 学习 -> 使用：
+
+1. 安装或打开：普通用户打开网页，Codex 用户安装 plugin/skill。
+2. 学口令：看下面的常用命令、plugin prompt，或打开网页左上角 `?`。
+3. 开始用：选择陪玩、一键生成、查赛果、计分解释、维护审查。
+4. 验结果：网页以冠军/分享/评分状态为准；skill 以脚本输出、测试和 validator 为准。
+
 在线体验：
 
 [https://www.cameraclaw.cn/2026](https://www.cameraclaw.cn/2026)
@@ -369,9 +411,11 @@ python3 -m http.server 8765
 Codex Skill：
 
 ```text
-$world-cup-2026-predictor 启动预测器并生成完整预测
+$world-cup-2026-predictor 打开预测器，陪我做一版完整预测
+$world-cup-2026-predictor 一键生成完整预测并总结冠军之路
 $world-cup-2026-predictor 查询最新已结束的世界杯比赛
-$world-cup-2026-predictor 验证球队、阵容、位置和 ESPN 映射
+$world-cup-2026-predictor 解释我的预测怎么按真实赛果计分
+$world-cup-2026-predictor CR 并修复球队、阵容、位置和 ESPN 映射问题
 ```
 
 维护命令：

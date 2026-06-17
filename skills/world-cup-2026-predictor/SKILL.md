@@ -13,6 +13,84 @@ Use the bundled single-file web app for interactive brackets and the bundled scr
 - For current scores or completed-match counts, run the live-results script before answering.
 - For code or data changes, read `references/predictor-model.md`, edit the canonical app, sync the bundled asset, then validate.
 - For a quick health check, run the validator without launching a browser.
+- For browser comments or UX bug reports, reproduce the visible flow first, then add or update a focused regression test before validating.
+- For onboarding, command discovery, or broad product testing, read `references/user-playbooks.json`; it is the source of truth for the install/learn/use journey, five primary skill modes, and 20 simulated user scenarios.
+
+## User Intent Playbooks
+
+Use these playbooks to map the user's wording to an execution path.
+
+### Launch And Guide
+
+Example prompts:
+
+- `$world-cup-2026-predictor 打开预测器，陪我做一版预测`
+- `$world-cup-2026-predictor launch the predictor and help me finish a bracket`
+
+Do this:
+
+1. Start `python3 scripts/serve_predictor.py --port 8000`.
+2. Open the printed URL when browser tools are available.
+3. Guide the user through group scores, knockout completion, scorers, and sharing.
+4. Do not call the run complete until a champion is visible and Share is enabled.
+
+### Generate A Complete Bracket
+
+Example prompts:
+
+- `$world-cup-2026-predictor 一键生成完整预测`
+- `$world-cup-2026-predictor simulate the full tournament`
+
+Do this:
+
+1. Launch the app.
+2. Pick a compatible gameplay and prediction model when the user does not specify one.
+3. Fill all 72 group matches.
+4. Complete every knockout match, including final and third-place match.
+5. Report champion, runner-up, third place, top scorer/assist leaders if available, and whether a share link was created.
+
+### Score Or Explain A Prediction
+
+Example prompts:
+
+- `$world-cup-2026-predictor 解释我的预测怎么计分`
+- `$world-cup-2026-predictor score my bracket against real results`
+
+Do this:
+
+1. Check whether the app state or shared URL contains a completed bracket.
+2. Run a fresh live-result check if the user asks for current scoring.
+3. Explain group-score points, knockout advancement points, and podium points.
+4. If real results are unavailable, say that scoring is waiting on completed ESPN results.
+
+### Check Live Results
+
+Example prompts:
+
+- `$world-cup-2026-predictor 今天结束了哪些比赛`
+- `$world-cup-2026-predictor check latest completed matches`
+
+Do this:
+
+1. Run `python3 scripts/live_results.py --json`.
+2. Report `fetched_at`, completed count, source, and the relevant matches.
+3. Treat ESPN as an external source; if the fetch or mapping fails, report the failure instead of inventing a score.
+
+### Maintain Or Review The Product
+
+Example prompts:
+
+- `$world-cup-2026-predictor CR 预测器代码和数据`
+- `$world-cup-2026-predictor 修这个浏览器反馈并加测试`
+- `$world-cup-2026-predictor validate all teams, squads, positions, and ESPN mappings`
+
+Do this:
+
+1. Read `references/predictor-model.md`.
+2. Identify whether the change affects UI, embedded data, scripts, or skill packaging.
+3. Edit the root `index.html` for app changes, not only the bundled asset.
+4. Add or update focused tests for the user-visible behavior.
+5. Sync the bundled app and run the validation commands below.
 
 ## Launch The Predictor
 
@@ -74,3 +152,10 @@ git diff --check
 ```
 
 The validator checks skill structure, tournament data invariants, inline JavaScript syntax when Node.js is available, and source/bundled-app drift.
+
+## Done Criteria
+
+- Interactive work: the browser state proves the requested prediction, score, or share flow.
+- Live-result work: the response names the source, fetch time, and completed-match count.
+- Code/data work: root `index.html` and bundled asset are in sync, targeted tests pass, and validator output is reported.
+- Review work: findings lead, with file/line references and severity; include test gaps when no code is changed.

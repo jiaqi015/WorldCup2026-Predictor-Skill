@@ -71,6 +71,27 @@ class TestSafeName(unittest.TestCase):
     def test_empty(self):
         self.assertEqual(photo_utils.safe_name(""), "")
 
+    def test_path_traversal(self):
+        """H2: safe_name must neutralize path traversal attempts."""
+        result = photo_utils.safe_name("../etc/passwd")
+        self.assertNotIn("..", result)
+        self.assertNotIn("/", result)
+
+    def test_slash_in_name(self):
+        """H2: slashes must be stripped."""
+        result = photo_utils.safe_name("O'Brien/Test")
+        self.assertNotIn("/", result)
+        self.assertNotIn("\\", result)
+
+    def test_null_byte(self):
+        """H2: null bytes must be stripped."""
+        result = photo_utils.safe_name("Test\x00Player")
+        self.assertNotIn("\x00", result)
+
+    def test_only_unsafe_chars(self):
+        """H2: if all chars are unsafe, return 'unknown'."""
+        self.assertEqual(photo_utils.safe_name("/..:\\"), "unknown")
+
 
 class TestValidateImage(unittest.TestCase):
     """Magic bytes validation: accept PNG/JPEG/WEBP, reject HTML/SVG/other."""
@@ -154,6 +175,108 @@ class TestSaveMapping(unittest.TestCase):
         with open(path) as f:
             self.assertEqual(json.load(f), updated)
         os.unlink(path)
+
+
+class TestDetermineExt(unittest.TestCase):
+    """M3: Shared determine_ext function."""
+
+    def test_png(self):
+        self.assertEqual(photo_utils.determine_ext("http://example.com/img.png"), ".png")
+
+    def test_webp(self):
+        self.assertEqual(photo_utils.determine_ext("http://example.com/img.webp"), ".webp")
+
+    def test_default_jpg(self):
+        self.assertEqual(photo_utils.determine_ext("http://example.com/img"), ".jpg")
+
+    def test_strips_query_params(self):
+        self.assertEqual(photo_utils.determine_ext("http://example.com/img.png?width=256"), ".png")
+
+
+class TestDownloadImageSizeLimit(unittest.TestCase):
+    """H3: download_image must reject files exceeding MAX_IMAGE_SIZE."""
+
+    def test_rejects_oversized(self):
+        """Files larger than MAX_IMAGE_SIZE must be rejected."""
+        import urllib.request
+        from unittest.mock import MagicMock
+
+        # Simulate a response returning more than MAX_IMAGE_SIZE bytes
+        oversized = b"x" * (photo_utils.MAX_IMAGE_SIZE + 1)
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = oversized
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+
+        with patch.object(urllib.request, "urlopen", return_value=mock_resp):
+            result = photo_utils.download_image("http://example.com/huge.jpg", "/tmp/test_huge.jpg")
+        self.assertFalse(result)
+
+    def test_rejects_tiny(self):
+        """Files smaller than 2000 bytes must be rejected."""
+        import urllib.request
+        from unittest.mock import MagicMock
+
+        tiny = b"x" * 100
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = tiny
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+
+        with patch.object(urllib.request, "urlopen", return_value=mock_resp):
+            result = photo_utils.download_image("http://example.com/tiny.jpg", "/tmp/test_tiny.jpg")
+        self.assertFalse(result)
+
+
+class TestGetPlaceholders(unittest.TestCase):
+
+    def test_returns_only_placeholders(self):
+        mapping = {
+            "A": {"source": "espn", "path": "a.png"},
+            "B": {"source": "placeholder", "path": "b.svg"},
+            "C": {"source": "wikidata", "path": "c.jpg"},
+        }
+        result = photo_utils.get_placeholders(mapping)
+        self.assertEqual(list(result.keys()), ["B"])
+
+    def test_empty_mapping_returns_empty(self):
+        result = photo_utils.get_placeholders({})
+        self.assertEqual(result, {})
+
+    def test_no_placeholders(self):
+        mapping = {
+            "A": {"source": "espn", "path": "a.png"},
+            "B": {"source": "sofifa", "path": "b.png"},
+        }
+        result = photo_utils.get_placeholders(mapping)
+        self.assertEqual(result, {})
+
+
+class TestDownloadImageSuccess(unittest.TestCase):
+
+    def test_success_path(self):
+        """Valid PNG image should be saved and return True."""
+        import urllib.request
+        from unittest.mock import MagicMock
+        import tempfile
+
+        png_data = b"\x89PNG\r\n" + b"\x00" * 3000
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = png_data
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as f:
+            path = f.name
+        try:
+            with patch.object(urllib.request, "urlopen", return_value=mock_resp):
+                result = photo_utils.download_image("http://example.com/ok.png", path)
+            self.assertTrue(result)
+            with open(path, "rb") as f:
+                self.assertEqual(f.read(), png_data)
+        finally:
+            if os.path.exists(path):
+                os.unlink(path)
 
 
 if __name__ == "__main__":

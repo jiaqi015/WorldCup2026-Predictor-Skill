@@ -30,9 +30,11 @@
     ],
     "websiteURL": "https://github.com/jiaqi015/WorldCup2026-Predictor-Skill",
     "defaultPrompt": [
-      "Launch the World Cup 2026 predictor and generate a complete bracket.",
-      "Check the latest completed World Cup matches.",
-      "Validate the predictor data and bundled app."
+      "Launch the predictor and guide me through a complete bracket.",
+      "Generate a full tournament prediction and summarize the champion path.",
+      "Check the latest completed World Cup matches from ESPN.",
+      "Explain or score my bracket against real results.",
+      "Review, repair, and validate the predictor data and bundled app."
     ],
     "brandColor": "#146B4A"
   }

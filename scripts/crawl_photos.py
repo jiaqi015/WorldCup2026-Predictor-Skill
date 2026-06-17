@@ -61,7 +61,9 @@ def download_file(url, filepath, retries=MAX_RETRIES, timeout=10):
                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
             })
             resp = urllib.request.urlopen(req, timeout=timeout)
-            data = resp.read()
+            data = resp.read(5 * 1024 * 1024 + 1)  # 5MB cap
+            if len(data) > 5 * 1024 * 1024:
+                return False
             if len(data) < 1000:  # Too small, likely error page
                 return False
             with open(filepath, "wb") as f:
@@ -177,9 +179,10 @@ def crawl_all_photos():
 
         stats["teams_processed"] += 1
 
-    # Save mapping
-    with open(PHOTO_MAP_FILE, "w", encoding="utf-8") as f:
-        json.dump(photo_mapping, f, ensure_ascii=False, indent=2)
+    # Save mapping (atomic write)
+    sys.path.insert(0, str(Path(__file__).parent))
+    from photo_utils import save_mapping
+    save_mapping(photo_mapping)
 
     return stats, photo_mapping
 

@@ -18,13 +18,14 @@ from photo_utils import (
     normalize_name,
     safe_name,
     save_mapping,
-    validate_image,
+    download_image,
+    determine_ext,
+    USER_AGENT,
 )
 
 PHOTOS_DIR = Path(__file__).parent.parent / "data" / "photos"
 PHOTOS_DIR.mkdir(exist_ok=True)
 
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 REQUEST_DELAY = 1.0
 DOWNLOAD_DELAY = 2.0
 DOWNLOAD_JITTER = 1.0
@@ -48,47 +49,6 @@ def query_wikipedia(name):
         if "original" in page:
             return page["original"].get("source")
     return None
-
-
-def download_image(url, filepath, timeout=20):
-    """Download image from URL, validate, and save."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                data = resp.read()
-            break
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                wait = 2 ** (attempt + 2)
-                print(f"  [429] Rate limited, waiting {wait}s...")
-                time.sleep(wait)
-                continue
-            print(f"  [Download] Failed: {e}")
-            return False
-        except Exception as e:
-            print(f"  [Download] Failed: {e}")
-            return False
-    else:
-        return False
-
-    if len(data) < 2000:
-        return False
-
-    with open(filepath, "wb") as f:
-        f.write(data)
-
-    return validate_image(filepath)
-
-
-def determine_ext(url):
-    """Guess file extension from URL or default to .jpg."""
-    lower = url.lower()
-    if ".png" in lower:
-        return ".png"
-    if ".webp" in lower:
-        return ".webp"
-    return ".jpg"
 
 
 def main():

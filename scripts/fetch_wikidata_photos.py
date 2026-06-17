@@ -28,11 +28,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 from photo_utils import (
     normalize_name, surname, safe_name, validate_image,
     load_mapping, save_mapping, get_placeholders,
+    download_image, determine_ext, USER_AGENT, MAX_IMAGE_SIZE,
 )
 
 PHOTOS_DIR = Path(__file__).parent.parent / "data" / "photos"
 SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 REQUEST_DELAY = 0.5  # seconds between SPARQL queries
 DOWNLOAD_DELAY = 3.0  # seconds between image downloads
 DOWNLOAD_JITTER = 1.0  # random jitter added to delay
@@ -41,7 +41,9 @@ BATCH_SIZE = 50
 
 def build_sparql_batch(names, with_occupation=True):
     """Build a SPARQL query for a batch of names."""
-    values = " ".join(f'"{name}"@en' for name in names)
+    # L1: Escape double quotes in names to prevent SPARQL injection
+    escaped = [n.replace('"', '\\"') for n in names]
+    values = " ".join(f'"{name}"@en' for name in escaped)
     occ_filter = "?item wdt:P106 wd:Q937857." if with_occupation else ""
     return f"""
 SELECT ?name ?pic WHERE {{
@@ -83,52 +85,12 @@ def query_sparql(query, retries=3, timeout=30):
     return []
 
 
-def download_image(url, filepath, timeout=20):
-    """Download image from URL, validate, and save."""
-    # Convert Special:FilePath to thumbnail URL to avoid 429
+def _wikidata_download(url, filepath, timeout=20):
+    """Download Wikidata image, converting Special:FilePath to thumbnail URL."""
     if "Special:FilePath" in url:
-        # Extract filename from URL
         filename = url.split("Special:FilePath/")[-1]
-        # Use thumbnail endpoint with width=256
         url = f"https://commons.wikimedia.org/wiki/Special:Redirect/file/{filename}?width=256"
-
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                data = resp.read()
-            break
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                wait = 2 ** (attempt + 2)  # 4s, 8s, 16s
-                print(f"  [429] Rate limited, waiting {wait}s...")
-                time.sleep(wait)
-                continue
-            print(f"  [Download] Failed: {e}")
-            return False
-        except Exception as e:
-            print(f"  [Download] Failed: {e}")
-            return False
-    else:
-        return False
-
-    if len(data) < 2000:
-        return False
-
-    with open(filepath, "wb") as f:
-        f.write(data)
-
-    return validate_image(filepath)
-
-
-def determine_ext(url):
-    """Guess file extension from URL or default to .jpg."""
-    lower = url.lower()
-    if ".png" in lower:
-        return ".png"
-    if ".webp" in lower:
-        return ".webp"
-    return ".jpg"
+    return download_image(url, filepath, timeout=timeout)
 
 
 def fetch_batch(names, with_occupation=True):
@@ -182,7 +144,7 @@ def run(args):
                 elif args.dry_run:
                     found += 1
                     print(f"    [DRY] {name} -> {pic_url}")
-                elif download_image(pic_url, str(fpath)):
+                elif _wikidata_download(pic_url, str(fpath)):
                     found += 1
                     time.sleep(DOWNLOAD_DELAY + random.uniform(0, DOWNLOAD_JITTER))
                 else:
@@ -234,7 +196,7 @@ def run(args):
                         if args.dry_run:
                             found += 1
                             print(f"    [DRY] {orig_name} -> {pic_url}")
-                        elif download_image(pic_url, str(fpath)):
+                        elif _wikidata_download(pic_url, str(fpath)):
                             found += 1
                             time.sleep(DOWNLOAD_DELAY + random.uniform(0, DOWNLOAD_JITTER))
                             mapping[orig_name] = {
@@ -274,7 +236,7 @@ def run(args):
         for i in range(0, len(surnames_list), args.batch_size):
             batch = surnames_list[i:i + args.batch_size]
             print(f"  Batch: {len(batch)} surnames...", end=" ")
-            results = fetch_batch(batch, with_occupation=False)
+            results = fetch_batch(batch, with_occupation=True)  # M1: added occupation filter
             print(f"found {len(results)}")
 
             for s_name in batch:
@@ -291,7 +253,7 @@ def run(args):
                         if args.dry_run:
                             found += 1
                             print(f"    [DRY] {orig_name} -> {pic_url}")
-                        elif download_image(pic_url, str(fpath)):
+                        elif _wikidata_download(pic_url, str(fpath)):
                             found += 1
                             time.sleep(DOWNLOAD_DELAY + random.uniform(0, DOWNLOAD_JITTER))
                             mapping[orig_name] = {

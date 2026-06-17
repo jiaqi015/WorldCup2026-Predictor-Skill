@@ -22,22 +22,22 @@ from photo_utils import (
     normalize_name,
     safe_name,
     save_mapping,
-    validate_image,
+    download_image,
+    determine_ext,
 )
 
 PHOTOS_DIR = Path(__file__).parent.parent / "data" / "photos"
 PHOTOS_DIR.mkdir(exist_ok=True)
 
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-# TheSportsDB free API key (public)
-API_KEY = "3"  # Free tier
+API_KEY = "3"  # TheSportsDB free tier
 REQUEST_DELAY = 0.5
 DOWNLOAD_DELAY = 1.0
 DOWNLOAD_JITTER = 0.5
 
 
 def query_sportsdb(name):
-    """Query TheSportsDB API for player by name."""
+    """Query TheSportsDB API for player by name. Only returns exact match."""
+    from photo_utils import USER_AGENT
     encoded = urllib.parse.quote(name)
     url = f"https://www.thesportsdb.com/api/v1/json/{API_KEY}/searchplayers.php?p={encoded}"
 
@@ -52,7 +52,7 @@ def query_sportsdb(name):
     if not players:
         return None
 
-    # Find best match by normalized name
+    # M2: Only return exact normalized match, no fallback to first result
     target_norm = normalize_name(name)
     for player in players:
         player_name = player.get("strPlayer", "")
@@ -61,51 +61,7 @@ def query_sportsdb(name):
             if thumb:
                 return thumb
 
-    # If no exact match, try first result
-    first = players[0]
-    thumb = first.get("strThumb")
-    return thumb if thumb else None
-
-
-def download_image(url, filepath, timeout=20):
-    """Download image from URL, validate, and save."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                data = resp.read()
-            break
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                wait = 2 ** (attempt + 2)
-                print(f"  [429] Rate limited, waiting {wait}s...")
-                time.sleep(wait)
-                continue
-            print(f"  [Download] Failed: {e}")
-            return False
-        except Exception as e:
-            print(f"  [Download] Failed: {e}")
-            return False
-    else:
-        return False
-
-    if len(data) < 2000:
-        return False
-
-    with open(filepath, "wb") as f:
-        f.write(data)
-
-    return validate_image(filepath)
-
-
-def determine_ext(url):
-    """Guess file extension from URL or default to .jpg."""
-    lower = url.lower()
-    if ".png" in lower:
-        return ".png"
-    if ".webp" in lower:
-        return ".webp"
-    return ".jpg"
+    return None
 
 
 def main():

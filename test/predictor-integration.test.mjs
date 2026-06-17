@@ -106,11 +106,82 @@ test("group outcome buttons mount complete 1X2 odds when available", () => {
   assert.match(html, /co&&co\.m==="derived_from_partial"/);
 });
 
+test("group quick actions preserve scroll and focus after re-render", () => {
+  assert.match(html, /function rememberFocus\(key\)/);
+  assert.match(html, /window\.__lastFocusKey=key/);
+  assert.match(html, /function getSplitRightScrollTop\(\)/);
+  assert.match(html, /function restoreSplitRightScrollTop\(scrollTop\)/);
+  assert.match(html, /window\.__lastPanelScrollTop=getSplitRightScrollTop\(\)/);
+  assert.match(html, /function restoreRenderFocus\(focusKey,scrollX,scrollY,panelScrollTop\)/);
+  assert.match(html, /var scrollX=window\.__lastScrollX!=null\?window\.__lastScrollX/);
+  assert.match(html, /window\.__lastScrollY=window\.pageYOffset/);
+  assert.match(html, /var panelScrollTop=window\.__lastPanelScrollTop!=null\?window\.__lastPanelScrollTop:getSplitRightScrollTop\(\)/);
+  assert.match(html, /\|\|window\.__lastFocusKey\|\|null/);
+  assert.ok(html.includes('var preferred=document.querySelector(\'.split-right [data-focus-key="\'+focusKey+\'"]\')'));
+  assert.ok(html.includes('if(preferred&&visible(preferred))nextFocus=preferred'));
+  assert.match(html, /nextFocus\.focus\(\{preventScroll:true\}\)/);
+  assert.match(html, /restoreSplitRightScrollTop\(panelScrollTop\)/);
+  assert.match(html, /window\.scrollTo\(scrollX\|\|0,scrollY\|\|0\)/);
+  assert.match(html, /function scheduleRenderRestore\(focusKey,scrollX,scrollY,panelScrollTop\)/);
+  assert.match(html, /window\.requestAnimationFrame\(function\(\)\{restoreRenderFocus\(focusKey,scrollX,scrollY,panelScrollTop\);\}\)/);
+  assert.match(html, /window\.setTimeout\(function\(\)\{restoreRenderFocus\(focusKey,scrollX,scrollY,panelScrollTop\);\},80\)/);
+  assert.match(html, /window\.__lastFocusKey=null;window\.__lastScrollX=null;window\.__lastScrollY=null;window\.__lastPanelScrollTop=null/);
+  assert.match(html, /data-focus-key="group-'\+gk\+'-'\+mi\+'-d"/);
+  assert.ok(html.includes("rememberFocus(\\'group-'+gk+'-'+mi+'-d\\');qpG"));
+});
+
+test("group match team names show FIFA ranking badges", () => {
+  assert.match(html, /function rankBadge\(team\)/);
+  assert.match(html, /var r=FIFA_RANKINGS&&FIFA_RANKINGS\[team\]/);
+  assert.match(html, /fifaRankTitle:"FIFA 世界排名 #\{rank\}"/);
+  assert.match(html, /fifaRankTitle:"FIFA rank #\{rank\}"/);
+  assert.match(html, /function teamNameHTML\(team\)/);
+  assert.match(html, /class="team-rank"/);
+  assert.match(html, /teamNameHTML\(m\.h\)/);
+  assert.match(html, /teamNameHTML\(m\.a\)/);
+  assert.match(html, /\.team-rank\{[^}]*white-space:nowrap/);
+});
+
+test("manual scorer picker uses full squad candidates with position labels", () => {
+  assert.match(html, /function getSquadPlayers\(team\)/);
+  assert.match(html, /if\(POS\[team\]\)for\(var p in POS\[team\]\)add\(p\)/);
+  assert.match(html, /uniquePlayers\(getSquadPlayers\(team\)\)/);
+  assert.match(html, /getPos\(ps\[i\],team\)/);
+  assert.match(html, /class="player-pos">'\+pos_t\(pos\)\+'/);
+  assert.match(html, /for\(var __i=0;__i<26;__i\+\+\)/);
+});
+
+test("position display preserves coarse source categories", () => {
+  assert.match(html, /"加拿大":\{[^}]*"拉林":"前锋"[^}]*"戴维":"前锋"/);
+  assert.match(html, /"英格兰":\{[^}]*"凯恩":"前锋"/);
+  assert.match(html, /"苏格兰":\{[^}]*"罗伯逊":"后卫"[^}]*"麦金":"中场"/);
+  assert.match(html, /var POS_EN=\{[^}]*"前锋":"F"[^}]*"中场":"M"[^}]*"后卫":"D"/);
+  assert.match(html, /var GOAL_W=\{[^}]*前锋:7[^}]*中场:4[^}]*后卫:1/);
+  assert.match(html, /var ASSIST_W=\{[^}]*前锋:4[^}]*中场:5[^}]*后卫:2/);
+  assert.match(html, /function getPos\(player,team\)\{[\s\S]*return"中场";[\s\S]*\}/);
+  assert.doesNotMatch(html, /if\(idx<=3\)return"边锋"/);
+});
+
 test("history panel title stays plain", () => {
   assert.match(html, /histTitle:"历史预测"/);
   assert.match(html, /<span class="history-title">\'\+T\("histTitle"\)\+\'<\/span>/);
   assert.doesNotMatch(html, /📅 \'\+T\("histTitle"\)/);
   assert.doesNotMatch(html, /📅 我的历史预测/);
+});
+
+test("manual scorer action label stays plain in Chinese", () => {
+  assert.match(html, /pickManually:"手动选择进球"/);
+  assert.doesNotMatch(html, /pickManually:"🎯 改为手动选择进球"/);
+});
+
+test("result scoring surface is hidden from the main tab bar", () => {
+  assert.match(html, /tabBaseline:"评分"/);
+  assert.match(html, /tabBaseline:"Score"/);
+  assert.match(html, /var ts=\["groups","knockout","scorers"\]/);
+  assert.match(html, /if\(ts\.indexOf\(tab\)<0\)tab="groups"/);
+  assert.doesNotMatch(html, /var ts=\["groups","knockout","baseline","scorers"\]/);
+  assert.match(html, /function rBaseline\(el\)/);
+  assert.match(html, /function scorePrediction\(\)/);
 });
 
 test("completed match goal events are team-scoped and enter prediction data", () => {
@@ -385,7 +456,21 @@ test("knockout match rows align flag, team, winner marker, and score columns", (
   assert.match(html, /\.bk-row \.win-mark\.on\{opacity:\.82\}/);
   assert.match(html, /\.bk-row \.sc\{[^}]*text-align:right/);
   assert.match(html, /\.bk-row\.is-cp \.win-mark\.on\{color:var\(--accent-gold-dark\)\}/);
+  assert.match(html, /\.bk-m\.is-final \.bk-row\{padding-left:6px;padding-right:6px\}/);
+  assert.match(html, /\.bk-m\.is-final \.bk-row\.is-cp\{margin:0\}/);
   assert.match(html, /<span class="win-mark'\+\(hw\?" on":""\)\+'">✓<\/span><span class="sc">'\+r\.h\+'<\/span>/);
+});
+
+test("knockout cards show source groups only in round-of-32 metadata", () => {
+  assert.match(html, /function koGroupMeta\(ht,at\)/);
+  assert.match(html, /function koShowsGroupMeta\(id\)\{return id&&id\.charAt\(0\)==="R";\}/);
+  assert.match(html, /function koMatchMeta\(m,ht,at\)/);
+  assert.match(html, /var time=LANG==="en"\?"Time TBD":"时间待定"/);
+  assert.match(html, /var venue=LANG==="en"\?"Venue TBD":"场地待定"/);
+  assert.match(html, /if\(koShowsGroupMeta\(m\.id\)\)return '<div class="bk-meta" title="'\+group\+' · '\+stage\+' · '\+time\+' · '\+venue\+'/);
+  assert.match(html, /return '<div class="bk-meta" title="'\+stage\+' · '\+time\+' · '\+venue\+'"><span>'\+stage\+' · '\+time\+' · '\+venue\+'<\/span><\/div>'/);
+  assert.match(html, /class="bk-meta"/);
+  assert.match(html, /h\+=koMatchMeta\(m,ht,at\)/);
 });
 
 test("knockout round labels use a balanced scale with a larger final title", () => {
@@ -428,6 +513,12 @@ test("venue metadata follows the active language", () => {
   assert.match(html, /if\(actual\.venue&&!m\.venue\)m\.venue=actual\.venue/);
   assert.match(html, /"name_cn"/);
   assert.match(html, /"city_cn"/);
+});
+
+test("language switch clears stale toast copy", () => {
+  assert.match(html, /function hideToast\(\)/);
+  assert.match(html, /el\.classList\.remove\("show"\);el\.textContent=""/);
+  assert.match(html, /function toggleLang\(\)[\s\S]*hideToast\(\);applyI18N\(\);render\(\);/);
 });
 
 test("offline ranking snapshot covers all 48 tournament teams", () => {

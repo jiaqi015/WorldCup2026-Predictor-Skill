@@ -77,9 +77,10 @@ ESPN_TO_CN = {
     "United States": "美国", "Uruguay": "乌拉圭", "Uzbekistan": "乌兹别克",
 }
 
-# Position weights (from index.html)
-GOAL_W = {"中锋": 9, "边锋": 7, "前腰": 7, "中前卫": 4, "后腰": 2, "边卫": 3, "中卫": 1, "门将": 0}
-ASSIST_W = {"中锋": 3, "边锋": 5, "前腰": 7, "中前卫": 5, "后腰": 4, "边卫": 4, "中卫": 1, "门将": 0}
+# Position weights (from index.html). Broad ESPN G/D/M/F categories stay broad
+# for display, then receive conservative model weights here.
+GOAL_W = {"中锋": 9, "前锋": 7, "边锋": 7, "前腰": 7, "中前卫": 4, "中场": 4, "后腰": 2, "边卫": 3, "中卫": 1, "后卫": 1, "门将": 0}
+ASSIST_W = {"中锋": 3, "前锋": 4, "边锋": 5, "前腰": 7, "中前卫": 5, "中场": 5, "后腰": 4, "边卫": 4, "中卫": 1, "后卫": 2, "门将": 0}
 
 def extract_js_var(html, var_name):
     """Extract a JS variable value from index.html using regex."""
@@ -213,7 +214,7 @@ def get_position(player_cn, team_cn, pos_data, squads_data, mapping_data):
     Get a player's position. Priority:
     1. POS embedded data (reviewed Chinese position when available)
     2. ESPN squad data (G/D/M/F -> conservative Chinese fallback)
-    3. Default: 中前卫
+    3. Default: 中场
     """
     # Try POS data first
     if team_cn in pos_data and player_cn in pos_data[team_cn]:
@@ -229,7 +230,7 @@ def get_position(player_cn, team_cn, pos_data, squads_data, mapping_data):
                 espn_pos = p.get("position", "M")
                 return normalize_espn_position(espn_pos)
 
-    return "中前卫"
+    return "中场"
 
 
 def get_age(player_cn, team_cn, squads_data, mapping_data):
@@ -288,7 +289,7 @@ def compute_assist_threat(position, team_tier, age, is_star, form_a=None, mins_s
     base = ASSIST_W.get(position, 0) / 7.0
     age_factor = compute_age_factor(age)
     team_factor = 0.6 + team_tier / 5.0 * 0.6
-    playmaker_bonus = 1.3 if (position in ("前腰", "中前卫") and is_star) else 1.0
+    playmaker_bonus = 1.3 if (position in ("前腰", "中前卫", "中场") and is_star) else 1.0
     form_factor = 1.0
     if form_a is not None:
         form_factor = 1.0 + min(form_a, 25) / 10.0
@@ -427,10 +428,13 @@ def get_role_tags(position, is_star, is_primary_star):
     tags = []
     pos_tags = {
         "中锋": ["primary_striker"],
+        "前锋": ["attacker"],
         "边锋": ["winger"],
         "前腰": ["creator", "set_piece_taker"],
+        "中场": ["midfielder"],
         "中前卫": ["box_to_box"],
         "后腰": ["defensive_midfielder"],
+        "后卫": ["defender"],
         "边卫": ["attacking_fullback"],
         "中卫": ["aerial_set_piece_threat"],
     }
@@ -444,14 +448,14 @@ def get_basis(position, is_star, threat_type):
     """Get basis for threat calculation."""
     if threat_type == "goal":
         basis = ["position_weight"]
-        if position in ("中锋", "边锋"):
+        if position in ("中锋", "前锋", "边锋"):
             basis.append("goal_scoring_position")
         if is_star:
             basis.append("star_player_status")
         return basis
     else:
         basis = ["position_weight"]
-        if position in ("前腰", "中前卫", "边锋"):
+        if position in ("前腰", "中前卫", "中场", "边锋"):
             basis.append("creative_position")
         if is_star:
             basis.append("star_player_status")
@@ -461,14 +465,14 @@ def get_basis(position, is_star, threat_type):
 def get_star_tier(position, tier, is_star):
     """Determine star tier."""
     if is_star and tier >= 4:
-        if position in ("中锋",):
+        if position in ("中锋", "前锋"):
             return "world_class_scorer"
         elif position in ("前腰", "边锋"):
             return "world_class_creator"
         return "elite_all_round_attacker"
     if is_star:
         return "national_team_core"
-    if tier >= 4 and position in ("中锋", "边锋", "前腰"):
+    if tier >= 4 and position in ("中锋", "前锋", "边锋", "前腰"):
         return "secondary_attacker"
     return "squad_regular"
 

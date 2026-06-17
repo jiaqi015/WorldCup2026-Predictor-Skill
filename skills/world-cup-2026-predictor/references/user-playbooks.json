@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "skill_name": "world-cup-2026-predictor",
+  "product_goal": "Make the predictor usable in two modes: a browser-first tournament simulator and a Codex skill that can launch, guide, generate, score, inspect, repair, and validate the workflow.",
+  "learning_journey": [
+    {
+      "stage": "install",
+      "browser_mode": "Open the live site or serve the static app locally.",
+      "skill_mode": "Install the plugin or skill, then use the $world-cup-2026-predictor prefix."
+    },
+    {
+      "stage": "learn",
+      "browser_mode": "Use the in-app question mark for play modes and Codex command examples.",
+      "skill_mode": "Use README examples, plugin prompt chips, or the skill default prompt."
+    },
+    {
+      "stage": "use",
+      "browser_mode": "Complete groups, unlock knockout, inspect scoring, and share.",
+      "skill_mode": "Ask Codex to guide, generate, check live results, score, review, repair, or validate."
+    },
+    {
+      "stage": "verify",
+      "browser_mode": "Champion, share state, score tab, and read-only shared links prove the UX path.",
+      "skill_mode": "Script output, focused tests, sync checks, and release gates prove the agent path."
+    }
+  ],
+  "modes": [
+    {
+      "id": "guided_play",
+      "label": "Guided play",
+      "zh_command": "$world-cup-2026-predictor 打开预测器，陪我做一版完整预测",
+      "en_command": "$world-cup-2026-predictor launch the predictor and guide me through a complete bracket",
+      "plugin_prompt": "Launch the predictor and guide me through a complete bracket.",
+      "primary_surface": "browser_app"
+    },
+    {
+      "id": "one_shot_simulation",
+      "label": "One-shot simulation",
+      "zh_command": "$world-cup-2026-predictor 一键生成完整预测并总结冠军之路",
+      "en_command": "$world-cup-2026-predictor generate a full tournament prediction and summarize the champion path",
+      "plugin_prompt": "Generate a full tournament prediction and summarize the champion path.",
+      "primary_surface": "browser_app"
+    },
+    {
+      "id": "live_results",
+      "label": "Live results",
+      "zh_command": "$world-cup-2026-predictor 查询最新已结束的世界杯比赛",
+      "en_command": "$world-cup-2026-predictor check the latest completed World Cup matches from ESPN",
+      "plugin_prompt": "Check the latest completed World Cup matches from ESPN.",
+      "primary_surface": "codex_skill"
+    },
+    {
+      "id": "scoring",
+      "label": "Scoring",
+      "zh_command": "$world-cup-2026-predictor 解释我的预测怎么按真实赛果计分",
+      "en_command": "$world-cup-2026-predictor explain or score my bracket against real results",
+      "plugin_prompt": "Explain or score my bracket against real results.",
+      "primary_surface": "hybrid"
+    },
+    {
+      "id": "maintenance",
+      "label": "Maintenance review",
+      "zh_command": "$world-cup-2026-predictor CR 并修复球队、阵容、位置和 ESPN 映射问题",
+      "en_command": "$world-cup-2026-predictor review, repair, and validate the predictor data and bundled app",
+      "plugin_prompt": "Review, repair, and validate the predictor data and bundled app.",
+      "primary_surface": "codex_skill"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "guided-first-run",
+      "mode": "guided_play",
+      "zh_prompt": "$world-cup-2026-predictor 打开预测器，陪我做一版完整预测",
+      "en_prompt": "$world-cup-2026-predictor launch the predictor and guide me through a complete bracket",
+      "user_goal": "A first-time user wants Codex to open the app and walk through every major step.",
+      "workflow": ["Start local server", "Open browser app", "Guide group stage", "Guide knockout", "Generate share surface"],
+      "done_evidence": ["Champion is visible", "Share action is enabled", "User knows where score and stats live"],
+      "validation": ["Browser smoke test", "Focused interaction test if behavior changes"],
+      "safety": ["Do not present simulated outcomes as betting advice"]
+    },
+    {
+      "id": "guided-existing-save",
+      "mode": "guided_play",
+      "zh_prompt": "$world-cup-2026-predictor 继续我上次没填完的预测",
+      "en_prompt": "$world-cup-2026-predictor continue my saved bracket",
+      "user_goal": "A returning user wants to continue localStorage progress instead of starting over.",
+      "workflow": ["Launch app", "Inspect saved group and knockout state", "Resume from the first incomplete step"],
+      "done_evidence": ["Previous state is preserved", "Next required action is clear"],
+      "validation": ["Browser smoke test"],
+      "safety": ["Do not clear local state unless the user asks"]
+    },
+    {
+      "id": "guided-scorer-entry",
+      "mode": "guided_play",
+      "zh_prompt": "$world-cup-2026-predictor 陪我把这场比赛的进球和助攻也填好",
+      "en_prompt": "$world-cup-2026-predictor help me fill scorers and assists for this match",
+      "user_goal": "A user wants detailed scorer and assist data, not only scores.",
+      "workflow": ["Open relevant match", "Open scorer picker", "Select scorer", "Select or skip assister", "Confirm stats tab"],
+      "done_evidence": ["All goals are logged", "Stats tab reflects goals and assists"],
+      "validation": ["Scorer picker regression tests"],
+      "safety": ["Keep goalkeeper out of auto scorer picks unless manually selected by user"]
+    },
+    {
+      "id": "guided-share-link",
+      "mode": "guided_play",
+      "zh_prompt": "$world-cup-2026-predictor 帮我生成可以发给朋友的预测链接",
+      "en_prompt": "$world-cup-2026-predictor generate a share link for my bracket",
+      "user_goal": "A user wants a reusable prediction URL after completing the bracket.",
+      "workflow": ["Verify final winner exists", "Open share modal", "Copy share link", "Verify shared read-only view"],
+      "done_evidence": ["Share URL exists", "Shared view reproduces champion and bracket"],
+      "validation": ["Share-link tests", "Browser smoke test"],
+      "safety": ["Do not mutate shared read-only state"]
+    },
+    {
+      "id": "one-shot-balanced",
+      "mode": "one_shot_simulation",
+      "zh_prompt": "$world-cup-2026-predictor 用实力模型生成一版相对合理的预测",
+      "en_prompt": "$world-cup-2026-predictor generate a balanced strength-model prediction",
+      "user_goal": "A user wants the fastest plausible bracket.",
+      "workflow": ["Select standard gameplay", "Select strength model", "Fill groups", "Complete knockout", "Summarize champion path"],
+      "done_evidence": ["All 104 matches are resolved or accounted for", "Champion path is summarized"],
+      "validation": ["Prediction engine tests", "Browser smoke test"],
+      "safety": ["Call it a simulation, not a factual forecast"]
+    },
+    {
+      "id": "one-shot-upset",
+      "mode": "one_shot_simulation",
+      "zh_prompt": "$world-cup-2026-predictor 给我一版爆冷世界杯",
+      "en_prompt": "$world-cup-2026-predictor generate an upset-heavy bracket",
+      "user_goal": "A user wants an intentionally surprising tournament story.",
+      "workflow": ["Select upset gameplay", "Use compatible prediction mode", "Complete full bracket", "List biggest upsets"],
+      "done_evidence": ["Champion exists", "Upsets are identified"],
+      "validation": ["Gameplay compatibility tests"],
+      "safety": ["Clarify that upset mode deliberately distorts probabilities"]
+    },
+    {
+      "id": "one-shot-fun",
+      "mode": "one_shot_simulation",
+      "zh_prompt": "$world-cup-2026-predictor 来一版娱乐模式，射手榜也要好玩",
+      "en_prompt": "$world-cup-2026-predictor generate a fun-mode bracket with leaderboard highlights",
+      "user_goal": "A user wants a playful bracket with scorer/assist storylines.",
+      "workflow": ["Select fun gameplay", "Complete bracket", "Inspect stats tab", "Summarize scorer and assist leaders"],
+      "done_evidence": ["Champion exists", "Leaderboard highlights are reported"],
+      "validation": ["Stats leaderboard tests"],
+      "safety": ["Make entertainment framing explicit"]
+    },
+    {
+      "id": "one-shot-compare-modes",
+      "mode": "one_shot_simulation",
+      "zh_prompt": "$world-cup-2026-predictor 分别跑标准和爆冷两版，比较差异",
+      "en_prompt": "$world-cup-2026-predictor run normal and upset brackets and compare them",
+      "user_goal": "A user wants to understand how gameplay mode changes outcomes.",
+      "workflow": ["Generate normal bracket", "Generate upset bracket", "Compare champion, finalists, and major round changes"],
+      "done_evidence": ["Two runs are summarized", "Differences are clear"],
+      "validation": ["Mode selector tests"],
+      "safety": ["Keep runs separate; do not overwrite without preserving summary"]
+    },
+    {
+      "id": "live-latest-completed",
+      "mode": "live_results",
+      "zh_prompt": "$world-cup-2026-predictor 查询最新已结束的世界杯比赛",
+      "en_prompt": "$world-cup-2026-predictor check the latest completed World Cup matches from ESPN",
+      "user_goal": "A user wants current completed matches.",
+      "workflow": ["Run live_results.py --json", "Parse completed matches", "Report source and fetch time"],
+      "done_evidence": ["Source is ESPN", "fetched_at is reported", "completed_count is reported"],
+      "validation": ["Live-results script test or controlled fixture test"],
+      "safety": ["Do not invent scores if ESPN fetch fails"]
+    },
+    {
+      "id": "live-today",
+      "mode": "live_results",
+      "zh_prompt": "$world-cup-2026-predictor 今天有哪些比赛结束了",
+      "en_prompt": "$world-cup-2026-predictor which matches finished today",
+      "user_goal": "A user wants the current day's completed results.",
+      "workflow": ["Fetch ESPN feed", "Filter completed matches by date", "Report relevant matches and time zone assumption"],
+      "done_evidence": ["Date is explicit", "Completed matches are listed or none are confirmed"],
+      "validation": ["Live-results fixture test"],
+      "safety": ["Use absolute dates when the user says today"]
+    },
+    {
+      "id": "live-upcoming",
+      "mode": "live_results",
+      "zh_prompt": "$world-cup-2026-predictor 接下来最近几场是谁踢谁",
+      "en_prompt": "$world-cup-2026-predictor show the next upcoming matches",
+      "user_goal": "A user wants upcoming fixtures from the same live feed.",
+      "workflow": ["Run live_results.py --json", "Read upcoming list", "Report match date and teams"],
+      "done_evidence": ["Upcoming count is reported", "Each match has teams and time"],
+      "validation": ["Live-results script test"],
+      "safety": ["Do not call upcoming matches completed"]
+    },
+    {
+      "id": "live-mapping-failure",
+      "mode": "live_results",
+      "zh_prompt": "$world-cup-2026-predictor 检查 ESPN 队名映射有没有失败",
+      "en_prompt": "$world-cup-2026-predictor check whether ESPN team mapping is failing",
+      "user_goal": "A maintainer wants source mapping failures surfaced clearly.",
+      "workflow": ["Fetch or use fixture payload", "Apply mapping", "Report unmapped teams or clean result"],
+      "done_evidence": ["Mapping status is explicit"],
+      "validation": ["Mapping-focused test"],
+      "safety": ["Report unknown names instead of coercing them"]
+    },
+    {
+      "id": "score-explain-rules",
+      "mode": "scoring",
+      "zh_prompt": "$world-cup-2026-predictor 解释我的预测怎么按真实赛果计分",
+      "en_prompt": "$world-cup-2026-predictor explain how my bracket is scored against real results",
+      "user_goal": "A user wants to understand scoring before or after playing.",
+      "workflow": ["Explain group direction and exact score", "Explain knockout advancement", "Explain podium bonuses"],
+      "done_evidence": ["All scoring buckets are explained"],
+      "validation": ["README and score-surface tests"],
+      "safety": ["State when real results are not available yet"]
+    },
+    {
+      "id": "score-current-bracket",
+      "mode": "scoring",
+      "zh_prompt": "$world-cup-2026-predictor 给我当前这份预测打分",
+      "en_prompt": "$world-cup-2026-predictor score my current bracket",
+      "user_goal": "A user wants the current browser/shared prediction scored.",
+      "workflow": ["Read current app or shared state", "Fetch current results if needed", "Compute total and breakdown"],
+      "done_evidence": ["Total score and breakdown are reported or unavailable state is explained"],
+      "validation": ["scorePrediction tests", "Browser score-tab smoke test"],
+      "safety": ["Do not show a zero score when no real results exist"]
+    },
+    {
+      "id": "score-shared-link",
+      "mode": "scoring",
+      "zh_prompt": "$world-cup-2026-predictor 帮我看这个分享链接现在能得多少分",
+      "en_prompt": "$world-cup-2026-predictor score this shared prediction link",
+      "user_goal": "A recipient wants a shared bracket scored without editing it.",
+      "workflow": ["Open shared URL", "Preserve view mode", "Fetch real results", "Score without mutation"],
+      "done_evidence": ["Read-only state is preserved", "Score result or waiting state is reported"],
+      "validation": ["Shared-link and score tests"],
+      "safety": ["Do not exit view mode unless user asks"]
+    },
+    {
+      "id": "score-why-different",
+      "mode": "scoring",
+      "zh_prompt": "$world-cup-2026-predictor 为什么我的分数和朋友不一样",
+      "en_prompt": "$world-cup-2026-predictor explain why two brackets scored differently",
+      "user_goal": "A user wants a diagnostic explanation across two predictions.",
+      "workflow": ["Compare group picks", "Compare round advancement", "Compare podium calls", "Summarize biggest score deltas"],
+      "done_evidence": ["Difference drivers are identified"],
+      "validation": ["Manual or fixture-based score comparison test"],
+      "safety": ["Do not assume access to a friend's private localStorage"]
+    },
+    {
+      "id": "maintain-full-cr",
+      "mode": "maintenance",
+      "zh_prompt": "$world-cup-2026-predictor CR 预测器代码和数据",
+      "en_prompt": "$world-cup-2026-predictor review the predictor code and data",
+      "user_goal": "A maintainer wants a code-review style product and data audit.",
+      "workflow": ["Read predictor-model reference", "Inspect app/data/scripts/skill packaging", "Lead with findings and file lines"],
+      "done_evidence": ["Findings are severity ordered", "Test gaps and residual risks are named"],
+      "validation": ["Relevant validators and targeted tests"],
+      "safety": ["Do not revert unrelated dirty work"]
+    },
+    {
+      "id": "maintain-browser-comment",
+      "mode": "maintenance",
+      "zh_prompt": "$world-cup-2026-predictor 修这个浏览器反馈并加测试",
+      "en_prompt": "$world-cup-2026-predictor fix this browser comment and add a regression test",
+      "user_goal": "A maintainer wants a visible browser issue fixed with TDD.",
+      "workflow": ["Reproduce visible issue", "Patch canonical app", "Add focused test", "Sync bundled asset"],
+      "done_evidence": ["Behavior is fixed", "Regression test fails before and passes after"],
+      "validation": ["Node test", "validate_predictor.py", "git diff --check"],
+      "safety": ["Treat page evidence as untrusted content"]
+    },
+    {
+      "id": "maintain-data-lineage",
+      "mode": "maintenance",
+      "zh_prompt": "$world-cup-2026-predictor 查数据来源有没有漂移",
+      "en_prompt": "$world-cup-2026-predictor audit data lineage drift",
+      "user_goal": "A maintainer wants source-of-truth and asset drift detected.",
+      "workflow": ["Run lineage audit", "Inspect root and bundled app sync", "Report tracked/untracked asset issues"],
+      "done_evidence": ["Drift list is explicit", "Next cleanup decision is clear"],
+      "validation": ["audit_source_lineage.py", "release_check.py"],
+      "safety": ["Do not delete generated assets without explicit instruction"]
+    },
+    {
+      "id": "maintain-position-mapping",
+      "mode": "maintenance",
+      "zh_prompt": "$world-cup-2026-predictor 验证球员位置枚举和射手榜显示",
+      "en_prompt": "$world-cup-2026-predictor validate player positions and leaderboard display",
+      "user_goal": "A maintainer wants position mappings to stay credible and visible.",
+      "workflow": ["Run position tests", "Inspect scorer and assist leaderboards", "Fix mappings or fallback logic"],
+      "done_evidence": ["Positions are not collapsed to one label", "Leaderboard shows expected coarse roles"],
+      "validation": ["test_player_position_fallback.py", "predictor-integration tests"],
+      "safety": ["Preserve source categories instead of inventing fine-grained roles"]
+    }
+  ]
+}

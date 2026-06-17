@@ -1,4 +1,4 @@
 interface:
   display_name: "World Cup 2026 Predictor"
   short_description: "Predict and track the 2026 World Cup"
-  default_prompt: "Use $world-cup-2026-predictor to launch the predictor and help me create or score a 2026 World Cup bracket."
+  default_prompt: "Use $world-cup-2026-predictor to launch, complete, score, validate, or repair a 2026 World Cup bracket workflow."

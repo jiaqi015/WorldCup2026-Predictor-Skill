@@ -9,6 +9,7 @@ import argparse
 import re
 import sys
 import unicodedata
+import xml.sax.saxutils
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
@@ -108,9 +109,10 @@ def get_position_label(pos):
 
 def generate_svg_avatar(en_name, team_en, jersey, position, size=200):
     """Generate SVG avatar with team colors and player initials."""
-    initials = get_initials(en_name)
+    initials = xml.sax.saxutils.escape(get_initials(en_name))
     primary, secondary = TEAM_COLORS.get(team_en, ("#4A90D9", "#FFFFFF"))
-    pos_label = get_position_label(position)
+    pos_label = xml.sax.saxutils.escape(get_position_label(position))
+    jersey_str = xml.sax.saxutils.escape(str(jersey))
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 {size} {size}">
   <defs>
@@ -125,7 +127,7 @@ def generate_svg_avatar(en_name, team_en, jersey, position, size=200):
   <g clip-path="url(#circle)">
     <rect width="{size}" height="{size}" fill="url(#bg)"/>
     <text x="{size//2}" y="{size*0.42}" text-anchor="middle" fill="{secondary}" font-family="Arial,sans-serif" font-size="{size*0.35}" font-weight="bold" opacity="0.9">{initials}</text>
-    <text x="{size//2}" y="{size*0.62}" text-anchor="middle" fill="{secondary}" font-family="Arial,sans-serif" font-size="{size*0.13}" opacity="0.7">#{jersey}</text>
+    <text x="{size//2}" y="{size*0.62}" text-anchor="middle" fill="{secondary}" font-family="Arial,sans-serif" font-size="{size*0.13}" opacity="0.7">#{jersey_str}</text>
     <text x="{size//2}" y="{size*0.78}" text-anchor="middle" fill="{secondary}" font-family="Arial,sans-serif" font-size="{size*0.10}" opacity="0.5">{pos_label}</text>
   </g>
 </svg>'''
@@ -212,8 +214,9 @@ def main():
             generated += 1
 
     # Save updated photo mapping
-    with open(PHOTO_MAP_FILE, "w", encoding="utf-8") as f:
-        json.dump(photo_mapping, f, ensure_ascii=False, indent=2)
+    sys.path.insert(0, str(Path(__file__).parent))
+    from photo_utils import save_mapping
+    save_mapping(photo_mapping)
 
     # Stats
     espn_count = sum(1 for v in photo_mapping.values() if v["source"] == "espn")

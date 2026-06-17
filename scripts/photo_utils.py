@@ -9,8 +9,11 @@ Used by: fetch_wikidata_photos.py, fetch_wikipedia_photos.py,
 
 import json
 import os
+import re
 import tempfile
 import unicodedata
+import urllib.error
+import urllib.request
 
 
 PHOTO_MAPPING_FILE = os.path.join(
@@ -49,10 +52,18 @@ def surname(name):
 
 
 def safe_name(name):
-    """Convert player name to safe filename (strip accents, spaces->underscore)."""
+    """Convert player name to safe filename.
+
+    Strips accents, replaces spaces with underscore, and filters out
+    characters unsafe for file paths (/ \\ .. : etc).
+    Only allows alphanumeric, underscore, hyphen, and dot.
+    """
     if not name:
         return ""
-    return _strip_accents(name).replace(" ", "_")
+    clean = _strip_accents(name).replace(" ", "_")
+    clean = re.sub(r"[^a-zA-Z0-9._-]", "", clean)
+    clean = clean.replace("..", "")
+    return clean or "unknown"
 
 
 def validate_image(filepath):
@@ -115,3 +126,59 @@ def save_mapping(mapping, path=None):
 def get_placeholders(mapping):
     """Return dict of players with source='placeholder'."""
     return {k: v for k, v in mapping.items() if v.get("source") == "placeholder"}
+
+
+# ---------------------------------------------------------------------------
+# Shared download utilities (M3: deduplicated from fetch_*.py)
+# ---------------------------------------------------------------------------
+
+USER_AGENT = "FIFA26PhotoFetcher/1.0"
+MAX_IMAGE_SIZE = 5 * 1024 * 1024  # 5 MB (H3)
+
+
+def determine_ext(url):
+    """Guess file extension from URL path."""
+    lower = url.lower().split("?")[0]  # strip query params
+    if lower.endswith(".png"):
+        return ".png"
+    if lower.endswith(".webp"):
+        return ".webp"
+    if lower.endswith(".gif"):
+        return ".gif"
+    return ".jpg"
+
+
+def download_image(url, filepath, timeout=20):
+    """Download image from URL, validate, and save.
+
+    Returns True on success. Handles 429 retry with exponential backoff.
+    Enforces MAX_IMAGE_SIZE limit (H3).
+    """
+    import time
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                data = resp.read(MAX_IMAGE_SIZE + 1)
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                wait = 2 ** (attempt + 2)  # 4s, 8s, 16s
+                time.sleep(wait)
+                continue
+            return False
+        except Exception:
+            return False
+        else:
+            break
+    else:
+        return False
+
+    if len(data) > MAX_IMAGE_SIZE:
+        return False
+    if len(data) < 2000:
+        return False
+
+    with open(filepath, "wb") as f:
+        f.write(data)
+
+    return validate_image(filepath)

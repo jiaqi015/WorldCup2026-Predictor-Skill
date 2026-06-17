@@ -8,12 +8,12 @@ More specific positions should come from an explicit, reviewed data source.
 
 ESPN_POSITION_FALLBACK = {
     "G": "门将",
-    "D": "中卫",
-    "M": "中前卫",
-    "F": "边锋",
+    "D": "后卫",
+    "M": "中场",
+    "F": "前锋",
 }
 
 
 def normalize_espn_position(position):
-    """Map ESPN's coarse position code to the app's safest compatible role."""
-    return ESPN_POSITION_FALLBACK.get(str(position or "").strip().upper(), "中前卫")
+    """Map ESPN's coarse position code without inventing a more specific role."""
+    return ESPN_POSITION_FALLBACK.get(str(position or "").strip().upper(), "中场")

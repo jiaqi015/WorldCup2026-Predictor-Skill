@@ -4,9 +4,13 @@ TDD Final Validation: Comprehensive checks for translations, photos, and data in
 """
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from photo_utils import validate_image
 
 BASE_DIR = Path(__file__).parent.parent
 SQUADS_FILE = BASE_DIR / "data" / "squads" / "squads_partial.json"
@@ -60,19 +64,23 @@ def check_photo_coverage():
 
 
 def check_photo_files_exist():
-    """Verify all photo files in mapping exist on disk."""
+    """Verify all photo files in mapping exist on disk and are valid images."""
     photo_map = load_json(PHOTO_MAP_FILE)
     missing = []
+    invalid = []
     for name, info in photo_map.items():
         path = BASE_DIR / info["path"]
         if not path.exists():
             missing.append(f"{name}: {info['path']}")
+        elif info.get("source") != "placeholder" and not validate_image(str(path)):
+            invalid.append(f"{name}: {info['path']}")
 
+    failures = missing[:5] + invalid[:5]
     return {
         "name": "Photo Files Exist",
-        "pass": len(missing) == 0,
-        "detail": f"{len(missing)} missing files",
-        "failures": missing[:5]
+        "pass": len(missing) == 0 and len(invalid) == 0,
+        "detail": f"{len(missing)} missing, {len(invalid)} invalid images",
+        "failures": failures
     }
 
 
@@ -83,7 +91,7 @@ def check_photo_sources():
     for item in photo_map.values():
         source = item.get("source", "unknown")
         sources[source] = sources.get(source, 0) + 1
-    approved = {"espn", "placeholder", "sofifa", "wikidata", "wikipedia", "sportsdb"}
+    approved = {"espn", "placeholder", "sofifa", "wikidata", "wikipedia", "sportsdb", "transfermarkt", "wikipedia_pageimg", "teammate"}
     unexpected = sorted(set(sources) - approved)
     total = len(photo_map)
 
@@ -223,6 +231,89 @@ def check_no_duplicate_jerseys():
     }
 
 
+def check_orphan_files():
+    """Detect files in data/photos/ not referenced by photo_mapping.json."""
+    photo_map = load_json(PHOTO_MAP_FILE)
+    referenced = set()
+    for v in photo_map.values():
+        p = v.get("path", "")
+        if p:
+            referenced.add(os.path.basename(p))
+
+    on_disk = set(f for f in os.listdir(PHOTOS_DIR)
+                  if os.path.isfile(PHOTOS_DIR / f))
+    orphans = sorted(on_disk - referenced)
+
+    return {
+        "name": "No Orphan Photo Files",
+        "pass": len(orphans) == 0,
+        "detail": f"{len(orphans)} orphan files",
+        "failures": orphans[:10]
+    }
+
+
+def check_cross_file_consistency():
+    """Verify photo_mapping keys exist in player_mapping."""
+    photo_map = load_json(PHOTO_MAP_FILE)
+    player_map = load_json(MAPPING_FILE)
+    player_keys = set(player_map.keys())
+
+    # Also build qualified keys from squads
+    squads = load_json(SQUADS_FILE)
+    for team_name, team_data in squads.items():
+        team_en = team_data.get("team", team_name)
+        for p in team_data.get("players", []):
+            player_keys.add(f"{p['name']} ({team_en})")
+
+    missing = sorted(k for k in photo_map if k not in player_keys)
+
+    return {
+        "name": "Cross-File Consistency",
+        "pass": len(missing) == 0,
+        "detail": f"{len(missing)} photo_mapping keys not in player_mapping",
+        "failures": missing[:10]
+    }
+
+
+def check_file_size_limits():
+    """Flag any photo file exceeding MAX_IMAGE_SIZE (5MB)."""
+    from photo_utils import MAX_IMAGE_SIZE
+    photo_map = load_json(PHOTO_MAP_FILE)
+    oversized = []
+    for name, v in photo_map.items():
+        p = v.get("path", "")
+        if p:
+            fp = BASE_DIR / p
+            if fp.exists() and fp.stat().st_size > MAX_IMAGE_SIZE:
+                oversized.append(f"{name}: {fp.stat().st_size / 1024 / 1024:.1f}MB")
+
+    return {
+        "name": "Photo Size Limits",
+        "pass": len(oversized) == 0,
+        "detail": f"{len(oversized)} files exceed {MAX_IMAGE_SIZE / 1024 / 1024:.0f}MB",
+        "failures": oversized[:10]
+    }
+
+
+def check_filename_security():
+    """Verify no photo mapping path contains '..' or escapes data/photos/."""
+    photo_map = load_json(PHOTO_MAP_FILE)
+    issues = []
+    for name, v in photo_map.items():
+        p = v.get("path", "")
+        if ".." in p:
+            issues.append(f"{name}: path contains '..' ({p})")
+        if p.startswith("/") or ":\\" in p:
+            issues.append(f"{name}: absolute path ({p})")
+
+    return {
+        "name": "Filename Security",
+        "pass": len(issues) == 0,
+        "detail": f"{len(issues)} insecure paths",
+        "failures": issues[:10]
+    }
+
+
 def main():
     print("=" * 60)
     print("TDD Final Validation")
@@ -238,6 +329,10 @@ def main():
         check_source_manifest(),
         check_mapping_consistency(),
         check_no_duplicate_jerseys(),
+        check_orphan_files(),
+        check_cross_file_consistency(),
+        check_file_size_limits(),
+        check_filename_security(),
     ]
 
     all_pass = True
