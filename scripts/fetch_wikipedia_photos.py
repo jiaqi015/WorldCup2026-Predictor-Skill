@@ -24,7 +24,6 @@ from photo_utils import (
 )
 
 PHOTOS_DIR = Path(__file__).parent.parent / "data" / "photos"
-PHOTOS_DIR.mkdir(exist_ok=True)
 
 REQUEST_DELAY = 1.0
 DOWNLOAD_DELAY = 2.0
@@ -52,6 +51,7 @@ def query_wikipedia(name):
 
 
 def main():
+    PHOTOS_DIR.mkdir(exist_ok=True)
     parser = argparse.ArgumentParser(description="Fetch player photos from Wikipedia")
     parser.add_argument("--dry-run", action="store_true", help="Don't download, just show matches")
     parser.add_argument("--batch-size", type=int, default=20, help="Batch size for progress reporting")

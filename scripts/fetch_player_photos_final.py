@@ -20,14 +20,13 @@ import os
 import re
 import sys
 import time
-import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(__file__))
 from photo_utils import (
-    USER_AGENT, PHOTO_MAPPING_FILE,
+    USER_AGENT, TM_USER_AGENT, PHOTO_MAPPING_FILE,
     load_mapping, save_mapping, get_placeholders,
     download_image, determine_ext, safe_name, normalize_name,
     _strip_accents,
@@ -169,14 +168,12 @@ def strategy_transfermarkt(name, expected_country):
                f"schnellsuche?query={urllib.parse.quote_plus(variant)}")
         try:
             req = urllib.request.Request(url, headers={
-                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                              "AppleWebKit/537.36 (KHTML, like Gecko) "
-                              "Chrome/120.0.0.0 Safari/537.36",
+                "User-Agent": TM_USER_AGENT,
                 "Accept": "text/html",
             })
             resp = urllib.request.urlopen(req, timeout=15)
             html = resp.read().decode("utf-8")
-        except Exception:
+        except (urllib.error.URLError, OSError, ValueError):
             time.sleep(SEARCH_DELAY)
             continue
 
@@ -227,7 +224,7 @@ def strategy_wikidata(name, expected_country=None):
             req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
             resp = urllib.request.urlopen(req, timeout=15)
             data = json.loads(resp.read().decode("utf-8"))
-        except Exception:
+        except (urllib.error.URLError, OSError, ValueError):
             time.sleep(SEARCH_DELAY)
             continue
 
@@ -262,7 +259,7 @@ def strategy_wikidata(name, expected_country=None):
                     bindings = data2.get("results", {}).get("bindings", [])
                     if bindings:
                         return bindings[0]["img"]["value"]
-                except Exception:
+                except (urllib.error.URLError, OSError, ValueError):
                     pass
 
         time.sleep(SEARCH_DELAY)
@@ -285,7 +282,7 @@ def strategy_sportsdb(name):
             req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
             resp = urllib.request.urlopen(req, timeout=10)
             data = json.loads(resp.read().decode("utf-8"))
-        except Exception:
+        except (urllib.error.URLError, OSError, ValueError):
             time.sleep(SEARCH_DELAY)
             continue
 
@@ -321,7 +318,7 @@ def strategy_wikipedia_page_image(name):
             req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
             resp = urllib.request.urlopen(req, timeout=15)
             data = json.loads(resp.read().decode("utf-8"))
-        except Exception:
+        except (urllib.error.URLError, OSError, ValueError):
             time.sleep(SEARCH_DELAY)
             continue
 
@@ -353,7 +350,7 @@ def _get_wiki_page_image(page_title):
             thumb = page.get("thumbnail", {})
             if thumb:
                 return thumb.get("source")
-    except Exception:
+    except (urllib.error.URLError, OSError, ValueError):
         pass
     return None
 
@@ -375,6 +372,8 @@ def deep_search_single(name, player_mapping):
     for strategy_name, strategy_fn in strategies:
         try:
             img_url = strategy_fn()
+            if img_url and not img_url.startswith(("https://", "http://")):
+                img_url = None
             if img_url:
                 return img_url, strategy_name
         except Exception as e:

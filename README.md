@@ -193,6 +193,10 @@ $world-cup-2026-predictor generate a full tournament prediction and summarize th
 
 $world-cup-2026-predictor check the latest completed World Cup matches from ESPN
 
+$world-cup-2026-predictor show today's completed matches and the next upcoming fixtures from ESPN
+
+$world-cup-2026-predictor check whether ESPN team-name mapping has drifted
+
 $world-cup-2026-predictor explain or score my bracket against real results
 
 $world-cup-2026-predictor review, repair, and validate the predictor data and bundled app
@@ -205,6 +209,8 @@ Useful skill play styles:
 | Guided play | Launch the app, keep the browser open, and walk through group stage, knockout, scorer selection, and sharing. |
 | One-shot simulation | Complete all 72 group matches and every knockout match, then report champion, runner-up, third place, and share status. |
 | Live-results check | Fetch ESPN's current scoreboard feed and report source, fetch time, completed count, and relevant matches. |
+| Today/upcoming fixtures | Use the normalized ESPN contract to answer today's completed matches or the next fixtures. |
+| ESPN mapping check | Detect whether ESPN team names no longer map cleanly to the app's team aliases. |
 | Scoring explainer | Explain or calculate group, knockout, and podium points against real results. |
 | Maintenance review | Inspect app/data/skill drift, patch the canonical source, sync the bundled asset, and run validation. |
 
@@ -221,6 +227,15 @@ Upgrade later:
 codex plugin marketplace upgrade world-cup-2026
 codex plugin add world-cup-2026-predictor@world-cup-2026
 ```
+
+Check whether the installed skill is current:
+
+```text
+$world-cup-2026-predictor 检查这个 skill 是不是最新版本
+$world-cup-2026-predictor check whether this skill is up to date
+```
+
+The skill is intentionally not auto-updated on every use. Installed skills are local packages so prediction runs stay reproducible. Use the freshness check when you want to compare local version/commit with remote `main`, then run the explicit upgrade commands above.
 
 ### Install Only The Skill
 
@@ -414,6 +429,10 @@ Codex Skill：
 $world-cup-2026-predictor 打开预测器，陪我做一版完整预测
 $world-cup-2026-predictor 一键生成完整预测并总结冠军之路
 $world-cup-2026-predictor 查询最新已结束的世界杯比赛
+$world-cup-2026-predictor 今天有哪些比赛结束了
+$world-cup-2026-predictor 接下来最近几场是谁踢谁
+$world-cup-2026-predictor 检查 ESPN 队名映射有没有失败
+$world-cup-2026-predictor 检查这个 skill 是不是最新版本
 $world-cup-2026-predictor 解释我的预测怎么按真实赛果计分
 $world-cup-2026-predictor CR 并修复球队、阵容、位置和 ESPN 映射问题
 ```

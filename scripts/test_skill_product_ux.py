@@ -125,10 +125,14 @@ def validate_surfaces(payload: dict) -> None:
         require_contains(index, mode["zh_command"], "index.html help")
 
     require_contains(skill_md, "references/user-playbooks.json", "SKILL.md")
+    require_contains(skill_md, "scripts/check_updates.py", "SKILL.md")
     require_contains(skill_md, "User Intent Playbooks", "SKILL.md")
-    require_contains(openai_yaml, "launch, complete, score, validate, or repair", "agents/openai.yaml")
+    require_contains(openai_yaml, "launch, complete, score", "agents/openai.yaml")
+    require_contains(openai_yaml, "freshness-check", "agents/openai.yaml")
     require_contains(index, "skillHelpHTML", "index.html help")
     require_contains(index, "Codex Skill", "index.html help")
+    require_contains(readme, "检查这个 skill 是不是最新版本", "README.md")
+    require_contains(index, "check whether this skill is up to date", "index.html help")
 
 
 def main() -> int:

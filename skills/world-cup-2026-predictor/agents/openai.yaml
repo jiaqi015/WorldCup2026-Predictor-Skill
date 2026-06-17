@@ -1,4 +1,4 @@
 interface:
   display_name: "World Cup 2026 Predictor"
-  short_description: "Predict and track the 2026 World Cup"
-  default_prompt: "Use $world-cup-2026-predictor to launch, complete, score, validate, or repair a 2026 World Cup bracket workflow."
+  short_description: "Predict, score, and track the 2026 World Cup"
+  default_prompt: "Use $world-cup-2026-predictor to launch, complete, score, validate, repair, or freshness-check a 2026 World Cup bracket workflow. It can also query ESPN-backed latest, today, upcoming, and mapping-check result views."

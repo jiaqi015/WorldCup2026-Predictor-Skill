@@ -161,7 +161,7 @@
       "zh_prompt": "$world-cup-2026-predictor 查询最新已结束的世界杯比赛",
       "en_prompt": "$world-cup-2026-predictor check the latest completed World Cup matches from ESPN",
       "user_goal": "A user wants current completed matches.",
-      "workflow": ["Run live_results.py --json", "Parse completed matches", "Report source and fetch time"],
+      "workflow": ["Run live_results.py --json --mode latest", "Parse completed matches from the ESPN source contract", "Report source and fetch time"],
       "done_evidence": ["Source is ESPN", "fetched_at is reported", "completed_count is reported"],
       "validation": ["Live-results script test or controlled fixture test"],
       "safety": ["Do not invent scores if ESPN fetch fails"]
@@ -172,9 +172,9 @@
       "zh_prompt": "$world-cup-2026-predictor 今天有哪些比赛结束了",
       "en_prompt": "$world-cup-2026-predictor which matches finished today",
       "user_goal": "A user wants the current day's completed results.",
-      "workflow": ["Fetch ESPN feed", "Filter completed matches by date", "Report relevant matches and time zone assumption"],
+      "workflow": ["Run live_results.py --json --mode today with an explicit YYYY-MM-DD date", "Filter completed matches through the ESPN source contract", "Report relevant matches and time zone assumption"],
       "done_evidence": ["Date is explicit", "Completed matches are listed or none are confirmed"],
-      "validation": ["Live-results fixture test"],
+      "validation": ["ESPN source contract fixture test"],
       "safety": ["Use absolute dates when the user says today"]
     },
     {
@@ -183,9 +183,9 @@
       "zh_prompt": "$world-cup-2026-predictor 接下来最近几场是谁踢谁",
       "en_prompt": "$world-cup-2026-predictor show the next upcoming matches",
       "user_goal": "A user wants upcoming fixtures from the same live feed.",
-      "workflow": ["Run live_results.py --json", "Read upcoming list", "Report match date and teams"],
+      "workflow": ["Run live_results.py --json --mode upcoming --upcoming N", "Read upcoming list from the ESPN source contract", "Report match date and teams"],
       "done_evidence": ["Upcoming count is reported", "Each match has teams and time"],
-      "validation": ["Live-results script test"],
+      "validation": ["ESPN source contract fixture test"],
       "safety": ["Do not call upcoming matches completed"]
     },
     {
@@ -194,9 +194,9 @@
       "zh_prompt": "$world-cup-2026-predictor 检查 ESPN 队名映射有没有失败",
       "en_prompt": "$world-cup-2026-predictor check whether ESPN team mapping is failing",
       "user_goal": "A maintainer wants source mapping failures surfaced clearly.",
-      "workflow": ["Fetch or use fixture payload", "Apply mapping", "Report unmapped teams or clean result"],
+      "workflow": ["Run live_results.py --json --mode mapping", "Compare ESPN team names against app team aliases", "Report unmapped teams or clean result"],
       "done_evidence": ["Mapping status is explicit"],
-      "validation": ["Mapping-focused test"],
+      "validation": ["ESPN source contract fixture test"],
       "safety": ["Report unknown names instead of coercing them"]
     },
     {

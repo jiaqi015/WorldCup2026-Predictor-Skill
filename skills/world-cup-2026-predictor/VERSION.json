@@ -1,0 +1,8 @@
+{
+  "version": "0.3.2",
+  "repository": "https://github.com/jiaqi015/WorldCup2026-Predictor-Skill.git",
+  "ref": "main",
+  "plugin_marketplace": "world-cup-2026",
+  "plugin_name": "world-cup-2026-predictor",
+  "skill_path": "skills/world-cup-2026-predictor"
+}

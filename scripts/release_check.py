@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills" / "world-cup-2026-predictor"
 PLUGIN_MANIFEST = ROOT / ".codex-plugin" / "plugin.json"
+SKILL_VERSION = SKILL / "VERSION.json"
 MARKETPLACE = ROOT / ".agents" / "plugins" / "marketplace.json"
 REPO_SKILL_LINK = ROOT / ".agents" / "skills" / "world-cup-2026-predictor"
 DOMAIN_CATALOG = ROOT / "data" / "schema" / "prediction-domain.v1.json"
@@ -99,6 +100,16 @@ def validate_metadata() -> str:
         fail("plugin.json version must be strict semantic versioning")
     if plugin["skills"] != "./skills/":
         fail("plugin.json skills must be ./skills/")
+
+    skill_version = load_json(SKILL_VERSION)
+    if skill_version.get("version") != plugin["version"]:
+        fail("skill VERSION.json must match plugin.json version")
+    if skill_version.get("plugin_name") != plugin["name"]:
+        fail("skill VERSION.json plugin_name must match plugin.json name")
+    if skill_version.get("plugin_marketplace") != "world-cup-2026":
+        fail("skill VERSION.json plugin_marketplace must remain world-cup-2026")
+    if skill_version.get("skill_path") != "skills/world-cup-2026-predictor":
+        fail("skill VERSION.json skill_path must point to the canonical skill")
 
     marketplace = load_json(MARKETPLACE)
     plugins = marketplace.get("plugins")
@@ -192,6 +203,8 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "validate_match_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_prediction_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_refresh_results.py")])
+        run([sys.executable, str(ROOT / "scripts" / "test_espn_source_contract.py")])
+        run([sys.executable, str(ROOT / "scripts" / "test_check_updates.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_fetch_analysis_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_player_position_fallback.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_photo_utils.py")])

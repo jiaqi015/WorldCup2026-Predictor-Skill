@@ -249,7 +249,7 @@ class TestStrategyTransfermarkt(unittest.TestCase):
     @patch("fetch_player_photos_final.urllib.request.urlopen")
     @patch("fetch_player_photos_final.time.sleep")
     def test_handles_exception(self, mock_sleep, mock_urlopen):
-        mock_urlopen.side_effect = Exception("Connection refused")
+        mock_urlopen.side_effect = urllib.error.URLError("Connection refused")
         result = fpf.strategy_transfermarkt("Test", "Egypt")
         self.assertIsNone(result)
 
@@ -345,7 +345,9 @@ class TestStrategyWikipediaPageImage(unittest.TestCase):
     @patch("fetch_player_photos_final.time.sleep")
     def test_returns_none_on_no_thumbnail(self, mock_sleep, mock_urlopen):
         no_thumb = {"query": {"pages": {"123": {}}}}
-        responses = [_mock_urlopen(SAMPLE_WIKI_SEARCH), _mock_urlopen(no_thumb)]
+        empty_search = {"query": {"search": []}}
+        responses = [_mock_urlopen(SAMPLE_WIKI_SEARCH), _mock_urlopen(no_thumb),
+                     _mock_urlopen(empty_search), _mock_urlopen(empty_search)]
         mock_urlopen.side_effect = responses
         result = fpf.strategy_wikipedia_page_image("Test Player")
         self.assertIsNone(result)

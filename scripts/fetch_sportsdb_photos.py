@@ -27,7 +27,6 @@ from photo_utils import (
 )
 
 PHOTOS_DIR = Path(__file__).parent.parent / "data" / "photos"
-PHOTOS_DIR.mkdir(exist_ok=True)
 
 API_KEY = "3"  # TheSportsDB free tier
 REQUEST_DELAY = 0.5
@@ -65,6 +64,7 @@ def query_sportsdb(name):
 
 
 def main():
+    PHOTOS_DIR.mkdir(exist_ok=True)
     parser = argparse.ArgumentParser(description="Fetch player photos from TheSportsDB")
     parser.add_argument(
         "--write",

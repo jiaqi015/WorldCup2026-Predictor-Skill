@@ -1,6 +1,6 @@
 ---
 name: world-cup-2026-predictor
-description: Launch, use, validate, or maintain the interactive 2026 World Cup predictor; generate group-stage and knockout brackets, compare predictions with current ESPN results, inspect scoring, and update teams, squads, mappings, or simulation logic. Use for 2026 World Cup prediction and live-score tasks, not unrelated football tournaments or betting advice.
+description: Launch, use, validate, or maintain the interactive 2026 World Cup predictor; generate group-stage and knockout brackets, query ESPN-backed latest/today/upcoming results, compare predictions with current ESPN results, inspect scoring, and update teams, squads, mappings, or simulation logic. Use for 2026 World Cup prediction and live-score tasks, not unrelated football tournaments or betting advice.
 ---
 
 # World Cup 2026 Predictor
@@ -10,8 +10,9 @@ Use the bundled single-file web app for interactive brackets and the bundled scr
 ## Choose The Workflow
 
 - For an interactive prediction, launch the web app and use browser automation when available.
-- For current scores or completed-match counts, run the live-results script before answering.
+- For ESPN-backed latest, today, upcoming, or mapping checks, run the live-results script before answering.
 - For code or data changes, read `references/predictor-model.md`, edit the canonical app, sync the bundled asset, then validate.
+- For version freshness or upgrade questions, run the update checker and report explicit upgrade commands.
 - For a quick health check, run the validator without launching a browser.
 - For browser comments or UX bug reports, reproduce the visible flow first, then add or update a focused regression test before validating.
 - For onboarding, command discovery, or broad product testing, read `references/user-playbooks.json`; it is the source of truth for the install/learn/use journey, five primary skill modes, and 20 simulated user scenarios.
@@ -69,12 +70,17 @@ Example prompts:
 
 - `$world-cup-2026-predictor 今天结束了哪些比赛`
 - `$world-cup-2026-predictor check latest completed matches`
+- `$world-cup-2026-predictor 接下来最近几场是谁踢谁`
+- `$world-cup-2026-predictor 检查 ESPN 队名映射有没有失败`
 
 Do this:
 
-1. Run `python3 scripts/live_results.py --json`.
-2. Report `fetched_at`, completed count, source, and the relevant matches.
-3. Treat ESPN as an external source; if the fetch or mapping fails, report the failure instead of inventing a score.
+1. Run `python3 scripts/live_results.py --json --mode latest` for latest completed results.
+2. Run `python3 scripts/live_results.py --json --mode today --date YYYY-MM-DD --timezone <zone>` when the user says today; state the absolute date.
+3. Run `python3 scripts/live_results.py --json --mode upcoming --upcoming N` for upcoming fixtures.
+4. Run `python3 scripts/live_results.py --json --mode mapping` for ESPN team-name mapping drift.
+5. Report `fetched_at`, completed count, source, and the relevant matches or mapping issues.
+6. Treat ESPN as an external source; if the fetch or mapping fails, report the failure instead of inventing a score.
 
 ### Maintain Or Review The Product
 
@@ -83,14 +89,16 @@ Example prompts:
 - `$world-cup-2026-predictor CR 预测器代码和数据`
 - `$world-cup-2026-predictor 修这个浏览器反馈并加测试`
 - `$world-cup-2026-predictor validate all teams, squads, positions, and ESPN mappings`
+- `$world-cup-2026-predictor 检查这个 skill 是不是最新版本`
 
 Do this:
 
-1. Read `references/predictor-model.md`.
-2. Identify whether the change affects UI, embedded data, scripts, or skill packaging.
-3. Edit the root `index.html` for app changes, not only the bundled asset.
-4. Add or update focused tests for the user-visible behavior.
-5. Sync the bundled app and run the validation commands below.
+1. For freshness checks, run `python3 scripts/check_updates.py --json`, then report local version, local commit when known, remote version, remote commit, local dirty state, and plugin upgrade commands.
+2. For review or repair work, read `references/predictor-model.md`.
+3. Identify whether the change affects UI, embedded data, scripts, or skill packaging.
+4. Edit the root `index.html` for app changes, not only the bundled asset.
+5. Add or update focused tests for the user-visible behavior.
+6. Sync the bundled app and run the validation commands below.
 
 ## Launch The Predictor
 
@@ -117,9 +125,14 @@ Run:
 ```bash
 python3 scripts/live_results.py
 python3 scripts/live_results.py --json
+python3 scripts/live_results.py --mode today --date 2026-06-17 --timezone Asia/Shanghai
+python3 scripts/live_results.py --mode upcoming --upcoming 5
+python3 scripts/live_results.py --mode mapping
 ```
 
-Always use a fresh result check when the user asks for current, latest, today, completed, or live tournament information. ESPN stage IDs and payload fields are external contracts; report a fetch or mapping failure instead of inventing a result.
+Always use a fresh result check when the user asks for current, latest, today, upcoming, completed, or live tournament information. ESPN stage IDs and payload fields are external contracts; report a fetch or mapping failure instead of inventing a result.
+
+The ESPN contract lives in `scripts/espn_source.py`. Keep new live-result commands on that normalized contract instead of parsing ESPN payloads independently.
 
 ## Maintain The App
 
@@ -135,6 +148,24 @@ When working in this source repository:
 When the skill is installed standalone and no repository root exists, edit `assets/predictor/index.html` directly.
 
 Do not add copyrighted music. The app intentionally works without bundled audio.
+
+## Keep The Skill Current
+
+Run:
+
+```bash
+python3 scripts/check_updates.py
+python3 scripts/check_updates.py --json
+```
+
+Do not silently auto-update on every skill use. Treat the installed skill as a reproducible local package. When the user asks for latest version, upgrade, freshness, or a maintenance/deploy check, compare the local install with remote `main` and show the explicit commands:
+
+```bash
+codex plugin marketplace upgrade world-cup-2026
+codex plugin add world-cup-2026-predictor@world-cup-2026
+```
+
+For skill-only installs, the installer refuses to overwrite an existing destination. Tell the user to remove the old skill directory first, then reinstall from GitHub.
 
 ## Validate
 
@@ -157,5 +188,6 @@ The validator checks skill structure, tournament data invariants, inline JavaScr
 
 - Interactive work: the browser state proves the requested prediction, score, or share flow.
 - Live-result work: the response names the source, fetch time, and completed-match count.
+- Update-check work: the response names local version/commit, remote version/commit, dirty state, and upgrade commands.
 - Code/data work: root `index.html` and bundled asset are in sync, targeted tests pass, and validator output is reported.
 - Review work: findings lead, with file/line references and severity; include test gaps when no code is changed.

@@ -12,6 +12,9 @@ import unicodedata
 import xml.sax.saxutils
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from photo_utils import safe_name
+
 BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"
 SQUADS_FILE = DATA_DIR / "squads" / "squads_partial.json"
@@ -201,8 +204,8 @@ def main():
                     player.get("jersey", "0"),
                     player.get("position", "M"),
                 )
-                safe_name = re.sub(r"[^\w.-]+", "_", pname, flags=re.UNICODE).strip("_")
-                svg_path = PHOTOS_DIR / f"avatar_{safe_name}.svg"
+                safe_fn = safe_name(pname)
+                svg_path = PHOTOS_DIR / f"avatar_{safe_fn}.svg"
                 svg_path.write_text(svg, encoding="utf-8")
                 avatar_paths[avatar_key(pname)] = svg_path
 

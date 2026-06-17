@@ -16,7 +16,6 @@ import sys
 import time
 import urllib.request
 import urllib.error
-import urllib.parse
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
@@ -24,8 +23,6 @@ DATA_DIR = BASE_DIR / "data"
 SQUADS_FILE = DATA_DIR / "squads" / "squads_partial.json"
 PHOTOS_DIR = DATA_DIR / "photos"
 PHOTO_MAP_FILE = DATA_DIR / "squads" / "photo_mapping.json"
-
-ESPN_ROSTER_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/teams/{team_id}/roster"
 
 REQUEST_DELAY = 0.1  # seconds between downloads (ESPN is fast)
 MAX_RETRIES = 2

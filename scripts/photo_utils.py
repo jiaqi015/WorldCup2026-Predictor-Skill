@@ -133,6 +133,9 @@ def get_placeholders(mapping):
 # ---------------------------------------------------------------------------
 
 USER_AGENT = "FIFA26PhotoFetcher/1.0"
+TM_USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                 "AppleWebKit/537.36 (KHTML, like Gecko) "
+                 "Chrome/120.0.0.0 Safari/537.36")
 MAX_IMAGE_SIZE = 5 * 1024 * 1024  # 5 MB (H3)
 
 

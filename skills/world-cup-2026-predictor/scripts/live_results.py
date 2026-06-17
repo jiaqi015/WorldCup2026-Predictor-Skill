@@ -1,75 +1,114 @@
 #!/usr/bin/env python3
-"""Fetch current 2026 World Cup results from ESPN's public scoreboard feed."""
+"""Query ESPN-backed 2026 World Cup live-result views for the skill."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime
 from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
 
-
-RESULTS_API = (
-    "https://site.api.espn.com/apis/site/v2/sports/soccer/"
-    "fifa.world/scoreboard?dates=20260611-20260719&limit=200"
+from espn_source import (
+    build_contract,
+    fetch_payload,
+    filter_completed_on_date,
+    parse_date,
+    resolve_timezone,
 )
-STAGES = {
-    13802: "Group",
-    13801: "Round of 32",
-    13800: "Round of 16",
-    13799: "Quarterfinal",
-    13798: "Semifinal",
-    13797: "Third place",
-    13803: "Final",
-}
 
 
-def fetch_payload(timeout: float) -> dict:
-    request = Request(
-        RESULTS_API,
-        headers={"User-Agent": "world-cup-2026-predictor-skill/1.0"},
-    )
-    with urlopen(request, timeout=timeout) as response:
-        return json.load(response)
+def format_event(event: dict, *, completed: bool = False) -> str:
+    if completed:
+        return (
+            f"- {event['date']} | {event['stage']} | "
+            f"{event['home']} {event['home_score']}-{event['away_score']} "
+            f"{event['away']}"
+        )
+    return f"- {event['date']} | {event['stage']} | {event['home']} vs {event['away']}"
 
 
-def parse_time(value: str | None) -> datetime | None:
-    if not value:
-        return None
-    return datetime.fromisoformat(value.replace("Z", "+00:00"))
-
-
-def normalize_event(event: dict) -> dict | None:
-    competition = (event.get("competitions") or [None])[0]
-    if not competition:
-        return None
-
-    competitors = competition.get("competitors") or []
-    home = next((item for item in competitors if item.get("homeAway") == "home"), None)
-    away = next((item for item in competitors if item.get("homeAway") == "away"), None)
-    if not home or not away:
-        return None
-
-    status = ((competition.get("status") or {}).get("type") or {})
-    season_type = (event.get("season") or {}).get("type")
-    return {
-        "id": event.get("id"),
-        "date": event.get("date"),
-        "stage": STAGES.get(season_type, f"Stage {season_type}"),
-        "completed": bool(status.get("completed")),
-        "status": status.get("shortDetail") or status.get("description"),
-        "home": (home.get("team") or {}).get("displayName"),
-        "away": (away.get("team") or {}).get("displayName"),
-        "home_score": home.get("score"),
-        "away_score": away.get("score"),
+def selected_payload(contract: dict, args: argparse.Namespace) -> dict:
+    result = {
+        "contract_version": contract["contract_version"],
+        "source": contract["source"],
+        "source_url": contract["source_url"],
+        "fetched_at": contract["fetched_at"],
+        "scheduled_count": contract["scheduled_count"],
+        "completed_count": contract["completed_count"],
+        "mode": args.mode,
     }
+    if args.mode == "today":
+        target = parse_date(args.date) if args.date else datetime.now(resolve_timezone(args.timezone)).date()
+        result["date"] = target.isoformat()
+        result["timezone"] = args.timezone
+        result["today_completed"] = filter_completed_on_date(
+            contract["events"],
+            target,
+            args.timezone,
+        )
+    elif args.mode == "upcoming":
+        result["selected"] = contract["upcoming"]
+    elif args.mode == "mapping":
+        result["selected"] = contract["mapping_issues"]
+    elif args.mode == "all":
+        result["selected"] = contract["events"]
+    else:
+        result["completed"] = contract["completed"]
+        result["upcoming"] = contract["upcoming"]
+    return result
+
+
+def print_text_view(contract: dict, args: argparse.Namespace) -> None:
+    print(
+        f"ESPN World Cup feed: {contract['completed_count']} completed / "
+        f"{contract['scheduled_count']} scheduled matches"
+    )
+    print(f"Fetched at: {contract['fetched_at']}")
+
+    if args.mode == "today":
+        target = parse_date(args.date) if args.date else datetime.now(resolve_timezone(args.timezone)).date()
+        events = filter_completed_on_date(contract["events"], target, args.timezone)
+        print(f"Completed on {target.isoformat()} ({args.timezone}): {len(events)}")
+        for event in events:
+            print(format_event(event, completed=True))
+        return
+
+    if args.mode == "upcoming":
+        print("Upcoming:")
+        for event in contract["upcoming"]:
+            print(format_event(event))
+        return
+
+    if args.mode == "mapping":
+        issues = contract["mapping_issues"]
+        if not issues:
+            print("No ESPN team mapping issues found.")
+            return
+        print(f"ESPN team mapping issues: {len(issues)}")
+        for issue in issues:
+            print(
+                f"- {issue['event_id']} | {issue['stage']} | "
+                f"{issue['side']} team {issue['team']}"
+            )
+        return
+
+    events = contract["events"] if args.mode == "all" else contract["completed"]
+    for event in events:
+        print(format_event(event, completed=bool(event.get("completed"))))
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true", dest="as_json")
+    parser.add_argument(
+        "--mode",
+        choices=("latest", "today", "upcoming", "mapping", "all"),
+        default="latest",
+        help="Live-result view to return.",
+    )
+    parser.add_argument("--date", help="YYYY-MM-DD date for --mode today.")
+    parser.add_argument("--timezone", default="Asia/Shanghai")
     parser.add_argument("--upcoming", type=int, default=5)
     parser.add_argument("--timeout", type=float, default=15)
     args = parser.parse_args()
@@ -80,48 +119,13 @@ def main() -> int:
         print(f"Unable to fetch ESPN results: {exc}", file=sys.stderr)
         return 1
 
-    events = [item for event in payload.get("events", []) if (item := normalize_event(event))]
-    events.sort(key=lambda item: item.get("date") or "")
-    completed = [event for event in events if event["completed"]]
-    now = datetime.now(timezone.utc)
-    upcoming = [
-        event
-        for event in events
-        if not event["completed"]
-        and (event_time := parse_time(event["date"]))
-        and event_time >= now
-    ][: max(args.upcoming, 0)]
-
-    result = {
-        "source": "ESPN",
-        "fetched_at": now.isoformat(),
-        "scheduled_count": len(events),
-        "completed_count": len(completed),
-        "completed": completed,
-        "upcoming": upcoming,
-    }
+    contract = build_contract(payload, upcoming_limit=args.upcoming)
 
     if args.as_json:
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+        print(json.dumps(selected_payload(contract, args), ensure_ascii=False, indent=2))
         return 0
 
-    print(
-        f"ESPN World Cup feed: {len(completed)} completed / "
-        f"{len(events)} scheduled matches"
-    )
-    for event in completed:
-        print(
-            f"- {event['date']} | {event['stage']} | "
-            f"{event['home']} {event['home_score']}-{event['away_score']} "
-            f"{event['away']}"
-        )
-    if upcoming:
-        print("Upcoming:")
-        for event in upcoming:
-            print(
-                f"- {event['date']} | {event['stage']} | "
-                f"{event['home']} vs {event['away']}"
-            )
+    print_text_view(contract, args)
     return 0
 
 
