@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-16",
+  "generated_at": "2026-06-17",
   "data_scope": {
     "tournament": "FIFA World Cup 2026",
     "team_count": 48,
@@ -2418,7 +2418,7 @@
       "away_team_cn": "南非",
       "odds": null,
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "high",
       "source_type": "unavailable",
       "notes": "Match already completed",
@@ -2504,12 +2504,12 @@
             "source": "ESPN summary API",
             "scorer_source_name": "Raúl Jiménez",
             "scorer_cn": "劳尔·希门尼斯",
-            "scorer_app_alias": "希门尼斯",
+            "scorer_app_alias": "希门尼斯MEX",
             "scorer_team_cn": "墨西哥",
             "scorer_jersey": "9",
             "scorer_position": "F",
             "scorer_mapping_status": "matched_team_player",
-            "scorer_mapping_key": "Raúl Jiménez",
+            "scorer_mapping_key": "Raúl Jiménez (Mexico)",
             "assist_source_name": "Roberto Alvarado",
             "assist_cn": "罗伯托·阿尔瓦拉多",
             "assist_app_alias": "罗伯托",
@@ -2578,7 +2578,7 @@
       "away_team_cn": "捷克",
       "odds": null,
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "high",
       "source_type": "unavailable",
       "notes": "Match already completed",
@@ -2704,7 +2704,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -120",
@@ -2867,7 +2867,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +110",
@@ -3091,7 +3091,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -450",
@@ -3178,7 +3178,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -155",
@@ -3296,7 +3296,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SCO -175",
@@ -3413,7 +3413,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR -140",
@@ -3508,7 +3508,7 @@
         "over_under_goals": 4.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -3000",
@@ -3680,7 +3680,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -105",
@@ -3859,7 +3859,7 @@
         "over_under_goals": 1.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU +145",
@@ -3984,7 +3984,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SWE -110",
@@ -4171,7 +4171,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1200",
@@ -4243,7 +4243,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -170",
@@ -4368,7 +4368,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
@@ -4407,6 +4407,21 @@
             "player_position": null,
             "player_mapping_status": "matched_team_player",
             "player_mapping_key": "Abdulelah Al-Amri"
+          },
+          {
+            "type": "goal",
+            "minute": "80'",
+            "team": "away",
+            "team_cn": "乌拉圭",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Maxi Araújo",
+            "scorer_cn": "阿劳霍",
+            "scorer_app_alias": "阿劳霍",
+            "scorer_team_cn": "乌拉圭",
+            "scorer_jersey": "20",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Maxi Araújo"
           }
         ],
         "source": "ESPN summary API",
@@ -4440,7 +4455,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: IRN -120",
@@ -4450,6 +4465,29 @@
         "attendance": 70108,
         "referee": "César Arturo Ramos Palazuelos",
         "events": [
+          {
+            "type": "goal",
+            "minute": "7'",
+            "team": "away",
+            "team_cn": "新西兰",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Elijah Just",
+            "scorer_cn": "伊莱-贾斯特",
+            "scorer_app_alias": "伊莱-贾斯特",
+            "scorer_team_cn": "新西兰",
+            "scorer_jersey": "11",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Elijah Just",
+            "assist_source_name": "Chris Wood",
+            "assist_cn": "克里斯-伍德",
+            "assist_app_alias": "克里斯-伍德",
+            "assist_team_cn": "新西兰",
+            "assist_jersey": "9",
+            "assist_position": "F",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Chris Wood"
+          },
           {
             "type": "goal",
             "minute": "32'",
@@ -4558,11 +4596,104 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -210",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 3,
+        "away_score": 1,
+        "attendance": 80545,
+        "referee": "Alireza Faghani",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "66'",
+            "team": "home",
+            "team_cn": "法国",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Kylian Mbappé",
+            "scorer_cn": "姆巴佩",
+            "scorer_app_alias": "姆巴佩",
+            "scorer_team_cn": "法国",
+            "scorer_jersey": "10",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Kylian Mbappé",
+            "assist_source_name": "Michael Olise",
+            "assist_cn": "奥利塞",
+            "assist_app_alias": "奥利塞",
+            "assist_team_cn": "法国",
+            "assist_jersey": "11",
+            "assist_position": "M",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Michael Olise"
+          },
+          {
+            "type": "goal",
+            "minute": "82'",
+            "team": "home",
+            "team_cn": "法国",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Bradley Barcola",
+            "scorer_cn": "巴尔科拉",
+            "scorer_app_alias": "巴尔科拉",
+            "scorer_team_cn": "法国",
+            "scorer_jersey": "12",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Bradley Barcola",
+            "assist_source_name": "Adrien Rabiot",
+            "assist_cn": "拉比奥",
+            "assist_app_alias": "拉比奥",
+            "assist_team_cn": "法国",
+            "assist_jersey": "14",
+            "assist_position": "M",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Adrien Rabiot"
+          },
+          {
+            "type": "goal",
+            "minute": "90'+5'",
+            "team": "away",
+            "team_cn": "塞内加尔",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Ibrahim Mbaye",
+            "scorer_cn": "易卜拉欣",
+            "scorer_app_alias": "易卜拉欣",
+            "scorer_team_cn": "塞内加尔",
+            "scorer_jersey": "20",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Ibrahim Mbaye",
+            "assist_source_name": "Iliman Ndiaye",
+            "assist_cn": "恩迪亚耶",
+            "assist_app_alias": "恩迪亚耶",
+            "assist_team_cn": "塞内加尔",
+            "assist_jersey": "13",
+            "assist_position": "F",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Iliman Ndiaye"
+          },
+          {
+            "type": "goal",
+            "minute": "90'+6'",
+            "team": "home",
+            "team_cn": "法国",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Kylian Mbappé",
+            "scorer_cn": "姆巴佩",
+            "scorer_app_alias": "姆巴佩",
+            "scorer_team_cn": "法国",
+            "scorer_jersey": "10",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Kylian Mbappé"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432"
+      }
     },
     {
       "match_id": "760430",
@@ -4591,11 +4722,119 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR -475",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 1,
+        "away_score": 4,
+        "attendance": 63106,
+        "referee": "Pierre Atcho",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "29'",
+            "team": "away",
+            "team_cn": "挪威",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Erling Haaland",
+            "scorer_cn": "哈兰德",
+            "scorer_app_alias": "哈兰德",
+            "scorer_team_cn": "挪威",
+            "scorer_jersey": "9",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Erling Haaland",
+            "assist_source_name": "David Møller Wolfe",
+            "assist_cn": "大卫",
+            "assist_app_alias": "大卫",
+            "assist_team_cn": "挪威",
+            "assist_jersey": "5",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "David Møller Wolfe"
+          },
+          {
+            "type": "goal",
+            "minute": "39'",
+            "team": "home",
+            "team_cn": "伊拉克",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Aymen Hussein",
+            "scorer_cn": "艾门",
+            "scorer_app_alias": "艾门",
+            "scorer_team_cn": "伊拉克",
+            "scorer_jersey": "18",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Aymen Hussein",
+            "assist_source_name": "Amir Al-Ammari",
+            "assist_cn": "阿米尔",
+            "assist_app_alias": "阿米尔",
+            "assist_team_cn": "伊拉克",
+            "assist_jersey": "16",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Amir Al-Ammari"
+          },
+          {
+            "type": "goal",
+            "minute": "43'",
+            "team": "away",
+            "team_cn": "挪威",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Erling Haaland",
+            "scorer_cn": "哈兰德",
+            "scorer_app_alias": "哈兰德",
+            "scorer_team_cn": "挪威",
+            "scorer_jersey": "9",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Erling Haaland"
+          },
+          {
+            "type": "goal",
+            "minute": "76'",
+            "team": "away",
+            "team_cn": "挪威",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Leo Østigard",
+            "scorer_cn": "奥斯蒂加德",
+            "scorer_app_alias": "奥斯蒂加德",
+            "scorer_team_cn": "挪威",
+            "scorer_jersey": "4",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Leo Østigard",
+            "assist_source_name": "Martin Ødegaard",
+            "assist_cn": "厄德高",
+            "assist_app_alias": "厄德高",
+            "assist_team_cn": "挪威",
+            "assist_jersey": "10",
+            "assist_position": "M",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Martin Ødegaard"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "86'",
+            "team": "home",
+            "team_cn": "伊拉克",
+            "source": "ESPN summary API",
+            "player_source_name": "Zaid Tahseen",
+            "player_cn": "扎伊德",
+            "player_app_alias": "扎伊德",
+            "player_team_cn": "伊拉克",
+            "player_jersey": "4",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Zaid Tahseen"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430"
+      }
     },
     {
       "match_id": "760433",
@@ -4624,11 +4863,81 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -245",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 3,
+        "away_score": 0,
+        "attendance": 69045,
+        "referee": "Szymon Marciniak",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "17'",
+            "team": "home",
+            "team_cn": "阿根廷",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Lionel Messi",
+            "scorer_cn": "梅西",
+            "scorer_app_alias": "梅西",
+            "scorer_team_cn": "阿根廷",
+            "scorer_jersey": "10",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Lionel Messi",
+            "assist_source_name": "Rodrigo De Paul",
+            "assist_cn": "德保罗",
+            "assist_app_alias": "德保罗",
+            "assist_team_cn": "阿根廷",
+            "assist_jersey": "7",
+            "assist_position": "M",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Rodrigo De Paul"
+          },
+          {
+            "type": "goal",
+            "minute": "60'",
+            "team": "home",
+            "team_cn": "阿根廷",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Lionel Messi",
+            "scorer_cn": "梅西",
+            "scorer_app_alias": "梅西",
+            "scorer_team_cn": "阿根廷",
+            "scorer_jersey": "10",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Lionel Messi"
+          },
+          {
+            "type": "goal",
+            "minute": "76'",
+            "team": "home",
+            "team_cn": "阿根廷",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Lionel Messi",
+            "scorer_cn": "梅西",
+            "scorer_app_alias": "梅西",
+            "scorer_team_cn": "阿根廷",
+            "scorer_jersey": "10",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Lionel Messi",
+            "assist_source_name": "Nico González",
+            "assist_cn": "Nico冈萨雷斯",
+            "assist_app_alias": "Nico冈萨雷斯",
+            "assist_team_cn": "阿根廷",
+            "assist_jersey": "15",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Nico González"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760433"
+      }
     },
     {
       "match_id": "760431",
@@ -4657,11 +4966,81 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT -295",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 3,
+        "away_score": 1,
+        "attendance": 68527,
+        "referee": "Beida Damane",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "21'",
+            "team": "home",
+            "team_cn": "奥地利",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Romano Schmid",
+            "scorer_cn": "施密德",
+            "scorer_app_alias": "施密德",
+            "scorer_team_cn": "奥地利",
+            "scorer_jersey": "18",
+            "scorer_position": "M",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Romano Schmid",
+            "assist_source_name": "Xaver Schlager",
+            "assist_cn": "施拉格",
+            "assist_app_alias": "施拉格",
+            "assist_team_cn": "奥地利",
+            "assist_jersey": "4",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Xaver Schlager"
+          },
+          {
+            "type": "goal",
+            "minute": "50'",
+            "team": "away",
+            "team_cn": "约旦",
+            "source": "ESPN summary API",
+            "scorer_source_name": "Ali Olwan",
+            "scorer_cn": "塔阿马里",
+            "scorer_app_alias": "塔阿马里",
+            "scorer_team_cn": "约旦",
+            "scorer_jersey": "9",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Ali Olwan",
+            "assist_source_name": "Noor Al-Rawabdeh",
+            "assist_cn": "达阿乌德",
+            "assist_app_alias": "达阿乌德",
+            "assist_team_cn": "约旦",
+            "assist_jersey": "8",
+            "assist_position": "M",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Noor Al-Rawabdeh"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "77'",
+            "team": "home",
+            "team_cn": "奥地利",
+            "source": "ESPN summary API",
+            "player_source_name": "Marcel Sabitzer",
+            "player_cn": "萨比策",
+            "player_app_alias": "萨比策",
+            "player_team_cn": "奥地利",
+            "player_jersey": "9",
+            "player_position": "M",
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Marcel Sabitzer"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760431"
+      }
     },
     {
       "match_id": "760435",
@@ -4690,7 +5069,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -360",
@@ -4723,7 +5102,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -140",
@@ -4756,7 +5135,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GHA +115",
@@ -4789,7 +5168,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -250",
@@ -4822,7 +5201,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CZE -135",
@@ -4855,7 +5234,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -160",
@@ -4888,7 +5267,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -330",
@@ -4921,7 +5300,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX +100",
@@ -4954,7 +5333,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA -130",
@@ -4987,7 +5366,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR +100",
@@ -5020,7 +5399,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -1200",
@@ -5053,7 +5432,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR +125",
@@ -5086,7 +5465,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -155",
@@ -5119,7 +5498,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -180",
@@ -5152,7 +5531,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU -500",
@@ -5185,7 +5564,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN -140",
@@ -5218,7 +5597,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1000",
@@ -5251,7 +5630,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -245",
@@ -5284,7 +5663,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
@@ -5317,7 +5696,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY -130",
@@ -5350,7 +5729,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -155",
@@ -5383,7 +5762,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -800",
@@ -5416,7 +5795,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR +115",
@@ -5449,7 +5828,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ALG -190",
@@ -5482,7 +5861,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -425",
@@ -5515,7 +5894,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -320",
@@ -5548,7 +5927,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -180",
@@ -5581,7 +5960,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -220",
@@ -5614,7 +5993,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BIH -155",
@@ -5647,7 +6026,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI +115",
@@ -5680,7 +6059,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR -310",
@@ -5713,7 +6092,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -215",
@@ -5746,7 +6125,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX -120",
@@ -5779,7 +6158,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: KOR -165",
@@ -5812,7 +6191,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CIV -450",
@@ -5845,7 +6224,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -135",
@@ -5878,7 +6257,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN +110",
@@ -5911,7 +6290,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -200",
@@ -5944,7 +6323,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: PAR +115",
@@ -5977,7 +6356,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +155",
@@ -6010,7 +6389,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -115",
@@ -6043,7 +6422,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SEN -245",
@@ -6076,7 +6455,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CPV +140",
@@ -6109,7 +6488,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -155",
@@ -6142,7 +6521,7 @@
         "over_under_goals": 1.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY +130",
@@ -6175,7 +6554,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -340",
@@ -6208,7 +6587,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -155",
@@ -6241,7 +6620,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -340",
@@ -6274,7 +6653,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR +120",
@@ -6307,7 +6686,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COD +135",
@@ -6340,7 +6719,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT +125",
@@ -6373,7 +6752,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-16",
+      "as_of": "2026-06-17",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -525",
@@ -23209,7 +23588,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760415:goal:4",
@@ -23220,9 +23599,9 @@
       "team_cn": "墨西哥",
       "player_source_name": "Raúl Jiménez",
       "player_display_name_cn": "劳尔·希门尼斯",
-      "player_app_alias": "希门尼斯",
+      "player_app_alias": "希门尼斯MEX",
       "player_mapping_status": "matched_team_player",
-      "player_mapping_key": "Raúl Jiménez",
+      "player_mapping_key": "Raúl Jiménez (Mexico)",
       "player_jersey": "9",
       "player_position": "F",
       "assist_source_name": "Roberto Alvarado",
@@ -23231,7 +23610,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760414:goal:0",
@@ -23253,7 +23632,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760414:goal:1",
@@ -23275,7 +23654,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760414:goal:2",
@@ -23297,7 +23676,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760416:goal:1",
@@ -23319,7 +23698,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760416",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760416:goal:5",
@@ -23341,7 +23720,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760416",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760417:goal:1",
@@ -23363,7 +23742,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760417:goal:2",
@@ -23385,7 +23764,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760417:goal:5",
@@ -23407,7 +23786,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760417:goal:9",
@@ -23429,7 +23808,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760419:goal:0",
@@ -23451,7 +23830,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760419",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760419:goal:1",
@@ -23473,7 +23852,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760419",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760418:goal:0",
@@ -23495,7 +23874,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760418",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760421:goal:0",
@@ -23517,7 +23896,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760421",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760421:goal:1",
@@ -23539,7 +23918,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760421",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760422:goal:0",
@@ -23561,7 +23940,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760422:goal:1",
@@ -23583,7 +23962,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760422:goal:2",
@@ -23605,7 +23984,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760422:goal:3",
@@ -23627,7 +24006,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760422:goal:4",
@@ -23649,7 +24028,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760422:goal:5",
@@ -23671,7 +24050,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760425:goal:0",
@@ -23693,7 +24072,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760425:goal:1",
@@ -23715,7 +24094,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760425:goal:3",
@@ -23737,7 +24116,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760425:goal:5",
@@ -23759,7 +24138,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760423:goal:4",
@@ -23781,7 +24160,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760423",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760424:goal:0",
@@ -23803,7 +24182,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760424:goal:1",
@@ -23825,7 +24204,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760424:goal:2",
@@ -23847,7 +24226,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760424:goal:4",
@@ -23869,7 +24248,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760424:goal:5",
@@ -23891,7 +24270,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760424:goal:6",
@@ -23913,7 +24292,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760426:goal:2",
@@ -23935,7 +24314,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760426",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760429:goal:0",
@@ -23957,10 +24336,54 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760429",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760429:goal:2",
+      "match_id": "760429",
+      "event_type": "goal",
+      "minute": "80'",
+      "team_side": "away",
+      "team_cn": "乌拉圭",
+      "player_source_name": "Maxi Araújo",
+      "player_display_name_cn": "阿劳霍",
+      "player_app_alias": "阿劳霍",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Maxi Araújo",
+      "player_jersey": "20",
+      "player_position": null,
+      "assist_source_name": null,
+      "assist_display_name_cn": null,
+      "assist_app_alias": null,
+      "assist_mapping_status": null,
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760429",
+      "as_of": "2026-06-17"
     },
     {
       "event_id": "760427:goal:0",
+      "match_id": "760427",
+      "event_type": "goal",
+      "minute": "7'",
+      "team_side": "away",
+      "team_cn": "新西兰",
+      "player_source_name": "Elijah Just",
+      "player_display_name_cn": "伊莱-贾斯特",
+      "player_app_alias": "伊莱-贾斯特",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Elijah Just",
+      "player_jersey": "11",
+      "player_position": "F",
+      "assist_source_name": "Chris Wood",
+      "assist_display_name_cn": "克里斯-伍德",
+      "assist_app_alias": "克里斯-伍德",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760427:goal:1",
       "match_id": "760427",
       "event_type": "goal",
       "minute": "32'",
@@ -23979,10 +24402,10 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
-      "event_id": "760427:goal:1",
+      "event_id": "760427:goal:2",
       "match_id": "760427",
       "event_type": "goal",
       "minute": "54'",
@@ -24001,10 +24424,10 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
     },
     {
-      "event_id": "760427:goal:2",
+      "event_id": "760427:goal:3",
       "match_id": "760427",
       "event_type": "goal",
       "minute": "64'",
@@ -24023,7 +24446,293 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
-      "as_of": "2026-06-16"
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760432:goal:0",
+      "match_id": "760432",
+      "event_type": "goal",
+      "minute": "66'",
+      "team_side": "home",
+      "team_cn": "法国",
+      "player_source_name": "Kylian Mbappé",
+      "player_display_name_cn": "姆巴佩",
+      "player_app_alias": "姆巴佩",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Kylian Mbappé",
+      "player_jersey": "10",
+      "player_position": "F",
+      "assist_source_name": "Michael Olise",
+      "assist_display_name_cn": "奥利塞",
+      "assist_app_alias": "奥利塞",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760432:goal:1",
+      "match_id": "760432",
+      "event_type": "goal",
+      "minute": "82'",
+      "team_side": "home",
+      "team_cn": "法国",
+      "player_source_name": "Bradley Barcola",
+      "player_display_name_cn": "巴尔科拉",
+      "player_app_alias": "巴尔科拉",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Bradley Barcola",
+      "player_jersey": "12",
+      "player_position": null,
+      "assist_source_name": "Adrien Rabiot",
+      "assist_display_name_cn": "拉比奥",
+      "assist_app_alias": "拉比奥",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760432:goal:2",
+      "match_id": "760432",
+      "event_type": "goal",
+      "minute": "90'+5'",
+      "team_side": "away",
+      "team_cn": "塞内加尔",
+      "player_source_name": "Ibrahim Mbaye",
+      "player_display_name_cn": "易卜拉欣",
+      "player_app_alias": "易卜拉欣",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Ibrahim Mbaye",
+      "player_jersey": "20",
+      "player_position": null,
+      "assist_source_name": "Iliman Ndiaye",
+      "assist_display_name_cn": "恩迪亚耶",
+      "assist_app_alias": "恩迪亚耶",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760432:goal:3",
+      "match_id": "760432",
+      "event_type": "goal",
+      "minute": "90'+6'",
+      "team_side": "home",
+      "team_cn": "法国",
+      "player_source_name": "Kylian Mbappé",
+      "player_display_name_cn": "姆巴佩",
+      "player_app_alias": "姆巴佩",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Kylian Mbappé",
+      "player_jersey": "10",
+      "player_position": "F",
+      "assist_source_name": null,
+      "assist_display_name_cn": null,
+      "assist_app_alias": null,
+      "assist_mapping_status": null,
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760430:goal:0",
+      "match_id": "760430",
+      "event_type": "goal",
+      "minute": "29'",
+      "team_side": "away",
+      "team_cn": "挪威",
+      "player_source_name": "Erling Haaland",
+      "player_display_name_cn": "哈兰德",
+      "player_app_alias": "哈兰德",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Erling Haaland",
+      "player_jersey": "9",
+      "player_position": "F",
+      "assist_source_name": "David Møller Wolfe",
+      "assist_display_name_cn": "大卫",
+      "assist_app_alias": "大卫",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760430:goal:1",
+      "match_id": "760430",
+      "event_type": "goal",
+      "minute": "39'",
+      "team_side": "home",
+      "team_cn": "伊拉克",
+      "player_source_name": "Aymen Hussein",
+      "player_display_name_cn": "艾门",
+      "player_app_alias": "艾门",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Aymen Hussein",
+      "player_jersey": "18",
+      "player_position": "F",
+      "assist_source_name": "Amir Al-Ammari",
+      "assist_display_name_cn": "阿米尔",
+      "assist_app_alias": "阿米尔",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760430:goal:2",
+      "match_id": "760430",
+      "event_type": "goal",
+      "minute": "43'",
+      "team_side": "away",
+      "team_cn": "挪威",
+      "player_source_name": "Erling Haaland",
+      "player_display_name_cn": "哈兰德",
+      "player_app_alias": "哈兰德",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Erling Haaland",
+      "player_jersey": "9",
+      "player_position": "F",
+      "assist_source_name": null,
+      "assist_display_name_cn": null,
+      "assist_app_alias": null,
+      "assist_mapping_status": null,
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760430:goal:3",
+      "match_id": "760430",
+      "event_type": "goal",
+      "minute": "76'",
+      "team_side": "away",
+      "team_cn": "挪威",
+      "player_source_name": "Leo Østigard",
+      "player_display_name_cn": "奥斯蒂加德",
+      "player_app_alias": "奥斯蒂加德",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Leo Østigard",
+      "player_jersey": "4",
+      "player_position": null,
+      "assist_source_name": "Martin Ødegaard",
+      "assist_display_name_cn": "厄德高",
+      "assist_app_alias": "厄德高",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760433:goal:0",
+      "match_id": "760433",
+      "event_type": "goal",
+      "minute": "17'",
+      "team_side": "home",
+      "team_cn": "阿根廷",
+      "player_source_name": "Lionel Messi",
+      "player_display_name_cn": "梅西",
+      "player_app_alias": "梅西",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Lionel Messi",
+      "player_jersey": "10",
+      "player_position": "F",
+      "assist_source_name": "Rodrigo De Paul",
+      "assist_display_name_cn": "德保罗",
+      "assist_app_alias": "德保罗",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760433",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760433:goal:1",
+      "match_id": "760433",
+      "event_type": "goal",
+      "minute": "60'",
+      "team_side": "home",
+      "team_cn": "阿根廷",
+      "player_source_name": "Lionel Messi",
+      "player_display_name_cn": "梅西",
+      "player_app_alias": "梅西",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Lionel Messi",
+      "player_jersey": "10",
+      "player_position": "F",
+      "assist_source_name": null,
+      "assist_display_name_cn": null,
+      "assist_app_alias": null,
+      "assist_mapping_status": null,
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760433",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760433:goal:2",
+      "match_id": "760433",
+      "event_type": "goal",
+      "minute": "76'",
+      "team_side": "home",
+      "team_cn": "阿根廷",
+      "player_source_name": "Lionel Messi",
+      "player_display_name_cn": "梅西",
+      "player_app_alias": "梅西",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Lionel Messi",
+      "player_jersey": "10",
+      "player_position": "F",
+      "assist_source_name": "Nico González",
+      "assist_display_name_cn": "Nico冈萨雷斯",
+      "assist_app_alias": "Nico冈萨雷斯",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760433",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760431:goal:0",
+      "match_id": "760431",
+      "event_type": "goal",
+      "minute": "21'",
+      "team_side": "home",
+      "team_cn": "奥地利",
+      "player_source_name": "Romano Schmid",
+      "player_display_name_cn": "施密德",
+      "player_app_alias": "施密德",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Romano Schmid",
+      "player_jersey": "18",
+      "player_position": "M",
+      "assist_source_name": "Xaver Schlager",
+      "assist_display_name_cn": "施拉格",
+      "assist_app_alias": "施拉格",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760431",
+      "as_of": "2026-06-17"
+    },
+    {
+      "event_id": "760431:goal:1",
+      "match_id": "760431",
+      "event_type": "goal",
+      "minute": "50'",
+      "team_side": "away",
+      "team_cn": "约旦",
+      "player_source_name": "Ali Olwan",
+      "player_display_name_cn": "塔阿马里",
+      "player_app_alias": "塔阿马里",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Ali Olwan",
+      "player_jersey": "9",
+      "player_position": "F",
+      "assist_source_name": "Noor Al-Rawabdeh",
+      "assist_display_name_cn": "达阿乌德",
+      "assist_app_alias": "达阿乌德",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760431",
+      "as_of": "2026-06-17"
     }
   ],
   "coverage_report": {
@@ -24165,9 +24874,9 @@
       ]
     },
     "actual_match_events": {
-      "completed_matches": 16,
-      "goal_events": 38,
-      "mapped_scorers": 38,
+      "completed_matches": 20,
+      "goal_events": 53,
+      "mapped_scorers": 53,
       "source_only_scorers": []
     },
     "data_quality_notes": [

@@ -54,6 +54,17 @@ def normalize_name(value):
     value = "".join(char for char in value if not unicodedata.combining(char))
     return "".join(char.lower() for char in value if char.isalnum())
 
+
+def base_player_key(value):
+    """Return the player-name portion of a mapping key."""
+    return (value or "").split(" (", 1)[0].strip()
+
+
+def team_en_candidates(team_cn):
+    """Return English team aliases that map to a Chinese team name."""
+    return [team_en for team_en, mapped_cn in TEAM_CN.items() if mapped_cn == team_cn]
+
+
 def load_player_mapping():
     """Load player name mapping from JSON file."""
     global PLAYER_DATA, PLAYER_DATA_NORMALIZED
@@ -68,15 +79,29 @@ def load_player_mapping():
                     continue
                 PLAYER_DATA[eng_name] = info
                 PLAYER_DATA_NORMALIZED.setdefault(normalize_name(eng_name), []).append((eng_name, info))
+                base_name = base_player_key(eng_name)
+                if base_name and base_name != eng_name:
+                    PLAYER_DATA_NORMALIZED.setdefault(normalize_name(base_name), []).append((eng_name, info))
 
 
 def resolve_player(source_name, expected_team):
-    """Resolve an ESPN participant against the project mapping within one team."""
+    """Resolve an ESPN participant against the project mapping within one team.
+
+    Prefers qualified keys (e.g. "Raúl Jiménez (Mexico)") over bare keys
+    to stay consistent with update_index.py's get_player_cn_name().
+    """
     display_cn = PLAYER_DISPLAY_CN.get(source_name)
     candidates = []
+    for team_en in team_en_candidates(expected_team):
+        qualified_key = f"{source_name} ({team_en})"
+        if qualified_key in PLAYER_DATA:
+            candidates.append((qualified_key, PLAYER_DATA[qualified_key]))
     if source_name in PLAYER_DATA:
         candidates.append((source_name, PLAYER_DATA[source_name]))
     candidates.extend(PLAYER_DATA_NORMALIZED.get(normalize_name(source_name), []))
+
+    # Sort: qualified keys (containing "(") first, so "X (Team)" beats "X"
+    candidates.sort(key=lambda c: 0 if '(' in c[0] else 1)
 
     seen = set()
     for mapped_name, info in candidates:

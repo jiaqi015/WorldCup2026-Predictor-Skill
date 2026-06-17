@@ -163,9 +163,14 @@ def main():
   for(var i=0;i<players.length;i++){
     var p=players[i],pos=getPos(p,team);
     var w=weights[pos];if(w===undefined)w=fallback;
-    if(threatMap&&threatMap[p]){
-      var mult=(type==="assist")?threatMap[p].a:threatMap[p].g;
-      if(mult>0)w=Math.max(1,Math.round(w*mult));
+    if(threatMap){
+      // team-qualified key 优先（区分跨队同名），bare key 作 fallback
+      var tEntry=team?threatMap[team+"|"+p]:null;
+      var entry=tEntry||threatMap[p];
+      if(entry){
+        var mult=(type==="assist")?entry.a:entry.g;
+        if(mult>0)w=Math.max(1,Math.round(w*mult));
+      }
     }
     for(var j=0;j<w;j++)pool.push(p);
   }
@@ -186,7 +191,7 @@ def main():
         print("[embed] WARNING: Could not find weightedPick exact match, trying fuzzy...")
         # The code might be minified differently, try to find and replace the key logic
         old_pattern = r'var w=weights\[pos\];if\(w===undefined\)w=fallback;\s*for\(var j=0;j<w;j\+\+\)pool\.push\(p\);'
-        new_logic = 'var w=weights[pos];if(w===undefined)w=fallback;if(typeof PLAYER_THREATS_MAP!=="undefined"&&PLAYER_THREATS_MAP[p]){var _m=(type==="assist")?PLAYER_THREATS_MAP[p].a:PLAYER_THREATS_MAP[p].g;if(_m>0)w=Math.max(1,Math.round(w*_m));}for(var j=0;j<w;j++)pool.push(p);'
+        new_logic = 'var w=weights[pos];if(w===undefined)w=fallback;var _tm=(typeof PLAYER_THREATS_MAP!=="undefined")?PLAYER_THREATS_MAP:null;if(_tm){var _te=team?_tm[team+"|"+p]:null;var _e=_te||_tm[p];if(_e){var _m=(type==="assist")?_e.a:_e.g;if(_m>0)w=Math.max(1,Math.round(w*_m));}}for(var j=0;j<w;j++)pool.push(p);'
         if re.search(old_pattern, html):
             html = re.sub(old_pattern, new_logic, html)
             # Also need to add the type parameter to the function signature

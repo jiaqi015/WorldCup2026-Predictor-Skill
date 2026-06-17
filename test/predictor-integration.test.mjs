@@ -80,6 +80,8 @@ test("shared match simulation passes match ids into complete odds lookup", () =>
 
 test("scorer generation applies separate goal and assist threat multipliers", () => {
   assert.match(html, /function weightedPick\(players,team,weights,fallback,type\)/);
+  assert.match(html, /threatMap\[team\+"\|"\+p\]/);
+  assert.match(html, /var entry=tEntry\|\|threatMap\[p\]/);
   assert.match(html, /weightedPick\(hp,m\.h,GOAL_W,3,"goal"\)/);
   assert.match(html, /weightedPick\(pool,m\.h,ASSIST_W,3,"assist"\)/);
   assert.match(html, /weightedPick\(hp,ht,GOAL_W,3,"goal"\)/);
@@ -216,13 +218,36 @@ test("completed match details expose partial ESPN goal-event coverage", () => {
   assert.ok(
     partials.every((detail) => detail.goalEventsStatus === "partial"),
   );
-  const saudiUruguay = matchDetails["760429"];
-  assert.ok(saudiUruguay);
-  assert.equal(saudiUruguay.homeTeamCn, "沙特");
-  assert.equal(saudiUruguay.awayTeamCn, "乌拉圭");
-  assert.equal(saudiUruguay.expectedGoalCount, 2);
-  assert.equal(saudiUruguay.goalEventCount, 1);
-  assert.equal(saudiUruguay.goalEventsStatus, "partial");
+  for (const detail of partials) {
+    assert.ok(detail.matchId);
+    assert.equal(detail.goalEventsStatus, "partial");
+    assert.ok(detail.goalEventCount < detail.expectedGoalCount);
+  }
+});
+
+test("Argentina vs Algeria completed match embeds ESPN goal scorers", () => {
+  const argentinaAlgeria = matchDetails["760433"];
+  assert.ok(argentinaAlgeria, "760433 should be present once ESPN marks it completed");
+  assert.equal(argentinaAlgeria.homeTeamCn, "阿根廷");
+  assert.equal(argentinaAlgeria.awayTeamCn, "阿尔及利亚");
+  assert.equal(argentinaAlgeria.homeScore, 3);
+  assert.equal(argentinaAlgeria.awayScore, 0);
+  assert.equal(argentinaAlgeria.expectedGoalCount, 3);
+  assert.equal(argentinaAlgeria.goalEventCount, 3);
+  assert.equal(argentinaAlgeria.goalEventsStatus, "complete");
+
+  const goals = argentinaAlgeria.events.filter((event) => event.type === "goal");
+  assert.equal(goals.length, 3);
+  assert.deepEqual(
+    goals.map((event) => event.scorer_source_name),
+    ["Lionel Messi", "Lionel Messi", "Lionel Messi"],
+  );
+  assert.deepEqual(
+    goals.map((event) => event.minute),
+    ["17'", "60'", "76'"],
+  );
+  assert.equal(goals[0].assist_source_name, "Rodrigo De Paul");
+  assert.equal(goals[2].assist_source_name, "Nico González");
 });
 
 test("embedded completed results default into blank group score inputs", () => {
