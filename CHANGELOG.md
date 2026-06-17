@@ -5,6 +5,30 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+## [0.3.3] - 2026-06-17
+
+### Fixed
+
+- Hardened the public deployment verifier so it checks the live ESPN result
+  data markers, completed match details, and the Argentina vs Algeria scorer
+  payload that previously exposed stale deployment/data gaps.
+- Replaced a stale public asset check that referenced a removed Neymar SVG
+  placeholder with currently shipped ESPN, SOFIFA, and Wikidata image assets.
+- Updated the Vercel deployment guide to reflect the current public origin
+  alias and hash-based `/2026` acceptance check.
+
+### Removed
+
+- Removed unused historical README media from `docs/` after the GitHub README
+  moved to the current `readme-*.jpg` screenshot set.
+
+### Validation
+
+- Added release-gate regression coverage for public deployment verifier markers
+  and asset inventory.
+
+## [0.3.2] - 2026-06-17
+
 ### Changed
 
 - Consolidated the overlapping strength-odds and power-ranking strategies into
@@ -15,9 +39,17 @@ All notable changes to this project are documented here. The project follows
   `aiReasoning` mode identifiers.
 - Documented the strength blend and uncertainty-calibration weights.
 
+### Fixed
+
+- Refreshed completed ESPN match details so the app and bundled skill include
+  all currently completed matches, including Argentina 3-0 Algeria scorer and
+  assist events.
+
 ### Validation
 
 - Added regression coverage for strategy distinctness and legacy mode migration.
+- Added completed-match regression coverage for Argentina vs Algeria goal
+  events and scorer rendering inputs.
 
 ## [0.3.1] - 2026-06-13
 

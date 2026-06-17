@@ -1,6 +1,6 @@
 {
   "name": "world-cup-2026-predictor",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Build, launch, score, validate, and maintain an interactive 48-team World Cup 2026 predictor.",
   "author": {
     "name": "jiaqi015",

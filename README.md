@@ -64,14 +64,6 @@ The app is static. All prediction state lives in the browser through local stora
 |---|---|
 | <img src="docs/readme-stats.jpg" alt="Scorer and assist leaderboard" width="100%"> | <img src="docs/readme-share.jpg" alt="Share poster modal" width="100%"> |
 
-Older generated media is still kept in `docs/` for release notes and historical comparison:
-
-- `docs/banner.png`
-- `docs/demo.gif`
-- `docs/screenshot-bracket.png`
-- `docs/screenshot-leaderboard.png`
-- `docs/screenshot-poster.png`
-
 ## Quick Start
 
 ### Browser mode vs Codex Skill mode

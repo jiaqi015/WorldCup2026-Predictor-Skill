@@ -1,19 +1,28 @@
-# GitHub Presentation Assets
+# GitHub README Assets
 
-This directory contains the visual assets used by the repository's main
-GitHub README. These files document the bundled predictor; they are not
-required for Codex to load or run the Skill.
+This directory contains the visual assets used by the repository's main GitHub
+README plus the source-backed architecture notes linked from it. These files are
+not required for Codex to load or run the Skill, but they are part of the public
+project presentation and maintenance handoff.
 
 ## Asset Inventory
 
-| File | Recommended size | README role |
-|---|---:|---|
-| `banner.png` | 1280 x 640 | Repository hero image |
-| `demo.gif` | 780 x 460 or similar | Short champion-reveal workflow |
-| `screenshot-bracket.png` | Wide desktop capture | Full knockout bracket |
-| `screenshot-poster.png` | 1080 x 1620 | Generated champion poster |
-| `screenshot-leaderboard.png` | Wide desktop capture | Scorer and assist tables |
-| `/og-image.png` | 1200 x 630 | Social sharing image; stored in repository root |
+| File | README role |
+|---|---|
+| `readme-groups.jpg` | Group-stage and completed-result context |
+| `readme-knockout.jpg` | Knockout bracket overview |
+| `readme-stats.jpg` | Scorer and assist leaderboard |
+| `readme-share.jpg` | Share poster and link modal |
+| `/og-image.png` | Social sharing image; stored in repository root |
+
+## Reference Documents
+
+| File | Purpose |
+|---|---|
+| `domain-model.md` | Canonical domain entities and source boundaries |
+| `prediction-architecture.md` | Prediction model and scoring architecture |
+| `rag-corpus.md` | Kimi report corpus regeneration and retrieval rules |
+| `vercel-deployment-guide.md` | Production route and deployment verification notes |
 
 ## Refresh Workflow
 
@@ -26,7 +35,7 @@ required for Codex to load or run the Skill.
    ```
 
 2. Complete all group and knockout matches.
-3. Capture the bracket, champion poster, and leaderboard at a desktop width.
+3. Capture the group stage, bracket, stats, and share modal at a desktop width.
 4. Keep screenshots free of browser chrome, personal data, and local file
    paths.
 5. Replace only the corresponding files in this directory.

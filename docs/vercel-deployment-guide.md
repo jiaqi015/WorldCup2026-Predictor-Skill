@@ -9,8 +9,7 @@ This document records the actual deployment shape for this repository. Follow it
 - Demo Vercel project: `world-cup-2026-demo`
 - Demo Vercel project ID: `prj_qzcOzoyZGfFno1U9GdsFXkVf35BF`
 - Vercel owner/team: `jiaqis-projects-c634fd33`
-- Demo production alias: `https://world-cup-2026-demo.vercel.app`
-- Public origin domain: `https://worldcup-origin.cameraclaw.cn`
+- Public origin domain / production custom alias: `https://worldcup-origin.cameraclaw.cn`
 - Public user URL: `https://www.cameraclaw.cn/2026`
 - Public domain owner project: `ai-image-workshop`
 - `www.cameraclaw.cn` is not directly bound to the demo project. It belongs to `ai-image-workshop`, which routes `/2026` to the public origin domain.
@@ -99,13 +98,13 @@ Expected CLI shape:
 ```text
 Deploying jiaqis-projects-c634fd33/world-cup-2026-demo
 Production: https://world-cup-2026-demo-<hash>-jiaqis-projects-c634fd33.vercel.app
-Aliased: https://world-cup-2026-demo.vercel.app
+Aliased: https://worldcup-origin.cameraclaw.cn
 ```
 
 The unique deployment URL changes every deployment. The stable alias should remain:
 
 ```text
-https://world-cup-2026-demo.vercel.app
+https://worldcup-origin.cameraclaw.cn
 ```
 
 The public URL should remain:
@@ -177,8 +176,7 @@ name: world-cup-2026-demo
 target: production
 status: Ready
 Aliases:
-  https://world-cup-2026-demo.vercel.app
-  https://world-cup-2026-demo-jiaqis-projects-c634fd33.vercel.app
+  https://worldcup-origin.cameraclaw.cn
 ```
 
 ## Verify Public URL
@@ -210,6 +208,12 @@ Expected markers:
 2026 世界杯
 var GD=
 var PHOTO_MAP=
+var ACTUAL_RESULTS=
+var MATCH_DETAILS=
+760433
+Lionel Messi
+Rodrigo De Paul
+Nico González
 ```
 
 Run the repository's public deployment check. It verifies the HTML plus
@@ -220,44 +224,17 @@ route:
 python3 scripts/verify_public_deployment.py
 ```
 
-## Verified Live Redeploy
-
-A fresh production deployment was performed from this repo on 2026-06-13 (with SOFIFA photo integration).
-
-Command:
+For high-signal release proof, also compare the public route body with the
+local canonical app:
 
 ```bash
-cd "/Users/jiaqi/Documents/FIFA 26"
-vercel --prod --yes
+curl -fsSL --max-time 30 https://www.cameraclaw.cn/2026 -o /tmp/wc26-public.html
+shasum -a 256 index.html /tmp/wc26-public.html
 ```
 
-Result:
-
-```text
-Production: https://world-cup-2026-demo-3p2c4rwbn-jiaqis-projects-c634fd33.vercel.app
-Aliased: https://world-cup-2026-demo.vercel.app
-```
-
-Inspection result:
-
-```text
-id: dpl_EMmzHaRGXamtCuRx7HGn8WbaeCD1
-name: world-cup-2026-demo
-target: production
-status: Ready
-created: Sat Jun 13 2026 13:06:59 GMT+0800
-```
-
-Public URL verification after that deployment:
-
-```text
-https://www.cameraclaw.cn/2026 -> HTTP/2 200
-server: Vercel
-content-type: text/html; charset=utf-8
-```
-
-The returned HTML included current demo markers, including `var GD=` and
-`var PHOTO_MAP=`.
+The two hashes should match immediately after a production deploy. If they do
+not match, treat the public route as stale even if the Vercel CLI reported a
+successful deployment.
 
 ## Common Mistakes
 

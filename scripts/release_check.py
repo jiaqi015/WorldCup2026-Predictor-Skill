@@ -213,6 +213,7 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "test_photo_pipeline_integration.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_update_index.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_fetch_match_details.py")])
+        run([sys.executable, str(ROOT / "scripts" / "test_verify_public_deployment.py")])
         validate_match_data_consistency()
         if shutil.which("node"):
             tests = sorted(str(path) for path in (ROOT / "test").glob("*.test.mjs"))

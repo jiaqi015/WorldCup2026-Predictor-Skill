@@ -14,11 +14,17 @@ HTML_MARKERS = (
     "2026 世界杯",
     "var GD=",
     "var PHOTO_MAP=",
+    "var ACTUAL_RESULTS=",
+    "var MATCH_DETAILS=",
+    "760433",
+    "Lionel Messi",
+    "Rodrigo De Paul",
+    "Nico González",
 )
 ASSETS = (
     ("data/photos/45843.png", "image/png", b"\x89PNG\r\n\x1a\n"),
     ("data/photos/sofifa_202126.png", "image/png", b"\x89PNG\r\n\x1a\n"),
-    ("data/photos/avatar_Neymar.svg", "image/svg+xml", b"<svg"),
+    ("data/photos/wikidata_Neymar.jpg", "image/jpeg", b"\xff\xd8\xff"),
 )
 
 
