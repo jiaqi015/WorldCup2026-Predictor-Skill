@@ -509,18 +509,22 @@ test("third-place knockout opponents are driven by FIFA Annex C", () => {
   assert.doesNotMatch(html, /function solve\(idx\)/);
 });
 
-test("locked knockout view previews safe direct seeds before all groups finish", () => {
-  assert.match(html, /lockCopySmart:"不用等到 72 场全完/);
+test("knockout tab renders the bracket itself before all groups finish", () => {
+  assert.doesNotMatch(html, /ko-lock-title/);
+  assert.doesNotMatch(html, /lockCopySmart/);
   assert.match(html, /function groupMatchesPlayed\(g\)/);
   assert.match(html, /function lockedDirectSeedInfo\(seed,st\)/);
-  assert.match(html, /function getKOLockPreviewRows\(st\)/);
-  assert.match(html, /function renderKOLockPreview\(st\)/);
-  assert.match(html, /renderKOLockPreview\(st\)/);
-  assert.match(html, /\.ko-seed-grid\{display:grid/);
-  assert.match(html, /\.ko-seed-card\.is-locked/);
+  assert.match(html, /function resolveKOSlot\(seed,st,t3,complete\)/);
+  assert.match(html, /function seedSlotName\(seed,role\)/);
+  assert.match(html, /resolveKOSlot\(m\.h,st,t3,complete\)/);
+  assert.match(html, /hSeed:m\.h,aSeed:m\.a/);
+  assert.match(html, /\.ko-progress-chip\{/);
+  assert.match(html, /\.bk-row\.is-seed \.seed-token/);
+  assert.match(html, /seedRow\(m\.hSeed,m\.seedRole\)/);
+  assert.match(html, /if\(!r&&!pending\)/);
   assert.match(html, /leaderMin>rowMax/);
-  assert.match(html, /if\(!locked&&played<4\)return null/);
-  assert.match(html, /thirdAnnexNote:"第三名对位按 FIFA Annex C/);
+  assert.match(html, /if\(!locked\)return null/);
+  assert.match(html, /else t3Assign=\{\}/);
 });
 
 test("round-by-round simulation is visually prioritized", () => {
@@ -536,7 +540,8 @@ test("knockout match rows align flag, team, winner marker, and score columns", (
   assert.match(html, /\.bk-row\.is-cp \.win-mark\.on\{color:var\(--accent-gold-dark\)\}/);
   assert.match(html, /\.bk-m\.is-final \.bk-row\{padding-left:6px;padding-right:6px\}/);
   assert.match(html, /\.bk-m\.is-final \.bk-row\.is-cp\{margin:0\}/);
-  assert.match(html, /<span class="win-mark'\+\(hw\?" on":""\)\+'">✓<\/span><span class="sc">'\+r\.h\+'<\/span>/);
+  assert.match(html, /function teamRow\(team,isCp,won,score\)/);
+  assert.match(html, /<span class="win-mark'\+\(won\?" on":""\)\+'">✓<\/span><span class="sc">'\+score\+'<\/span>/);
 });
 
 test("knockout cards show source groups only in round-of-32 metadata", () => {
