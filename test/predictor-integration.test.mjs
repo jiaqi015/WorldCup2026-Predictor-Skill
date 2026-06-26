@@ -519,6 +519,7 @@ test("knockout tab renders the bracket itself before all groups finish", () => {
   assert.match(html, /function seedSlotPrimary\(seed,role\)/);
   assert.match(html, /function seedSlotDetail\(seed,role\)/);
   assert.match(html, /function seedSlotKind\(seed,role\)/);
+  assert.match(html, /function centerKnockoutScroll\(el\)/);
   assert.match(html, /resolveKOSlot\(m\.h,st,t3,complete\)/);
   assert.match(html, /hSeed:m\.h,aSeed:m\.a/);
   assert.match(html, /\.ko-progress-chip\{/);
@@ -528,6 +529,8 @@ test("knockout tab renders the bracket itself before all groups finish", () => {
   assert.match(html, /leaderMin>rowMax/);
   assert.match(html, /if\(!locked\)return null/);
   assert.match(html, /else t3Assign=\{\}/);
+  assert.match(html, /var hadBk=!!bkEl/);
+  assert.match(html, /else if\(tab==="knockout"\)centerKnockoutScroll\(bkEl2\)/);
 });
 
 test("round-by-round simulation is visually prioritized", () => {
@@ -553,10 +556,12 @@ test("knockout match rows align flag, team, winner marker, and score columns", (
 });
 
 test("pending knockout seed rows split slot labels from source details", () => {
-  assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex/);
+  assert.match(html, /\.bk-wrap\{overflow-x:auto;padding:16px clamp\(8px,2vw,24px\) 40px/);
+  assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;min-width:min-content;margin:0 auto\}/);
   assert.match(html, /\.bk-round\{display:flex;flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
   assert.match(html, /\.bk-round\.final-col\{flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
   assert.match(html, /\.bk-m\.is-preview\{height:var\(--bk-preview-h\);justify-content:space-between\}/);
+  assert.match(html, /\.bk-m\.is-preview \.bk-meta\{justify-content:center;text-align:center/);
   assert.match(html, /\.bk\{--bk-card-w:136px;--bk-preview-h:84px\}/);
   assert.match(html, /\.bk\{--bk-card-w:144px;--bk-preview-h:92px\}/);
   assert.doesNotMatch(html, /\.bk>\.bk-round:first-child,\.bk>\.bk-round:last-child\{min-width:/);
@@ -584,18 +589,27 @@ test("pending knockout seed rows split slot labels from source details", () => {
 test("knockout cards show source groups only in round-of-32 metadata", () => {
   assert.match(html, /function koGroupMeta\(ht,at\)/);
   assert.match(html, /function koShowsGroupMeta\(id\)\{return id&&id\.charAt\(0\)==="R";\}/);
+  assert.match(html, /function formatVenueName\(venue\)/);
+  assert.match(html, /var KO_SCHEDULE_INDEX=null/);
+  assert.match(html, /function buildKOScheduleIndex\(\)/);
+  assert.match(html, /function getKOMatchSchedule\(id\)/);
   assert.match(html, /function koMatchMeta\(m,ht,at\)/);
-  assert.match(html, /var time=LANG==="en"\?"Time TBD":"时间待定"/);
-  assert.match(html, /var venue=LANG==="en"\?"Venue TBD":"场地待定"/);
+  assert.ok(html.includes("var s=getKOMatchSchedule(m.id);"));
+  assert.ok(html.includes('var time=s&&s.date?formatMatchTime(s.date):(LANG==="en"?"Time TBD":"时间待定");'));
+  assert.ok(html.includes('var venue=s&&s.venue?formatVenueName(s.venue):(LANG==="en"?"Venue TBD":"场地待定");'));
+  assert.ok(html.includes("var fullVenue=s&&s.venue?formatVenue(s.venue):venue;"));
+  assert.doesNotMatch(html, /var time=LANG==="en"\?"Time TBD":"时间待定"/);
+  assert.doesNotMatch(html, /var venue=LANG==="en"\?"Venue TBD":"场地待定"/);
   assert.match(html, /if\(koShowsGroupMeta\(m\.id\)&&\(!ht\|\|!at\)\)\{var slots=seedShort\(m\.hSeed\)\+\(m\.aSeed\?" \/ "\+seedShort\(m\.aSeed\):""\);return '<div class="bk-meta is-pending"/);
-  assert.match(html, /if\(koShowsGroupMeta\(m\.id\)\)return '<div class="bk-meta" title="'\+group\+' · '\+stage\+' · '\+time\+' · '\+venue\+'/);
-  assert.match(html, /return '<div class="bk-meta" title="'\+stage\+' · '\+time\+' · '\+venue\+'"><span>'\+stage\+' · '\+time\+' · '\+venue\+'<\/span><\/div>'/);
+  assert.match(html, /if\(koShowsGroupMeta\(m\.id\)\)return '<div class="bk-meta" title="'\+group\+' · '\+stage\+' · '\+time\+' · '\+fullVenue\+'/);
+  assert.match(html, /return '<div class="bk-meta" title="'\+stage\+' · '\+time\+' · '\+fullVenue\+'"><span>'\+stage\+' · '\+time\+' · '\+venue\+'<\/span><\/div>'/);
   assert.match(html, /class="bk-meta"/);
   assert.match(html, /h\+=koMatchMeta\(m,ht,at\)/);
 });
 
 test("knockout round labels use a balanced scale with a larger final title", () => {
   assert.match(html, /\.bk-title\.stage-label\{font-size:1\.35rem/);
+  assert.match(html, /\.bk-title\.stage-label\{[^}]*letter-spacing:0;line-height:1;min-height:26px;display:flex/);
   assert.match(html, /\.bk-title\.stage-label\{font-size:1\.05rem\}/);
   assert.match(html, /\.bk-round\.final-col>\.bk-title\.final-title\{font-size:1\.7rem/);
   assert.match(html, /\.bk-round\.final-col \.bk-title\.third-title\{font-size:1\.45rem/);
@@ -605,6 +619,25 @@ test("knockout round labels use a balanced scale with a larger final title", () 
   assert.match(html, /<div class="bk-title final-title">'\+cupIcon\(\)\+' '\+T\("finalLabel"\)/);
   assert.match(html, /<div class="bk-title third-title">'\+T\("third"\)/);
   assert.match(html, /r32:"R32",r16:"R16",qf:"QF",sf:"SF"/);
+});
+
+test("embedded knockout schedule includes dated venues for every bracket match", () => {
+  const schedule = extractVarExpression("MATCH_SCHEDULE");
+  const knockout = Object.values(schedule).filter((match) => match.stage !== "group");
+  const counts = knockout.reduce((acc, match) => {
+    acc[match.stage] = (acc[match.stage] || 0) + 1;
+    return acc;
+  }, {});
+  assert.deepEqual(counts, { R: 16, L: 8, Q: 4, S: 2, "3RD": 1, FINAL: 1 });
+  for (const match of knockout) {
+    assert.ok(match.date, `${match.id} must have a kickoff date`);
+    assert.ok(match.venue?.name_cn, `${match.id} must have a Chinese venue name`);
+    assert.ok(match.venue?.city_cn, `${match.id} must have a Chinese venue city`);
+  }
+  const final = knockout.find((match) => match.stage === "FINAL");
+  assert.equal(final.date, "2026-07-19T19:00Z");
+  assert.equal(final.venue.name_cn, "大都会人寿体育场");
+  assert.equal(final.venue.city_cn, "新泽西州东卢瑟福");
 });
 
 test("stats tab has a distinct selected state and non-recursive photo priming", () => {

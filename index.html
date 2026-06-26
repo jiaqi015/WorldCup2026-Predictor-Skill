@@ -288,15 +288,15 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .group-match-title-note{display:block;margin-top:6px;color:var(--ink-light);font-size:12px;font-weight:600;line-height:1.45;letter-spacing:0}
 .hdr{padding:48px 20px 32px}.hdr h1{font-size:32px}
 }
-.bk-wrap{overflow-x:auto;padding:16px 0 40px;-webkit-overflow-scrolling:touch}
+.bk-wrap{overflow-x:auto;padding:16px clamp(8px,2vw,24px) 40px;-webkit-overflow-scrolling:touch}
 .bk-wrap::-webkit-scrollbar{height:4px}
 .bk-wrap::-webkit-scrollbar-thumb{background:var(--line-delicate);border-radius:4px}
-.bk{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;min-width:min-content}
+.bk{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;min-width:min-content;margin:0 auto}
 .bk-round{display:flex;flex:0 0 var(--bk-card-w);width:var(--bk-card-w);flex-direction:column;justify-content:space-around;min-width:0;padding:0}
 .bk-round.final-col{flex:0 0 var(--bk-card-w);width:var(--bk-card-w);min-width:0;padding:0}
 .bk-title{text-align:center;font-size:12px;font-weight:700;color:var(--ink-light);margin-bottom:24px;text-transform:uppercase;letter-spacing:1px;line-height:1.2}
-.bk-title.stage-label{font-size:1.35rem;font-weight:800;letter-spacing:-0.03em;line-height:1}
-.bk-round.final-col>.bk-title{font-weight:850;letter-spacing:-0.03em;text-transform:none;color:var(--ink-medium);margin-bottom:18px}
+.bk-title.stage-label{font-size:1.35rem;font-weight:800;letter-spacing:0;line-height:1;min-height:26px;display:flex;align-items:center;justify-content:center}
+.bk-round.final-col>.bk-title{font-weight:850;letter-spacing:0;text-transform:none;color:var(--ink-medium);margin-bottom:18px;min-height:26px;display:flex;align-items:center;justify-content:center}
 .bk-round.final-col>.bk-title.final-title{font-size:1.7rem;color:var(--accent-gold-dark)}
 .bk-round.final-col .bk-title.third-title{font-size:1.45rem;text-transform:none;color:var(--ink-medium);margin-bottom:12px}
 .bk-m-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%}
@@ -345,6 +345,8 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-m.is-final .bk-row{padding-left:6px;padding-right:6px}
 .bk-m.is-final .bk-row.is-cp{margin:0}
 .bk-meta{display:flex;align-items:center;gap:4px;margin:3px 0 2px;color:var(--ink-light);font-size:8.5px;font-weight:650;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bk-m.is-preview .bk-meta{justify-content:center;text-align:center;margin-top:2px}
+.bk-m.is-preview .bk-meta span{flex:0 1 auto}
 .bk-meta span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bk-meta b{color:var(--ink-medium);font-weight:800}
 .bk-meta.is-pending b{color:var(--ink-light)}
@@ -905,6 +907,11 @@ function formatVenue(venue){
   var city=LANG==="zh"?(venue.city_cn||(venue.address&&venue.address.city)||venue.city):((venue.address&&venue.address.city)||venue.city||venue.city_cn)||"";
   return name+(city?" · "+city:"");
 }
+function formatVenueName(venue){
+  if(!venue)return "";
+  if(typeof venue==="string")return venue;
+  return LANG==="zh"?(venue.name_cn||venue.fullName||venue.name||""):(venue.fullName||venue.name||venue.name_cn||"");
+}
 function getActualGoalEvents(matchId){
   var details=matchId&&typeof MATCH_DETAILS!=="undefined"?MATCH_DETAILS[matchId]:null;
   if(!details||!Array.isArray(details.events))return [];
@@ -973,6 +980,82 @@ function matchStatusInfo(m,actual){
 var R32D=[{i:"R1",h:"2A",a:"2B"},{i:"R2",h:"1E",a:"3_ABCDF"},{i:"R3",h:"1F",a:"2C"},{i:"R4",h:"1C",a:"2F"},{i:"R5",h:"1I",a:"3_CDFGH"},{i:"R6",h:"2E",a:"2I"},{i:"R7",h:"1A",a:"3_CEFHI"},{i:"R8",h:"1L",a:"3_EHIJK"},{i:"R9",h:"1D",a:"3_BEFIJ"},{i:"R10",h:"1G",a:"3_AEHIJ"},{i:"R11",h:"2K",a:"2L"},{i:"R12",h:"1H",a:"2J"},{i:"R13",h:"1B",a:"3_EFGIJ"},{i:"R14",h:"1J",a:"2H"},{i:"R15",h:"1K",a:"3_DEIJL"},{i:"R16",h:"2D",a:"2G"}];
 var R16P=[["R2","R5"],["R1","R3"],["R4","R6"],["R7","R8"],["R11","R12"],["R9","R10"],["R14","R16"],["R13","R15"]];
 var QFP=[["L1","L2"],["L5","L6"],["L3","L4"],["L7","L8"]],SFP=[["Q1","Q2"],["Q3","Q4"]];
+var KO_SCHEDULE_INDEX=null;
+function koPairKey(a,b){return [a||"",b||""].sort().join("|");}
+function koTopologyPairIndex(pairs,prefix){
+  var out={};
+  for(var i=0;i<pairs.length;i++)out[koPairKey(pairs[i][0],pairs[i][1])]=prefix+(i+1);
+  return out;
+}
+function koScheduleStageList(stage){
+  var list=[];
+  if(typeof MATCH_SCHEDULE==="undefined")return list;
+  for(var id in MATCH_SCHEDULE){
+    var m=MATCH_SCHEDULE[id];
+    if(m&&m.stage===stage)list.push(m);
+  }
+  list.sort(function(a,b){
+    var ad=new Date(a.date||0).getTime(),bd=new Date(b.date||0).getTime();
+    if(ad!==bd)return ad-bd;
+    return String(a.id||"").localeCompare(String(b.id||""));
+  });
+  return list;
+}
+function koScheduleRoundNumber(label,roundName){
+  var re=new RegExp("^"+roundName+" (\\d+) (Winner|Loser)$");
+  var m=label&&label.match(re);
+  return m?m[1]:"";
+}
+function koParseGroupScheduleSeed(label){
+  var m=label&&label.match(/^Group ([A-L]) Winner$/);
+  if(m)return "1"+m[1];
+  m=label&&label.match(/^Group ([A-L]) 2nd Place$/);
+  if(m)return "2"+m[1];
+  m=label&&label.match(/^Third Place Group ([A-L](?:\/[A-L])*)$/);
+  if(m)return "3_"+m[1].replace(/\//g,"");
+  return "";
+}
+function buildKOScheduleIndex(){
+  var idx={},rPair={},lPair=koTopologyPairIndex(R16P,"L"),qPair=koTopologyPairIndex(QFP,"Q"),sPair=koTopologyPairIndex(SFP,"S");
+  var officialL={},officialQ={};
+  for(var i=0;i<R32D.length;i++)rPair[koPairKey(R32D[i].h,R32D[i].a)]=R32D[i].i;
+  if(typeof MATCH_SCHEDULE==="undefined")return idx;
+  for(var matchId in MATCH_SCHEDULE){
+    var m=MATCH_SCHEDULE[matchId];
+    if(!m)continue;
+    if(m.stage==="R"){
+      var rid=rPair[koPairKey(koParseGroupScheduleSeed(m.home),koParseGroupScheduleSeed(m.away))];
+      if(rid)idx[rid]=m;
+    }else if(m.stage==="FINAL"){
+      idx.FINAL=m;
+    }else if(m.stage==="3RD"){
+      idx["3RD"]=m;
+    }
+  }
+  var list=koScheduleStageList("L");
+  for(i=0;i<list.length;i++){
+    var lh="R"+koScheduleRoundNumber(list[i].home,"Round of 32"),la="R"+koScheduleRoundNumber(list[i].away,"Round of 32");
+    var lid=lPair[koPairKey(lh,la)];
+    if(lid){idx[lid]=list[i];officialL[String(i+1)]=lid;}
+  }
+  list=koScheduleStageList("Q");
+  for(i=0;i<list.length;i++){
+    var qh=officialL[koScheduleRoundNumber(list[i].home,"Round of 16")],qa=officialL[koScheduleRoundNumber(list[i].away,"Round of 16")];
+    var qid=qPair[koPairKey(qh,qa)];
+    if(qid){idx[qid]=list[i];officialQ[String(i+1)]=qid;}
+  }
+  list=koScheduleStageList("S");
+  for(i=0;i<list.length;i++){
+    var sh=officialQ[koScheduleRoundNumber(list[i].home,"Quarterfinal")],sa=officialQ[koScheduleRoundNumber(list[i].away,"Quarterfinal")];
+    var sid=sPair[koPairKey(sh,sa)];
+    if(sid)idx[sid]=list[i];
+  }
+  return idx;
+}
+function getKOMatchSchedule(id){
+  if(!KO_SCHEDULE_INDEX)KO_SCHEDULE_INDEX=buildKOScheduleIndex();
+  return KO_SCHEDULE_INDEX[id]||null;
+}
 var THIRD_PLACE_WINNER_COLUMNS=["1A","1B","1D","1E","1G","1I","1K","1L"];
 var THIRD_PLACE_SLOT_BY_WINNER={"1A":"3_CEFHI","1B":"3_EFGIJ","1D":"3_BEFIJ","1E":"3_ABCDF","1G":"3_AEHIJ","1I":"3_CDFGH","1K":"3_DEIJL","1L":"3_EHIJK"};
 // FIFA Regulations Annex C. Key = eight qualifying third-place groups; value = opponents for [1A,1B,1D,1E,1G,1I,1K,1L].
@@ -2526,6 +2609,10 @@ function resolveKOSlot(seed,st,t3,complete){
   var info=lockedDirectSeedInfo(seed,st);
   return info?info.team:null;
 }
+function centerKnockoutScroll(el){
+  if(!el||el.scrollWidth<=el.clientWidth)return;
+  el.scrollLeft=Math.max(0,Math.round((el.scrollWidth-el.clientWidth)/2));
+}
 function getSplitRightScrollTop(){var panel=document.querySelector(".split-right");return panel?panel.scrollTop:0;}
 function restoreSplitRightScrollTop(scrollTop){var panel=document.querySelector(".split-right");if(panel&&scrollTop!=null)panel.scrollTop=scrollTop;}
 function rememberFocus(key){
@@ -2570,6 +2657,7 @@ var panelScrollTop=window.__lastPanelScrollTop!=null?window.__lastPanelScrollTop
 var activeEl=document.activeElement;
 var focusKey=(activeEl&&activeEl.getAttribute?activeEl.getAttribute("data-focus-key"):null)||window.__lastFocusKey||null;
 var bkEl=document.querySelector(".bk-wrap");
+var hadBk=!!bkEl;
 var bkScroll=bkEl?bkEl.scrollLeft:0;
 var te=document.getElementById("tabs"),ae=document.getElementById("app");
 var svgs={"groups":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg>',"knockout":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6h6v12H6"></path><path d="M12 12h6"></path><path d="M18 12l-3-3"></path><path d="M18 12l-3 3"></path></svg>',"scorers":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-4"></path></svg>',"baseline":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>'};
@@ -2584,7 +2672,10 @@ renderModeControl();
 if(tab==="groups")rGroups(ae);else if(tab==="knockout")rKO(ae);else if(tab==="baseline")rBaseline(ae);else rScorers(ae);
 saveState();
 var bkEl2=document.querySelector(".bk-wrap");
-if(bkEl2&&bkScroll>0)bkEl2.scrollLeft=bkScroll;
+if(bkEl2){
+  if(hadBk)bkEl2.scrollLeft=bkScroll;
+  else if(tab==="knockout")centerKnockoutScroll(bkEl2);
+}
 scheduleRenderRestore(focusKey,scrollX,scrollY,panelScrollTop);
 window.__lastFocusKey=null;window.__lastScrollX=null;window.__lastScrollY=null;window.__lastPanelScrollTop=null;
 checkChampion();
@@ -2820,11 +2911,13 @@ function koGroupMeta(ht,at){
 function koShowsGroupMeta(id){return id&&id.charAt(0)==="R";}
 function koMatchMeta(m,ht,at){
   var group=(ht&&at)?koGroupMeta(ht,at):(seedSlotName(m.hSeed,m.seedRole)+(m.aSeed?"/"+seedSlotName(m.aSeed,m.seedRole):"")),stage=koStageLabel(m.id);
-  var time=LANG==="en"?"Time TBD":"时间待定";
-  var venue=LANG==="en"?"Venue TBD":"场地待定";
-  if(koShowsGroupMeta(m.id)&&(!ht||!at)){var slots=seedShort(m.hSeed)+(m.aSeed?" / "+seedShort(m.aSeed):"");return '<div class="bk-meta is-pending" title="'+group+' · '+stage+' · '+time+' · '+venue+'"><b>'+stage+'</b><span>'+slots+' · '+time+' · '+venue+'</span></div>';}
-  if(koShowsGroupMeta(m.id))return '<div class="bk-meta" title="'+group+' · '+stage+' · '+time+' · '+venue+'"><b>'+group+'</b><span>'+stage+' · '+time+' · '+venue+'</span></div>';
-  return '<div class="bk-meta" title="'+stage+' · '+time+' · '+venue+'"><span>'+stage+' · '+time+' · '+venue+'</span></div>';
+  var s=getKOMatchSchedule(m.id);
+  var time=s&&s.date?formatMatchTime(s.date):(LANG==="en"?"Time TBD":"时间待定");
+  var venue=s&&s.venue?formatVenueName(s.venue):(LANG==="en"?"Venue TBD":"场地待定");
+  var fullVenue=s&&s.venue?formatVenue(s.venue):venue;
+  if(koShowsGroupMeta(m.id)&&(!ht||!at)){var slots=seedShort(m.hSeed)+(m.aSeed?" / "+seedShort(m.aSeed):"");return '<div class="bk-meta is-pending" title="'+group+' · '+stage+' · '+time+' · '+fullVenue+'"><b>'+stage+'</b><span>'+slots+' · '+time+' · '+venue+'</span></div>';}
+  if(koShowsGroupMeta(m.id))return '<div class="bk-meta" title="'+group+' · '+stage+' · '+time+' · '+fullVenue+'"><b>'+group+'</b><span>'+stage+' · '+time+' · '+venue+'</span></div>';
+  return '<div class="bk-meta" title="'+stage+' · '+time+' · '+fullVenue+'"><span>'+stage+' · '+time+' · '+venue+'</span></div>';
 }
 function bkMatch(m,cp,canPlay){
 var r=ko[m.id];var ht=m.ht,at=m.at,pending=!ht||!at;
