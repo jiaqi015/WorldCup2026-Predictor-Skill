@@ -228,6 +228,11 @@ body.dark .share-url-chip{background:rgba(255,255,255,0.05);border-color:rgba(22
 body.dark .share-result-modal{box-shadow:0 36px 100px rgba(0,0,0,0.62),0 0 0 1px rgba(255,255,255,0.03)}
 @media(max-width:760px){
   .modal-bg{padding:12px}
+  .scorer-modal{width:100%;max-height:92vh}
+  .scorer-modal-head{padding:16px 16px 12px}
+  .scorer-modal-body{padding:14px 16px 16px}
+  .scorer-modal .player-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .scorer-modal .player-choice{min-height:104px}
   .share-result-modal{width:100%;max-height:92vh;overflow:auto;border-radius:22px}
   .share-result-head{padding:12px 16px 9px}
   .share-result-title{font-size:18px}
@@ -361,6 +366,38 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .player-avatar{background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink-light);font-weight:700}
 .player-choice .player-name{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .player-pos{font-size:9px;line-height:1;color:var(--ink-light);font-weight:800;letter-spacing:0;background:var(--bg-card);border:1px solid var(--line-delicate);border-radius:999px;padding:2px 5px}
+.scorer-modal{max-width:760px;width:min(760px,calc(100vw - 32px));max-height:min(92vh,920px);padding:0;overflow:hidden;display:flex;flex-direction:column}
+.scorer-modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:20px 22px 14px;border-bottom:1px solid var(--line-delicate);background:linear-gradient(180deg,var(--bg-card),var(--bg-soft))}
+.scorer-kicker{font-size:11px;font-weight:800;color:var(--ink-light);letter-spacing:0;margin-bottom:6px}
+.scorer-title{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:850;color:var(--ink-dark);letter-spacing:-0.4px;line-height:1.15}
+.scorer-close{border:none;background:transparent;color:var(--ink-light);font-size:24px;line-height:1;cursor:pointer;padding:0 2px;font-family:inherit}
+.scorer-modal-body{padding:16px 22px 22px;overflow:auto}
+.goal-progress{display:grid;gap:10px;margin-bottom:14px}
+.goal-progress-line{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-medium)}
+.goal-progress-line strong{color:var(--ink-dark);font-size:15px}
+.goal-dots{display:grid;grid-template-columns:repeat(auto-fit,minmax(28px,1fr));gap:6px}
+.goal-dot{height:8px;border-radius:999px;background:var(--bg-input);border:1px solid var(--line-delicate)}
+.goal-dot.done{background:rgba(5,150,105,0.22);border-color:rgba(5,150,105,0.28)}
+.goal-dot.current{background:rgba(229,181,71,0.32);border-color:rgba(229,181,71,0.46)}
+.logged-goals{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.logged-goal-pill{display:inline-flex;align-items:center;gap:5px;min-width:0;max-width:100%;padding:5px 8px;border-radius:999px;background:var(--bg-input);border:1px solid var(--line-delicate);color:var(--ink-medium);font-size:11px;font-weight:750}
+.logged-goal-pill b{color:var(--ink-dark);font-weight:850}
+.scorer-stage{border-top:1px solid var(--line-delicate);padding-top:14px}
+.scorer-stage-title{font-size:15px;font-weight:850;color:var(--ink-dark);margin-bottom:4px}
+.scorer-stage-hint{font-size:12px;color:var(--ink-light);line-height:1.45;margin-bottom:12px}
+.player-sections{display:grid;gap:12px}
+.player-bucket-summary{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.player-bucket-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;background:var(--bg-input);border:1px solid var(--line-delicate);color:var(--ink-medium);font-size:11px;font-weight:850}
+.player-bucket-chip b{color:var(--ink-dark);font-weight:900}
+.player-section{display:grid;gap:8px}
+.player-section-head{display:flex;align-items:center;justify-content:space-between;color:var(--ink-medium);font-size:12px;font-weight:850}
+.player-section-count{color:var(--ink-light);font-size:11px;font-weight:800}
+.scorer-modal .player-grid{grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:8px}
+.scorer-modal .player-choice{min-height:96px;padding:8px 7px;border-width:1px;background:var(--bg-card);box-shadow:0 1px 0 rgba(0,0,0,0.02)}
+.scorer-modal .player-choice:hover{border-color:rgba(37,99,235,0.42);background:var(--row-blue-bg)}
+.scorer-modal .player-choice.is-selected{border-color:var(--accent-gold);background:var(--row-gold-bg)}
+.assist-skip{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;margin-bottom:12px;border-radius:12px;border:1px solid var(--line-delicate);background:var(--bg-soft);color:var(--ink-dark);font-weight:850;font-family:inherit;cursor:pointer}
+.assist-skip:hover{border-color:rgba(37,99,235,0.42);background:var(--row-blue-bg)}
 /* Pre-reveal state for champion-path reveal animation (round-by-round) */
 .bk-m.on-cp.pre-anim{border-color:var(--line-delicate);box-shadow:var(--shadow-card)}
 .bk-m.on-cp.pre-anim .bk-row.is-cp{background:transparent}
@@ -2172,14 +2209,27 @@ var I18N={
     posForward:"前锋",posMid:"中前卫",posDef:"后卫",posGK:"门将",
     champRouteTitle:"{champ} 的夺冠之路",routeWin:"胜",routeEmpty:"暂无路径数据",
     t3Title:"🏅 第三名排名（前8名晋级32强）",pts:"分",    groupPrefix:"{g}组",
-    goalsRemain:"⚽ 还需记录 {rem} / {total} 个进球",
+    goalsRemain:"还需记录 {rem} / {total} 个进球",
     loadingPhotos:"加载球员照片中...",
     teamRoster:"{team} 球员阵容",
     noDetail:"无详细记录",
     skipBtn:"跳过",
-    selectScorer:"选择进球球员：",
-    selectAssister:"选择助攻球员：",
-    goalsAllLogged:"✅ 已全部记录",
+    selectScorer:"先选进球球员",
+    selectAssister:"再选助攻球员",
+    selectAssisterFor:"第 {current} / {total} 球 · 进球：{player}",
+    scorerModalTitle:"{team} · 手动记录进球",
+    scorerStep:"第 {current} / {total} 球",
+    scorerPickerHint:"按位置分组，前锋和中场在前；后卫、门将也保留可选。",
+    assisterPickerHint:"有助攻就选队友，没有助攻可以跳过。",
+    goalsLogged:"已记录 {done} / {total}",
+    loggedGoalsTitle:"已记录",
+    noAssist:"无助攻",
+    skipAssist:"这球没有助攻",
+    bucketFwd:"前锋",
+    bucketMid:"中场",
+    bucketDef:"后卫",
+    bucketGK:"门将",
+    goalsAllLogged:"已全部记录",
     pickedAssister:"已选助攻",
     sharingTitle:"生成夺冠路线图...",
     sharingDesc:"正在渲染淘汰赛对阵海报",
@@ -2188,7 +2238,7 @@ var I18N={
     posterModalTitle:"分享预测结果",posterModalKicker:"专属预测海报",posterModalDesc:"完整赛程链接",posterModalActionHint:"复制链接给朋友，邀请她也来预测",btnDownloadPoster:"保存海报",btnCloseModal:"关闭",
     groupMatchesTitle:"{g}组 · 比赛 & 比分",groupMatchesHint:"（ 完赛结果已带入，可模拟后手动修改结果 ）",
     pickManually:"手动选择进球",
-    mustFinishHint:"💡 选完全部进球后会自动关闭"
+    mustFinishHint:"选完全部进球后会自动关闭"
   },
   en:{
     title:"2026 World Cup Simulator",
@@ -2228,14 +2278,27 @@ var I18N={
     posForward:"FW",posMid:"MF",posDef:"DF",posGK:"GK",
     champRouteTitle:"{champ}'s Path to Glory",routeWin:"beat",routeEmpty:"No path data",
     t3Title:"🏅 Third Place Standings (top 8 advance to R32)",pts:"pts",    groupPrefix:"Group {g}",
-    goalsRemain:"⚽ {rem} / {total} goals left to log",
+    goalsRemain:"{rem} / {total} goals left to log",
     loadingPhotos:"Loading player photos...",
     teamRoster:"{team} squad",
     noDetail:"No details recorded",
     skipBtn:"Skip",
-    selectScorer:"Pick the scorer:",
-    selectAssister:"Pick the assister:",
-    goalsAllLogged:"✅ All goals logged",
+    selectScorer:"Pick the scorer first",
+    selectAssister:"Pick the assist next",
+    selectAssisterFor:"Goal {current} / {total} · Scorer: {player}",
+    scorerModalTitle:"{team} · Log goals manually",
+    scorerStep:"Goal {current} / {total}",
+    scorerPickerHint:"Players are grouped by position; forwards and midfielders come first, defenders and keepers remain available.",
+    assisterPickerHint:"Pick a teammate if there was an assist, or skip this part.",
+    goalsLogged:"Logged {done} / {total}",
+    loggedGoalsTitle:"Logged",
+    noAssist:"No assist",
+    skipAssist:"No assist on this goal",
+    bucketFwd:"Forwards",
+    bucketMid:"Midfielders",
+    bucketDef:"Defenders",
+    bucketGK:"Goalkeepers",
+    goalsAllLogged:"All goals logged",
     pickedAssister:"Assister picked",
     sharingTitle:"Building your bracket poster...",
     sharingDesc:"Rendering the knockout image",
@@ -2243,8 +2306,8 @@ var I18N={
     viewModeText:"You're viewing a shared prediction",viewModeAction:"Make your own prediction",
     posterModalTitle:"Share prediction results",posterModalKicker:"Personal bracket poster",posterModalDesc:"Full bracket link",posterModalActionHint:"Copy the link and invite friends to make their own prediction.",btnDownloadPoster:"Save poster",btnCloseModal:"Close",
     groupMatchesTitle:"Group {g} · Matches & Scores",groupMatchesHint:"(completed results are filled; simulate or edit manually)",
-    pickManually:"🎯 Pick scorers manually",
-    mustFinishHint:"💡 Modal will close once every goal is picked"
+    pickManually:"Pick scorers manually",
+    mustFinishHint:"The modal closes once every goal is picked"
   }
 };
 var TEAM_EN={"墨西哥":"Mexico","南非":"South Africa","韩国":"South Korea","捷克":"Czechia","加拿大":"Canada","波黑":"Bosnia","卡塔尔":"Qatar","瑞士":"Switzerland","巴西":"Brazil","摩洛哥":"Morocco","海地":"Haiti","苏格兰":"Scotland","美国":"USA","巴拉圭":"Paraguay","澳大利亚":"Australia","土耳其":"Türkiye","德国":"Germany","库拉索":"Curaçao","科特迪瓦":"Côte d'Ivoire","厄瓜多尔":"Ecuador","荷兰":"Netherlands","日本":"Japan","瑞典":"Sweden","突尼斯":"Tunisia","比利时":"Belgium","埃及":"Egypt","伊朗":"Iran","新西兰":"New Zealand","西班牙":"Spain","佛得角":"Cape Verde","沙特":"Saudi Arabia","乌拉圭":"Uruguay","法国":"France","伊拉克":"Iraq","塞内加尔":"Senegal","挪威":"Norway","阿根廷":"Argentina","阿尔及利亚":"Algeria","奥地利":"Austria","约旦":"Jordan","葡萄牙":"Portugal","刚果金":"DR Congo","乌兹别克":"Uzbekistan","哥伦比亚":"Colombia","英格兰":"England","克罗地亚":"Croatia","加纳":"Ghana","巴拿马":"Panama"};
@@ -3305,78 +3368,120 @@ var sl1=ko["S1"]?ko["S1"].l:null,sl2=ko["S2"]?ko["S2"].l:null;if(sl1&&sl2){var r
 var sw1=ko["S1"]?ko["S1"].w:null,sw2=ko["S2"]?ko["S2"].w:null;if(sw1&&sw2){var r=rndKO(sw1,sw2);ko["FINAL"]={w:r[0]>r[1]?sw1:sw2,l:r[0]>r[1]?sw2:sw1,h:r[0],a:r[1]};var sc=autoScoreKO(sw1,sw2,r[0],r[1],"FINAL");for(var j=0;j<sc.length;j++)slog.push(sc[j]);}render();checkChampion();}
 
 // ── SCORER MODAL ──
-// Manual scorer picker: clears auto-picked scorers for one side, then opens picker in forced mode (can't close until all goals picked).
+// Manual scorer picker: clears auto-picked scorers for one side, then guides the user goal by goal.
 function manualPickGoals(team,phase,gk,mi,side){
   if(phase==="group"){var key=side==="h"?"hg":"ag";gm[gk][mi][key]=[];}
+  else{slog=slog.filter(function(s){return !(s.mid===gk&&s.t===team);});}
   oS(team,phase,gk,mi,side,true);
 }
-function oS(team,phase,gk,mi,side,force){
-  // Check goal limit
-  var maxGoals=0,recorded=0;
-  if(phase==="group"){
-    var m=gm[gk][mi];
-    maxGoals=parseInt(side==="h"?m.hs:m.as)||0;
-    var arr=side==="h"?m.hg:m.ag;
-    for(var i=0;i<arr.length;i++)if(arr[i].g>0)recorded++;
-  }else{
-    var r=ko[gk];if(r){maxGoals=99;}
+function jsq(s){return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'");}
+function getScorerLog(phase,gk,mi,side,team){
+  if(phase==="group"&&gm[gk]&&gm[gk][mi])return side==="h"?gm[gk][mi].hg:gm[gk][mi].ag;
+  return slog.filter(function(s){return s.mid===gk&&s.t===team;});
+}
+function getGoalLimit(team,phase,gk,mi,side){
+  if(phase==="group"&&gm[gk]&&gm[gk][mi]){
+    var m=gm[gk][mi];return parseInt(side==="h"?m.hs:m.as)||0;
   }
-  // If group match has partial scorer data (started manual pick but didn't finish), auto-enter force mode.
-  if(phase==="group"&&recorded<maxGoals)force=true;
+  var r=ko[gk],pair=inferKOTeams(r);if(!r||!pair)return 0;
+  if(team===pair[0])return parseInt(r.h)||0;
+  if(team===pair[1])return parseInt(r.a)||0;
+  return 0;
+}
+function countLoggedGoals(log){var n=0;for(var i=0;i<log.length;i++)if(log[i].g>0)n++;return n;}
+function goalLogPairs(log){
+  var out=[];
+  for(var i=0;i<log.length;i++){
+    if(log[i].g>0)out.push({scorer:log[i].p,assist:null});
+    else if(log[i].a>0&&out.length&&!out[out.length-1].assist)out[out.length-1].assist=log[i].p;
+  }
+  return out;
+}
+function playerBucket(player,team){
+  var pos=getPos(player,team);
+  if(pos==="门将")return"gk";
+  if(pos.indexOf("锋")>=0||pos==="前锋"||pos==="中锋"||pos==="边锋")return"fwd";
+  if(pos.indexOf("卫")>=0||pos==="后卫"||pos==="中卫"||pos==="边卫")return"def";
+  return"mid";
+}
+function playerBucketLabel(bucket){return T(bucket==="fwd"?"bucketFwd":bucket==="mid"?"bucketMid":bucket==="def"?"bucketDef":"bucketGK");}
+function playerChoiceHTML(player,team,onclick,extraClass){
+  var photo=getPhotoUrl(player,team),pos=getPos(player,team),cls="player-choice"+(extraClass?" "+extraClass:"");
+  var h='<button class="'+cls+'" onclick="'+onclick+'">';
+  if(photo)h+='<img src="'+photo+'" onerror="this.style.display=\'none\'">';
+  else h+='<div class="player-avatar">'+player.charAt(0)+'</div>';
+  h+='<span class="player-name">'+pn(player,team)+'</span><span class="player-pos">'+pos_t(pos)+'</span></button>';
+  return h;
+}
+function playerSectionsHTML(players,team,onclickBuilder){
+  var groups={fwd:[],mid:[],def:[],gk:[]},order=["fwd","mid","def","gk"];
+  for(var i=0;i<players.length;i++)groups[playerBucket(players[i],team)].push(players[i]);
+  var h='<div class="player-bucket-summary">';
+  for(var s=0;s<order.length;s++){var sb=order[s];h+='<span class="player-bucket-chip">'+playerBucketLabel(sb)+' <b>'+groups[sb].length+'</b></span>';}
+  h+='</div><div class="player-sections">';
+  for(var j=0;j<order.length;j++){
+    var b=order[j],arr=groups[b];if(!arr.length)continue;
+    h+='<section class="player-section player-section-'+b+'"><div class="player-section-head"><span>'+playerBucketLabel(b)+'</span><span class="player-section-count">'+arr.length+'</span></div><div class="player-grid">';
+    for(var k=0;k<arr.length;k++)h+=playerChoiceHTML(arr[k],team,onclickBuilder(arr[k]),"");
+    h+='</div></section>';
+  }
+  h+='</div>';return h;
+}
+function loggedGoalsHTML(log,team){
+  var pairs=goalLogPairs(log);if(!pairs.length)return"";
+  var h='<div class="logged-goals" aria-label="'+T("loggedGoalsTitle")+'">';
+  for(var i=0;i<pairs.length;i++){
+    h+='<span class="logged-goal-pill"><b>'+(i+1)+'. '+pn(pairs[i].scorer,team)+'</b>';
+    h+=pairs[i].assist?' / '+pn(pairs[i].assist,team):' / '+T("noAssist");
+    h+='</span>';
+  }
+  h+='</div>';return h;
+}
+function goalProgressHTML(log,team,maxGoals,recorded){
+  if(!maxGoals)return"";
+  var current=Math.min(recorded+1,maxGoals);
+  var h='<div class="goal-progress"><div class="goal-progress-line"><strong>'+T("scorerStep",{current:current,total:maxGoals})+'</strong><span>'+T("goalsLogged",{done:recorded,total:maxGoals})+'</span></div><div class="goal-dots">';
+  for(var i=0;i<maxGoals;i++)h+='<span class="goal-dot '+(i<recorded?"done":i===recorded?"current":"")+'"></span>';
+  h+='</div>'+loggedGoalsHTML(log,team)+'</div>';return h;
+}
+function oS(team,phase,gk,mi,side,force){
+  var maxGoals=getGoalLimit(team,phase,gk,mi,side),arr=getScorerLog(phase,gk,mi,side,team),recorded=countLoggedGoals(arr);
   // "Already logged" view — only when not forced. Shows summary + "pick manually" CTA.
-  if(phase==="group"&&recorded>=maxGoals&&!force){
+  if(maxGoals>0&&recorded>=maxGoals&&!force){
     var mr=document.getElementById("modal-root");
-    var arr=side==="h"?gm[gk][mi].hg:gm[gk][mi].ag;
-    var detail='';
-    for(var i=0;i<arr.length;i++){
-      if(arr[i].g>0)detail+='<div style="display:flex;align-items:center;gap:6px;padding:6px 10px;background:var(--bg-input);border-radius:8px;margin-bottom:4px"><span>⚽</span><strong>'+pn(arr[i].p,team)+'</strong></div>';
-      if(arr[i].a>0)detail+='<div style="display:flex;align-items:center;gap:6px;padding:6px 10px;background:var(--row-blue-bg);border-radius:8px;margin-bottom:4px"><span>🅰️</span><span style="color:var(--accent-blue)">'+pn(arr[i].p,team)+'</span></div>';
-    }
-    if(!detail)detail='<p style="color:var(--ink-light);text-align:center">'+T("noDetail")+'</p>';
     var manualBtn=maxGoals>0?'<button onclick="manualPickGoals(\''+team+'\',\''+phase+'\',\''+gk+'\','+mi+',\''+side+'\')" style="margin-top:14px;width:100%;padding:10px;border-radius:10px;border:1px solid var(--line-delicate);background:var(--bg-soft);color:var(--ink-dark);font-weight:600;cursor:pointer;font-family:inherit">'+T("pickManually")+'</button>':'';
-    mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal" onclick="event.stopPropagation()"><h3>'+fi(team)+' '+tn(team)+' <button onclick="cM()">✕</button></h3><p style="color:var(--accent-success);font-weight:600;margin-bottom:10px">'+T("goalsAllLogged")+' ('+maxGoals+')</p>'+detail+manualBtn+'</div></div>';
+    mr.innerHTML='<div class="modal-bg" onclick="cM()"><div class="modal scorer-modal" onclick="event.stopPropagation()"><div class="scorer-modal-head"><div><div class="scorer-kicker">'+T("goalsAllLogged")+'</div><div class="scorer-title">'+fi(team)+' '+T("scorerModalTitle",{team:tn(team)})+'</div></div><button class="scorer-close" onclick="cM()">✕</button></div><div class="scorer-modal-body">'+goalProgressHTML(arr,team,maxGoals,recorded)+manualBtn+'</div></div></div>';
     return;
   }
-  // Picker view — if force=true, no close button and backdrop click disabled
+  // Picker view
   var mr=document.getElementById("modal-root");
   // Skeleton grid matches the full-squad picker layout.
   var skelGrid='';
   for(var __i=0;__i<26;__i++)skelGrid+='<div class="skel-grid-item"><div class="skel skel-circle"></div><div class="skel skel-bar-sm"></div></div>';
-  mr.innerHTML='<div class="modal-bg"><div class="modal"><h3>'+fi(team)+' '+tn(team)+'</h3><p style="text-align:center;color:var(--ink-light);font-size:12px;margin:4px 0 6px">'+T("loadingPhotos")+'</p><div class="skel-grid">'+skelGrid+'</div></div></div>';
+  mr.innerHTML='<div class="modal-bg"><div class="modal scorer-modal"><div class="scorer-modal-head"><div><div class="scorer-kicker">'+T("loadingPhotos")+'</div><div class="scorer-title">'+fi(team)+' '+T("scorerModalTitle",{team:tn(team)})+'</div></div><button class="scorer-close" onclick="cM()">✕</button></div><div class="scorer-modal-body"><div class="skel-grid">'+skelGrid+'</div></div></div></div>';
   loadPhotos(team,function(){var ps=uniquePlayers(getSquadPlayers(team));
-  var remainInfo=phase==="group"?'<p style="color:var(--accent-purple);font-weight:600;margin-bottom:8px">'+T("goalsRemain",{rem:(maxGoals-recorded),total:maxGoals})+'</p>':"";
-  var forceHint=force?'<p style="color:var(--ink-light);font-size:11px;margin-bottom:8px">'+T("mustFinishHint")+'</p>':"";
-  var bgOnClick=force?"":'onclick="cM()"';
-  var closeBtn=force?"":'<button onclick="cM()">✕</button>';
   var fStr=force?"true":"false";
-  var h='<div class="modal-bg" '+bgOnClick+'><div class="modal" onclick="event.stopPropagation()"><h3>'+fi(team)+' '+tn(team)+' '+closeBtn+'</h3>'+remainInfo+forceHint+'<p>'+T("selectScorer")+'</p><div class="player-grid">';
-  for(var i=0;i<ps.length;i++){var photo=getPhotoUrl(ps[i],team),pos=getPos(ps[i],team);
-  h+='<button class="player-choice" onclick="sS(this,\''+ps[i]+'\',\''+team+'\',\''+phase+'\',\''+gk+'\','+mi+',\''+side+'\','+fStr+')">';
-  if(photo)h+='<img src="'+photo+'" onerror="this.style.display=\'none\'">';
-  else h+='<div class="player-avatar">'+ps[i].charAt(0)+'</div>';
-  h+='<span class="player-name">'+pn(ps[i],team)+'</span><span class="player-pos">'+pos_t(pos)+'</span></button>';}
-  h+='</div><div id="aa"></div></div></div>';mr.innerHTML=h;});}
+  var h='<div class="modal-bg" onclick="cM()"><div class="modal scorer-modal" onclick="event.stopPropagation()"><div class="scorer-modal-head"><div><div class="scorer-kicker">'+T("goalsRemain",{rem:Math.max(maxGoals-recorded,0),total:maxGoals})+'</div><div class="scorer-title">'+fi(team)+' '+T("scorerModalTitle",{team:tn(team)})+'</div></div><button class="scorer-close" onclick="cM()">✕</button></div><div class="scorer-modal-body">'+goalProgressHTML(arr,team,maxGoals,recorded)+'<div class="scorer-stage"><div id="scorer-step-title" class="scorer-stage-title">'+T("selectScorer")+'</div><div id="scorer-step-hint" class="scorer-stage-hint">'+T("scorerPickerHint")+'</div><div id="scorer-step-body">';
+  h+=playerSectionsHTML(ps,team,function(p){return "sS(this,'"+jsq(p)+"','"+jsq(team)+"','"+phase+"','"+gk+"',"+mi+",'"+side+"',"+fStr+")";});
+  h+='</div></div></div></div></div>';mr.innerHTML=h;});}
 function sS(btn,player,team,phase,gk,mi,side,force){
-var btns=document.querySelectorAll(".modal button[onclick*='sS(']");for(var i=0;i<btns.length;i++)btns[i].style.borderColor="var(--line-delicate)";
-btn.style.borderColor="var(--accent-purple)";btn.style.background="var(--row-gold-bg)";
-var ps=uniquePlayers(getSquadPlayers(team));
+var btns=document.querySelectorAll(".modal button[onclick*='sS(']");for(var i=0;i<btns.length;i++)btns[i].classList.remove("is-selected");
+btn.classList.add("is-selected");
+var log=getScorerLog(phase,gk,mi,side,team),maxGoals=getGoalLimit(team,phase,gk,mi,side),recorded=countLoggedGoals(log),current=Math.min(recorded+1,maxGoals||recorded+1);
+var title=document.getElementById("scorer-step-title"),hint=document.getElementById("scorer-step-hint"),body=document.getElementById("scorer-step-body");
+if(title)title.innerHTML=T("selectAssisterFor",{current:current,total:maxGoals||current,player:pn(player,team)});
+if(hint)hint.innerHTML=T("assisterPickerHint");
+var ps=uniquePlayers(getSquadPlayers(team));if(playMode!=="clone")ps=ps.filter(function(p){return p!==player;});
 var fStr=force?"true":"false";
-var h='<p style="margin-top:12px">'+T("selectAssister")+'</p><div class="player-grid">';
-h+='<button class="player-choice" onclick="aG(\''+player+'\',\''+team+'\',\''+phase+'\',\''+gk+'\','+mi+',\''+side+'\',null,'+fStr+')" style="background:var(--bg-card);color:var(--accent-purple);font-weight:700"><div class="player-avatar" style="font-size:18px">⏭</div><span class="player-name">'+T("skipBtn")+'</span><span class="player-pos">-</span></button>';
-for(var i=0;i<ps.length;i++){if(playMode!=="clone"&&ps[i]===player)continue;var photo=getPhotoUrl(ps[i],team),pos=getPos(ps[i],team);
-h+='<button class="player-choice" onclick="aG(\''+player+'\',\''+team+'\',\''+phase+'\',\''+gk+'\','+mi+',\''+side+'\',\''+ps[i]+'\','+fStr+')">';
-if(photo)h+='<img src="'+photo+'" onerror="this.style.display=\'none\'">';
-else h+='<div class="player-avatar">'+ps[i].charAt(0)+'</div>';
-h+='<span class="player-name">'+pn(ps[i],team)+'</span><span class="player-pos">'+pos_t(pos)+'</span></button>';}
-h+='</div>';document.getElementById("aa").innerHTML=h;}
+var h='<button class="assist-skip" onclick="aG(\''+jsq(player)+'\',\''+jsq(team)+'\',\''+phase+'\',\''+gk+'\','+mi+',\''+side+'\',null,'+fStr+')">'+T("skipAssist")+'</button>';
+h+=playerSectionsHTML(ps,team,function(p){return "aG('"+jsq(player)+"','"+jsq(team)+"','"+phase+"','"+gk+"',"+mi+",'"+side+"','"+jsq(p)+"',"+fStr+")";});
+if(body)body.innerHTML=h;}
 function aG(player,team,phase,gk,mi,side,assist,force){
   if(phase==="group"){var key=side==="h"?"hg":"ag";gm[gk][mi][key].push({p:player,t:team,g:1,a:0});if(assist)gm[gk][mi][key].push({p:assist,t:team,g:0,a:1});}
-  else{slog.push({p:player,t:team,g:1,a:0});if(assist)slog.push({p:assist,t:team,g:0,a:1});}
-  // In forced manual mode, re-open the picker if more goals still need to be logged
-  if(force&&phase==="group"){
-    var maxGoals=parseInt(side==="h"?gm[gk][mi].hs:gm[gk][mi].as)||0;
-    var arr2=side==="h"?gm[gk][mi].hg:gm[gk][mi].ag;
-    var rec=0;for(var i=0;i<arr2.length;i++)if(arr2[i].g>0)rec++;
+  else{slog.push({p:player,t:team,g:1,a:0,mid:gk});if(assist)slog.push({p:assist,t:team,g:0,a:1,mid:gk});}
+  // In guided manual mode, re-open the picker if more goals still need to be logged.
+  if(force){
+    var maxGoals=getGoalLimit(team,phase,gk,mi,side),arr2=getScorerLog(phase,gk,mi,side,team),rec=countLoggedGoals(arr2);
     if(rec<maxGoals){saveState();oS(team,phase,gk,mi,side,true);return;}
   }
   cM();render();

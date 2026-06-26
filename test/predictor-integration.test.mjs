@@ -150,13 +150,32 @@ test("group match team names show FIFA ranking badges", () => {
   assert.match(html, /\.team-rank\{[^}]*white-space:nowrap/);
 });
 
-test("manual scorer picker uses full squad candidates with position labels", () => {
+test("manual scorer picker uses full squad candidates grouped by position", () => {
   assert.match(html, /function getSquadPlayers\(team\)/);
   assert.match(html, /if\(POS\[team\]\)for\(var p in POS\[team\]\)add\(p\)/);
   assert.match(html, /uniquePlayers\(getSquadPlayers\(team\)\)/);
-  assert.match(html, /getPos\(ps\[i\],team\)/);
+  assert.match(html, /function playerBucket\(player,team\)/);
+  assert.match(html, /function playerSectionsHTML\(players,team,onclickBuilder\)/);
+  assert.match(html, /groups=\{fwd:\[\],mid:\[\],def:\[\],gk:\[\]\}/);
+  assert.match(html, /playerBucket\(players\[i\],team\)/);
+  assert.match(html, /class="player-bucket-chip"/);
+  assert.match(html, /function playerChoiceHTML\(player,team,onclick,extraClass\)/);
+  assert.match(html, /pos=getPos\(player,team\)/);
   assert.match(html, /class="player-pos">'\+pos_t\(pos\)\+'/);
   assert.match(html, /for\(var __i=0;__i<26;__i\+\+\)/);
+});
+
+test("manual scorer modal presents a goal-by-goal scorer then assist flow", () => {
+  assert.match(html, /scorerModalTitle:"\{team\} · 手动记录进球"/);
+  assert.match(html, /scorerStep:"第 \{current\} \/ \{total\} 球"/);
+  assert.match(html, /selectScorer:"先选进球球员"/);
+  assert.match(html, /selectAssisterFor:"第 \{current\} \/ \{total\} 球 · 进球：\{player\}"/);
+  assert.match(html, /scorerPickerHint:"按位置分组/);
+  assert.match(html, /assisterPickerHint:"有助攻就选队友/);
+  assert.match(html, /class="assist-skip"/);
+  assert.match(html, /function getScorerLog\(phase,gk,mi,side,team\)/);
+  assert.match(html, /function getGoalLimit\(team,phase,gk,mi,side\)/);
+  assert.match(html, /slog\.push\(\{p:player,t:team,g:1,a:0,mid:gk\}\)/);
 });
 
 test("position display preserves coarse source categories", () => {
