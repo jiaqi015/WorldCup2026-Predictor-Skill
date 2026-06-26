@@ -293,6 +293,7 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-wrap::-webkit-scrollbar-thumb{background:var(--line-delicate);border-radius:4px}
 .bk{display:flex;align-items:stretch;min-width:min-content}
 .bk-round{display:flex;flex-direction:column;justify-content:space-around;min-width:0;flex:1;padding:0}
+.bk>.bk-round:first-child,.bk>.bk-round:last-child{min-width:170px;flex:1.12}
 .bk-round.final-col{min-width:0;flex:1.3;padding:0 4px}
 .bk-title{text-align:center;font-size:12px;font-weight:700;color:var(--ink-light);margin-bottom:24px;text-transform:uppercase;letter-spacing:1px;line-height:1.2}
 .bk-title.stage-label{font-size:1.35rem;font-weight:800;letter-spacing:-0.03em;line-height:1}
@@ -310,20 +311,24 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-conn-r .bk-conn-pair::after{right:auto;left:0}
 .bk-conn-pair.on-cp::before{border-color:#E5B547!important;box-shadow:0 0 8px rgba(229,181,71,0.25)}
 .bk-conn-pair.on-cp::after{border-color:#E5B547!important;box-shadow:0 0 6px rgba(229,181,71,0.25)}
-.bk-m{background:var(--bg-card);border-radius:12px;border:1px solid var(--line-delicate);box-shadow:var(--shadow-card);margin:8px 0;padding:8px 10px;font-size:13px;position:relative;min-height:60px;display:flex;flex-direction:column;justify-content:center}
+.bk-m{background:var(--bg-card);border-radius:12px;border:1px solid var(--line-delicate);box-shadow:var(--shadow-card);margin:8px 0;padding:9px 10px;font-size:13px;position:relative;min-height:68px;display:flex;flex-direction:column;justify-content:center;width:100%;box-sizing:border-box}
 .bk-m.won{border-color:var(--line-delicate)}
 .bk-m.wait{opacity:0.4}
-.bk-row{display:grid;grid-template-columns:18px minmax(0,1fr) 12px 24px;align-items:center;column-gap:6px;padding:3px 0}
+.bk-row{display:grid;grid-template-columns:18px minmax(0,1fr) 12px 24px;align-items:center;column-gap:6px;padding:3px 0;min-height:24px}
 .bk-row img{width:16px;height:16px;border-radius:50%;justify-self:center}
 .bk-row .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500;color:var(--ink-medium);font-size:12px;min-width:0}
 .bk-row .name.w{color:var(--ink-dark);font-weight:700}
-.bk-row.is-seed .seed-token{min-width:17px;height:17px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--ink-light);font-size:8.5px;font-weight:900;letter-spacing:-0.02em;justify-self:center}
-.bk-row.is-seed .name{color:var(--ink-light);font-weight:750}
+.bk-copy{min-width:0;display:flex;flex-direction:column;gap:1px}
+.bk-copy .name{display:block}
+.seed-sub{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-light);font-size:8.5px;font-weight:700;line-height:1.05;opacity:.82}
+.bk-row.is-seed .seed-token{min-width:18px;height:18px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--bg-soft);color:var(--ink-light);font-size:8.5px;font-weight:900;letter-spacing:-0.02em;justify-self:center}
+.bk-row.is-seed .name{color:var(--ink-medium);font-weight:800}
 .bk-m.has-pending{border-style:dashed}
 .bk-row .win-mark{display:flex;align-items:center;justify-content:center;color:var(--accent-success);font-size:9px;font-weight:900;line-height:1;opacity:0}
 .bk-row .win-mark.on{opacity:.82}
 .bk-row .sc{font-weight:800;font-size:14px;min-width:24px;text-align:right;justify-self:end;font-variant-numeric:tabular-nums}
 .bk-vs{display:none}
+.bk-vs+.bk-row{margin-top:2px}
 .bk-act{display:flex;gap:6px;justify-content:center;margin-top:8px;border-top:1px solid var(--line-delicate);padding-top:8px}
 .bk-act button{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:var(--bg-soft);color:var(--ink-medium);font-family:inherit}
 .bk-act .bkw{color:var(--accent-success)}.bk-act .bkr{color:var(--ink-dark)}.bk-act .bkx{color:var(--accent-danger)}
@@ -336,9 +341,10 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-row.is-cp .win-mark.on{color:var(--accent-gold-dark)}
 .bk-m.is-final .bk-row{padding-left:6px;padding-right:6px}
 .bk-m.is-final .bk-row.is-cp{margin:0}
-.bk-meta{display:flex;align-items:center;gap:4px;margin:1px 0 2px;color:var(--ink-light);font-size:8.5px;font-weight:650;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bk-meta{display:flex;align-items:center;gap:4px;margin:3px 0 2px;color:var(--ink-light);font-size:8.5px;font-weight:650;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bk-meta span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bk-meta b{color:var(--ink-medium);font-weight:800}
+.bk-meta.is-pending b{color:var(--ink-light)}
 .player-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .player-choice{display:flex;flex-direction:column;align-items:center;padding:8px 4px;border-radius:12px;border:2px solid var(--line-delicate);background:var(--bg-input);color:var(--ink-dark);cursor:pointer;font-family:Arial;font-size:10px;gap:4px;font-weight:600;transition:all .15s;min-width:0}
 .player-choice img,.player-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #e0e0e8}
@@ -539,10 +545,12 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
   .topbar button{padding:9px 14px;font-size:12px;border-radius:20px}
   .sec-t{font-size:16px;margin:24px 0 12px}
   .bk-round{min-width:120px!important;padding:0}
+  .bk>.bk-round:first-child,.bk>.bk-round:last-child{min-width:148px!important}
   .bk-round.final-col{padding:0 2px}
-  .bk-m{padding:6px 8px;font-size:10px;min-height:44px;margin:4px 0}
-  .bk-row{grid-template-columns:16px minmax(0,1fr) 10px 18px;column-gap:4px}
+  .bk-m{padding:7px 8px;font-size:10px;min-height:58px;margin:4px 0}
+  .bk-row{grid-template-columns:16px minmax(0,1fr) 10px 18px;column-gap:4px;min-height:21px}
   .bk-row .name{font-size:10px}
+  .seed-sub{font-size:7.5px}
   .bk-row img{width:14px;height:14px}
   .bk-row .win-mark{font-size:8px}
   .bk-row .sc{font-size:12px;min-width:18px}
@@ -563,13 +571,15 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
 /* Mid-range desktop (covers 1080p + Windows display scaling). Tighter spacing per round
    so 9 rounds + 8 connectors don't crowd each card's content. */
 @media(min-width:769px) and (max-width:1366px){
+  .bk>.bk-round:first-child,.bk>.bk-round:last-child{min-width:156px}
   .bk-conn{width:24px;min-width:24px;margin-top:34px}
   .bk-conn-pair::before{width:18px;right:6px}
   .bk-conn-r .bk-conn-pair::before{left:6px}
   .bk-conn-pair::after{width:6px}
-  .bk-m{padding:8px 10px;font-size:12px;min-height:56px;margin:6px 0}
-  .bk-row{grid-template-columns:16px minmax(0,1fr) 11px 22px;column-gap:5px;padding:2px 0}
+  .bk-m{padding:8px 10px;font-size:12px;min-height:62px;margin:6px 0}
+  .bk-row{grid-template-columns:16px minmax(0,1fr) 11px 22px;column-gap:5px;padding:2px 0;min-height:22px}
   .bk-row .name{font-size:11px}
+  .seed-sub{font-size:8px}
   .bk-row .win-mark{font-size:8.5px}
   .bk-row .sc{font-size:13px;min-width:22px}
   .bk-row img{width:14px;height:14px}
@@ -1938,7 +1948,7 @@ var I18N={
     groupsComplete:"小组赛已完成，前往淘汰赛查看对阵",
     selectGroupLine1:"点击左边的小组",selectGroupLine2:"在这里显示比赛详情",
     matchCount:"共6场比赛",randGroup:"模拟本组",
-    returnGroups:"返回小组赛",seedRank:"第{rank}",seedDirectSlot:"{group} · 第{rank}",seedThirdSlot:"第三名 {groups}",seedWinner:"{seed}胜者",seedLoser:"{seed}负者",
+    returnGroups:"返回小组赛",seedRank:"第{rank}",seedDirectSlot:"{group}第{rank}",seedDirectCompact:"{group}第{rank}",seedThirdSlot:"第三名 {groups}",seedThirdPrimary:"第三名",seedThirdDetail:"候选 {groups}",seedWinner:"{seed}胜者",seedLoser:"{seed}负者",
     bracketHint:"左右滑动查看完整对阵",
     waiting:"⏳ 等待晋级",
     r32:"32强",r16:"16强",qf:"8强",sf:"半决赛",finalLabel:"决赛",third:"🥉 季军赛",
@@ -1995,7 +2005,7 @@ var I18N={
     groupsComplete:"Group stage complete — go to Knockout to view the bracket",
     selectGroupLine1:"Tap a group on the left",selectGroupLine2:"to see match details here",
     matchCount:"6 matches",randGroup:"Simulate Group",
-    returnGroups:"Back to Groups",seedRank:"#{rank}",seedDirectSlot:"{group} · #{rank}",seedThirdSlot:"3rd {groups}",seedWinner:"Winner {seed}",seedLoser:"Loser {seed}",
+    returnGroups:"Back to Groups",seedRank:"#{rank}",seedDirectSlot:"{group} #{rank}",seedDirectCompact:"{group} #{rank}",seedThirdSlot:"3rd {groups}",seedThirdPrimary:"Best 3rd",seedThirdDetail:"From {groups}",seedWinner:"Winner {seed}",seedLoser:"Loser {seed}",
     bracketHint:"Scroll horizontally to see the full bracket",
     waiting:"⏳ Awaiting team",
     r32:"R32",r16:"R16",qf:"QF",sf:"SF",finalLabel:"Final",third:"🥉 Third Place",
@@ -2476,7 +2486,7 @@ function lockedDirectSeedInfo(seed,st){
   if(!locked)return null;
   return {team:row.t,group:g,rank:rank,seed:seed,locked:locked,done:gcDone(g),played:played,pts:row.p};
 }
-function seedShort(seed){return seed&&seed.indexOf("3_")===0?"3":seed;}
+function seedShort(seed){return seed&&seed.indexOf("3_")===0?"3":(/^[12][A-L]$/.test(seed)?seed.charAt(1)+seed.charAt(0):seed);}
 function seedGroups(seed){return seed&&seed.indexOf("3_")===0?seed.substring(2).split("").join("/"):"";}
 function seedSlotName(seed,role){
   if(!seed)return "?";
@@ -2485,6 +2495,18 @@ function seedSlotName(seed,role){
   if(seed.indexOf("3_")===0)return T("seedThirdSlot",{groups:seedGroups(seed)});
   if(/^[12][A-L]$/.test(seed))return T("seedDirectSlot",{group:groupName(seed.charAt(1)),rank:seed.charAt(0)});
   return seed;
+}
+function seedSlotPrimary(seed,role){
+  if(!seed)return "?";
+  if(role==="loser"||role==="winner")return seedSlotName(seed,role);
+  if(seed.indexOf("3_")===0)return T("seedThirdPrimary");
+  if(/^[12][A-L]$/.test(seed))return T("seedDirectCompact",{group:groupName(seed.charAt(1)),rank:seed.charAt(0)});
+  return seed;
+}
+function seedSlotDetail(seed,role){
+  if(!seed||role==="loser"||role==="winner")return "";
+  if(seed.indexOf("3_")===0)return T("seedThirdDetail",{groups:seedGroups(seed)});
+  return "";
 }
 function resolveKOSlot(seed,st,t3,complete){
   if(!seed)return null;
@@ -2789,24 +2811,27 @@ function koMatchMeta(m,ht,at){
   var group=(ht&&at)?koGroupMeta(ht,at):(seedSlotName(m.hSeed,m.seedRole)+(m.aSeed?"/"+seedSlotName(m.aSeed,m.seedRole):"")),stage=koStageLabel(m.id);
   var time=LANG==="en"?"Time TBD":"时间待定";
   var venue=LANG==="en"?"Venue TBD":"场地待定";
+  if(koShowsGroupMeta(m.id)&&(!ht||!at)){var slots=seedShort(m.hSeed)+(m.aSeed?" / "+seedShort(m.aSeed):"");return '<div class="bk-meta is-pending" title="'+group+' · '+stage+' · '+time+' · '+venue+'"><b>'+stage+'</b><span>'+slots+' · '+time+' · '+venue+'</span></div>';}
   if(koShowsGroupMeta(m.id))return '<div class="bk-meta" title="'+group+' · '+stage+' · '+time+' · '+venue+'"><b>'+group+'</b><span>'+stage+' · '+time+' · '+venue+'</span></div>';
   return '<div class="bk-meta" title="'+stage+' · '+time+' · '+venue+'"><span>'+stage+' · '+time+' · '+venue+'</span></div>';
 }
 function bkMatch(m,cp){
 var r=ko[m.id];var ht=m.ht,at=m.at,pending=!ht||!at;
-function teamRow(team,isCp,won,score){
-  return '<div class="bk-row'+(isCp?" is-cp":"")+'">'+fi(team,"fls")+' <span class="name'+(won?" w":"")+'">'+tn(team)+'</span>'+(r?'<span class="win-mark'+(won?" on":"")+'">✓</span><span class="sc">'+score+'</span>':'')+'</div>';
+function teamRow(team,isCp,won,score,seed,role){
+  var sub=seed?seedSlotPrimary(seed,role):"";
+  return '<div class="bk-row'+(isCp?" is-cp":"")+'">'+fi(team,"fls")+' <span class="bk-copy"><span class="name'+(won?" w":"")+'">'+tn(team)+'</span>'+(sub?'<span class="seed-sub">'+escHtml(sub)+'</span>':'')+'</span>'+(r?'<span class="win-mark'+(won?" on":"")+'">✓</span><span class="sc">'+score+'</span>':'')+'</div>';
 }
 function seedRow(seed,role){
-  return '<div class="bk-row is-seed"><span class="seed-token">'+escHtml(seedShort(seed))+'</span><span class="name">'+escHtml(seedSlotName(seed,role))+'</span><span class="win-mark"></span><span class="sc"></span></div>';
+  var detail=seedSlotDetail(seed,role);
+  return '<div class="bk-row is-seed"><span class="seed-token">'+escHtml(seedShort(seed))+'</span><span class="bk-copy"><span class="name">'+escHtml(seedSlotPrimary(seed,role))+'</span>'+(detail?'<span class="seed-sub">'+escHtml(detail)+'</span>':'')+'</span><span class="win-mark"></span><span class="sc"></span></div>';
 }
 var onPath=cp&&cp.set[m.id];
 var htCp=onPath&&ht===cp.champ,atCp=onPath&&at===cp.champ;
 var hw=r&&r.w===ht,aw=r&&r.w===at;
 var h='<div class="bk-m'+(r?" won":"")+(pending?" has-pending":"")+(onPath?" on-cp":"")+(onPath&&m.id==="FINAL"?" is-final":"")+'" data-mid="'+m.id+'">';
-h+=ht?teamRow(ht,htCp,hw,r&&r.h):seedRow(m.hSeed,m.seedRole);
+h+=ht?teamRow(ht,htCp,hw,r&&r.h,m.hSeed,m.seedRole):seedRow(m.hSeed,m.seedRole);
 h+='<div class="bk-vs">vs</div>';
-h+=at?teamRow(at,atCp,aw,r&&r.a):seedRow(m.aSeed,m.seedRole);
+h+=at?teamRow(at,atCp,aw,r&&r.a,m.aSeed,m.seedRole):seedRow(m.aSeed,m.seedRole);
 h+=koMatchMeta(m,ht,at);
 if(!r&&!pending){h+='<div class="bk-act"><button class="bkw" onclick="qpKO(\''+m.id+'\',\''+ht+'\',\''+at+'\',\''+ht+'\')">'+tn(ht)+'</button><button class="bkw" onclick="qpKO(\''+m.id+'\',\''+ht+'\',\''+at+'\',\''+at+'\')">'+tn(at)+'</button><button class="bkr" onclick="rnKO(\''+m.id+'\',\''+ht+'\',\''+at+'\')">🎲</button></div>';}
 else if(r){h+='<div class="bk-act"><button class="bkx" onclick="delKO(\''+m.id+'\')">↺</button></div>';}
