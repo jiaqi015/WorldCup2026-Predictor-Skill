@@ -318,6 +318,7 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-m.won{border-color:var(--line-delicate)}
 .bk-m.wait{opacity:0.4}
 .bk-row{display:grid;grid-template-columns:22px minmax(0,1fr) 12px 22px;align-items:center;column-gap:6px;padding:3px 0;min-height:24px}
+.bk-row.is-seed{grid-template-columns:22px minmax(0,1fr);column-gap:7px}
 .bk-row img{width:16px;height:16px;border-radius:50%;justify-self:center}
 .bk-row .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500;color:var(--ink-medium);font-size:12px;min-width:0}
 .bk-row .name.w{color:var(--ink-dark);font-weight:700}
@@ -330,6 +331,7 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-row.is-third .seed-token{background:rgba(229,181,71,0.12);color:var(--accent-gold-dark)}
 .bk-row.is-advancer .name{color:var(--ink-light);font-weight:750}
 .bk-m.has-pending{border-style:dashed}
+.bk-row.is-seed .win-mark,.bk-row.is-seed .sc{display:none}
 .bk-row .win-mark{display:flex;align-items:center;justify-content:center;color:var(--accent-success);font-size:9px;font-weight:900;line-height:1;opacity:0}
 .bk-row .win-mark.on{opacity:.82}
 .bk-row .sc{font-weight:800;font-size:14px;min-width:24px;text-align:right;justify-self:end;font-variant-numeric:tabular-nums}
@@ -347,10 +349,12 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-row.is-cp .win-mark.on{color:var(--accent-gold-dark)}
 .bk-m.is-final .bk-row{padding-left:6px;padding-right:6px}
 .bk-m.is-final .bk-row.is-cp{margin:0}
-.bk-meta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;margin:2px 0 0;color:var(--ink-light);font-size:8.2px;font-weight:650;line-height:1.08;white-space:normal;overflow:hidden;text-align:center}
-.bk-meta-line{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bk-meta-main{color:var(--ink-medium);font-weight:800}
-.bk-meta-detail{color:var(--ink-light);font-weight:680}
+.bk-meta{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:2px;margin:4px 0 0;color:var(--ink-light);font-size:8.1px;font-weight:650;line-height:1.08;white-space:normal;overflow:hidden;text-align:left}
+.bk-meta-line{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.bk-meta-main{display:flex;align-items:center;justify-content:space-between;gap:6px;color:var(--ink-medium);font-weight:800;white-space:nowrap}
+.bk-meta-stage{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.bk-meta-time{flex:0 0 auto;color:var(--ink-light);font-weight:780;font-variant-numeric:tabular-nums}
+.bk-meta-detail{color:var(--ink-light);font-weight:680;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .player-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .player-choice{display:flex;flex-direction:column;align-items:center;padding:8px 4px;border-radius:12px;border:2px solid var(--line-delicate);background:var(--bg-input);color:var(--ink-dark);cursor:pointer;font-family:Arial;font-size:10px;gap:4px;font-weight:600;transition:all .15s;min-width:0}
 .player-choice img,.player-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #e0e0e8}
@@ -555,6 +559,7 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
   .bk-round.final-col{padding:0 2px}
   .bk-m{padding:7px 8px;font-size:10px;min-height:58px;margin:4px 0}
   .bk-row{grid-template-columns:20px minmax(0,1fr) 10px 18px;column-gap:4px;min-height:21px}
+  .bk-row.is-seed{grid-template-columns:20px minmax(0,1fr);column-gap:6px}
   .bk-row .name{font-size:10px}
   .seed-sub{font-size:7.5px}
   .bk-row.is-seed .seed-token{width:20px;height:16px;font-size:7.5px}
@@ -585,6 +590,7 @@ body.dark .skel{background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,rgba(
   .bk-conn-pair::after{width:6px}
   .bk-m{padding:8px 10px;font-size:12px;min-height:62px;margin:6px 0}
   .bk-row{grid-template-columns:21px minmax(0,1fr) 11px 20px;column-gap:5px;padding:2px 0;min-height:22px}
+  .bk-row.is-seed{grid-template-columns:21px minmax(0,1fr);column-gap:6px}
   .bk-row .name{font-size:11px}
   .seed-sub{font-size:8px}
   .bk-row.is-seed .seed-token{width:21px;height:17px;font-size:7.5px}
@@ -2156,7 +2162,7 @@ var I18N={
     groupsComplete:"小组赛已完成，前往淘汰赛查看对阵",
     selectGroupLine1:"点击左边的小组",selectGroupLine2:"在这里显示比赛详情",
     matchCount:"共6场比赛",randGroup:"模拟本组",
-    returnGroups:"返回小组赛",seedRank:"第{rank}",seedDirectSlot:"{group}第{rank}",seedDirectCompact:"{group}第{rank}",seedThirdSlot:"第三名 {groups}",seedThirdPrimary:"第三名",seedThirdDetail:"候选 {groups}",seedWinner:"{seed}胜者",seedLoser:"{seed}负者",
+    returnGroups:"返回小组赛",seedRank:"第{rank}",seedDirectSlot:"{group} 第{rank}",seedDirectCompact:"{group} 第{rank}",seedThirdSlot:"第三名 {groups}",seedThirdPrimary:"第三名",seedThirdDetail:"候选 {groups}",seedWinner:"{seed}胜者",seedLoser:"{seed}负者",
     waiting:"⏳ 等待晋级",
     r32:"32强",r16:"16强",qf:"8强",sf:"半决赛",finalLabel:"决赛",third:"🥉 季军赛",
     topScorers:"射手榜",topAssists:"助攻榜",
@@ -3027,17 +3033,17 @@ function koGroupMeta(ht,at){
 }
 function koShowsGroupMeta(id){return id&&id.charAt(0)==="R";}
 function koMatchMeta(m,ht,at){
-  var group=(ht&&at)?koGroupMeta(ht,at):(seedSlotName(m.hSeed,m.seedRole)+(m.aSeed?"/"+seedSlotName(m.aSeed,m.seedRole):"")),stage=koStageLabel(m.id);
+  var hasTeams=!!(ht&&at),group=hasTeams?koGroupMeta(ht,at):"",stage=koStageLabel(m.id);
   var s=getKOMatchSchedule(m.id);
   var time=s&&s.date?formatMatchTime(s.date):(LANG==="en"?"Time TBD":"时间待定");
   var venue=s&&s.venue?formatVenueName(s.venue):(LANG==="en"?"Venue TBD":"场地待定");
   var fullVenue=s&&s.venue?formatVenue(s.venue):venue;
   var city=s&&s.venue?formatVenueCityCompact(s.venue):"";
-  var source=koShowsGroupMeta(m.id)?((!ht||!at)?seedShort(m.hSeed)+(m.aSeed?" / "+seedShort(m.aSeed):""):group):"";
-  var line1=stage+(source?" · "+source:"")+" · "+time;
+  var source=koShowsGroupMeta(m.id)&&hasTeams?group:"";
+  var stageText=stage+(source?" · "+source:"");
   var line2=venue+(city?" · "+city:"");
-  var label=(koShowsGroupMeta(m.id)?group+" · ":"")+stage+" · "+time+" · "+fullVenue;
-  return '<div class="bk-meta'+((!ht||!at)?" is-pending":"")+'" aria-label="'+escHtml(label)+'"><span class="bk-meta-line bk-meta-main">'+escHtml(line1)+'</span><span class="bk-meta-line bk-meta-detail">'+escHtml(line2)+'</span></div>';
+  var label=(source?source+" · ":"")+stage+" · "+time+" · "+fullVenue;
+  return '<div class="bk-meta'+((!ht||!at)?" is-pending":"")+'" aria-label="'+escHtml(label)+'"><span class="bk-meta-line bk-meta-main"><span class="bk-meta-stage">'+escHtml(stageText)+'</span><span class="bk-meta-time">'+escHtml(time)+'</span></span><span class="bk-meta-line bk-meta-detail">'+escHtml(line2)+'</span></div>';
 }
 function bkMatch(m,cp,canPlay){
 var r=ko[m.id];var ht=m.ht,at=m.at,pending=!ht||!at;
@@ -3049,7 +3055,7 @@ function teamRow(team,isCp,won,score,seed,role){
 function seedRow(seed,role){
   var detail=seedSlotDetail(seed,role);
   var kind=seedSlotKind(seed,role);
-  return '<div class="bk-row is-seed is-'+kind+'"><span class="seed-token">'+escHtml(seedShort(seed))+'</span><span class="bk-copy"><span class="name">'+escHtml(seedSlotPrimary(seed,role))+'</span>'+(detail?'<span class="seed-sub">'+escHtml(detail)+'</span>':'')+'</span><span class="win-mark"></span><span class="sc"></span></div>';
+  return '<div class="bk-row is-seed is-'+kind+'"><span class="seed-token">'+escHtml(seedShort(seed))+'</span><span class="bk-copy"><span class="name">'+escHtml(seedSlotPrimary(seed,role))+'</span>'+(detail?'<span class="seed-sub">'+escHtml(detail)+'</span>':'')+'</span></div>';
 }
 var onPath=cp&&cp.set[m.id];
 var htCp=onPath&&ht===cp.champ,atCp=onPath&&at===cp.champ;

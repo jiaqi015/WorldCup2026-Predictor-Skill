@@ -559,9 +559,11 @@ test("round-by-round simulation is visually prioritized", () => {
 
 test("knockout match rows align flag, team, winner marker, and score columns", () => {
   assert.match(html, /\.bk-row\{display:grid;grid-template-columns:22px minmax\(0,1fr\) 12px 22px/);
+  assert.match(html, /\.bk-row\.is-seed\{grid-template-columns:22px minmax\(0,1fr\);column-gap:7px\}/);
   assert.match(html, /\.bk-copy\{min-width:0;display:flex;flex-direction:column/);
   assert.match(html, /\.seed-sub\{display:block;overflow:hidden;text-overflow:ellipsis/);
   assert.match(html, /\.bk-row\.is-seed \.seed-token\{width:22px;height:18px/);
+  assert.match(html, /\.bk-row\.is-seed \.win-mark,\.bk-row\.is-seed \.sc\{display:none\}/);
   assert.match(html, /\.bk-row \.win-mark\{[^}]*justify-content:center/);
   assert.match(html, /\.bk-row \.win-mark\.on\{opacity:\.82\}/);
   assert.match(html, /\.bk-row \.sc\{[^}]*text-align:right/);
@@ -580,15 +582,19 @@ test("pending knockout seed rows split slot labels from source details", () => {
   assert.match(html, /\.bk-round\{display:flex;flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
   assert.match(html, /\.bk-round\.final-col\{flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\);min-width:0;padding:0;justify-content:center/);
   assert.match(html, /\.bk-m\.is-preview\{height:var\(--bk-preview-h\);justify-content:space-between\}/);
-  assert.match(html, /\.bk-meta\{display:flex;flex-direction:column;align-items:center;justify-content:center/);
-  assert.match(html, /\.bk-meta-line\{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\}/);
+  assert.match(html, /\.bk-meta\{display:flex;flex-direction:column;align-items:stretch;justify-content:center/);
+  assert.match(html, /\.bk-meta-line\{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis\}/);
+  assert.match(html, /\.bk-meta-main\{display:flex;align-items:center;justify-content:space-between/);
+  assert.match(html, /\.bk-meta-detail\{[^}]*-webkit-line-clamp:2/);
   assert.match(html, /\.bk\{--bk-card-w:136px;--bk-preview-h:84px\}/);
   assert.match(html, /\.bk\{--bk-card-w:144px;--bk-preview-h:92px\}/);
+  assert.match(html, /\.bk-row\.is-seed\{grid-template-columns:20px minmax\(0,1fr\);column-gap:6px\}/);
+  assert.match(html, /\.bk-row\.is-seed\{grid-template-columns:21px minmax\(0,1fr\);column-gap:6px\}/);
   assert.doesNotMatch(html, /\.bk>\.bk-round:first-child,\.bk>\.bk-round:last-child\{min-width:/);
   assert.match(html, /\.bk-vs\+\.bk-row\{margin-top:2px\}/);
   assert.match(html, /function seedShort\(seed\)\{return seed&&seed\.indexOf\("3_"\)===0\?"3":\(\//);
   assert.match(html, /seed\.charAt\(1\)\+seed\.charAt\(0\):seed/);
-  assert.match(html, /seedDirectCompact:"\{group\}第\{rank\}"/);
+  assert.match(html, /seedDirectCompact:"\{group\} 第\{rank\}"/);
   assert.match(html, /seedThirdPrimary:"第三名"/);
   assert.match(html, /seedThirdDetail:"候选 \{groups\}"/);
   assert.match(html, /if\(role==="loser"\|\|role==="winner"\)return "advancer"/);
@@ -604,6 +610,7 @@ test("pending knockout seed rows split slot labels from source details", () => {
   assert.match(html, /if\(canPlay&&!r&&!pending\)/);
   assert.ok(html.includes('<span class="seed-token">\'+escHtml(seedShort(seed))+\'</span><span class="bk-copy"><span class="name">\'+escHtml(seedSlotPrimary(seed,role))'));
   assert.ok(html.includes('<span class="seed-sub">\'+escHtml(detail)+\'</span>'));
+  assert.doesNotMatch(html, /<span class="win-mark"><\/span><span class="sc"><\/span><\/div>';\n\}/);
 });
 
 test("knockout cards show source groups only in round-of-32 metadata", () => {
@@ -622,10 +629,12 @@ test("knockout cards show source groups only in round-of-32 metadata", () => {
   assert.ok(html.includes("var city=s&&s.venue?formatVenueCityCompact(s.venue):\"\";"));
   assert.doesNotMatch(html, /var time=LANG==="en"\?"Time TBD":"时间待定"/);
   assert.doesNotMatch(html, /var venue=LANG==="en"\?"Venue TBD":"场地待定"/);
-  assert.ok(html.includes('var line1=stage+(source?" · "+source:"")+" · "+time;'));
+  assert.ok(html.includes('var hasTeams=!!(ht&&at),group=hasTeams?koGroupMeta(ht,at):"",stage=koStageLabel(m.id);'));
+  assert.ok(html.includes('var source=koShowsGroupMeta(m.id)&&hasTeams?group:"";'));
+  assert.ok(html.includes('var stageText=stage+(source?" · "+source:"");'));
   assert.ok(html.includes('var line2=venue+(city?" · "+city:"");'));
   assert.match(html, /aria-label="'\+escHtml\(label\)\+'"/);
-  assert.match(html, /<span class="bk-meta-line bk-meta-main">'\+escHtml\(line1\)\+'<\/span><span class="bk-meta-line bk-meta-detail">'\+escHtml\(line2\)\+'<\/span>/);
+  assert.match(html, /<span class="bk-meta-line bk-meta-main"><span class="bk-meta-stage">'\+escHtml\(stageText\)\+'<\/span><span class="bk-meta-time">'\+escHtml\(time\)\+'<\/span><\/span><span class="bk-meta-line bk-meta-detail">'\+escHtml\(line2\)\+'<\/span>/);
   assert.doesNotMatch(html, /class="bk-meta[^"]*" title="/);
   assert.match(html, /'<div class="bk-meta'\+\(\(!ht\|\|!at\)\?" is-pending":""\)\+'/);
   assert.match(html, /h\+=koMatchMeta\(m,ht,at\)/);
