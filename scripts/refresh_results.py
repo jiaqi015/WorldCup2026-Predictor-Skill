@@ -9,14 +9,19 @@ consistency across manifest, match_details, and both HTML embeds.
 Usage:
     python3 scripts/refresh_results.py           # Full pipeline
     python3 scripts/refresh_results.py --check   # Consistency assertion only (no network)
+    python3 scripts/refresh_results.py --check --live-check
 
 Pipeline steps (full mode):
     1. fetch_match_data.py       -> match_schedule.json + manifest.json
     2. fetch_match_details.py    -> match_details.json
-    3. fetch_analysis_data.py    -> data/analysis/{match_xg,match_momentum,match_team_stats}.json
-    4. build_prediction_data.py  -> data/prediction/prediction_data_v1.json
-    5. update_match_data.py      -> index.html (embeds MATCH_DETAILS, MATCH_DATA_META, etc.)
-    6. sync_predictor_asset.py   -> skills/.../assets/predictor/index.html
+    3. build_prediction_data.py  -> data/prediction/prediction_data_v1.json
+    4. update_match_data.py      -> index.html (embeds MATCH_DETAILS, MATCH_DATA_META, etc.)
+    5. sync_predictor_asset.py   -> skills/.../assets/predictor/index.html
+
+Optional analysis mode:
+    --with-analysis also runs fetch_analysis_data.py after match details.
+    Keep this off the default path so flaky supplemental ESPN core endpoints
+    cannot block score/detail/scorer freshness.
 
 Exit codes:
     0  All data consistent (or --check passed)
@@ -27,6 +32,10 @@ The --check flag validates that these four values are equal:
     len(match_details.json)
     len(embedded MATCH_DETAILS in index.html)
     len(embedded MATCH_DETAILS in skill copy)
+
+Add --live-check when preparing a deployment: it compares local completed
+match details against ESPN's current completed event IDs, catching the
+"browser has a fresh score but static MATCH_DETAILS has no scorers" failure.
 """
 
 from __future__ import annotations
@@ -49,6 +58,8 @@ SKILL_SCRIPTS = ROOT / "skills" / "world-cup-2026-predictor" / "scripts"
 PIPELINE_STEPS_NETWORK = [
     [sys.executable, str(ROOT / "scripts" / "fetch_match_data.py")],
     [sys.executable, str(ROOT / "scripts" / "fetch_match_details.py")],
+]
+PIPELINE_STEPS_ANALYSIS = [
     [sys.executable, str(ROOT / "scripts" / "fetch_analysis_data.py")],
 ]
 PIPELINE_STEPS_LOCAL = [
@@ -204,6 +215,37 @@ def assert_consistency() -> tuple:
     return ok, counts
 
 
+def fetch_live_completed_ids(timeout: float = 15) -> tuple[set, dict]:
+    """Fetch ESPN's current completed event IDs through the shared skill contract."""
+    if str(SKILL_SCRIPTS) not in sys.path:
+        sys.path.insert(0, str(SKILL_SCRIPTS))
+    from espn_source import build_contract, fetch_payload
+
+    contract = build_contract(fetch_payload(timeout), upcoming_limit=0)
+    return {str(event["id"]) for event in contract["completed"] if event.get("id")}, contract
+
+
+def assert_live_freshness(timeout: float = 15) -> tuple[bool, dict]:
+    """Verify local details are not behind ESPN's current completed matches."""
+    live_ids, contract = fetch_live_completed_ids(timeout)
+    counts = get_all_counts()
+    local_ids = counts["ids"]
+    missing = sorted(live_ids - local_ids)
+    ok = not missing
+    if ok:
+        print(
+            f"[OK] Live freshness verified: local details cover "
+            f"{len(live_ids)} ESPN completed matches"
+        )
+    else:
+        print("[FAIL] Local match details are behind ESPN:", file=sys.stderr)
+        print(f"  ESPN completed_count = {contract['completed_count']}", file=sys.stderr)
+        print(f"  local match_details   = {len(local_ids)}", file=sys.stderr)
+        print(f"  missing completed ids = {', '.join(missing)}", file=sys.stderr)
+        print("  Run: python3 scripts/refresh_results.py", file=sys.stderr)
+    return ok, {"live_ids": live_ids, "contract": contract, "local_counts": counts}
+
+
 def show_diff(before_ids: set, after_ids: set) -> None:
     """Print newly completed matches."""
     new_ids = sorted(after_ids - before_ids)
@@ -232,10 +274,23 @@ def main() -> int:
         action="store_true",
         help="Only assert 4-way consistency (no network, no file writes).",
     )
+    parser.add_argument(
+        "--live-check",
+        action="store_true",
+        help="Also compare local completed details with ESPN's current completed IDs.",
+    )
+    parser.add_argument("--timeout", type=float, default=15, help="Network timeout for --live-check.")
+    parser.add_argument(
+        "--with-analysis",
+        action="store_true",
+        help="Also refresh supplemental xG/momentum/team-stat analysis data.",
+    )
     args = parser.parse_args()
 
     if args.check:
         ok, _ = assert_consistency()
+        if ok and args.live_check:
+            ok, _ = assert_live_freshness(args.timeout)
         return 0 if ok else 1
 
     # Full pipeline
@@ -254,10 +309,10 @@ def main() -> int:
           f"{before['html']} embedded in HTML")
 
     # Pipeline steps
-    all_steps = (
-        [(cmd, 3) for cmd in PIPELINE_STEPS_NETWORK]
-        + [(cmd, 1) for cmd in PIPELINE_STEPS_LOCAL]
-    )
+    all_steps = [(cmd, 3) for cmd in PIPELINE_STEPS_NETWORK]
+    if args.with_analysis:
+        all_steps += [(cmd, 3) for cmd in PIPELINE_STEPS_ANALYSIS]
+    all_steps += [(cmd, 1) for cmd in PIPELINE_STEPS_LOCAL]
     for i, (cmd, retries) in enumerate(all_steps, 1):
         script_name = Path(cmd[-1]).name
         print(f"\n--- Step {i}/{len(all_steps)}: {script_name} ---", flush=True)
@@ -277,6 +332,8 @@ def main() -> int:
     # Hard assertion
     print()
     ok, counts = assert_consistency()
+    if ok and args.live_check:
+        ok, _ = assert_live_freshness(args.timeout)
 
     if ok:
         print(f"\nRefresh complete: {after['file']} completed matches "

@@ -394,17 +394,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 450,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "POR -340"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760437": {
     "id": "760437",
@@ -421,17 +413,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 270,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ENG -140"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760434": {
     "id": "760434",
@@ -448,17 +432,9 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 220,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "GHA +140"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760436": {
     "id": "760436",
@@ -475,17 +451,9 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 390,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "COL -270"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760438": {
     "id": "760438",
@@ -502,17 +470,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 275,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "CZE -130"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760439": {
     "id": "760439",
@@ -529,17 +489,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 320,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "SUI -180"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760440": {
     "id": "760440",
@@ -556,17 +508,9 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 475,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "CAN -360"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760441": {
     "id": "760441",
@@ -583,17 +527,9 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 235,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "MEX +100"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760442": {
     "id": "760442",
@@ -610,17 +546,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 330,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "USA -165"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760445": {
     "id": "760445",
@@ -637,17 +565,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 265,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "MAR -135"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760444": {
     "id": "760444",
@@ -664,17 +584,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 1000,
-      "spread": null,
-      "overUnder": 3.5,
-      "details": "BRA -1000"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760443": {
     "id": "760443",
@@ -691,17 +603,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 240,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "TUR -105"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760447": {
     "id": "760447",
@@ -718,17 +622,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 295,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "NED -140"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760448": {
     "id": "760448",
@@ -745,17 +641,9 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 350,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "GER -180"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760446": {
     "id": "760446",
@@ -772,17 +660,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 1000,
-      "spread": null,
-      "overUnder": 3.5,
-      "details": "ECU -1100"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760449": {
     "id": "760449",
@@ -799,17 +679,9 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 310,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "JPN -190"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760453": {
     "id": "760453",
@@ -826,17 +698,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 950,
-      "spread": null,
-      "overUnder": 3.5,
-      "details": "ESP -1000"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760451": {
     "id": "760451",
@@ -853,17 +717,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 370,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "BEL -235"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760450": {
     "id": "760450",
@@ -880,17 +736,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 320,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "URU -210"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760452": {
     "id": "760452",
@@ -907,17 +755,9 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 310,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "EGY -160"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760456": {
     "id": "760456",
@@ -934,17 +774,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 310,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ARG -180"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760457": {
     "id": "760457",
@@ -961,17 +793,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 1100,
-      "spread": null,
-      "overUnder": 3.5,
-      "details": "FRA -1100"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760454": {
     "id": "760454",
@@ -988,17 +812,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 250,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "NOR +135"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760455": {
     "id": "760455",
@@ -1015,17 +831,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 320,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ALG -175"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760461": {
     "id": "760461",
@@ -1042,17 +850,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 550,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "POR -425"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760458": {
     "id": "760458",
@@ -1069,17 +869,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 450,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ENG -310"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760460": {
     "id": "760460",
@@ -1096,17 +888,9 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 295,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "CRO -175"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760459": {
     "id": "760459",
@@ -1123,17 +907,9 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 330,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "COL -210"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760462": {
     "id": "760462",
@@ -1150,17 +926,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 310,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "BIH -175"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760463": {
     "id": "760463",
@@ -1177,17 +945,9 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 245,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "SUI +115"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760464": {
     "id": "760464",
@@ -1204,17 +964,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 475,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "MAR -340"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760465": {
     "id": "760465",
@@ -1231,17 +983,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 400,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "BRA -225"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760467": {
     "id": "760467",
@@ -1258,17 +1002,9 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 265,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "MEX -125"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760466": {
     "id": "760466",
@@ -1285,17 +1021,9 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 310,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "KOR -165"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760473": {
     "id": "760473",
@@ -1312,17 +1040,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 800,
-      "spread": null,
-      "overUnder": 3.5,
-      "details": "CIV -700"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760468": {
     "id": "760468",
@@ -1339,17 +1059,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 290,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "GER -140"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760471": {
     "id": "760471",
@@ -1366,17 +1078,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 245,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "JPN +110"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760472": {
     "id": "760472",
@@ -1393,17 +1097,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 450,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "NED -310"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760469": {
     "id": "760469",
@@ -1420,17 +1116,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 235,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "PAR +115"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760470": {
     "id": "760470",
@@ -1447,17 +1135,9 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 270,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "USA +145"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true
   },
   "760475": {
     "id": "760475",
@@ -1478,10 +1158,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 280,
+      "drawML": 360,
       "spread": null,
-      "overUnder": 2.5,
-      "details": "FRA -120"
+      "overUnder": 3.5,
+      "details": "FRA -160"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1505,10 +1185,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 425,
+      "drawML": 550,
       "spread": null,
-      "overUnder": 2.5,
-      "details": "SEN -320"
+      "overUnder": 3.5,
+      "details": "SEN -425"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1532,10 +1212,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 280,
+      "drawML": 235,
       "spread": null,
       "overUnder": 2.5,
-      "details": "KSA +140"
+      "details": "CPV +170"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1559,10 +1239,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 330,
+      "drawML": 260,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ESP -185"
+      "details": "ESP -145"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1586,10 +1266,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 215,
+      "drawML": 160,
       "spread": null,
-      "overUnder": 2.5,
-      "details": "EGY +110"
+      "overUnder": 1.5,
+      "details": "EGY +150"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1613,10 +1293,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 550,
+      "drawML": 650,
       "spread": null,
-      "overUnder": 2.5,
-      "details": "BEL -450"
+      "overUnder": 3.5,
+      "details": "BEL -525"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1640,10 +1320,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 295,
+      "drawML": 240,
       "spread": null,
       "overUnder": 2.5,
-      "details": "CRO -160"
+      "details": "CRO -130"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1667,10 +1347,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 600,
+      "drawML": 750,
       "spread": null,
-      "overUnder": 2.5,
-      "details": "ENG -370"
+      "overUnder": 3.5,
+      "details": "ENG -600"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1694,10 +1374,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 245,
+      "drawML": 275,
       "spread": null,
       "overUnder": 2.5,
-      "details": "POR +110"
+      "details": "POR -115"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1721,10 +1401,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 235,
+      "drawML": 300,
       "spread": null,
       "overUnder": 2.5,
-      "details": "COD +135"
+      "details": "COD -125"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1748,10 +1428,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 210,
+      "drawML": 120,
       "spread": null,
-      "overUnder": 2.5,
-      "details": "AUT +155"
+      "overUnder": 1.5,
+      "details": "AUT +190"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1775,10 +1455,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 600,
+      "drawML": 650,
       "spread": null,
-      "overUnder": 2.5,
-      "details": "ARG -475"
+      "overUnder": 3.5,
+      "details": "ARG -550"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1788,8 +1468,8 @@
     "date": "2026-06-28T19:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group A 2nd Place",
-    "away": "Group B 2nd Place",
+    "home": "南非",
+    "away": "加拿大",
     "venue": {
       "name": "SoFi Stadium",
       "name_cn": "SoFi体育场",
@@ -1798,7 +1478,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 270,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "CAN -140"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -1807,8 +1495,8 @@
     "date": "2026-06-29T17:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group C Winner",
-    "away": "Group F 2nd Place",
+    "home": "巴西",
+    "away": "日本",
     "venue": {
       "name": "NRG Stadium",
       "name_cn": "NRG体育场",
@@ -1817,7 +1505,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 280,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BRA -135"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -1826,7 +1522,7 @@
     "date": "2026-06-29T20:30Z",
     "stage": "R",
     "group": null,
-    "home": "Group E Winner",
+    "home": "德国",
     "away": "Third Place Group A/B/C/D/F",
     "venue": {
       "name": "Gillette Stadium",
@@ -1845,8 +1541,8 @@
     "date": "2026-06-30T01:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group F Winner",
-    "away": "Group C 2nd Place",
+    "home": "荷兰",
+    "away": "摩洛哥",
     "venue": {
       "name": "Estadio BBVA",
       "name_cn": "BBVA体育场",
@@ -1855,7 +1551,15 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 230,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "NED +115"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -1864,7 +1568,7 @@
     "date": "2026-06-30T17:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group E 2nd Place",
+    "home": "科特迪瓦",
     "away": "Group I 2nd Place",
     "venue": {
       "name": "AT&T Stadium",
@@ -1902,7 +1606,7 @@
     "date": "2026-07-01T01:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group A Winner",
+    "home": "墨西哥",
     "away": "Third Place Group C/E/F/H/I",
     "venue": {
       "name": "Estadio Banorte",
@@ -1959,8 +1663,8 @@
     "date": "2026-07-02T00:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group D Winner",
-    "away": "Third Place Group B/E/F/I/J",
+    "home": "美国",
+    "away": "波黑",
     "venue": {
       "name": "Levi's Stadium",
       "name_cn": "李维斯体育场",
@@ -1969,7 +1673,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 370,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "USA -240"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -2016,7 +1728,7 @@
     "date": "2026-07-03T03:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group B Winner",
+    "home": "瑞士",
     "away": "Third Place Group E/F/G/I/J",
     "venue": {
       "name": "BC Place",
@@ -2035,7 +1747,7 @@
     "date": "2026-07-03T18:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group D 2nd Place",
+    "home": "澳大利亚",
     "away": "Group G 2nd Place",
     "venue": {
       "name": "AT&T Stadium",
@@ -2054,7 +1766,7 @@
     "date": "2026-07-03T22:00Z",
     "stage": "R",
     "group": null,
-    "home": "Group J Winner",
+    "home": "阿根廷",
     "away": "Group H 2nd Place",
     "venue": {
       "name": "Hard Rock Stadium",

@@ -11,6 +11,7 @@ Use the bundled single-file web app for interactive brackets and the bundled scr
 
 - For an interactive prediction, launch the web app and use browser automation when available.
 - For ESPN-backed latest, today, upcoming, or mapping checks, run the live-results script before answering.
+- For completed matches that show scores but no scorers, treat it as a score/detail freshness split: run the full results refresh pipeline, then the live freshness check.
 - For code or data changes, read `references/predictor-model.md`, edit the canonical app, sync the bundled asset, then validate.
 - For version freshness or upgrade questions, run the update checker and report explicit upgrade commands.
 - For a quick health check, run the validator without launching a browser.
@@ -81,6 +82,7 @@ Do this:
 4. Run `python3 scripts/live_results.py --json --mode mapping` for ESPN team-name mapping drift.
 5. Report `fetched_at`, completed count, source, and the relevant matches or mapping issues.
 6. Treat ESPN as an external source; if the fetch or mapping fails, report the failure instead of inventing a score.
+7. If the app has a completed score but missing scorer events, run `python3 scripts/refresh_results.py` from the source repo; verify with `python3 scripts/refresh_results.py --check --live-check`.
 
 ### Maintain Or Review The Product
 
@@ -141,9 +143,10 @@ Read `references/predictor-model.md` before changing teams, players, bracket map
 When working in this source repository:
 
 1. Edit the root `index.html`; it is the canonical GitHub Pages app.
-2. Run `python3 skills/world-cup-2026-predictor/scripts/sync_predictor_asset.py`.
-3. Run the validator.
-4. Launch the app and browser-test the changed user flow.
+2. For match result/data changes, run `python3 scripts/refresh_results.py` so `MATCH_SCHEDULE`, `MATCH_DETAILS`, prediction data, root app, and bundled asset advance together.
+3. Otherwise run `python3 skills/world-cup-2026-predictor/scripts/sync_predictor_asset.py`.
+4. Run the validator.
+5. Launch the app and browser-test the changed user flow.
 
 When the skill is installed standalone and no repository root exists, edit `assets/predictor/index.html` directly.
 
@@ -178,8 +181,15 @@ python3 scripts/validate_predictor.py
 In the source repository, also run:
 
 ```bash
+python3 scripts/refresh_results.py --check
 python3 scripts/release_check.py
 git diff --check
+```
+
+Before deploys or live-data fixes, use:
+
+```bash
+python3 scripts/refresh_results.py --check --live-check
 ```
 
 The validator checks skill structure, tournament data invariants, inline JavaScript syntax when Node.js is available, and source/bundled-app drift.

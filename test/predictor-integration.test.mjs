@@ -204,16 +204,32 @@ test("completed match goal events are team-scoped and enter prediction data", ()
     predictionData.actual_match_events.filter((event) => event.event_type === "goal").length,
     goals.length,
   );
-  assert.match(html, /function renderActualGoalEvents\(matchId\)/);
-  assert.match(html, /function getActualGoalExpectedCount\(matchId,goals\)/);
+  assert.match(html, /function renderActualGoalEvents\(matchId,actual\)/);
+  assert.match(html, /function getActualGoalExpectedCount\(matchId,goals,actual\)/);
   assert.match(html, /actualGoalsTitle/);
   assert.match(html, /actualGoalsPartial/);
+  assert.match(html, /actualGoalsLoading/);
   assert.match(html, /T\("actualMapped",\{mapped:mapped,total:expected\|\|goals\.length\}\)/);
-  assert.match(html, /if\(expected>goals\.length\)h\+='<div class="actual-goals-note">'\+T\("actualGoalsPartial"/);
+  assert.match(html, /detailFetchPending\[matchId\]\?T\("actualGoalsLoading"\):T\("actualGoalsPartial"/);
   assert.match(html, /function actualEventTeamBadge\(team\)/);
   assert.match(html, /class="actual-goal-team"/);
   assert.match(html, /actualEventTeamName\(event,"scorer"\)/);
   assert.match(html, /actualEventTeamName\(event,"assist"\)/);
+});
+
+test("fresh live scores hydrate missing ESPN summary goal events at runtime", () => {
+  assert.match(html, /var DETAIL_API="https:\/\/site\.api\.espn\.com\/apis\/site\/v2\/sports\/soccer\/fifa\.world\/summary\?event="/);
+  assert.match(html, /function matchDetailNeedsHydration\(matchId,actual\)/);
+  assert.match(html, /function parseEspnSummaryDetails\(summary,matchId,actual\)/);
+  assert.match(html, /function fetchActualMatchDetails\(matchId,actual\)/);
+  assert.match(html, /function hydrateMissingActualDetails\(\)/);
+  assert.match(html, /function loadCachedMatchDetails\(\)/);
+  assert.match(html, /localStorage\.getItem\("wc26_match_details"\)/);
+  assert.match(html, /MATCH_DETAILS\[matchId\]=detail/);
+  assert.match(html, /fetch\(DETAIL_API\+encodeURIComponent\(matchId\)\)/);
+  assert.match(html, /m\.actualEvents=events/);
+  assert.match(html, /hydrateMissingActualDetails\(\);/);
+  assert.match(html, /renderActualGoalEvents\(m\.id\|\|actual\.id,actual\)/);
 });
 
 test("completed match details expose partial ESPN goal-event coverage", () => {
@@ -523,6 +539,8 @@ test("knockout tab renders the bracket itself before all groups finish", () => {
   assert.match(html, /resolveKOSlot\(m\.h,st,t3,complete\)/);
   assert.match(html, /hSeed:m\.h,aSeed:m\.a/);
   assert.match(html, /\.ko-progress-chip\{/);
+  assert.match(html, /\.ko-preview-toolbar\{gap:8px;align-items:center\}/);
+  assert.match(html, /<div class="topbar ko-preview-toolbar"><button class="btn-rand btn-rand-secondary"/);
   assert.match(html, /\.bk-row\.is-seed \.seed-token/);
   assert.match(html, /seedRow\(m\.hSeed,m\.seedRole\)/);
   assert.match(html, /if\(canPlay&&!r&&!pending\)/);
@@ -531,6 +549,7 @@ test("knockout tab renders the bracket itself before all groups finish", () => {
   assert.match(html, /else t3Assign=\{\}/);
   assert.match(html, /var hadBk=!!bkEl/);
   assert.match(html, /else if\(tab==="knockout"\)centerKnockoutScroll\(bkEl2\)/);
+  assert.doesNotMatch(html, /h\+='<p style="text-align:center;font-size:11px;color:var\(--ink-light\);margin-bottom:8px">'\+T\("bracketHint"\)/);
 });
 
 test("round-by-round simulation is visually prioritized", () => {
@@ -559,9 +578,10 @@ test("pending knockout seed rows split slot labels from source details", () => {
   assert.match(html, /\.bk-wrap\{overflow-x:auto;padding:16px clamp\(8px,2vw,24px\) 40px/);
   assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;min-width:min-content;margin:0 auto\}/);
   assert.match(html, /\.bk-round\{display:flex;flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
-  assert.match(html, /\.bk-round\.final-col\{flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
+  assert.match(html, /\.bk-round\.final-col\{flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\);min-width:0;padding:0;justify-content:center/);
   assert.match(html, /\.bk-m\.is-preview\{height:var\(--bk-preview-h\);justify-content:space-between\}/);
-  assert.match(html, /\.bk-m\.is-preview \.bk-meta\{justify-content:center;text-align:center/);
+  assert.match(html, /\.bk-meta\{display:flex;flex-direction:column;align-items:center;justify-content:center/);
+  assert.match(html, /\.bk-meta-line\{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\}/);
   assert.match(html, /\.bk\{--bk-card-w:136px;--bk-preview-h:84px\}/);
   assert.match(html, /\.bk\{--bk-card-w:144px;--bk-preview-h:92px\}/);
   assert.doesNotMatch(html, /\.bk>\.bk-round:first-child,\.bk>\.bk-round:last-child\{min-width:/);
@@ -590,6 +610,7 @@ test("knockout cards show source groups only in round-of-32 metadata", () => {
   assert.match(html, /function koGroupMeta\(ht,at\)/);
   assert.match(html, /function koShowsGroupMeta\(id\)\{return id&&id\.charAt\(0\)==="R";\}/);
   assert.match(html, /function formatVenueName\(venue\)/);
+  assert.match(html, /function formatVenueCityCompact\(venue\)/);
   assert.match(html, /var KO_SCHEDULE_INDEX=null/);
   assert.match(html, /function buildKOScheduleIndex\(\)/);
   assert.match(html, /function getKOMatchSchedule\(id\)/);
@@ -598,12 +619,15 @@ test("knockout cards show source groups only in round-of-32 metadata", () => {
   assert.ok(html.includes('var time=s&&s.date?formatMatchTime(s.date):(LANG==="en"?"Time TBD":"时间待定");'));
   assert.ok(html.includes('var venue=s&&s.venue?formatVenueName(s.venue):(LANG==="en"?"Venue TBD":"场地待定");'));
   assert.ok(html.includes("var fullVenue=s&&s.venue?formatVenue(s.venue):venue;"));
+  assert.ok(html.includes("var city=s&&s.venue?formatVenueCityCompact(s.venue):\"\";"));
   assert.doesNotMatch(html, /var time=LANG==="en"\?"Time TBD":"时间待定"/);
   assert.doesNotMatch(html, /var venue=LANG==="en"\?"Venue TBD":"场地待定"/);
-  assert.match(html, /if\(koShowsGroupMeta\(m\.id\)&&\(!ht\|\|!at\)\)\{var slots=seedShort\(m\.hSeed\)\+\(m\.aSeed\?" \/ "\+seedShort\(m\.aSeed\):""\);return '<div class="bk-meta is-pending"/);
-  assert.match(html, /if\(koShowsGroupMeta\(m\.id\)\)return '<div class="bk-meta" title="'\+group\+' · '\+stage\+' · '\+time\+' · '\+fullVenue\+'/);
-  assert.match(html, /return '<div class="bk-meta" title="'\+stage\+' · '\+time\+' · '\+fullVenue\+'"><span>'\+stage\+' · '\+time\+' · '\+venue\+'<\/span><\/div>'/);
-  assert.match(html, /class="bk-meta"/);
+  assert.ok(html.includes('var line1=stage+(source?" · "+source:"")+" · "+time;'));
+  assert.ok(html.includes('var line2=venue+(city?" · "+city:"");'));
+  assert.match(html, /aria-label="'\+escHtml\(label\)\+'"/);
+  assert.match(html, /<span class="bk-meta-line bk-meta-main">'\+escHtml\(line1\)\+'<\/span><span class="bk-meta-line bk-meta-detail">'\+escHtml\(line2\)\+'<\/span>/);
+  assert.doesNotMatch(html, /class="bk-meta[^"]*" title="/);
+  assert.match(html, /'<div class="bk-meta'\+\(\(!ht\|\|!at\)\?" is-pending":""\)\+'/);
   assert.match(html, /h\+=koMatchMeta\(m,ht,at\)/);
 });
 
@@ -611,12 +635,15 @@ test("knockout round labels use a balanced scale with a larger final title", () 
   assert.match(html, /\.bk-title\.stage-label\{font-size:1\.35rem/);
   assert.match(html, /\.bk-title\.stage-label\{[^}]*letter-spacing:0;line-height:1;min-height:26px;display:flex/);
   assert.match(html, /\.bk-title\.stage-label\{font-size:1\.05rem\}/);
-  assert.match(html, /\.bk-round\.final-col>\.bk-title\.final-title\{font-size:1\.7rem/);
+  assert.match(html, /\.bk-final-stack,\.bk-third-stack\{width:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:center\}/);
+  assert.match(html, /\.bk-final-stack \.bk-title\.final-title\{font-size:1\.7rem/);
   assert.match(html, /\.bk-round\.final-col \.bk-title\.third-title\{font-size:1\.45rem/);
-  assert.match(html, /\.bk-round\.final-col>\.bk-title\.final-title\{font-size:1\.35rem\}/);
+  assert.match(html, /\.bk-final-stack \.bk-title\.final-title\{font-size:1\.35rem\}/);
   assert.match(html, /\.bk-round\.final-col \.bk-title\.third-title\{font-size:1\.15rem\}/);
   assert.match(html, /<div class="bk-title stage-label">'\+title\+'<\/div>/);
+  assert.match(html, /<div class="bk-round final-col"><div class="bk-final-stack">/);
   assert.match(html, /<div class="bk-title final-title">'\+cupIcon\(\)\+' '\+T\("finalLabel"\)/);
+  assert.match(html, /<div class="bk-third-stack"><div class="bk-title third-title">'\+T\("third"\)/);
   assert.match(html, /<div class="bk-title third-title">'\+T\("third"\)/);
   assert.match(html, /r32:"R32",r16:"R16",qf:"QF",sf:"SF"/);
 });

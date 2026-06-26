@@ -692,17 +692,23 @@ class TestIncrementalSkip(unittest.TestCase):
 
 class TestRefreshResultsIntegration(unittest.TestCase):
 
-    def test_pipeline_steps_network_contains_fetch_analysis(self):
-        """fetch_analysis_data.py must be in PIPELINE_STEPS_NETWORK."""
+    def test_pipeline_steps_analysis_is_optional(self):
+        """fetch_analysis_data.py must be available but outside the default network path."""
         rr_path = os.path.join(
             os.path.dirname(os.path.abspath(__file__)), "refresh_results.py"
         )
         with open(rr_path, "r") as f:
             content = f.read()
         self.assertIn("fetch_analysis_data.py", content)
+        self.assertIn("PIPELINE_STEPS_ANALYSIS", content)
+        network_block = content.split("PIPELINE_STEPS_NETWORK = [", 1)[1].split(
+            "PIPELINE_STEPS_ANALYSIS",
+            1,
+        )[0]
+        self.assertNotIn("fetch_analysis_data.py", network_block)
 
     def test_pipeline_steps_order(self):
-        """fetch_analysis_data.py must come after fetch_match_details.py."""
+        """Optional analysis step must still be declared after match details."""
         rr_path = os.path.join(
             os.path.dirname(os.path.abspath(__file__)), "refresh_results.py"
         )
@@ -713,15 +719,14 @@ class TestRefreshResultsIntegration(unittest.TestCase):
         self.assertLess(pos_details, pos_analysis)
 
     def test_docstring_updated(self):
-        """Docstring should list 6 pipeline steps."""
+        """Docstring should list the 5-step default path and optional analysis."""
         rr_path = os.path.join(
             os.path.dirname(os.path.abspath(__file__)), "refresh_results.py"
         )
         with open(rr_path, "r") as f:
             content = f.read()
-        # Docstring should mention step 6
-        self.assertIn("6. sync_predictor_asset.py", content)
-        self.assertIn("3. fetch_analysis_data.py", content)
+        self.assertIn("5. sync_predictor_asset.py", content)
+        self.assertIn("--with-analysis", content)
 
     def test_no_changes_to_consistency(self):
         """assert_consistency should NOT reference analysis files."""

@@ -202,6 +202,7 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "audit_source_lineage.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_match_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_prediction_data.py")])
+        run([sys.executable, str(ROOT / "scripts" / "refresh_results.py"), "--check"])
         run([sys.executable, str(ROOT / "scripts" / "test_refresh_results.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_espn_source_contract.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_check_updates.py")])

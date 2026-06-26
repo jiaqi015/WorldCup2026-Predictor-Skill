@@ -6,9 +6,10 @@ validate_match_data_consistency() addition to scripts/release_check.py.
 Tests cover:
   1. extract_js_value — bracket-depth parser (core of the consistency check)
   2. assert_consistency — 4-way drift detection
-  3. run_step — retry logic
-  4. show_diff — new match diff printing
-  5. End-to-end --check mode with real data
+  3. assert_live_freshness — live ESPN freshness drift detection
+  4. run_step — retry logic
+  5. show_diff — new match diff printing
+  6. End-to-end --check mode with real data
 
 Run:  python3 scripts/test_refresh_results.py
 """
@@ -239,12 +240,54 @@ def test_assert_consistency():
 
 
 # ═══════════════════════════════════════════════════════════════════
-#  3. run_step retry logic
+#  3. assert_live_freshness
+# ═══════════════════════════════════════════════════════════════════
+
+
+def test_live_freshness_check():
+    print("\n=== 3. assert_live_freshness ===")
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        match_dir, index_html, skill_html = _make_temp_data(tmpdir, 2, 2, 2, 2)
+        with mock.patch.object(rr, "MATCH_DIR", match_dir), \
+             mock.patch.object(rr, "INDEX_HTML", index_html), \
+             mock.patch.object(rr, "SKILL_HTML", skill_html), \
+             mock.patch.object(
+                 rr,
+                 "fetch_live_completed_ids",
+                 return_value=(
+                     {"m0", "m1", "m2"},
+                     {"completed_count": 3, "fetched_at": "2026-06-26T00:00:00+00:00"},
+                 ),
+             ):
+            ok, state = rr.assert_live_freshness()
+            report("live completed id missing locally → not ok", not ok)
+            report("live id set is exposed", state["live_ids"] == {"m0", "m1", "m2"})
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        match_dir, index_html, skill_html = _make_temp_data(tmpdir, 3, 3, 3, 3)
+        with mock.patch.object(rr, "MATCH_DIR", match_dir), \
+             mock.patch.object(rr, "INDEX_HTML", index_html), \
+             mock.patch.object(rr, "SKILL_HTML", skill_html), \
+             mock.patch.object(
+                 rr,
+                 "fetch_live_completed_ids",
+                 return_value=(
+                     {"m0", "m1", "m2"},
+                     {"completed_count": 3, "fetched_at": "2026-06-26T00:00:00+00:00"},
+                 ),
+             ):
+            ok, state = rr.assert_live_freshness()
+            report("live completed ids covered locally → ok", ok)
+
+
+# ═══════════════════════════════════════════════════════════════════
+#  4. run_step retry logic
 # ═══════════════════════════════════════════════════════════════════
 
 
 def test_run_step():
-    print("\n=== 3. run_step ===")
+    print("\n=== 4. run_step ===")
 
     # 3.1 Success on first try
     with mock.patch("subprocess.run") as mock_run:
@@ -290,12 +333,12 @@ def test_run_step():
 
 
 # ═══════════════════════════════════════════════════════════════════
-#  4. show_diff
+#  5. show_diff
 # ═══════════════════════════════════════════════════════════════════
 
 
 def test_show_diff():
-    print("\n=== 4. show_diff ===")
+    print("\n=== 5. show_diff ===")
 
     with tempfile.TemporaryDirectory() as tmpdir:
         match_dir = Path(tmpdir) / "data" / "matches"
@@ -334,12 +377,12 @@ def test_show_diff():
 
 
 # ═══════════════════════════════════════════════════════════════════
-#  5. End-to-end --check with real data
+#  6. End-to-end --check with real data
 # ═══════════════════════════════════════════════════════════════════
 
 
 def test_e2e_check_mode():
-    print("\n=== 5. End-to-end --check ===")
+    print("\n=== 6. End-to-end --check ===")
 
     result = subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "refresh_results.py"), "--check"],
@@ -425,6 +468,7 @@ if __name__ == "__main__":
 
     test_extract_js_value()
     test_assert_consistency()
+    test_live_freshness_check()
     test_run_step()
     test_show_diff()
     test_e2e_check_mode()
