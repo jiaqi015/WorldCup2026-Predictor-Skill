@@ -273,7 +273,7 @@ body.dark .group-progress-copy strong{color:var(--ink-dark)}
 @media(prefers-reduced-motion:reduce){
   .group-progress-liquid{transition:none}
 }
-.ko-lock{max-width:520px;margin:22px auto 0;padding:28px 26px;text-align:left;border:1px solid var(--line-delicate);border-radius:24px;background:linear-gradient(145deg,var(--bg-card),var(--bg-paper));box-shadow:var(--shadow-float)}
+.ko-lock{max-width:720px;margin:22px auto 0;padding:28px 26px;text-align:left;border:1px solid var(--line-delicate);border-radius:24px;background:linear-gradient(145deg,var(--bg-card),var(--bg-paper));box-shadow:var(--shadow-float)}
 .ko-lock-kicker{color:var(--ink-light);font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px}
 .ko-lock-title{font-size:22px;font-weight:850;letter-spacing:-0.6px;color:var(--ink-dark);margin-bottom:8px}
 .ko-lock-copy{font-size:13px;line-height:1.55;color:var(--ink-medium);margin-bottom:18px}
@@ -281,9 +281,29 @@ body.dark .group-progress-copy strong{color:var(--ink-dark)}
 .ko-lock-progress b{color:var(--ink-dark);font-size:13px}
 .ko-lock-bar{height:7px;border-radius:100px;background:var(--bg-soft);overflow:hidden;box-shadow:inset 0 1px 2px rgba(18,20,23,0.05)}
 .ko-lock-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--ink-dark),var(--accent-gold));transition:width 0.45s ease}
+.ko-lock-preview{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-delicate)}
+.ko-lock-preview-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.ko-lock-preview-head span{font-size:13px;font-weight:850;color:var(--ink-dark)}
+.ko-lock-preview-head b{font-size:11px;color:var(--ink-light);font-weight:800}
+.ko-seed-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ko-seed-card{display:grid;grid-template-columns:42px minmax(0,1fr) auto;align-items:center;gap:9px;min-height:46px;padding:8px 10px;border:1px solid var(--line-soft);border-radius:14px;background:rgba(255,255,255,0.54)}
+.ko-seed-card.is-locked{border-color:rgba(5,150,105,0.22);background:rgba(5,150,105,0.06)}
+.ko-seed-team{min-width:0;font-size:12px;font-weight:800;color:var(--ink-dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ko-seed-meta{margin-top:3px;font-size:10px;color:var(--ink-light);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ko-seed-badge{font-size:11px;font-weight:850;color:var(--ink-medium);background:var(--bg-soft);border-radius:999px;padding:4px 7px;text-align:center}
+.ko-seed-status{font-size:10px;font-weight:850;color:var(--ink-light);white-space:nowrap}
+.ko-seed-card.is-locked .ko-seed-status{color:#059669}
+.ko-lock-empty{font-size:12px;line-height:1.55;color:var(--ink-medium);padding:10px 12px;border-radius:14px;background:var(--bg-soft)}
+.ko-third-note{margin-top:10px;font-size:11px;line-height:1.45;color:var(--ink-light)}
 .ko-lock-actions{margin-top:20px;display:flex;justify-content:flex-start}
 body.dark .ko-lock{background:linear-gradient(145deg,rgba(255,255,255,0.055),rgba(255,255,255,0.025));box-shadow:0 18px 44px rgba(0,0,0,0.24)}
 body.dark .ko-lock-bar{background:rgba(255,255,255,0.08)}
+body.dark .ko-seed-card{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08)}
+body.dark .ko-seed-card.is-locked{background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.20)}
+@media(max-width:640px){
+  .ko-lock{padding:24px 20px}
+  .ko-seed-grid{grid-template-columns:1fr}
+}
 .split{display:flex;gap:32px}.split-left{flex:1;min-width:0}.split-right{display:none}
 @media(min-width:850px){
 .main{max-width:95vw;padding:16px}
@@ -964,6 +984,95 @@ function matchStatusInfo(m,actual){
 var R32D=[{i:"R1",h:"2A",a:"2B"},{i:"R2",h:"1E",a:"3_ABCDF"},{i:"R3",h:"1F",a:"2C"},{i:"R4",h:"1C",a:"2F"},{i:"R5",h:"1I",a:"3_CDFGH"},{i:"R6",h:"2E",a:"2I"},{i:"R7",h:"1A",a:"3_CEFHI"},{i:"R8",h:"1L",a:"3_EHIJK"},{i:"R9",h:"1D",a:"3_BEFIJ"},{i:"R10",h:"1G",a:"3_AEHIJ"},{i:"R11",h:"2K",a:"2L"},{i:"R12",h:"1H",a:"2J"},{i:"R13",h:"1B",a:"3_EFGIJ"},{i:"R14",h:"1J",a:"2H"},{i:"R15",h:"1K",a:"3_DEIJL"},{i:"R16",h:"2D",a:"2G"}];
 var R16P=[["R2","R5"],["R1","R3"],["R4","R6"],["R7","R8"],["R11","R12"],["R9","R10"],["R14","R16"],["R13","R15"]];
 var QFP=[["L1","L2"],["L5","L6"],["L3","L4"],["L7","L8"]],SFP=[["Q1","Q2"],["Q3","Q4"]];
+var THIRD_PLACE_WINNER_COLUMNS=["1A","1B","1D","1E","1G","1I","1K","1L"];
+var THIRD_PLACE_SLOT_BY_WINNER={"1A":"3_CEFHI","1B":"3_EFGIJ","1D":"3_BEFIJ","1E":"3_ABCDF","1G":"3_AEHIJ","1I":"3_CDFGH","1K":"3_DEIJL","1L":"3_EHIJK"};
+// FIFA Regulations Annex C. Key = eight qualifying third-place groups; value = opponents for [1A,1B,1D,1E,1G,1I,1K,1L].
+var THIRD_PLACE_OPTIONS=[
+  "EFGHIJKL:EJIFHGLK","DFGHIJKL:HGIDJFLK","DEGHIJKL:EJIDHGLK","DEFHIJKL:EJIDHFLK","DEFGIJKL:EGIDJFLK","DEFGHJKL:EGJDHFLK",
+  "DEFGHIKL:EGIDHFLK","DEFGHIJL:EGJDHFLI","DEFGHIJK:EGJDHFIK","CFGHIJKL:HGICJFLK","CEGHIJKL:EJICHGLK","CEFHIJKL:EJICHFLK",
+  "CEFGIJKL:EGICJFLK","CEFGHJKL:EGJCHFLK","CEFGHIKL:EGICHFLK","CEFGHIJL:EGJCHFLI","CEFGHIJK:EGJCHFIK","CDGHIJKL:HGICJDLK",
+  "CDFHIJKL:CJIDHFLK","CDFGIJKL:CGIDJFLK","CDFGHJKL:CGJDHFLK","CDFGHIKL:CGIDHFLK","CDFGHIJL:CGJDHFLI","CDFGHIJK:CGJDHFIK",
+  "CDEHIJKL:EJICHDLK","CDEGIJKL:EGICJDLK","CDEGHJKL:EGJCHDLK","CDEGHIKL:EGICHDLK","CDEGHIJL:EGJCHDLI","CDEGHIJK:EGJCHDIK",
+  "CDEFIJKL:CJEDIFLK","CDEFHJKL:CJEDHFLK","CDEFHIKL:CEIDHFLK","CDEFHIJL:CJEDHFLI","CDEFHIJK:CJEDHFIK","CDEFGJKL:CGEDJFLK",
+  "CDEFGIKL:CGEDIFLK","CDEFGIJL:CGEDJFLI","CDEFGIJK:CGEDJFIK","CDEFGHKL:CGEDHFLK","CDEFGHJL:CGJDHFLE","CDEFGHJK:CGJDHFEK",
+  "CDEFGHIL:CGEDHFLI","CDEFGHIK:CGEDHFIK","CDEFGHIJ:CGJDHFEI","BFGHIJKL:HJBFIGLK","BEGHIJKL:EJIBHGLK","BEFHIJKL:EJBFIHLK",
+  "BEFGIJKL:EJBFIGLK","BEFGHJKL:EJBFHGLK","BEFGHIKL:EGBFIHLK","BEFGHIJL:EJBFHGLI","BEFGHIJK:EJBFHGIK","BDGHIJKL:HJBDIGLK",
+  "BDFHIJKL:HJBDIFLK","BDFGIJKL:IGBDJFLK","BDFGHJKL:HGBDJFLK","BDFGHIKL:HGBDIFLK","BDFGHIJL:HGBDJFLI","BDFGHIJK:HGBDJFIK",
+  "BDEHIJKL:EJBDIHLK","BDEGIJKL:EJBDIGLK","BDEGHJKL:EJBDHGLK","BDEGHIKL:EGBDIHLK","BDEGHIJL:EJBDHGLI","BDEGHIJK:EJBDHGIK",
+  "BDEFIJKL:EJBDIFLK","BDEFHJKL:EJBDHFLK","BDEFHIKL:EIBDHFLK","BDEFHIJL:EJBDHFLI","BDEFHIJK:EJBDHFIK","BDEFGJKL:EGBDJFLK",
+  "BDEFGIKL:EGBDIFLK","BDEFGIJL:EGBDJFLI","BDEFGIJK:EGBDJFIK","BDEFGHKL:EGBDHFLK","BDEFGHJL:HGBDJFLE","BDEFGHJK:HGBDJFEK",
+  "BDEFGHIL:EGBDHFLI","BDEFGHIK:EGBDHFIK","BDEFGHIJ:HGBDJFEI","BCGHIJKL:HJBCIGLK","BCFHIJKL:HJBCIFLK","BCFGIJKL:IGBCJFLK",
+  "BCFGHJKL:HGBCJFLK","BCFGHIKL:HGBCIFLK","BCFGHIJL:HGBCJFLI","BCFGHIJK:HGBCJFIK","BCEHIJKL:EJBCIHLK","BCEGIJKL:EJBCIGLK",
+  "BCEGHJKL:EJBCHGLK","BCEGHIKL:EGBCIHLK","BCEGHIJL:EJBCHGLI","BCEGHIJK:EJBCHGIK","BCEFIJKL:EJBCIFLK","BCEFHJKL:EJBCHFLK",
+  "BCEFHIKL:EIBCHFLK","BCEFHIJL:EJBCHFLI","BCEFHIJK:EJBCHFIK","BCEFGJKL:EGBCJFLK","BCEFGIKL:EGBCIFLK","BCEFGIJL:EGBCJFLI",
+  "BCEFGIJK:EGBCJFIK","BCEFGHKL:EGBCHFLK","BCEFGHJL:HGBCJFLE","BCEFGHJK:HGBCJFEK","BCEFGHIL:EGBCHFLI","BCEFGHIK:EGBCHFIK",
+  "BCEFGHIJ:HGBCJFEI","BCDHIJKL:HJBCIDLK","BCDGIJKL:IGBCJDLK","BCDGHJKL:HGBCJDLK","BCDGHIKL:HGBCIDLK","BCDGHIJL:HGBCJDLI",
+  "BCDGHIJK:HGBCJDIK","BCDFIJKL:CJBDIFLK","BCDFHJKL:CJBDHFLK","BCDFHIKL:CIBDHFLK","BCDFHIJL:CJBDHFLI","BCDFHIJK:CJBDHFIK",
+  "BCDFGJKL:CGBDJFLK","BCDFGIKL:CGBDIFLK","BCDFGIJL:CGBDJFLI","BCDFGIJK:CGBDJFIK","BCDFGHKL:CGBDHFLK","BCDFGHJL:CGBDHFLJ",
+  "BCDFGHJK:HGBCJFDK","BCDFGHIL:CGBDHFLI","BCDFGHIK:CGBDHFIK","BCDFGHIJ:HGBCJFDI","BCDEIJKL:EJBCIDLK","BCDEHJKL:EJBCHDLK",
+  "BCDEHIKL:EIBCHDLK","BCDEHIJL:EJBCHDLI","BCDEHIJK:EJBCHDIK","BCDEGJKL:EGBCJDLK","BCDEGIKL:EGBCIDLK","BCDEGIJL:EGBCJDLI",
+  "BCDEGIJK:EGBCJDIK","BCDEGHKL:EGBCHDLK","BCDEGHJL:HGBCJDLE","BCDEGHJK:HGBCJDEK","BCDEGHIL:EGBCHDLI","BCDEGHIK:EGBCHDIK",
+  "BCDEGHIJ:HGBCJDEI","BCDEFJKL:CJBDEFLK","BCDEFIKL:CEBDIFLK","BCDEFIJL:CJBDEFLI","BCDEFIJK:CJBDEFIK","BCDEFHKL:CEBDHFLK",
+  "BCDEFHJL:CJBDHFLE","BCDEFHJK:CJBDHFEK","BCDEFHIL:CEBDHFLI","BCDEFHIK:CEBDHFIK","BCDEFHIJ:CJBDHFEI","BCDEFGKL:CGBDEFLK",
+  "BCDEFGJL:CGBDJFLE","BCDEFGJK:CGBDJFEK","BCDEFGIL:CGBDEFLI","BCDEFGIK:CGBDEFIK","BCDEFGIJ:CGBDJFEI","BCDEFGHL:CGBDHFLE",
+  "BCDEFGHK:CGBDHFEK","BCDEFGHJ:HGBCJFDE","BCDEFGHI:CGBDHFEI","AFGHIJKL:HJIFAGLK","AEGHIJKL:EJIAHGLK","AEFHIJKL:EJIFAHLK",
+  "AEFGIJKL:EJIFAGLK","AEFGHJKL:EGJFAHLK","AEFGHIKL:EGIFAHLK","AEFGHIJL:EGJFAHLI","AEFGHIJK:EGJFAHIK","ADGHIJKL:HJIDAGLK",
+  "ADFHIJKL:HJIDAFLK","ADFGIJKL:IGJDAFLK","ADFGHJKL:HGJDAFLK","ADFGHIKL:HGIDAFLK","ADFGHIJL:HGJDAFLI","ADFGHIJK:HGJDAFIK",
+  "ADEHIJKL:EJIDAHLK","ADEGIJKL:EJIDAGLK","ADEGHJKL:EGJDAHLK","ADEGHIKL:EGIDAHLK","ADEGHIJL:EGJDAHLI","ADEGHIJK:EGJDAHIK",
+  "ADEFIJKL:EJIDAFLK","ADEFHJKL:HJEDAFLK","ADEFHIKL:HEIDAFLK","ADEFHIJL:HJEDAFLI","ADEFHIJK:HJEDAFIK","ADEFGJKL:EGJDAFLK",
+  "ADEFGIKL:EGIDAFLK","ADEFGIJL:EGJDAFLI","ADEFGIJK:EGJDAFIK","ADEFGHKL:HGEDAFLK","ADEFGHJL:HGJDAFLE","ADEFGHJK:HGJDAFEK",
+  "ADEFGHIL:HGEDAFLI","ADEFGHIK:HGEDAFIK","ADEFGHIJ:HGJDAFEI","ACGHIJKL:HJICAGLK","ACFHIJKL:HJICAFLK","ACFGIJKL:IGJCAFLK",
+  "ACFGHJKL:HGJCAFLK","ACFGHIKL:HGICAFLK","ACFGHIJL:HGJCAFLI","ACFGHIJK:HGJCAFIK","ACEHIJKL:EJICAHLK","ACEGIJKL:EJICAGLK",
+  "ACEGHJKL:EGJCAHLK","ACEGHIKL:EGICAHLK","ACEGHIJL:EGJCAHLI","ACEGHIJK:EGJCAHIK","ACEFIJKL:EJICAFLK","ACEFHJKL:HJECAFLK",
+  "ACEFHIKL:HEICAFLK","ACEFHIJL:HJECAFLI","ACEFHIJK:HJECAFIK","ACEFGJKL:EGJCAFLK","ACEFGIKL:EGICAFLK","ACEFGIJL:EGJCAFLI",
+  "ACEFGIJK:EGJCAFIK","ACEFGHKL:HGECAFLK","ACEFGHJL:HGJCAFLE","ACEFGHJK:HGJCAFEK","ACEFGHIL:HGECAFLI","ACEFGHIK:HGECAFIK",
+  "ACEFGHIJ:HGJCAFEI","ACDHIJKL:HJICADLK","ACDGIJKL:IGJCADLK","ACDGHJKL:HGJCADLK","ACDGHIKL:HGICADLK","ACDGHIJL:HGJCADLI",
+  "ACDGHIJK:HGJCADIK","ACDFIJKL:CJIDAFLK","ACDFHJKL:HJFCADLK","ACDFHIKL:HFICADLK","ACDFHIJL:HJFCADLI","ACDFHIJK:HJFCADIK",
+  "ACDFGJKL:CGJDAFLK","ACDFGIKL:CGIDAFLK","ACDFGIJL:CGJDAFLI","ACDFGIJK:CGJDAFIK","ACDFGHKL:HGFCADLK","ACDFGHJL:CGJDAFLH",
+  "ACDFGHJK:HGJCAFDK","ACDFGHIL:HGFCADLI","ACDFGHIK:HGFCADIK","ACDFGHIJ:HGJCAFDI","ACDEIJKL:EJICADLK","ACDEHJKL:HJECADLK",
+  "ACDEHIKL:HEICADLK","ACDEHIJL:HJECADLI","ACDEHIJK:HJECADIK","ACDEGJKL:EGJCADLK","ACDEGIKL:EGICADLK","ACDEGIJL:EGJCADLI",
+  "ACDEGIJK:EGJCADIK","ACDEGHKL:HGECADLK","ACDEGHJL:HGJCADLE","ACDEGHJK:HGJCADEK","ACDEGHIL:HGECADLI","ACDEGHIK:HGECADIK",
+  "ACDEGHIJ:HGJCADEI","ACDEFJKL:CJEDAFLK","ACDEFIKL:CEIDAFLK","ACDEFIJL:CJEDAFLI","ACDEFIJK:CJEDAFIK","ACDEFHKL:HEFCADLK",
+  "ACDEFHJL:HJFCADLE","ACDEFHJK:HJECAFDK","ACDEFHIL:HEFCADLI","ACDEFHIK:HEFCADIK","ACDEFHIJ:HJECAFDI","ACDEFGKL:CGEDAFLK",
+  "ACDEFGJL:CGJDAFLE","ACDEFGJK:CGJDAFEK","ACDEFGIL:CGEDAFLI","ACDEFGIK:CGEDAFIK","ACDEFGIJ:CGJDAFEI","ACDEFGHL:HGFCADLE",
+  "ACDEFGHK:HGECAFDK","ACDEFGHJ:HGJCAFDE","ACDEFGHI:HGECAFDI","ABGHIJKL:HJBAIGLK","ABFHIJKL:HJBAIFLK","ABFGIJKL:IJBFAGLK",
+  "ABFGHJKL:HJBFAGLK","ABFGHIKL:HGBAIFLK","ABFGHIJL:HJBFAGLI","ABFGHIJK:HJBFAGIK","ABEHIJKL:EJBAIHLK","ABEGIJKL:EJBAIGLK",
+  "ABEGHJKL:EJBAHGLK","ABEGHIKL:EGBAIHLK","ABEGHIJL:EJBAHGLI","ABEGHIJK:EJBAHGIK","ABEFIJKL:EJBAIFLK","ABEFHJKL:EJBFAHLK",
+  "ABEFHIKL:EIBFAHLK","ABEFHIJL:EJBFAHLI","ABEFHIJK:EJBFAHIK","ABEFGJKL:EJBFAGLK","ABEFGIKL:EGBAIFLK","ABEFGIJL:EJBFAGLI",
+  "ABEFGIJK:EJBFAGIK","ABEFGHKL:EGBFAHLK","ABEFGHJL:HJBFAGLE","ABEFGHJK:HJBFAGEK","ABEFGHIL:EGBFAHLI","ABEFGHIK:EGBFAHIK",
+  "ABEFGHIJ:HJBFAGEI","ABDHIJKL:IJBDAHLK","ABDGIJKL:IJBDAGLK","ABDGHJKL:HJBDAGLK","ABDGHIKL:IGBDAHLK","ABDGHIJL:HJBDAGLI",
+  "ABDGHIJK:HJBDAGIK","ABDFIJKL:IJBDAFLK","ABDFHJKL:HJBDAFLK","ABDFHIKL:HIBDAFLK","ABDFHIJL:HJBDAFLI","ABDFHIJK:HJBDAFIK",
+  "ABDFGJKL:FJBDAGLK","ABDFGIKL:IGBDAFLK","ABDFGIJL:FJBDAGLI","ABDFGIJK:FJBDAGIK","ABDFGHKL:HGBDAFLK","ABDFGHJL:HGBDAFLJ",
+  "ABDFGHJK:HGBDAFJK","ABDFGHIL:HGBDAFLI","ABDFGHIK:HGBDAFIK","ABDFGHIJ:HGBDAFIJ","ABDEIJKL:EJBAIDLK","ABDEHJKL:EJBDAHLK",
+  "ABDEHIKL:EIBDAHLK","ABDEHIJL:EJBDAHLI","ABDEHIJK:EJBDAHIK","ABDEGJKL:EJBDAGLK","ABDEGIKL:EGBAIDLK","ABDEGIJL:EJBDAGLI",
+  "ABDEGIJK:EJBDAGIK","ABDEGHKL:EGBDAHLK","ABDEGHJL:HJBDAGLE","ABDEGHJK:HJBDAGEK","ABDEGHIL:EGBDAHLI","ABDEGHIK:EGBDAHIK",
+  "ABDEGHIJ:HJBDAGEI","ABDEFJKL:EJBDAFLK","ABDEFIKL:EIBDAFLK","ABDEFIJL:EJBDAFLI","ABDEFIJK:EJBDAFIK","ABDEFHKL:HEBDAFLK",
+  "ABDEFHJL:HJBDAFLE","ABDEFHJK:HJBDAFEK","ABDEFHIL:HEBDAFLI","ABDEFHIK:HEBDAFIK","ABDEFHIJ:HJBDAFEI","ABDEFGKL:EGBDAFLK",
+  "ABDEFGJL:EGBDAFLJ","ABDEFGJK:EGBDAFJK","ABDEFGIL:EGBDAFLI","ABDEFGIK:EGBDAFIK","ABDEFGIJ:EGBDAFIJ","ABDEFGHL:HGBDAFLE",
+  "ABDEFGHK:HGBDAFEK","ABDEFGHJ:HGBDAFEJ","ABDEFGHI:HGBDAFEI","ABCHIJKL:IJBCAHLK","ABCGIJKL:IJBCAGLK","ABCGHJKL:HJBCAGLK",
+  "ABCGHIKL:IGBCAHLK","ABCGHIJL:HJBCAGLI","ABCGHIJK:HJBCAGIK","ABCFIJKL:IJBCAFLK","ABCFHJKL:HJBCAFLK","ABCFHIKL:HIBCAFLK",
+  "ABCFHIJL:HJBCAFLI","ABCFHIJK:HJBCAFIK","ABCFGJKL:CJBFAGLK","ABCFGIKL:IGBCAFLK","ABCFGIJL:CJBFAGLI","ABCFGIJK:CJBFAGIK",
+  "ABCFGHKL:HGBCAFLK","ABCFGHJL:HGBCAFLJ","ABCFGHJK:HGBCAFJK","ABCFGHIL:HGBCAFLI","ABCFGHIK:HGBCAFIK","ABCFGHIJ:HGBCAFIJ",
+  "ABCEIJKL:EJBAICLK","ABCEHJKL:EJBCAHLK","ABCEHIKL:EIBCAHLK","ABCEHIJL:EJBCAHLI","ABCEHIJK:EJBCAHIK","ABCEGJKL:EJBCAGLK",
+  "ABCEGIKL:EGBAICLK","ABCEGIJL:EJBCAGLI","ABCEGIJK:EJBCAGIK","ABCEGHKL:EGBCAHLK","ABCEGHJL:HJBCAGLE","ABCEGHJK:HJBCAGEK",
+  "ABCEGHIL:EGBCAHLI","ABCEGHIK:EGBCAHIK","ABCEGHIJ:HJBCAGEI","ABCEFJKL:EJBCAFLK","ABCEFIKL:EIBCAFLK","ABCEFIJL:EJBCAFLI",
+  "ABCEFIJK:EJBCAFIK","ABCEFHKL:HEBCAFLK","ABCEFHJL:HJBCAFLE","ABCEFHJK:HJBCAFEK","ABCEFHIL:HEBCAFLI","ABCEFHIK:HEBCAFIK",
+  "ABCEFHIJ:HJBCAFEI","ABCEFGKL:EGBCAFLK","ABCEFGJL:EGBCAFLJ","ABCEFGJK:EGBCAFJK","ABCEFGIL:EGBCAFLI","ABCEFGIK:EGBCAFIK",
+  "ABCEFGIJ:EGBCAFIJ","ABCEFGHL:HGBCAFLE","ABCEFGHK:HGBCAFEK","ABCEFGHJ:HGBCAFEJ","ABCEFGHI:HGBCAFEI","ABCDIJKL:IJBCADLK",
+  "ABCDHJKL:HJBCADLK","ABCDHIKL:HIBCADLK","ABCDHIJL:HJBCADLI","ABCDHIJK:HJBCADIK","ABCDGJKL:CJBDAGLK","ABCDGIKL:IGBCADLK",
+  "ABCDGIJL:CJBDAGLI","ABCDGIJK:CJBDAGIK","ABCDGHKL:HGBCADLK","ABCDGHJL:HGBCADLJ","ABCDGHJK:HGBCADJK","ABCDGHIL:HGBCADLI",
+  "ABCDGHIK:HGBCADIK","ABCDGHIJ:HGBCADIJ","ABCDFJKL:CJBDAFLK","ABCDFIKL:CIBDAFLK","ABCDFIJL:CJBDAFLI","ABCDFIJK:CJBDAFIK",
+  "ABCDFHKL:HFBCADLK","ABCDFHJL:CJBDAFLH","ABCDFHJK:HJBCAFDK","ABCDFHIL:HFBCADLI","ABCDFHIK:HFBCADIK","ABCDFHIJ:HJBCAFDI",
+  "ABCDFGKL:CGBDAFLK","ABCDFGJL:CGBDAFLJ","ABCDFGJK:CGBDAFJK","ABCDFGIL:CGBDAFLI","ABCDFGIK:CGBDAFIK","ABCDFGIJ:CGBDAFIJ",
+  "ABCDFGHL:CGBDAFLH","ABCDFGHK:HGBCAFDK","ABCDFGHJ:HGBCAFDJ","ABCDFGHI:HGBCAFDI","ABCDEJKL:EJBCADLK","ABCDEIKL:EIBCADLK",
+  "ABCDEIJL:EJBCADLI","ABCDEIJK:EJBCADIK","ABCDEHKL:HEBCADLK","ABCDEHJL:HJBCADLE","ABCDEHJK:HJBCADEK","ABCDEHIL:HEBCADLI",
+  "ABCDEHIK:HEBCADIK","ABCDEHIJ:HJBCADEI","ABCDEGKL:EGBCADLK","ABCDEGJL:EGBCADLJ","ABCDEGJK:EGBCADJK","ABCDEGIL:EGBCADLI",
+  "ABCDEGIK:EGBCADIK","ABCDEGIJ:EGBCADIJ","ABCDEGHL:HGBCADLE","ABCDEGHK:HGBCADEK","ABCDEGHJ:HGBCADEJ","ABCDEGHI:HGBCADEI",
+  "ABCDEFKL:CEBDAFLK","ABCDEFJL:CJBDAFLE","ABCDEFJK:CJBDAFEK","ABCDEFIL:CEBDAFLI","ABCDEFIK:CEBDAFIK","ABCDEFIJ:CJBDAFEI",
+  "ABCDEFHL:HFBCADLE","ABCDEFHK:HEBCAFDK","ABCDEFHJ:HJBCAFDE","ABCDEFHI:HEBCAFDI","ABCDEFGL:CGBDAFLE","ABCDEFGK:CGBDAFEK",
+  "ABCDEFGJ:CGBDAFEJ","ABCDEFGI:CGBDAFEI","ABCDEFGH:HGBCAFDE"
+].join("|");
+var THIRD_PLACE_OPTION_MAP=null;
 var tab="groups",expG=null,gm={},ko={},slog=[],playMode=localStorage.getItem("wc26_play_mode")||"normal",predictionMode=normalizePredictionMode(localStorage.getItem("wc26_play_mode")||"normal",localStorage.getItem("wc26_prediction_mode")||"strength");
 gm=initGM();
 enrichGMWithData();
@@ -1855,7 +1964,10 @@ var I18N={
     groupsComplete:"小组赛已完成，前往淘汰赛查看对阵",
     selectGroupLine1:"点击左边的小组",selectGroupLine2:"在这里显示比赛详情",
     matchCount:"共6场比赛",randGroup:"模拟本组",
-    lockKO:"先完成全部小组赛",returnGroups:"返回小组赛",
+    lockKO:"小组赛还没全完",returnGroups:"返回小组赛",
+    lockCopySmart:"不用等到 72 场全完；数学上已锁定的第 1 / 第 2 会先显示，第三名跨组落位等全部小组结果确定后再锁。",
+    lockPreviewTitle:"可提前看的落位",lockPreviewEmpty:"目前还没有数学锁定的前二席位。继续完成小组赛后这里会自动更新。",
+    seedLocked:"已锁定",seedProjected:"暂定",seedRank:"第{rank}",seedMatch:"{match} · {seed}",thirdAnnexNote:"第三名对位按 FIFA Annex C，在 8 个第三名全部确定后生成。",
     bracketHint:"左右滑动查看完整对阵",
     waiting:"⏳ 等待晋级",
     r32:"32强",r16:"16强",qf:"8强",sf:"半决赛",finalLabel:"决赛",third:"🥉 季军赛",
@@ -1912,7 +2024,10 @@ var I18N={
     groupsComplete:"Group stage complete — go to Knockout to view the bracket",
     selectGroupLine1:"Tap a group on the left",selectGroupLine2:"to see match details here",
     matchCount:"6 matches",randGroup:"Simulate Group",
-    lockKO:"Finish all group matches first",returnGroups:"Back to Groups",
+    lockKO:"Group stage still in progress",returnGroups:"Back to Groups",
+    lockCopySmart:"You do not have to wait for all 72 matches: mathematically locked 1st / 2nd seeds appear early; third-place cross-group slots lock only after every group result is known.",
+    lockPreviewTitle:"Early seed view",lockPreviewEmpty:"No top-two seed is mathematically locked yet. Finish more group matches and this updates automatically.",
+    seedLocked:"Locked",seedProjected:"Projected",seedRank:"#{rank}",seedMatch:"{match} · {seed}",thirdAnnexNote:"Third-place pairings follow FIFA Annex C and are generated once all eight third-place qualifiers are known.",
     bracketHint:"Scroll horizontally to see the full bracket",
     waiting:"⏳ Awaiting team",
     r32:"R32",r16:"R16",qf:"QF",sf:"SF",finalLabel:"Final",third:"🥉 Third Place",
@@ -2346,35 +2461,90 @@ function allDone(){for(var k in GD)if(!gcDone(k))return false;return true;}
 function getSt(){var s={};for(var k in GD)s[k]=calcS(GD[k],gm[k]);return s;}
 function getT3(st){var t=[];for(var k in st)if(st[k][2])t.push({t:st[k][2].t,p:st[k][2].p,gf:st[k][2].gf,ga:st[k][2].ga,gd:st[k][2].gd,g:k});t.sort(function(a,b){return b.p-a.p||b.gd-a.gd||b.gf-a.gf||teamFallback(a,b);});return t.slice(0,8);}
 var t3Assign={};
-function assignThirds(t3){
-  var slots=[
-    {id:"3_ABCDF",gs:["A","B","C","D","F"]},
-    {id:"3_CDFGH",gs:["C","D","F","G","H"]},
-    {id:"3_CEFHI",gs:["C","E","F","H","I"]},
-    {id:"3_EHIJK",gs:["E","H","I","J","K"]},
-    {id:"3_BEFIJ",gs:["B","E","F","I","J"]},
-    {id:"3_AEHIJ",gs:["A","E","H","I","J"]},
-    {id:"3_EFGIJ",gs:["E","F","G","I","J"]},
-    {id:"3_DEIJL",gs:["D","E","I","J","L"]}
-  ];
-  var used={},result={};
-  function solve(idx){
-    if(idx>=slots.length)return true;
-    var sl=slots[idx];
-    for(var i=0;i<t3.length;i++){
-      var tm=t3[i];
-      if(used[tm.g])continue;
-      if(sl.gs.indexOf(tm.g)===-1)continue;
-      used[tm.g]=true;result[sl.id]=tm.t;
-      if(solve(idx+1))return true;
-      delete used[tm.g];delete result[sl.id];
-    }
-    return false;
+function getThirdPlaceOptionMap(){
+  if(THIRD_PLACE_OPTION_MAP)return THIRD_PLACE_OPTION_MAP;
+  var map={},rows=THIRD_PLACE_OPTIONS.split("|");
+  for(var i=0;i<rows.length;i++){
+    var parts=rows[i].split(":");
+    if(parts.length===2)map[parts[0]]=parts[1];
   }
-  solve(0);t3Assign=result;return result;
+  THIRD_PLACE_OPTION_MAP=map;
+  return map;
+}
+function assignThirds(t3){
+  var byGroup={},groups=[],result={};
+  for(var i=0;i<t3.length;i++){
+    if(!t3[i]||!t3[i].g)continue;
+    byGroup[t3[i].g]=t3[i].t;
+    groups.push(t3[i].g);
+  }
+  var key=groups.sort().join("");
+  var row=getThirdPlaceOptionMap()[key];
+  if(!row){t3Assign={};return t3Assign;}
+  for(var j=0;j<THIRD_PLACE_WINNER_COLUMNS.length;j++){
+    var winner=THIRD_PLACE_WINNER_COLUMNS[j],g=row.charAt(j),slot=THIRD_PLACE_SLOT_BY_WINNER[winner];
+    if(slot&&byGroup[g])result[slot]=byGroup[g];
+  }
+  t3Assign=result;return result;
 }
 function getT3Team(slot){return t3Assign[slot]||null;}
 function getS(s,st,t3){if(s.indexOf("3_")===0)return getT3Team(s);var p=parseInt(s[0]),g=s[1];if(st[g]&&st[g][p-1])return st[g][p-1].t;return null;}
+function maxGroupPoints(row){return row.p+(3*Math.max(0,3-row.mp));}
+function groupMatchesPlayed(g){var n=0;for(var i=0;i<gm[g].length;i++)if(gm[g][i].hs!==""&&gm[g][i].as!=="")n++;return n;}
+function lockedDirectSeedInfo(seed,st){
+  var rank=parseInt(seed.charAt(0),10),g=seed.charAt(1),group=st[g];
+  if(!group||rank>2)return null;
+  var row=group[rank-1],played=groupMatchesPlayed(g),locked=gcDone(g);
+  if(!row)return null;
+  if(!locked&&rank===1){
+    locked=true;
+    for(var i=1;i<group.length;i++)if(maxGroupPoints(group[i])>=row.p)locked=false;
+  }
+  if(!locked&&rank===2){
+    var leader=group[0],leaderMin=leader?leader.p:0,rowMax=maxGroupPoints(row);
+    locked=leader&&leaderMin>rowMax;
+    for(var j=2;j<group.length;j++)if(maxGroupPoints(group[j])>=row.p)locked=false;
+  }
+  if(!locked&&played<4)return null;
+  return {team:row.t,group:g,rank:rank,seed:seed,locked:locked,done:gcDone(g),played:played,pts:row.p};
+}
+function getKOLockPreviewRows(st){
+  var rows=[],seen={};
+  for(var i=0;i<R32D.length;i++){
+    var m=R32D[i],seeds=[m.h,m.a];
+    for(var j=0;j<seeds.length;j++){
+      var seed=seeds[j];
+      if(!/^[12][A-L]$/.test(seed)||seen[seed])continue;
+      seen[seed]=1;
+      var info=lockedDirectSeedInfo(seed,st);
+      if(!info)continue;
+      info.match=m.i;
+      rows.push(info);
+    }
+  }
+  rows.sort(function(a,b){
+    if(a.locked!==b.locked)return a.locked?-1:1;
+    if(a.done!==b.done)return a.done?-1:1;
+    return a.match.localeCompare(b.match)||a.seed.localeCompare(b.seed);
+  });
+  return rows.slice(0,12);
+}
+function renderKOLockPreview(st){
+  var rows=getKOLockPreviewRows(st),locked=0,h='<div class="ko-lock-preview"><div class="ko-lock-preview-head"><span>'+T("lockPreviewTitle")+'</span>';
+  for(var i=0;i<rows.length;i++)if(rows[i].locked)locked++;
+  h+='<b>'+locked+' / '+rows.length+' '+T("seedLocked")+'</b></div>';
+  if(!rows.length)h+='<div class="ko-lock-empty">'+T("lockPreviewEmpty")+'</div>';
+  else{
+    h+='<div class="ko-seed-grid">';
+    for(var j=0;j<rows.length;j++){
+      var r=rows[j],status=r.locked?T("seedLocked"):T("seedProjected");
+      h+='<div class="ko-seed-card '+(r.locked?"is-locked":"is-projected")+'"><div class="ko-seed-badge">'+escHtml(r.seed)+'</div><div><div class="ko-seed-team">'+fi(r.team,"fls")+escHtml(tn(r.team))+'</div><div class="ko-seed-meta">'+T("seedMatch",{match:r.match,seed:T("seedRank",{rank:r.rank})})+' · '+escHtml(groupName(r.group))+'</div></div><div class="ko-seed-status">'+status+'</div></div>';
+    }
+    h+='</div>';
+  }
+  h+='<div class="ko-third-note">'+T("thirdAnnexNote")+'</div></div>';
+  return h;
+}
 function getSplitRightScrollTop(){var panel=document.querySelector(".split-right");return panel?panel.scrollTop:0;}
 function restoreSplitRightScrollTop(scrollTop){var panel=document.querySelector(".split-right");if(panel&&scrollTop!=null)panel.scrollTop=scrollTop;}
 function rememberFocus(key){
@@ -2530,8 +2700,8 @@ function rKO(el){
 if(!allDone()){
 var totalM=72,doneM=0;for(var kk in gm)for(var jj=0;jj<gm[kk].length;jj++)if(gm[kk][jj].hs!==""&&gm[kk][jj].as!=="")doneM++;
 var pct=Math.round(doneM/totalM*100);
-var copy=LANG==="en"?"Complete every group match to seed the round of 32.":"完成 72 场小组赛后，系统会生成 32 强对阵。";
-el.innerHTML='<div class="ko-lock"><div class="ko-lock-kicker">'+(LANG==="en"?"Knockout bracket":"淘汰赛签表")+'</div><div class="ko-lock-title">'+T("lockKO")+'</div><div class="ko-lock-copy">'+copy+'</div><div class="ko-lock-progress"><span>'+T("progressDone",{done:doneM,total:totalM,pct:pct})+'</span><b>'+pct+'%</b></div><div class="ko-lock-bar"><div class="ko-lock-fill" style="width:'+pct+'%"></div></div><div class="ko-lock-actions"><button class="b bd" onclick="tab=\'groups\';render()">'+T("returnGroups")+'</button></div></div>';
+var st=getSt();
+el.innerHTML='<div class="ko-lock"><div class="ko-lock-kicker">'+(LANG==="en"?"Knockout bracket":"淘汰赛签表")+'</div><div class="ko-lock-title">'+T("lockKO")+'</div><div class="ko-lock-copy">'+T("lockCopySmart")+'</div><div class="ko-lock-progress"><span>'+T("progressDone",{done:doneM,total:totalM,pct:pct})+'</span><b>'+pct+'%</b></div><div class="ko-lock-bar"><div class="ko-lock-fill" style="width:'+pct+'%"></div></div>'+renderKOLockPreview(st)+'<div class="ko-lock-actions"><button class="b bd" onclick="tab=\'groups\';render()">'+T("returnGroups")+'</button></div></div>';
 return;}
 var st=getSt(),t3=getT3(st);assignThirds(t3);
 var cp=getChampionPath();

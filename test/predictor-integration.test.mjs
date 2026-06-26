@@ -10,6 +10,12 @@ const predictionData = JSON.parse(
   readFileSync(new URL("../data/prediction/prediction_data_v1.json", import.meta.url), "utf8"),
 );
 
+function extractVarExpression(name) {
+  const match = html.match(new RegExp(`var ${name}=([\\s\\S]*?);\\nvar `));
+  assert.ok(match, `${name} must be declared`);
+  return Function(`return (${match[1]});`)();
+}
+
 test("prediction model selector is wired to persistent application state", () => {
   assert.match(html, /id="predictionModeSelect"/);
   assert.match(html, /onchange="setPredictionMode\(this\.value\)"/);
@@ -468,6 +474,53 @@ test("knockout toolbar can simulate the bracket one round at a time", () => {
   assert.match(html, /function raKONext\(\)/);
   assert.match(html, /\{id:"3RD",ht:ko\["S1"\]\?ko\["S1"\]\.l:null/);
   assert.match(html, /\{id:"FINAL",ht:ko\["S1"\]\?ko\["S1"\]\.w:null/);
+});
+
+test("knockout topology follows the official 2026 bracket order", () => {
+  const r32 = extractVarExpression("R32D").map((m) => [m.i, m.h, m.a]);
+  assert.deepEqual(r32, [
+    ["R1", "2A", "2B"], ["R2", "1E", "3_ABCDF"],
+    ["R3", "1F", "2C"], ["R4", "1C", "2F"],
+    ["R5", "1I", "3_CDFGH"], ["R6", "2E", "2I"],
+    ["R7", "1A", "3_CEFHI"], ["R8", "1L", "3_EHIJK"],
+    ["R9", "1D", "3_BEFIJ"], ["R10", "1G", "3_AEHIJ"],
+    ["R11", "2K", "2L"], ["R12", "1H", "2J"],
+    ["R13", "1B", "3_EFGIJ"], ["R14", "1J", "2H"],
+    ["R15", "1K", "3_DEIJL"], ["R16", "2D", "2G"],
+  ]);
+  assert.deepEqual(extractVarExpression("R16P"), [
+    ["R2", "R5"], ["R1", "R3"], ["R4", "R6"], ["R7", "R8"],
+    ["R11", "R12"], ["R9", "R10"], ["R14", "R16"], ["R13", "R15"],
+  ]);
+  assert.match(html, /var QFP=\[\["L1","L2"\],\["L5","L6"\],\["L3","L4"\],\["L7","L8"\]\],SFP=\[\["Q1","Q2"\],\["Q3","Q4"\]\]/);
+});
+
+test("third-place knockout opponents are driven by FIFA Annex C", () => {
+  const options = extractVarExpression("THIRD_PLACE_OPTIONS").split("|");
+  const map = new Map(options.map((row) => row.split(":")));
+  assert.equal(options.length, 495);
+  assert.equal(map.size, 495);
+  assert.equal(map.get("EFGHIJKL"), "EJIFHGLK");
+  assert.equal(map.get("ABCDEFGH"), "HGBCAFDE");
+  assert.match(html, /var THIRD_PLACE_WINNER_COLUMNS=\["1A","1B","1D","1E","1G","1I","1K","1L"\]/);
+  assert.match(html, /"1A":"3_CEFHI","1B":"3_EFGIJ","1D":"3_BEFIJ","1E":"3_ABCDF","1G":"3_AEHIJ","1I":"3_CDFGH","1K":"3_DEIJL","1L":"3_EHIJK"/);
+  assert.match(html, /function getThirdPlaceOptionMap\(\)/);
+  assert.match(html, /var row=getThirdPlaceOptionMap\(\)\[key\]/);
+  assert.doesNotMatch(html, /function solve\(idx\)/);
+});
+
+test("locked knockout view previews safe direct seeds before all groups finish", () => {
+  assert.match(html, /lockCopySmart:"不用等到 72 场全完/);
+  assert.match(html, /function groupMatchesPlayed\(g\)/);
+  assert.match(html, /function lockedDirectSeedInfo\(seed,st\)/);
+  assert.match(html, /function getKOLockPreviewRows\(st\)/);
+  assert.match(html, /function renderKOLockPreview\(st\)/);
+  assert.match(html, /renderKOLockPreview\(st\)/);
+  assert.match(html, /\.ko-seed-grid\{display:grid/);
+  assert.match(html, /\.ko-seed-card\.is-locked/);
+  assert.match(html, /leaderMin>rowMax/);
+  assert.match(html, /if\(!locked&&played<4\)return null/);
+  assert.match(html, /thirdAnnexNote:"第三名对位按 FIFA Annex C/);
 });
 
 test("round-by-round simulation is visually prioritized", () => {
