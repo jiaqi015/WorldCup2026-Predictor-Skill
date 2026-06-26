@@ -518,12 +518,13 @@ test("knockout tab renders the bracket itself before all groups finish", () => {
   assert.match(html, /function seedSlotName\(seed,role\)/);
   assert.match(html, /function seedSlotPrimary\(seed,role\)/);
   assert.match(html, /function seedSlotDetail\(seed,role\)/);
+  assert.match(html, /function seedSlotKind\(seed,role\)/);
   assert.match(html, /resolveKOSlot\(m\.h,st,t3,complete\)/);
   assert.match(html, /hSeed:m\.h,aSeed:m\.a/);
   assert.match(html, /\.ko-progress-chip\{/);
   assert.match(html, /\.bk-row\.is-seed \.seed-token/);
   assert.match(html, /seedRow\(m\.hSeed,m\.seedRole\)/);
-  assert.match(html, /if\(!r&&!pending\)/);
+  assert.match(html, /if\(canPlay&&!r&&!pending\)/);
   assert.match(html, /leaderMin>rowMax/);
   assert.match(html, /if\(!locked\)return null/);
   assert.match(html, /else t3Assign=\{\}/);
@@ -535,9 +536,10 @@ test("round-by-round simulation is visually prioritized", () => {
 });
 
 test("knockout match rows align flag, team, winner marker, and score columns", () => {
-  assert.match(html, /\.bk-row\{display:grid;grid-template-columns:18px minmax\(0,1fr\) 12px 24px/);
+  assert.match(html, /\.bk-row\{display:grid;grid-template-columns:22px minmax\(0,1fr\) 12px 22px/);
   assert.match(html, /\.bk-copy\{min-width:0;display:flex;flex-direction:column/);
   assert.match(html, /\.seed-sub\{display:block;overflow:hidden;text-overflow:ellipsis/);
+  assert.match(html, /\.bk-row\.is-seed \.seed-token\{width:22px;height:18px/);
   assert.match(html, /\.bk-row \.win-mark\{[^}]*justify-content:center/);
   assert.match(html, /\.bk-row \.win-mark\.on\{opacity:\.82\}/);
   assert.match(html, /\.bk-row \.sc\{[^}]*text-align:right/);
@@ -551,14 +553,30 @@ test("knockout match rows align flag, team, winner marker, and score columns", (
 });
 
 test("pending knockout seed rows split slot labels from source details", () => {
-  assert.match(html, /\.bk>\.bk-round:first-child,\.bk>\.bk-round:last-child\{min-width:170px/);
+  assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex/);
+  assert.match(html, /\.bk-round\{display:flex;flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
+  assert.match(html, /\.bk-round\.final-col\{flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
+  assert.match(html, /\.bk-m\.is-preview\{height:var\(--bk-preview-h\);justify-content:space-between\}/);
+  assert.match(html, /\.bk\{--bk-card-w:136px;--bk-preview-h:84px\}/);
+  assert.match(html, /\.bk\{--bk-card-w:144px;--bk-preview-h:92px\}/);
+  assert.doesNotMatch(html, /\.bk>\.bk-round:first-child,\.bk>\.bk-round:last-child\{min-width:/);
   assert.match(html, /\.bk-vs\+\.bk-row\{margin-top:2px\}/);
   assert.match(html, /function seedShort\(seed\)\{return seed&&seed\.indexOf\("3_"\)===0\?"3":\(\//);
   assert.match(html, /seed\.charAt\(1\)\+seed\.charAt\(0\):seed/);
   assert.match(html, /seedDirectCompact:"\{group\}第\{rank\}"/);
   assert.match(html, /seedThirdPrimary:"第三名"/);
   assert.match(html, /seedThirdDetail:"候选 \{groups\}"/);
+  assert.match(html, /if\(role==="loser"\|\|role==="winner"\)return "advancer"/);
+  assert.match(html, /return '<div class="bk-row is-seed is-'\+kind\+'/);
+  assert.match(html, /\.bk-row\.is-direct \.seed-token\{color:var\(--ink-medium\)\}/);
+  assert.match(html, /\.bk-row\.is-third \.seed-token\{background:rgba\(229,181,71,0\.12\)/);
   assert.match(html, /var detail=seedSlotDetail\(seed,role\)/);
+  assert.match(html, /function bkRound\(title,matches,cp,canPlay\)/);
+  assert.match(html, /bkMatch\(matches\[i\],cp,canPlay\)/);
+  assert.match(html, /function bkMatch\(m,cp,canPlay\)/);
+  assert.match(html, /canPlay=!!canPlay/);
+  assert.match(html, /\+\(canPlay\?"":" is-preview"\)\+/);
+  assert.match(html, /if\(canPlay&&!r&&!pending\)/);
   assert.ok(html.includes('<span class="seed-token">\'+escHtml(seedShort(seed))+\'</span><span class="bk-copy"><span class="name">\'+escHtml(seedSlotPrimary(seed,role))'));
   assert.ok(html.includes('<span class="seed-sub">\'+escHtml(detail)+\'</span>'));
 });
