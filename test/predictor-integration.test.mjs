@@ -106,10 +106,31 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
   assert.match(html, /function koDecisionText\(rec\)/);
   assert.match(html, /class="bk-decision"/);
   assert.match(html, /decidedBy==="shootout"/);
+  assert.match(html, /period:event\.period/);
   assert.match(html, /var SHARE_STATE_VERSION=3/);
   assert.match(html, /data\.v===SHARE_STATE_VERSION\|\|data\.v===2/);
   assert.match(html, /meta=\{ht:tIdx\(ks\.ht\),at:tIdx\(ks\.at\),decidedBy:ks\.decidedBy\|\|"regulation"/);
   assert.match(html, /r\.decidedBy&&r\.decidedBy!=="regulation"/);
+});
+
+test("simulated group and knockout matches open a unified timeline detail modal", () => {
+  assert.match(html, /detailButton:"详情"/);
+  assert.match(html, /detailSourceSimulation:"模拟比赛"/);
+  assert.match(html, /function renderMatchDetailModal\(model\)/);
+  assert.match(html, /class="modal match-detail-modal"/);
+  assert.match(html, /function timelineFromActual\(matchId,actual,home,away\)/);
+  assert.match(html, /function timelineFromGoalLog\(log,scoringTeam,sourceLabel\)/);
+  assert.match(html, /goalLogPairs\(log\|\|\[\]\)/);
+  assert.match(html, /function openGroupMatchDetail\(gk,mi\)/);
+  assert.match(html, /timelineFromGoalLog\(m\.hg,m\.h,source\)\.concat\(timelineFromGoalLog\(m\.ag,m\.a,source\)\)/);
+  assert.match(html, /function openKOMatchDetail\(id,ht,at,hSeed,aSeed,seedRole\)/);
+  assert.match(html, /var detailClick='openKOMatchDetail/);
+  assert.ok(html.includes('<button class="bk-detail" onclick="\'+detailClick+\'">'));
+  assert.match(html, /renderShootoutDetail\(model\)/);
+  assert.match(html, /shootout\.kicks\.length/);
+  assert.match(html, /detailPenalty:"点球"/);
+  assert.match(html, /detailExtraTime:"加时"/);
+  assert.match(html, /detailShootout:"点球大战"/);
 });
 
 test("group quick actions expose draw selection", () => {
@@ -615,7 +636,7 @@ test("knockout match rows align flag, team, winner marker, and score columns", (
 
 test("pending knockout seed rows split slot labels from source details", () => {
   assert.match(html, /\.bk-wrap\{overflow-x:auto;padding:16px clamp\(8px,2vw,24px\) 40px/);
-  assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;min-width:min-content;margin:0 auto\}/);
+  assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;width:max-content;min-width:max-content;margin:0 auto\}/);
   assert.match(html, /\.bk-round\{display:flex;flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\)/);
   assert.match(html, /\.bk-round\.final-col\{flex:0 0 var\(--bk-card-w\);width:var\(--bk-card-w\);min-width:0;padding:0;justify-content:center/);
   assert.match(html, /\.bk-m\.is-preview\{height:var\(--bk-preview-h\);justify-content:space-between\}/);
@@ -650,6 +671,12 @@ test("pending knockout seed rows split slot labels from source details", () => {
   assert.doesNotMatch(html, /<span class="win-mark"><\/span><span class="sc"><\/span><\/div>';\n\}/);
 });
 
+test("knockout bracket shrink-wraps so wide screens center the full chart", () => {
+  assert.match(html, /\.bk\{[^}]*width:max-content;min-width:max-content;margin:0 auto/);
+  assert.doesNotMatch(html, /\.bk\{[^}]*min-width:min-content/);
+  assert.match(html, /function centerKnockoutScroll\(el\)\{/);
+});
+
 test("knockout cards show source groups only in round-of-32 metadata", () => {
   assert.match(html, /function koGroupMeta\(ht,at\)/);
   assert.match(html, /function koShowsGroupMeta\(id\)\{return id&&id\.charAt\(0\)==="R";\}/);
@@ -658,6 +685,10 @@ test("knockout cards show source groups only in round-of-32 metadata", () => {
   assert.match(html, /var KO_SCHEDULE_INDEX=null/);
   assert.match(html, /function buildKOScheduleIndex\(\)/);
   assert.match(html, /function getKOMatchSchedule\(id\)/);
+  assert.match(html, /function koScheduleLabelMatchesSeed\(label,seed\)/);
+  assert.match(html, /var group=TEAM_GROUP\[label\]/);
+  assert.match(html, /function koFindRIdForScheduleMatch\(match\)/);
+  assert.match(html, /if\(!rid\)rid=koFindRIdForScheduleMatch\(m\)/);
   assert.match(html, /function koMatchMeta\(m,ht,at\)/);
   assert.ok(html.includes("var s=getKOMatchSchedule(m.id);"));
   assert.ok(html.includes('var time=s&&s.date?formatMatchTime(s.date):(LANG==="en"?"Time TBD":"时间待定");'));
