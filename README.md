@@ -5,6 +5,8 @@
 <p align="center">
   <a href="https://www.cameraclaw.cn/2026"><strong>Live Demo</strong></a>
   ·
+  <a href="#why-star-this">Why Star This</a>
+  ·
   <a href="#choose-your-path">Choose Your Path</a>
   ·
   <a href="#screenshots">Screenshots</a>
@@ -20,6 +22,7 @@
   <img src="https://img.shields.io/badge/World_Cup_2026-48_teams-d6aa48?style=for-the-badge">
   <img src="https://img.shields.io/badge/Matches-104-111827?style=for-the-badge">
   <img src="https://img.shields.io/badge/App-single_file_HTML-0f766e?style=for-the-badge">
+  <img src="https://img.shields.io/badge/ESPN-live_results-991b1b?style=for-the-badge">
   <img src="https://img.shields.io/badge/Codex-Skill-2563eb?style=for-the-badge">
   <img src="https://img.shields.io/badge/License-MIT-64748b?style=for-the-badge">
 </p>
@@ -30,7 +33,7 @@
   </a>
 </p>
 
-This is not just a champion picker. It is a full tournament workspace: simulate 48 teams, override the matches you care about, watch the bracket unfold, inspect scorer stories, share a champion poster, and use the bundled Codex skill when you want the data and app checked instead of guessed.
+Looking for a 2026 FIFA World Cup predictor, World Cup 2026 bracket simulator, or shareable football prediction game? This repo is not just a champion picker. It is a full tournament workspace: simulate 48 teams, override the matches you care about, watch the bracket unfold, inspect scorer stories, share a champion poster, and use the bundled Codex skill when you want the data and app checked instead of guessed.
 
 | Surface | Use it when you want to | Start |
 | --- | --- | --- |
@@ -38,6 +41,24 @@ This is not just a champion picker. It is a full tournament workspace: simulate 
 | Codex Skill mode | Let Codex launch the app, guide a prediction, fetch live ESPN context, score a bracket, or audit the repo before release. | Use `$world-cup-2026-predictor` |
 
 It is an unofficial fan and software project. It is not affiliated with FIFA, and it is not betting advice.
+
+## Why Star This
+
+- You want a no-login 2026 FIFA World Cup bracket that people can open, play, and share quickly.
+- You want a small static app that still carries real data contracts: ESPN snapshots, match venues, rankings, odds completions, scorers, assists, extra time, shootouts, and validation scripts.
+- You want a concrete Codex skill example: not a README wrapper, but a runnable skill with launch, live-result, scoring, freshness, maintenance, and release-check workflows.
+- You want a benchmark target for football prediction projects: `Random baseline`, `Strength model`, and `Ensemble model` are exposed in the UI and validated in tests.
+
+Useful GitHub search phrases for this repo:
+
+```text
+2026 FIFA World Cup predictor
+World Cup 2026 bracket simulator
+FIFA World Cup bracket predictor
+football prediction game
+Codex skill example
+ESPN soccer scoreboard parser
+```
 
 ## What Makes It Fun
 
@@ -76,6 +97,8 @@ Open the current public build:
 [https://www.cameraclaw.cn/2026](https://www.cameraclaw.cn/2026)
 
 The app is static. All prediction state lives in the browser through local storage or URL hashes. No backend is required for normal play.
+
+If the project helps you run a bracket night, test a football model, or build a Codex skill, star the repo so it is easier for other World Cup and agent-tooling people to find.
 
 ## Screenshots
 
@@ -334,6 +357,7 @@ python3 scripts/verify_public_deployment.py --base-url https://www.cameraclaw.cn
 │   └── scripts/
 ├── test/
 ├── CHANGELOG.md
+├── CONTRIBUTING.md
 ├── RELEASING.md
 ├── LICENSE
 └── NOTICE.md
@@ -355,6 +379,17 @@ Key files:
 | `scripts/release_check.py` | Main release validation gate |
 | `scripts/embed_prediction_data.py` | Embeds generated data into `index.html` |
 | `scripts/manage_local_preview.sh` | Persistent local preview manager |
+
+## Community And Growth
+
+This project grows best through useful proof, not spam links.
+
+- If you find a bracket-placement, venue, odds, scorer, translation, or ESPN mapping issue, open an issue with the fixture/team and a source link.
+- If you compare this with another World Cup predictor, share the concrete difference: format coverage, bracket topology, scoring, data source, or validation.
+- If you mention the project in another repository, only do it when it directly answers a question, fixes a bug, or contributes a reusable reference.
+- Do not post generic "check my repo" comments. They hurt trust and make the project look weaker.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/promotion-strategy.md](docs/promotion-strategy.md).
 
 ## Research Corpus
 
@@ -404,7 +439,7 @@ See [RELEASING.md](RELEASING.md) for semantic versioning, plugin publishing, and
 
 ## 中文说明
 
-这不是一个只填冠军的小玩具。它是一套完整的 2026 世界杯预测工作台：你可以直接在网页里跑完 104 场比赛，也可以让 Codex 作为 skill 帮你查赛果、解释计分、检查数据、验证发布。
+如果你在找 2026 FIFA World Cup predictor、世界杯 2026 淘汰赛模拟器、足球预测游戏、Codex skill 示例，这个项目就是为这些搜索场景做的。它不是一个只填冠军的小玩具，而是一套完整的 2026 世界杯预测工作台：你可以直接在网页里跑完 104 场比赛，也可以让 Codex 作为 skill 帮你查赛果、解释计分、检查数据、验证发布。
 
 你打开它之后可以做这些事：
 
@@ -471,6 +506,8 @@ git diff --check
 ```
 
 预测结果仅用于娱乐和软件实验，不构成事实预测或投注建议。
+
+如果这个项目对你有用，欢迎 star、fork，或者提交数据/赛程/翻译问题。真正有用的反馈比泛泛宣传更能帮项目传播。
 
 ## Credits
 

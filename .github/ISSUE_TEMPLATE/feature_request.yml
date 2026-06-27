@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest a product, model, data, or Codex skill improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should improve?
+      description: Describe the user problem and the desired behavior.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Browser app
+        - Prediction model
+        - Data pipeline
+        - Codex skill
+        - README or docs
+        - Sharing / poster
+        - Mobile UX
+  - type: textarea
+    id: proof
+    attributes:
+      label: Why is this useful?
+      description: Add examples, screenshots, references, or comparable tools.
+

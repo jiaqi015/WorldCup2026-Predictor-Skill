@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a broken app, bracket, scorer, share, or skill flow.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / device
+      placeholder: "Chrome 126 on macOS, Safari on iPhone, etc."
+  - type: input
+    id: mode
+    attributes:
+      label: Mode and model
+      placeholder: "Standard + Strength model"
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open the live demo\n2. Simulate groups\n3. Click ..."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshot, share link, or console output
+      description: Add anything that helps reproduce the issue.
+
