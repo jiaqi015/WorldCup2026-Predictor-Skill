@@ -98,6 +98,9 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
   assert.match(html, /ownGoal:isOwn/);
   assert.match(html, /event\.type==="penalty_goal"/);
   assert.match(html, /if\(s\.ownGoal\)continue/);
+  assert.match(html, /function pushAutoGoalFromEvent\(target,event,scoringTeam,opponentTeam,mid\)\{/);
+  assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)return/);
+  assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)continue/);
   assert.match(html, /PredictionEngine\.simulateKnockoutMatch\(/);
   assert.match(html, /ht:ht,at:at/);
   assert.match(html, /decidedBy:sim\.decidedBy/);
@@ -115,9 +118,19 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
 
 test("simulated group and knockout matches open a unified timeline detail modal", () => {
   assert.match(html, /detailButton:"详情"/);
-  assert.match(html, /detailSourceSimulation:"模拟比赛"/);
+  assert.match(html, /detailButtonSimulation:"模拟详情"/);
+  assert.match(html, /function detailButtonLabel\(isSimulation\)/);
+  assert.match(html, /detailButtonLabel\(m&&m\.predictionSource==="sim"\)/);
+  assert.match(html, /var detailLabel=detailButtonLabel\(\!\!r\);/);
+  assert.match(html, /detailSourceSimulation:"模拟生成"/);
   assert.match(html, /function renderMatchDetailModal\(model\)/);
   assert.match(html, /class="modal match-detail-modal"/);
+  assert.match(html, /class="match-detail-shell"/);
+  assert.match(html, /function detailSummaryHTML\(model\)/);
+  assert.match(html, /\.modal\.match-detail-modal\{[^}]*max-width:none/);
+  assert.match(html, /\.modal\.match-detail-modal\{[^}]*width:min\(860px,calc\(100vw - 28px\)\)/);
+  assert.match(html, /\.match-detail-shell\{[^}]*grid-template-columns:260px minmax\(0,1fr\)/);
+  assert.match(html, /\.detail-timeline\{[^}]*max-height:min\(58vh,560px\)/);
   assert.match(html, /function timelineFromActual\(matchId,actual,home,away\)/);
   assert.match(html, /function timelineFromGoalLog\(log,scoringTeam,sourceLabel\)/);
   assert.match(html, /goalLogPairs\(log\|\|\[\]\)/);
@@ -137,8 +150,18 @@ test("match detail timelines render non-scoring events from the unified event st
   assert.match(html, /detailYellowCard:"黄牌"/);
   assert.match(html, /detailRedCard:"红牌"/);
   assert.match(html, /detailSubstitution:"换人"/);
+  assert.match(html, /detailPlayerTbd:"球员待确认"/);
+  assert.match(html, /detailBenchTbd:"替补待确认"/);
   assert.match(html, /function safePlayerName\(player\)/);
-  assert.match(html, /s==="undefined"\|\|s==="null"/);
+  assert.doesNotMatch(html, /return LANG==="en"\?"Unknown":"未记录"/);
+  assert.match(html, /function detailPlayerName\(player,team,fallback\)/);
+  assert.match(html, /detailPlayerName\(e\.player,team,T\("detailPlayerTbd"\)\)/);
+  assert.match(html, /detailPlayerName\(e\.outPlayer,team,T\("detailPlayerTbd"\)\)/);
+  assert.match(html, /detailPlayerName\(e\.inPlayer,team,T\("detailBenchTbd"\)\)/);
+  assert.match(html, /function detailEventPeriodText\(event\)/);
+  assert.match(html, /sub=detailEventPeriodText\(e\);/);
+  assert.doesNotMatch(html, /badges\.push\(\{text:T\("detailYellowCard"\)/);
+  assert.doesNotMatch(html, /badges\.push\(\{text:T\("detailSubstitution"\)/);
   assert.match(html, /function isTimelineScoringEvent\(event\)/);
   const rawTimeline = html.match(/function timelineFromRawEvents\(events,home,away,sourceLabel\)\{([\s\S]*?)\n\}/);
   assert.ok(rawTimeline, "raw event timeline adapter must exist");
@@ -153,11 +176,19 @@ test("stats and share poster expose tournament awards derived from match events"
   assert.match(html, /function computeTournamentAwards\(\)/);
   assert.match(html, /PredictionEngine\.deriveTournamentAwards/);
   assert.match(html, /function renderAwardsPanel\(awards\)/);
+  assert.match(html, /awardPanelTitle:"奖项"/);
+  assert.doesNotMatch(html, /awardPanelTitle:"模拟奖项"/);
   assert.match(html, /awardGoldenBoot:"金靴"/);
   assert.match(html, /awardGoldenGlove:"金手套"/);
   assert.match(html, /awardGoldenBall:"金球"/);
   assert.match(html, /awardFairPlay:"公平竞赛"/);
+  assert.match(html, /function awardIconHTML\(kind\)/);
+  assert.match(html, /function awardAvatarHTML\(name,team\)/);
+  assert.match(html, /function awardCountryHTML\(team\)/);
   assert.match(html, /class="award-panel"/);
+  assert.match(html, /class="award-logo /);
+  assert.match(html, /class="award-avatar"/);
+  assert.match(html, /class="award-country"/);
   assert.match(html, /class="poster-awards"/);
   assert.match(html, /buildPosterAwardsHTML\(computeTournamentAwards\(\)\)/);
 });
@@ -212,10 +243,49 @@ test("group match team names show FIFA ranking badges", () => {
   assert.match(html, /fifaRankTitle:"FIFA 世界排名 #\{rank\}"/);
   assert.match(html, /fifaRankTitle:"FIFA rank #\{rank\}"/);
   assert.match(html, /function teamNameHTML\(team\)/);
+  assert.match(html, /function teamNameHTML\(team\)\{return teamProfileInline\(team,"match-team-chip"\)/);
   assert.match(html, /class="team-rank"/);
   assert.match(html, /teamNameHTML\(m\.h\)/);
   assert.match(html, /teamNameHTML\(m\.a\)/);
   assert.match(html, /\.team-rank\{[^}]*white-space:nowrap/);
+});
+
+test("team profile opens from team surfaces and keeps facts source-aware", () => {
+  assert.match(html, /var TEAM_TACTICAL_PROFILES=\{/);
+  assert.match(html, /function teamProfileInline\(team,extraClass\)/);
+  assert.match(html, /function openTeamProfile\(team,ev\)/);
+  assert.match(html, /ev\.preventDefault\(\);ev\.stopPropagation\(\)/);
+  assert.match(html, /window\.scrollTo\(sx,sy\)/);
+  assert.match(html, /window\.setTimeout\(function\(\)\{window\.scrollTo\(sx,sy\);\},80\)/);
+  assert.match(html, /function buildTeamProfile\(team\)/);
+  assert.match(html, /function teamProfileRecord\(team\)/);
+  assert.match(html, /function teamProfileSquadSections\(team\)/);
+  assert.match(html, /function teamProfileMatchRows\(team\)/);
+  assert.match(html, /function renderTeamProfileModal\(profile\)/);
+  assert.match(html, /teamProfileCoachUnknown:"待补充"/);
+  assert.match(html, /teamProfileFormationUnknown:"待补充"/);
+  assert.match(html, /teamProfileDataNote:"主教练和阵型只显示有来源的资料/);
+  assert.match(html, /class="modal team-profile-modal"/);
+  assert.match(html, /class="team-profile-hero"/);
+  assert.match(html, /class="team-profile-pitch"/);
+  assert.match(html, /class="team-profile-section roster"/);
+  assert.match(html, /teamProfileInline\(t\.t/);
+  assert.match(html, /teamNameHTML\(m\.h\)/);
+  assert.match(html, /teamNameHTML\(m\.a\)/);
+  assert.match(html, /teamProfileInline\(team,"bk-team-chip"\)/);
+});
+
+test("team profile design uses a scouting-board layout instead of generic cards", () => {
+  assert.match(html, /\.team-profile-modal\{[^}]*width:min\(980px,calc\(100vw - 24px\)\)/);
+  assert.match(html, /\.modal\.team-profile-modal\{[^}]*width:min\(980px,calc\(100vw - 24px\)\)/);
+  assert.match(html, /\.team-profile-body\{[^}]*grid-template-columns:minmax\(280px,0\.9fr\) minmax\(0,1\.35fr\)/);
+  assert.match(html, /\.team-profile-pitch\{[^}]*linear-gradient\(180deg,rgba\(11,90,55,0\.92\),rgba\(6,61,40,0\.96\)\)/);
+  assert.match(html, /\.team-profile-pitch::before/);
+  assert.match(html, /\.team-profile-matches\{[^}]*max-height:320px/);
+  assert.match(html, /\.team-chip-inline\{[^}]*background:transparent/);
+  assert.match(html, /@media\(max-width:760px\)\{\.team-profile-body\{grid-template-columns:1fr\}/);
+  assert.doesNotMatch(html, /\.team-profile-[^{]+\{[^}]*border-left:\s*[2-9]/);
+  assert.doesNotMatch(html, /background-clip:text/);
 });
 
 test("manual scorer picker uses full squad candidates grouped by position", () => {
@@ -386,6 +456,7 @@ test("poster sharing emphasizes URL and keeps modal actions plain", () => {
   assert.match(html, /btnCopyLink:"复制链接（本次模拟完整方案）"/);
   assert.match(html, /btnCopyShort:"复制"/);
   assert.match(html, /btnShare:"分享我的专属预测 海报&链接"/);
+  assert.match(html, /btnShareLocked:"完成淘汰赛后分享"/);
   assert.match(html, /posterModalActionHint:"复制链接给朋友，邀请她也来预测"/);
   assert.match(html, /posterModalTitle:"分享预测结果"/);
   assert.doesNotMatch(html, /<div class="share-result-kicker">/);
@@ -449,11 +520,22 @@ test("shared prediction links use a shorter schedule hash while preserving old l
 });
 
 test("share actions guide clicks and keep long copy text readable", () => {
+  assert.match(html, /id="globalActions"/);
+  assert.match(html, /function shareBrandIcon\(\)/);
+  assert.match(html, /class="share-brand-icon"/);
+  assert.match(html, /<text class="year" x="32" y="58" text-anchor="middle">26<\/text>/);
+  assert.match(html, /function renderGlobalShareBar\(ready\)/);
+  assert.match(html, /var cls="btn-rand share-cta"\+\(ready\?"":" dim"\)/);
+  assert.match(html, /var action=ready\?' onclick="genShareCard\(\)"':' disabled aria-disabled="true"/);
+  assert.match(html, /if\(ge\)ge\.innerHTML=renderGlobalShareBar\(knockoutDone\);/);
+  assert.doesNotMatch(html, /var shareBtn=koDone/);
   assert.match(html, /\.share-cta\{[^}]*animation:shareCtaPulse/);
   assert.match(html, /\.share-cta\{[^}]*white-space:normal/);
+  assert.doesNotMatch(html, /@keyframes shareCtaPulse\{[^}]*transform:/);
   assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.share-cta\{animation:none\}\}/);
   assert.match(html, /body\.dark \.share-cta/);
-  assert.match(html, /class="btn-rand share-cta" onclick="genShareCard\(\)"/);
+  assert.match(html, /\.global-sharebar button\{[^}]*display:inline-flex/);
+  assert.match(html, /\.share-cta\.dim\{[^}]*animation:none/);
   assert.match(html, /\.share-copy-btn\{[^}]*white-space:normal/);
   assert.match(html, /\.share-url-row\{[^}]*grid-template-columns:minmax\(0,1fr\) 44px/);
   assert.match(html, /\.share-url-copy\{[^}]*min-height:54px/);
@@ -647,6 +729,8 @@ test("round-by-round simulation is visually prioritized", () => {
 test("knockout match rows align flag, team, winner marker, and score columns", () => {
   assert.match(html, /\.bk-row\{display:grid;grid-template-columns:22px minmax\(0,1fr\) 12px 22px/);
   assert.match(html, /\.bk-row\.is-seed\{grid-template-columns:22px minmax\(0,1fr\);column-gap:7px\}/);
+  assert.match(html, /\.bk-team-wrap\{grid-column:1\/3;min-width:0;display:flex;flex-direction:column;align-items:flex-start\}/);
+  assert.match(html, /\.bk-team-chip\{grid-column:1\/3;justify-content:flex-start;width:100%;max-width:100%;gap:5px\}/);
   assert.match(html, /\.bk-copy\{min-width:0;display:flex;flex-direction:column/);
   assert.match(html, /\.seed-sub\{display:block;overflow:hidden;text-overflow:ellipsis/);
   assert.match(html, /\.bk-row\.is-seed \.seed-token\{width:22px;height:18px/);
@@ -658,7 +742,7 @@ test("knockout match rows align flag, team, winner marker, and score columns", (
   assert.match(html, /\.bk-m\.is-final \.bk-row\{padding-left:6px;padding-right:6px\}/);
   assert.match(html, /\.bk-m\.is-final \.bk-row\.is-cp\{margin:0\}/);
   assert.match(html, /function teamRow\(team,isCp,won,score,seed,role\)/);
-  assert.ok(html.includes('<span class="bk-copy"><span class="name\'+(won?" w":"")'));
+  assert.ok(html.includes('<span class="bk-team-wrap">\'+teamProfileInline(team,"bk-team-chip")'));
   assert.ok(html.includes('<span class="seed-sub">\'+escHtml(sub)+\'</span>'));
   assert.match(html, /<span class="win-mark'\+\(won\?" on":""\)\+'">✓<\/span><span class="sc">'\+score\+'<\/span>/);
 });
