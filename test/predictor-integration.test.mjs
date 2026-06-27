@@ -88,10 +88,28 @@ test("scorer generation applies separate goal and assist threat multipliers", ()
   assert.match(html, /function weightedPick\(players,team,weights,fallback,type\)/);
   assert.match(html, /threatMap\[team\+"\|"\+p\]/);
   assert.match(html, /var entry=tEntry\|\|threatMap\[p\]/);
-  assert.match(html, /weightedPick\(hp,m\.h,GOAL_W,3,"goal"\)/);
-  assert.match(html, /weightedPick\(pool,m\.h,ASSIST_W,3,"assist"\)/);
-  assert.match(html, /weightedPick\(hp,ht,GOAL_W,3,"goal"\)/);
-  assert.match(html, /weightedPick\(pool,ht,ASSIST_W,3,"assist"\)/);
+  assert.match(html, /weightedPick\(pool,playerTeam,GOAL_W,3,"goal"\)/);
+  assert.match(html, /weightedPick\(assistPool,playerTeam,ASSIST_W,3,"assist"\)/);
+});
+
+test("simulation stores event-aware goal logs and knockout decisions", () => {
+  assert.match(html, /PredictionEngine\.buildScoreEvents\(hs,as,Math\.random/);
+  assert.match(html, /event\.type==="own_goal"/);
+  assert.match(html, /ownGoal:isOwn/);
+  assert.match(html, /event\.type==="penalty_goal"/);
+  assert.match(html, /if\(s\.ownGoal\)continue/);
+  assert.match(html, /PredictionEngine\.simulateKnockoutMatch\(/);
+  assert.match(html, /ht:ht,at:at/);
+  assert.match(html, /decidedBy:sim\.decidedBy/);
+  assert.match(html, /shootout:sim\.shootout/);
+  assert.match(html, /function koWinScoreText\(rec,champ\)/);
+  assert.match(html, /function koDecisionText\(rec\)/);
+  assert.match(html, /class="bk-decision"/);
+  assert.match(html, /decidedBy==="shootout"/);
+  assert.match(html, /var SHARE_STATE_VERSION=3/);
+  assert.match(html, /data\.v===SHARE_STATE_VERSION\|\|data\.v===2/);
+  assert.match(html, /meta=\{ht:tIdx\(ks\.ht\),at:tIdx\(ks\.at\),decidedBy:ks\.decidedBy\|\|"regulation"/);
+  assert.match(html, /r\.decidedBy&&r\.decidedBy!=="regulation"/);
 });
 
 test("group quick actions expose draw selection", () => {

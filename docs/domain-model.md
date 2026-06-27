@@ -18,6 +18,8 @@ runtime state:
 - `Squad` and `PlayerPosition` in `PL`, `POS`, and the 26-player source data.
 - `BracketSlot` and `StageTopology` in `R32D`, `R16P`, `QFP`, and `SFP`.
 - `MatchEvent` in scorer and assist logs.
+- `MatchSimulation`, `MatchEvent`, and `KnockoutDecision` in
+  `PredictionEngine` event-first simulations.
 - `ActualResult` in `ACTUAL_RESULTS`.
 - `PredictionRun` in `gm`, `ko`, local storage, and share payloads.
 - `PredictionStrategy` and `GameplayMode` in the engine registries.
@@ -180,6 +182,37 @@ impact, and market probability directly on `Team`.
 
 `Prediction` should be immutable. A new injury or result creates another
 `ModelRun` and `Prediction`, linked to the prior version.
+
+### Match Simulation Events
+
+The simulator should treat the event log as the source of truth for goals.
+Final score, scorers, assists, and knockout winners are derived from events
+instead of inventing scorers after a scoreline is chosen.
+
+`MatchEvent` scoring types:
+
+- `goal`: open-play or set-piece goal. Counts for the scoring player and may
+  have an assist.
+- `penalty_goal`: in-match penalty goal. Counts for the taker, has no assist.
+- `own_goal`: credits the score to the opponent but does not count as a personal
+  goal for the defender.
+
+`MatchSimulation` stores regular-time score, event minutes, and final score.
+It also preserves the original home/away matchup sides. Winner/loser plus
+score is not enough once a shootout can leave the official scoreline level.
+`KnockoutDecision` adds:
+
+- `regulation`: 90-minute score.
+- `extraTime`: 30-minute extra-time score when regulation is level.
+- `shootout`: kicks from the penalty mark when extra time remains level.
+- `decidedBy`: `regulation`, `extraTime`, or `shootout`.
+
+Shootout kicks decide advancement only. They must not enter the official
+scoreline, scorer leaderboard, or assist leaderboard.
+
+Compact share URLs may use the older winner/loser shape only for regulation
+wins. Extra-time and shootout decisions require the full state payload so the
+winner, official scoreline, and shootout score survive round-trips.
 
 ### Feedback And Governance
 

@@ -30,12 +30,15 @@ Preserve these invariants:
 - 16 round-of-32 matches and 104 tournament matches overall.
 - Exactly 11 simulation players per team.
 - Every team has flag, English-name, roster, and position mappings.
-- A knockout match cannot finish level.
+- A knockout match must resolve a winner. Its official scoreline may remain
+  level only when advancement is decided by a shootout.
 
 ## Runtime State
 
 - `gm`: group predictions.
-- `ko`: knockout predictions.
+- `ko`: knockout predictions. New records should preserve original matchup
+  sides as `ht` and `at`; `w/l/h/a` alone is not enough to reconstruct
+  shootout-level ties.
 - `slog`: scorer and assist events.
 - `predictionMode`: random baseline, consolidated strength model, or
   uncertainty-calibrated ensemble model. Legacy `odds` and `worldRanking`

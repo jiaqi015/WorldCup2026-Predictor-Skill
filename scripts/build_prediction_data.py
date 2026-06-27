@@ -259,18 +259,24 @@ def main():
 
         matches.append(match_record)
 
+    scoring_event_types = {"goal", "penalty_goal", "own_goal"}
     actual_match_events = []
     for match_id, detail in match_details.items():
         for event_index, event in enumerate(detail.get("events", [])):
-            if event.get("type") != "goal":
+            event_type = event.get("type")
+            if event_type not in scoring_event_types:
                 continue
             record = {
-                "event_id": f"{match_id}:goal:{event_index}",
+                "event_id": f"{match_id}:{event_type}:{event_index}",
                 "match_id": match_id,
-                "event_type": "goal",
+                "event_type": event_type,
                 "minute": event.get("minute"),
                 "team_side": event.get("team"),
                 "team_cn": event.get("team_cn"),
+                "scoring_team_cn": event.get("scoring_team_cn") or event.get("team_cn"),
+                "player_team_cn": event.get("player_team_cn") or event.get("scorer_team_cn"),
+                "own_goal": bool(event.get("own_goal")),
+                "penalty_kick": bool(event.get("penalty_kick")),
                 "player_source_name": event.get("scorer_source_name"),
                 "player_display_name_cn": event.get("scorer_cn"),
                 "player_app_alias": event.get("scorer_app_alias"),

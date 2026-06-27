@@ -161,7 +161,7 @@ test("chaos gameplay shifts strength-mode probability toward the underdog", () =
   assert.ok(chaos.away > normal.away);
 });
 
-test("simulated knockout scores never draw and match the sampled outcome", () => {
+test("winner-only match simulations never draw and match the sampled outcome", () => {
   const engine = loadPredictionEngine();
   const result = engine.simulateMatch({
     predictionMode: "strength",
@@ -184,6 +184,73 @@ test("simulated knockout scores never draw and match the sampled outcome", () =>
   assert.ok(result.halfTimeScore.away <= result.awayGoals);
   assert.ok(Array.isArray(result.events));
   assert.ok(Array.isArray(result.explain));
+});
+
+test("goal events are the score source of truth and support own goals", () => {
+  const engine = loadPredictionEngine();
+  const events = engine.buildScoreEvents(1, 0, fixedRng([0.1, 0.01, 0.8]), {
+    ownGoalShare: 1,
+    penaltyGoalShare: 0,
+  });
+
+  assert.equal(events.length, 1);
+  assert.equal(events[0].type, "own_goal");
+  assert.equal(events[0].team, "home");
+  assert.equal(events[0].scoringTeam, "home");
+  assert.equal(events[0].playerTeam, "away");
+  assert.equal(events[0].period, "regular");
+  assert.deepEqual(engine.deriveScorelineFromEvents(events), { home: 1, away: 0 });
+});
+
+test("penalty goals are explicit match events, not plain goals", () => {
+  const engine = loadPredictionEngine();
+  const events = engine.buildScoreEvents(1, 0, fixedRng([0.2, 0.6, 0.01]), {
+    ownGoalShare: 0,
+    penaltyGoalShare: 1,
+  });
+
+  assert.equal(events.length, 1);
+  assert.equal(events[0].type, "penalty_goal");
+  assert.equal(events[0].team, "home");
+  assert.equal(events[0].assist, null);
+  assert.deepEqual(engine.deriveScorelineFromEvents(events), { home: 1, away: 0 });
+});
+
+test("knockout simulation models regulation, extra time, and shootout resolution", () => {
+  const engine = loadPredictionEngine();
+  const extraTimeWin = engine.simulateKnockoutMatch({
+    homeTeam: "强队",
+    awayTeam: "中队",
+    regulationScoreline: { home: 0, away: 0 },
+    extraTimeScoreline: { home: 1, away: 0 },
+    rng: fixedRng([0.2, 0.7, 0.4, 0.9]),
+  });
+
+  assert.equal(extraTimeWin.decidedBy, "extraTime");
+  assert.deepEqual(extraTimeWin.regulation, { home: 0, away: 0 });
+  assert.deepEqual(extraTimeWin.extraTime, { home: 1, away: 0 });
+  assert.deepEqual(extraTimeWin.scoreline, { home: 1, away: 0 });
+  assert.equal(extraTimeWin.winnerSide, "home");
+
+  const result = engine.simulateKnockoutMatch({
+    homeTeam: "强队",
+    awayTeam: "中队",
+    regulationScoreline: { home: 1, away: 1 },
+    extraTimeScoreline: { home: 0, away: 0 },
+    shootoutResult: { home: 4, away: 3 },
+    rng: fixedRng([0.2, 0.7, 0.4, 0.9]),
+  });
+
+  assert.equal(result.kind, "KnockoutPrediction");
+  assert.equal(result.decidedBy, "shootout");
+  assert.equal(result.homeGoals, result.awayGoals);
+  assert.deepEqual(result.regulation, { home: 1, away: 1 });
+  assert.deepEqual(result.extraTime, { home: 0, away: 0 });
+  assert.deepEqual(result.scoreline, { home: 1, away: 1 });
+  assert.deepEqual(result.shootout.scoreline, { home: 4, away: 3 });
+  assert.equal(result.winnerSide, "home");
+  assert.equal(result.outcome, "home");
+  assert.ok(result.events.every((event) => event.period !== "shootout"));
 });
 
 test("all prediction modes are implemented with a shared output contract", () => {

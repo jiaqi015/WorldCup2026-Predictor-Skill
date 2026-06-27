@@ -39,6 +39,9 @@
       "AgentAnalysis",
       "EvidenceClaim",
       "SimulationBatch",
+      "MatchSimulation",
+      "MatchEvent",
+      "KnockoutDecision",
       "Prediction",
       "Scenario"
     ],
@@ -123,6 +126,37 @@
       ],
       "immutable": true,
       "lineage": ["model_run_id", "evidence_claim_ids"]
+    },
+    "MatchEvent": {
+      "identity": ["id"],
+      "required": ["match_id", "event_type", "minute", "team_side"],
+      "allowed_event_types": [
+        "goal",
+        "penalty_goal",
+        "own_goal",
+        "penalty_miss",
+        "yellow_card",
+        "red_card"
+      ],
+      "lineage": ["source_id", "source_record_id"]
+    },
+    "MatchSimulation": {
+      "identity": ["id"],
+      "required": [
+        "match_id",
+        "model_run_id",
+        "home_team_id",
+        "away_team_id",
+        "regulation_score",
+        "scoreline",
+        "event_ids"
+      ],
+      "lineage": ["model_run_id", "event_ids"]
+    },
+    "KnockoutDecision": {
+      "identity": ["match_simulation_id"],
+      "required": ["match_simulation_id", "winner_team_id", "decided_by"],
+      "allowed_decided_by": ["regulation", "extraTime", "shootout"]
     },
     "UpdateEvent": {
       "identity": ["id"],

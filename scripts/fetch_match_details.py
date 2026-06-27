@@ -33,6 +33,7 @@ TEAM_CN = {
 # Player name mapping (English to project player metadata).
 PLAYER_DATA = {}
 PLAYER_DATA_NORMALIZED = {}
+SCORING_EVENT_TYPES = {"goal", "penalty_goal", "own_goal"}
 
 PLAYER_DISPLAY_CN = {
     "Julián Quiñones": "胡利安·基尼奥内斯",
@@ -168,8 +169,12 @@ def parse_key_events(key_events, home_team_id, home_team_cn, away_team_cn):
         type_id = event_type.get("id")
         type_text = event_type.get("text", "")
 
-        # Goal events (type 70 = goal, 137 = header goal)
-        if type_id in ["70", "137"]:
+        type_text_l = str(type_text or event.get("text", "")).lower()
+
+        # Goal events (type 70 = goal, 137 = header goal). Keep special goal
+        # types in the same scoring-event family so score/detail coverage stays
+        # correct when ESPN marks penalties or own goals explicitly.
+        if type_id in ["70", "137"] or "goal" in type_text_l:
             participants = event.get("participants", [])
             scorer = participants[0].get("athlete", {}).get("displayName", "") if len(participants) > 0 else ""
             assister = participants[1].get("athlete", {}).get("displayName", "") if len(participants) > 1 else None
@@ -177,18 +182,29 @@ def parse_key_events(key_events, home_team_id, home_team_cn, away_team_cn):
             team_id = event.get("team", {}).get("id", "")
             team_cn = "home" if team_id == home_team_id else "away"
             expected_team = home_team_cn if team_cn == "home" else away_team_cn
+            own_goal = bool(event.get("ownGoal")) or "own goal" in type_text_l
+            penalty_kick = (not own_goal) and (bool(event.get("penaltyKick")) or "penalty" in type_text_l)
+            player_team = (
+                away_team_cn if own_goal and team_cn == "home"
+                else home_team_cn if own_goal
+                else expected_team
+            )
 
             clock = event.get("clock", {}).get("displayValue", "")
 
             goal_event = {
-                "type": "goal",
+                "type": "own_goal" if own_goal else "penalty_goal" if penalty_kick else "goal",
                 "minute": clock,
                 "team": team_cn,
                 "team_cn": expected_team,
+                "scoring_team_cn": expected_team,
+                "player_team_cn": player_team,
+                "own_goal": own_goal,
+                "penalty_kick": penalty_kick,
                 "source": "ESPN summary API",
             }
-            add_player_fields(goal_event, "scorer", resolve_player(scorer, expected_team))
-            if assister:
+            add_player_fields(goal_event, "scorer", resolve_player(scorer, player_team))
+            if assister and not own_goal and not penalty_kick:
                 add_player_fields(goal_event, "assist", resolve_player(assister, expected_team))
 
             events.append(goal_event)
@@ -337,7 +353,7 @@ def main():
         key_events = summary.get("keyEvents", [])
         events = parse_key_events(key_events, home_team_id, home_cn, away_cn)
         expected_goal_count = home_score + away_score
-        goal_event_count = sum(1 for e in events if e.get("type") == "goal")
+        goal_event_count = sum(1 for e in events if e.get("type") in SCORING_EVENT_TYPES)
         if goal_event_count == expected_goal_count:
             goal_events_status = "complete"
         elif goal_event_count < expected_goal_count:

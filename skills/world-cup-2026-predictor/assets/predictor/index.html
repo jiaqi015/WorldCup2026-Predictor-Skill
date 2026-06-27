@@ -360,6 +360,7 @@ body.dark .ko-progress-chip{background:rgba(255,255,255,0.05);border-color:rgba(
 .bk-meta-stage{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .bk-meta-time{flex:0 0 auto;color:var(--ink-light);font-weight:780;font-variant-numeric:tabular-nums}
 .bk-meta-detail{color:var(--ink-light);font-weight:680;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.bk-decision{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;max-width:100%;margin:2px 0 0;padding:2px 5px;border-radius:999px;background:rgba(229,181,71,0.11);color:var(--accent-gold-dark);font-size:8px;font-weight:850;line-height:1;white-space:nowrap}
 .player-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .player-choice{display:flex;flex-direction:column;align-items:center;padding:8px 4px;border-radius:12px;border:2px solid var(--line-delicate);background:var(--bg-input);color:var(--ink-dark);cursor:pointer;font-family:Arial;font-size:10px;gap:4px;font-weight:600;transition:all .15s;min-width:0}
 .player-choice img,.player-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #e0e0e8}
@@ -1004,8 +1005,11 @@ function addActualPlayerFields(target,prefix,resolved){
 function getActualGoalEvents(matchId){
   var details=matchId&&typeof MATCH_DETAILS!=="undefined"?MATCH_DETAILS[matchId]:null;
   if(!details||!Array.isArray(details.events))return [];
-  return details.events.filter(function(event){return event.type==="goal";});
+  return details.events.filter(function(event){return isActualScoringEvent(event);});
 }
+function isActualScoringEvent(event){return event&&(
+  event.type==="goal"||event.type==="penalty_goal"||event.type==="own_goal"
+);}
 function getActualGoalExpectedCount(matchId,goals,actual){
   var details=matchId&&typeof MATCH_DETAILS!=="undefined"?MATCH_DETAILS[matchId]:null;
   var expected=details?Number(details.expectedGoalCount):NaN;
@@ -1024,7 +1028,7 @@ function matchDetailNeedsHydration(matchId,actual){
 }
 function isEspnGoalEvent(event){
   var type=event&&event.type?event.type:{},id=String(type.id||""),text=String(type.text||type.type||"").toLowerCase();
-  return id==="70"||id==="137"||text.indexOf("goal")>=0&&text.indexOf("own goal")<0;
+  return id==="70"||id==="137"||text.indexOf("goal")>=0;
 }
 function parseEspnSummaryDetails(summary,matchId,actual){
   ensureEN2CN();
@@ -1042,9 +1046,11 @@ function parseEspnSummaryDetails(summary,matchId,actual){
     var participants=raw.participants||[],scorer=participants[0]&&participants[0].athlete&&participants[0].athlete.displayName,assist=participants[1]&&participants[1].athlete&&participants[1].athlete.displayName;
     if(!scorer)continue;
     var teamId=raw.team&&raw.team.id,side=String(teamId)===String(homeId)?"home":"away",team=side==="home"?homeTeam:awayTeam;
-    var goal={type:"goal",minute:(raw.clock&&raw.clock.displayValue)||"",team:side,team_cn:team,source:"ESPN summary API"};
-    addActualPlayerFields(goal,"scorer",resolveEspnEventPlayer(scorer,team));
-    if(assist)addActualPlayerFields(goal,"assist",resolveEspnEventPlayer(assist,team));
+    var text=String((raw.type&&raw.type.text)||raw.text||"").toLowerCase(),ownGoal=!!raw.ownGoal||text.indexOf("own goal")>=0,penaltyKick=!ownGoal&&(!!raw.penaltyKick||text.indexOf("penalty")>=0);
+    var playerTeam=ownGoal?(side==="home"?awayTeam:homeTeam):team;
+    var goal={type:ownGoal?"own_goal":(penaltyKick?"penalty_goal":"goal"),minute:(raw.clock&&raw.clock.displayValue)||"",team:side,team_cn:team,scoring_team_cn:team,player_team_cn:playerTeam,own_goal:ownGoal,penalty_kick:penaltyKick,source:"ESPN summary API"};
+    addActualPlayerFields(goal,"scorer",resolveEspnEventPlayer(scorer,playerTeam));
+    if(assist&&!ownGoal&&!penaltyKick)addActualPlayerFields(goal,"assist",resolveEspnEventPlayer(assist,team));
     events.push(goal);
   }
   var expected=homeScore+awayScore,goalCount=events.length;
@@ -1346,13 +1352,13 @@ function loadState(){
 // Lets a friend open a URL like  https://site/#p=<encoded>  and see your prediction.
 // Format: URL-safe base64 of compact JSON. Version-tagged so we can evolve later.
 //
-// v2 format (split scorers / assisters so the leaderboard reconstructs correctly):
+// v3 format (v2 plus knockout decision metadata for extra time / shootouts):
 //   gm[grp][i] = [hs, as, hg_scorers, hg_assisters, ag_scorers, ag_assisters]   (or 0 if unplayed)
-//   ko[kid]    = [winnerIdx, loserIdx, h, a, scorerPairs, assisterPairs]
+//   ko[kid]    = [winnerIdx, loserIdx, h, a, scorerPairs, assisterPairs, meta?]
 // Scorer/assister tuples are player indices into PL[team]; pairs are [teamIdx, playerIdx].
 // autoScore creates separate hg/ag entries for each goal AND each assist (g:1,a:0 vs g:0,a:1),
 // so we must preserve that distinction or rScorers can't reconstruct the leaderboards.
-var SHARE_STATE_VERSION=2;
+var SHARE_STATE_VERSION=3;
 var SHORT_SHARE_STATE_VERSION=3;
 var RAW_SHORT_SHARE_STATE_VERSION="4";
 var PACKED_SHORT_SHARE_STATE_VERSION="5";
@@ -1402,7 +1408,11 @@ function serializeState(){
       if(!ks||!ks.w)continue;
       var matchScorers=slog.filter(function(s){return s.mid===kid&&s.g===1;}).map(function(s){return [tIdx(s.t),pIdx(s.t,s.p)];});
       var matchAssists =slog.filter(function(s){return s.mid===kid&&s.a===1;}).map(function(s){return [tIdx(s.t),pIdx(s.t,s.p)];});
-      k[kid]=[tIdx(ks.w),tIdx(ks.l),ks.h,ks.a,matchScorers,matchAssists];
+      var meta=null;
+      if(ks.ht||ks.at||ks.decidedBy||ks.extraTime||ks.shootout){
+        meta={ht:tIdx(ks.ht),at:tIdx(ks.at),decidedBy:ks.decidedBy||"regulation",regulation:ks.regulation||null,extraTime:ks.extraTime||null,shootout:ks.shootout||null};
+      }
+      k[kid]=[tIdx(ks.w),tIdx(ks.l),ks.h,ks.a,matchScorers,matchAssists,meta];
     }
     return shareEncodeJson({v:SHARE_STATE_VERSION,g:g,k:k});
   }catch(e){console.error("serializeState failed:",e);return null;}
@@ -1411,7 +1421,7 @@ function deserializeState(encoded){
   if(!encoded)return false;
   try{
     var data=shareDecodeJson(encoded);
-    if(!data||data.v!==SHARE_STATE_VERSION)return false;
+    if(!data||!(data.v===SHARE_STATE_VERSION||data.v===2))return false;
     var teams=Object.keys(PL);
     // Restore gm from compact format
     gm=initGM();
@@ -1441,9 +1451,18 @@ enrichGMWithData();
       if(!e2)continue;
       var wIdx=e2[0],lIdx=e2[1],hScore=e2[2],aScore=e2[3];
       var matchScorers=e2[4]||[],matchAssists=e2[5]||[];
+      var meta=e2[6]||null;
       var wTeam=teams[wIdx],lTeam=teams[lIdx];
       if(!wTeam||!lTeam)continue;
       ko[kid]={w:wTeam,l:lTeam,h:hScore,a:aScore};
+      if(meta){
+        ko[kid].ht=teams[meta.ht]||null;
+        ko[kid].at=teams[meta.at]||null;
+        ko[kid].decidedBy=meta.decidedBy||"regulation";
+        ko[kid].regulation=meta.regulation||null;
+        ko[kid].extraTime=meta.extraTime||null;
+        ko[kid].shootout=meta.shootout||null;
+      }
       for(var s2=0;s2<matchScorers.length;s2++){
         var ti=matchScorers[s2][0],pi=matchScorers[s2][1];
         var team=teams[ti];
@@ -1539,6 +1558,7 @@ function serializeShortState(){
         pushShareBits(bits,63,6);pushShareBits(bits,63,6);pushShareBits(bits,31,5);pushShareBits(bits,31,5);
         continue;
       }
+      if((r.decidedBy&&r.decidedBy!=="regulation")||r.shootout||parseInt(r.h)===parseInt(r.a))return null;
       var wIdx=teams.indexOf(r.w),lIdx=teams.indexOf(r.l);
       pushShareBits(bits,wIdx>=0?wIdx:63,6);
       pushShareBits(bits,lIdx>=0?lIdx:63,6);
@@ -2108,7 +2128,7 @@ function renderModeControl(){
   var mount=document.getElementById("modeMount");
   if(mount)mount.innerHTML=modeControl();
 }
-function inferKOTeams(r){if(!r||!r.w||!r.l)return null;var h=parseInt(r.h)||0,a=parseInt(r.a)||0;return h>a?[r.w,r.l]:[r.l,r.w];}
+function inferKOTeams(r){if(!r||!r.w||!r.l)return null;if(r.ht&&r.at)return[r.ht,r.at];var h=parseInt(r.h)||0,a=parseInt(r.a)||0;if(h>a)return[r.w,r.l];if(a>h)return[r.l,r.w];return[r.w,r.l];}
 function rebuildAllScorers(){for(var k in gm){for(var i=0;i<gm[k].length;i++){var m=gm[k][i];if(m.hs!==""&&m.as!==""&&!isNaN(parseInt(m.hs))&&!isNaN(parseInt(m.as)))autoScore(k,i);else{m.hg=[];m.ag=[];}}}var old=ko;slog=[];for(var id in old){var r=old[id],pair=inferKOTeams(r);if(pair){var sc=autoScoreKO(pair[0],pair[1],parseInt(r.h)||0,parseInt(r.a)||0,id);for(var j=0;j<sc.length;j++)slog.push(sc[j]);}}}
 function setPlayMode(mode){
   if(mode!=="clone"&&mode!=="chaos")mode="normal";
@@ -2224,6 +2244,8 @@ var I18N={
     goalsLogged:"已记录 {done} / {total}",
     loggedGoalsTitle:"已记录",
     noAssist:"无助攻",
+    ownGoalShort:"乌龙",
+    penaltyShort:"点球",
     skipAssist:"这球没有助攻",
     bucketFwd:"前锋",
     bucketMid:"中场",
@@ -2293,6 +2315,8 @@ var I18N={
     goalsLogged:"Logged {done} / {total}",
     loggedGoalsTitle:"Logged",
     noAssist:"No assist",
+    ownGoalShort:"OG",
+    penaltyShort:"pen",
     skipAssist:"No assist on this goal",
     bucketFwd:"Forwards",
     bucketMid:"Midfielders",
@@ -2362,6 +2386,21 @@ var GAMEPLAY_MODES=[
 var DEFAULT_GOAL_DISTRIBUTION=[0,0,0,0,0,1,1,1,1,1,1,2,2,2,3,3,4];
 var POISSON_BASE_TOTAL=2.4;
 var POISSON_SUPREMACY_K=0.45;
+var SIMULATION_EVENT_CONFIG={
+  ownGoalShare:0.028,
+  penaltyGoalShare:0.11,
+  assistRate:0.72,
+  extraTimeGoalIntensity:0.33,
+  shootoutConversion:0.76,
+  goalMinuteBuckets:[
+    {start:1,end:15,weight:0.12},
+    {start:16,end:30,weight:0.14},
+    {start:31,end:45,weight:0.16},
+    {start:46,end:60,weight:0.18},
+    {start:61,end:75,weight:0.18},
+    {start:76,end:90,weight:0.22}
+  ]
+};
 function clamp(n,min,max){return Math.max(min,Math.min(max,n));}
 function sum(arr){var t=0;for(var i=0;i<arr.length;i++)t+=arr[i];return t;}
 function normalize(map){
@@ -2521,14 +2560,91 @@ function sampleGoals(rng,dist){
   dist=dist||DEFAULT_GOAL_DISTRIBUTION;
   return dist[Math.floor(rng()*dist.length)];
 }
-function buildEvents(homeGoals,awayGoals,rng){
+function eventConfig(overrides){
+  var cfg={};
+  for(var k in SIMULATION_EVENT_CONFIG)cfg[k]=SIMULATION_EVENT_CONFIG[k];
+  overrides=overrides||{};
+  for(var key in overrides)if(overrides[key]!=null)cfg[key]=overrides[key];
+  cfg.ownGoalShare=clamp(Number(cfg.ownGoalShare)||0,0,1);
+  cfg.penaltyGoalShare=clamp(Number(cfg.penaltyGoalShare)||0,0,1);
+  cfg.assistRate=clamp(Number(cfg.assistRate)||0,0,1);
+  cfg.extraTimeGoalIntensity=clamp(Number(cfg.extraTimeGoalIntensity)||0,0.05,0.6);
+  cfg.shootoutConversion=clamp(Number(cfg.shootoutConversion)||0.76,0.45,0.95);
+  return cfg;
+}
+function otherSide(side){return side==="home"?"away":"home";}
+function isScoringEvent(event){
+  if(!event)return false;
+  return event.type==="goal"||event.type==="penalty_goal"||event.type==="own_goal";
+}
+function sampleGoalMinute(rng,period,cfg){
+  if(period==="extraTime1")return 91+Math.floor(rng()*15);
+  if(period==="extraTime2")return 106+Math.floor(rng()*15);
+  var buckets=cfg.goalMinuteBuckets||SIMULATION_EVENT_CONFIG.goalMinuteBuckets,total=0;
+  for(var i=0;i<buckets.length;i++)total+=buckets[i].weight||0;
+  var r=rng()*total,acc=0,b=buckets[buckets.length-1];
+  for(var j=0;j<buckets.length;j++){acc+=buckets[j].weight||0;if(r<=acc){b=buckets[j];break;}}
+  return b.start+Math.floor(rng()*(b.end-b.start+1));
+}
+function buildGoalEvent(side,rng,cfg,period){
+  cfg=eventConfig(cfg);
+  period=period||"regular";
+  var minute=sampleGoalMinute(rng,period,cfg);
+  var own=rng()<cfg.ownGoalShare;
+  var penalty=!own&&rng()<cfg.penaltyGoalShare;
+  var type=own?"own_goal":(penalty?"penalty_goal":"goal");
+  var playerTeam=own?otherSide(side):side;
+  return {
+    type:type,
+    team:side,
+    scoringTeam:side,
+    playerTeam:playerTeam,
+    period:period,
+    minute:minute,
+    minuteLabel:String(minute)+"'",
+    scorer:null,
+    assist:type==="goal"&&rng()<cfg.assistRate?{team:side,player:null}:null
+  };
+}
+function buildScoreEvents(homeGoals,awayGoals,rng,cfg,period){
   var events=[];
   function addGoals(side,count){
-    for(var i=0;i<count;i++)events.push({type:"goal",team:side,minute:4+Math.floor(rng()*87),scorer:null,assist:rng()<0.72?{team:side,player:null}:null});
+    for(var i=0;i<count;i++)events.push(buildGoalEvent(side,rng,cfg,period));
   }
   addGoals("home",homeGoals);addGoals("away",awayGoals);
   events.sort(function(a,b){return a.minute-b.minute;});
   return events;
+}
+function deriveScorelineFromEvents(events){
+  var score={home:0,away:0};
+  events=events||[];
+  for(var i=0;i<events.length;i++){
+    if(!isScoringEvent(events[i]))continue;
+    var side=events[i].scoringTeam||events[i].team;
+    if(side==="home"||side==="away")score[side]++;
+  }
+  return score;
+}
+function addScore(a,b){return{home:(a.home||0)+(b.home||0),away:(a.away||0)+(b.away||0)};}
+function sampleShootout(rng,cfg){
+  cfg=eventConfig(cfg);
+  var home=0,away=0,kicks=[];
+  for(var i=0;i<5;i++){
+    var h=rng()<cfg.shootoutConversion;if(h)home++;kicks.push({team:"home",round:i+1,scored:h});
+    var a=rng()<cfg.shootoutConversion;if(a)away++;kicks.push({team:"away",round:i+1,scored:a});
+    var left=4-i;
+    if(home>away+left||away>home+left)break;
+  }
+  var round=6,guard=0;
+  while(home===away&&guard<10){
+    var h2=rng()<cfg.shootoutConversion;if(h2)home++;kicks.push({team:"home",round:round,scored:h2});
+    var a2=rng()<cfg.shootoutConversion;if(a2)away++;kicks.push({team:"away",round:round,scored:a2});
+    round++;guard++;
+  }
+  if(home===away){
+    if(rng()<0.5)home++;else away++;
+  }
+  return{scoreline:{home:home,away:away},kicks:kicks};
 }
 function explanationFor(options,homeStrength,awayStrength){
   var mode=normalizeModeId(options.predictionMode),out=[];
@@ -2552,6 +2668,9 @@ function simulateMatch(options){
   var h=scoreline.home,a=scoreline.away;
   var half={home:Math.min(h,Math.floor(rng()*(h+1))),away:Math.min(a,Math.floor(rng()*(a+1)))};
   var cards={home:Math.floor(rng()*5),away:Math.floor(rng()*5)};
+  var events=buildScoreEvents(h,a,rng,options.eventConfig||options.simulationEventConfig);
+  var eventScore=deriveScorelineFromEvents(events);
+  h=eventScore.home;a=eventScore.away;
   var prediction=createPredictionEntity({
     mode:predictionMode,
     gameplayMode:options.gameplayMode||"normal",
@@ -2560,14 +2679,63 @@ function simulateMatch(options){
     scoreline:{home:h,away:a},
     halfTimeScore:half,
     cards:cards,
-    events:buildEvents(h,a,rng),
+    events:events,
     probabilities:probabilities,
     explain:explanationFor(options,homeStrength,awayStrength)
   });
   prediction.homeGoals=h;prediction.awayGoals=a;
   return prediction;
 }
-return{ENGINE_SCHEMA_VERSION:ENGINE_SCHEMA_VERSION,PREDICTION_MODES:PREDICTION_MODES,GAMEPLAY_MODES:GAMEPLAY_MODES,DEFAULT_GOAL_DISTRIBUTION:DEFAULT_GOAL_DISTRIBUTION,createCoachEntity:createCoachEntity,createPlayerEntity:createPlayerEntity,createTeamEntity:createTeamEntity,createMatchEntity:createMatchEntity,createPredictionEntity:createPredictionEntity,getPredictionMode:function(id){return getMode(id,PREDICTION_MODES);},getGameplayMode:function(id){return getMode(id,GAMEPLAY_MODES);},normalizeOddsMarket:normalizeOddsMarket,estimateOutcomeProbabilities:estimateOutcomeProbabilities,simulateMatch:simulateMatch,computePoissonLambdas:computePoissonLambdas,samplePoisson:samplePoisson,sampleConditionalScoreline:sampleConditionalScoreline,POISSON_BASE_TOTAL:POISSON_BASE_TOTAL,POISSON_SUPREMACY_K:POISSON_SUPREMACY_K};
+function simulateKnockoutMatch(options){
+  options=options||{};
+  var rng=options.rng||Math.random,cfg=eventConfig(options.eventConfig||options.simulationEventConfig);
+  var baseOptions={};
+  for(var key in options)baseOptions[key]=options[key];
+  baseOptions.allowDraw=true;baseOptions.rng=rng;
+  var regPred=options.regulationScoreline?null:simulateMatch(baseOptions);
+  var regulation=options.regulationScoreline||{home:regPred.homeGoals,away:regPred.awayGoals};
+  var events=options.regulationEvents||buildScoreEvents(regulation.home,regulation.away,rng,cfg,"regular");
+  var score=deriveScorelineFromEvents(events),extraTime=null,shootout=null,decidedBy="regulation",winnerSide=score.home>score.away?"home":score.away>score.home?"away":null;
+  if(!winnerSide){
+    var homeStrength=strengthOf(options.homeTeam,options.strengths),awayStrength=strengthOf(options.awayTeam,options.strengths);
+    var lambdas=computePoissonLambdas(homeStrength,awayStrength);
+    var et=options.extraTimeScoreline||{
+      home:clamp(samplePoisson(lambdas.home*cfg.extraTimeGoalIntensity,rng),0,5),
+      away:clamp(samplePoisson(lambdas.away*cfg.extraTimeGoalIntensity,rng),0,5)
+    };
+    extraTime={home:et.home,away:et.away};
+    var firstHalf={home:Math.floor(et.home/2),away:Math.floor(et.away/2)},secondHalf={home:et.home-firstHalf.home,away:et.away-firstHalf.away};
+    events=events.concat(buildScoreEvents(firstHalf.home,firstHalf.away,rng,cfg,"extraTime1"));
+    events=events.concat(buildScoreEvents(secondHalf.home,secondHalf.away,rng,cfg,"extraTime2"));
+    score=addScore(score,extraTime);
+    if(score.home!==score.away){
+      decidedBy="extraTime";
+      winnerSide=score.home>score.away?"home":"away";
+    }else{
+      decidedBy="shootout";
+      shootout=options.shootoutResult?{scoreline:{home:options.shootoutResult.home,away:options.shootoutResult.away},kicks:options.shootoutResult.kicks||[]}:sampleShootout(rng,cfg);
+      winnerSide=shootout.scoreline.home>shootout.scoreline.away?"home":"away";
+    }
+  }
+  return {
+    kind:"KnockoutPrediction",
+    matchId:options.matchId||"",
+    mode:normalizeModeId(options.predictionMode),
+    homeTeam:options.homeTeam||null,
+    awayTeam:options.awayTeam||null,
+    regulation:regulation,
+    extraTime:extraTime,
+    shootout:shootout,
+    scoreline:score,
+    homeGoals:score.home,
+    awayGoals:score.away,
+    winnerSide:winnerSide,
+    outcome:winnerSide,
+    decidedBy:decidedBy,
+    events:events.sort(function(a,b){return a.minute-b.minute;})
+  };
+}
+return{ENGINE_SCHEMA_VERSION:ENGINE_SCHEMA_VERSION,PREDICTION_MODES:PREDICTION_MODES,GAMEPLAY_MODES:GAMEPLAY_MODES,DEFAULT_GOAL_DISTRIBUTION:DEFAULT_GOAL_DISTRIBUTION,SIMULATION_EVENT_CONFIG:SIMULATION_EVENT_CONFIG,createCoachEntity:createCoachEntity,createPlayerEntity:createPlayerEntity,createTeamEntity:createTeamEntity,createMatchEntity:createMatchEntity,createPredictionEntity:createPredictionEntity,getPredictionMode:function(id){return getMode(id,PREDICTION_MODES);},getGameplayMode:function(id){return getMode(id,GAMEPLAY_MODES);},normalizeOddsMarket:normalizeOddsMarket,estimateOutcomeProbabilities:estimateOutcomeProbabilities,simulateMatch:simulateMatch,simulateKnockoutMatch:simulateKnockoutMatch,buildScoreEvents:buildScoreEvents,deriveScorelineFromEvents:deriveScorelineFromEvents,computePoissonLambdas:computePoissonLambdas,samplePoisson:samplePoisson,sampleConditionalScoreline:sampleConditionalScoreline,POISSON_BASE_TOTAL:POISSON_BASE_TOTAL,POISSON_SUPREMACY_K:POISSON_SUPREMACY_K};
 })();
 if(typeof window!=="undefined")window.PredictionEngine=PredictionEngine;
 // Team strength tier (1=weakest, 5=strongest). Teams not listed default to 3.
@@ -3049,9 +3217,45 @@ for(var i=1;i<=16;i++)stageNames["R"+i]=r32Lbl;
 var route=[];
 for(var i=ids.length-1;i>=0;i--){
   var id=ids[i],rec=ko[id];if(!rec)continue;
-  route.push({stage:stageNames[id],id:id,opp:rec.l,cs:Math.max(rec.h,rec.a),os:Math.min(rec.h,rec.a)});
+  route.push({stage:stageNames[id],id:id,opp:rec.l,score:koWinScoreText(rec,champ)});
 }
 return {champ:champ,set:set,route:route};}
+
+function koTeamScore(rec,team){
+if(!rec)return 0;
+if(rec.ht&&rec.ht===team)return parseInt(rec.h)||0;
+if(rec.at&&rec.at===team)return parseInt(rec.a)||0;
+if(rec.w===team)return Math.max(parseInt(rec.h)||0,parseInt(rec.a)||0);
+if(rec.l===team)return Math.min(parseInt(rec.h)||0,parseInt(rec.a)||0);
+return 0;
+}
+function koShootoutTeamScore(rec,team){
+var so=rec&&rec.shootout&&rec.shootout.scoreline;if(!so)return null;
+if(rec.ht&&rec.ht===team)return parseInt(so.home)||0;
+if(rec.at&&rec.at===team)return parseInt(so.away)||0;
+if(rec.w===team)return Math.max(parseInt(so.home)||0,parseInt(so.away)||0);
+if(rec.l===team)return Math.min(parseInt(so.home)||0,parseInt(so.away)||0);
+return null;
+}
+function koWinScoreText(rec,champ){
+var opp=rec&&rec.l,score=koTeamScore(rec,champ)+"-"+koTeamScore(rec,opp);
+if(rec&&rec.decidedBy==="shootout"){
+  var cp=koShootoutTeamScore(rec,champ),op=koShootoutTeamScore(rec,opp);
+  if(cp!==null&&op!==null)score+=LANG==="en"?" (pens "+cp+"-"+op+")":"（点球 "+cp+"-"+op+"）";
+}else if(rec&&rec.decidedBy==="extraTime"){
+  score+=LANG==="en"?" (a.e.t.)":"（加时）";
+}
+return score;
+}
+function koDecisionText(rec){
+if(!rec)return"";
+if(rec.decidedBy==="shootout"){
+  var wp=koShootoutTeamScore(rec,rec.w),lp=koShootoutTeamScore(rec,rec.l);
+  return wp!==null&&lp!==null?(LANG==="en"?"Pens ":"点球 ")+wp+"-"+lp:"";
+}
+if(rec.decidedBy==="extraTime")return LANG==="en"?"After extra time":"加时赛";
+return"";
+}
 
 function renderChampionRoute(cp){
 if(!cp)return"";
@@ -3060,7 +3264,7 @@ if(!cp.route.length){h+='<div class="cr-empty">'+T("routeEmpty")+'</div></div>';
 h+='<div class="cr-s">';
 for(var i=0;i<cp.route.length;i++){
   var s=cp.route[i];
-  h+='<span class="cr-step"><span class="cr-stage">'+s.stage+'</span> '+T("routeWin")+' '+fi(s.opp,"fls")+'<b>'+tn(s.opp)+'</b><span class="cr-sc">'+s.cs+'-'+s.os+'</span></span>';
+  h+='<span class="cr-step"><span class="cr-stage">'+s.stage+'</span> '+T("routeWin")+' '+fi(s.opp,"fls")+'<b>'+tn(s.opp)+'</b><span class="cr-sc">'+s.score+'</span></span>';
   if(i<cp.route.length-1)h+='<span class="cr-arrow">→</span>';
 }
 h+='</div></div>';return h;}
@@ -3127,6 +3331,7 @@ var h='<div class="bk-m'+(r?" won":"")+(pending?" has-pending":"")+(canPlay?"":"
 h+=ht?teamRow(ht,htCp,hw,r&&r.h,m.hSeed,m.seedRole):seedRow(m.hSeed,m.seedRole);
 h+='<div class="bk-vs">vs</div>';
 h+=at?teamRow(at,atCp,aw,r&&r.a,m.aSeed,m.seedRole):seedRow(m.aSeed,m.seedRole);
+var decision=koDecisionText(r);if(decision)h+='<div class="bk-decision">'+escHtml(decision)+'</div>';
 h+=koMatchMeta(m,ht,at);
 if(canPlay&&!r&&!pending){h+='<div class="bk-act"><button class="bkw" onclick="qpKO(\''+m.id+'\',\''+ht+'\',\''+at+'\',\''+ht+'\')">'+tn(ht)+'</button><button class="bkw" onclick="qpKO(\''+m.id+'\',\''+ht+'\',\''+at+'\',\''+at+'\')">'+tn(at)+'</button><button class="bkr" onclick="rnKO(\''+m.id+'\',\''+ht+'\',\''+at+'\')">🎲</button></div>';}
 else if(canPlay&&r){h+='<div class="bk-act"><button class="bkx" onclick="delKO(\''+m.id+'\')">↺</button></div>';}
@@ -3161,8 +3366,8 @@ function primeLeaderboardPhotos(items){
     if(photoCache[item.p]===undefined)photoCache[item.p]=PHOTO_MAP[item.p]||photoCache[qk]||null;
   }
 }
-function rScorers(el){var m={};function add(arr){if(!arr)return;for(var i=0;i<arr.length;i++){var s=arr[i],k=s.p+"|"+s.t;if(!m[k])m[k]={p:s.p,t:s.t,g:0,a:0};m[k].g+=(s.g||0);m[k].a+=(s.a||0);}}
-function addActual(events){if(!events)return;for(var i=0;i<events.length;i++){var e=events[i];if(e.type!=="goal")continue;var sp=e.scorer_app_alias||e.scorer_cn,st=e.scorer_team_cn||e.team_cn;if(sp&&st)add([{p:sp,t:st,g:1,a:0}]);var ap=e.assist_app_alias||e.assist_cn,at=e.assist_team_cn||st;if(ap&&at)add([{p:ap,t:at,g:0,a:1}]);}}
+function rScorers(el){var m={};function add(arr){if(!arr)return;for(var i=0;i<arr.length;i++){var s=arr[i];if(s.ownGoal)continue;var statTeam=s.playerTeam||s.t,k=s.p+"|"+statTeam;if(!m[k])m[k]={p:s.p,t:statTeam,g:0,a:0};m[k].g+=(s.g||0);m[k].a+=(s.a||0);}}
+function addActual(events){if(!events)return;for(var i=0;i<events.length;i++){var e=events[i];if(!isActualScoringEvent(e)||e.type==="own_goal")continue;var sp=e.scorer_app_alias||e.scorer_cn,st=e.scorer_team_cn||e.team_cn;if(sp&&st)add([{p:sp,t:st,g:1,a:0}]);var ap=e.assist_app_alias||e.assist_cn,at=e.assist_team_cn||st;if(ap&&at)add([{p:ap,t:at,g:0,a:1}]);}}
 for(var k in gm)for(var j=0;j<gm[k].length;j++){var match=gm[k][j];if(match.predictionSource==="actual"&&match.actualEvents&&match.actualEvents.length)addActual(match.actualEvents);else{add(match.hg);add(match.ag);}}add(slog);
 var arr=[];for(var k in m)arr.push(m[k]);
 var goals=arr.slice().sort(function(a,b){return b.g-a.g;}).filter(function(x){return x.g>0;}).slice(0,20);
@@ -3225,29 +3430,35 @@ function uGMDone(){
   }
   render();
 }
-// Auto-generate random scorers for a group match
+function ownGoalPool(team){
+  var players=getPlayers(team).filter(function(x){return getPos(x,team)!=="门将";});
+  var defenders=players.filter(function(x){return getPos(x,team).indexOf("卫")>=0;});
+  return defenders.length?defenders:players;
+}
+function pushAutoGoalFromEvent(target,event,scoringTeam,opponentTeam,mid){
+  var isOwn=event.type==="own_goal",playerTeam=isOwn?opponentTeam:scoringTeam;
+  var pool=isOwn?ownGoalPool(playerTeam):getPlayers(playerTeam).filter(function(x){return getPos(x,playerTeam)!=="门将";});
+  var sc=weightedPick(pool,playerTeam,GOAL_W,3,"goal");if(!sc)return;
+  var rec={p:sc,t:scoringTeam,playerTeam:playerTeam,g:1,a:0,eventType:event.type,minute:event.minute,ownGoal:isOwn};
+  if(mid)rec.mid=mid;
+  target.push(rec);
+  if(event.type==="penalty_goal")return;
+  if(!isOwn&&event.assist&&pool.length>1){
+    var assistPool=getAssistPool(pool,sc);
+    var asst=weightedPick(assistPool,playerTeam,ASSIST_W,3,"assist");
+    if(asst){var arec={p:asst,t:scoringTeam,playerTeam:playerTeam,g:0,a:1,eventType:event.type,minute:event.minute};if(mid)arec.mid=mid;target.push(arec);}
+  }
+}
+// Auto-generate event-aware scorers for a group match.
 function autoScore(gk,mi){
   var m=gm[gk][mi];var hs=parseInt(m.hs)||0,as=parseInt(m.as)||0;
   m.hg=[];m.ag=[];
-  var hp=getPlayers(m.h).filter(function(x){return getPos(x,m.h)!=="门将";});
-  var ap=getPlayers(m.a).filter(function(x){return getPos(x,m.a)!=="门将";});
-  for(var i=0;i<hs;i++){
-    var sc=weightedPick(hp,m.h,GOAL_W,3,"goal");if(!sc)continue;
-    m.hg.push({p:sc,t:m.h,g:1,a:0});
-    if(Math.random()>0.35&&hp.length>1){
-      var pool=getAssistPool(hp,sc);
-      var asst=weightedPick(pool,m.h,ASSIST_W,3,"assist");
-      if(asst)m.hg.push({p:asst,t:m.h,g:0,a:1});
-    }
-  }
-  for(var i=0;i<as;i++){
-    var sc=weightedPick(ap,m.a,GOAL_W,3,"goal");if(!sc)continue;
-    m.ag.push({p:sc,t:m.a,g:1,a:0});
-    if(Math.random()>0.35&&ap.length>1){
-      var pool=getAssistPool(ap,sc);
-      var asst=weightedPick(pool,m.a,ASSIST_W,3,"assist");
-      if(asst)m.ag.push({p:asst,t:m.a,g:0,a:1});
-    }
+  var events=PredictionEngine.buildScoreEvents(hs,as,Math.random);
+  m.simEvents=events;
+  for(var i=0;i<events.length;i++){
+    var event=events[i];
+    if(event.team==="home")pushAutoGoalFromEvent(m.hg,event,m.h,m.a);
+    else pushAutoGoalFromEvent(m.ag,event,m.a,m.h);
   }
 }
 function qpG(gk,mi,res){var m=gm[gk][mi];var r=rnd(true,m.h,m.a),h=r[0],a=r[1];if(res==="h"){if(h<=a)h=a+1+Math.floor(Math.random()*2);}else if(res==="a"){if(a<=h)a=h+1+Math.floor(Math.random()*2);}else a=h;m.hs=String(h);m.as=String(a);m.predictionSource="user";autoScore(gk,mi);render();}
@@ -3261,31 +3472,17 @@ function rsaG(){gm=initGM();
 enrichGMWithData();ko={};slog=[];applyActualResultsToBlankPredictions();render();}
 // KO auto-scorers. `mid` is the KO match id (R1..R16, L1..L8, Q1..Q4, S1..S2, FINAL, 3RD).
 // Each goal/assist record is tagged with mid so single-match reset can clean slog properly.
-function autoScoreKO(ht,at,hs,as,mid){
-  var hp=getPlayers(ht).filter(function(x){return getPos(x,ht)!=="门将";});
-  var ap=getPlayers(at).filter(function(x){return getPos(x,at)!=="门将";});
+function autoScoreKO(ht,at,hs,as,mid,events){
   var arr=[];
-  for(var i=0;i<hs;i++){
-    var sc=weightedPick(hp,ht,GOAL_W,3,"goal");if(!sc)continue;
-    arr.push({p:sc,t:ht,g:1,a:0,mid:mid});
-    if(Math.random()>0.35&&hp.length>1){
-      var pool=getAssistPool(hp,sc);
-      var asst=weightedPick(pool,ht,ASSIST_W,3,"assist");
-      if(asst)arr.push({p:asst,t:ht,g:0,a:1,mid:mid});
-    }
-  }
-  for(var i=0;i<as;i++){
-    var sc=weightedPick(ap,at,GOAL_W,3,"goal");if(!sc)continue;
-    arr.push({p:sc,t:at,g:1,a:0,mid:mid});
-    if(Math.random()>0.35&&ap.length>1){
-      var pool=getAssistPool(ap,sc);
-      var asst=weightedPick(pool,at,ASSIST_W,3,"assist");
-      if(asst)arr.push({p:asst,t:at,g:0,a:1,mid:mid});
-    }
+  events=events||PredictionEngine.buildScoreEvents(hs,as,Math.random);
+  for(var i=0;i<events.length;i++){
+    var event=events[i];
+    if(event.team==="home")pushAutoGoalFromEvent(arr,event,ht,at,mid);
+    else pushAutoGoalFromEvent(arr,event,at,ht,mid);
   }
   return arr;
 }
-function cKO(id,ht,at){var he=document.getElementById("kh_"+id),ae=document.getElementById("ka_"+id);if(!he||!ae)return;var h=parseInt(he.value),a=parseInt(ae.value);if(isNaN(h)||isNaN(a)||h===a)return;slog=slog.filter(function(s){return s.mid!==id;});ko[id]={w:h>a?ht:at,l:h>a?at:ht,h:h,a:a};var sc=autoScoreKO(ht,at,h,a,id);for(var j=0;j<sc.length;j++)slog.push(sc[j]);render();checkChampion();}
+function cKO(id,ht,at){var he=document.getElementById("kh_"+id),ae=document.getElementById("ka_"+id);if(!he||!ae)return;var h=parseInt(he.value),a=parseInt(ae.value);if(isNaN(h)||isNaN(a)||h===a)return;slog=slog.filter(function(s){return s.mid!==id;});ko[id]={w:h>a?ht:at,l:h>a?at:ht,h:h,a:a,ht:ht,at:at,decidedBy:"regulation",regulation:{home:h,away:a},extraTime:null,shootout:null};var sc=autoScoreKO(ht,at,h,a,id);for(var j=0;j<sc.length;j++)slog.push(sc[j]);render();checkChampion();}
 // Upset score cap (knockout only): if the WEAKER team won by >= 2 tier diff,
 // replace the score with a realistic upset (1-0, 2-0, 2-1).
 // Preserves upset probability — only sanitizes the scoreline.
@@ -3306,16 +3503,31 @@ function applyUpsetCap(ht,at,h,a){
 // Knockout score generator with cap baked in — use in rnKO/raKO so capping
 // can't be accidentally skipped.
 function rndKO(ht,at){var r=rnd(false,ht,at);return applyUpsetCap(ht,at,r[0],r[1]);}
+function koRecordFromSimulation(sim,ht,at){
+  var w=sim.winnerSide==="home"?ht:at,l=w===ht?at:ht;
+  return {w:w,l:l,h:sim.homeGoals,a:sim.awayGoals,ht:ht,at:at,decidedBy:sim.decidedBy,regulation:sim.regulation,extraTime:sim.extraTime,shootout:sim.shootout,events:sim.events};
+}
+function storeKOSimulation(id,ht,at,sim){
+  slog=slog.filter(function(s){return s.mid!==id;});
+  ko[id]=koRecordFromSimulation(sim,ht,at);
+  var sc=autoScoreKO(ht,at,sim.homeGoals,sim.awayGoals,id,sim.events);
+  for(var i=0;i<sc.length;i++)slog.push(sc[i]);
+}
 function simulateKOResult(id,ht,at){
   if(!id||!ht||!at)return false;
-  var r=rndKO(ht,at);
-  slog=slog.filter(function(s){return s.mid!==id;});
-  ko[id]={w:r[0]>r[1]?ht:at,l:r[0]>r[1]?at:ht,h:r[0],a:r[1]};
-  var sc=autoScoreKO(ht,at,r[0],r[1],id);
-  for(var i=0;i<sc.length;i++)slog.push(sc[i]);
+  var sim=PredictionEngine.simulateKnockoutMatch({
+    predictionMode:predictionMode,
+    gameplayMode:playMode,
+    homeTeam:ht,
+    awayTeam:at,
+    matchId:id,
+    strengths:STRENGTH,
+    rankings:MODEL_RANKING
+  });
+  storeKOSimulation(id,ht,at,sim);
   return true;
 }
-function qpKO(id,ht,at,w){var r=rnd(false,ht,at),h=r[0],a=r[1];if(w===ht&&h<=a){var t=a+1;a=h;h=t;}if(w===at&&a<=h){var t=h+1;h=a;a=t;}var cap=applyUpsetCap(ht,at,h,a);h=cap[0];a=cap[1];slog=slog.filter(function(s){return s.mid!==id;});ko[id]={w:w,l:w===ht?at:ht,h:h,a:a};var sc=autoScoreKO(ht,at,h,a,id);for(var i=0;i<sc.length;i++)slog.push(sc[i]);render();}
+function qpKO(id,ht,at,w){var r=rnd(false,ht,at),h=r[0],a=r[1];if(w===ht&&h<=a){var t=a+1;a=h;h=t;}if(w===at&&a<=h){var t=h+1;h=a;a=t;}var cap=applyUpsetCap(ht,at,h,a);h=cap[0];a=cap[1];slog=slog.filter(function(s){return s.mid!==id;});ko[id]={w:w,l:w===ht?at:ht,h:h,a:a,ht:ht,at:at,decidedBy:"regulation",regulation:{home:h,away:a},extraTime:null,shootout:null};var sc=autoScoreKO(ht,at,h,a,id);for(var i=0;i<sc.length;i++)slog.push(sc[i]);render();}
 function rnKO(id,ht,at){simulateKOResult(id,ht,at);render();}
 function getKORounds(){
   if(!allDone())return[];
@@ -3360,12 +3572,13 @@ function raKONext(){
 }
 function raKO(){if(!allDone())return;var st=getSt(),t3=getT3(st);ko={};slog=[];
 assignThirds(t3);
-for(var i=0;i<R32D.length;i++){var m=R32D[i],ht=getS(m.h,st,t3),at=m.a.indexOf("3_")===0?getT3Team(m.a):getS(m.a,st,t3);if(!ht||!at)continue;var r=rndKO(ht,at);ko[m.i]={w:r[0]>r[1]?ht:at,l:r[0]>r[1]?at:ht,h:r[0],a:r[1]};var sc=autoScoreKO(ht,at,r[0],r[1],m.i);for(var j=0;j<sc.length;j++)slog.push(sc[j]);}
-for(var i=0;i<R16P.length;i++){var lid="L"+(i+1),ht=ko[R16P[i][0]]?ko[R16P[i][0]].w:null,at=ko[R16P[i][1]]?ko[R16P[i][1]].w:null;if(!ht||!at)continue;var r=rndKO(ht,at);ko[lid]={w:r[0]>r[1]?ht:at,l:r[0]>r[1]?at:ht,h:r[0],a:r[1]};var sc=autoScoreKO(ht,at,r[0],r[1],lid);for(var j=0;j<sc.length;j++)slog.push(sc[j]);}
-for(var i=0;i<QFP.length;i++){var qid="Q"+(i+1),ht=ko[QFP[i][0]]?ko[QFP[i][0]].w:null,at=ko[QFP[i][1]]?ko[QFP[i][1]].w:null;if(!ht||!at)continue;var r=rndKO(ht,at);ko[qid]={w:r[0]>r[1]?ht:at,l:r[0]>r[1]?at:ht,h:r[0],a:r[1]};var sc=autoScoreKO(ht,at,r[0],r[1],qid);for(var j=0;j<sc.length;j++)slog.push(sc[j]);}
-for(var i=0;i<SFP.length;i++){var sid="S"+(i+1),ht=ko[SFP[i][0]]?ko[SFP[i][0]].w:null,at=ko[SFP[i][1]]?ko[SFP[i][1]].w:null;if(!ht||!at)continue;var r=rndKO(ht,at);ko[sid]={w:r[0]>r[1]?ht:at,l:r[0]>r[1]?at:ht,h:r[0],a:r[1]};var sc=autoScoreKO(ht,at,r[0],r[1],sid);for(var j=0;j<sc.length;j++)slog.push(sc[j]);}
-var sl1=ko["S1"]?ko["S1"].l:null,sl2=ko["S2"]?ko["S2"].l:null;if(sl1&&sl2){var r=rndKO(sl1,sl2);ko["3RD"]={w:r[0]>r[1]?sl1:sl2,l:r[0]>r[1]?sl2:sl1,h:r[0],a:r[1]};var sc=autoScoreKO(sl1,sl2,r[0],r[1],"3RD");for(var j=0;j<sc.length;j++)slog.push(sc[j]);}
-var sw1=ko["S1"]?ko["S1"].w:null,sw2=ko["S2"]?ko["S2"].w:null;if(sw1&&sw2){var r=rndKO(sw1,sw2);ko["FINAL"]={w:r[0]>r[1]?sw1:sw2,l:r[0]>r[1]?sw2:sw1,h:r[0],a:r[1]};var sc=autoScoreKO(sw1,sw2,r[0],r[1],"FINAL");for(var j=0;j<sc.length;j++)slog.push(sc[j]);}render();checkChampion();}
+for(var i=0;i<R32D.length;i++){var m=R32D[i],ht=getS(m.h,st,t3),at=m.a.indexOf("3_")===0?getT3Team(m.a):getS(m.a,st,t3);if(ht&&at)simulateKOResult(m.i,ht,at);}
+for(var i=0;i<R16P.length;i++){var lid="L"+(i+1),ht=ko[R16P[i][0]]?ko[R16P[i][0]].w:null,at=ko[R16P[i][1]]?ko[R16P[i][1]].w:null;if(ht&&at)simulateKOResult(lid,ht,at);}
+for(var i=0;i<QFP.length;i++){var qid="Q"+(i+1),ht=ko[QFP[i][0]]?ko[QFP[i][0]].w:null,at=ko[QFP[i][1]]?ko[QFP[i][1]].w:null;if(ht&&at)simulateKOResult(qid,ht,at);}
+for(var i=0;i<SFP.length;i++){var sid="S"+(i+1),ht=ko[SFP[i][0]]?ko[SFP[i][0]].w:null,at=ko[SFP[i][1]]?ko[SFP[i][1]].w:null;if(ht&&at)simulateKOResult(sid,ht,at);}
+var sl1=ko["S1"]?ko["S1"].l:null,sl2=ko["S2"]?ko["S2"].l:null;if(sl1&&sl2)simulateKOResult("3RD",sl1,sl2);
+var sw1=ko["S1"]?ko["S1"].w:null,sw2=ko["S2"]?ko["S2"].w:null;if(sw1&&sw2)simulateKOResult("FINAL",sw1,sw2);
+render();checkChampion();}
 
 // ── SCORER MODAL ──
 // Manual scorer picker: clears auto-picked scorers for one side, then guides the user goal by goal.
@@ -3392,8 +3605,8 @@ function countLoggedGoals(log){var n=0;for(var i=0;i<log.length;i++)if(log[i].g>
 function goalLogPairs(log){
   var out=[];
   for(var i=0;i<log.length;i++){
-    if(log[i].g>0)out.push({scorer:log[i].p,assist:null});
-    else if(log[i].a>0&&out.length&&!out[out.length-1].assist)out[out.length-1].assist=log[i].p;
+    if(log[i].g>0)out.push({scorer:log[i].p,team:log[i].playerTeam||log[i].t,assist:null,assistTeam:null,ownGoal:!!log[i].ownGoal,eventType:log[i].eventType,minute:log[i].minute});
+    else if(log[i].a>0&&out.length&&!out[out.length-1].assist){out[out.length-1].assist=log[i].p;out[out.length-1].assistTeam=log[i].playerTeam||log[i].t;}
   }
   return out;
 }
@@ -3431,8 +3644,10 @@ function loggedGoalsHTML(log,team){
   var pairs=goalLogPairs(log);if(!pairs.length)return"";
   var h='<div class="logged-goals" aria-label="'+T("loggedGoalsTitle")+'">';
   for(var i=0;i<pairs.length;i++){
-    h+='<span class="logged-goal-pill"><b>'+(i+1)+'. '+pn(pairs[i].scorer,team)+'</b>';
-    h+=pairs[i].assist?' / '+pn(pairs[i].assist,team):' / '+T("noAssist");
+    h+='<span class="logged-goal-pill"><b>'+(i+1)+'. '+(pairs[i].minute?pairs[i].minute+"' ":"")+pn(pairs[i].scorer,pairs[i].team||team)+'</b>';
+    if(pairs[i].ownGoal)h+=' / '+T("ownGoalShort");
+    else if(pairs[i].eventType==="penalty_goal")h+=' / '+T("penaltyShort");
+    else h+=pairs[i].assist?' / '+pn(pairs[i].assist,pairs[i].assistTeam||team):' / '+T("noAssist");
     h+='</span>';
   }
   h+='</div>';return h;
@@ -3621,9 +3836,8 @@ function getShareUrl(){
 }
 // ─── POSTER SHARE: champion path + HTML builder ───
 // Walks ko[] from R32→FINAL collecting the champion's 5 winning matches.
-// ko[id] structure: {w: winner, l: loser, h: home goals, a: away goals}.
-// Knockout matches are guaranteed h !== a (cKO/rndKO reject ties), so
-// champion's score = max(h,a) and opponent's = min(h,a) — no need to know home/away.
+// ko[id] structure keeps winner/loser plus original ht/at sides. ht/at matter
+// once a shootout preserves a level official scoreline.
 // NOTE: distinct name from the project's pre-existing `getChampionPath()` (line ~942),
 // which builds the {champ, set, route} object for in-page bracket highlighting.
 function getPosterChampionPath(champ){
@@ -3646,15 +3860,13 @@ function getPosterChampionPath(champ){
       if(mm&&mm.w===champ){m=mm;break;}
     }
     if(m){
-      var ws=Math.max(m.h,m.a), ls=Math.min(m.h,m.a);
-      path.push({stage:lbl[s.key], opp:m.l, oppDisplay:tn(m.l), score:ws+"-"+ls});
+      path.push({stage:lbl[s.key], opp:m.l, oppDisplay:tn(m.l), score:koWinScoreText(m,champ)});
     }
   }
   // Final
   var f=ko.FINAL;
   if(f&&f.w===champ){
-    var ws=Math.max(f.h,f.a), ls=Math.min(f.h,f.a);
-    path.push({stage:lbl.F, opp:f.l, oppDisplay:tn(f.l), score:ws+"-"+ls});
+    path.push({stage:lbl.F, opp:f.l, oppDisplay:tn(f.l), score:koWinScoreText(f,champ)});
   }
   return path;
 }

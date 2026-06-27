@@ -92,5 +92,48 @@ class TestResolvePlayer(unittest.TestCase):
         self.assertEqual(result["app_alias"], "希门尼斯MEX")
 
 
+class TestParseKeyEvents(unittest.TestCase):
+    """Test ESPN scoring event normalization."""
+
+    def setUp(self):
+        fdm.PLAYER_DATA.clear()
+        fdm.PLAYER_DATA_NORMALIZED.clear()
+        fdm.PLAYER_DISPLAY_CN.clear()
+        add_player_mapping("Penalty Taker", {"cn": "点球手", "team": "主队", "jersey": 10})
+        add_player_mapping("Defender OG", {"cn": "乌龙后卫", "team": "客队", "jersey": 4})
+
+    def test_penalty_and_own_goal_are_scoring_events(self):
+        events = fdm.parse_key_events(
+            [
+                {
+                    "type": {"id": "70", "text": "Penalty - Scored"},
+                    "penaltyKick": True,
+                    "team": {"id": "1"},
+                    "clock": {"displayValue": "17'"},
+                    "participants": [{"athlete": {"displayName": "Penalty Taker"}}],
+                },
+                {
+                    "type": {"id": "70", "text": "Own Goal"},
+                    "ownGoal": True,
+                    "team": {"id": "1"},
+                    "clock": {"displayValue": "44'"},
+                    "participants": [{"athlete": {"displayName": "Defender OG"}}],
+                },
+            ],
+            "1",
+            "主队",
+            "客队",
+        )
+
+        self.assertEqual([event["type"] for event in events], ["penalty_goal", "own_goal"])
+        self.assertTrue(events[0]["penalty_kick"])
+        self.assertFalse(events[0]["own_goal"])
+        self.assertEqual(events[0]["scorer_team_cn"], "主队")
+        self.assertEqual(events[1]["team_cn"], "主队")
+        self.assertEqual(events[1]["scoring_team_cn"], "主队")
+        self.assertEqual(events[1]["player_team_cn"], "客队")
+        self.assertEqual(events[1]["scorer_team_cn"], "客队")
+
+
 if __name__ == "__main__":
     unittest.main()

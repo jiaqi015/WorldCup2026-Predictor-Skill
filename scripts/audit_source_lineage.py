@@ -164,7 +164,8 @@ def assert_match_lineage(errors: list[str]) -> None:
     allowed_goal_status = {"complete", "partial", "extra"}
     for mid, match in details.items():
         expected_goals = int(match.get("homeScore", 0)) + int(match.get("awayScore", 0))
-        goal_events = [event for event in match.get("events", []) if event.get("type") == "goal"]
+        scoring_event_types = {"goal", "penalty_goal", "own_goal"}
+        goal_events = [event for event in match.get("events", []) if event.get("type") in scoring_event_types]
         if match.get("expectedGoalCount") != expected_goals:
             fail(f"{mid}: expectedGoalCount does not match scoreline", errors)
         if match.get("goalEventCount") != len(goal_events):
