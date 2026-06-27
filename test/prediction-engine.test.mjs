@@ -35,7 +35,7 @@ const strengths = {
 test("defines the architecture contracts for entities and prediction modes", () => {
   const engine = loadPredictionEngine();
 
-  assert.equal(engine.ENGINE_SCHEMA_VERSION, 3);
+  assert.equal(engine.ENGINE_SCHEMA_VERSION, 4);
   assert.deepEqual(engine.PREDICTION_MODES.map((mode) => mode.id), [
     "random",
     "strength",
@@ -216,6 +216,151 @@ test("penalty goals are explicit match events, not plain goals", () => {
   assert.deepEqual(engine.deriveScorelineFromEvents(events), { home: 1, away: 0 });
 });
 
+test("full match events include scoring, cards, and substitutions with football limits", () => {
+  const engine = loadPredictionEngine();
+  const homePlayers = [
+    "主门将",
+    "主后卫1",
+    "主后卫2",
+    "主中场1",
+    "主中场2",
+    "主前锋1",
+    "主前锋2",
+    "主替补1",
+    "主替补2",
+  ];
+  const awayPlayers = [
+    "客门将",
+    "客后卫1",
+    "客后卫2",
+    "客中场1",
+    "客中场2",
+    "客前锋1",
+    "客前锋2",
+    "客替补1",
+    "客替补2",
+  ];
+
+  const events = engine.buildMatchEvents({
+    homeGoals: 2,
+    awayGoals: 1,
+    homePlayers,
+    awayPlayers,
+    rng: seededRng(20260627),
+    eventConfig: {
+      ownGoalShare: 0,
+      penaltyGoalShare: 0,
+      yellowCardAverage: 4,
+      redCardAverage: 1,
+      substitutionAverage: 5,
+      maxSubstitutions: 5,
+    },
+  });
+
+  assert.deepEqual(engine.deriveScorelineFromEvents(events), { home: 2, away: 1 });
+  assert.ok(events.some((event) => event.type === "goal"));
+  assert.ok(events.some((event) => event.type === "yellow_card"));
+  assert.ok(events.some((event) => event.type === "red_card"));
+  assert.ok(events.some((event) => event.type === "substitution"));
+
+  const substitutions = events.filter((event) => event.type === "substitution");
+  assert.ok(substitutions.filter((event) => event.team === "home").length <= 5);
+  assert.ok(substitutions.filter((event) => event.team === "away").length <= 5);
+  assert.ok(substitutions.every((event) => event.inPlayer && event.outPlayer));
+  assert.ok(substitutions.every((event) => event.inPlayer !== event.outPlayer));
+  assert.ok(events.every((event, index, list) => index === 0 || list[index - 1].sortMinute <= event.sortMinute));
+});
+
+test("knockout event simulation keeps extra-time events and extra substitutions explicit", () => {
+  const engine = loadPredictionEngine();
+  const result = engine.simulateKnockoutMatch({
+    homeTeam: "强队",
+    awayTeam: "中队",
+    regulationScoreline: { home: 1, away: 1 },
+    extraTimeScoreline: { home: 1, away: 0 },
+    homePlayers: ["主门将", "主后卫", "主中场", "主边锋", "主前锋", "主替补1", "主替补2", "主替补3"],
+    awayPlayers: ["客门将", "客后卫", "客中场", "客边锋", "客前锋", "客替补1", "客替补2", "客替补3"],
+    eventConfig: {
+      ownGoalShare: 0,
+      penaltyGoalShare: 0,
+      yellowCardAverage: 0,
+      redCardAverage: 0,
+      substitutionAverage: 1,
+      maxSubstitutions: 5,
+      extraTimeAdditionalSubstitution: 1,
+    },
+    rng: seededRng(20260628),
+  });
+
+  assert.equal(result.decidedBy, "extraTime");
+  assert.ok(result.events.some((event) => event.period === "extraTime1" || event.period === "extraTime2"));
+  assert.ok(result.events.some((event) => event.type === "substitution" && event.period === "extraTime"));
+  assert.deepEqual(engine.deriveScorelineFromEvents(result.events), result.scoreline);
+});
+
+test("tournament awards are derived from match events, not temporary UI tables", () => {
+  const engine = loadPredictionEngine();
+  const awards = engine.deriveTournamentAwards({
+    matches: [
+      {
+        homeTeam: "阿根廷",
+        awayTeam: "法国",
+        homeGoalkeeper: "大马丁",
+        awayGoalkeeper: "迈尼昂",
+        scoreline: { home: 3, away: 1 },
+        stage: "FINAL",
+        events: [
+          { type: "goal", scoringTeam: "home", playerTeam: "home", scorer: "梅西", assist: "德保罗" },
+          { type: "penalty_goal", scoringTeam: "home", playerTeam: "home", scorer: "梅西", assist: null },
+          { type: "own_goal", scoringTeam: "home", playerTeam: "away", scorer: "孔德", assist: null },
+          { type: "goal", scoringTeam: "away", playerTeam: "away", scorer: "姆巴佩", assist: "格列兹曼" },
+          { type: "yellow_card", team: "away", player: "拉比奥" },
+          { type: "shootout_goal", team: "home", player: "梅西" },
+        ],
+      },
+      {
+        homeTeam: "阿根廷",
+        awayTeam: "巴西",
+        homeGoalkeeper: "大马丁",
+        awayGoalkeeper: "阿利松",
+        scoreline: { home: 2, away: 0 },
+        stage: "S1",
+        events: [
+          { type: "goal", scoringTeam: "home", playerTeam: "home", scorer: "劳塔罗", assist: "梅西" },
+          { type: "goal", scoringTeam: "home", playerTeam: "home", scorer: "劳塔罗", assist: "梅西" },
+          { type: "red_card", team: "away", player: "卡塞米罗" },
+        ],
+      },
+      {
+        homeTeam: "法国",
+        awayTeam: "英格兰",
+        homeGoalkeeper: "迈尼昂",
+        awayGoalkeeper: "皮克福德",
+        scoreline: { home: 2, away: 1 },
+        stage: "S2",
+        events: [
+          { type: "goal", scoringTeam: "home", playerTeam: "home", scorer: "姆巴佩", assist: "登贝莱" },
+          { type: "goal", scoringTeam: "home", playerTeam: "home", scorer: "姆巴佩", assist: "格列兹曼" },
+          { type: "goal", scoringTeam: "away", playerTeam: "away", scorer: "凯恩", assist: null },
+        ],
+      },
+    ],
+    playerMinutes: {
+      "阿根廷|梅西": 270,
+      "法国|姆巴佩": 300,
+      "阿根廷|劳塔罗": 180,
+    },
+  });
+
+  assert.equal(awards.goldenBoot.player, "姆巴佩");
+  assert.equal(awards.goldenBoot.goals, 3);
+  assert.equal(awards.goldenBoot.assists, 0);
+  assert.equal(awards.topScorers[1].player, "梅西");
+  assert.equal(awards.goldenBall.player, "梅西");
+  assert.equal(awards.goldenGlove.player, "大马丁");
+  assert.equal(awards.fairPlay.team, "阿根廷");
+});
+
 test("knockout simulation models regulation, extra time, and shootout resolution", () => {
   const engine = loadPredictionEngine();
   const extraTimeWin = engine.simulateKnockoutMatch({
@@ -263,6 +408,8 @@ test("all prediction modes are implemented with a shared output contract", () =>
       "assists",
       "cards",
       "halfTimeScore",
+      "substitutions",
+      "awards",
     ]);
     assert.equal(mode.status, "implemented");
   }

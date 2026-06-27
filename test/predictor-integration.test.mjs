@@ -93,7 +93,7 @@ test("scorer generation applies separate goal and assist threat multipliers", ()
 });
 
 test("simulation stores event-aware goal logs and knockout decisions", () => {
-  assert.match(html, /PredictionEngine\.buildScoreEvents\(hs,as,Math\.random/);
+  assert.match(html, /PredictionEngine\.buildMatchEvents\(\{homeGoals:hs,awayGoals:as/);
   assert.match(html, /event\.type==="own_goal"/);
   assert.match(html, /ownGoal:isOwn/);
   assert.match(html, /event\.type==="penalty_goal"/);
@@ -122,7 +122,7 @@ test("simulated group and knockout matches open a unified timeline detail modal"
   assert.match(html, /function timelineFromGoalLog\(log,scoringTeam,sourceLabel\)/);
   assert.match(html, /goalLogPairs\(log\|\|\[\]\)/);
   assert.match(html, /function openGroupMatchDetail\(gk,mi\)/);
-  assert.match(html, /timelineFromGoalLog\(m\.hg,m\.h,source\)\.concat\(timelineFromGoalLog\(m\.ag,m\.a,source\)\)/);
+  assert.match(html, /mergeTimelineEvents\(timelineFromGoalLog\(m\.hg,m\.h,source\),timelineFromGoalLog\(m\.ag,m\.a,source\),timelineFromRawEvents/);
   assert.match(html, /function openKOMatchDetail\(id,ht,at,hSeed,aSeed,seedRole\)/);
   assert.match(html, /var detailClick='openKOMatchDetail/);
   assert.ok(html.includes('<button class="bk-detail" onclick="\'+detailClick+\'">'));
@@ -131,6 +131,35 @@ test("simulated group and knockout matches open a unified timeline detail modal"
   assert.match(html, /detailPenalty:"点球"/);
   assert.match(html, /detailExtraTime:"加时"/);
   assert.match(html, /detailShootout:"点球大战"/);
+});
+
+test("match detail timelines render non-scoring events from the unified event stream", () => {
+  assert.match(html, /detailYellowCard:"黄牌"/);
+  assert.match(html, /detailRedCard:"红牌"/);
+  assert.match(html, /detailSubstitution:"换人"/);
+  assert.match(html, /function safePlayerName\(player\)/);
+  assert.match(html, /s==="undefined"\|\|s==="null"/);
+  assert.match(html, /function isTimelineScoringEvent\(event\)/);
+  const rawTimeline = html.match(/function timelineFromRawEvents\(events,home,away,sourceLabel\)\{([\s\S]*?)\n\}/);
+  assert.ok(rawTimeline, "raw event timeline adapter must exist");
+  assert.doesNotMatch(rawTimeline[1], /if\(!isScoringEvent\(e\)\)continue/);
+  assert.match(rawTimeline[1], /isTimelineCardEvent\(e\)/);
+  assert.match(rawTimeline[1], /isTimelineSubstitutionEvent\(e\)/);
+  assert.match(html, /mergeTimelineEvents\(timelineFromGoalLog/);
+});
+
+test("stats and share poster expose tournament awards derived from match events", () => {
+  assert.match(html, /function collectAwardMatches\(\)/);
+  assert.match(html, /function computeTournamentAwards\(\)/);
+  assert.match(html, /PredictionEngine\.deriveTournamentAwards/);
+  assert.match(html, /function renderAwardsPanel\(awards\)/);
+  assert.match(html, /awardGoldenBoot:"金靴"/);
+  assert.match(html, /awardGoldenGlove:"金手套"/);
+  assert.match(html, /awardGoldenBall:"金球"/);
+  assert.match(html, /awardFairPlay:"公平竞赛"/);
+  assert.match(html, /class="award-panel"/);
+  assert.match(html, /class="poster-awards"/);
+  assert.match(html, /buildPosterAwardsHTML\(computeTournamentAwards\(\)\)/);
 });
 
 test("group quick actions expose draw selection", () => {

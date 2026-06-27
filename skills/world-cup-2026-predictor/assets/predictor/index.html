@@ -286,6 +286,17 @@ body.dark .share-result-modal{box-shadow:0 36px 100px rgba(0,0,0,0.62),0 0 0 1px
 .lb-card{background:var(--bg-card);border-radius:20px;padding:20px;box-shadow:var(--shadow-float)}
 .lb-card h3{margin:0 0 16px;font-size:16px;font-weight:700;color:var(--ink-dark)}
 .lbg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.award-panel{max-width:1100px;margin:0 auto 20px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,rgba(229,181,71,0.11),var(--bg-card) 62%);border:1px solid rgba(229,181,71,0.22);box-shadow:var(--shadow-float)}
+.award-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.award-panel-title{font-size:15px;font-weight:900;color:var(--ink-dark);letter-spacing:-0.2px}
+.award-panel-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.award-card{min-width:0;padding:11px 12px;border-radius:14px;border:1px solid var(--line-delicate);background:rgba(255,255,255,0.48)}
+.award-label{color:var(--ink-light);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.award-name{display:flex;align-items:center;gap:6px;min-width:0;color:var(--ink-dark);font-size:13px;font-weight:900;line-height:1.2}
+.award-name span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.award-meta{margin-top:4px;color:var(--ink-medium);font-size:10.5px;font-weight:750;line-height:1.3}
+body.dark .award-card{background:rgba(255,255,255,0.035)}
+@media(max-width:760px){.award-panel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.award-panel{margin-left:8px;margin-right:8px}}
 .status{text-align:center;font-size:13px;margin:12px 0 20px;color:var(--ink-medium);font-weight:500}
 .status.ok{width:fit-content;max-width:calc(100% - 32px);margin:12px auto 22px;padding:8px 13px;border-radius:100px;display:flex;align-items:center;justify-content:center;gap:7px;background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.18);color:#047857;box-shadow:0 8px 22px rgba(5,150,105,0.06)}
 .status-mark{width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#059669;color:white;font-size:11px;font-weight:800;line-height:1;flex-shrink:0}
@@ -549,6 +560,11 @@ body.dark .toast{background:rgba(255,255,255,0.9);color:#121417}
 .poster .poster-champ-name{color:#E5C26A;font-weight:850;letter-spacing:-0.6px;line-height:0.98;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;flex-shrink:1}
 .poster .poster-champ-tier{font-size:16px;color:#A1A1AA;letter-spacing:1.3px;font-weight:500}
 .poster .poster-conclusion{max-width:23ch;font-size:18px;font-style:italic;color:#E5C26A;line-height:1.45;letter-spacing:0.4px;white-space:pre-line;margin-top:22px}
+.poster .poster-awards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;max-width:360px}
+.poster .poster-award{min-width:0;padding:8px 10px;border-radius:10px;border:1px solid rgba(229,194,106,0.18);background:rgba(255,255,255,0.025)}
+.poster .poster-award-label{font-size:8px;color:#7A8E83;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:3px}
+.poster .poster-award-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#F4F5F2;font-size:12px;font-weight:850;line-height:1.15}
+.poster .poster-award-meta{display:block;margin-top:2px;color:#E5C26A;font-size:9px;font-weight:800}
 .poster .poster-path-panel{display:flex;flex-direction:column;justify-content:flex-start;min-width:0;padding-top:4px;position:relative;z-index:1}
 .poster .poster-path-label{font-size:11px;letter-spacing:2.6px;color:#7A8E83;font-weight:800;margin-bottom:12px;text-transform:uppercase}
 .poster .poster-path{display:flex;flex-direction:column;gap:7px}
@@ -1164,6 +1180,10 @@ function detailMinuteSort(minute){
 function detailEventTypeLabel(type){
   if(type==="own_goal")return T("detailOwnGoal");
   if(type==="penalty_goal")return T("detailPenalty");
+  if(type==="yellow_card"||type==="yellowCard")return T("detailYellowCard");
+  if(type==="red_card"||type==="redCard")return T("detailRedCard");
+  if(type==="second_yellow")return T("detailSecondYellow");
+  if(type==="substitution"||type==="sub")return T("detailSubstitution");
   return T("detailGoal");
 }
 function detailPeriodBadge(period,minute){
@@ -1175,6 +1195,9 @@ function detailBadgesHTML(event){
   var badges=[],type=event.type||event.eventType||"goal",period=detailPeriodBadge(event.period,event.minute);
   if(type==="own_goal")badges.push({text:T("detailOwnGoal"),warn:true});
   else if(type==="penalty_goal")badges.push({text:T("detailPenalty"),warn:true});
+  else if(type==="yellow_card"||type==="yellowCard")badges.push({text:T("detailYellowCard"),warn:true});
+  else if(type==="red_card"||type==="redCard"||type==="second_yellow")badges.push({text:detailEventTypeLabel(type),warn:true});
+  else if(type==="substitution"||type==="sub")badges.push({text:T("detailSubstitution"),warn:false});
   if(period)badges.push({text:period,warn:true});
   if(!badges.length)badges.push({text:T("detailRegular"),warn:false});
   var h='<div class="detail-badges">';
@@ -1189,21 +1212,43 @@ function scoringEventTeam(event,home,away){
   if(event.team==="away")return away;
   return "";
 }
+function isTimelineScoringEvent(event){
+  return event&&(event.type==="goal"||event.type==="penalty_goal"||event.type==="own_goal");
+}
+function isTimelineCardEvent(event){
+  return event&&(event.type==="yellow_card"||event.type==="red_card"||event.type==="second_yellow"||event.type==="yellowCard"||event.type==="redCard");
+}
+function isTimelineSubstitutionEvent(event){
+  return event&&(event.type==="substitution"||event.type==="sub");
+}
+function getActualTimelineEvents(matchId){
+  var details=matchId&&typeof MATCH_DETAILS!=="undefined"?MATCH_DETAILS[matchId]:null;
+  if(!details||!Array.isArray(details.events))return [];
+  return details.events;
+}
 function timelineFromActual(matchId,actual,home,away){
-  var goals=getActualGoalEvents(matchId),out=[];
-  for(var i=0;i<goals.length;i++){
-    var e=goals[i],scoring=scoringEventTeam(e,home,away);
-    out.push({
-      minute:e.minute||"",
-      period:e.period||"regular",
-      type:e.type||"goal",
-      scoringTeam:scoring,
-      scorer:actualEventPlayerName(e,"scorer")||detailEventTypeLabel(e.type),
-      scorerTeam:actualEventTeamName(e,"scorer")||e.player_team_cn||scoring,
-      assist:actualEventPlayerName(e,"assist"),
-      assistTeam:actualEventTeamName(e,"assist")||scoring,
-      source:T("detailSourceActual")
-    });
+  var raw=getActualTimelineEvents(matchId),out=[];
+  for(var i=0;i<raw.length;i++){
+    var e=raw[i],scoring=scoringEventTeam(e,home,away);
+    if(isTimelineScoringEvent(e)){
+      out.push({
+        minute:e.minute||"",
+        period:e.period||"regular",
+        type:e.type||"goal",
+        scoringTeam:scoring,
+        scorer:actualEventPlayerName(e,"scorer")||detailEventTypeLabel(e.type),
+        scorerTeam:actualEventTeamName(e,"scorer")||e.player_team_cn||scoring,
+        assist:actualEventPlayerName(e,"assist"),
+        assistTeam:actualEventTeamName(e,"assist")||scoring,
+        source:T("detailSourceActual")
+      });
+    }else if(isTimelineCardEvent(e)){
+      var cardTeam=e.player_team_cn||e.team_cn||scoring||home||away;
+      out.push({minute:e.minute||"",period:e.period||"regular",type:e.type,team:cardTeam,player:actualEventPlayerName(e,"player")||e.player_cn||e.player||detailEventTypeLabel(e.type),playerTeam:cardTeam,source:T("detailSourceActual")});
+    }else if(isTimelineSubstitutionEvent(e)){
+      var subTeam=e.team_cn||scoring||home||away;
+      out.push({minute:e.minute||"",period:e.period||"regular",type:"substitution",team:subTeam,outPlayer:e.out_player_cn||e.outPlayer||"",inPlayer:e.in_player_cn||e.inPlayer||"",playerTeam:subTeam,source:T("detailSourceActual")});
+    }
   }
   return out;
 }
@@ -1229,9 +1274,29 @@ function timelineFromRawEvents(events,home,away,sourceLabel){
   var out=[];
   events=events||[];
   for(var i=0;i<events.length;i++){
-    var e=events[i];if(!isScoringEvent(e))continue;
-    var scoring=e.team==="home"?home:away;
-    out.push({minute:e.minute||"",period:e.period||"",type:e.type||"goal",scoringTeam:scoring,scorer:detailEventTypeLabel(e.type),scorerTeam:e.playerTeam==="away"?away:home,assist:null,assistTeam:null,source:sourceLabel});
+    var e=events[i],team=e.team==="away"?away:home;
+    if(isTimelineScoringEvent(e)){
+      var scoring=e.scoringTeam==="away"?away:(e.scoringTeam==="home"?home:team),playerTeam=e.playerTeam==="away"?away:(e.playerTeam==="home"?home:team),assist=typeof e.assist==="string"?e.assist:(e.assist&&e.assist.player);
+      out.push({minute:e.minute||"",period:e.period||"",type:e.type||"goal",scoringTeam:scoring,scorer:e.scorer||detailEventTypeLabel(e.type),scorerTeam:playerTeam,assist:assist||null,assistTeam:e.assist&&e.assist.team==="away"?away:(e.assist&&e.assist.team==="home"?home:scoring),source:sourceLabel});
+    }else if(isTimelineCardEvent(e)){
+      out.push({minute:e.minute||"",period:e.period||"",type:e.type,team:team,player:e.player||detailEventTypeLabel(e.type),playerTeam:team,source:sourceLabel});
+    }else if(isTimelineSubstitutionEvent(e)){
+      out.push({minute:e.minute||"",period:e.period||"",type:"substitution",team:team,outPlayer:e.outPlayer||"",inPlayer:e.inPlayer||"",playerTeam:team,source:sourceLabel});
+    }
+  }
+  return out;
+}
+function timelineEventKey(event){
+  return [event.type||"",event.minute||"",event.scorer||event.player||event.inPlayer||"",event.outPlayer||"",event.scoringTeam||event.team||""].join("|");
+}
+function mergeTimelineEvents(){
+  var out=[],seen={};
+  for(var a=0;a<arguments.length;a++){
+    var arr=arguments[a]||[];
+    for(var i=0;i<arr.length;i++){
+      var key=timelineEventKey(arr[i]);
+      if(!seen[key]){seen[key]=1;out.push(arr[i]);}
+    }
   }
   return out;
 }
@@ -1280,9 +1345,19 @@ function renderMatchDetailModal(model){
   if(model.events&&model.events.length){
     h+='<div class="detail-timeline">';
     for(var i=0;i<model.events.length;i++){
-      var e=model.events[i],team=e.scoringTeam||e.scorerTeam;
-      h+='<div class="detail-event"><div class="detail-minute">'+escHtml(detailMinuteText(e.minute))+'</div><div><div class="detail-event-main">'+(team?fi(team,"fls"):"")+'<b>'+escHtml(pn(e.scorer,e.scorerTeam||team))+'</b><span>'+escHtml(detailEventTypeLabel(e.type))+'</span></div>';
-      h+='<div class="detail-event-sub">'+escHtml(e.assist?T("detailAssist")+": "+pn(e.assist,e.assistTeam||team):T("detailNoAssist"))+'</div>';
+      var e=model.events[i],team=e.scoringTeam||e.scorerTeam||e.team||e.playerTeam,main="",sub="";
+      if(isTimelineSubstitutionEvent(e)){
+        main=(team?fi(team,"fls"):"")+'<b>'+escHtml(T("detailSubstitution"))+'</b><span>'+escHtml(detailEventTypeLabel(e.type))+'</span>';
+        sub=T("detailSubOut")+": "+pn(e.outPlayer,team)+" · "+T("detailSubIn")+": "+pn(e.inPlayer,team);
+      }else if(isTimelineCardEvent(e)){
+        main=(team?fi(team,"fls"):"")+'<b>'+escHtml(pn(e.player,team))+'</b><span>'+escHtml(detailEventTypeLabel(e.type))+'</span>';
+        sub=e.source||T("detailRegular");
+      }else{
+        main=(team?fi(team,"fls"):"")+'<b>'+escHtml(pn(e.scorer,e.scorerTeam||team))+'</b><span>'+escHtml(detailEventTypeLabel(e.type))+'</span>';
+        sub=e.assist?T("detailAssist")+": "+pn(e.assist,e.assistTeam||team):T("detailNoAssist");
+      }
+      h+='<div class="detail-event"><div class="detail-minute">'+escHtml(detailMinuteText(e.minute))+'</div><div><div class="detail-event-main">'+main+'</div>';
+      h+='<div class="detail-event-sub">'+escHtml(sub)+'</div>';
       h+=detailBadgesHTML(e)+'</div></div>';
     }
     h+='</div>';
@@ -1299,7 +1374,7 @@ function openGroupMatchDetail(gk,mi){
   var actual=getActualGroupResult(gk,mi),matchId=(actual&&actual.id)||m.actualId||m.id;
   var scored=m.hs!==""&&m.as!=="",isActual=m.predictionSource==="actual"&&actual;
   var source=isActual?T("detailSourceActual"):(m.predictionSource==="sim"?T("detailSourceSimulation"):T("detailSourcePrediction"));
-  var events=isActual?timelineFromActual(matchId,actual,m.h,m.a):timelineFromGoalLog(m.hg,m.h,source).concat(timelineFromGoalLog(m.ag,m.a,source));
+  var events=isActual?timelineFromActual(matchId,actual,m.h,m.a):mergeTimelineEvents(timelineFromGoalLog(m.hg,m.h,source),timelineFromGoalLog(m.ag,m.a,source),timelineFromRawEvents(m.simEvents||[],m.h,m.a,source));
   events=sortTimeline(events);
   var expected=isActual?getActualGoalExpectedCount(matchId,getActualGoalEvents(matchId),actual):0;
   var note=isActual&&expected>events.length?(detailFetchPending[matchId]?T("actualGoalsLoading"):T("actualGoalsPartial",{missing:expected-events.length})):"";
@@ -1325,8 +1400,7 @@ function openKOMatchDetail(id,ht,at,hSeed,aSeed,seedRole){
   var source=r?T("detailSourceSimulation"):T("detailSourcePending"),decision=r?koDecisionText(r):"";
   var events=[];
   if(r){
-    events=timelineFromGoalLog(slog.filter(function(s){return s.mid===id&&s.t===home;}),home,source).concat(timelineFromGoalLog(slog.filter(function(s){return s.mid===id&&s.t===away;}),away,source));
-    if(!events.length&&r.events)events=timelineFromRawEvents(r.events,home,away,source);
+    events=mergeTimelineEvents(timelineFromGoalLog(slog.filter(function(s){return s.mid===id&&s.t===home;}),home,source),timelineFromGoalLog(slog.filter(function(s){return s.mid===id&&s.t===away;}),away,source),timelineFromRawEvents(r.events||[],home,away,source));
   }
   events=sortTimeline(events);
   renderMatchDetailModal({
@@ -2460,7 +2534,7 @@ var I18N={
     actualScore:"真实比分",actualApplied:"已带入真实比分",actualAutoFilled:"已自动带入 {n} 场真实比分",fifaRankTitle:"FIFA 世界排名 #{rank}",
     actualGoalsTitle:"进球球员 · ESPN",actualMapped:"已映射 {mapped}/{total}",actualGoalsPartial:"ESPN 事件暂缺 {missing} 球，后续刷新会补齐",actualGoalsLoading:"正在同步进球球员",assistLabel:"助攻",
     detailButton:"详情",detailTitle:"比赛详情",detailTimeline:"时间线",detailSourceActual:"真实比赛 · ESPN",detailSourceSimulation:"模拟比赛",detailSourcePrediction:"预测比赛",detailSourcePending:"赛程信息",
-    detailNoEvents:"还没有进球事件。模拟或填写比分后，会显示进球、助攻、时间、点球和加时信息。",detailNoGoals:"没有进球",detailMinuteTbd:"时间待定",detailRegular:"常规时间",detailExtraTime:"加时",detailShootout:"点球大战",detailPenalty:"点球",detailOwnGoal:"乌龙",detailGoal:"进球",detailAssist:"助攻",detailNoAssist:"无助攻",detailShootoutMade:"命中",detailShootoutMiss:"罚丢",detailDecision:"胜负方式",
+    detailNoEvents:"还没有事件。模拟或填写比分后，会显示进球、助攻、换人、红黄牌、点球和加时。",detailNoGoals:"没有进球",detailMinuteTbd:"时间待定",detailRegular:"常规时间",detailExtraTime:"加时",detailShootout:"点球大战",detailPenalty:"点球",detailOwnGoal:"乌龙",detailGoal:"进球",detailYellowCard:"黄牌",detailRedCard:"红牌",detailSecondYellow:"两黄变红",detailSubstitution:"换人",detailAssist:"助攻",detailNoAssist:"无助攻",detailSubIn:"换上",detailSubOut:"换下",detailShootoutMade:"命中",detailShootoutMiss:"罚丢",detailDecision:"胜负方式",
     hintExpandGroup:"点击小组右侧模拟",shareNeedKO:"请先完成全部淘汰赛，再生成预测海报。",shareLibFail:"html2canvas 未加载，请检查网络",shareGenFail:"生成失败：",
     quickHome:"主胜",quickDraw:"平",quickAway:"客胜",quickSim:"模拟",
     ttSkip:"切歌",ttMusic:"播放 / 暂停",ttTheme:"切换主题",ttInfo:"玩法说明",
@@ -2479,7 +2553,7 @@ var I18N={
     returnGroups:"返回小组赛",seedRank:"第{rank}",seedDirectSlot:"{group} 第{rank}",seedDirectCompact:"{group} 第{rank}",seedThirdSlot:"第三名 {groups}",seedThirdPrimary:"第三名",seedThirdDetail:"候选 {groups}",seedWinner:"{seed}胜者",seedLoser:"{seed}负者",
     waiting:"⏳ 等待晋级",
     r32:"32强",r16:"16强",qf:"8强",sf:"半决赛",finalLabel:"决赛",third:"🥉 季军赛",
-    topScorers:"射手榜",topAssists:"助攻榜",
+    topScorers:"射手榜",topAssists:"助攻榜",awardPanelTitle:"模拟奖项",awardGoldenBoot:"金靴",awardGoldenGlove:"金手套",awardGoldenBall:"金球",awardTopAssist:"助攻王",awardFairPlay:"公平竞赛",awardNoData:"暂无奖项数据",awardCleanSheets:"零封 {n}",awardGoals:"{n} 球",awardAssists:"{n} 助",
     colNum:"#",colPlayer:"球员",colPos:"位置",colTeam:"球队",colGoals:"进球",colAssists:"助攻",
     colMP:"赛",colW:"胜",colD:"平",colL:"负",colGD:"净胜",colPts:"积分",
     noScorerData:"暂无数据 — 比赛中点 ⚽ 记录进球",noAssistData:"暂无数据",
@@ -2533,7 +2607,7 @@ var I18N={
     actualScore:"Actual score",actualApplied:"Actual score filled",actualAutoFilled:"Filled {n} actual result(s)",fifaRankTitle:"FIFA rank #{rank}",
     actualGoalsTitle:"Goal events · ESPN",actualMapped:"Mapped {mapped}/{total}",actualGoalsPartial:"ESPN is missing {missing} goal event(s); refresh will fill them later",actualGoalsLoading:"Syncing goal events",assistLabel:"Assist",
     detailButton:"Details",detailTitle:"Match details",detailTimeline:"Timeline",detailSourceActual:"Real match · ESPN",detailSourceSimulation:"Simulated match",detailSourcePrediction:"Prediction",detailSourcePending:"Fixture info",
-    detailNoEvents:"No goal events yet. Simulate or enter a score to see goals, assists, timing, penalties, and extra-time details.",detailNoGoals:"No goals",detailMinuteTbd:"Time TBD",detailRegular:"Regular time",detailExtraTime:"Extra time",detailShootout:"Penalty shootout",detailPenalty:"Penalty",detailOwnGoal:"Own goal",detailGoal:"Goal",detailAssist:"Assist",detailNoAssist:"No assist",detailShootoutMade:"Scored",detailShootoutMiss:"Missed",detailDecision:"Decision",
+    detailNoEvents:"No events yet. Simulate or enter a score to see goals, assists, substitutions, cards, penalties, and extra time.",detailNoGoals:"No goals",detailMinuteTbd:"Time TBD",detailRegular:"Regular time",detailExtraTime:"Extra time",detailShootout:"Penalty shootout",detailPenalty:"Penalty",detailOwnGoal:"Own goal",detailGoal:"Goal",detailYellowCard:"Yellow card",detailRedCard:"Red card",detailSecondYellow:"Second yellow",detailSubstitution:"Substitution",detailAssist:"Assist",detailNoAssist:"No assist",detailSubIn:"On",detailSubOut:"Off",detailShootoutMade:"Scored",detailShootoutMiss:"Missed",detailDecision:"Decision",
     hintExpandGroup:"Select a group, then simulate on the right",shareNeedKO:"Finish the full knockout stage first to generate a poster.",shareLibFail:"html2canvas failed to load — check your network",shareGenFail:"Generation failed: ",
     quickHome:"Home",quickDraw:"Draw",quickAway:"Away",quickSim:"Sim",
     ttSkip:"Skip track",ttMusic:"Play / Pause",ttTheme:"Toggle theme",ttInfo:"How to play",
@@ -2552,7 +2626,7 @@ var I18N={
     returnGroups:"Back to Groups",seedRank:"#{rank}",seedDirectSlot:"{group} #{rank}",seedDirectCompact:"{group} #{rank}",seedThirdSlot:"3rd {groups}",seedThirdPrimary:"Best 3rd",seedThirdDetail:"From {groups}",seedWinner:"Winner {seed}",seedLoser:"Loser {seed}",
     waiting:"⏳ Awaiting team",
     r32:"R32",r16:"R16",qf:"QF",sf:"SF",finalLabel:"Final",third:"🥉 Third Place",
-    topScorers:"Top Scorers",topAssists:"Top Assists",
+    topScorers:"Top Scorers",topAssists:"Top Assists",awardPanelTitle:"Tournament awards",awardGoldenBoot:"Golden Boot",awardGoldenGlove:"Golden Glove",awardGoldenBall:"Golden Ball",awardTopAssist:"Top Assist",awardFairPlay:"Fair Play",awardNoData:"No award data yet",awardCleanSheets:"{n} clean sheets",awardGoals:"{n} goals",awardAssists:"{n} assists",
     colNum:"#",colPlayer:"Player",colPos:"Pos",colTeam:"Team",colGoals:"G",colAssists:"A",
     colMP:"P",colW:"W",colD:"D",colL:"L",colGD:"GD",colPts:"Pts",
     noScorerData:"No data yet — tap ⚽ in a match to log goals",noAssistData:"No data yet",
@@ -2609,7 +2683,13 @@ function cupIcon(){
 function tn(team){if(LANG==="en"&&TEAM_EN[team])return TEAM_EN[team];return team;}
 function rankBadge(team){var r=FIFA_RANKINGS&&FIFA_RANKINGS[team];return r?'<span class="team-rank" title="'+escHtml(T("fifaRankTitle",{rank:r}))+'">#'+r+'</span>':"";}
 function teamNameHTML(team){return fi(team,"fls")+" "+'<span class="team-name">'+escHtml(tn(team))+'</span>'+rankBadge(team);}
-function pn(player,team){if(LANG==="en"){if(typeof EN_OVERRIDE!=="undefined"&&team&&EN_OVERRIDE[team]&&EN_OVERRIDE[team][player])return EN_OVERRIDE[team][player];if(typeof EN!=="undefined"&&EN[player])return EN[player];}return player;}
+function safePlayerName(player){
+  if(player==null)return LANG==="en"?"Unknown":"未记录";
+  var s=String(player).trim();
+  if(!s||s==="undefined"||s==="null")return LANG==="en"?"Unknown":"未记录";
+  return s;
+}
+function pn(player,team){player=safePlayerName(player);if(LANG==="en"){if(typeof EN_OVERRIDE!=="undefined"&&team&&EN_OVERRIDE[team]&&EN_OVERRIDE[team][player])return EN_OVERRIDE[team][player];if(typeof EN!=="undefined"&&EN[player])return EN[player];}return player;}
 function pos_t(pos){if(LANG==="en"&&POS_EN[pos])return POS_EN[pos];return pos;}
 function groupName(gk){return T("groupPrefix",{g:gk});}
 function applyI18N(){
@@ -2630,8 +2710,8 @@ function applyI18N(){
 function toggleLang(){LANG=LANG==="zh"?"en":"zh";localStorage.setItem("wc26_lang",LANG);document.documentElement.lang=(LANG==="zh")?"zh-CN":"en";hideToast();applyI18N();render();}
 applyI18N();
 var PredictionEngine=(function(){
-var ENGINE_SCHEMA_VERSION=3;
-var OUTPUT_CAPABILITIES=["winner","scoreline","goals","assists","cards","halfTimeScore"];
+var ENGINE_SCHEMA_VERSION=4;
+var OUTPUT_CAPABILITIES=["winner","scoreline","goals","assists","cards","halfTimeScore","substitutions","awards"];
 var PREDICTION_MODES=[
   {id:"random",label:"Pure Random",status:"implemented",provider:"offline",capabilities:OUTPUT_CAPABILITIES.slice()},
   {id:"strength",label:"Strength Model",status:"implemented",provider:"offline-hybrid",capabilities:OUTPUT_CAPABILITIES.slice()},
@@ -2649,6 +2729,11 @@ var SIMULATION_EVENT_CONFIG={
   ownGoalShare:0.028,
   penaltyGoalShare:0.11,
   assistRate:0.72,
+  yellowCardAverage:3.55,
+  redCardAverage:0.06,
+  substitutionAverage:4.2,
+  maxSubstitutions:5,
+  extraTimeAdditionalSubstitution:1,
   extraTimeGoalIntensity:0.33,
   shootoutConversion:0.76,
   goalMinuteBuckets:[
@@ -2827,6 +2912,11 @@ function eventConfig(overrides){
   cfg.ownGoalShare=clamp(Number(cfg.ownGoalShare)||0,0,1);
   cfg.penaltyGoalShare=clamp(Number(cfg.penaltyGoalShare)||0,0,1);
   cfg.assistRate=clamp(Number(cfg.assistRate)||0,0,1);
+  cfg.yellowCardAverage=clamp(Number(cfg.yellowCardAverage)||0,0,12);
+  cfg.redCardAverage=clamp(Number(cfg.redCardAverage)||0,0,4);
+  cfg.substitutionAverage=clamp(Number(cfg.substitutionAverage)||0,0,6);
+  cfg.maxSubstitutions=clamp(Math.round(Number(cfg.maxSubstitutions)||5),0,6);
+  cfg.extraTimeAdditionalSubstitution=clamp(Math.round(Number(cfg.extraTimeAdditionalSubstitution)||0),0,1);
   cfg.extraTimeGoalIntensity=clamp(Number(cfg.extraTimeGoalIntensity)||0,0.05,0.6);
   cfg.shootoutConversion=clamp(Number(cfg.shootoutConversion)||0.76,0.45,0.95);
   return cfg;
@@ -2836,6 +2926,22 @@ function isScoringEvent(event){
   if(!event)return false;
   return event.type==="goal"||event.type==="penalty_goal"||event.type==="own_goal";
 }
+function isCardEvent(event){
+  return event&&(event.type==="yellow_card"||event.type==="red_card"||event.type==="second_yellow"||event.type==="yellowCard"||event.type==="redCard");
+}
+function isSubstitutionEvent(event){
+  return event&&(event.type==="substitution"||event.type==="sub");
+}
+function sampleCountAverage(avg,rng,max){
+  avg=Number(avg)||0;
+  if(avg<=0)return 0;
+  var n=Math.floor(avg)+(rng()<(avg-Math.floor(avg))?1:0);
+  return clamp(n,0,max==null?99:max);
+}
+function sampleRegularMinute(rng,start,end){
+  start=start||1;end=end||90;
+  return start+Math.floor(rng()*(end-start+1));
+}
 function sampleGoalMinute(rng,period,cfg){
   if(period==="extraTime1")return 91+Math.floor(rng()*15);
   if(period==="extraTime2")return 106+Math.floor(rng()*15);
@@ -2844,6 +2950,24 @@ function sampleGoalMinute(rng,period,cfg){
   var r=rng()*total,acc=0,b=buckets[buckets.length-1];
   for(var j=0;j<buckets.length;j++){acc+=buckets[j].weight||0;if(r<=acc){b=buckets[j];break;}}
   return b.start+Math.floor(rng()*(b.end-b.start+1));
+}
+function eventSortMinute(event){
+  var period=event&&event.period||"regular",minute=event&&event.minute,base=0;
+  if(period==="extraTime1")base=90;
+  else if(period==="extraTime2")base=105;
+  else if(period==="extraTime")base=90;
+  else if(period==="shootout")base=130;
+  if(minute===""||minute==null)return base+999;
+  var m=String(minute).match(/^(\d+)/),n=m?parseInt(m[1],10):Number(minute);
+  if(!isFinite(n))n=999;
+  var add=String(minute).match(/\+(\d+)/);
+  return base+n+(add?parseInt(add[1],10)/100:0);
+}
+function finalizeEvents(events){
+  events=events||[];
+  for(var i=0;i<events.length;i++)events[i].sortMinute=eventSortMinute(events[i]);
+  events.sort(function(a,b){return a.sortMinute-b.sortMinute;});
+  return events;
 }
 function buildGoalEvent(side,rng,cfg,period){
   cfg=eventConfig(cfg);
@@ -2871,8 +2995,102 @@ function buildScoreEvents(homeGoals,awayGoals,rng,cfg,period){
     for(var i=0;i<count;i++)events.push(buildGoalEvent(side,rng,cfg,period));
   }
   addGoals("home",homeGoals);addGoals("away",awayGoals);
-  events.sort(function(a,b){return a.minute-b.minute;});
+  return finalizeEvents(events);
+}
+function buildCardEvents(rng,cfg){
+  cfg=eventConfig(cfg);
+  var events=[],yellow=sampleCountAverage(cfg.yellowCardAverage,rng,12),red=sampleCountAverage(cfg.redCardAverage,rng,4);
+  for(var i=0;i<yellow;i++){
+    var ySide=rng()<0.5?"home":"away";
+    events.push({type:"yellow_card",team:ySide,playerTeam:ySide,period:"regular",minute:sampleRegularMinute(rng,8,90),minuteLabel:"",player:null});
+  }
+  for(var j=0;j<red;j++){
+    var rSide=rng()<0.5?"home":"away";
+    events.push({type:"red_card",team:rSide,playerTeam:rSide,period:"regular",minute:sampleRegularMinute(rng,15,90),minuteLabel:"",player:null});
+  }
   return events;
+}
+function buildSubstitutionEvents(rng,cfg,period){
+  cfg=eventConfig(cfg);
+  period=period||"regular";
+  var events=[],home=sampleCountAverage(cfg.substitutionAverage,rng,cfg.maxSubstitutions),away=sampleCountAverage(cfg.substitutionAverage,rng,cfg.maxSubstitutions);
+  function add(side,count){
+    for(var i=0;i<count;i++){
+      var minute=period==="extraTime"?sampleRegularMinute(rng,91,120):sampleRegularMinute(rng,46,90);
+      events.push({type:"substitution",team:side,playerTeam:side,period:period,minute:minute,minuteLabel:String(minute)+"'",outPlayer:null,inPlayer:null});
+    }
+  }
+  add("home",home);add("away",away);
+  return events;
+}
+function normalizePlayerList(players){
+  var out=[],seen={};
+  players=players||[];
+  for(var i=0;i<players.length;i++){
+    var p=players[i],name=typeof p==="string"?p:(p&&(p.name||p.id));
+    if(name&&!seen[name]){seen[name]=1;out.push(name);}
+  }
+  return out;
+}
+function splitSquad(players){
+  var list=normalizePlayerList(players);
+  if(list.length<=1)return{active:list.slice(),bench:[]};
+  var benchCount=list.length>11?list.length-11:Math.min(5,Math.max(1,Math.floor(list.length/4)));
+  var activeCount=Math.max(1,list.length-benchCount);
+  return{active:list.slice(0,activeCount),bench:list.slice(activeCount)};
+}
+function pickName(list,rng,avoid){
+  var pool=[];
+  for(var i=0;i<(list||[]).length;i++)if(list[i]&&list[i]!==avoid)pool.push(list[i]);
+  if(!pool.length)return "";
+  return pool[Math.floor(rng()*pool.length)];
+}
+function sideState(states,side){return side==="away"?states.away:states.home;}
+function removeActivePlayer(state,player){
+  if(!player)return;
+  var next=[];
+  for(var i=0;i<state.active.length;i++)if(state.active[i]!==player)next.push(state.active[i]);
+  state.active=next;
+}
+function assignEventParticipants(events,options,rng){
+  options=options||{};rng=rng||Math.random;
+  var states={home:splitSquad(options.homePlayers),away:splitSquad(options.awayPlayers)};
+  events=finalizeEvents(events);
+  for(var i=0;i<events.length;i++){
+    var e=events[i],side=e.team==="away"?"away":"home";
+    if(isScoringEvent(e)){
+      var scorerSide=e.playerTeam==="away"?"away":(e.playerTeam==="home"?"home":side);
+      var scorerState=sideState(states,scorerSide);
+      if(!e.scorer)e.scorer=pickName(scorerState.active,rng);
+      if(e.assist&&typeof e.assist==="object"&&!e.assist.player){
+        var assistState=sideState(states,e.assist.team==="away"?"away":"home");
+        e.assist.player=pickName(assistState.active,rng,e.scorer);
+      }
+    }else if(isCardEvent(e)){
+      var cardState=sideState(states,side);
+      if(!e.player)e.player=pickName(cardState.active,rng);
+      if(e.type==="red_card"||e.type==="redCard"||e.type==="second_yellow")removeActivePlayer(cardState,e.player);
+    }else if(isSubstitutionEvent(e)){
+      var subState=sideState(states,side),out=e.outPlayer||pickName(subState.active,rng),inn=e.inPlayer||pickName(subState.bench,rng);
+      if(out&&inn&&out!==inn){
+        e.outPlayer=out;e.inPlayer=inn;
+        removeActivePlayer(subState,out);
+        var nextBench=[];
+        for(var b=0;b<subState.bench.length;b++)if(subState.bench[b]!==inn)nextBench.push(subState.bench[b]);
+        subState.bench=nextBench;
+        subState.active.push(inn);
+      }
+    }
+  }
+  return finalizeEvents(events.filter(function(e){return !isSubstitutionEvent(e)||(e.inPlayer&&e.outPlayer);}));
+}
+function buildMatchEvents(options){
+  options=options||{};
+  var rng=options.rng||Math.random,cfg=eventConfig(options.eventConfig||options.simulationEventConfig);
+  var events=buildScoreEvents(options.homeGoals||0,options.awayGoals||0,rng,cfg,options.period||"regular");
+  if(options.includeCards!==false)events=events.concat(buildCardEvents(rng,cfg));
+  if(options.includeSubstitutions!==false)events=events.concat(buildSubstitutionEvents(rng,cfg,"regular"));
+  return assignEventParticipants(events,options,rng);
 }
 function deriveScorelineFromEvents(events){
   var score={home:0,away:0};
@@ -2885,6 +3103,16 @@ function deriveScorelineFromEvents(events){
   return score;
 }
 function addScore(a,b){return{home:(a.home||0)+(b.home||0),away:(a.away||0)+(b.away||0)};}
+function countCardsBySide(events){
+  var out={home:{yellow:0,red:0,total:0},away:{yellow:0,red:0,total:0}};
+  events=events||[];
+  for(var i=0;i<events.length;i++){
+    var e=events[i],side=e.team==="away"?"away":"home";
+    if(e.type==="yellow_card"||e.type==="yellowCard"){out[side].yellow++;out[side].total++;}
+    if(e.type==="red_card"||e.type==="redCard"||e.type==="second_yellow"){out[side].red++;out[side].total++;}
+  }
+  return out;
+}
 function sampleShootout(rng,cfg){
   cfg=eventConfig(cfg);
   var home=0,away=0,kicks=[];
@@ -2926,8 +3154,8 @@ function simulateMatch(options){
   var scoreline=sampleConditionalScoreline(lambdas,sampledOutcome,rng);
   var h=scoreline.home,a=scoreline.away;
   var half={home:Math.min(h,Math.floor(rng()*(h+1))),away:Math.min(a,Math.floor(rng()*(a+1)))};
-  var cards={home:Math.floor(rng()*5),away:Math.floor(rng()*5)};
-  var events=buildScoreEvents(h,a,rng,options.eventConfig||options.simulationEventConfig);
+  var events=buildMatchEvents({homeGoals:h,awayGoals:a,rng:rng,eventConfig:options.eventConfig||options.simulationEventConfig,homePlayers:options.homePlayers,awayPlayers:options.awayPlayers,homeTeam:options.homeTeam,awayTeam:options.awayTeam});
+  var cards=countCardsBySide(events);
   var eventScore=deriveScorelineFromEvents(events);
   h=eventScore.home;a=eventScore.away;
   var prediction=createPredictionEntity({
@@ -2953,7 +3181,8 @@ function simulateKnockoutMatch(options){
   baseOptions.allowDraw=true;baseOptions.rng=rng;
   var regPred=options.regulationScoreline?null:simulateMatch(baseOptions);
   var regulation=options.regulationScoreline||{home:regPred.homeGoals,away:regPred.awayGoals};
-  var events=options.regulationEvents||buildScoreEvents(regulation.home,regulation.away,rng,cfg,"regular");
+  var participantOptions={homePlayers:options.homePlayers,awayPlayers:options.awayPlayers,homeTeam:options.homeTeam,awayTeam:options.awayTeam};
+  var events=options.regulationEvents||buildMatchEvents({homeGoals:regulation.home,awayGoals:regulation.away,rng:rng,eventConfig:cfg,homePlayers:options.homePlayers,awayPlayers:options.awayPlayers,homeTeam:options.homeTeam,awayTeam:options.awayTeam});
   var score=deriveScorelineFromEvents(events),extraTime=null,shootout=null,decidedBy="regulation",winnerSide=score.home>score.away?"home":score.away>score.home?"away":null;
   if(!winnerSide){
     var homeStrength=strengthOf(options.homeTeam,options.strengths),awayStrength=strengthOf(options.awayTeam,options.strengths);
@@ -2966,6 +3195,8 @@ function simulateKnockoutMatch(options){
     var firstHalf={home:Math.floor(et.home/2),away:Math.floor(et.away/2)},secondHalf={home:et.home-firstHalf.home,away:et.away-firstHalf.away};
     events=events.concat(buildScoreEvents(firstHalf.home,firstHalf.away,rng,cfg,"extraTime1"));
     events=events.concat(buildScoreEvents(secondHalf.home,secondHalf.away,rng,cfg,"extraTime2"));
+    if(cfg.extraTimeAdditionalSubstitution>0)events=events.concat(buildSubstitutionEvents(rng,{substitutionAverage:cfg.extraTimeAdditionalSubstitution,maxSubstitutions:cfg.extraTimeAdditionalSubstitution},"extraTime"));
+    events=assignEventParticipants(events,participantOptions,rng);
     score=addScore(score,extraTime);
     if(score.home!==score.away){
       decidedBy="extraTime";
@@ -2991,10 +3222,91 @@ function simulateKnockoutMatch(options){
     winnerSide:winnerSide,
     outcome:winnerSide,
     decidedBy:decidedBy,
-    events:events.sort(function(a,b){return a.minute-b.minute;})
+    events:finalizeEvents(events)
   };
 }
-return{ENGINE_SCHEMA_VERSION:ENGINE_SCHEMA_VERSION,PREDICTION_MODES:PREDICTION_MODES,GAMEPLAY_MODES:GAMEPLAY_MODES,DEFAULT_GOAL_DISTRIBUTION:DEFAULT_GOAL_DISTRIBUTION,SIMULATION_EVENT_CONFIG:SIMULATION_EVENT_CONFIG,createCoachEntity:createCoachEntity,createPlayerEntity:createPlayerEntity,createTeamEntity:createTeamEntity,createMatchEntity:createMatchEntity,createPredictionEntity:createPredictionEntity,getPredictionMode:function(id){return getMode(id,PREDICTION_MODES);},getGameplayMode:function(id){return getMode(id,GAMEPLAY_MODES);},normalizeOddsMarket:normalizeOddsMarket,estimateOutcomeProbabilities:estimateOutcomeProbabilities,simulateMatch:simulateMatch,simulateKnockoutMatch:simulateKnockoutMatch,buildScoreEvents:buildScoreEvents,deriveScorelineFromEvents:deriveScorelineFromEvents,computePoissonLambdas:computePoissonLambdas,samplePoisson:samplePoisson,sampleConditionalScoreline:sampleConditionalScoreline,POISSON_BASE_TOTAL:POISSON_BASE_TOTAL,POISSON_SUPREMACY_K:POISSON_SUPREMACY_K};
+function sideToTeam(match,side){
+  if(side==="home")return match.homeTeam||match.ht||"";
+  if(side==="away")return match.awayTeam||match.at||"";
+  return "";
+}
+function resolveTeamValue(match,value,fallbackSide){
+  if(value==="home"||value==="away")return sideToTeam(match,value);
+  if(value)return value;
+  return sideToTeam(match,fallbackSide);
+}
+function assistPlayerName(assist){
+  if(!assist)return "";
+  if(typeof assist==="string")return assist;
+  return assist.player||assist.name||"";
+}
+function ensurePlayerStat(stats,team,player,minutesMap){
+  if(!team||!player)return null;
+  var key=team+"|"+player;
+  if(!stats[key])stats[key]={team:team,player:player,goals:0,assists:0,minutes:minutesMap&&isFinite(minutesMap[key])?Number(minutesMap[key]):0,score:0,cards:0};
+  return stats[key];
+}
+function awardStageWeight(stage){
+  stage=String(stage||"").toUpperCase();
+  if(stage==="FINAL")return 2.4;
+  if(stage==="3RD")return 1.1;
+  if(stage.indexOf("S")===0)return 1.9;
+  if(stage.indexOf("Q")===0)return 1.5;
+  if(stage.indexOf("L")===0)return 1.25;
+  if(stage.indexOf("R")===0)return 1.1;
+  return 1;
+}
+function deriveTournamentAwards(input){
+  input=input||{};
+  var matches=input.matches||[],minutesMap=input.playerMinutes||{},stats={},keepers={},teams={};
+  function teamStat(team){if(!team)return null;if(!teams[team])teams[team]={team:team,yellow:0,red:0,points:0,matches:0};return teams[team];}
+  function keeperStat(team,player){
+    if(!team||!player)return null;
+    var key=team+"|"+player;
+    if(!keepers[key])keepers[key]={team:team,player:player,cleanSheets:0,goalsAgainst:0,matches:0,saves:0,minutes:0,score:0};
+    return keepers[key];
+  }
+  for(var i=0;i<matches.length;i++){
+    var match=matches[i]||{},events=match.events||[],score=match.scoreline||{home:Number(match.h)||0,away:Number(match.a)||0},stageWeight=awardStageWeight(match.stage);
+    var homeTeam=match.homeTeam||match.ht||"",awayTeam=match.awayTeam||match.at||"";
+    if(homeTeam)teamStat(homeTeam).matches++;if(awayTeam)teamStat(awayTeam).matches++;
+    for(var e=0;e<events.length;e++){
+      var event=events[e]||{},type=event.type||"";
+      if(type==="goal"||type==="penalty_goal"){
+        var scorer=event.scorer||event.player||"",scorerTeam=resolveTeamValue(match,event.scorerTeam||event.playerTeam,event.team||event.scoringTeam);
+        var stat=ensurePlayerStat(stats,scorerTeam,scorer,minutesMap);
+        if(stat){stat.goals++;stat.score+=4*stageWeight;}
+        var assist=assistPlayerName(event.assist),assistTeam=resolveTeamValue(match,event.assistTeam||(event.assist&&event.assist.team),event.team||event.scoringTeam);
+        var ast=ensurePlayerStat(stats,assistTeam,assist,minutesMap);
+        if(ast){ast.assists++;ast.score+=3*stageWeight;}
+      }else if(type==="yellow_card"||type==="yellowCard"){
+        var yTeam=resolveTeamValue(match,event.team||event.playerTeam);
+        var yts=teamStat(yTeam);if(yts){yts.yellow++;yts.points+=1;}
+        var yp=ensurePlayerStat(stats,yTeam,event.player,minutesMap);if(yp){yp.cards++;yp.score-=0.25;}
+      }else if(type==="red_card"||type==="redCard"||type==="second_yellow"){
+        var rTeam=resolveTeamValue(match,event.team||event.playerTeam);
+        var rts=teamStat(rTeam);if(rts){rts.red++;rts.points+=3;}
+        var rp=ensurePlayerStat(stats,rTeam,event.player,minutesMap);if(rp){rp.cards+=3;rp.score-=1.2;}
+      }
+    }
+    var hgk=keeperStat(homeTeam,match.homeGoalkeeper),agk=keeperStat(awayTeam,match.awayGoalkeeper);
+    if(hgk){hgk.matches++;hgk.minutes+=match.minutes||90;hgk.goalsAgainst+=Number(score.away)||0;hgk.saves+=Number(match.homeSaves)||0;if((Number(score.away)||0)===0)hgk.cleanSheets++;}
+    if(agk){agk.matches++;agk.minutes+=match.minutes||90;agk.goalsAgainst+=Number(score.home)||0;agk.saves+=Number(match.awaySaves)||0;if((Number(score.home)||0)===0)agk.cleanSheets++;}
+  }
+  var players=[];for(var k in stats){var ps=stats[k];if(!ps.minutes)ps.minutes=Math.max(90,(ps.goals+ps.assists)*70);players.push(ps);}
+  var topScorers=players.slice().sort(function(a,b){return b.goals-a.goals||b.assists-a.assists||a.minutes-b.minutes||a.player.localeCompare(b.player);}).filter(function(x){return x.goals>0;});
+  var topAssists=players.slice().sort(function(a,b){return b.assists-a.assists||b.goals-a.goals||a.minutes-b.minutes||a.player.localeCompare(b.player);}).filter(function(x){return x.assists>0;});
+  var goldenBall=players.slice().sort(function(a,b){return b.score-a.score||b.goals-a.goals||b.assists-a.assists||a.player.localeCompare(b.player);})[0]||null;
+  var keeperList=[];for(var g in keepers){var ks=keepers[g];ks.score=ks.cleanSheets*5+ks.saves*0.25-ks.goalsAgainst*1.4+ks.matches*0.2;keeperList.push(ks);}
+  keeperList.sort(function(a,b){return b.score-a.score||b.cleanSheets-a.cleanSheets||a.goalsAgainst-b.goalsAgainst||b.minutes-a.minutes||a.player.localeCompare(b.player);});
+  var teamList=[];for(var t in teams)teamList.push(teams[t]);
+  teamList.sort(function(a,b){
+    var ar=a.points/Math.max(1,a.matches),br=b.points/Math.max(1,b.matches);
+    return ar-br||b.matches-a.matches||a.red-b.red||a.yellow-b.yellow||a.team.localeCompare(b.team);
+  });
+  return{goldenBoot:topScorers[0]||null,topScorers:topScorers,topAssists:topAssists,goldenGlove:keeperList[0]||null,goldenBall:goldenBall,fairPlay:teamList[0]||null};
+}
+return{ENGINE_SCHEMA_VERSION:ENGINE_SCHEMA_VERSION,PREDICTION_MODES:PREDICTION_MODES,GAMEPLAY_MODES:GAMEPLAY_MODES,DEFAULT_GOAL_DISTRIBUTION:DEFAULT_GOAL_DISTRIBUTION,SIMULATION_EVENT_CONFIG:SIMULATION_EVENT_CONFIG,createCoachEntity:createCoachEntity,createPlayerEntity:createPlayerEntity,createTeamEntity:createTeamEntity,createMatchEntity:createMatchEntity,createPredictionEntity:createPredictionEntity,getPredictionMode:function(id){return getMode(id,PREDICTION_MODES);},getGameplayMode:function(id){return getMode(id,GAMEPLAY_MODES);},normalizeOddsMarket:normalizeOddsMarket,estimateOutcomeProbabilities:estimateOutcomeProbabilities,simulateMatch:simulateMatch,simulateKnockoutMatch:simulateKnockoutMatch,buildScoreEvents:buildScoreEvents,buildMatchEvents:buildMatchEvents,deriveScorelineFromEvents:deriveScorelineFromEvents,deriveTournamentAwards:deriveTournamentAwards,computePoissonLambdas:computePoissonLambdas,samplePoisson:samplePoisson,sampleConditionalScoreline:sampleConditionalScoreline,POISSON_BASE_TOTAL:POISSON_BASE_TOTAL,POISSON_SUPREMACY_K:POISSON_SUPREMACY_K};
 })();
 if(typeof window!=="undefined")window.PredictionEngine=PredictionEngine;
 // Team strength tier (1=weakest, 5=strongest). Teams not listed default to 3.
@@ -3627,6 +3939,60 @@ function primeLeaderboardPhotos(items){
     if(photoCache[item.p]===undefined)photoCache[item.p]=PHOTO_MAP[item.p]||photoCache[qk]||null;
   }
 }
+function firstGoalkeeper(team){
+  var players=getPlayers(team);
+  for(var i=0;i<players.length;i++)if(getPos(players[i],team)==="门将")return players[i];
+  return players[0]||"";
+}
+function awardEventFromActual(e,home,away){
+  if(!e)return null;
+  if(isTimelineScoringEvent(e)){
+    return{type:e.type,team:e.team,scoringTeam:e.scoring_team_cn||e.team_cn,playerTeam:e.player_team_cn||actualEventTeamName(e,"scorer")||e.team_cn,scorer:actualEventPlayerName(e,"scorer"),assist:actualEventPlayerName(e,"assist")||null};
+  }
+  if(isTimelineCardEvent(e)){
+    return{type:e.type==="yellowCard"?"yellow_card":(e.type==="redCard"?"red_card":e.type),team:e.player_team_cn||e.team_cn,playerTeam:e.player_team_cn||e.team_cn,player:actualEventPlayerName(e,"player")||e.player_cn||e.player};
+  }
+  return null;
+}
+function collectAwardMatches(){
+  var out=[];
+  for(var g in gm)for(var i=0;i<gm[g].length;i++){
+    var m=gm[g][i],actual=getActualGroupResult(g,i),matchId=(actual&&actual.id)||m.actualId||m.id,hs=m.hs===""?NaN:Number(m.hs),as=m.as===""?NaN:Number(m.as);
+    if(actual&&m.predictionSource==="actual"){hs=Number(actual.hs);as=Number(actual.as);}
+    if(!isFinite(hs)||!isFinite(as))continue;
+    var events=[];
+    if(actual&&m.predictionSource==="actual"){
+      var raw=getActualTimelineEvents(matchId);
+      for(var a=0;a<raw.length;a++){var ae=awardEventFromActual(raw[a],m.h,m.a);if(ae)events.push(ae);}
+    }else{
+      events=(m.simEvents&&m.simEvents.length)?m.simEvents:[].concat(m.hg||[],m.ag||[]).map(function(s){return{type:s.eventType||"goal",team:s.t===m.a?"away":"home",scoringTeam:s.t,playerTeam:s.playerTeam||s.t,scorer:s.g?s.p:"",assist:s.a?s.p:null};});
+    }
+    out.push({id:matchId,stage:g,homeTeam:m.h,awayTeam:m.a,homeGoalkeeper:firstGoalkeeper(m.h),awayGoalkeeper:firstGoalkeeper(m.a),scoreline:{home:hs,away:as},events:events});
+  }
+  for(var id in ko){
+    var r=ko[id];if(!r||!r.ht||!r.at)continue;
+    out.push({id:id,stage:id,homeTeam:r.ht,awayTeam:r.at,homeGoalkeeper:firstGoalkeeper(r.ht),awayGoalkeeper:firstGoalkeeper(r.at),scoreline:{home:Number(r.h)||0,away:Number(r.a)||0},events:r.events||[]});
+  }
+  return out;
+}
+function computeTournamentAwards(){
+  return PredictionEngine.deriveTournamentAwards({matches:collectAwardMatches()});
+}
+function awardCardHTML(label,item,meta){
+  if(!item)return '<div class="award-card"><div class="award-label">'+escHtml(label)+'</div><div class="award-name"><span>'+escHtml(T("awardNoData"))+'</span></div></div>';
+  var team=item.team||"",name=item.player||item.team||"";
+  return '<div class="award-card"><div class="award-label">'+escHtml(label)+'</div><div class="award-name">'+(team?fi(team,"fls"):"")+'<span>'+escHtml(pn(name,team))+'</span></div><div class="award-meta">'+escHtml(meta||"")+'</div></div>';
+}
+function renderAwardsPanel(awards){
+  awards=awards||computeTournamentAwards();
+  var assist=awards.topAssists&&awards.topAssists[0],h='<div class="award-panel"><div class="award-panel-head"><div class="award-panel-title">'+T("awardPanelTitle")+'</div></div><div class="award-panel-grid">';
+  h+=awardCardHTML(T("awardGoldenBoot"),awards.goldenBoot,awards.goldenBoot?T("awardGoals",{n:awards.goldenBoot.goals})+" · "+T("awardAssists",{n:awards.goldenBoot.assists}):"");
+  h+=awardCardHTML(T("awardTopAssist"),assist,assist?T("awardAssists",{n:assist.assists}):"");
+  h+=awardCardHTML(T("awardGoldenBall"),awards.goldenBall,awards.goldenBall?T("awardGoals",{n:awards.goldenBall.goals})+" · "+T("awardAssists",{n:awards.goldenBall.assists}):"");
+  h+=awardCardHTML(T("awardGoldenGlove"),awards.goldenGlove,awards.goldenGlove?T("awardCleanSheets",{n:awards.goldenGlove.cleanSheets}):"");
+  h+=awardCardHTML(T("awardFairPlay"),awards.fairPlay,awards.fairPlay?((awards.fairPlay.points||0)+" pts"):"");
+  return h+'</div></div>';
+}
 function rScorers(el){var m={};function add(arr){if(!arr)return;for(var i=0;i<arr.length;i++){var s=arr[i];if(s.ownGoal)continue;var statTeam=s.playerTeam||s.t,k=s.p+"|"+statTeam;if(!m[k])m[k]={p:s.p,t:statTeam,g:0,a:0};m[k].g+=(s.g||0);m[k].a+=(s.a||0);}}
 function addActual(events){if(!events)return;for(var i=0;i<events.length;i++){var e=events[i];if(!isActualScoringEvent(e)||e.type==="own_goal")continue;var sp=e.scorer_app_alias||e.scorer_cn,st=e.scorer_team_cn||e.team_cn;if(sp&&st)add([{p:sp,t:st,g:1,a:0}]);var ap=e.assist_app_alias||e.assist_cn,at=e.assist_team_cn||st;if(ap&&at)add([{p:ap,t:at,g:0,a:1}]);}}
 for(var k in gm)for(var j=0;j<gm[k].length;j++){var match=gm[k][j];if(match.predictionSource==="actual"&&match.actualEvents&&match.actualEvents.length)addActual(match.actualEvents);else{add(match.hg);add(match.ag);}}add(slog);
@@ -3638,6 +4004,7 @@ primeLeaderboardPhotos(goals.concat(assists));
 var thBase='padding:8px 4px;text-align:left;color:var(--ink-light);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--line-delicate)';
 var thCtr='padding:8px 4px;text-align:center;color:var(--ink-light);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--line-delicate)';
 var h=renderHistorySection();
+h+=renderAwardsPanel(computeTournamentAwards());
 h+='<div class="lbg"><div class="lb-card"><h3 style="color:var(--accent-purple)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line></svg>'+T("topScorers")+'</h3>';
 if(!goals.length)h+='<p style="color:var(--ink-light);font-size:12px;text-align:center;padding:20px">'+T("noScorerData")+'</p>';
 else{h+='<table style="width:100%;border-collapse:collapse"><thead><tr><th style="'+thBase+';width:30px">'+T("colNum")+'</th><th style="'+thBase+';width:42px"></th><th style="'+thBase+'">'+T("colPlayer")+'</th><th style="'+thBase+';width:50px">'+T("colPos")+'</th><th style="'+thBase+';width:36px">'+T("colTeam")+'</th><th style="'+thCtr+';width:48px">'+T("colGoals")+'</th></tr></thead><tbody>';for(var i=0;i<goals.length;i++){var x=goals[i];var xpos=getPos(x.p,x.t);h+='<tr'+(i===0?' style="background:var(--row-gold-bg)"':'')+'><td style="color:'+(i<3?"var(--accent-purple)":"var(--ink-light)")+';font-weight:700;padding:7px 4px">'+(i+1)+'</td><td style="padding:4px 2px">'+lbPhoto(x.p,x.t)+'</td><td style="padding:7px 4px;font-weight:600">'+pn(x.p,x.t)+'</td><td style="padding:7px 4px;color:var(--ink-medium);font-size:12px">'+pos_t(xpos)+'</td><td style="padding:7px 4px">'+fi(x.t,"fls")+'</td><td style="padding:7px 4px;text-align:center;color:var(--accent-purple);font-weight:700;font-size:14px">'+x.g+'</td></tr>';}h+='</tbody></table>';}
@@ -3699,14 +4066,14 @@ function ownGoalPool(team){
 function pushAutoGoalFromEvent(target,event,scoringTeam,opponentTeam,mid){
   var isOwn=event.type==="own_goal",playerTeam=isOwn?opponentTeam:scoringTeam;
   var pool=isOwn?ownGoalPool(playerTeam):getPlayers(playerTeam).filter(function(x){return getPos(x,playerTeam)!=="门将";});
-  var sc=weightedPick(pool,playerTeam,GOAL_W,3,"goal");if(!sc)return;
+  var sc=event.scorer||weightedPick(pool,playerTeam,GOAL_W,3,"goal");if(!sc)return;
   var rec={p:sc,t:scoringTeam,playerTeam:playerTeam,g:1,a:0,eventType:event.type,minute:event.minute,period:event.period,ownGoal:isOwn};
   if(mid)rec.mid=mid;
   target.push(rec);
   if(event.type==="penalty_goal")return;
   if(!isOwn&&event.assist&&pool.length>1){
     var assistPool=getAssistPool(pool,sc);
-    var asst=weightedPick(assistPool,playerTeam,ASSIST_W,3,"assist");
+    var asst=(typeof event.assist==="string"?event.assist:(event.assist&&event.assist.player))||weightedPick(assistPool,playerTeam,ASSIST_W,3,"assist");
     if(asst){var arec={p:asst,t:scoringTeam,playerTeam:playerTeam,g:0,a:1,eventType:event.type,minute:event.minute,period:event.period};if(mid)arec.mid=mid;target.push(arec);}
   }
 }
@@ -3714,7 +4081,7 @@ function pushAutoGoalFromEvent(target,event,scoringTeam,opponentTeam,mid){
 function autoScore(gk,mi){
   var m=gm[gk][mi];var hs=parseInt(m.hs)||0,as=parseInt(m.as)||0;
   m.hg=[];m.ag=[];
-  var events=PredictionEngine.buildScoreEvents(hs,as,Math.random);
+  var events=PredictionEngine.buildMatchEvents({homeGoals:hs,awayGoals:as,rng:Math.random,homePlayers:getPlayers(m.h),awayPlayers:getPlayers(m.a),homeTeam:m.h,awayTeam:m.a});
   m.simEvents=events;
   for(var i=0;i<events.length;i++){
     var event=events[i];
@@ -3735,7 +4102,7 @@ enrichGMWithData();ko={};slog=[];applyActualResultsToBlankPredictions();render()
 // Each goal/assist record is tagged with mid so single-match reset can clean slog properly.
 function autoScoreKO(ht,at,hs,as,mid,events){
   var arr=[];
-  events=events||PredictionEngine.buildScoreEvents(hs,as,Math.random);
+  events=events||PredictionEngine.buildMatchEvents({homeGoals:hs,awayGoals:as,rng:Math.random,homePlayers:getPlayers(ht),awayPlayers:getPlayers(at),homeTeam:ht,awayTeam:at});
   for(var i=0;i<events.length;i++){
     var event=events[i];
     if(event.team==="home")pushAutoGoalFromEvent(arr,event,ht,at,mid);
@@ -3743,7 +4110,7 @@ function autoScoreKO(ht,at,hs,as,mid,events){
   }
   return arr;
 }
-function cKO(id,ht,at){var he=document.getElementById("kh_"+id),ae=document.getElementById("ka_"+id);if(!he||!ae)return;var h=parseInt(he.value),a=parseInt(ae.value);if(isNaN(h)||isNaN(a)||h===a)return;slog=slog.filter(function(s){return s.mid!==id;});ko[id]={w:h>a?ht:at,l:h>a?at:ht,h:h,a:a,ht:ht,at:at,decidedBy:"regulation",regulation:{home:h,away:a},extraTime:null,shootout:null};var sc=autoScoreKO(ht,at,h,a,id);for(var j=0;j<sc.length;j++)slog.push(sc[j]);render();checkChampion();}
+function cKO(id,ht,at){var he=document.getElementById("kh_"+id),ae=document.getElementById("ka_"+id);if(!he||!ae)return;var h=parseInt(he.value),a=parseInt(ae.value);if(isNaN(h)||isNaN(a)||h===a)return;slog=slog.filter(function(s){return s.mid!==id;});var events=PredictionEngine.buildMatchEvents({homeGoals:h,awayGoals:a,rng:Math.random,homePlayers:getPlayers(ht),awayPlayers:getPlayers(at),homeTeam:ht,awayTeam:at});ko[id]={w:h>a?ht:at,l:h>a?at:ht,h:h,a:a,ht:ht,at:at,decidedBy:"regulation",regulation:{home:h,away:a},extraTime:null,shootout:null,events:events};var sc=autoScoreKO(ht,at,h,a,id,events);for(var j=0;j<sc.length;j++)slog.push(sc[j]);render();checkChampion();}
 // Upset score cap (knockout only): if the WEAKER team won by >= 2 tier diff,
 // replace the score with a realistic upset (1-0, 2-0, 2-1).
 // Preserves upset probability — only sanitizes the scoreline.
@@ -3783,12 +4150,14 @@ function simulateKOResult(id,ht,at){
     awayTeam:at,
     matchId:id,
     strengths:STRENGTH,
-    rankings:MODEL_RANKING
+    rankings:MODEL_RANKING,
+    homePlayers:getPlayers(ht),
+    awayPlayers:getPlayers(at)
   });
   storeKOSimulation(id,ht,at,sim);
   return true;
 }
-function qpKO(id,ht,at,w){var r=rnd(false,ht,at),h=r[0],a=r[1];if(w===ht&&h<=a){var t=a+1;a=h;h=t;}if(w===at&&a<=h){var t=h+1;h=a;a=t;}var cap=applyUpsetCap(ht,at,h,a);h=cap[0];a=cap[1];slog=slog.filter(function(s){return s.mid!==id;});ko[id]={w:w,l:w===ht?at:ht,h:h,a:a,ht:ht,at:at,decidedBy:"regulation",regulation:{home:h,away:a},extraTime:null,shootout:null};var sc=autoScoreKO(ht,at,h,a,id);for(var i=0;i<sc.length;i++)slog.push(sc[i]);render();}
+function qpKO(id,ht,at,w){var r=rnd(false,ht,at),h=r[0],a=r[1];if(w===ht&&h<=a){var t=a+1;a=h;h=t;}if(w===at&&a<=h){var t=h+1;h=a;a=t;}var cap=applyUpsetCap(ht,at,h,a);h=cap[0];a=cap[1];slog=slog.filter(function(s){return s.mid!==id;});var events=PredictionEngine.buildMatchEvents({homeGoals:h,awayGoals:a,rng:Math.random,homePlayers:getPlayers(ht),awayPlayers:getPlayers(at),homeTeam:ht,awayTeam:at});ko[id]={w:w,l:w===ht?at:ht,h:h,a:a,ht:ht,at:at,decidedBy:"regulation",regulation:{home:h,away:a},extraTime:null,shootout:null,events:events};var sc=autoScoreKO(ht,at,h,a,id,events);for(var i=0;i<sc.length;i++)slog.push(sc[i]);render();}
 function rnKO(id,ht,at){simulateKOResult(id,ht,at);render();}
 function getKORounds(){
   if(!allDone())return[];
@@ -4166,6 +4535,20 @@ function championPosterTier(team){
   if(!isFinite(raw))raw=3;
   return Math.max(1,Math.min(5,Math.round(raw)));
 }
+function posterAwardItem(label,item,meta){
+  if(!item)return "";
+  var team=item.team||"",name=item.player||item.team||"";
+  return '<div class="poster-award"><div class="poster-award-label">'+escHtml(label)+'</div><span class="poster-award-name">'+(team?escHtml(tn(team))+" · ":"")+escHtml(pn(name,team))+'</span><span class="poster-award-meta">'+escHtml(meta||"")+'</span></div>';
+}
+function buildPosterAwardsHTML(awards){
+  awards=awards||computeTournamentAwards();
+  var h='<div class="poster-awards">';
+  h+=posterAwardItem(T("awardGoldenBoot"),awards.goldenBoot,awards.goldenBoot?T("awardGoals",{n:awards.goldenBoot.goals}):"");
+  h+=posterAwardItem(T("awardGoldenBall"),awards.goldenBall,awards.goldenBall?T("awardGoals",{n:awards.goldenBall.goals})+" · "+T("awardAssists",{n:awards.goldenBall.assists}):"");
+  h+=posterAwardItem(T("awardGoldenGlove"),awards.goldenGlove,awards.goldenGlove?T("awardCleanSheets",{n:awards.goldenGlove.cleanSheets}):"");
+  h+=posterAwardItem(T("awardFairPlay"),awards.fairPlay,awards.fairPlay?((awards.fairPlay.points||0)+" pts"):"");
+  return h+'</div>';
+}
 function buildPosterHTML(champ){
   var en=(LANG==="en");
   var tier=championPosterTier(champ);
@@ -4209,6 +4592,7 @@ function buildPosterHTML(champ){
   var tlLen=tagline.length;
   var tlFont=tlLen>200?13:(tlLen>130?15:(tlLen>90?16:18));
   h+='<div class="poster-conclusion" style="font-size:'+tlFont+'px">'+escHtml(tagline)+'</div>';
+  h+=buildPosterAwardsHTML(computeTournamentAwards());
   h+='</div>';
   h+='<div class="poster-path-panel">';
   h+='<div class="poster-path-label">'+(en?"CHAMPION PATH":"夺冠路线")+'</div>';
