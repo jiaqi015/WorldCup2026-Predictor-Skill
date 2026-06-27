@@ -199,6 +199,14 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "validate_final.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_rag_corpus.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_skill_product_ux.py")])
+        run([sys.executable, str(ROOT / "scripts" / "test_full_system_experience.py")])
+        run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "full_system_experience_test.py"),
+                "--skip-browser",
+            ]
+        )
         run([sys.executable, str(ROOT / "scripts" / "audit_source_lineage.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_match_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "validate_prediction_data.py")])

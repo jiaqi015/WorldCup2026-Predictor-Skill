@@ -245,6 +245,7 @@ Root `index.html` is canonical. The bundled skill app must be synced after any a
 ```bash
 python3 skills/world-cup-2026-predictor/scripts/sync_predictor_asset.py
 python3 skills/world-cup-2026-predictor/scripts/validate_predictor.py
+python3 scripts/full_system_experience_test.py
 python3 scripts/release_check.py
 git diff --check
 ```
@@ -255,6 +256,7 @@ Useful development commands:
 python3 scripts/validate_match_data.py
 python3 scripts/validate_prediction_data.py
 python3 scripts/validate_squads.py
+python3 scripts/full_system_experience_test.py --public-url https://www.cameraclaw.cn/2026
 node --test
 ```
 
