@@ -26,16 +26,15 @@ project presentation and maintenance handoff.
 
 ## Refresh Workflow
 
-1. Launch the bundled Skill app:
+1. Launch the canonical local preview:
 
    ```bash
-   python3 \
-     skills/world-cup-2026-predictor/scripts/serve_predictor.py \
-     --port 8000
+   node scripts/serve_local.mjs --host 127.0.0.1 --port 8765
    ```
 
-2. Complete all group and knockout matches.
-3. Capture the group stage, bracket, stats, and share modal at a desktop width.
+2. Complete enough state for each view: group table/live context, full knockout
+   bracket, stats leaderboard, and share poster modal.
+3. Capture the four README images at a wide desktop viewport.
 4. Keep screenshots free of browser chrome, personal data, and local file
    paths.
 5. Replace only the corresponding files in this directory.

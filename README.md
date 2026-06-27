@@ -1,6 +1,6 @@
 # 2026 World Cup Predictor
 
-> A static 2026 World Cup simulator, bracket sharer, ESPN-backed result scorer, and installable Codex skill for guided prediction workflows.
+> Play the entire 2026 World Cup in one browser tab, then ask Codex to keep the prediction, live data, scoring, and release checks honest.
 
 <p align="center">
   <a href="https://www.cameraclaw.cn/2026"><strong>Live Demo</strong></a>
@@ -30,38 +30,44 @@
   </a>
 </p>
 
-This project has two surfaces:
+This is not just a champion picker. It is a full tournament workspace: simulate 48 teams, override the matches you care about, watch the bracket unfold, inspect scorer stories, share a champion poster, and use the bundled Codex skill when you want the data and app checked instead of guessed.
 
 | Surface | Use it when you want to | Start |
 | --- | --- | --- |
-| Browser app | Play the tournament, edit scores, inspect scorers, share a read-only bracket, or compare against completed results. | [Open the live demo](https://www.cameraclaw.cn/2026) |
-| Codex Skill mode | Ask Codex to launch, guide, generate, score, inspect live ESPN results, repair data, or validate the whole package. | Use `$world-cup-2026-predictor` |
+| Browser app | Fill the tournament fast, tweak scores manually, inspect scorers, and send a read-only bracket to someone else. | [Open the live demo](https://www.cameraclaw.cn/2026) |
+| Codex Skill mode | Let Codex launch the app, guide a prediction, fetch live ESPN context, score a bracket, or audit the repo before release. | Use `$world-cup-2026-predictor` |
 
 It is an unofficial fan and software project. It is not affiliated with FIFA, and it is not betting advice.
 
-## Why This Exists
+## What Makes It Fun
 
-Most World Cup projects are one of three things: a prediction pool with accounts and leagues, a model notebook, or a bracket library. This repo is deliberately a different shape:
+Open the page, press simulate, and you get a complete tournament. Then the useful part starts: change one result, see the table move, carry the bracket into knockouts, track who scored, and share a finished story instead of a spreadsheet.
 
-| Benchmark | Useful pattern | This project's answer |
+The Codex skill adds the second layer. It can explain how to play, run the same app locally, check whether ESPN mappings drifted, compare predictions with real results, and validate that the shipped skill still matches the canonical source.
+
+## Benchmark
+
+Most World Cup projects are one of three things: a prediction pool, a model notebook, or a bracket library. This repo deliberately combines the good parts without adding accounts or a backend.
+
+| Benchmark | What good tools do | This project adds |
 | --- | --- | --- |
-| Prediction pool | Clear user outcome: fill a tournament and share it. | No accounts or backend; predictions stay in local storage or URL hashes. |
-| Tournament manager | Bracket state should be explicit and inspectable. | Uses the 2026 48-team topology, Round of 32 placement, third-place match, venue metadata, and share-state tests. |
-| Modeling repo | Explain the model and make validation reproducible. | Ships `Random baseline`, `Strength model`, and `Ensemble model`, plus release gates and full-system browser checks. |
-| README benchmark | First screen should answer what, why, how, and proof. | Live demo, screenshots, two usage paths, command examples, and validation commands are all above the maintenance details. |
+| Prediction pool | Make it easy to finish and share a bracket. | Local-only state, compact share URLs, read-only shared views, and no sign-in wall. |
+| Tournament manager | Keep the bracket topology explicit. | 2026 48-team groups, Round of 32 third-place placement, venues, third-place match, and share-state tests. |
+| Modeling repo | Explain and validate the model. | `Random baseline`, `Strength model`, and `Ensemble model`, plus event-level goals, own goals, penalties, extra time, and shootouts. |
+| Skill package | Give users repeatable commands, not vague prompts. | Installable Codex skill with launch, play, live-result, scoring, freshness, maintenance, and deployment validation workflows. |
 
 ## Highlights
 
-- Full 2026 format: 48 teams, 12 groups, 72 group matches, 32-team knockout bracket, and 104 total matches.
-- One-click simulation for groups, knockout rounds, or the whole tournament.
-- Three gameplay modes: Standard, Fun, and Upset.
+- Full 2026 structure: 48 teams, 12 groups, 72 group matches, 32-team knockout bracket, and 104 total matches.
+- Fast play: simulate all groups, finish one knockout round, or run the whole tournament.
+- Manual control: override scores, pick scorers, and keep the bracket responsive instead of frozen.
 - Three prediction modes: Random baseline, Strength model, and Ensemble model.
-- Event-aware simulation: scorer and assist logs, own goals, penalties, extra time, and shootouts.
-- Player-level goal and assist leaderboards with squad photos where available.
-- Shareable champion poster plus compact share links (`#s=` when possible, `#p=` when full metadata is needed).
-- Real completed results can be embedded from ESPN-backed snapshots and used for scoring context.
-- Bilingual Chinese/English UI with light/dark themes.
-- Installable Codex skill with commands for play, live results, scoring, freshness checks, maintenance, and deployment validation.
+- Event-aware simulation: goal minutes, scorers, assists, own goals, penalties, extra time, and shootouts.
+- Data view: goal and assist leaderboards with squad photos where available.
+- Share view: champion poster plus compact links (`#s=` when possible, `#p=` when full metadata is needed).
+- Real-result context: completed ESPN-backed snapshots can be embedded and used for scoring.
+- Bilingual UI: Chinese/English, light/dark themes, and a small in-app help surface.
+- Real skill behavior: commands for play, live results, scoring, freshness checks, maintenance, and deployment validation.
 
 ## Live Demo
 
@@ -398,31 +404,31 @@ See [RELEASING.md](RELEASING.md) for semantic versioning, plugin publishing, and
 
 ## 中文说明
 
-这是一个完整的 2026 世界杯预测器，也是一个可安装的 Codex Skill。
+这不是一个只填冠军的小玩具。它是一套完整的 2026 世界杯预测工作台：你可以直接在网页里跑完 104 场比赛，也可以让 Codex 作为 skill 帮你查赛果、解释计分、检查数据、验证发布。
 
-你可以：
+你打开它之后可以做这些事：
 
-- 模拟 48 队、12 个小组、104 场比赛；
-- 自动或手动填写小组赛比分；
-- 生成 32 强到决赛的完整淘汰赛路径；
-- 查看射手榜和助攻榜；
-- 生成冠军海报并复制分享链接；
-- 在真实赛果更新后计算预测得分；
-- 让 Codex 负责启动、陪玩、验证、抓取赛果、维护数据和部署。
+- 一键跑完 48 队、12 个小组、104 场比赛；
+- 手动改比分、选进球球员，看小组排名和淘汰赛落位怎么变化；
+- 生成从 32 强到决赛、季军赛的完整路径；
+- 查看射手榜和助攻榜，而不是只看谁夺冠；
+- 生成冠军海报和只读分享链接；
+- 等真实比赛结束后，用真实赛果给自己的预测计分；
+- 让 Codex 检查 ESPN 赛果、球队映射、数据来源、测试和部署状态。
 
-双模式使用路径：
+两种用法：
 
 | 模式 | 适合谁 | 从哪开始 |
 | --- | --- | --- |
-| 浏览器模式 | 直接玩预测器、改比分、生成海报、查看评分。 | 打开线上地址，或本地运行静态页面。 |
-| Codex Skill 模式 | 让 Codex 陪玩、一键生成、查赛果、解释计分、CR/修复/验证。 | 使用 `$world-cup-2026-predictor` 加一句自然语言任务。 |
+| 浏览器模式 | 想马上玩、改比分、生成海报、发给朋友。 | 打开线上地址，或本地运行静态页面。 |
+| Codex Skill 模式 | 想让 Codex 陪玩、一键生成、查赛果、解释计分、CR/修复/验证。 | 使用 `$world-cup-2026-predictor` 加一句自然语言任务。 |
 
 安装 -> 学习 -> 使用：
 
 1. 安装或打开：普通用户打开网页，Codex 用户安装 plugin/skill。
 2. 学口令：看下面的常用命令、plugin prompt，或打开网页左上角 `?`。
-3. 开始用：选择陪玩、一键生成、查赛果、计分解释、维护审查。
-4. 验结果：网页以冠军/分享/评分状态为准；skill 以脚本输出、测试和 validator 为准。
+3. 开始用：选择陪玩、一键生成、查赛果、计分解释，或者让它做维护审查。
+4. 验结果：网页以冠军、分享、评分状态为准；skill 以脚本输出、测试和 validator 为准。
 
 在线体验：
 
