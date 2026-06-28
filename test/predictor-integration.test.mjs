@@ -526,9 +526,11 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /id="globalActions"/);
   assert.match(html, /function shareBrandIcon\(\)/);
   assert.match(html, /class="share-brand-icon"/);
-  assert.match(html, /<text class="year" x="32" y="58" text-anchor="middle">26<\/text>/);
+  assert.match(html, /assets\/fifa-trophy-share\.png/);
+  assert.match(html, /\.share-brand-icon img\{[^}]*height:38px/);
   assert.match(html, /function renderGlobalShareBar\(ready\)/);
-  assert.match(html, /var cls="btn-rand share-cta"\+\(ready\?"":" dim"\)/);
+  assert.match(html, /var cls="share-cta"\+\(ready\?"":" dim"\)/);
+  assert.doesNotMatch(html, /var cls="btn-rand share-cta"/);
   assert.match(html, /var action=ready\?' onclick="genShareCard\(\)"':' disabled aria-disabled="true"/);
   assert.match(html, /if\(ge\)ge\.innerHTML=renderGlobalShareBar\(knockoutDone\);/);
   assert.doesNotMatch(html, /var shareBtn=koDone/);
@@ -638,8 +640,9 @@ test("group simulation toolbar prioritizes remaining matches before full re-simu
   assert.match(html, /hintExpandGroup:"Select a group, then simulate on the right"/);
   assert.match(html, /btnRandAll:"⚡ 重新模拟全部",btnFillRemaining:"✨ 模拟补全剩余"/);
   assert.match(html, /btnRandAll:"⚡ Re-simulate All",btnFillRemaining:"✨ Simulate Remaining"/);
-  assert.match(html, /var h='<div class="topbar">'\+fillBtn\+'<button class="btn-rand btn-rand-secondary" onclick="raG\(\)">'\+T\("btnRandAll"\)/);
-  assert.match(html, /\.btn-rand-secondary\{background:linear-gradient\(180deg,#2A2D32,#1A1D21\)/);
+  assert.match(html, /var h='<div class="topbar actionbar">'\+fillBtn\+'<button class="btn-rand-secondary btn-compact-action" onclick="raG\(\)">'\+T\("btnRandAll"\)/);
+  assert.match(html, /\.btn-text-action\{[^}]*background:transparent/);
+  assert.match(html, /\.toolbar-status-chip\{[^}]*cursor:default/);
 });
 
 test("play mode labels and selected entertainment color stay intentional", () => {
@@ -672,7 +675,7 @@ test("knockout toolbar can simulate the bracket one round at a time", () => {
   assert.match(html, /btnSimFinals:"模拟决赛及季军赛",btnKODone:"淘汰赛已完成"/);
   assert.match(html, /function getNextKOSimulationLabel\(\)/);
   assert.match(html, /keys=\["btnSimR32","btnSimR16","btnSimQF","btnSimSF","btnSimFinals"\]/);
-  assert.match(html, /class="btn-next-round" onclick="raKONext\(\)"/);
+  assert.match(html, /class="btn-next-round btn-main-action" onclick="raKONext\(\)"/);
   assert.match(html, /onclick="raKONext\(\)"/);
   assert.match(html, /function getKORounds\(\)/);
   assert.match(html, /function raKONext\(\)/);
@@ -728,7 +731,7 @@ test("knockout tab renders the bracket itself before all groups finish", () => {
   assert.match(html, /hSeed:m\.h,aSeed:m\.a/);
   assert.match(html, /\.ko-progress-chip\{/);
   assert.match(html, /\.ko-preview-toolbar\{gap:8px;align-items:center\}/);
-  assert.match(html, /<div class="topbar ko-preview-toolbar"><button class="btn-rand btn-rand-secondary"/);
+  assert.match(html, /<div class="topbar ko-preview-toolbar"><button class="btn-rand-secondary btn-compact-action"/);
   assert.match(html, /\.bk-row\.is-seed \.seed-token/);
   assert.match(html, /seedRow\(m\.hSeed,m\.seedRole\)/);
   assert.match(html, /if\(canPlay&&!r&&!pending\)/);
