@@ -286,6 +286,75 @@ def parse_team_stats(boxscore, home_team_id):
 
     return stats
 
+
+def lineup_player(roster_item, expected_team):
+    """Normalize one ESPN roster entry for front-end lineup rendering."""
+    athlete = roster_item.get("athlete", {}) or {}
+    source_name = athlete.get("displayName") or athlete.get("fullName") or ""
+    resolved = resolve_player(source_name, expected_team)
+    jersey = roster_item.get("jersey") or resolved.get("jersey")
+    position = roster_item.get("position", {}) or {}
+    headshot = athlete.get("headshot", {}) or {}
+    return {
+        "sourceName": source_name,
+        "displayNameCn": resolved.get("display_name_cn") or source_name,
+        "appAlias": resolved.get("app_alias"),
+        "teamCn": expected_team,
+        "jersey": str(jersey) if jersey is not None else None,
+        "positionName": position.get("displayName") or position.get("name"),
+        "positionAbbr": position.get("abbreviation"),
+        "formationPlace": roster_item.get("formationPlace"),
+        "starter": bool(roster_item.get("starter")),
+        "subbedIn": bool(roster_item.get("subbedIn")),
+        "subbedOut": bool(roster_item.get("subbedOut")),
+        "athleteId": athlete.get("id"),
+        "headshot": headshot.get("href"),
+        "mappingStatus": resolved.get("mapping_status"),
+        "mappingKey": resolved.get("mapping_key"),
+    }
+
+
+def sort_lineup_players(players):
+    """Keep ESPN's formation order stable, with jersey as deterministic fallback."""
+    def key(player):
+        place = player.get("formationPlace")
+        jersey = player.get("jersey")
+        try:
+            place_sort = int(place)
+        except (TypeError, ValueError):
+            place_sort = 99
+        try:
+            jersey_sort = int(jersey)
+        except (TypeError, ValueError):
+            jersey_sort = 99
+        return (place_sort, jersey_sort, player.get("sourceName") or "")
+
+    return sorted(players, key=key)
+
+
+def parse_match_lineups(summary, home_team_cn, away_team_cn):
+    """Parse ESPN summary rosters into home/away starters and bench."""
+    lineups = {}
+    for roster_group in summary.get("rosters", []) or []:
+        side = roster_group.get("homeAway")
+        if side not in {"home", "away"}:
+            continue
+        team_cn = home_team_cn if side == "home" else away_team_cn
+        roster = roster_group.get("roster", []) or []
+        normalized = [lineup_player(item, team_cn) for item in roster if item.get("active", True)]
+        starters = sort_lineup_players([player for player in normalized if player.get("starter")])
+        bench = sort_lineup_players([player for player in normalized if not player.get("starter")])
+        lineups[side] = {
+            "teamCn": team_cn,
+            "teamDisplayName": (roster_group.get("team") or {}).get("displayName"),
+            "source": "ESPN summary API rosters",
+            "starterCount": len(starters),
+            "benchCount": len(bench),
+            "starters": starters,
+            "bench": bench,
+        }
+    return lineups
+
 def main():
     # Load player mapping
     load_player_mapping()
@@ -364,6 +433,7 @@ def main():
         # Parse team stats
         boxscore = summary.get("boxscore", {})
         stats = parse_team_stats(boxscore, home_team_id)
+        lineups = parse_match_lineups(summary, home_cn, away_cn)
 
         details[match_id] = {
             "matchId": match_id,
@@ -377,11 +447,19 @@ def main():
             "goalEventCount": goal_event_count,
             "goalEventsStatus": goal_events_status,
             "events": events,
-            "stats": stats
+            "stats": stats,
+            "lineups": lineups,
         }
 
         print(f"  Score: {home_score}-{away_score}")
         print(f"  Events: {len(events)} (goals: {goal_event_count}/{expected_goal_count}, {goal_events_status})")
+        if lineups:
+            starter_counts = "/".join(
+                f"{side}:{lineups[side].get('starterCount', 0)}"
+                for side in ("home", "away")
+                if side in lineups
+            )
+            print(f"  Lineups: {starter_counts}")
         if referee:
             print(f"  Referee: {referee}")
         if attendance:

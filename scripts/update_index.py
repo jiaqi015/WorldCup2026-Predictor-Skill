@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Update index.html with official squad data from ESPN.
-Generates new PL, POS, EN, STAR_PLAYER variables with jersey numbers, ages, and positions.
+Generates PL, POS, PLAYER_JERSEYS, EN, STAR_PLAYER, and PHOTO_MAP variables.
 """
 
 import json
@@ -16,6 +16,8 @@ from player_positions import normalize_espn_position
 SQUADS_FILE = Path(__file__).parent.parent / "data" / "squads" / "squads_partial.json"
 MAPPING_FILE = Path(__file__).parent.parent / "data" / "squads" / "player_mapping.json"
 PHOTO_MAP_FILE = Path(__file__).parent.parent / "data" / "squads" / "photo_mapping.json"
+MATCH_SCHEDULE_FILE = Path(__file__).parent.parent / "data" / "matches" / "match_schedule.json"
+MATCH_DETAILS_FILE = Path(__file__).parent.parent / "data" / "matches" / "match_details.json"
 INDEX_FILE = Path(__file__).parent.parent / "index.html"
 
 # Team name mapping (ESPN English -> Chinese)
@@ -77,6 +79,14 @@ def load_data():
     return squads, mapping
 
 
+def load_optional_json(path, default):
+    """Load a JSON artifact when present; otherwise return a safe default."""
+    if not path.exists():
+        return default
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 def get_player_cn_name(en_name, mapping, team_en=None):
     """Get Chinese name for player, fallback to English."""
     qualified = f"{en_name} ({team_en})" if team_en else None
@@ -87,9 +97,76 @@ def get_player_cn_name(en_name, mapping, team_en=None):
     return en_name
 
 
-def generate_new_variables(squads, mapping):
+def get_lineup_player_name(player):
+    """Return the localized app name preferred by the front end."""
+    return player.get("appAlias") or player.get("displayNameCn") or player.get("sourceName") or ""
+
+
+def estimate_shape(starters):
+    """Estimate a readable shape from ESPN lineup position abbreviations."""
+    defenders = midfielders = forwards = 0
+    for player in starters:
+        abbr = (player.get("positionAbbr") or "").upper()
+        if abbr == "G":
+            continue
+        is_defender = (abbr.startswith("C") and "D" in abbr) or abbr in {"D", "LB", "RB", "CB"}
+        if is_defender:
+            defenders += 1
+        elif "F" in abbr:
+            forwards += 1
+        else:
+            midfielders += 1
+    return f"{defenders}-{midfielders}-{forwards}" if defenders and midfielders and forwards else ""
+
+
+def first_lineups_from_matches(schedule, details):
+    """Extract each team's first group-match starting XI from ESPN match rosters."""
+    matches = sorted(
+        (m for m in schedule.values() if m.get("stage") == "group"),
+        key=lambda m: (m.get("date") or "", m.get("id") or ""),
+    )
+    lineups = {}
+    for match in matches:
+        match_id = str(match.get("id") or "")
+        detail = details.get(match_id) or {}
+        match_lineups = detail.get("lineups") or {}
+        for side, team_key in (("home", "home"), ("away", "away")):
+            team_cn = match.get(team_key)
+            if not team_cn or team_cn in lineups:
+                continue
+            lineup = match_lineups.get(side) or {}
+            starters = lineup.get("starters") or []
+            if len(starters) < 11:
+                continue
+            compact = []
+            for player in starters[:11]:
+                compact.append({
+                    "name": get_lineup_player_name(player),
+                    "sourceName": player.get("sourceName"),
+                    "jersey": str(player.get("jersey")) if player.get("jersey") is not None else None,
+                    "pos": player.get("positionAbbr"),
+                    "posName": player.get("positionName"),
+                    "place": player.get("formationPlace"),
+                    "athleteId": player.get("athleteId"),
+                    "headshot": player.get("headshot"),
+                    "mapped": player.get("mappingStatus") == "matched_team_player",
+                })
+            lineups[team_cn] = {
+                "matchId": match_id,
+                "opponent": match.get("away") if side == "home" else match.get("home"),
+                "date": match.get("date"),
+                "source": lineup.get("source") or "ESPN summary API rosters",
+                "shape": estimate_shape(starters),
+                "starters": compact,
+            }
+    return lineups
+
+
+def generate_new_variables(squads, mapping, schedule=None, details=None):
     """Generate new JavaScript variables."""
     lines = []
+    schedule = schedule or {}
+    details = details or {}
 
     def get_jersey(player):
         jersey = player.get('jersey', '')
@@ -155,6 +232,28 @@ def generate_new_variables(squads, mapping):
     lines.append(','.join(pos_entries))
     lines.append('};')
 
+    # Generate PLAYER_JERSEYS (team-scoped Chinese display name -> shirt number).
+    # The app keeps localized display names as its stable UI key, so this map is
+    # the lightweight bridge between the ESPN squad payload and team profile UI.
+    lines.append("\nvar PLAYER_JERSEYS={")
+    jersey_entries = []
+    for team_en, team_data in squads.items():
+        team_cn = TEAM_CN_MAP.get(team_en, team_en)
+        players = sorted(team_data.get('players', []), key=get_jersey)
+        player_jerseys = {}
+        for p in players:
+            cn = get_player_cn_name(p['name'], mapping, team_en)
+            jersey = p.get('jersey')
+            if jersey:
+                player_jerseys.setdefault(cn, str(jersey))
+        encoded_jerseys = (
+            f'{json.dumps(name, ensure_ascii=False)}:{json.dumps(number, ensure_ascii=False)}'
+            for name, number in player_jerseys.items()
+        )
+        jersey_entries.append(f'"{team_cn}":{{{",".join(encoded_jerseys)}}}')
+    lines.append(','.join(jersey_entries))
+    lines.append('};')
+
     # Generate STAR_PLAYER. Curated choices preserve product intent across
     # refreshes; every choice is still constrained to the generated PL 11.
     lines.append("\nvar STAR_PLAYER={")
@@ -178,6 +277,12 @@ def generate_new_variables(squads, mapping):
             star_entries.append(f'{json.dumps(team_cn, ensure_ascii=False)}:{json.dumps(star_cn, ensure_ascii=False)}')
     lines.append(','.join(star_entries))
     lines.append('};')
+
+    # Generate TEAM_FIRST_LINEUPS from ESPN match rosters. This is intentionally
+    # separated from PL: PL remains the simulation roster, while this powers the
+    # team dossier's real first-match XI.
+    first_lineups = first_lineups_from_matches(schedule, details)
+    lines.append("\nvar TEAM_FIRST_LINEUPS=" + json.dumps(first_lineups, ensure_ascii=False, separators=(",", ":")) + ";")
 
     # Generate PHOTO_MAP using the same display labels consumed by the UI.
     with open(PHOTO_MAP_FILE, 'r', encoding='utf-8') as f:
@@ -228,10 +333,37 @@ def update_index_file(new_vars):
         content = re.sub(r'var POS=\{[^;]+\};', pos_match.group(0), content, flags=re.DOTALL)
         content = content.replace('};nction getPos(player,team){', '};function getPos(player,team){')
 
+    # Replace or insert PLAYER_JERSEYS variable.
+    jersey_match = re.search(r'var PLAYER_JERSEYS=\{[^;]+\};', new_vars)
+    if jersey_match:
+        if re.search(r'var PLAYER_JERSEYS=\{[^;]+\};', content, flags=re.DOTALL):
+            content = re.sub(r'var PLAYER_JERSEYS=\{[^;]+\};', jersey_match.group(0), content, flags=re.DOTALL)
+        else:
+            content = re.sub(
+                r'(var POS=\{[^;]+\};)',
+                r'\1\n' + jersey_match.group(0) + '\n',
+                content,
+                count=1,
+                flags=re.DOTALL,
+            )
+
     # Replace STAR_PLAYER variable
     star_match = re.search(r'var STAR_PLAYER=\{[^;]+\};', new_vars)
     if star_match:
         content = re.sub(r'var STAR_PLAYER=\{[^;]+\};', star_match.group(0), content, flags=re.DOTALL)
+
+    lineup_match = re.search(r'var TEAM_FIRST_LINEUPS=\{.*?\};', new_vars, flags=re.DOTALL)
+    if lineup_match:
+        if re.search(r'var TEAM_FIRST_LINEUPS=\{.*?\};', content, flags=re.DOTALL):
+            content = re.sub(r'var TEAM_FIRST_LINEUPS=\{.*?\};', lineup_match.group(0), content, flags=re.DOTALL)
+        else:
+            content = re.sub(
+                r'(var STAR_PLAYER=\{[^;]+\};)',
+                r'\1\n' + lineup_match.group(0),
+                content,
+                count=1,
+                flags=re.DOTALL,
+            )
 
     photo_match = re.search(r'var PHOTO_MAP=\{[^;]+\};', new_vars)
     if photo_match:
@@ -252,11 +384,15 @@ def main():
 
     # Load data
     squads, mapping = load_data()
+    schedule = load_optional_json(MATCH_SCHEDULE_FILE, {})
+    details = load_optional_json(MATCH_DETAILS_FILE, {})
     print(f"Loaded {len(squads)} teams, {len(mapping)} player mappings")
+    if schedule and details:
+        print(f"Loaded {len(schedule)} scheduled matches, {len(details)} match details")
 
     # Generate new variables
     print("\nGenerating new variables...")
-    new_vars = generate_new_variables(squads, mapping)
+    new_vars = generate_new_variables(squads, mapping, schedule, details)
 
     # Update index.html
     print("\nUpdating index.html...")

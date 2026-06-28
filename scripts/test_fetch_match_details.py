@@ -135,5 +135,68 @@ class TestParseKeyEvents(unittest.TestCase):
         self.assertEqual(events[1]["scorer_team_cn"], "客队")
 
 
+class TestParseMatchLineups(unittest.TestCase):
+    """Test ESPN roster normalization into starters and bench."""
+
+    def setUp(self):
+        fdm.PLAYER_DATA.clear()
+        fdm.PLAYER_DATA_NORMALIZED.clear()
+        fdm.PLAYER_DISPLAY_CN.clear()
+        add_player_mapping("Starter One", {"cn": "首发一", "team": "主队", "jersey": "10", "position": "F"})
+        add_player_mapping("Bench One", {"cn": "替补一", "team": "主队", "jersey": "18", "position": "M"})
+        add_player_mapping("Away Starter", {"cn": "客队首发", "team": "客队", "jersey": "4", "position": "D"})
+
+    def test_rosters_are_split_into_starters_and_bench(self):
+        lineups = fdm.parse_match_lineups(
+            {
+                "rosters": [
+                    {
+                        "homeAway": "home",
+                        "team": {"displayName": "Home"},
+                        "roster": [
+                            {
+                                "active": True,
+                                "starter": True,
+                                "jersey": "10",
+                                "formationPlace": "9",
+                                "athlete": {"id": "1", "displayName": "Starter One"},
+                                "position": {"displayName": "Forward", "abbreviation": "F"},
+                            },
+                            {
+                                "active": True,
+                                "starter": False,
+                                "jersey": "18",
+                                "athlete": {"id": "2", "displayName": "Bench One"},
+                                "position": {"displayName": "Midfielder", "abbreviation": "M"},
+                            },
+                        ],
+                    },
+                    {
+                        "homeAway": "away",
+                        "team": {"displayName": "Away"},
+                        "roster": [
+                            {
+                                "active": True,
+                                "starter": True,
+                                "jersey": "4",
+                                "formationPlace": "5",
+                                "athlete": {"id": "3", "displayName": "Away Starter"},
+                                "position": {"displayName": "Defender", "abbreviation": "D"},
+                            }
+                        ],
+                    },
+                ]
+            },
+            "主队",
+            "客队",
+        )
+
+        self.assertEqual(lineups["home"]["starterCount"], 1)
+        self.assertEqual(lineups["home"]["benchCount"], 1)
+        self.assertEqual(lineups["home"]["starters"][0]["appAlias"], "首发一")
+        self.assertEqual(lineups["home"]["starters"][0]["formationPlace"], "9")
+        self.assertEqual(lineups["away"]["starters"][0]["appAlias"], "客队首发")
+
+
 if __name__ == "__main__":
     unittest.main()
