@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-27",
+  "generated_at": "2026-06-28",
   "data_scope": {
     "tournament": "FIFA World Cup 2026",
     "team_count": 48,
@@ -2418,7 +2418,7 @@
       "away_team_cn": "南非",
       "odds": null,
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "high",
       "source_type": "unavailable",
       "notes": "Match already completed",
@@ -2586,7 +2586,7 @@
       "away_team_cn": "捷克",
       "odds": null,
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "high",
       "source_type": "unavailable",
       "notes": "Match already completed",
@@ -2724,7 +2724,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -120",
@@ -2895,7 +2895,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +110",
@@ -3154,7 +3154,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -450",
@@ -3260,7 +3260,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -155",
@@ -3386,7 +3386,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SCO -175",
@@ -3507,7 +3507,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR -140",
@@ -3610,7 +3610,7 @@
         "over_under_goals": 4.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -3000",
@@ -3833,7 +3833,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -105",
@@ -4028,7 +4028,7 @@
         "over_under_goals": 1.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU +145",
@@ -4157,7 +4157,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SWE -110",
@@ -4368,7 +4368,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1200",
@@ -4440,7 +4440,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -170",
@@ -4588,7 +4588,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
@@ -4683,7 +4683,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: IRN -120",
@@ -4840,7 +4840,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -210",
@@ -4982,7 +4982,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR -475",
@@ -5158,7 +5158,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -245",
@@ -5273,7 +5273,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT -295",
@@ -5403,7 +5403,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -360",
@@ -5559,7 +5559,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -140",
@@ -5736,7 +5736,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GHA +115",
@@ -5850,7 +5850,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -250",
@@ -6022,7 +6022,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CZE -135",
@@ -6136,7 +6136,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI -160",
@@ -6330,7 +6330,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CAN -330",
@@ -6554,7 +6554,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX +100",
@@ -6645,7 +6645,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA -130",
@@ -6830,7 +6830,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR +100",
@@ -6929,7 +6929,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -1200",
@@ -7104,7 +7104,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: TUR +125",
@@ -7218,7 +7218,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -155",
@@ -7467,7 +7467,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -180",
@@ -7582,7 +7582,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ECU -500",
@@ -7714,7 +7714,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN -140",
@@ -7864,7 +7864,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -1000",
@@ -8036,7 +8036,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -245",
@@ -8123,7 +8123,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: URU -225",
@@ -8309,7 +8309,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY -130",
@@ -8504,7 +8504,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -155",
@@ -8652,7 +8652,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -800",
@@ -8790,7 +8790,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NOR +115",
@@ -8959,7 +8959,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ALG -190",
@@ -9104,7 +9104,7 @@
         "over_under_goals": 3.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR -425",
@@ -9287,7 +9287,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -320",
@@ -9359,7 +9359,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -180",
@@ -9458,7 +9458,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COL -220",
@@ -9572,7 +9572,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BIH -155",
@@ -9744,7 +9744,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SUI +115",
@@ -9912,7 +9912,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MAR -310",
@@ -10145,7 +10145,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BRA -215",
@@ -10313,7 +10313,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: MEX -120",
@@ -10451,7 +10451,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: KOR -165",
@@ -10550,7 +10550,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CIV -450",
@@ -10691,7 +10691,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: GER -135",
@@ -10874,7 +10874,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: JPN +110",
@@ -11015,7 +11015,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: NED -200",
@@ -11157,7 +11157,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: PAR +115",
@@ -11229,7 +11229,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: USA +155",
@@ -11405,7 +11405,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: FRA -115",
@@ -11612,7 +11612,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: SEN -245",
@@ -11864,7 +11864,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CPV +140",
@@ -11966,7 +11966,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ESP -155",
@@ -12110,7 +12110,7 @@
         "over_under_goals": 1.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: EGY +130",
@@ -12303,7 +12303,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: BEL -340",
@@ -12513,11 +12513,131 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: CRO -155",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 2,
+        "away_score": 1,
+        "attendance": 68324,
+        "referee": "Drew Fischer",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "31'",
+            "team": "home",
+            "team_cn": "克罗地亚",
+            "scoring_team_cn": "克罗地亚",
+            "player_team_cn": "克罗地亚",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Petar Sucic",
+            "scorer_cn": "苏契奇",
+            "scorer_app_alias": "苏契奇",
+            "scorer_team_cn": "克罗地亚",
+            "scorer_jersey": "17",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Petar Sucic",
+            "assist_source_name": "Mateo Kovacic",
+            "assist_cn": "科瓦契奇",
+            "assist_app_alias": "科瓦契奇",
+            "assist_team_cn": "克罗地亚",
+            "assist_jersey": "8",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Mateo Kovacic"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "68'",
+            "team": "home",
+            "team_cn": "克罗地亚",
+            "source": "ESPN summary API",
+            "player_source_name": "Ivan Perisic",
+            "player_cn": "佩里西奇",
+            "player_app_alias": "佩里西奇",
+            "player_team_cn": "克罗地亚",
+            "player_jersey": "14",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Ivan Perisic"
+          },
+          {
+            "type": "goal",
+            "minute": "73'",
+            "team": "away",
+            "team_cn": "加纳",
+            "scoring_team_cn": "加纳",
+            "player_team_cn": "加纳",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Derrick Luckassen",
+            "scorer_cn": "德里克",
+            "scorer_app_alias": "德里克",
+            "scorer_team_cn": "加纳",
+            "scorer_jersey": "23",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Derrick Luckassen",
+            "assist_source_name": "Ernest Nuamah",
+            "assist_cn": "阿蒂苏",
+            "assist_app_alias": "阿蒂苏",
+            "assist_team_cn": "加纳",
+            "assist_jersey": "24",
+            "assist_position": "F",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Ernest Nuamah"
+          },
+          {
+            "type": "goal",
+            "minute": "83'",
+            "team": "home",
+            "team_cn": "克罗地亚",
+            "scoring_team_cn": "克罗地亚",
+            "player_team_cn": "克罗地亚",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Nikola Vlasic",
+            "scorer_cn": "尼古拉",
+            "scorer_app_alias": "尼古拉",
+            "scorer_team_cn": "克罗地亚",
+            "scorer_jersey": "13",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Nikola Vlasic",
+            "assist_source_name": "Luka Modric",
+            "assist_cn": "莫德里奇",
+            "assist_app_alias": "莫德里奇",
+            "assist_team_cn": "克罗地亚",
+            "assist_jersey": "10",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Luka Modric"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "90'+4'",
+            "team": "away",
+            "team_cn": "加纳",
+            "source": "ESPN summary API",
+            "player_source_name": "Kojo Peprah Oppong",
+            "player_cn": "奥蓬",
+            "player_app_alias": "奥蓬",
+            "player_team_cn": "加纳",
+            "player_jersey": "21",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Kojo Peprah Oppong"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760480"
+      }
     },
     {
       "match_id": "760485",
@@ -12546,11 +12666,119 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ENG -340",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 0,
+        "away_score": 2,
+        "attendance": 80663,
+        "referee": "Abdulrahman Al-Jassim",
+        "events": [
+          {
+            "type": "yellowCard",
+            "minute": "53'",
+            "team": "home",
+            "team_cn": "巴拿马",
+            "source": "ESPN summary API",
+            "player_source_name": "José Fajardo",
+            "player_cn": "佩尼多",
+            "player_app_alias": "佩尼多",
+            "player_team_cn": "巴拿马",
+            "player_jersey": "17",
+            "player_position": "F",
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "José Fajardo"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "60'",
+            "team": "away",
+            "team_cn": "英格兰",
+            "source": "ESPN summary API",
+            "player_source_name": "Jarell Quansah",
+            "player_cn": "宽萨",
+            "player_app_alias": "宽萨",
+            "player_team_cn": "英格兰",
+            "player_jersey": "26",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Jarell Quansah"
+          },
+          {
+            "type": "goal",
+            "minute": "62'",
+            "team": "away",
+            "team_cn": "英格兰",
+            "scoring_team_cn": "英格兰",
+            "player_team_cn": "英格兰",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Jude Bellingham",
+            "scorer_cn": "贝林厄姆",
+            "scorer_app_alias": "贝林厄姆",
+            "scorer_team_cn": "英格兰",
+            "scorer_jersey": "10",
+            "scorer_position": "M",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Jude Bellingham",
+            "assist_source_name": "Bukayo Saka",
+            "assist_cn": "萨卡",
+            "assist_app_alias": "萨卡",
+            "assist_team_cn": "英格兰",
+            "assist_jersey": "7",
+            "assist_position": "F",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Bukayo Saka"
+          },
+          {
+            "type": "goal",
+            "minute": "67'",
+            "team": "away",
+            "team_cn": "英格兰",
+            "scoring_team_cn": "英格兰",
+            "player_team_cn": "英格兰",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Harry Kane",
+            "scorer_cn": "凯恩",
+            "scorer_app_alias": "凯恩",
+            "scorer_team_cn": "英格兰",
+            "scorer_jersey": "9",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Harry Kane",
+            "assist_source_name": "Jude Bellingham",
+            "assist_cn": "贝林厄姆",
+            "assist_app_alias": "贝林厄姆",
+            "assist_team_cn": "英格兰",
+            "assist_jersey": "10",
+            "assist_position": "M",
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Jude Bellingham"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "84'",
+            "team": "home",
+            "team_cn": "巴拿马",
+            "source": "ESPN summary API",
+            "player_source_name": "Andrés Andrade",
+            "player_cn": "安德拉德",
+            "player_app_alias": "安德拉德",
+            "player_team_cn": "巴拿马",
+            "player_jersey": "16",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Andrés Andrade"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760485"
+      }
     },
     {
       "match_id": "760481",
@@ -12579,11 +12807,35 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: POR +120",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 0,
+        "away_score": 0,
+        "attendance": 64478,
+        "referee": "Alireza Faghani",
+        "events": [
+          {
+            "type": "yellowCard",
+            "minute": "86'",
+            "team": "home",
+            "team_cn": "哥伦比亚",
+            "source": "ESPN summary API",
+            "player_source_name": "Gustavo Puerta",
+            "player_cn": "普埃尔塔",
+            "player_app_alias": "普埃尔塔",
+            "player_team_cn": "哥伦比亚",
+            "player_jersey": "14",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Gustavo Puerta"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760481"
+      }
     },
     {
       "match_id": "760482",
@@ -12612,11 +12864,168 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: COD +135",
-      "actual_result": null
+      "actual_result": {
+        "home_score": 3,
+        "away_score": 1,
+        "attendance": 68239,
+        "referee": "Felix Zwayer",
+        "events": [
+          {
+            "type": "goal",
+            "minute": "10'",
+            "team": "away",
+            "team_cn": "乌兹别克",
+            "scoring_team_cn": "乌兹别克",
+            "player_team_cn": "乌兹别克",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Eldor Shomurodov",
+            "scorer_cn": "绍穆罗多夫",
+            "scorer_app_alias": "绍穆罗多夫",
+            "scorer_team_cn": "乌兹别克",
+            "scorer_jersey": "14",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Eldor Shomurodov",
+            "assist_source_name": "Akmal Mozgovoy",
+            "assist_cn": "莫兹戈沃伊",
+            "assist_app_alias": "莫兹戈沃伊",
+            "assist_team_cn": "乌兹别克",
+            "assist_jersey": "6",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Akmal Mozgovoy"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "21'",
+            "team": "home",
+            "team_cn": "刚果金",
+            "source": "ESPN summary API",
+            "player_source_name": "Noah Sadiki",
+            "player_cn": "诺亚",
+            "player_app_alias": "诺亚",
+            "player_team_cn": "刚果金",
+            "player_jersey": "14",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Noah Sadiki"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "43'",
+            "team": "away",
+            "team_cn": "乌兹别克",
+            "source": "ESPN summary API",
+            "player_source_name": "Abdukodir Khusanov",
+            "player_cn": "胡萨诺夫",
+            "player_app_alias": "胡萨诺夫",
+            "player_team_cn": "乌兹别克",
+            "player_jersey": "2",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Abdukodir Khusanov"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "45'+5'",
+            "team": "home",
+            "team_cn": "刚果金",
+            "source": "ESPN summary API",
+            "player_source_name": "Nathanaël Mbuku",
+            "player_cn": "姆布库",
+            "player_app_alias": "姆布库",
+            "player_team_cn": "刚果金",
+            "player_jersey": "7",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Nathanaël Mbuku"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "48'",
+            "team": "away",
+            "team_cn": "乌兹别克",
+            "source": "ESPN summary API",
+            "player_source_name": "Sherzod Nasrullaev",
+            "player_cn": "纳斯鲁拉耶夫",
+            "player_app_alias": "纳斯鲁拉耶夫",
+            "player_team_cn": "乌兹别克",
+            "player_jersey": "13",
+            "player_position": null,
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Sherzod Nasrullaev"
+          },
+          {
+            "type": "yellowCard",
+            "minute": "62'",
+            "team": "home",
+            "team_cn": "刚果金",
+            "source": "ESPN summary API",
+            "player_source_name": "Samuel Moutoussamy",
+            "player_cn": "穆图萨米",
+            "player_app_alias": "穆图萨米",
+            "player_team_cn": "刚果金",
+            "player_jersey": "8",
+            "player_position": "M",
+            "player_mapping_status": "matched_team_player",
+            "player_mapping_key": "Samuel Moutoussamy"
+          },
+          {
+            "type": "goal",
+            "minute": "78'",
+            "team": "home",
+            "team_cn": "刚果金",
+            "scoring_team_cn": "刚果金",
+            "player_team_cn": "刚果金",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Fiston Mayele",
+            "scorer_cn": "马耶莱",
+            "scorer_app_alias": "马耶莱",
+            "scorer_team_cn": "刚果金",
+            "scorer_jersey": "19",
+            "scorer_position": null,
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Fiston Mayele"
+          },
+          {
+            "type": "goal",
+            "minute": "90'+1'",
+            "team": "home",
+            "team_cn": "刚果金",
+            "scoring_team_cn": "刚果金",
+            "player_team_cn": "刚果金",
+            "own_goal": false,
+            "penalty_kick": false,
+            "source": "ESPN summary API",
+            "scorer_source_name": "Yoane Wissa",
+            "scorer_cn": "维萨",
+            "scorer_app_alias": "维萨",
+            "scorer_team_cn": "刚果金",
+            "scorer_jersey": "20",
+            "scorer_position": "F",
+            "scorer_mapping_status": "matched_team_player",
+            "scorer_mapping_key": "Yoane Wissa",
+            "assist_source_name": "Meschack Elia",
+            "assist_cn": "埃利亚",
+            "assist_app_alias": "埃利亚",
+            "assist_team_cn": "刚果金",
+            "assist_jersey": "13",
+            "assist_position": null,
+            "assist_mapping_status": "matched_team_player",
+            "assist_mapping_key": "Meschack Elia"
+          }
+        ],
+        "source": "ESPN summary API",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760482"
+      }
     },
     {
       "match_id": "760484",
@@ -12645,7 +13054,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: AUT +125",
@@ -12678,7 +13087,7 @@
         "over_under_goals": 2.5
       },
       "source_url": null,
-      "as_of": "2026-06-27",
+      "as_of": "2026-06-28",
       "confidence": "medium",
       "source_type": "derived",
       "notes": "Model-derived 1X2 completion from ESPN/DraftKings partial market data: ARG -525",
@@ -29518,7 +29927,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760415:goal:4",
@@ -29544,7 +29953,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760414:goal:0",
@@ -29570,7 +29979,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760414:goal:1",
@@ -29596,7 +30005,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760414:goal:2",
@@ -29622,7 +30031,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760414",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760416:goal:1",
@@ -29648,7 +30057,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760416",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760416:goal:5",
@@ -29674,7 +30083,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760416",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760417:own_goal:0",
@@ -29700,7 +30109,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760417:goal:2",
@@ -29726,7 +30135,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760417:goal:3",
@@ -29752,7 +30161,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760417:goal:6",
@@ -29778,7 +30187,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760417:goal:10",
@@ -29804,7 +30213,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760417",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760420:own_goal:3",
@@ -29830,7 +30239,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760420",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760419:goal:0",
@@ -29856,7 +30265,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760419",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760419:goal:1",
@@ -29882,7 +30291,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760419",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760418:goal:0",
@@ -29908,7 +30317,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760418",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760421:goal:0",
@@ -29934,7 +30343,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760421",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760421:goal:1",
@@ -29960,7 +30369,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760421",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760422:goal:0",
@@ -29986,7 +30395,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760422:goal:1",
@@ -30012,7 +30421,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760422:goal:2",
@@ -30038,7 +30447,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760422:goal:3",
@@ -30064,7 +30473,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760422:goal:4",
@@ -30090,7 +30499,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760422:goal:5",
@@ -30116,7 +30525,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760422:goal:6",
@@ -30142,7 +30551,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760422",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760425:goal:0",
@@ -30168,7 +30577,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760425:goal:1",
@@ -30194,7 +30603,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760425:goal:3",
@@ -30220,7 +30629,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760425:goal:5",
@@ -30246,7 +30655,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760425",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760423:goal:4",
@@ -30272,7 +30681,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760423",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760424:goal:0",
@@ -30298,7 +30707,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760424:goal:1",
@@ -30324,7 +30733,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760424:goal:2",
@@ -30350,7 +30759,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760424:goal:4",
@@ -30376,7 +30785,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760424:goal:5",
@@ -30402,7 +30811,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760424:goal:6",
@@ -30428,7 +30837,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760424",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760426:goal:2",
@@ -30454,7 +30863,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760426",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760426:own_goal:4",
@@ -30480,7 +30889,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760426",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760429:goal:0",
@@ -30506,7 +30915,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760429",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760429:goal:2",
@@ -30532,7 +30941,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760429",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760427:goal:0",
@@ -30558,7 +30967,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760427:goal:1",
@@ -30584,7 +30993,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760427:goal:2",
@@ -30610,7 +31019,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760427:goal:3",
@@ -30636,7 +31045,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760427",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760432:goal:0",
@@ -30662,7 +31071,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760432:goal:1",
@@ -30688,7 +31097,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760432:goal:2",
@@ -30714,7 +31123,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760432:goal:3",
@@ -30740,7 +31149,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760432",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760430:goal:0",
@@ -30766,7 +31175,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760430:goal:1",
@@ -30792,7 +31201,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760430:goal:2",
@@ -30818,7 +31227,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760430:goal:3",
@@ -30844,7 +31253,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760430:own_goal:5",
@@ -30870,7 +31279,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760430",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760433:goal:0",
@@ -30896,7 +31305,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760433",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760433:goal:1",
@@ -30922,7 +31331,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760433",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760433:goal:2",
@@ -30948,7 +31357,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760433",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760431:goal:0",
@@ -30974,7 +31383,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760431",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760431:goal:1",
@@ -31000,7 +31409,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760431",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760431:own_goal:2",
@@ -31026,7 +31435,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760431",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760435:goal:0",
@@ -31052,7 +31461,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760435",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760435:goal:3",
@@ -31078,7 +31487,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760435",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760437:goal:0",
@@ -31104,7 +31513,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760437",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760437:goal:1",
@@ -31130,7 +31539,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760437",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760437:goal:2",
@@ -31156,7 +31565,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760437",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760437:goal:3",
@@ -31182,7 +31591,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760437",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760437:goal:4",
@@ -31208,7 +31617,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760437",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760434:goal:2",
@@ -31234,7 +31643,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760434",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760436:goal:2",
@@ -31260,7 +31669,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760436",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760436:goal:3",
@@ -31286,7 +31695,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760436",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760436:goal:4",
@@ -31312,7 +31721,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760436",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760436:goal:5",
@@ -31338,7 +31747,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760436",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760438:goal:0",
@@ -31364,7 +31773,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760438",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760439:goal:3",
@@ -31390,7 +31799,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760439",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760439:goal:5",
@@ -31416,7 +31825,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760439",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760439:goal:6",
@@ -31442,7 +31851,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760439",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760439:goal:7",
@@ -31468,7 +31877,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760439",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760440:goal:1",
@@ -31494,7 +31903,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760440",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760440:goal:2",
@@ -31520,7 +31929,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760440",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760440:goal:4",
@@ -31546,7 +31955,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760440",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760440:goal:7",
@@ -31572,7 +31981,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760440",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760440:own_goal:8",
@@ -31598,7 +32007,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760440",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760440:goal:9",
@@ -31624,7 +32033,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760440",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760441:goal:1",
@@ -31650,7 +32059,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760441",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760442:own_goal:0",
@@ -31676,7 +32085,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760442",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760442:goal:3",
@@ -31702,7 +32111,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760442",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760445:goal:0",
@@ -31728,7 +32137,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760445",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760444:goal:1",
@@ -31754,7 +32163,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760444",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760444:goal:2",
@@ -31780,7 +32189,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760444",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760444:goal:3",
@@ -31806,7 +32215,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760444",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760443:goal:0",
@@ -31832,7 +32241,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760443",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760447:goal:0",
@@ -31858,7 +32267,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760447",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760447:goal:1",
@@ -31884,7 +32293,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760447",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760447:goal:2",
@@ -31910,7 +32319,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760447",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760447:goal:4",
@@ -31936,7 +32345,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760447",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760447:goal:5",
@@ -31962,7 +32371,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760447",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760447:goal:8",
@@ -31988,7 +32397,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760447",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760448:goal:0",
@@ -32014,7 +32423,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760448",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760448:goal:1",
@@ -32040,7 +32449,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760448",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760448:goal:2",
@@ -32066,7 +32475,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760448",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760449:goal:0",
@@ -32092,7 +32501,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760449",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760449:goal:1",
@@ -32118,7 +32527,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760449",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760449:goal:2",
@@ -32144,7 +32553,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760449",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760449:goal:3",
@@ -32170,7 +32579,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760449",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760453:goal:0",
@@ -32196,7 +32605,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760453",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760453:goal:1",
@@ -32222,7 +32631,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760453",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760453:goal:2",
@@ -32248,7 +32657,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760453",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760453:own_goal:4",
@@ -32274,7 +32683,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760453",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760450:goal:2",
@@ -32300,7 +32709,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760450",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760450:goal:3",
@@ -32326,7 +32735,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760450",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760450:goal:4",
@@ -32352,7 +32761,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760450",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760450:goal:6",
@@ -32378,7 +32787,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760450",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760452:goal:0",
@@ -32404,7 +32813,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760452",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760452:goal:4",
@@ -32430,7 +32839,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760452",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760452:goal:5",
@@ -32456,7 +32865,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760452",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760452:goal:6",
@@ -32482,7 +32891,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760452",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760456:goal:0",
@@ -32508,7 +32917,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760456",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760456:goal:5",
@@ -32534,7 +32943,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760456",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760457:goal:1",
@@ -32560,7 +32969,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760457",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760457:goal:2",
@@ -32586,7 +32995,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760457",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760457:goal:3",
@@ -32612,7 +33021,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760457",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760454:goal:0",
@@ -32638,7 +33047,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760454",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760454:goal:1",
@@ -32664,7 +33073,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760454",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760454:goal:2",
@@ -32690,7 +33099,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760454",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760454:goal:3",
@@ -32716,7 +33125,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760454",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760454:goal:4",
@@ -32742,7 +33151,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760454",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760455:goal:0",
@@ -32768,7 +33177,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760455",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760455:goal:3",
@@ -32794,7 +33203,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760455",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760455:goal:4",
@@ -32820,7 +33229,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760455",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760461:goal:0",
@@ -32846,7 +33255,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760461",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760461:goal:2",
@@ -32872,7 +33281,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760461",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760461:goal:3",
@@ -32898,7 +33307,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760461",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760461:own_goal:4",
@@ -32924,7 +33333,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760461",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760461:goal:6",
@@ -32950,7 +33359,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760461",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760460:goal:0",
@@ -32976,7 +33385,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760460",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760459:goal:1",
@@ -33002,7 +33411,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760459",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760462:goal:0",
@@ -33028,7 +33437,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760462",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760462:own_goal:1",
@@ -33054,7 +33463,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760462",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760462:goal:2",
@@ -33080,7 +33489,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760462",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760462:goal:4",
@@ -33106,7 +33515,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760462",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760463:goal:2",
@@ -33132,7 +33541,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760463",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760463:goal:3",
@@ -33158,7 +33567,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760463",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760463:goal:4",
@@ -33184,7 +33593,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760463",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760464:own_goal:0",
@@ -33210,7 +33619,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760464",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760464:goal:1",
@@ -33236,7 +33645,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760464",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760464:goal:2",
@@ -33262,7 +33671,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760464",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760464:goal:3",
@@ -33288,7 +33697,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760464",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760464:goal:4",
@@ -33314,7 +33723,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760464",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760464:goal:7",
@@ -33340,7 +33749,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760464",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760465:goal:0",
@@ -33366,7 +33775,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760465",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760465:goal:1",
@@ -33392,7 +33801,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760465",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760465:goal:2",
@@ -33418,7 +33827,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760465",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760467:goal:0",
@@ -33444,7 +33853,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760467",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760467:goal:1",
@@ -33470,7 +33879,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760467",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760467:goal:3",
@@ -33496,7 +33905,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760467",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760466:goal:0",
@@ -33522,7 +33931,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760466",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760473:goal:0",
@@ -33548,7 +33957,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760473",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760473:goal:2",
@@ -33574,7 +33983,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760473",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760468:goal:0",
@@ -33600,7 +34009,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760468",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760468:goal:1",
@@ -33626,7 +34035,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760468",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760468:goal:5",
@@ -33652,7 +34061,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760468",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760471:goal:1",
@@ -33678,7 +34087,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760471",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760471:goal:2",
@@ -33704,7 +34113,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760471",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760472:own_goal:0",
@@ -33730,7 +34139,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760472",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760472:goal:1",
@@ -33756,7 +34165,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760472",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760472:goal:2",
@@ -33782,7 +34191,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760472",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760472:goal:3",
@@ -33808,7 +34217,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760472",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760470:goal:0",
@@ -33834,7 +34243,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760470",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760470:goal:1",
@@ -33860,7 +34269,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760470",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760470:goal:3",
@@ -33886,7 +34295,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760470",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760470:goal:4",
@@ -33912,7 +34321,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760470",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760470:goal:5",
@@ -33938,7 +34347,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760470",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760475:goal:0",
@@ -33964,7 +34373,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760475",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760475:goal:2",
@@ -33990,7 +34399,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760475",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760475:goal:3",
@@ -34016,7 +34425,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760475",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760475:goal:4",
@@ -34042,7 +34451,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760475",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760475:goal:6",
@@ -34068,7 +34477,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760475",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760474:goal:0",
@@ -34094,7 +34503,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760474",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760474:goal:3",
@@ -34120,7 +34529,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760474",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760474:goal:4",
@@ -34146,7 +34555,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760474",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760474:goal:5",
@@ -34172,7 +34581,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760474",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760474:goal:8",
@@ -34198,7 +34607,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760474",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760479:goal:0",
@@ -34224,7 +34633,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760479",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760476:goal:0",
@@ -34250,7 +34659,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760476",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760476:goal:1",
@@ -34276,7 +34685,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760476",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760477:goal:0",
@@ -34302,7 +34711,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760477",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760477:goal:2",
@@ -34328,7 +34737,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760477",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760477:goal:4",
@@ -34354,7 +34763,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760477",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760477:goal:5",
@@ -34380,7 +34789,7 @@
       "assist_mapping_status": null,
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760477",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760477:goal:6",
@@ -34406,7 +34815,7 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760477",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
     },
     {
       "event_id": "760477:goal:7",
@@ -34432,7 +34841,215 @@
       "assist_mapping_status": "matched_team_player",
       "source": "ESPN summary API",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760477",
-      "as_of": "2026-06-27"
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760480:goal:0",
+      "match_id": "760480",
+      "event_type": "goal",
+      "minute": "31'",
+      "team_side": "home",
+      "team_cn": "克罗地亚",
+      "scoring_team_cn": "克罗地亚",
+      "player_team_cn": "克罗地亚",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Petar Sucic",
+      "player_display_name_cn": "苏契奇",
+      "player_app_alias": "苏契奇",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Petar Sucic",
+      "player_jersey": "17",
+      "player_position": null,
+      "assist_source_name": "Mateo Kovacic",
+      "assist_display_name_cn": "科瓦契奇",
+      "assist_app_alias": "科瓦契奇",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760480",
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760480:goal:2",
+      "match_id": "760480",
+      "event_type": "goal",
+      "minute": "73'",
+      "team_side": "away",
+      "team_cn": "加纳",
+      "scoring_team_cn": "加纳",
+      "player_team_cn": "加纳",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Derrick Luckassen",
+      "player_display_name_cn": "德里克",
+      "player_app_alias": "德里克",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Derrick Luckassen",
+      "player_jersey": "23",
+      "player_position": null,
+      "assist_source_name": "Ernest Nuamah",
+      "assist_display_name_cn": "阿蒂苏",
+      "assist_app_alias": "阿蒂苏",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760480",
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760480:goal:3",
+      "match_id": "760480",
+      "event_type": "goal",
+      "minute": "83'",
+      "team_side": "home",
+      "team_cn": "克罗地亚",
+      "scoring_team_cn": "克罗地亚",
+      "player_team_cn": "克罗地亚",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Nikola Vlasic",
+      "player_display_name_cn": "尼古拉",
+      "player_app_alias": "尼古拉",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Nikola Vlasic",
+      "player_jersey": "13",
+      "player_position": null,
+      "assist_source_name": "Luka Modric",
+      "assist_display_name_cn": "莫德里奇",
+      "assist_app_alias": "莫德里奇",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760480",
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760485:goal:2",
+      "match_id": "760485",
+      "event_type": "goal",
+      "minute": "62'",
+      "team_side": "away",
+      "team_cn": "英格兰",
+      "scoring_team_cn": "英格兰",
+      "player_team_cn": "英格兰",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Jude Bellingham",
+      "player_display_name_cn": "贝林厄姆",
+      "player_app_alias": "贝林厄姆",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Jude Bellingham",
+      "player_jersey": "10",
+      "player_position": "M",
+      "assist_source_name": "Bukayo Saka",
+      "assist_display_name_cn": "萨卡",
+      "assist_app_alias": "萨卡",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760485",
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760485:goal:3",
+      "match_id": "760485",
+      "event_type": "goal",
+      "minute": "67'",
+      "team_side": "away",
+      "team_cn": "英格兰",
+      "scoring_team_cn": "英格兰",
+      "player_team_cn": "英格兰",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Harry Kane",
+      "player_display_name_cn": "凯恩",
+      "player_app_alias": "凯恩",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Harry Kane",
+      "player_jersey": "9",
+      "player_position": "F",
+      "assist_source_name": "Jude Bellingham",
+      "assist_display_name_cn": "贝林厄姆",
+      "assist_app_alias": "贝林厄姆",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760485",
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760482:goal:0",
+      "match_id": "760482",
+      "event_type": "goal",
+      "minute": "10'",
+      "team_side": "away",
+      "team_cn": "乌兹别克",
+      "scoring_team_cn": "乌兹别克",
+      "player_team_cn": "乌兹别克",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Eldor Shomurodov",
+      "player_display_name_cn": "绍穆罗多夫",
+      "player_app_alias": "绍穆罗多夫",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Eldor Shomurodov",
+      "player_jersey": "14",
+      "player_position": "F",
+      "assist_source_name": "Akmal Mozgovoy",
+      "assist_display_name_cn": "莫兹戈沃伊",
+      "assist_app_alias": "莫兹戈沃伊",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760482",
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760482:goal:6",
+      "match_id": "760482",
+      "event_type": "goal",
+      "minute": "78'",
+      "team_side": "home",
+      "team_cn": "刚果金",
+      "scoring_team_cn": "刚果金",
+      "player_team_cn": "刚果金",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Fiston Mayele",
+      "player_display_name_cn": "马耶莱",
+      "player_app_alias": "马耶莱",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Fiston Mayele",
+      "player_jersey": "19",
+      "player_position": null,
+      "assist_source_name": null,
+      "assist_display_name_cn": null,
+      "assist_app_alias": null,
+      "assist_mapping_status": null,
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760482",
+      "as_of": "2026-06-28"
+    },
+    {
+      "event_id": "760482:goal:7",
+      "match_id": "760482",
+      "event_type": "goal",
+      "minute": "90'+1'",
+      "team_side": "home",
+      "team_cn": "刚果金",
+      "scoring_team_cn": "刚果金",
+      "player_team_cn": "刚果金",
+      "own_goal": false,
+      "penalty_kick": false,
+      "player_source_name": "Yoane Wissa",
+      "player_display_name_cn": "维萨",
+      "player_app_alias": "维萨",
+      "player_mapping_status": "matched_team_player",
+      "player_mapping_key": "Yoane Wissa",
+      "player_jersey": "20",
+      "player_position": "F",
+      "assist_source_name": "Meschack Elia",
+      "assist_display_name_cn": "埃利亚",
+      "assist_app_alias": "埃利亚",
+      "assist_mapping_status": "matched_team_player",
+      "source": "ESPN summary API",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760482",
+      "as_of": "2026-06-28"
     }
   ],
   "coverage_report": {
@@ -34574,9 +35191,9 @@
       ]
     },
     "actual_match_events": {
-      "completed_matches": 66,
-      "goal_events": 190,
-      "mapped_scorers": 190,
+      "completed_matches": 70,
+      "goal_events": 198,
+      "mapped_scorers": 198,
       "source_only_scorers": []
     },
     "data_quality_notes": [

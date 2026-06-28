@@ -117,10 +117,10 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
 });
 
 test("simulated group and knockout matches open a unified timeline detail modal", () => {
-  assert.match(html, /detailButton:"详情"/);
+  assert.match(html, /detailButton:"比赛详情"/);
   assert.match(html, /detailButtonSimulation:"模拟详情"/);
   assert.match(html, /function detailButtonLabel\(isSimulation\)/);
-  assert.match(html, /detailButtonLabel\(m&&m\.predictionSource==="sim"\)/);
+  assert.match(html, /detailButtonLabel\(!\(m&&m\.predictionSource==="actual"\)\)/);
   assert.match(html, /var detailLabel=detailButtonLabel\(\!\!r\);/);
   assert.match(html, /detailSourceSimulation:"模拟生成"/);
   assert.match(html, /function renderMatchDetailModal\(model\)/);
@@ -201,9 +201,11 @@ test("group quick actions expose draw selection", () => {
 
 test("group outcome buttons mount complete 1X2 odds when available", () => {
   assert.match(html, /function getCompleteOdds\(matchId\)/);
-  assert.match(html, /function getOutcomeOdds\(odds,matchId\)/);
+  assert.match(html, /function getOutcomeOdds\(odds,matchId,flip\)/);
+  assert.match(html, /orientCompleteOddsToFixture\(getCompleteOdds\(matchId\),flip\)/);
   assert.match(html, /function outcomeButtonHTML\(label,odd\)/);
   assert.match(html, /co&&co\.h/);
+  assert.match(html, /getOutcomeOdds\(m\.odds,m\.id,m\.scheduleFlip\)/);
   assert.match(html, /outcomeButtonHTML\(T\("quickHome"\),outcomeOdds&&outcomeOdds\.h\)/);
   assert.match(html, /outcomeButtonHTML\(T\("quickDraw"\),outcomeOdds&&outcomeOdds\.d\)/);
   assert.match(html, /outcomeButtonHTML\(T\("quickAway"\),outcomeOdds&&outcomeOdds\.a\)/);
@@ -431,8 +433,9 @@ test("Argentina vs Algeria completed match embeds ESPN goal scorers", () => {
 
 test("embedded completed results default into blank group score inputs", () => {
   assert.match(html, /md&&md\.homeScore!=null&&md\.awayScore!=null/);
-  assert.match(html, /m\.actualHs=String\(md\.homeScore\)/);
-  assert.match(html, /m\.actualAs=String\(md\.awayScore\)/);
+  assert.match(html, /m\.actualHs=String\(reverseDirection\?md\.awayScore:md\.homeScore\)/);
+  assert.match(html, /m\.actualAs=String\(reverseDirection\?md\.homeScore:md\.awayScore\)/);
+  assert.match(html, /if\(actual\.flip!=null\)m\.scheduleFlip=!!actual\.flip/);
   assert.match(html, /var hasLive=!!\(ACTUAL_RESULTS\.ready&&ACTUAL_RESULTS\.groups\)/);
   assert.match(html, /loadState\(\);\napplyActualResultsToBlankPredictions\(\);/);
   assert.match(html, /function rsG\(gk\)[\s\S]*applyActualResultsToBlankPredictions\(\);render\(\);/);
@@ -593,6 +596,22 @@ test("group matches render chronologically without changing fixture identity", (
   assert.match(html, /function chronologicalGroupMatches\(gk\)/);
   assert.match(html, /return Date\.parse\(left\.m\.date\|\|""\)-Date\.parse\(right\.m\.date\|\|""\)/);
   assert.match(html, /var mi=ordered\[oi\]\.mi,m=ordered\[oi\]\.m/);
+});
+
+test("group data enrichment orients reversed ESPN fixtures to app fixture slots", () => {
+  const schedule = extractVarExpression("MATCH_SCHEDULE");
+  assert.equal(schedule["760485"].home, "巴拿马");
+  assert.equal(schedule["760485"].away, "英格兰");
+  assert.equal(matchDetails["760485"].homeScore, 0);
+  assert.equal(matchDetails["760485"].awayScore, 2);
+
+  assert.match(html, /function orientOddsToFixture\(odds,flip\)/);
+  assert.match(html, /var sameDirection=ms\.group===grp&&ms\.home===m\.h&&ms\.away===m\.a/);
+  assert.match(html, /var reverseDirection=ms\.group===grp&&ms\.home===m\.a&&ms\.away===m\.h/);
+  assert.match(html, /m\.scheduleFlip=reverseDirection/);
+  assert.match(html, /m\.actualHs=String\(reverseDirection\?md\.awayScore:md\.homeScore\)/);
+  assert.match(html, /m\.actualAs=String\(reverseDirection\?md\.homeScore:md\.awayScore\)/);
+  assert.match(html, /getOutcomeOdds\(m\.odds,m\.id,m\.scheduleFlip\)/);
 });
 
 test("group progress uses the liquid glass progress component", () => {

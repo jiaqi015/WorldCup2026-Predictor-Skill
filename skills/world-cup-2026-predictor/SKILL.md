@@ -7,6 +7,12 @@ description: Launch, use, validate, or maintain the interactive 2026 World Cup p
 
 Use the bundled single-file web app for interactive brackets and the bundled scripts for live-result checks and deterministic validation.
 
+## Command Paths
+
+Commands that start with `scripts/` in this guide are relative to this skill directory. In the source repository, either `cd skills/world-cup-2026-predictor` first or run them with the full prefix, for example `python3 skills/world-cup-2026-predictor/scripts/live_results.py --json --mode latest`.
+
+Repository maintenance commands such as `python3 scripts/refresh_results.py` and `python3 scripts/release_check.py` are run from the source repository root.
+
 ## Choose The Workflow
 
 - For an interactive prediction, launch the web app and use browser automation when available.
