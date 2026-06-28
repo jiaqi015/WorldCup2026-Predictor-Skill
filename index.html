@@ -207,7 +207,7 @@ body.dark .team-rank{background:rgba(255,255,255,0.08);border-color:rgba(255,255
 .pitch-box{position:absolute;left:50%;width:55%;height:68px;border:1px solid rgba(255,255,255,0.24);transform:translateX(-50%);pointer-events:none}
 .pitch-box.top{top:0;border-top:0;border-radius:0 0 14px 14px}
 .pitch-box.bottom{bottom:0;border-bottom:0;border-radius:14px 14px 0 0}
-.pitch-player-card{position:absolute;left:var(--x);top:var(--y);width:70px;min-height:52px;padding:6px 5px;border-radius:14px;background:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.72);box-shadow:0 10px 20px rgba(4,35,22,0.18);transform:translate(-50%,-50%);color:#173225;text-align:center}
+.pitch-player-card{position:absolute;left:var(--x);top:var(--y);width:70px;height:54px;padding:5px 5px;border-radius:14px;background:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.72);box-shadow:0 10px 20px rgba(4,35,22,0.18);transform:translate(-50%,-50%);color:#173225;text-align:center}
 .pitch-player-card .team-profile-photo{width:24px;height:24px;margin:0 auto 3px}
 .pitch-player-card .team-profile-avatar{width:24px;height:24px;font-size:10px;background:#E8F2EC;border-color:rgba(5,48,31,0.12);color:#49675A}
 .pitch-shirt{position:absolute;top:5px;left:5px;min-width:19px;height:19px;padding:0 4px;border-radius:999px;background:#0A6E45;color:#fff;font-size:9px;font-weight:950;line-height:19px;font-variant-numeric:tabular-nums}
@@ -241,7 +241,7 @@ body.dark .team-rank{background:rgba(255,255,255,0.08);border-color:rgba(255,255
 .team-profile-player-meta{display:block;margin-top:1px;color:var(--ink-light);font-size:9px;font-weight:750}
 .team-profile-shirt{display:inline-flex;align-items:center;justify-content:center;min-width:23px;height:20px;padding:0 5px;border-radius:7px;background:var(--bg-soft);border:1px solid var(--line-delicate);color:var(--ink-medium);font-size:9px;font-weight:950;font-variant-numeric:tabular-nums;flex:0 0 auto}
 .team-profile-section.roster{grid-column:1/-1}
-@media(max-width:760px){.team-profile-body{grid-template-columns:1fr}.team-profile-roster{grid-template-columns:repeat(2,minmax(0,1fr))}.team-profile-title{font-size:23px}.team-profile-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.team-profile-pitch-field{height:430px}.pitch-player-card{width:54px;min-height:47px;padding:5px 4px;border-radius:12px}.pitch-player-card .team-profile-photo,.pitch-player-card .team-profile-avatar{width:20px;height:20px}.pitch-shirt{top:4px;left:4px;min-width:16px;height:16px;padding:0 3px;font-size:8px;line-height:16px}.pitch-name{font-size:8px}.pitch-role{font-size:6.8px}.pitch-source{max-width:112px}}
+@media(max-width:760px){.team-profile-body{grid-template-columns:1fr}.team-profile-roster{grid-template-columns:repeat(2,minmax(0,1fr))}.team-profile-title{font-size:23px}.team-profile-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.team-profile-pitch-field{height:430px}.pitch-player-card{width:54px;height:50px;padding:4px;border-radius:12px}.pitch-player-card .team-profile-photo,.pitch-player-card .team-profile-avatar{width:20px;height:20px}.pitch-shirt{top:4px;left:4px;min-width:16px;height:16px;padding:0 3px;font-size:8px;line-height:16px}.pitch-name{font-size:8px}.pitch-role{font-size:6.8px}.pitch-source{max-width:112px}}
 .btns{display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}
 .match-actions{display:inline-flex;align-self:center;gap:0;margin-top:0;border:1px solid var(--line-delicate);border-radius:100px;background:var(--bg-card);overflow:hidden;box-shadow:0 4px 12px rgba(18,20,23,0.04)}
 .match-actions .b{border:0;border-radius:0;background:transparent;box-shadow:none;min-width:64px}
@@ -3115,6 +3115,7 @@ function teamProfilePlayerHTML(player,team){
 function teamProfilePitchLine(player){
   var abbr=String((player&&player.pos)||"").toUpperCase();
   if(abbr==="G"||abbr==="GK")return "gk";
+  if(abbr==="SW")return "def";
   if(abbr.indexOf("AM")>=0)return "am";
   if(abbr==="DM"||abbr.indexOf("DM-")===0)return "dm";
   if(abbr.indexOf("F")>=0)return "fwd";
@@ -3131,7 +3132,7 @@ function teamProfileBaseX(player){
   return 50;
 }
 function teamProfileSpreadX(items,player){
-  var xs={1:[50],2:[38,62],3:[24,50,76],4:[14,38,62,86],5:[10,30,50,70,90]};
+  var xs={1:[50],2:[36,64],3:[24,50,76],4:[14,38,62,86],5:[12,31,50,69,88]};
   var ordered=items.slice().sort(function(a,b){
     var ax=teamProfileBaseX(a),bx=teamProfileBaseX(b);
     if(ax!==bx)return ax-bx;
@@ -3142,22 +3143,22 @@ function teamProfileSpreadX(items,player){
 }
 function teamProfilePitchCoords(player,index,starters){
   var all=starters||[],line=teamProfilePitchLine(player),abbr=String((player&&player.pos)||"").toUpperCase();
-  if(line==="gk")return {x:50,y:91};
+  if(line==="gk")return {x:50,y:94};
   var same=all.filter(function(p){return teamProfilePitchLine(p)===line;});
   if(line==="def"){
     var defenders=same;
     if(defenders.length>=5){
-      if(abbr==="LB")return {x:10,y:69};
-      if(abbr==="RB")return {x:90,y:69};
+      if(abbr==="LB")return {x:12,y:66};
+      if(abbr==="RB")return {x:88,y:66};
       var centerBacks=defenders.filter(function(p){var a=String((p&&p.pos)||"").toUpperCase();return a!=="LB"&&a!=="RB";});
-      return {x:teamProfileSpreadX(centerBacks,player),y:79};
+      return {x:teamProfileSpreadX(centerBacks,player),y:78};
     }
     return {x:teamProfileSpreadX(defenders,player),y:77};
   }
   if(line==="dm")return {x:teamProfileSpreadX(same,player),y:61};
-  if(line==="mid")return {x:teamProfileSpreadX(same,player),y:45};
-  if(line==="am")return {x:teamProfileSpreadX(same,player),y:34};
-  if(line==="fwd")return {x:teamProfileSpreadX(same,player),y:18};
+  if(line==="mid")return {x:teamProfileSpreadX(same,player),y:47};
+  if(line==="am")return {x:teamProfileSpreadX(same,player),y:31};
+  if(line==="fwd")return {x:teamProfileSpreadX(same,player),y:14};
   var fallback={1:[50,91],2:[86,77],3:[14,77],4:[38,77],5:[62,77],6:[50,61],7:[86,45],8:[62,45],9:[50,18],10:[50,34],11:[14,45]};
   var c=fallback[index+1]||[50,50];
   return {x:c[0],y:c[1]};

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import vm from "node:vm";
 
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const matchDetails = JSON.parse(
@@ -299,13 +300,56 @@ test("team profile design uses a scouting-board layout instead of generic cards"
   assert.match(html, /\.team-profile-pitch\{[^}]*linear-gradient\(180deg,rgba\(15,113,70,0\.94\),rgba\(6,69,45,0\.98\)\)/);
   assert.match(html, /\.team-profile-pitch-field\{[^}]*height:486px/);
   assert.match(html, /\.team-profile-pitch-field::after/);
-  assert.match(html, /\.pitch-player-card\{[^}]*position:absolute[^}]*width:70px/);
+  assert.match(html, /\.pitch-player-card\{[^}]*position:absolute[^}]*width:70px[^}]*height:54px/);
   assert.match(html, /style="--x:'\+coords\.x\+'\%;--y:'\+coords\.y\+'\%"/);
   assert.match(html, /\.team-profile-matches\{[^}]*max-height:320px/);
   assert.match(html, /\.team-chip-inline\{[^}]*background:transparent/);
   assert.match(html, /@media\(max-width:760px\)\{\.team-profile-body\{grid-template-columns:1fr\}/);
   assert.doesNotMatch(html, /\.team-profile-[^{]+\{[^}]*border-left:\s*[2-9]/);
   assert.doesNotMatch(html, /background-clip:text/);
+});
+
+test("team profile pitch coordinates keep first XI cards from overlapping", () => {
+  const lineupMatch = html.match(/var TEAM_FIRST_LINEUPS=(.*?);\n/);
+  assert.ok(lineupMatch, "TEAM_FIRST_LINEUPS should be embedded");
+  const lineups = JSON.parse(lineupMatch[1]);
+  const start = html.indexOf("function teamProfilePitchLine(player)");
+  const end = html.indexOf("function teamProfileLineupSourceLabel(source)");
+  assert.ok(start > 0 && end > start, "pitch coordinate functions should be present");
+  const context = {};
+  vm.createContext(context);
+  vm.runInContext(html.slice(start, end), context);
+
+  const layouts = [
+    { name: "desktop", fieldWidth: 408, fieldHeight: 486, cardWidth: 70, cardHeight: 54 },
+    { name: "mobile", fieldWidth: 230, fieldHeight: 430, cardWidth: 54, cardHeight: 50 },
+  ];
+  for (const [team, lineup] of Object.entries(lineups)) {
+    const starters = lineup.starters || [];
+    assert.equal(starters.length, 11, `${team} should have an 11-player first lineup`);
+    for (const layout of layouts) {
+      const rects = starters.map((player, index) => {
+        const coords = context.teamProfilePitchCoords(player, index, starters);
+        const x = (coords.x / 100) * layout.fieldWidth;
+        const y = (coords.y / 100) * layout.fieldHeight;
+        return {
+          player: player.name,
+          left: x - layout.cardWidth / 2,
+          right: x + layout.cardWidth / 2,
+          top: y - layout.cardHeight / 2,
+          bottom: y + layout.cardHeight / 2,
+        };
+      });
+      for (let i = 0; i < rects.length; i += 1) {
+        for (let j = i + 1; j < rects.length; j += 1) {
+          const a = rects[i];
+          const b = rects[j];
+          const overlap = a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+          assert.equal(overlap, false, `${team} ${layout.name}: ${a.player} overlaps ${b.player}`);
+        }
+      }
+    }
+  }
 });
 
 test("manual scorer picker uses full squad candidates grouped by position", () => {
