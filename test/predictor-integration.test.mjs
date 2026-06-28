@@ -526,7 +526,7 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /id="globalActions"/);
   assert.match(html, /function shareBrandIcon\(\)/);
   assert.match(html, /class="share-brand-icon"/);
-  assert.match(html, /assets\/fifa-trophy-share\.png/);
+  assert.match(html, /resolvePhotoUrl\("assets\/fifa-trophy-share\.png"\)/);
   assert.match(html, /\.share-brand-icon img\{[^}]*height:38px/);
   assert.match(html, /function renderGlobalShareBar\(ready\)/);
   assert.match(html, /var cls="share-cta"\+\(ready\?"":" dim"\)/);

@@ -2857,7 +2857,7 @@ function cupIcon(){
   '</svg>';
 }
 function shareBrandIcon(){
-  return '<span class="share-brand-icon" aria-hidden="true"><img src="assets/fifa-trophy-share.png" alt="" decoding="async"></span>';
+  return '<span class="share-brand-icon" aria-hidden="true"><img src="'+resolvePhotoUrl("assets/fifa-trophy-share.png")+'" alt="" decoding="async"></span>';
 }
 function renderGlobalShareBar(ready){
   var label=ready?T("btnShare"):T("btnShareLocked"),title=ready?T("btnShare"):T("shareNeedKO");
