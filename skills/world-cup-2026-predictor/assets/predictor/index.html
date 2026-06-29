@@ -214,7 +214,10 @@ body.dark .team-rank{background:rgba(255,255,255,0.08);border-color:rgba(255,255
 .pitch-name{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#10261C;font-size:9.5px;font-weight:950;line-height:1.15}
 .pitch-role{display:block;margin-top:2px;color:#6D8177;font-size:7.5px;font-weight:900;line-height:1}
 .pitch-lineup-meta{position:relative;z-index:2;display:flex;justify-content:space-between;gap:10px;margin-top:10px;color:rgba(255,255,255,0.75);font-size:10px;font-weight:800;line-height:1.35}
-.team-profile-photo{position:relative;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;flex:0 0 auto}
+.player-photo{position:relative;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:var(--bg-soft);border:1px solid var(--line-delicate);flex:0 0 auto}
+.player-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.player-photo-fallback{position:relative;z-index:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--ink-light);font-weight:900}
+.team-profile-photo{width:28px;height:28px}
 .team-profile-photo img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;border:1px solid var(--line-delicate);background:var(--bg-card)}
 .team-profile-avatar{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--bg-soft);border:1px solid var(--line-delicate);color:var(--ink-light);font-weight:900;flex:0 0 auto}
 .team-profile-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
@@ -546,8 +549,10 @@ body.dark .award-logo{color:#3A2A02}
 .bk-decision{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;max-width:100%;margin:2px 0 0;padding:2px 5px;border-radius:999px;background:rgba(229,181,71,0.11);color:var(--accent-gold-dark);font-size:8px;font-weight:850;line-height:1;white-space:nowrap}
 .player-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .player-choice{display:flex;flex-direction:column;align-items:center;padding:8px 4px;border-radius:12px;border:2px solid var(--line-delicate);background:var(--bg-input);color:var(--ink-dark);cursor:pointer;font-family:Arial;font-size:10px;gap:4px;font-weight:600;transition:all .15s;min-width:0}
-.player-choice img,.player-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #e0e0e8}
-.player-avatar{background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink-light);font-weight:700}
+.leaderboard-avatar{width:32px;height:32px;border:1.5px solid var(--line-delicate);display:block}
+.leaderboard-avatar-fallback{font-size:11px}
+.player-choice-photo{width:44px;height:44px;border:2px solid #e0e0e8;background:var(--bg-soft)}
+.player-avatar{font-size:16px;color:var(--ink-light);font-weight:700}
 .player-choice .player-name{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .player-pos{font-size:9px;line-height:1;color:var(--ink-light);font-weight:800;letter-spacing:0;background:var(--bg-card);border:1px solid var(--line-delicate);border-radius:999px;padding:2px 5px}
 .scorer-modal{max-width:760px;width:min(760px,calc(100vw - 32px));max-height:min(92vh,920px);padding:0;overflow:hidden;display:flex;flex-direction:column}
@@ -1160,6 +1165,13 @@ function resolvePlayerPhoto(player,team){
   return null;
 }
 function getPhotoUrl(player,team){return resolvePlayerPhoto(player,team);}
+function playerAvatarHTML(player,team,opts){
+  opts=opts||{};
+  var name=safePlayerName(player),photo=resolvePlayerPhoto(player,team)||(opts.fallbackUrl?resolvePhotoUrl(opts.fallbackUrl):null);
+  var label=escHtml(pn(name||player,team)),initial=escHtml((name||"?").charAt(0));
+  var frameClass=opts.frameClass||"player-photo",fallbackClass=opts.fallbackClass||"player-photo-fallback";
+  return '<span class="'+escHtml(frameClass)+'"><span class="'+escHtml(fallbackClass)+'">'+initial+'</span>'+(photo?'<img src="'+escHtml(photo)+'" alt="'+label+'" onerror="this.style.display=\'none\'">':"")+'</span>';
+}
 function loadPhotos(team,cb){
   var players=PL[team]||[];
   for(var i=0;i<players.length;i++){
@@ -3212,10 +3224,9 @@ function buildTeamProfile(team){
   var standing=teamProfileStanding(team),record=teamProfileRecord(team),squad=teamProfileSquadSections(team),tactic=TEAM_TACTICAL_PROFILES[team]||{};
   return {team:team,standing:standing,record:record,squad:squad,matches:teamProfileMatchRows(team),keyPlayers:teamProfileKeyPlayers(team,record),tactic:tactic,lineup:teamProfileLineup(team,tactic)};
 }
-function teamProfilePhoto(player,team,overrideUrl){
-  var url=overrideUrl||getPhotoUrl(player,team),label=escHtml(pn(player,team));
-  var initial=escHtml((player||"?").charAt(0));
-  return '<span class="team-profile-photo"><span class="team-profile-avatar">'+initial+'</span>'+(url?'<img src="'+escHtml(url)+'" alt="'+label+'" onerror="this.style.display=\'none\'">':"")+'</span>';
+function teamProfilePhoto(player,team,opts){
+  opts=opts||{};
+  return playerAvatarHTML(player,team,{frameClass:"player-photo team-profile-photo",fallbackClass:"player-photo-fallback team-profile-avatar",fallbackUrl:opts.fallbackUrl});
 }
 function teamProfilePlayerHTML(player,team){
   var name=player.name||player,jersey=teamProfileJersey(player,team),meta=(jersey?"#"+jersey+" · ":"")+pos_t(player.pos||getPos(name,team));
@@ -3284,7 +3295,7 @@ function teamProfilePitchHTML(profile,formation,coach){
   h+='<div class="pitch-coach">'+T("teamProfileCoach")+': '+escHtml(coach)+'</div><div class="team-profile-pitch-field"><span class="pitch-box top"></span><span class="pitch-box bottom"></span>';
   for(var i=0;i<starters.length&&i<11;i++){
     var p=starters[i],name=p.name||p.appAlias||p.sourceName||"",coords=teamProfilePitchCoords(p,i,starters),jersey=teamProfileJersey(p,team),role=p.pos||p.posName||getPos(name,team);
-    h+='<div class="pitch-player-card" style="--x:'+coords.x+'%;--y:'+coords.y+'%"><span class="pitch-shirt">'+(jersey?escHtml(jersey):"—")+'</span>'+teamProfilePhoto(name,team,p.headshot)+'<span class="pitch-name">'+escHtml(pn(name,team))+'</span><span class="pitch-role">'+escHtml(pos_t(role))+'</span></div>';
+    h+='<div class="pitch-player-card" style="--x:'+coords.x+'%;--y:'+coords.y+'%"><span class="pitch-shirt">'+(jersey?escHtml(jersey):"—")+'</span>'+teamProfilePhoto(name,team,{fallbackUrl:p.headshot})+'<span class="pitch-name">'+escHtml(pn(name,team))+'</span><span class="pitch-role">'+escHtml(pos_t(role))+'</span></div>';
   }
   h+='</div><div class="pitch-lineup-meta"><span>'+escHtml(firstMatch)+'</span><span>'+escHtml(matchTime)+'</span></div></div>';
   return h;
@@ -4645,12 +4656,9 @@ if(!r){h+='<div class="btns"><button class="b bw" onclick="qpKO(\''+id+'\',\''+h
 else{h+='<div class="btns">';if(r.h>0)h+='<button class="b" style="font-size:9px" onclick="oS(\''+ht+'\',\'ko\',\''+id+'\',0,\'\')">'+fi(ht,"fls")+' ⚽</button>';if(r.a>0)h+='<button class="b" style="font-size:9px" onclick="oS(\''+at+'\',\'ko\',\''+id+'\',0,\'\')">'+fi(at,"fls")+' ⚽</button>';h+='<button class="b bx" style="font-size:9px" onclick="delKO(\''+id+'\')">↺</button></div>';}
 h+='</div>';return h;}
 
-// Render a player headshot cell. Falls back to a first-letter placeholder when
-// the photo isn't in cache yet (cache populated by loadPhotos on Stats tab visit).
+// Render leaderboard avatars through the same local-first player avatar path.
 function lbPhoto(player,team){
-  var photo=getPhotoUrl(player,team);
-  if(photo)return '<img src="'+photo+'" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--line-delicate);display:block" onerror="this.outerHTML=\'<div style=&quot;width:32px;height:32px;border-radius:50%;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-light);font-weight:700;border:1.5px solid var(--line-delicate)&quot;>'+player.charAt(0)+'</div>\'">';
-  return '<div style="width:32px;height:32px;border-radius:50%;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-light);font-weight:700;border:1.5px solid var(--line-delicate)">'+player.charAt(0)+'</div>';
+  return playerAvatarHTML(player,team,{frameClass:"player-photo leaderboard-avatar",fallbackClass:"player-photo-fallback leaderboard-avatar-fallback"});
 }
 // Prime exact team/player photo keys before rendering. Leaderboard players may be
 // outside the starting XI, so loading only PL[team] can never fill every key.
@@ -4771,8 +4779,7 @@ function awardIconHTML(kind){
 }
 function awardAvatarHTML(name,team){
   if(!name||name===team)return '<span class="award-team-emblem">'+(team?fi(team,"fls"):"")+'</span>';
-  var photo=resolvePlayerPhoto(name,team),label=escHtml(pn(name,team)),initial=escHtml((safePlayerName(name)||"?").charAt(0));
-  return '<span class="award-avatar"><span class="award-avatar-fallback">'+initial+'</span>'+(photo?'<img src="'+escHtml(photo)+'" alt="'+label+'" onerror="this.style.display=\'none\'">':"")+'</span>';
+  return playerAvatarHTML(name,team,{frameClass:"player-photo award-avatar",fallbackClass:"player-photo-fallback award-avatar-fallback"});
 }
 function awardCountryHTML(team){
   return team?'<div class="award-country">'+fi(team,"fls")+'<span>'+escHtml(tn(team))+'</span></div>':"";
@@ -5048,10 +5055,9 @@ function playerBucket(player,team){
 }
 function playerBucketLabel(bucket){return T(bucket==="fwd"?"bucketFwd":bucket==="mid"?"bucketMid":bucket==="def"?"bucketDef":"bucketGK");}
 function playerChoiceHTML(player,team,onclick,extraClass){
-  var photo=getPhotoUrl(player,team),pos=getPos(player,team),cls="player-choice"+(extraClass?" "+extraClass:"");
+  var pos=getPos(player,team),cls="player-choice"+(extraClass?" "+extraClass:"");
   var h='<button class="'+cls+'" onclick="'+onclick+'">';
-  if(photo)h+='<img src="'+photo+'" onerror="this.style.display=\'none\'">';
-  else h+='<div class="player-avatar">'+player.charAt(0)+'</div>';
+  h+=playerAvatarHTML(player,team,{frameClass:"player-photo player-choice-photo",fallbackClass:"player-photo-fallback player-avatar"});
   h+='<span class="player-name">'+pn(player,team)+'</span><span class="player-pos">'+pos_t(pos)+'</span></button>';
   return h;
 }

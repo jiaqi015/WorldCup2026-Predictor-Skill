@@ -246,7 +246,7 @@ test("award and leaderboard avatars use normalized player photo resolution", () 
   assert.match(html, /function matchingLineupPlayer\(player,team\)/);
   assert.match(html, /normalizeEspnName\(names\[n\]\)===target/);
   assert.match(html, /pushPhotoCandidate\(out,seen,lineup\.sourceName\)/);
-  assert.match(html, /var photo=resolvePlayerPhoto\(name,team\)/);
+  assert.match(html, /playerAvatarHTML\(name,team,\{frameClass:"player-photo award-avatar"/);
   assert.match(html, /photoCache\[qk\]===undefined\)photoCache\[qk\]=resolvePlayerPhoto\(item\.p,item\.t\)/);
   assert.match(html, /\(qk&&PHOTO_MAP\[qk\]\)\|\|PHOTO_MAP\[c\]\|\|PHOTO_MAP\[base\]/);
   const resolver = html.slice(
@@ -267,6 +267,22 @@ test("award avatar photo data includes Messi by team and player key", () => {
   const photoMap = Function(`return (${line.slice("var PHOTO_MAP=".length, -1)});`)();
   assert.equal(photoMap["阿根廷|梅西"], "data/photos/45843.png");
   assert.equal(photoMap["梅西"], "data/photos/45843.png");
+});
+
+test("all player avatar surfaces share one local-first renderer", () => {
+  assert.match(html, /function playerAvatarHTML\(player,team,opts\)/);
+  assert.match(html, /function teamProfilePhoto\(player,team,opts\)/);
+  assert.match(html, /return playerAvatarHTML\(player,team,\{/);
+  assert.match(html, /function lbPhoto\(player,team\)\{\s*return playerAvatarHTML\(player,team,\{/);
+  assert.match(html, /return playerAvatarHTML\(name,team,\{/);
+  assert.match(html, /playerAvatarHTML\(player,team,\{frameClass:"player-photo player-choice-photo"/);
+  assert.doesNotMatch(html, /overrideUrl\|\|getPhotoUrl/);
+  assert.doesNotMatch(html, /teamProfilePhoto\(name,team,p\.headshot\)/);
+  const renderer = html.slice(
+    html.indexOf("function playerAvatarHTML(player,team,opts)"),
+    html.indexOf("function loadPhotos(team,cb)")
+  );
+  assert.ok(renderer.indexOf("resolvePlayerPhoto(player,team)") < renderer.indexOf("opts.fallbackUrl"));
 });
 
 test("group quick actions expose draw selection", () => {
