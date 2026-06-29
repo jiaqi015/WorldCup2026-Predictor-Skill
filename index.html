@@ -2398,6 +2398,24 @@ function getActualKOMatchResult(id,ht,at){
   }
   return null;
 }
+function getKOResult(id,ht,at){
+  if(ko&&ko[id])return ko[id];
+  return getActualKOMatchResult(id,ht,at);
+}
+function getKOResultWinner(id,ht,at){
+  var r=getKOResult(id,ht,at);
+  return r&&r.w?r.w:null;
+}
+function getKOResultLoser(id,ht,at){
+  var r=getKOResult(id,ht,at);
+  return r&&r.l?r.l:null;
+}
+function isKOResultComplete(id,ht,at){
+  return !!getKOResult(id,ht,at);
+}
+function isKnockoutComplete(){
+  return !!(getKOResult("FINAL")&&getKOResult("3RD"));
+}
 function applyActualResultsToBlankPredictions(){
   if(isViewMode)return 0;
   var hasLive=!!(ACTUAL_RESULTS.ready&&ACTUAL_RESULTS.groups);
@@ -2944,7 +2962,7 @@ function groupProgressState(){
 }
 function knockoutProgressState(){
   var rounds=getKORounds(),total=0,done=0;
-  for(var ri=0;ri<rounds.length;ri++)for(var mi=0;mi<rounds[ri].length;mi++){total++;if(ko[rounds[ri][mi].id])done++;}
+  for(var ri=0;ri<rounds.length;ri++)for(var mi=0;mi<rounds[ri].length;mi++){var match=rounds[ri][mi];total++;if(isKOResultComplete(match.id,match.ht,match.at))done++;}
   return {done:done,total:total,pct:total?Math.round(done/total*100):0};
 }
 function renderControlProgress(label,progress,status,complete){
@@ -2967,7 +2985,7 @@ function renderGroupActions(){
 }
 function renderKnockoutActions(groupDone){
   if(!groupDone)return '<button class="btn-rand-secondary btn-compact-action" onclick="tab=\'groups\';render()">'+T("returnGroups")+'</button>';
-  var nextRoundDone=!!ko["FINAL"]&&!!ko["3RD"];
+  var nextRoundDone=isKnockoutComplete();
   var nextRoundBtn=nextRoundDone?'<span class="toolbar-status-chip">'+T("btnKODone")+'</span>':'<button class="btn-next-round btn-main-action" onclick="raKONext()">'+getNextKOSimulationLabel()+'</button>';
   return nextRoundBtn+'<button class="btn-rand-secondary btn-compact-action" onclick="raKO()">'+T("btnRandKO")+'</button><button class="btn-reset btn-text-action" onclick="ko={};slog=[];render()">'+T("btnResetKO")+'</button>';
 }
@@ -4158,7 +4176,7 @@ var svgs={"groups":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 var tabNames={"groups":T("tabGroups"),"knockout":T("tabKnockout"),"scorers":T("tabScorers"),"baseline":T("tabBaseline")};
 var ts=["groups","knockout","scorers"];
 if(ts.indexOf(tab)<0)tab="groups";
-var groupDone=allDone(),knockoutDone=!!(ko&&ko.FINAL&&ko.FINAL.w);
+var groupDone=allDone(),knockoutDone=isKnockoutComplete();
 var guideKO=tab==="groups"&&groupDone&&!knockoutDone;
 var th='<div class="tabs-inner">';for(var i=0;i<ts.length;i++){var done=(ts[i]==="groups"&&groupDone)||(ts[i]==="knockout"&&knockoutDone);var cls='tab-'+ts[i]+(tab===ts[i]?" on":"")+(ts[i]==="knockout"&&guideKO?" tab-guide":"")+(done?" tab-complete":"");var doneBadge=done?'<span class="tab-done-badge" aria-label="'+T("tabComplete")+'" title="'+T("tabComplete")+'"></span>':'';var badge=(ts[i]==="knockout"&&guideKO)?'<span class="tab-guide-badge">→</span>':'';th+='<button class="'+cls+'" onclick="tab=\''+ts[i]+'\';render()">'+svgs[ts[i]]+tabNames[ts[i]]+doneBadge+badge+'</button>';}
 th+='</div>';te.innerHTML=th;
@@ -4260,11 +4278,11 @@ var cp=getChampionPath();
 var h="";
 // Build bracket data
 var r32m=[];for(var i=0;i<R32D.length;i++){var m=R32D[i];r32m.push({id:m.i,ht:resolveKOSlot(m.h,st,t3,complete),at:resolveKOSlot(m.a,st,t3,complete),hSeed:m.h,aSeed:m.a});}
-var r16m=[];for(var i=0;i<R16P.length;i++)r16m.push({id:"L"+(i+1),ht:ko[R16P[i][0]]?ko[R16P[i][0]].w:null,at:ko[R16P[i][1]]?ko[R16P[i][1]].w:null,hSeed:R16P[i][0],aSeed:R16P[i][1],seedRole:"winner"});
-var qfm=[];for(var i=0;i<QFP.length;i++)qfm.push({id:"Q"+(i+1),ht:ko[QFP[i][0]]?ko[QFP[i][0]].w:null,at:ko[QFP[i][1]]?ko[QFP[i][1]].w:null,hSeed:QFP[i][0],aSeed:QFP[i][1],seedRole:"winner"});
-var sfm=[];for(var i=0;i<SFP.length;i++)sfm.push({id:"S"+(i+1),ht:ko[SFP[i][0]]?ko[SFP[i][0]].w:null,at:ko[SFP[i][1]]?ko[SFP[i][1]].w:null,hSeed:SFP[i][0],aSeed:SFP[i][1],seedRole:"winner"});
-var fnl={id:"FINAL",ht:ko["S1"]?ko["S1"].w:null,at:ko["S2"]?ko["S2"].w:null,hSeed:"S1",aSeed:"S2",seedRole:"winner"};
-var trd={id:"3RD",ht:ko["S1"]?ko["S1"].l:null,at:ko["S2"]?ko["S2"].l:null,hSeed:"S1",aSeed:"S2",seedRole:"loser"};
+var r16m=[];for(var i=0;i<R16P.length;i++)r16m.push({id:"L"+(i+1),ht:getKOResultWinner(R16P[i][0]),at:getKOResultWinner(R16P[i][1]),hSeed:R16P[i][0],aSeed:R16P[i][1],seedRole:"winner"});
+var qfm=[];for(var i=0;i<QFP.length;i++)qfm.push({id:"Q"+(i+1),ht:getKOResultWinner(QFP[i][0]),at:getKOResultWinner(QFP[i][1]),hSeed:QFP[i][0],aSeed:QFP[i][1],seedRole:"winner"});
+var sfm=[];for(var i=0;i<SFP.length;i++)sfm.push({id:"S"+(i+1),ht:getKOResultWinner(SFP[i][0]),at:getKOResultWinner(SFP[i][1]),hSeed:SFP[i][0],aSeed:SFP[i][1],seedRole:"winner"});
+var fnl={id:"FINAL",ht:getKOResultWinner("S1"),at:getKOResultWinner("S2"),hSeed:"S1",aSeed:"S2",seedRole:"winner"};
+var trd={id:"3RD",ht:getKOResultLoser("S1"),at:getKOResultLoser("S2"),hSeed:"S1",aSeed:"S2",seedRole:"loser"};
 function pick(arr,ids){var out=[];for(var i=0;i<ids.length;i++){for(var j=0;j<arr.length;j++){if(arr[j].id===ids[i]){out.push(arr[j]);break;}}}return out;}
 var leftR32=pick(r32m,["R2","R5","R1","R3","R11","R12","R9","R10"]),rightR32=pick(r32m,["R4","R6","R7","R8","R14","R16","R13","R15"]);
 var leftR16=pick(r16m,["L1","L2","L5","L6"]),rightR16=pick(r16m,["L3","L4","L7","L8"]);
@@ -4285,7 +4303,7 @@ h+=bkConn(1,false,["FINAL"],cp);
 // Final
 h+='<div class="bk-round final-col"><div class="bk-final-stack"><div class="bk-title final-title">'+cupIcon()+' '+T("finalLabel")+'</div>';
 h+=bkMatch(fnl,cp,complete);
-if(ko["FINAL"]){var w=ko["FINAL"].w;h+='<div style="text-align:center;margin-top:8px"><img src="https://flagcdn.com/w80/'+FC[w]+'.png" class="fl" style="width:64px;height:64px;border:3px solid var(--accent-gold);box-shadow:0 0 30px rgba(229,181,71,0.6)"><div style="font-size:18px;font-weight:800;color:var(--accent-gold-dark);margin-top:8px;letter-spacing:0.5px">'+cupIcon()+' '+tn(w)+'</div></div>';}
+var finalResult=getKOResult("FINAL",fnl.ht,fnl.at);if(finalResult){var w=finalResult.w;h+='<div style="text-align:center;margin-top:8px"><img src="https://flagcdn.com/w80/'+FC[w]+'.png" class="fl" style="width:64px;height:64px;border:3px solid var(--accent-gold);box-shadow:0 0 30px rgba(229,181,71,0.6)"><div style="font-size:18px;font-weight:800;color:var(--accent-gold-dark);margin-top:8px;letter-spacing:0.5px">'+cupIcon()+' '+tn(w)+'</div></div>';}
 h+='</div><div class="bk-third-stack"><div class="bk-title third-title">'+T("third")+'</div>';
 h+=bkMatch(trd,cp,complete);
 h+='</div></div>';
@@ -4303,24 +4321,29 @@ h+=renderChampionRoute(cp);
 el.innerHTML=h;}
 
 function getChampionPath(){
-if(!ko["FINAL"])return null;
-var champ=ko["FINAL"].w;
+var finalRec=getKOResult("FINAL");
+if(!finalRec)return null;
+var champ=finalRec.w;
 var ids=["FINAL"];
-var sf=ko["S1"]&&ko["S1"].w===champ?"S1":(ko["S2"]&&ko["S2"].w===champ?"S2":null);
+var s1Rec=getKOResult("S1"),s2Rec=getKOResult("S2");
+var sf=s1Rec&&s1Rec.w===champ?"S1":(s2Rec&&s2Rec.w===champ?"S2":null);
 if(sf){
   ids.push(sf);
   var qfPair=SFP[sf==="S1"?0:1];
-  var qf=ko[qfPair[0]]&&ko[qfPair[0]].w===champ?qfPair[0]:(ko[qfPair[1]]&&ko[qfPair[1]].w===champ?qfPair[1]:null);
+  var qf0=getKOResult(qfPair[0]),qf1=getKOResult(qfPair[1]);
+  var qf=qf0&&qf0.w===champ?qfPair[0]:(qf1&&qf1.w===champ?qfPair[1]:null);
   if(qf){
     ids.push(qf);
     var qfIdx=parseInt(qf.substring(1))-1;
     var r16Pair=QFP[qfIdx];
-    var l=ko[r16Pair[0]]&&ko[r16Pair[0]].w===champ?r16Pair[0]:(ko[r16Pair[1]]&&ko[r16Pair[1]].w===champ?r16Pair[1]:null);
+    var l0=getKOResult(r16Pair[0]),l1=getKOResult(r16Pair[1]);
+    var l=l0&&l0.w===champ?r16Pair[0]:(l1&&l1.w===champ?r16Pair[1]:null);
     if(l){
       ids.push(l);
       var lIdx=parseInt(l.substring(1))-1;
       var r32Pair=R16P[lIdx];
-      var r=ko[r32Pair[0]]&&ko[r32Pair[0]].w===champ?r32Pair[0]:(ko[r32Pair[1]]&&ko[r32Pair[1]].w===champ?r32Pair[1]:null);
+      var r0=getKOResult(r32Pair[0]),r1=getKOResult(r32Pair[1]);
+      var r=r0&&r0.w===champ?r32Pair[0]:(r1&&r1.w===champ?r32Pair[1]:null);
       if(r)ids.push(r);
     }
   }
@@ -4333,7 +4356,7 @@ for(var i=1;i<=8;i++)stageNames["L"+i]=r16Lbl;
 for(var i=1;i<=16;i++)stageNames["R"+i]=r32Lbl;
 var route=[];
 for(var i=ids.length-1;i>=0;i--){
-  var id=ids[i],rec=ko[id];if(!rec)continue;
+  var id=ids[i],rec=getKOResult(id);if(!rec)continue;
   route.push({stage:stageNames[id],id:id,opp:rec.l,score:koWinScoreText(rec,champ)});
 }
 return {champ:champ,set:set,route:route};}
@@ -4740,21 +4763,21 @@ function getKORounds(){
     rounds[0].push({id:m.i,ht:ht,at:at});
   }
   rounds.push([]);
-  for(i=0;i<R16P.length;i++)rounds[1].push({id:"L"+(i+1),ht:ko[R16P[i][0]]?ko[R16P[i][0]].w:null,at:ko[R16P[i][1]]?ko[R16P[i][1]].w:null});
+  for(i=0;i<R16P.length;i++)rounds[1].push({id:"L"+(i+1),ht:getKOResultWinner(R16P[i][0]),at:getKOResultWinner(R16P[i][1])});
   rounds.push([]);
-  for(i=0;i<QFP.length;i++)rounds[2].push({id:"Q"+(i+1),ht:ko[QFP[i][0]]?ko[QFP[i][0]].w:null,at:ko[QFP[i][1]]?ko[QFP[i][1]].w:null});
+  for(i=0;i<QFP.length;i++)rounds[2].push({id:"Q"+(i+1),ht:getKOResultWinner(QFP[i][0]),at:getKOResultWinner(QFP[i][1])});
   rounds.push([]);
-  for(i=0;i<SFP.length;i++)rounds[3].push({id:"S"+(i+1),ht:ko[SFP[i][0]]?ko[SFP[i][0]].w:null,at:ko[SFP[i][1]]?ko[SFP[i][1]].w:null});
+  for(i=0;i<SFP.length;i++)rounds[3].push({id:"S"+(i+1),ht:getKOResultWinner(SFP[i][0]),at:getKOResultWinner(SFP[i][1])});
   rounds.push([
-    {id:"3RD",ht:ko["S1"]?ko["S1"].l:null,at:ko["S2"]?ko["S2"].l:null},
-    {id:"FINAL",ht:ko["S1"]?ko["S1"].w:null,at:ko["S2"]?ko["S2"].w:null}
+    {id:"3RD",ht:getKOResultLoser("S1"),at:getKOResultLoser("S2")},
+    {id:"FINAL",ht:getKOResultWinner("S1"),at:getKOResultWinner("S2")}
   ]);
   return rounds;
 }
 function getNextKOSimulationLabel(){
   var rounds=getKORounds(),keys=["btnSimR32","btnSimR16","btnSimQF","btnSimSF","btnSimFinals"];
   for(var ri=0;ri<rounds.length;ri++){
-    for(var mi=0;mi<rounds[ri].length;mi++)if(!ko[rounds[ri][mi].id])return T(keys[ri]);
+    for(var mi=0;mi<rounds[ri].length;mi++){var match=rounds[ri][mi];if(!isKOResultComplete(match.id,match.ht,match.at))return T(keys[ri]);}
   }
   return T("btnKODone");
 }
@@ -4762,7 +4785,7 @@ function raKONext(){
   var rounds=getKORounds();
   for(var ri=0;ri<rounds.length;ri++){
     var round=rounds[ri],pending=[];
-    for(var mi=0;mi<round.length;mi++)if(!ko[round[mi].id])pending.push(round[mi]);
+    for(var mi=0;mi<round.length;mi++)if(!isKOResultComplete(round[mi].id,round[mi].ht,round[mi].at))pending.push(round[mi]);
     if(!pending.length)continue;
     for(var pi=0;pi<pending.length;pi++){
       var match=pending[pi];
@@ -4774,12 +4797,12 @@ function raKONext(){
 }
 function raKO(){if(!allDone())return;var st=getSt(),t3=getT3(st);ko={};slog=[];
 assignThirds(t3);
-for(var i=0;i<R32D.length;i++){var m=R32D[i],ht=getS(m.h,st,t3),at=m.a.indexOf("3_")===0?getT3Team(m.a):getS(m.a,st,t3);if(ht&&at)simulateKOResult(m.i,ht,at);}
-for(var i=0;i<R16P.length;i++){var lid="L"+(i+1),ht=ko[R16P[i][0]]?ko[R16P[i][0]].w:null,at=ko[R16P[i][1]]?ko[R16P[i][1]].w:null;if(ht&&at)simulateKOResult(lid,ht,at);}
-for(var i=0;i<QFP.length;i++){var qid="Q"+(i+1),ht=ko[QFP[i][0]]?ko[QFP[i][0]].w:null,at=ko[QFP[i][1]]?ko[QFP[i][1]].w:null;if(ht&&at)simulateKOResult(qid,ht,at);}
-for(var i=0;i<SFP.length;i++){var sid="S"+(i+1),ht=ko[SFP[i][0]]?ko[SFP[i][0]].w:null,at=ko[SFP[i][1]]?ko[SFP[i][1]].w:null;if(ht&&at)simulateKOResult(sid,ht,at);}
-var sl1=ko["S1"]?ko["S1"].l:null,sl2=ko["S2"]?ko["S2"].l:null;if(sl1&&sl2)simulateKOResult("3RD",sl1,sl2);
-var sw1=ko["S1"]?ko["S1"].w:null,sw2=ko["S2"]?ko["S2"].w:null;if(sw1&&sw2)simulateKOResult("FINAL",sw1,sw2);
+for(var i=0;i<R32D.length;i++){var m=R32D[i],ht=getS(m.h,st,t3),at=m.a.indexOf("3_")===0?getT3Team(m.a):getS(m.a,st,t3);if(ht&&at&&!isKOResultComplete(m.i,ht,at))simulateKOResult(m.i,ht,at);}
+for(var i=0;i<R16P.length;i++){var lid="L"+(i+1),ht=getKOResultWinner(R16P[i][0]),at=getKOResultWinner(R16P[i][1]);if(ht&&at&&!isKOResultComplete(lid,ht,at))simulateKOResult(lid,ht,at);}
+for(var i=0;i<QFP.length;i++){var qid="Q"+(i+1),ht=getKOResultWinner(QFP[i][0]),at=getKOResultWinner(QFP[i][1]);if(ht&&at&&!isKOResultComplete(qid,ht,at))simulateKOResult(qid,ht,at);}
+for(var i=0;i<SFP.length;i++){var sid="S"+(i+1),ht=getKOResultWinner(SFP[i][0]),at=getKOResultWinner(SFP[i][1]);if(ht&&at&&!isKOResultComplete(sid,ht,at))simulateKOResult(sid,ht,at);}
+var sl1=getKOResultLoser("S1"),sl2=getKOResultLoser("S2");if(sl1&&sl2&&!isKOResultComplete("3RD",sl1,sl2))simulateKOResult("3RD",sl1,sl2);
+var sw1=getKOResultWinner("S1"),sw2=getKOResultWinner("S2");if(sw1&&sw2&&!isKOResultComplete("FINAL",sw1,sw2))simulateKOResult("FINAL",sw1,sw2);
 render();checkChampion();}
 
 // ── SCORER MODAL ──
@@ -4959,7 +4982,7 @@ function pruneStaleKO(){
   // R16: each L_i sources from R16P[i] = [Ra, Rb]
   for(var i=0;i<R16P.length;i++){
     var lid="L"+(i+1),s1=R16P[i][0],s2=R16P[i][1];
-    var ht=ko[s1]?ko[s1].w:null,at=ko[s2]?ko[s2].w:null;
+    var ht=getKOResultWinner(s1),at=getKOResultWinner(s2);
     if(dirty[s1])ht=null;
     if(dirty[s2])at=null;
     check(lid,ht,at);
@@ -4967,23 +4990,23 @@ function pruneStaleKO(){
   // QF
   for(var i=0;i<QFP.length;i++){
     var qid="Q"+(i+1),s1=QFP[i][0],s2=QFP[i][1];
-    var ht=ko[s1]?ko[s1].w:null,at=ko[s2]?ko[s2].w:null;
+    var ht=getKOResultWinner(s1),at=getKOResultWinner(s2);
     if(dirty[s1])ht=null;if(dirty[s2])at=null;
     check(qid,ht,at);
   }
   // SF
   for(var i=0;i<SFP.length;i++){
     var sid="S"+(i+1),s1=SFP[i][0],s2=SFP[i][1];
-    var ht=ko[s1]?ko[s1].w:null,at=ko[s2]?ko[s2].w:null;
+    var ht=getKOResultWinner(s1),at=getKOResultWinner(s2);
     if(dirty[s1])ht=null;if(dirty[s2])at=null;
     check(sid,ht,at);
   }
   // FINAL: S1.w vs S2.w
-  var fHt=ko["S1"]?ko["S1"].w:null,fAt=ko["S2"]?ko["S2"].w:null;
+  var fHt=getKOResultWinner("S1"),fAt=getKOResultWinner("S2");
   if(dirty["S1"])fHt=null;if(dirty["S2"])fAt=null;
   check("FINAL",fHt,fAt);
   // 3RD: S1.l vs S2.l
-  var tHt=ko["S1"]?ko["S1"].l:null,tAt=ko["S2"]?ko["S2"].l:null;
+  var tHt=getKOResultLoser("S1"),tAt=getKOResultLoser("S2");
   if(dirty["S1"])tHt=null;if(dirty["S2"])tAt=null;
   checkLoser("3RD",tHt,tAt);
   // Single slog pass: remove all entries belonging to any dirtied match

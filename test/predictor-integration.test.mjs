@@ -647,7 +647,7 @@ test("share poster modal uses a designed landscape preview and side actions", ()
 test("knockout tab gently guides users after group stage completion", () => {
   assert.match(html, /\.tabs button\.tab-guide\{[^}]*animation:tabGuidePulse/);
   assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.tabs button\.tab-guide,\.tabs button\.tab-guide svg\{animation:none\}\}/);
-  assert.match(html, /var groupDone=allDone\(\),knockoutDone=!!\(ko&&ko\.FINAL&&ko\.FINAL\.w\)/);
+  assert.match(html, /var groupDone=allDone\(\),knockoutDone=isKnockoutComplete\(\)/);
   assert.match(html, /var guideKO=tab==="groups"&&groupDone&&!knockoutDone/);
   assert.match(html, /ts\[i\]==="knockout"&&guideKO\?" tab-guide":""/);
   assert.match(html, /class="tab-guide-badge">→<\/span>/);
@@ -765,8 +765,10 @@ test("knockout toolbar can simulate the bracket one round at a time", () => {
   assert.match(html, /onclick="raKONext\(\)"/);
   assert.match(html, /function getKORounds\(\)/);
   assert.match(html, /function raKONext\(\)/);
-  assert.match(html, /\{id:"3RD",ht:ko\["S1"\]\?ko\["S1"\]\.l:null/);
-  assert.match(html, /\{id:"FINAL",ht:ko\["S1"\]\?ko\["S1"\]\.w:null/);
+  assert.match(html, /\{id:"3RD",ht:getKOResultLoser\("S1"\),at:getKOResultLoser\("S2"\)\}/);
+  assert.match(html, /\{id:"FINAL",ht:getKOResultWinner\("S1"\),at:getKOResultWinner\("S2"\)\}/);
+  assert.match(html, /if\(!isKOResultComplete\(match\.id,match\.ht,match\.at\)\)return T\(keys\[ri\]\)/);
+  assert.match(html, /if\(ht&&at&&!isKOResultComplete\(m\.i,ht,at\)\)simulateKOResult\(m\.i,ht,at\)/);
 });
 
 test("knockout topology follows the official 2026 bracket order", () => {
@@ -883,11 +885,22 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
 
   assert.match(html, /function orientKOMatchResult\(rec,ht,at\)/);
   assert.match(html, /function getActualKOMatchResult\(id,ht,at\)/);
+  assert.match(html, /function getKOResult\(id,ht,at\)/);
+  assert.match(html, /return getActualKOMatchResult\(id,ht,at\)/);
+  assert.match(html, /function getKOResultWinner\(id,ht,at\)/);
+  assert.match(html, /function getKOResultLoser\(id,ht,at\)/);
+  assert.match(html, /function isKOResultComplete\(id,ht,at\)/);
+  assert.match(html, /function isKnockoutComplete\(\)/);
   assert.match(html, /var r=ko\[m\.id\],actual=!r\?getActualKOMatchResult\(m\.id,m\.ht,m\.at\):null,shown=r\|\|actual/);
   assert.match(html, /var hw=shown&&shown\.w===ht,aw=shown&&shown\.w===at/);
   assert.match(html, /if\(actual\)h\+='<div class="bk-decision">'\+escHtml\(T\("actualScore"\)\)\+'<\/div>'/);
   assert.match(html, /else if\(canPlay&&actual\)/);
   assert.match(html, /timelineFromActual\(actual\.id,actual,home,away\)/);
+  assert.match(html, /ht:getKOResultWinner\(R16P\[i\]\[0\]\),at:getKOResultWinner\(R16P\[i\]\[1\]\)/);
+  assert.match(html, /var match=rounds\[ri\]\[mi\];total\+\+;if\(isKOResultComplete\(match\.id,match\.ht,match\.at\)\)done\+\+/);
+  assert.match(html, /var nextRoundDone=isKnockoutComplete\(\)/);
+  assert.match(html, /var groupDone=allDone\(\),knockoutDone=isKnockoutComplete\(\)/);
+  assert.match(html, /var ht=getKOResultWinner\(s1\),at=getKOResultWinner\(s2\)/);
 });
 
 test("pending knockout seed rows split slot labels from source details", () => {
