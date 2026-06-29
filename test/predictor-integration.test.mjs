@@ -602,6 +602,8 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /'<div class="control-share">'\+renderGlobalShareBar\(knockoutDone\)\+'/);
   assert.doesNotMatch(html, /var shareBtn=koDone/);
   assert.match(html, /\.share-cta\{[^}]*animation:shareCtaPulse/);
+  assert.match(html, /\.share-cta\{[^}]*background:rgba\(255,255,255,0\.96\)/);
+  assert.match(html, /\.share-cta\{[^}]*color:var\(--ink-dark\)/);
   assert.match(html, /\.share-cta\{[^}]*white-space:normal/);
   assert.doesNotMatch(html, /@keyframes shareCtaPulse\{[^}]*transform:/);
   assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.share-cta\{animation:none\}\}/);
@@ -692,7 +694,13 @@ test("global control deck combines progress sharing and page actions", () => {
   assert.match(html, /class="control-actions /);
   assert.match(html, /role="progressbar"/);
   assert.match(html, /aria-valuenow="'\+progress\.done\+'"/);
+  assert.match(html, /\.control-deck\{[^}]*width:min\(95vw,calc\(100vw - 40px\)\)/);
+  assert.match(html, /\.control-deck\{[^}]*grid-template-columns:minmax\(0,1fr\) auto minmax\(0,1fr\)/);
   assert.match(html, /\.control-deck\{[^}]*grid-template-areas:"progress share actions"/);
+  assert.match(html, /\.control-progress\{[^}]*justify-self:start/);
+  assert.match(html, /\.control-progress\{[^}]*background:rgba\(255,255,255,0\.94\)/);
+  assert.match(html, /\.control-progress\.is-complete\{[^}]*background:rgba\(255,255,255,0\.94\)/);
+  assert.match(html, /\.control-actions\{[^}]*justify-self:end/);
   assert.match(html, /@media\(max-width:1080px\)\{\s*\.control-deck\{[^}]*grid-template-areas:"share" "progress" "actions"/);
   assert.match(html, /koProgressLabel:"淘汰赛进度"/);
   assert.match(html, /groupsCompleteShort:"小组赛已完成"/);
