@@ -124,6 +124,7 @@ test("simulated group and knockout matches open a unified timeline detail modal"
   assert.match(html, /detailButtonLabel\(!\(m&&m\.predictionSource==="actual"\)\)/);
   assert.match(html, /var detailLabel=detailButtonLabel\(\!\!r\);/);
   assert.match(html, /detailSourceSimulation:"模拟生成"/);
+  assert.match(html, /detailSourceActual:"真实赛况 · ESPN"/);
   assert.match(html, /function renderMatchDetailModal\(model\)/);
   assert.match(html, /class="modal match-detail-modal"/);
   assert.match(html, /class="match-detail-shell"/);
@@ -138,6 +139,9 @@ test("simulated group and knockout matches open a unified timeline detail modal"
   assert.match(html, /function openGroupMatchDetail\(gk,mi\)/);
   assert.match(html, /mergeTimelineEvents\(timelineFromGoalLog\(m\.hg,m\.h,source\),timelineFromGoalLog\(m\.ag,m\.a,source\),timelineFromRawEvents/);
   assert.match(html, /function openKOMatchDetail\(id,ht,at,hSeed,aSeed,seedRole\)/);
+  assert.match(html, /actual=!r\?getActualKOMatchResult\(id,ht,at\):null/);
+  assert.match(html, /timelineFromActual\(actual\.id,actual,home,away\)/);
+  assert.match(html, /homeScore:rec\?String\(rec\.h\):"-"/);
   assert.match(html, /var detailClick='openKOMatchDetail/);
   assert.ok(html.includes('<button class="bk-detail" onclick="\'+detailClick+\'">'));
   assert.match(html, /renderShootoutDetail\(model\)/);
@@ -809,7 +813,7 @@ test("knockout tab renders the bracket itself before all groups finish", () => {
   assert.doesNotMatch(html, /<div class="topbar ko-preview-toolbar"/);
   assert.match(html, /\.bk-row\.is-seed \.seed-token/);
   assert.match(html, /seedRow\(m\.hSeed,m\.seedRole\)/);
-  assert.match(html, /if\(canPlay&&!r&&!pending\)/);
+  assert.match(html, /if\(canPlay&&!r&&!pending&&!actual\)/);
   assert.match(html, /leaderMin>rowMax/);
   assert.match(html, /if\(!locked\)return null/);
   assert.match(html, /else t3Assign=\{\}/);
@@ -851,6 +855,33 @@ test("knockout match rows align flag, team, winner marker, and score columns", (
   assert.match(html, /simulateShort:"模拟"/);
 });
 
+test("completed knockout results flow from ESPN snapshot into bracket cards and details", () => {
+  const schedule = extractVarExpression("MATCH_SCHEDULE");
+  const southAfricaCanada = schedule["760486"];
+  assert.ok(southAfricaCanada, "South Africa vs Canada knockout match must be embedded");
+  assert.notEqual(southAfricaCanada.stage, "group");
+  assert.equal(southAfricaCanada.completed, true);
+  assert.equal(southAfricaCanada.home, "南非");
+  assert.equal(southAfricaCanada.away, "加拿大");
+  assert.equal(southAfricaCanada.homeScore, 0);
+  assert.equal(southAfricaCanada.awayScore, 1);
+  assert.equal(southAfricaCanada.winner, "加拿大");
+
+  const detail = matchDetails["760486"];
+  assert.ok(detail, "completed knockout match details must be refreshed");
+  assert.equal(detail.homeScore, 0);
+  assert.equal(detail.awayScore, 1);
+  assert.equal(detail.goalEventsStatus, "complete");
+
+  assert.match(html, /function orientKOMatchResult\(rec,ht,at\)/);
+  assert.match(html, /function getActualKOMatchResult\(id,ht,at\)/);
+  assert.match(html, /var r=ko\[m\.id\],actual=!r\?getActualKOMatchResult\(m\.id,m\.ht,m\.at\):null,shown=r\|\|actual/);
+  assert.match(html, /var hw=shown&&shown\.w===ht,aw=shown&&shown\.w===at/);
+  assert.match(html, /if\(actual\)h\+='<div class="bk-decision">'\+escHtml\(T\("actualScore"\)\)\+'<\/div>'/);
+  assert.match(html, /else if\(canPlay&&actual\)/);
+  assert.match(html, /timelineFromActual\(actual\.id,actual,home,away\)/);
+});
+
 test("pending knockout seed rows split slot labels from source details", () => {
   assert.match(html, /\.bk-wrap\{overflow-x:auto;padding:16px clamp\(8px,2vw,24px\) 40px/);
   assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;width:max-content;min-width:max-content;margin:0 auto\}/);
@@ -882,7 +913,7 @@ test("pending knockout seed rows split slot labels from source details", () => {
   assert.match(html, /function bkMatch\(m,cp,canPlay\)/);
   assert.match(html, /canPlay=!!canPlay/);
   assert.match(html, /\+\(canPlay\?"":" is-preview"\)\+/);
-  assert.match(html, /if\(canPlay&&!r&&!pending\)/);
+  assert.match(html, /if\(canPlay&&!r&&!pending&&!actual\)/);
   assert.ok(html.includes('<span class="seed-token">\'+escHtml(seedShort(seed))+\'</span><span class="bk-copy"><span class="name">\'+escHtml(seedSlotPrimary(seed,role))'));
   assert.ok(html.includes('<span class="seed-sub">\'+escHtml(detail)+\'</span>'));
   assert.doesNotMatch(html, /<span class="win-mark"><\/span><span class="sc"><\/span><\/div>';\n\}/);

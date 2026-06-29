@@ -161,13 +161,27 @@ def main():
         competitors = comp.get("competitors", [])
         home_cn = None
         away_cn = None
+        home_score = None
+        away_score = None
+        home_winner = None
+        away_winner = None
         for c in competitors:
             team_name = c.get("team", {}).get("displayName", "")
             cn_name = TEAM_CN.get(team_name, team_name)
+            raw_score = c.get("score")
+            score = None
+            try:
+                score = int(raw_score) if raw_score is not None and raw_score != "" else None
+            except (TypeError, ValueError):
+                score = None
             if c.get("homeAway") == "home":
                 home_cn = cn_name
+                home_score = score
+                home_winner = c.get("winner") is True
             else:
                 away_cn = cn_name
+                away_score = score
+                away_winner = c.get("winner") is True
 
         # Get stage
         stage_type = ev.get("season", {}).get("type", 0)
@@ -200,7 +214,7 @@ def main():
         status = comp.get("status", {}).get("type", {}).get("name", "")
         completed = comp.get("status", {}).get("type", {}).get("completed", False)
 
-        schedule[match_id] = {
+        match = {
             "id": match_id,
             "date": date,
             "stage": stage,
@@ -212,6 +226,20 @@ def main():
             "status": status,
             "completed": completed
         }
+        if completed and home_score is not None and away_score is not None:
+            match["homeScore"] = home_score
+            match["awayScore"] = away_score
+            if home_winner:
+                match["winner"] = home_cn
+            elif away_winner:
+                match["winner"] = away_cn
+            elif home_score > away_score:
+                match["winner"] = home_cn
+            elif away_score > home_score:
+                match["winner"] = away_cn
+            else:
+                match["winner"] = None
+        schedule[match_id] = match
 
     # Output
     out_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "matches")
