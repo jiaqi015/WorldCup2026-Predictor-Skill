@@ -240,6 +240,35 @@ test("stats and share poster expose tournament awards derived from match events"
   assert.match(html, /buildPosterAwardsHTML\(computeTournamentAwards\(\)\)/);
 });
 
+test("award and leaderboard avatars use normalized player photo resolution", () => {
+  assert.match(html, /function resolvePlayerPhoto\(player,team\)/);
+  assert.match(html, /function playerPhotoCandidates\(player,team\)/);
+  assert.match(html, /function matchingLineupPlayer\(player,team\)/);
+  assert.match(html, /normalizeEspnName\(names\[n\]\)===target/);
+  assert.match(html, /pushPhotoCandidate\(out,seen,lineup\.sourceName\)/);
+  assert.match(html, /var photo=resolvePlayerPhoto\(name,team\)/);
+  assert.match(html, /photoCache\[qk\]===undefined\)photoCache\[qk\]=resolvePlayerPhoto\(item\.p,item\.t\)/);
+  assert.match(html, /\(qk&&PHOTO_MAP\[qk\]\)\|\|PHOTO_MAP\[c\]\|\|PHOTO_MAP\[base\]/);
+  const resolver = html.slice(
+    html.indexOf("function resolvePlayerPhoto(player,team)"),
+    html.indexOf("function getPhotoUrl(player,team)")
+  );
+  assert.ok(resolver.includes("(qk&&PHOTO_MAP[qk])||PHOTO_MAP[c]||PHOTO_MAP[base]"));
+  assert.ok(
+    resolver.indexOf("(qk&&PHOTO_MAP[qk])||PHOTO_MAP[c]||PHOTO_MAP[base]") <
+      resolver.indexOf("meta&&meta.headshot"),
+    "local bundled player photos must be preferred over external headshot URLs"
+  );
+});
+
+test("award avatar photo data includes Messi by team and player key", () => {
+  const line = html.split("\n").find((value) => value.startsWith("var PHOTO_MAP="));
+  assert.ok(line, "PHOTO_MAP must be declared");
+  const photoMap = Function(`return (${line.slice("var PHOTO_MAP=".length, -1)});`)();
+  assert.equal(photoMap["阿根廷|梅西"], "data/photos/45843.png");
+  assert.equal(photoMap["梅西"], "data/photos/45843.png");
+});
+
 test("group quick actions expose draw selection", () => {
   assert.match(html, /quickDraw:"平"/);
   assert.match(html, /quickDraw:"Draw"/);
@@ -1049,12 +1078,12 @@ test("embedded knockout schedule includes dated venues for every bracket match",
   assert.equal(final.venue.city_cn, "新泽西州东卢瑟福");
 });
 
-test("stats tab has a distinct selected state and non-recursive photo priming", () => {
+test("stats tab has a distinct selected state and normalized photo priming", () => {
   assert.match(html, /\.tabs button\.tab-scorers\.on\{background:linear-gradient/);
   assert.match(html, /var cls='tab-'\+ts\[i\]\+\(tab===ts\[i\]\?" on":""\)/);
   assert.match(html, /<button class="'\+cls\+'"/);
   assert.match(html, /function primeLeaderboardPhotos\(items\)/);
-  assert.match(html, /photoCache\[qk\]=PHOTO_MAP\[qk\]\|\|PHOTO_MAP\[item\.p\]\|\|null/);
+  assert.match(html, /photoCache\[qk\]=resolvePlayerPhoto\(item\.p,item\.t\)\|\|PHOTO_MAP\[qk\]\|\|PHOTO_MAP\[item\.p\]\|\|null/);
   assert.match(html, /primeLeaderboardPhotos\(goals\.concat\(assists\)\);/);
   assert.match(html, /function resolvePhotoUrl\(path\)/);
   assert.match(html, /location\.hostname==="www\.cameraclaw\.cn"/);
