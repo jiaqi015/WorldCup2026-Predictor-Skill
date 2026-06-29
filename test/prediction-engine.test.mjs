@@ -32,6 +32,111 @@ const strengths = {
   "弱队": 1,
 };
 
+function makeRoster(prefix) {
+  const players = [
+    `${prefix}门将`,
+    `${prefix}右后卫`,
+    `${prefix}中卫1`,
+    `${prefix}中卫2`,
+    `${prefix}左后卫`,
+    `${prefix}后腰`,
+    `${prefix}中场`,
+    `${prefix}前腰`,
+    `${prefix}右边锋`,
+    `${prefix}中锋`,
+    `${prefix}左边锋`,
+    `${prefix}替补门将`,
+    `${prefix}替补后卫`,
+    `${prefix}替补中场`,
+    `${prefix}替补前锋`,
+    `${prefix}替补边锋`,
+  ];
+  return {
+    players,
+    positions: {
+      [players[0]]: "门将",
+      [players[1]]: "后卫",
+      [players[2]]: "后卫",
+      [players[3]]: "后卫",
+      [players[4]]: "后卫",
+      [players[5]]: "中场",
+      [players[6]]: "中场",
+      [players[7]]: "中场",
+      [players[8]]: "前锋",
+      [players[9]]: "前锋",
+      [players[10]]: "前锋",
+      [players[11]]: "门将",
+      [players[12]]: "后卫",
+      [players[13]]: "中场",
+      [players[14]]: "前锋",
+      [players[15]]: "前锋",
+    },
+  };
+}
+
+function roleOf(position) {
+  if (position === "门将") return "gk";
+  if (position === "后卫" || position === "中卫" || position === "边卫") return "def";
+  if (position === "前锋" || position === "中锋" || position === "边锋") return "fwd";
+  return "mid";
+}
+
+function removeOne(list, player) {
+  const index = list.indexOf(player);
+  assert.notEqual(index, -1, `${player} should be present before removal`);
+  list.splice(index, 1);
+}
+
+function assertEventsRespectRosterState(events, rosters) {
+  const states = {
+    home: {
+      active: rosters.home.players.slice(0, 11),
+      bench: rosters.home.players.slice(11),
+      positions: rosters.home.positions,
+    },
+    away: {
+      active: rosters.away.players.slice(0, 11),
+      bench: rosters.away.players.slice(11),
+      positions: rosters.away.positions,
+    },
+  };
+  const sideOf = (value, fallback) => (value === "away" ? "away" : value === "home" ? "home" : fallback);
+  const isScoring = (event) => event.type === "goal" || event.type === "penalty_goal" || event.type === "own_goal";
+  const isCard = (event) => event.type === "yellow_card" || event.type === "red_card" || event.type === "second_yellow";
+  const role = (state, player) => roleOf(state.positions[player]);
+
+  for (const event of events) {
+    const side = event.team === "away" ? "away" : "home";
+    if (isScoring(event)) {
+      const playerSide = sideOf(event.playerTeam, side);
+      const state = states[playerSide];
+      assert.ok(state.active.includes(event.scorer), `${event.scorer} should be active at ${event.minuteLabel}`);
+      if (event.assist?.player) {
+        const assistSide = sideOf(event.assist.team, side);
+        assert.ok(states[assistSide].active.includes(event.assist.player), `${event.assist.player} assist should be active`);
+        assert.notEqual(event.assist.player, event.scorer);
+      }
+    } else if (isCard(event)) {
+      const state = states[side];
+      assert.ok(state.active.includes(event.player), `${event.player} card should be active`);
+      if (event.type === "red_card" || event.type === "second_yellow") removeOne(state.active, event.player);
+    } else if (event.type === "substitution") {
+      const state = states[side];
+      assert.ok(state.active.includes(event.outPlayer), `${event.outPlayer} should be active before sub`);
+      assert.ok(state.bench.includes(event.inPlayer), `${event.inPlayer} should be on bench before sub`);
+      const outRole = role(state, event.outPlayer);
+      const inRole = role(state, event.inPlayer);
+      const hasSameRoleBench = state.bench.some((player) => role(state, player) === outRole);
+      if (outRole === "gk") assert.equal(inRole, "gk");
+      else if (hasSameRoleBench) assert.equal(inRole, outRole);
+      else assert.notEqual(inRole, "gk");
+      removeOne(state.active, event.outPlayer);
+      removeOne(state.bench, event.inPlayer);
+      state.active.push(event.inPlayer);
+    }
+  }
+}
+
 test("defines the architecture contracts for entities and prediction modes", () => {
   const engine = loadPredictionEngine();
 
@@ -218,34 +323,27 @@ test("penalty goals are explicit match events, not plain goals", () => {
 
 test("full match events include scoring, cards, and substitutions with football limits", () => {
   const engine = loadPredictionEngine();
-  const homePlayers = [
-    "主门将",
-    "主后卫1",
-    "主后卫2",
-    "主中场1",
-    "主中场2",
-    "主前锋1",
-    "主前锋2",
-    "主替补1",
-    "主替补2",
-  ];
-  const awayPlayers = [
-    "客门将",
-    "客后卫1",
-    "客后卫2",
-    "客中场1",
-    "客中场2",
-    "客前锋1",
-    "客前锋2",
-    "客替补1",
-    "客替补2",
-  ];
+  const home = makeRoster("主");
+  const away = makeRoster("客");
+  const states = engine.createMatchStates({
+    homePlayers: home.players,
+    awayPlayers: away.players,
+    homePlayerPositions: home.positions,
+    awayPlayerPositions: away.positions,
+  });
+
+  assert.deepEqual(states.home.active, home.players.slice(0, 11));
+  assert.deepEqual(states.home.bench, home.players.slice(11));
+  assert.deepEqual(states.away.active, away.players.slice(0, 11));
+  assert.deepEqual(states.away.bench, away.players.slice(11));
 
   const events = engine.buildMatchEvents({
     homeGoals: 2,
     awayGoals: 1,
-    homePlayers,
-    awayPlayers,
+    homePlayers: home.players,
+    awayPlayers: away.players,
+    homePlayerPositions: home.positions,
+    awayPlayerPositions: away.positions,
     rng: seededRng(20260627),
     eventConfig: {
       ownGoalShare: 0,
@@ -269,17 +367,118 @@ test("full match events include scoring, cards, and substitutions with football 
   assert.ok(substitutions.every((event) => event.inPlayer && event.outPlayer));
   assert.ok(substitutions.every((event) => event.inPlayer !== event.outPlayer));
   assert.ok(events.every((event, index, list) => index === 0 || list[index - 1].sortMinute <= event.sortMinute));
+  assertEventsRespectRosterState(events, { home, away });
+});
+
+test("event participant assignment repairs players who are no longer on the pitch", () => {
+  const engine = loadPredictionEngine();
+  const home = makeRoster("主");
+  const away = makeRoster("客");
+  const subbedOffForward = home.players[9];
+  const rawEvents = [
+    {
+      type: "substitution",
+      team: "home",
+      playerTeam: "home",
+      period: "regular",
+      minute: 55,
+      minuteLabel: "55'",
+      outPlayer: subbedOffForward,
+      inPlayer: home.players[14],
+    },
+    {
+      type: "goal",
+      team: "home",
+      scoringTeam: "home",
+      playerTeam: "home",
+      period: "regular",
+      minute: 67,
+      minuteLabel: "67'",
+      scorer: subbedOffForward,
+      assist: { team: "home", player: subbedOffForward },
+    },
+    {
+      type: "yellow_card",
+      team: "home",
+      playerTeam: "home",
+      period: "regular",
+      minute: 73,
+      minuteLabel: "73'",
+      player: subbedOffForward,
+    },
+  ];
+
+  const events = engine.assignEventParticipants(rawEvents, {
+    homePlayers: home.players,
+    awayPlayers: away.players,
+    homePlayerPositions: home.positions,
+    awayPlayerPositions: away.positions,
+  }, seededRng(20260629));
+  const goal = events.find((event) => event.type === "goal");
+  const card = events.find((event) => event.type === "yellow_card");
+
+  assert.notEqual(goal.scorer, subbedOffForward);
+  assert.notEqual(goal.assist.player, subbedOffForward);
+  assert.notEqual(card.player, subbedOffForward);
+  assertEventsRespectRosterState(events, { home, away });
+});
+
+test("event participant state treats jersey-qualified duplicate names as distinct players", () => {
+  const engine = loadPredictionEngine();
+  const home = makeRoster("主");
+  const away = makeRoster("客");
+  home.players[2] = "李 #13";
+  home.players[3] = "李 #3";
+  home.positions["李 #13"] = "后卫";
+  home.positions["李 #3"] = "后卫";
+  delete home.positions["主中卫1"];
+  delete home.positions["主中卫2"];
+
+  const events = engine.assignEventParticipants([
+    {
+      type: "substitution",
+      team: "home",
+      playerTeam: "home",
+      period: "regular",
+      minute: 58,
+      minuteLabel: "58'",
+      outPlayer: "李 #13",
+      inPlayer: home.players[12],
+    },
+    {
+      type: "yellow_card",
+      team: "home",
+      playerTeam: "home",
+      period: "regular",
+      minute: 71,
+      minuteLabel: "71'",
+      player: "李 #3",
+    },
+  ], {
+    homePlayers: home.players,
+    awayPlayers: away.players,
+    homePlayerPositions: home.positions,
+    awayPlayerPositions: away.positions,
+  }, seededRng(20260630));
+
+  assert.equal(events[0].outPlayer, "李 #13");
+  assert.equal(events[1].player, "李 #3");
+  assertEventsRespectRosterState(events, { home, away });
 });
 
 test("knockout event simulation keeps extra-time events and extra substitutions explicit", () => {
   const engine = loadPredictionEngine();
+  const home = makeRoster("主");
+  const away = makeRoster("客");
   const result = engine.simulateKnockoutMatch({
     homeTeam: "强队",
     awayTeam: "中队",
     regulationScoreline: { home: 1, away: 1 },
     extraTimeScoreline: { home: 1, away: 0 },
-    homePlayers: ["主门将", "主后卫", "主中场", "主边锋", "主前锋", "主替补1", "主替补2", "主替补3"],
-    awayPlayers: ["客门将", "客后卫", "客中场", "客边锋", "客前锋", "客替补1", "客替补2", "客替补3"],
+    homePlayers: home.players,
+    awayPlayers: away.players,
+    homePlayerPositions: home.positions,
+    awayPlayerPositions: away.positions,
     eventConfig: {
       ownGoalShare: 0,
       penaltyGoalShare: 0,
@@ -296,6 +495,7 @@ test("knockout event simulation keeps extra-time events and extra substitutions 
   assert.ok(result.events.some((event) => event.period === "extraTime1" || event.period === "extraTime2"));
   assert.ok(result.events.some((event) => event.type === "substitution" && event.period === "extraTime"));
   assert.deepEqual(engine.deriveScorelineFromEvents(result.events), result.scoreline);
+  assertEventsRespectRosterState(result.events, { home, away });
 });
 
 test("tournament awards are derived from match events, not temporary UI tables", () => {

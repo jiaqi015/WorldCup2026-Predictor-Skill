@@ -28,7 +28,12 @@ Preserve these invariants:
 
 - 12 groups, 48 unique teams, 72 group matches.
 - 16 round-of-32 matches and 104 tournament matches overall.
-- Exactly 11 simulation players per team.
+- Match simulation receives an ordered squad: the first 11 players are the
+  current starting XI and remaining players are the bench. Goal, assist, card,
+  and substitution events must be assigned from the time-aware on-pitch state.
+  Duplicate short display names must be disambiguated with jersey-backed
+  simulation labels while retaining the original player name for photos,
+  position lookup, translation, and threat weighting.
 - Every team has flag, English-name, roster, and position mappings.
 - A knockout match must resolve a winner. Its official scoreline may remain
   level only when advancement is decided by a shootout.

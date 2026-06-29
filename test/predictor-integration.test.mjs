@@ -88,13 +88,27 @@ test("shared match simulation passes match ids into complete odds lookup", () =>
 test("scorer generation applies separate goal and assist threat multipliers", () => {
   assert.match(html, /function weightedPick\(players,team,weights,fallback,type\)/);
   assert.match(html, /threatMap\[team\+"\|"\+p\]/);
-  assert.match(html, /var entry=tEntry\|\|threatMap\[p\]/);
+  assert.match(html, /var base=simulationBaseName\(p,team\),tEntry=team\?threatMap\[team\+"\|"\+p\]:null/);
+  assert.match(html, /var entry=tEntry\|\|\(team\?threatMap\[team\+"\|"\+base\]:null\)\|\|threatMap\[p\]\|\|threatMap\[base\]/);
   assert.match(html, /weightedPick\(pool,playerTeam,GOAL_W,3,"goal"\)/);
   assert.match(html, /weightedPick\(assistPool,playerTeam,ASSIST_W,3,"assist"\)/);
 });
 
 test("simulation stores event-aware goal logs and knockout decisions", () => {
-  assert.match(html, /PredictionEngine\.buildMatchEvents\(\{homeGoals:hs,awayGoals:as/);
+  assert.match(html, /var SIM_PLAYER_META=\{\}/);
+  assert.match(html, /function simulationBaseName\(player,team\)/);
+  assert.match(html, /function simulationPlayerLabel\(team,item,counts\)/);
+  assert.match(html, /if\(counts&&counts\[base\]>1&&jersey\)label=base\+"\s#"\+jersey/);
+  assert.match(html, /basePlayerPosition\(simulationBaseName\(player,team\),team\)/);
+  assert.match(html, /threatMap\[team\+"\|"\+base\]/);
+  assert.match(html, /function getSimulationStarters\(team\)/);
+  assert.match(html, /function getSimulationRoster\(team\)/);
+  assert.match(html, /function getSimulationPositionMap\(team\)/);
+  assert.match(html, /function simulationEventOptions\(homeTeam,awayTeam,extra\)/);
+  assert.match(html, /homePlayers:getSimulationRoster\(homeTeam\)/);
+  assert.match(html, /homePlayerPositions:getSimulationPositionMap\(homeTeam\)/);
+  assert.match(html, /PredictionEngine\.buildMatchEvents\(simulationEventOptions\(m\.h,m\.a,\{homeGoals:hs,awayGoals:as/);
+  assert.match(html, /PredictionEngine\.buildMatchEvents\(simulationEventOptions\(ht,at,\{homeGoals:h,awayGoals:a/);
   assert.match(html, /event\.type==="own_goal"/);
   assert.match(html, /ownGoal:isOwn/);
   assert.match(html, /event\.type==="penalty_goal"/);
@@ -103,6 +117,7 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
   assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)return/);
   assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)continue/);
   assert.match(html, /PredictionEngine\.simulateKnockoutMatch\(/);
+  assert.match(html, /PredictionEngine\.simulateKnockoutMatch\(simulationEventOptions\(ht,at,\{/);
   assert.match(html, /ht:ht,at:at/);
   assert.match(html, /decidedBy:sim\.decidedBy/);
   assert.match(html, /shootout:sim\.shootout/);
@@ -115,6 +130,26 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
   assert.match(html, /data\.v===SHARE_STATE_VERSION\|\|data\.v===2/);
   assert.match(html, /meta=\{ht:tIdx\(ks\.ht\),at:tIdx\(ks\.at\),decidedBy:ks\.decidedBy\|\|"regulation"/);
   assert.match(html, /r\.decidedBy&&r\.decidedBy!=="regulation"/);
+});
+
+test("real starting lineups carry jersey data for duplicate short names", () => {
+  const line = html.split("\n").find((value) => value.startsWith("var TEAM_FIRST_LINEUPS="));
+  assert.ok(line, "TEAM_FIRST_LINEUPS must be embedded as a single generated source line");
+  const lineups = JSON.parse(line.slice("var TEAM_FIRST_LINEUPS=".length, -1));
+  const duplicateTeams = [];
+
+  for (const [team, info] of Object.entries(lineups)) {
+    const starters = info.starters || [];
+    const names = starters.map((player) => player.name).filter(Boolean);
+    const duplicates = new Set(names.filter((name, index) => names.indexOf(name) !== index));
+    if (!duplicates.size) continue;
+    duplicateTeams.push(team);
+    for (const player of starters) {
+      if (duplicates.has(player.name)) assert.ok(player.jersey, `${team} duplicate player ${player.name} needs jersey`);
+    }
+  }
+
+  assert.ok(duplicateTeams.length > 0, "fixture should cover real duplicate short-name teams");
 });
 
 test("simulated group and knockout matches open a unified timeline detail modal", () => {
@@ -391,7 +426,8 @@ test("position display preserves coarse source categories", () => {
   assert.match(html, /var POS_EN=\{[^}]*"前锋":"F"[^}]*"中场":"M"[^}]*"后卫":"D"/);
   assert.match(html, /var GOAL_W=\{[^}]*前锋:7[^}]*中场:4[^}]*后卫:1/);
   assert.match(html, /var ASSIST_W=\{[^}]*前锋:4[^}]*中场:5[^}]*后卫:2/);
-  assert.match(html, /function getPos\(player,team\)\{[\s\S]*return"中场";[\s\S]*\}/);
+  assert.match(html, /function basePlayerPosition\(player,team\)\{[\s\S]*return"中场";[\s\S]*\}/);
+  assert.match(html, /return basePlayerPosition\(simulationBaseName\(player,team\),team\)/);
   assert.doesNotMatch(html, /if\(idx<=3\)return"边锋"/);
 });
 
