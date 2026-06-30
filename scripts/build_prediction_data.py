@@ -278,14 +278,18 @@ def main():
                 "own_goal": bool(event.get("own_goal")),
                 "penalty_kick": bool(event.get("penalty_kick")),
                 "player_source_name": event.get("scorer_source_name"),
-                "player_display_name_cn": event.get("scorer_cn"),
+                "player_display_name_cn": event.get("scorer_display_name_cn")
+                or event.get("scorer_source_name")
+                or event.get("scorer_cn"),
                 "player_app_alias": event.get("scorer_app_alias"),
                 "player_mapping_status": event.get("scorer_mapping_status"),
                 "player_mapping_key": event.get("scorer_mapping_key"),
                 "player_jersey": event.get("scorer_jersey"),
                 "player_position": event.get("scorer_position"),
                 "assist_source_name": event.get("assist_source_name"),
-                "assist_display_name_cn": event.get("assist_cn"),
+                "assist_display_name_cn": event.get("assist_display_name_cn")
+                or event.get("assist_source_name")
+                or event.get("assist_cn"),
                 "assist_app_alias": event.get("assist_app_alias"),
                 "assist_mapping_status": event.get("assist_mapping_status"),
                 "source": "ESPN summary API",

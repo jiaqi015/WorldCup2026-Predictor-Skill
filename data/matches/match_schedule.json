@@ -1664,17 +1664,12 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 210,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "NED +145"
-    },
-    "status": "STATUS_IN_PROGRESS",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FINAL_PEN",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 1,
+    "winner": "摩洛哥"
   },
   "760490": {
     "id": "760490",
@@ -1722,10 +1717,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 500,
+      "drawML": 475,
       "spread": null,
       "overUnder": 3.5,
-      "details": "FRA -350"
+      "details": "FRA -340"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1860,7 +1855,7 @@
       "drawML": 425,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ESP -320"
+      "details": "ESP -300"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1968,7 +1963,7 @@
       "drawML": 650,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ARG -575"
+      "details": "ARG -600"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -2006,7 +2001,7 @@
     "stage": "L",
     "group": null,
     "home": "加拿大",
-    "away": "Round of 32 3 Winner",
+    "away": "摩洛哥",
     "venue": {
       "name": "NRG Stadium",
       "name_cn": "NRG体育场",
@@ -2015,7 +2010,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 265,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "MAR -125"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },

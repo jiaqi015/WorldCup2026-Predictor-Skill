@@ -91,6 +91,38 @@ class TestResolvePlayer(unittest.TestCase):
         # app_alias uses mapping cn (qualified key preferred)
         self.assertEqual(result["app_alias"], "希门尼斯MEX")
 
+    def test_fact_display_name_does_not_reuse_compact_alias(self):
+        """Factual ESPN events must not display compact roster aliases as scorers."""
+        add_player_mapping(
+            "Gabriel Martinelli",
+            {"cn": "加布里埃尔", "team": "巴西", "jersey": 22, "auto_translated": True},
+        )
+
+        result = fdm.resolve_player("Gabriel Martinelli", "巴西")
+
+        self.assertEqual(result["app_alias"], "加布里埃尔")
+        self.assertEqual(fdm.fact_display_name_cn(result), "Gabriel Martinelli")
+
+    def test_fact_display_name_uses_curated_full_name(self):
+        """Curated event display names may replace ESPN English without using short aliases."""
+        add_player_mapping(
+            "Gabriel Martinelli",
+            {"cn": "加布里埃尔", "team": "巴西", "jersey": 22, "auto_translated": True},
+        )
+        fdm.PLAYER_DISPLAY_CN["Gabriel Martinelli"] = "马丁内利"
+
+        result = fdm.resolve_player("Gabriel Martinelli", "巴西")
+
+        self.assertEqual(fdm.fact_display_name_cn(result), "马丁内利")
+
+    def test_fact_display_name_keeps_safe_chinese_mapping(self):
+        """Non-ambiguous checked mappings can remain Chinese in factual timelines."""
+        add_player_mapping("Kaishu Sano", {"cn": "佐野海舟", "team": "日本", "jersey": 24})
+
+        result = fdm.resolve_player("Kaishu Sano", "日本")
+
+        self.assertEqual(fdm.fact_display_name_cn(result), "佐野海舟")
+
 
 class TestParseKeyEvents(unittest.TestCase):
     """Test ESPN scoring event normalization."""
@@ -133,6 +165,31 @@ class TestParseKeyEvents(unittest.TestCase):
         self.assertEqual(events[1]["scoring_team_cn"], "主队")
         self.assertEqual(events[1]["player_team_cn"], "客队")
         self.assertEqual(events[1]["scorer_team_cn"], "客队")
+
+    def test_goal_event_carries_factual_display_name(self):
+        fdm.PLAYER_DISPLAY_CN["Gabriel Martinelli"] = "马丁内利"
+        add_player_mapping(
+            "Gabriel Martinelli",
+            {"cn": "加布里埃尔", "team": "巴西", "jersey": 22, "auto_translated": True},
+        )
+
+        events = fdm.parse_key_events(
+            [
+                {
+                    "type": {"id": "70", "text": "Goal"},
+                    "team": {"id": "1"},
+                    "clock": {"displayValue": "90'+5'"},
+                    "participants": [{"athlete": {"displayName": "Gabriel Martinelli"}}],
+                }
+            ],
+            "1",
+            "巴西",
+            "日本",
+        )
+
+        self.assertEqual(events[0]["scorer_cn"], "马丁内利")
+        self.assertEqual(events[0]["scorer_app_alias"], "加布里埃尔")
+        self.assertEqual(events[0]["scorer_display_name_cn"], "马丁内利")
 
 
 class TestParseMatchLineups(unittest.TestCase):

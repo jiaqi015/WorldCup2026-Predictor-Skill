@@ -40,12 +40,61 @@ PLAYER_DISPLAY_CN = {
     "Érik Lira": "埃里克·利拉",
     "Raúl Jiménez": "劳尔·希门尼斯",
     "Roberto Alvarado": "罗伯托·阿尔瓦拉多",
+    "Lionel Messi": "梅西",
+    "Cristiano Ronaldo": "C罗",
+    "Harry Kane": "凯恩",
+    "Jude Bellingham": "贝林厄姆",
+    "Kylian Mbappé": "姆巴佩",
+    "Casemiro": "卡塞米罗",
+    "Gabriel Martinelli": "马丁内利",
+    "Gabriel Magalhães": "加布里埃尔·马加良斯",
+    "José Fajardo": "法哈多",
+    "Pape Gueye": "帕普·盖耶",
+    "Connor Metcalfe": "梅特卡夫",
+    "David Alaba": "阿拉巴",
+    "Mahmoud Saber": "马哈茂德·萨贝尔",
+    "Nikola Vlasic": "弗拉希奇",
+    "Matías Galarza": "加拉尔萨",
+    "Ramin Rezaeian": "雷扎伊安",
+    "Mohammad Mohebbi": "莫赫比",
+    "Aymen Hussein": "艾曼·侯赛因",
+    "Martin Baturina": "巴图里纳",
+    "Giovani Lo Celso": "洛塞尔索",
     "Ladislav Krejcí": "拉迪斯拉夫·克雷伊奇",
     "Ladislav Krejčí": "拉迪斯拉夫·克雷伊奇",
     "Vladimír Coufal": "弗拉迪米尔·曹法尔",
     "Hwang In-Beom": "黄仁范",
     "Lee Kang-In": "李刚仁",
     "Oh Hyeon-Gyu": "吴贤揆",
+}
+
+UNSAFE_EVENT_DISPLAY_CN = {
+    # First-name-only or known-bad roster aliases. These are acceptable in tiny
+    # roster chips but too ambiguous for factual match events.
+    "加布里埃尔",
+    "大卫",
+    "穆罕默德",
+    "马哈茂德",
+    "何塞",
+    "马蒂亚斯",
+    "尼古拉",
+    "塞巴斯蒂安",
+    "拉明",
+    "艾门",
+    "马丁",
+    "欧文",
+    "雅库布斯",
+    "佩尼多",
+    "乔瓦尼",
+    "拉菲克",
+    "哈桑",
+    "约翰",
+    "胡安",
+    "亚历克斯",
+    "罗德里戈",
+    "奥马尔",
+    "路易斯",
+    "马克斯",
 }
 
 
@@ -136,9 +185,33 @@ def resolve_player(source_name, expected_team):
     }
 
 
+def fact_display_name_cn(resolved):
+    """Return the user-facing factual name for ESPN event timelines.
+
+    The squad/player mapping intentionally stores compact UI aliases such as
+    "加布里埃尔" or "大卫". Those are useful in dense roster tables but unsafe
+    for factual scoring events because multiple players share them and some
+    generated aliases are wrong. Event timelines therefore use curated full
+    Chinese names when we have them, otherwise the exact ESPN source name.
+    """
+    source_name = resolved.get("source_name") or ""
+    curated = PLAYER_DISPLAY_CN.get(source_name)
+    if curated:
+        return curated
+    candidate = resolved.get("display_name_cn")
+    if (
+        candidate
+        and resolved.get("mapping_status") == "matched_team_player"
+        and candidate not in UNSAFE_EVENT_DISPLAY_CN
+    ):
+        return candidate
+    return source_name or candidate
+
+
 def add_player_fields(target, prefix, resolved):
     """Flatten player metadata into an event for simple static embedding."""
     target[f"{prefix}_source_name"] = resolved["source_name"]
+    target[f"{prefix}_display_name_cn"] = fact_display_name_cn(resolved)
     target[f"{prefix}_cn"] = resolved["display_name_cn"]
     target[f"{prefix}_app_alias"] = resolved["app_alias"]
     target[f"{prefix}_team_cn"] = resolved["team_cn"]

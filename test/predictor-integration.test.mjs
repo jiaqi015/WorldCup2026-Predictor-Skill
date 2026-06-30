@@ -990,6 +990,14 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.equal(detail.goalEventsStatus, "complete");
   assert.ok(matchDetails["760487"], "Brazil vs Japan match detail must be refreshed");
   assert.equal(matchDetails["760487"].goalEventsStatus, "complete");
+  const brazilJapanScorers = matchDetails["760487"].events
+    .filter((event) => event.type === "goal")
+    .map((event) => event.scorer_display_name_cn || event.scorer_cn);
+  assert.deepEqual(brazilJapanScorers, ["佐野海舟", "卡塞米罗", "马丁内利"]);
+  assert.notEqual(
+    matchDetails["760487"].events.find((event) => event.scorer_source_name === "Gabriel Martinelli")?.scorer_display_name_cn,
+    "加布里埃尔",
+  );
   assert.ok(matchDetails["760489"], "Germany vs Paraguay match detail must be refreshed");
   assert.equal(matchDetails["760489"].goalEventsStatus, "complete");
 
@@ -1152,8 +1160,8 @@ test("stats tab has a distinct selected state and normalized photo priming", () 
 
 test("stats leaderboard includes actual scorers and assists exactly once", () => {
   assert.match(html, /function addActual\(events\)/);
-  assert.match(html, /e\.scorer_app_alias\|\|e\.scorer_cn/);
-  assert.match(html, /e\.assist_app_alias\|\|e\.assist_cn/);
+  assert.match(html, /actualEventPlayerName\(e,"scorer"\)/);
+  assert.match(html, /actualEventPlayerName\(e,"assist"\)/);
   assert.match(html, /match\.predictionSource==="actual"&&match\.actualEvents&&match\.actualEvents\.length/);
 });
 
