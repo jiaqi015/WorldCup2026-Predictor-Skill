@@ -227,11 +227,16 @@ test("stats and share poster expose tournament awards derived from match events"
   assert.match(html, /function awardCountryHTML\(team\)/);
   assert.match(html, /class="award-panel"/);
   assert.match(html, /class="award-logo /);
-  assert.match(html, /award-panel-grid\{display:grid;grid-template-columns:minmax\(184px,1\.18fr\)/);
+  assert.match(html, /award-panel-grid\{display:grid;grid-template-columns:minmax\(174px,1\.12fr\)/);
   assert.match(html, /var cardClass='award-card award-'\+\(kind\|\|"goldenBall"\)/);
   assert.match(html, /\.award-card\.award-goldenBoot/);
   assert.match(html, /\.award-card\.award-goldenBall/);
   assert.match(html, /\.award-card\.award-goldenGlove/);
+  assert.match(html, /\.award-card\{[^}]*min-height:82px/);
+  assert.match(html, /\.award-logo\{[^}]*width:42px/);
+  assert.match(html, /\.award-card\.award-goldenBoot \.award-logo[^}]*width:44px/);
+  assert.doesNotMatch(html, /\.award-card\{[^}]*min-height:116px/);
+  assert.doesNotMatch(html, /\.award-logo\{[^}]*width:52px/);
   assert.match(html, /\.award-logo::before/);
   assert.match(html, /class="award-fill"/);
   assert.match(html, /class="award-avatar"/);
@@ -1163,6 +1168,17 @@ test("stats leaderboard includes actual scorers and assists exactly once", () =>
   assert.match(html, /actualEventPlayerName\(e,"scorer"\)/);
   assert.match(html, /actualEventPlayerName\(e,"assist"\)/);
   assert.match(html, /match\.predictionSource==="actual"&&match\.actualEvents&&match\.actualEvents\.length/);
+});
+
+test("player display names normalize factual and stored source names in Chinese UI", () => {
+  assert.match(html, /var FACT_PLAYER_DISPLAY_CN=\{/);
+  assert.match(html, /"Gabriel Martinelli":"马丁内利"/);
+  assert.match(html, /var UNSAFE_EVENT_DISPLAY_CN=\{"加布里埃尔":1/);
+  assert.match(html, /function canonicalPlayerName\(player,team\)/);
+  assert.match(html, /hasLatinOnlyDisplay\(base\)&&team&&typeof resolveEspnEventPlayer==="function"/);
+  assert.match(html, /return \{source_name:sourceName,display_name_cn:factDisplay\|\|alias/);
+  assert.match(html, /function pn\(player,team\)\{return canonicalPlayerName\(player,team\);\}/);
+  assert.match(html, /if\(display&&!hasLatinOnlyDisplay\(display\)\)return canonicalPlayerName\(display,team\)/);
 });
 
 test("venue metadata follows the active language", () => {

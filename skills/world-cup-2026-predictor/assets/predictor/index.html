@@ -419,24 +419,24 @@ body.dark .share-result-modal{box-shadow:0 36px 100px rgba(0,0,0,0.62),0 0 0 1px
 .lb-card{background:var(--bg-card);border-radius:20px;padding:20px;box-shadow:var(--shadow-float)}
 .lb-card h3{margin:0 0 16px;font-size:16px;font-weight:700;color:var(--ink-dark)}
 .lbg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.award-panel{max-width:1120px;margin:0 auto 20px;padding:18px 20px 20px;border-radius:22px;background:linear-gradient(135deg,rgba(229,181,71,0.13),rgba(255,255,255,0.86) 42%,var(--bg-card) 100%);border:1px solid rgba(184,132,30,0.22);box-shadow:var(--shadow-float)}
-.award-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
+.award-panel{max-width:1120px;margin:0 auto 18px;padding:13px 16px 15px;border-radius:18px;background:linear-gradient(135deg,rgba(229,181,71,0.10),rgba(255,255,255,0.9) 42%,var(--bg-card) 100%);border:1px solid rgba(184,132,30,0.20);box-shadow:var(--shadow-card)}
+.award-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
 .award-panel-title{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:950;color:var(--ink-dark);letter-spacing:0}
 .award-panel-title::before{content:"";width:7px;height:20px;border-radius:999px;background:linear-gradient(180deg,#F4D37B,#B8841E);box-shadow:0 0 14px rgba(229,181,71,0.25)}
-.award-panel-grid{display:grid;grid-template-columns:minmax(184px,1.18fr) minmax(158px,.94fr) minmax(184px,1.18fr) minmax(158px,.94fr) minmax(158px,.94fr);gap:12px;align-items:stretch}
-.award-card{position:relative;min-width:0;min-height:116px;padding:13px 14px;border-radius:18px;border:1px solid rgba(188,196,209,0.82);background:linear-gradient(145deg,rgba(255,255,255,0.84),rgba(255,255,255,0.52));display:grid;grid-template-columns:52px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:11px;row-gap:6px;overflow:hidden}
+.award-panel-grid{display:grid;grid-template-columns:minmax(174px,1.12fr) minmax(148px,.94fr) minmax(174px,1.12fr) minmax(148px,.94fr) minmax(148px,.94fr);gap:10px;align-items:stretch}
+.award-card{position:relative;min-width:0;min-height:82px;padding:10px 12px;border-radius:14px;border:1px solid rgba(188,196,209,0.82);background:linear-gradient(145deg,rgba(255,255,255,0.86),rgba(255,255,255,0.58));display:grid;grid-template-columns:42px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:9px;row-gap:4px;overflow:hidden}
 .award-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.72),rgba(255,255,255,0) 48%);pointer-events:none}
-.award-card::after{content:"";position:absolute;right:8px;top:8px;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle,rgba(229,181,71,0.14),rgba(229,181,71,0));pointer-events:none}
-.award-card.award-goldenBoot,.award-card.award-goldenBall{grid-template-columns:58px minmax(0,1fr);background:linear-gradient(145deg,rgba(255,248,224,0.92),rgba(255,255,255,0.58));border-color:rgba(184,132,30,0.32)}
+.award-card::after{content:"";position:absolute;right:8px;top:7px;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle,rgba(229,181,71,0.12),rgba(229,181,71,0));pointer-events:none}
+.award-card.award-goldenBoot,.award-card.award-goldenBall{grid-template-columns:44px minmax(0,1fr);background:linear-gradient(145deg,rgba(255,248,224,0.92),rgba(255,255,255,0.60));border-color:rgba(184,132,30,0.30)}
 .award-card.award-assist{background:linear-gradient(145deg,rgba(232,246,255,0.9),rgba(255,255,255,0.54))}
 .award-card.award-goldenGlove{background:linear-gradient(145deg,rgba(255,245,233,0.92),rgba(255,255,255,0.54))}
 .award-card.award-fairPlay{background:linear-gradient(145deg,rgba(225,255,244,0.86),rgba(255,255,255,0.54))}
-.award-logo{position:relative;grid-row:1/4;width:52px;height:52px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#6F4D02;background:radial-gradient(circle at 32% 22%,#FFF9C9 0,#F2CD66 42%,#B8841E 74%,#714B06 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.72),inset 0 -8px 12px rgba(89,56,0,0.16),0 12px 24px rgba(122,92,0,0.16);z-index:1}
-.award-logo::before{content:"";position:absolute;left:9px;top:8px;width:17px;height:9px;border-radius:50%;background:rgba(255,255,255,0.62);filter:blur(.2px)}
-.award-logo::after{content:"";position:absolute;left:12px;right:12px;bottom:5px;height:5px;border-radius:50%;background:rgba(122,92,0,0.14);filter:blur(2px)}
-.award-card.award-goldenBoot .award-logo,.award-card.award-goldenBall .award-logo{width:58px;height:58px;border-radius:20px}
-.award-logo svg{position:relative;z-index:1;width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round}
-.award-card.award-goldenBoot .award-logo svg,.award-card.award-goldenBall .award-logo svg{width:34px;height:34px}
+.award-logo{position:relative;grid-row:1/4;width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#6F4D02;background:radial-gradient(circle at 32% 22%,#FFF9C9 0,#F2CD66 42%,#B8841E 74%,#714B06 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.70),inset 0 -6px 10px rgba(89,56,0,0.14),0 8px 16px rgba(122,92,0,0.13);z-index:1}
+.award-logo::before{content:"";position:absolute;left:8px;top:7px;width:13px;height:7px;border-radius:50%;background:rgba(255,255,255,0.58);filter:blur(.2px)}
+.award-logo::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:4px;border-radius:50%;background:rgba(122,92,0,0.12);filter:blur(2px)}
+.award-card.award-goldenBoot .award-logo,.award-card.award-goldenBall .award-logo{width:44px;height:44px;border-radius:15px}
+.award-logo svg{position:relative;z-index:1;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.15;stroke-linecap:round;stroke-linejoin:round}
+.award-card.award-goldenBoot .award-logo svg,.award-card.award-goldenBall .award-logo svg{width:25px;height:25px}
 .award-logo .award-fill{fill:currentColor;stroke:none;opacity:.2}
 .award-logo .award-soft{stroke:rgba(255,255,255,0.66);stroke-width:1.35}
 .award-logo.assist{background:radial-gradient(circle at 32% 22%,#F3FAFF 0,#93D5FF 42%,#2784D6 74%,#0E4B88 100%);color:#083B68}
@@ -444,26 +444,26 @@ body.dark .share-result-modal{box-shadow:0 36px 100px rgba(0,0,0,0.62),0 0 0 1px
 .award-logo.goldenGlove{background:radial-gradient(circle at 32% 22%,#FFF7E7 0,#F4C07A 43%,#C8711D 76%,#7A3609 100%);color:#723C09}
 .award-logo.fairPlay{background:radial-gradient(circle at 32% 22%,#E5FFF3 0,#48D9A4 45%,#06966C 76%,#03523B 100%);color:#063F2A}
 .award-copy{min-width:0;z-index:1}
-.award-label{color:var(--ink-light);font-size:9px;font-weight:950;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px;line-height:1}
-.award-winner{display:flex;align-items:center;gap:8px;min-width:0}
-.award-avatar{position:relative;width:34px;height:34px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);border:1px solid var(--line-delicate);overflow:hidden}
+.award-label{color:var(--ink-light);font-size:8.5px;font-weight:950;text-transform:uppercase;letter-spacing:.45px;margin-bottom:5px;line-height:1}
+.award-winner{display:flex;align-items:center;gap:7px;min-width:0}
+.award-avatar{position:relative;width:28px;height:28px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);border:1px solid var(--line-delicate);overflow:hidden}
 .award-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.award-avatar-fallback{color:var(--ink-light);font-size:12px;font-weight:950}
-.award-team-emblem{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);border:1px solid var(--line-delicate);flex:0 0 auto}
-.award-team-emblem .fls{width:24px;height:24px}
+.award-avatar-fallback{color:var(--ink-light);font-size:11px;font-weight:950}
+.award-team-emblem{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-soft);border:1px solid var(--line-delicate);flex:0 0 auto}
+.award-team-emblem .fls{width:20px;height:20px}
 .award-winner-copy{min-width:0}
-.award-name{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-dark);font-size:13px;font-weight:950;line-height:1.15}
-.award-country{display:flex;align-items:center;gap:5px;min-width:0;margin-top:3px;color:var(--ink-light);font-size:10px;font-weight:820;line-height:1.1}
-.award-country .fls{width:15px;height:15px;flex:0 0 auto}
+.award-name{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-dark);font-size:12px;font-weight:950;line-height:1.12}
+.award-country{display:flex;align-items:center;gap:4px;min-width:0;margin-top:2px;color:var(--ink-light);font-size:9.5px;font-weight:820;line-height:1.05}
+.award-country .fls{width:13px;height:13px;flex:0 0 auto}
 .award-country span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.award-meta{grid-column:2;margin-top:0;color:var(--ink-medium);font-size:10.5px;font-weight:780;line-height:1.25;z-index:1}
+.award-meta{grid-column:2;margin-top:0;color:var(--ink-medium);font-size:10px;font-weight:780;line-height:1.18;z-index:1}
 .award-card.is-empty .award-name{color:var(--ink-light)}
 body.dark .award-panel{background:linear-gradient(135deg,rgba(229,181,71,0.09),rgba(255,255,255,0.035) 45%,rgba(255,255,255,0.02));border-color:rgba(229,194,106,0.16)}
 body.dark .award-card{background:linear-gradient(145deg,rgba(255,255,255,0.062),rgba(255,255,255,0.028));border-color:rgba(229,194,106,0.14)}
 body.dark .award-card.award-goldenBoot,body.dark .award-card.award-goldenBall,body.dark .award-card.award-assist,body.dark .award-card.award-goldenGlove,body.dark .award-card.award-fairPlay{background:linear-gradient(145deg,rgba(255,255,255,0.072),rgba(255,255,255,0.03))}
 body.dark .award-logo{color:#3A2A02}
-@media(max-width:900px){.award-panel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.award-card.award-goldenBoot,.award-card.award-goldenBall{grid-template-columns:52px minmax(0,1fr)}.award-card.award-goldenBoot .award-logo,.award-card.award-goldenBall .award-logo{width:52px;height:52px;border-radius:18px}.award-card.award-goldenBoot .award-logo svg,.award-card.award-goldenBall .award-logo svg{width:30px;height:30px}}
-@media(max-width:760px){.award-panel{margin-left:8px;margin-right:8px}.award-card{min-height:102px}}
+@media(max-width:900px){.award-panel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.award-card.award-goldenBoot,.award-card.award-goldenBall{grid-template-columns:42px minmax(0,1fr)}.award-card.award-goldenBoot .award-logo,.award-card.award-goldenBall .award-logo{width:42px;height:42px;border-radius:14px}.award-card.award-goldenBoot .award-logo svg,.award-card.award-goldenBall .award-logo svg{width:24px;height:24px}}
+@media(max-width:760px){.award-panel{margin-left:8px;margin-right:8px}.award-card{min-height:80px}}
 .split{display:flex;gap:32px}.split-left{flex:1;min-width:0}.split-right{display:none}
 @media(min-width:850px){
 .main{max-width:95vw;padding:16px}
@@ -1275,6 +1275,24 @@ function formatVenueCityCompact(venue){
   return city.split(",")[0];
 }
 var detailFetchPending={};
+var FACT_PLAYER_DISPLAY_CN={
+  "Julián Quiñones":"胡利安·基尼奥内斯","Érik Lira":"埃里克·利拉","Raúl Jiménez":"劳尔·希门尼斯","Roberto Alvarado":"罗伯托·阿尔瓦拉多",
+  "Lionel Messi":"梅西","Cristiano Ronaldo":"C罗","Harry Kane":"凯恩","Jude Bellingham":"贝林厄姆","Kylian Mbappé":"姆巴佩",
+  "Casemiro":"卡塞米罗","Gabriel Martinelli":"马丁内利","Gabriel Magalhães":"加布里埃尔·马加良斯","José Fajardo":"法哈多",
+  "Pape Gueye":"帕普·盖耶","Connor Metcalfe":"梅特卡夫","David Alaba":"阿拉巴","Mahmoud Saber":"马哈茂德·萨贝尔",
+  "Nikola Vlasic":"弗拉希奇","Matías Galarza":"加拉尔萨","Ramin Rezaeian":"雷扎伊安","Mohammad Mohebbi":"莫赫比",
+  "Aymen Hussein":"艾曼·侯赛因","Martin Baturina":"巴图里纳","Giovani Lo Celso":"洛塞尔索",
+  "Ladislav Krejcí":"拉迪斯拉夫·克雷伊奇","Ladislav Krejčí":"拉迪斯拉夫·克雷伊奇","Vladimír Coufal":"弗拉迪米尔·曹法尔",
+  "Hwang In-Beom":"黄仁范","Lee Kang-In":"李刚仁","Oh Hyeon-Gyu":"吴贤揆"
+};
+var UNSAFE_EVENT_DISPLAY_CN={"加布里埃尔":1,"大卫":1,"穆罕默德":1,"马哈茂德":1,"何塞":1};
+function hasLatinOnlyDisplay(value){
+  value=String(value||"");
+  return /[A-Za-z\u00C0-\u024F]/.test(value)&&!/[\u4e00-\u9fff]/.test(value);
+}
+function factPlayerDisplayNameCn(sourceName){
+  return FACT_PLAYER_DISPLAY_CN[sourceName]||"";
+}
 function normalizeEspnName(value){
   value=String(value||"");
   if(value.normalize)value=value.normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
@@ -1289,14 +1307,15 @@ function squadCandidatesForTeam(team){
   return out;
 }
 function resolveEspnEventPlayer(sourceName,team){
+  var factDisplay=factPlayerDisplayNameCn(sourceName);
   var normalized=normalizeEspnName(sourceName),players=squadCandidatesForTeam(team);
   for(var i=0;i<players.length;i++){
     var alias=players[i],override=EN_OVERRIDE[team]&&EN_OVERRIDE[team][alias],english=override||EN[alias]||"";
     if(normalizeEspnName(alias)===normalized||normalizeEspnName(english)===normalized){
-      return {source_name:sourceName,display_name_cn:alias,fact_display_name_cn:sourceName,app_alias:alias,team_cn:team,jersey:null,position:getPos(alias,team),mapping_status:"matched_team_player",mapping_key:english||alias};
+      return {source_name:sourceName,display_name_cn:factDisplay||alias,fact_display_name_cn:factDisplay||sourceName,app_alias:alias,team_cn:team,jersey:null,position:getPos(alias,team),mapping_status:"matched_team_player",mapping_key:english||alias};
     }
   }
-  return {source_name:sourceName,display_name_cn:sourceName,fact_display_name_cn:sourceName,app_alias:null,team_cn:team,jersey:null,position:null,mapping_status:"source_only",mapping_key:null};
+  return {source_name:sourceName,display_name_cn:factDisplay||sourceName,fact_display_name_cn:factDisplay||sourceName,app_alias:null,team_cn:team,jersey:null,position:null,mapping_status:factDisplay?"curated_display":"source_only",mapping_key:null};
 }
 function addActualPlayerFields(target,prefix,resolved){
   target[prefix+"_source_name"]=resolved.source_name;
@@ -1398,7 +1417,11 @@ function hydrateMissingActualDetails(){
 }
 function actualEventPlayerName(event,prefix){
   if(LANG==="en")return event[prefix+"_source_name"]||event[prefix]||event[prefix+"_cn"]||"";
-  return event[prefix+"_display_name_cn"]||event[prefix+"_source_name"]||event[prefix+"_cn"]||event[prefix+"_app_alias"]||event[prefix]||"";
+  var team=event[prefix+"_team_cn"]||event.player_team_cn||event.team_cn||"";
+  var display=event[prefix+"_display_name_cn"]||"",cn=event[prefix+"_cn"]||event[prefix+"_app_alias"]||"";
+  if(display&&!hasLatinOnlyDisplay(display))return canonicalPlayerName(display,team);
+  if(cn&&!hasLatinOnlyDisplay(cn)&&!UNSAFE_EVENT_DISPLAY_CN[cn])return canonicalPlayerName(cn,team);
+  return canonicalPlayerName(display||event[prefix+"_source_name"]||cn||event[prefix]||"",team);
 }
 function actualEventTeamName(event,prefix){
   return event[prefix+"_team_cn"]||event.team_cn||"";
@@ -3372,9 +3395,20 @@ function safePlayerName(player){
   if(!s||s==="undefined"||s==="null"||s==="Unknown"||s==="未记录")return "";
   return s;
 }
-function pn(player,team){
+function canonicalPlayerName(player,team){
   player=safePlayerName(player);
   var meta=getSimulationPlayerMeta(player,team),base=simulationBaseName(player,team);
+  if(LANG==="zh"){
+    var suffix=base!==player?player.slice(base.length):"",fact=factPlayerDisplayNameCn(base);
+    if(fact)return fact+suffix;
+    if(hasLatinOnlyDisplay(base)&&team&&typeof resolveEspnEventPlayer==="function"){
+      var resolved=resolveEspnEventPlayer(base,team),candidate=resolved&&(resolved.display_name_cn||resolved.app_alias);
+      if(candidate&&!hasLatinOnlyDisplay(candidate))return candidate+suffix;
+    }
+    var lineup=matchingLineupPlayer(base,team);
+    if(lineup&&lineup.name&&!hasLatinOnlyDisplay(lineup.name))return lineup.name+suffix;
+    return player;
+  }
   if(LANG==="en"){
     if(meta&&meta.sourceName)return meta.sourceName+(meta.jersey?" #"+meta.jersey:"");
     if(typeof EN_OVERRIDE!=="undefined"&&team&&EN_OVERRIDE[team]&&EN_OVERRIDE[team][base])return EN_OVERRIDE[team][base]+(base!==player?player.slice(base.length):"");
@@ -3382,6 +3416,7 @@ function pn(player,team){
   }
   return player;
 }
+function pn(player,team){return canonicalPlayerName(player,team);}
 function detailPlayerName(player,team,fallback){var name=pn(player,team);return name||fallback||T("detailPlayerTbd");}
 function pos_t(pos){if(LANG==="en"&&POS_EN[pos])return POS_EN[pos];return pos;}
 function groupName(gk){return T("groupPrefix",{g:gk});}
