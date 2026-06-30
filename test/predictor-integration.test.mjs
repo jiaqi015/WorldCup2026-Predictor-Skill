@@ -958,11 +958,40 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.equal(southAfricaCanada.awayScore, 1);
   assert.equal(southAfricaCanada.winner, "加拿大");
 
+  const brazilJapan = schedule["760487"];
+  assert.ok(brazilJapan, "Brazil vs Japan knockout result must be embedded");
+  assert.equal(brazilJapan.completed, true);
+  assert.equal(brazilJapan.home, "巴西");
+  assert.equal(brazilJapan.away, "日本");
+  assert.equal(brazilJapan.homeScore, 2);
+  assert.equal(brazilJapan.awayScore, 1);
+  assert.equal(brazilJapan.winner, "巴西");
+
+  const paraguayGermany = schedule["760489"];
+  assert.ok(paraguayGermany, "Germany vs Paraguay knockout result must be embedded");
+  assert.equal(paraguayGermany.completed, true);
+  assert.equal(paraguayGermany.home, "德国");
+  assert.equal(paraguayGermany.away, "巴拉圭");
+  assert.equal(paraguayGermany.homeScore, 1);
+  assert.equal(paraguayGermany.awayScore, 1);
+  assert.equal(paraguayGermany.winner, "巴拉圭");
+
+  const brazilRoundOf16 = schedule["760504"];
+  assert.ok(brazilRoundOf16, "Brazil round-of-16 fixture must be embedded");
+  assert.equal(brazilRoundOf16.stage, "L");
+  assert.equal(brazilRoundOf16.home, "巴西");
+  assert.equal(brazilRoundOf16.away, "Round of 32 6 Winner");
+  assert.equal(brazilRoundOf16.venue.name_cn, "大都会人寿体育场");
+
   const detail = matchDetails["760486"];
   assert.ok(detail, "completed knockout match details must be refreshed");
   assert.equal(detail.homeScore, 0);
   assert.equal(detail.awayScore, 1);
   assert.equal(detail.goalEventsStatus, "complete");
+  assert.ok(matchDetails["760487"], "Brazil vs Japan match detail must be refreshed");
+  assert.equal(matchDetails["760487"].goalEventsStatus, "complete");
+  assert.ok(matchDetails["760489"], "Germany vs Paraguay match detail must be refreshed");
+  assert.equal(matchDetails["760489"].goalEventsStatus, "complete");
 
   assert.match(html, /function orientKOMatchResult\(rec,ht,at\)/);
   assert.match(html, /function getActualKOMatchResult\(id,ht,at\)/);
@@ -982,6 +1011,9 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.match(html, /var nextRoundDone=isKnockoutComplete\(\)/);
   assert.match(html, /var groupDone=allDone\(\),knockoutDone=isKnockoutComplete\(\)/);
   assert.match(html, /var ht=getKOResultWinner\(s1\),at=getKOResultWinner\(s2\)/);
+  assert.match(html, /function getKOIdForScheduleEvent\(matchId\)/);
+  assert.match(html, /var m=koEvents\[q\],directId=getKOIdForScheduleEvent\(m\.id\),id=directId\|\|/);
+  assert.doesNotMatch(html, /m\.stage\+\(\+\+seq\[m\.stage\]\);\n\s*fresh\.knockout\[id\]/);
 });
 
 test("pending knockout seed rows split slot labels from source details", () => {
@@ -1037,6 +1069,16 @@ test("knockout cards show source groups only in round-of-32 metadata", () => {
   assert.match(html, /function getKOMatchSchedule\(id\)/);
   assert.match(html, /function koScheduleLabelMatchesSeed\(label,seed\)/);
   assert.match(html, /var group=TEAM_GROUP\[label\]/);
+  assert.match(html, /function koScheduleAdvancerId\(label,roundName,prefix,sourceIds,idx\)/);
+  assert.match(html, /if\(s&&s\.winner===team\)return sourceIds\[i\]/);
+  assert.match(html, /function koBuildResolvedR32PairIndex\(\)/);
+  assert.match(html, /var st=getSt\(\),t3=getT3\(st\);assignThirds\(t3\)/);
+  assert.match(html, /if\(ht&&at\)out\[koPairKey\(ht,at\)\]=slot\.i/);
+  assert.match(html, /resolvedRPair=koBuildResolvedR32PairIndex\(\)/);
+  assert.match(html, /var rid=resolvedRPair\[koPairKey\(m\.home,m\.away\)\]\|\|rPair/);
+  assert.match(html, /var lh=koScheduleAdvancerId\(list\[i\]\.home,"Round of 32","R",rIds,idx\),la=koScheduleAdvancerId\(list\[i\]\.away,"Round of 32","R",rIds,idx\)/);
+  assert.match(html, /var qh=koScheduleAdvancerId\(list\[i\]\.home,"Round of 16","L",lIds,idx\),qa=koScheduleAdvancerId\(list\[i\]\.away,"Round of 16","L",lIds,idx\)/);
+  assert.doesNotMatch(html, /var lh="R"\+koScheduleRoundNumber/);
   assert.match(html, /function koFindRIdForScheduleMatch\(match\)/);
   assert.match(html, /if\(!rid\)rid=koFindRIdForScheduleMatch\(m\)/);
   assert.match(html, /function koMatchMeta\(m,ht,at\)/);

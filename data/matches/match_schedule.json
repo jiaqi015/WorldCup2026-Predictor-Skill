@@ -1620,17 +1620,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 275,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "BRA -135"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 1,
+    "winner": "巴西"
   },
   "760489": {
     "id": "760489",
@@ -1647,17 +1642,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 425,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "GER -300"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FINAL_PEN",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 1,
+    "winner": "巴拉圭"
   },
   "760488": {
     "id": "760488",
@@ -1681,9 +1671,9 @@
       "drawML": 210,
       "spread": null,
       "overUnder": 2.5,
-      "details": "NED +125"
+      "details": "NED +145"
     },
-    "status": "STATUS_SCHEDULED",
+    "status": "STATUS_IN_PROGRESS",
     "completed": false
   },
   "760490": {
@@ -1705,10 +1695,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 250,
+      "drawML": 245,
       "spread": null,
       "overUnder": 2.5,
-      "details": "NOR +105"
+      "details": "NOR +110"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1732,10 +1722,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 550,
+      "drawML": 500,
       "spread": null,
       "overUnder": 3.5,
-      "details": "FRA -370"
+      "details": "FRA -350"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1759,7 +1749,7 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 200,
+      "drawML": 190,
       "spread": null,
       "overUnder": 1.5,
       "details": "MEX +125"
@@ -1786,10 +1776,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 475,
+      "drawML": 450,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ENG -370"
+      "details": "ENG -360"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1816,7 +1806,7 @@
       "drawML": 230,
       "spread": null,
       "overUnder": 2.5,
-      "details": "BEL +115"
+      "details": "BEL +120"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1840,10 +1830,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 400,
+      "drawML": 390,
       "spread": null,
       "overUnder": 2.5,
-      "details": "USA -270"
+      "details": "USA -265"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1897,7 +1887,7 @@
       "drawML": 265,
       "spread": null,
       "overUnder": 2.5,
-      "details": "POR -125"
+      "details": "POR -130"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1921,10 +1911,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 235,
+      "drawML": 230,
       "spread": null,
       "overUnder": 2.5,
-      "details": "SUI +105"
+      "details": "SUI +110"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1975,10 +1965,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 700,
+      "drawML": 650,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ARG -600"
+      "details": "ARG -575"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -2034,7 +2024,7 @@
     "date": "2026-07-04T21:00Z",
     "stage": "L",
     "group": null,
-    "home": "Round of 32 2 Winner",
+    "home": "巴拉圭",
     "away": "Round of 32 5 Winner",
     "venue": {
       "name": "Lincoln Financial Field",
@@ -2053,7 +2043,7 @@
     "date": "2026-07-05T20:00Z",
     "stage": "L",
     "group": null,
-    "home": "Round of 32 4 Winner",
+    "home": "巴西",
     "away": "Round of 32 6 Winner",
     "venue": {
       "name": "MetLife Stadium",
