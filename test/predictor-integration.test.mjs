@@ -154,10 +154,12 @@ test("real starting lineups carry jersey data for duplicate short names", () => 
 
 test("simulated group and knockout matches open a unified timeline detail modal", () => {
   assert.match(html, /detailButton:"比赛详情"/);
+  assert.match(html, /detailButtonShort:"详情"/);
   assert.match(html, /detailButtonSimulation:"模拟详情"/);
   assert.match(html, /function detailButtonLabel\(isSimulation\)/);
+  assert.match(html, /function knockoutDetailButtonLabel\(\)/);
   assert.match(html, /detailButtonLabel\(!\(m&&m\.predictionSource==="actual"\)\)/);
-  assert.match(html, /var detailLabel=detailButtonLabel\(\!\!r\);/);
+  assert.match(html, /var detailLabel=knockoutDetailButtonLabel\(\);/);
   assert.match(html, /detailSourceSimulation:"模拟生成"/);
   assert.match(html, /detailSourceActual:"真实赛况 · ESPN"/);
   assert.match(html, /function renderMatchDetailModal\(model\)/);
@@ -982,10 +984,12 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.equal(paraguayGermany.winner, "巴拉圭");
 
   const brazilRoundOf16 = schedule["760504"];
+  const roundOf32R6 = schedule["760490"];
   assert.ok(brazilRoundOf16, "Brazil round-of-16 fixture must be embedded");
+  assert.ok(roundOf32R6, "Round-of-32 R6 fixture must be embedded");
   assert.equal(brazilRoundOf16.stage, "L");
   assert.equal(brazilRoundOf16.home, "巴西");
-  assert.equal(brazilRoundOf16.away, "Round of 32 6 Winner");
+  assert.equal(brazilRoundOf16.away, roundOf32R6.completed ? roundOf32R6.winner : "Round of 32 6 Winner");
   assert.equal(brazilRoundOf16.venue.name_cn, "大都会人寿体育场");
 
   const detail = matchDetails["760486"];

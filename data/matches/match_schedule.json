@@ -1686,17 +1686,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 245,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "NOR +110"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 2,
+    "winner": "挪威"
   },
   "760492": {
     "id": "760492",
@@ -1713,21 +1708,16 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 475,
-      "spread": null,
-      "overUnder": 3.5,
-      "details": "FRA -340"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 3,
+    "awayScore": 0,
+    "winner": "法国"
   },
   "760491": {
     "id": "760491",
-    "date": "2026-07-01T01:00Z",
+    "date": "2026-07-01T02:00Z",
     "stage": "R",
     "group": null,
     "home": "墨西哥",
@@ -1744,12 +1734,12 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 190,
+      "drawML": 175,
       "spread": null,
       "overUnder": 1.5,
-      "details": "MEX +125"
+      "details": "MEX +135"
     },
-    "status": "STATUS_SCHEDULED",
+    "status": "STATUS_FIRST_HALF",
     "completed": false
   },
   "760495": {
@@ -1771,10 +1761,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 450,
+      "drawML": 425,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ENG -360"
+      "details": "ENG -350"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1801,7 +1791,7 @@
       "drawML": 230,
       "spread": null,
       "overUnder": 2.5,
-      "details": "BEL +120"
+      "details": "BEL +115"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1825,7 +1815,7 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 390,
+      "drawML": 400,
       "spread": null,
       "overUnder": 2.5,
       "details": "USA -265"
@@ -1879,10 +1869,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 265,
+      "drawML": 260,
       "spread": null,
       "overUnder": 2.5,
-      "details": "POR -130"
+      "details": "POR -125"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1909,7 +1899,7 @@
       "drawML": 230,
       "spread": null,
       "overUnder": 2.5,
-      "details": "SUI +110"
+      "details": "SUI +105"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -1963,7 +1953,7 @@
       "drawML": 650,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ARG -600"
+      "details": "ARG -575"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -2014,10 +2004,10 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 265,
+      "drawML": 255,
       "spread": null,
       "overUnder": 2.5,
-      "details": "MAR -125"
+      "details": "MAR -120"
     },
     "status": "STATUS_SCHEDULED",
     "completed": false
@@ -2028,7 +2018,7 @@
     "stage": "L",
     "group": null,
     "home": "巴拉圭",
-    "away": "Round of 32 5 Winner",
+    "away": "法国",
     "venue": {
       "name": "Lincoln Financial Field",
       "name_cn": "林肯金融球场",
@@ -2037,7 +2027,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 600,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "FRA -500"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -2047,7 +2045,7 @@
     "stage": "L",
     "group": null,
     "home": "巴西",
-    "away": "Round of 32 6 Winner",
+    "away": "挪威",
     "venue": {
       "name": "MetLife Stadium",
       "name_cn": "大都会人寿体育场",
@@ -2056,7 +2054,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 260,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "BRA -110"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
