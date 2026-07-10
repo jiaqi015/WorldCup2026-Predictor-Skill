@@ -2595,7 +2595,10 @@ function getKOResultLoser(id,ht,at){
   return r&&r.l?r.l:null;
 }
 function isKOResultComplete(id,ht,at){
-  return !!getKOResult(id,ht,at);
+  // Completion belongs to the canonical bracket slot. Team arguments are only
+  // for orienting a score at render time; user-predicted teams must not make
+  // an already completed official fixture look pending or simulatable again.
+  return !!getKOResult(id);
 }
 function isKnockoutComplete(){
   return !!(getKOResult("FINAL")&&getKOResult("3RD"));

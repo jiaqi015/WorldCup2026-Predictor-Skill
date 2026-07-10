@@ -431,6 +431,8 @@ def assert_browser_result(payload: Dict[str, Any]) -> None:
             fail(f"browser run did not render all 32 knockout cards: {run}")
         if int(run.get("actualCardCount") or 0) != int(run.get("completedScheduleCount") or 0):
             fail(f"browser run did not render every completed knockout result: {run}")
+        if int(run.get("actualProgressBeforeSimulation") or 0) != int(run.get("completedScheduleCount") or 0):
+            fail(f"knockout progress did not include every completed official slot: {run}")
         if run.get("missingScheduleCards"):
             fail(f"browser run has knockout cards without schedule metadata: {run}")
         if run.get("englishPlaceholderCards"):
@@ -512,6 +514,7 @@ async () => {
     raG();
     tab = "knockout";
     render();
+    const actualProgressBeforeSimulation = knockoutProgressState().done;
     raKO();
     const knockoutCards = Array.from(document.querySelectorAll(".bk-m")).map((card) => ({
       slot: card.getAttribute("data-mid"),
@@ -536,6 +539,7 @@ async () => {
       koCount: KO_SHARE_IDS.filter((id) => Boolean(getKOResult(id))).length,
       koCardCount: knockoutCards.length,
       actualCardCount: knockoutCards.filter((card) => card.text.includes("真实比分")).length,
+      actualProgressBeforeSimulation,
       completedScheduleCount: completedKnockoutSchedule.length,
       missingScheduleCards: knockoutCards.filter((card) => card.text.includes("时间待定") || card.text.includes("场地待定")).map((card) => card.slot),
       englishPlaceholderCards: knockoutCards.filter((card) => /Round of|Winner|Loser/.test(card.text)).map((card) => card.slot),

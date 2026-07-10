@@ -1058,6 +1058,11 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.doesNotMatch(html, /m\.stage\+\(\+\+seq\[m\.stage\]\);\n\s*fresh\.knockout\[id\]/);
 });
 
+test("knockout completion is derived from the canonical slot, not predicted teams", () => {
+  assert.match(html, /function isKOResultComplete\(id,ht,at\)\{[\s\S]{0,400}return !!getKOResult\(id\);\s*\}/);
+  assert.doesNotMatch(html, /function isKOResultComplete\(id,ht,at\)\{\s*return !!getKOResult\(id,ht,at\);\s*\}/);
+});
+
 test("pending knockout seed rows split slot labels from source details", () => {
   assert.match(html, /\.bk-wrap\{overflow-x:auto;padding:16px clamp\(8px,2vw,24px\) 40px/);
   assert.match(html, /\.bk\{--bk-card-w:156px;--bk-preview-h:94px;display:flex;align-items:stretch;width:max-content;min-width:max-content;margin:0 auto\}/);
