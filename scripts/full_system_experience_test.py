@@ -427,6 +427,16 @@ def assert_browser_result(payload: Dict[str, Any]) -> None:
             fail(f"browser run did not produce third place: {run}")
         if int(run.get("koCount") or 0) < 32:
             fail(f"browser run did not populate knockout bracket: {run}")
+        if int(run.get("koCardCount") or 0) != 32:
+            fail(f"browser run did not render all 32 knockout cards: {run}")
+        if int(run.get("actualCardCount") or 0) != int(run.get("completedScheduleCount") or 0):
+            fail(f"browser run did not render every completed knockout result: {run}")
+        if run.get("missingScheduleCards"):
+            fail(f"browser run has knockout cards without schedule metadata: {run}")
+        if run.get("englishPlaceholderCards"):
+            fail(f"browser run leaked ESPN placeholder teams: {run}")
+        if run.get("officialPairMismatches"):
+            fail(f"browser run attached official results to the wrong teams: {run}")
         if not is_valid_share_url(run.get("shareUrl")):
             fail(f"browser run did not create share URL: {run}")
 
@@ -503,6 +513,16 @@ async () => {
     tab = "knockout";
     render();
     raKO();
+    const knockoutCards = Array.from(document.querySelectorAll(".bk-m")).map((card) => ({
+      slot: card.getAttribute("data-mid"),
+      text: (card.innerText || "").replace(/\\s+/g, " ").trim()
+    }));
+    const knockoutSchedule = Object.values(MATCH_SCHEDULE).filter((match) => match.stage !== "group");
+    const completedKnockoutSchedule = knockoutSchedule.filter((match) => match.completed);
+    const officialPairMismatches = completedKnockoutSchedule.filter((match) => {
+      const card = knockoutCards.find((item) => item.slot === match.bracketSlot);
+      return !card || !card.text.includes(match.home) || !card.text.includes(match.away);
+    }).map((match) => ({slot: match.bracketSlot, home: match.home, away: match.away}));
     tab = "scorers";
     render();
     modeRuns.push({
@@ -514,6 +534,12 @@ async () => {
       champion: getKOResult("FINAL") && getKOResult("FINAL").w ? getKOResult("FINAL").w : "",
       third: getKOResult("3RD") && getKOResult("3RD").w ? getKOResult("3RD").w : "",
       koCount: KO_SHARE_IDS.filter((id) => Boolean(getKOResult(id))).length,
+      koCardCount: knockoutCards.length,
+      actualCardCount: knockoutCards.filter((card) => card.text.includes("真实比分")).length,
+      completedScheduleCount: completedKnockoutSchedule.length,
+      missingScheduleCards: knockoutCards.filter((card) => card.text.includes("时间待定") || card.text.includes("场地待定")).map((card) => card.slot),
+      englishPlaceholderCards: knockoutCards.filter((card) => /Round of|Winner|Loser/.test(card.text)).map((card) => card.slot),
+      officialPairMismatches,
       scoreRows: document.querySelectorAll("tbody tr").length,
       shareUrl: getSharePredictionUrl()
     });

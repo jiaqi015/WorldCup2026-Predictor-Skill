@@ -180,7 +180,7 @@ test("simulated group and knockout matches open a unified timeline detail modal"
   assert.match(html, /function openGroupMatchDetail\(gk,mi\)/);
   assert.match(html, /mergeTimelineEvents\(timelineFromGoalLog\(m\.hg,m\.h,source\),timelineFromGoalLog\(m\.ag,m\.a,source\),timelineFromRawEvents/);
   assert.match(html, /function openKOMatchDetail\(id,ht,at,hSeed,aSeed,seedRole\)/);
-  assert.match(html, /fixture=getOfficialKOMatchFixture\(id\),actual=getActualKOMatchResult\(id,ht,at\),rec=actual\|\|r/);
+  assert.match(html, /officialHome=fixtureHome&&TEAM_GROUP\[fixtureHome\]\?fixtureHome:"",officialAway=fixtureAway&&TEAM_GROUP\[fixtureAway\]\?fixtureAway:"",actual=getActualKOMatchResult\(id,officialHome\|\|ht,officialAway\|\|at\),rec=actual\|\|r/);
   assert.match(html, /source=actual\?T\("detailSourceActual"\):\(r\?T\("detailSourceSimulation"\):\(fixture\?T\("detailSourceOfficial"\):T\("detailSourcePending"\)\)\)/);
   assert.match(html, /status:officialFixtureStatusLabel\(fixture,actual\)/);
   assert.match(html, /emptyText:knockoutDetailEmptyText\(fixture,actual,rec\)/);
@@ -1028,17 +1028,21 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.equal(matchDetails["760489"].goalEventsStatus, "complete");
 
   assert.match(html, /function orientKOMatchResult\(rec,ht,at\)/);
+  assert.match(html, /if\(ht&&at\)\{[\s\S]{0,700}return null;\n  \}/);
   assert.match(html, /function getActualKOMatchResult\(id,ht,at\)/);
   assert.match(html, /function getKOResult\(id,ht,at\)/);
   assert.match(html, /var actual=isViewMode\?null:getActualKOMatchResult\(id,ht,at\);\n  return actual\|\|\(ko&&ko\[id\]\)\|\|null;/);
   assert.match(html, /for\(var ki=0;ki<KO_SHARE_IDS\.length;ki\+\+\)\{\n      var kid=KO_SHARE_IDS\[ki\],ks=getKOResult\(kid\);/);
   assert.match(html, /var id=KO_SHARE_IDS\[i\],r=getKOResult\(id\);/);
+  assert.match(html, /if\(explicitMatch&&explicitMatch\.bracketSlot\)idx\[explicitMatch\.bracketSlot\]=explicitMatch;/);
+  assert.doesNotMatch(html, /directId\|\|\(\(m\.stage==="FINAL"/);
+  assert.match(html, /fixture=!isViewMode\?getOfficialKOMatchFixture\(m\.id\):null/);
   assert.match(html, /function pruneStaleKO\(\)\{\n  if\(isViewMode\|\|!gm\|\|!ko\)return;/);
   assert.match(html, /function getKOResultWinner\(id,ht,at\)/);
   assert.match(html, /function getKOResultLoser\(id,ht,at\)/);
   assert.match(html, /function isKOResultComplete\(id,ht,at\)/);
   assert.match(html, /function isKnockoutComplete\(\)/);
-  assert.match(html, /var r=ko\[m\.id\],actual=getActualKOMatchResult\(m\.id,m\.ht,m\.at\),shown=actual\|\|r/);
+  assert.match(html, /officialHt=fixtureHome&&TEAM_GROUP\[fixtureHome\]\?fixtureHome:"",officialAt=fixtureAway&&TEAM_GROUP\[fixtureAway\]\?fixtureAway:"",actual=getActualKOMatchResult\(m\.id,officialHt\|\|m\.ht,officialAt\|\|m\.at\),shown=actual\|\|r/);
   assert.match(html, /var hw=shown&&shown\.w===ht,aw=shown&&shown\.w===at/);
   assert.match(html, /if\(actual\)h\+='<div class="bk-decision">'\+escHtml\(T\("actualScore"\)\)\+'<\/div>'/);
   assert.match(html, /else if\(canPlay&&actual\)/);
@@ -1049,7 +1053,8 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.match(html, /var groupDone=allDone\(\),knockoutDone=isKnockoutComplete\(\)/);
   assert.match(html, /var ht=getKOResultWinner\(s1\),at=getKOResultWinner\(s2\)/);
   assert.match(html, /function getKOIdForScheduleEvent\(matchId\)/);
-  assert.match(html, /var m=koEvents\[q\],directId=getKOIdForScheduleEvent\(m\.id\),id=directId\|\|/);
+  assert.match(html, /var m=koEvents\[q\],id=getKOIdForScheduleEvent\(m\.id\);/);
+  assert.match(html, /if\(!id\)\{if\(window\.console\)console\.warn\("WC26 results: unmapped knockout event"/);
   assert.doesNotMatch(html, /m\.stage\+\(\+\+seq\[m\.stage\]\);\n\s*fresh\.knockout\[id\]/);
 });
 

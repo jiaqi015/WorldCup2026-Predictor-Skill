@@ -6,6 +6,7 @@ Outputs: data/matches/match_schedule.json
 
 import json
 import os
+import re
 import sys
 import urllib.request
 import time
@@ -59,6 +60,23 @@ GROUPS = {
     "L": ["英格兰", "克罗地亚", "加纳", "巴拿马"]
 }
 
+R32_SLOTS = [
+    ("R1", "2A", "2B"), ("R2", "1E", "3_ABCDF"),
+    ("R3", "1F", "2C"), ("R4", "1C", "2F"),
+    ("R5", "1I", "3_CDFGH"), ("R6", "2E", "2I"),
+    ("R7", "1A", "3_CEFHI"), ("R8", "1L", "3_EHIJK"),
+    ("R9", "1D", "3_BEFIJ"), ("R10", "1G", "3_AEHIJ"),
+    ("R11", "2K", "2L"), ("R12", "1H", "2J"),
+    ("R13", "1B", "3_EFGIJ"), ("R14", "1J", "2H"),
+    ("R15", "1K", "3_DEIJL"), ("R16", "2D", "2G"),
+]
+R16_PAIRS = [
+    ("R2", "R5"), ("R1", "R3"), ("R4", "R6"), ("R7", "R8"),
+    ("R11", "R12"), ("R9", "R10"), ("R14", "R16"), ("R13", "R15"),
+]
+QF_PAIRS = [("L1", "L2"), ("L5", "L6"), ("L3", "L4"), ("L7", "L8")]
+SF_PAIRS = [("Q1", "Q2"), ("Q3", "Q4")]
+
 VENUE_CN = {
     "Estadio Banorte": "巴诺特体育场",
     "Estadio Akron": "阿克伦体育场",
@@ -110,6 +128,175 @@ def find_group(home_cn, away_cn):
         if home_cn in teams and away_cn in teams:
             return group
     return None
+
+
+def _stats_for(teams, matches):
+    stats = {team: {"p": 0, "gf": 0, "ga": 0, "gd": 0} for team in teams}
+    for match in matches:
+        home, away = match.get("home"), match.get("away")
+        if home not in stats or away not in stats:
+            continue
+        home_score, away_score = match.get("homeScore"), match.get("awayScore")
+        if home_score is None or away_score is None:
+            continue
+        stats[home]["gf"] += home_score
+        stats[home]["ga"] += away_score
+        stats[away]["gf"] += away_score
+        stats[away]["ga"] += home_score
+        if home_score > away_score:
+            stats[home]["p"] += 3
+        elif home_score < away_score:
+            stats[away]["p"] += 3
+        else:
+            stats[home]["p"] += 1
+            stats[away]["p"] += 1
+    for row in stats.values():
+        row["gd"] = row["gf"] - row["ga"]
+    return stats
+
+
+def _split_ranked(teams, value_for):
+    ordered = sorted(teams, key=lambda team: value_for(team), reverse=True)
+    buckets = []
+    for team in ordered:
+        value = value_for(team)
+        if not buckets or buckets[-1][0] != value:
+            buckets.append((value, [team]))
+        else:
+            buckets[-1][1].append(team)
+    return [bucket for _, bucket in buckets]
+
+
+def _rank_group(teams, matches):
+    overall = _stats_for(teams, matches)
+    final = []
+    for points_bucket in _split_ranked(teams, lambda team: overall[team]["p"]):
+        buckets = [points_bucket]
+        for field in ("p", "gd", "gf"):
+            refined = []
+            for bucket in buckets:
+                if len(bucket) <= 1:
+                    refined.append(bucket)
+                    continue
+                head_to_head = _stats_for(bucket, matches)
+                refined.extend(_split_ranked(bucket, lambda team, f=field: head_to_head[team][f]))
+            buckets = refined
+        for field in ("gd", "gf"):
+            refined = []
+            for bucket in buckets:
+                if len(bucket) <= 1:
+                    refined.append(bucket)
+                else:
+                    refined.extend(_split_ranked(bucket, lambda team, f=field: overall[team][f]))
+            buckets = refined
+        for bucket in buckets:
+            final.extend(sorted(bucket, key=teams.index))
+    return final
+
+
+def _official_seed_map(schedule):
+    seeds = {}
+    for group, teams in GROUPS.items():
+        matches = [
+            match for match in schedule.values()
+            if match.get("stage") == "group"
+            and match.get("group") == group
+            and match.get("completed")
+            and match.get("homeScore") is not None
+            and match.get("awayScore") is not None
+        ]
+        if len(matches) != 6:
+            continue
+        ranking = _rank_group(teams, matches)
+        for position, team in enumerate(ranking[:3], start=1):
+            seeds[team] = f"{position}{group}"
+    return seeds
+
+
+def _parse_seed_label(label):
+    match = re.match(r"^Group ([A-L]) Winner$", label or "")
+    if match:
+        return f"1{match.group(1)}"
+    match = re.match(r"^Group ([A-L]) 2nd Place$", label or "")
+    if match:
+        return f"2{match.group(1)}"
+    match = re.match(r"^Third Place Group ([A-L](?:/[A-L])*)$", label or "")
+    if match:
+        return "3_" + match.group(1).replace("/", "")
+    return ""
+
+
+def _seed_matches(actual_seed, topology_seed):
+    if not actual_seed or not topology_seed:
+        return False
+    if topology_seed.startswith("3_"):
+        return actual_seed.startswith("3") and actual_seed[1:] in topology_seed[2:]
+    return actual_seed == topology_seed
+
+
+def _pair_key(first, second):
+    return tuple(sorted((first, second)))
+
+
+def _round_source(label, round_name, prefix, source_slots, by_slot):
+    match = re.match(rf"^{re.escape(round_name)} (\d+) Winner$", label or "")
+    if match:
+        return f"{prefix}{match.group(1)}"
+    for slot in source_slots:
+        source = by_slot.get(slot)
+        if source and source.get("winner") == label:
+            return slot
+    return ""
+
+
+def assign_bracket_slots(schedule):
+    """Attach one stable internal bracket slot to every knockout fixture."""
+    for match in schedule.values():
+        match.pop("bracketSlot", None)
+
+    seeds = _official_seed_map(schedule)
+    by_slot = {}
+    for match in schedule.values():
+        if match.get("stage") != "R":
+            continue
+        home_seed = seeds.get(match.get("home")) or _parse_seed_label(match.get("home"))
+        away_seed = seeds.get(match.get("away")) or _parse_seed_label(match.get("away"))
+        candidates = []
+        for slot, first_seed, second_seed in R32_SLOTS:
+            ordered = _seed_matches(home_seed, first_seed) and _seed_matches(away_seed, second_seed)
+            reversed_pair = _seed_matches(home_seed, second_seed) and _seed_matches(away_seed, first_seed)
+            if ordered or reversed_pair:
+                candidates.append(slot)
+        if len(candidates) == 1:
+            match["bracketSlot"] = candidates[0]
+            by_slot[candidates[0]] = match
+
+    def assign_round(stage, round_name, prefix, source_slots, pairs, target_prefix):
+        pair_index = {_pair_key(*pair): f"{target_prefix}{index + 1}" for index, pair in enumerate(pairs)}
+        matches = sorted(
+            (match for match in schedule.values() if match.get("stage") == stage),
+            key=lambda match: (match.get("date") or "", match.get("id") or ""),
+        )
+        for match in matches:
+            home_source = _round_source(match.get("home"), round_name, prefix, source_slots, by_slot)
+            away_source = _round_source(match.get("away"), round_name, prefix, source_slots, by_slot)
+            slot = pair_index.get(_pair_key(home_source, away_source))
+            if slot:
+                match["bracketSlot"] = slot
+                by_slot[slot] = match
+
+    assign_round("L", "Round of 32", "R", [f"R{i}" for i in range(1, 17)], R16_PAIRS, "L")
+    assign_round("Q", "Round of 16", "L", [f"L{i}" for i in range(1, 9)], QF_PAIRS, "Q")
+    assign_round("S", "Quarterfinal", "Q", [f"Q{i}" for i in range(1, 5)], SF_PAIRS, "S")
+
+    for match in schedule.values():
+        if match.get("stage") == "3RD":
+            match["bracketSlot"] = "3RD"
+            by_slot["3RD"] = match
+        elif match.get("stage") == "FINAL":
+            match["bracketSlot"] = "FINAL"
+            by_slot["FINAL"] = match
+    return len(by_slot)
 
 def fetch_json(url):
     """Fetch JSON from URL with retry logic."""
@@ -240,6 +427,15 @@ def main():
             else:
                 match["winner"] = None
         schedule[match_id] = match
+
+    knockout_count = sum(1 for match in schedule.values() if match["stage"] != "group")
+    assigned_slots = assign_bracket_slots(schedule)
+    if knockout_count == 32 and assigned_slots != 32:
+        print(
+            f"Failed to map knockout bracket slots: {assigned_slots}/32 assigned",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     # Output
     out_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "matches")

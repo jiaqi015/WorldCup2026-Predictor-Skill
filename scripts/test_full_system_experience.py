@@ -93,6 +93,8 @@ class TestFullSystemExperienceScript(unittest.TestCase):
         self.assertIn('KO_SHARE_IDS.filter((id) => Boolean(getKOResult(id))).length', source)
         self.assertNotIn('koCount: Object.keys(ko).length', source)
         self.assertIn('champion: getKOResult("FINAL")', source)
+        self.assertIn('officialPairMismatches', source)
+        self.assertIn('browser run attached official results to the wrong teams', source)
 
 
 if __name__ == "__main__":

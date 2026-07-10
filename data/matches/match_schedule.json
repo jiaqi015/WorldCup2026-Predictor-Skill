@@ -1603,7 +1603,8 @@
     "completed": true,
     "homeScore": 0,
     "awayScore": 1,
-    "winner": "加拿大"
+    "winner": "加拿大",
+    "bracketSlot": "R1"
   },
   "760487": {
     "id": "760487",
@@ -1625,7 +1626,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 1,
-    "winner": "巴西"
+    "winner": "巴西",
+    "bracketSlot": "R4"
   },
   "760489": {
     "id": "760489",
@@ -1647,7 +1649,8 @@
     "completed": true,
     "homeScore": 1,
     "awayScore": 1,
-    "winner": "巴拉圭"
+    "winner": "巴拉圭",
+    "bracketSlot": "R2"
   },
   "760488": {
     "id": "760488",
@@ -1669,7 +1672,8 @@
     "completed": true,
     "homeScore": 1,
     "awayScore": 1,
-    "winner": "摩洛哥"
+    "winner": "摩洛哥",
+    "bracketSlot": "R3"
   },
   "760490": {
     "id": "760490",
@@ -1691,7 +1695,8 @@
     "completed": true,
     "homeScore": 1,
     "awayScore": 2,
-    "winner": "挪威"
+    "winner": "挪威",
+    "bracketSlot": "R6"
   },
   "760492": {
     "id": "760492",
@@ -1713,7 +1718,8 @@
     "completed": true,
     "homeScore": 3,
     "awayScore": 0,
-    "winner": "法国"
+    "winner": "法国",
+    "bracketSlot": "R5"
   },
   "760491": {
     "id": "760491",
@@ -1735,7 +1741,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 0,
-    "winner": "墨西哥"
+    "winner": "墨西哥",
+    "bracketSlot": "R7"
   },
   "760495": {
     "id": "760495",
@@ -1757,7 +1764,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 1,
-    "winner": "英格兰"
+    "winner": "英格兰",
+    "bracketSlot": "R8"
   },
   "760493": {
     "id": "760493",
@@ -1779,7 +1787,8 @@
     "completed": true,
     "homeScore": 3,
     "awayScore": 2,
-    "winner": "比利时"
+    "winner": "比利时",
+    "bracketSlot": "R10"
   },
   "760494": {
     "id": "760494",
@@ -1801,7 +1810,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 0,
-    "winner": "美国"
+    "winner": "美国",
+    "bracketSlot": "R9"
   },
   "760497": {
     "id": "760497",
@@ -1823,7 +1833,8 @@
     "completed": true,
     "homeScore": 3,
     "awayScore": 0,
-    "winner": "西班牙"
+    "winner": "西班牙",
+    "bracketSlot": "R12"
   },
   "760496": {
     "id": "760496",
@@ -1845,7 +1856,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 1,
-    "winner": "葡萄牙"
+    "winner": "葡萄牙",
+    "bracketSlot": "R11"
   },
   "760498": {
     "id": "760498",
@@ -1867,7 +1879,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 0,
-    "winner": "瑞士"
+    "winner": "瑞士",
+    "bracketSlot": "R13"
   },
   "760499": {
     "id": "760499",
@@ -1889,7 +1902,8 @@
     "completed": true,
     "homeScore": 1,
     "awayScore": 1,
-    "winner": "埃及"
+    "winner": "埃及",
+    "bracketSlot": "R16"
   },
   "760500": {
     "id": "760500",
@@ -1911,7 +1925,8 @@
     "completed": true,
     "homeScore": 3,
     "awayScore": 2,
-    "winner": "阿根廷"
+    "winner": "阿根廷",
+    "bracketSlot": "R14"
   },
   "760501": {
     "id": "760501",
@@ -1933,7 +1948,8 @@
     "completed": true,
     "homeScore": 1,
     "awayScore": 0,
-    "winner": "哥伦比亚"
+    "winner": "哥伦比亚",
+    "bracketSlot": "R15"
   },
   "760502": {
     "id": "760502",
@@ -1955,7 +1971,8 @@
     "completed": true,
     "homeScore": 0,
     "awayScore": 3,
-    "winner": "摩洛哥"
+    "winner": "摩洛哥",
+    "bracketSlot": "L2"
   },
   "760503": {
     "id": "760503",
@@ -1977,7 +1994,8 @@
     "completed": true,
     "homeScore": 0,
     "awayScore": 1,
-    "winner": "法国"
+    "winner": "法国",
+    "bracketSlot": "L1"
   },
   "760504": {
     "id": "760504",
@@ -1999,7 +2017,8 @@
     "completed": true,
     "homeScore": 1,
     "awayScore": 2,
-    "winner": "挪威"
+    "winner": "挪威",
+    "bracketSlot": "L3"
   },
   "760505": {
     "id": "760505",
@@ -2021,7 +2040,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 3,
-    "winner": "英格兰"
+    "winner": "英格兰",
+    "bracketSlot": "L4"
   },
   "760506": {
     "id": "760506",
@@ -2043,7 +2063,8 @@
     "completed": true,
     "homeScore": 0,
     "awayScore": 1,
-    "winner": "西班牙"
+    "winner": "西班牙",
+    "bracketSlot": "L5"
   },
   "760507": {
     "id": "760507",
@@ -2065,7 +2086,8 @@
     "completed": true,
     "homeScore": 1,
     "awayScore": 4,
-    "winner": "比利时"
+    "winner": "比利时",
+    "bracketSlot": "L6"
   },
   "760509": {
     "id": "760509",
@@ -2087,7 +2109,8 @@
     "completed": true,
     "homeScore": 3,
     "awayScore": 2,
-    "winner": "阿根廷"
+    "winner": "阿根廷",
+    "bracketSlot": "L7"
   },
   "760508": {
     "id": "760508",
@@ -2109,7 +2132,8 @@
     "completed": true,
     "homeScore": 0,
     "awayScore": 0,
-    "winner": "瑞士"
+    "winner": "瑞士",
+    "bracketSlot": "L8"
   },
   "760510": {
     "id": "760510",
@@ -2131,7 +2155,8 @@
     "completed": true,
     "homeScore": 2,
     "awayScore": 0,
-    "winner": "法国"
+    "winner": "法国",
+    "bracketSlot": "Q1"
   },
   "760511": {
     "id": "760511",
@@ -2152,13 +2177,14 @@
       "provider": "DraftKings",
       "homeML": null,
       "awayML": null,
-      "drawML": 290,
+      "drawML": 295,
       "spread": null,
       "overUnder": 2.5,
-      "details": "ESP -155"
+      "details": "ESP -160"
     },
     "status": "STATUS_SCHEDULED",
-    "completed": false
+    "completed": false,
+    "bracketSlot": "Q2"
   },
   "760512": {
     "id": "760512",
@@ -2185,7 +2211,8 @@
       "details": "ENG -115"
     },
     "status": "STATUS_SCHEDULED",
-    "completed": false
+    "completed": false,
+    "bracketSlot": "Q3"
   },
   "760513": {
     "id": "760513",
@@ -2212,7 +2239,8 @@
       "details": "ARG -145"
     },
     "status": "STATUS_SCHEDULED",
-    "completed": false
+    "completed": false,
+    "bracketSlot": "Q4"
   },
   "760514": {
     "id": "760514",
@@ -2231,7 +2259,8 @@
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
-    "completed": false
+    "completed": false,
+    "bracketSlot": "S1"
   },
   "760515": {
     "id": "760515",
@@ -2250,7 +2279,8 @@
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
-    "completed": false
+    "completed": false,
+    "bracketSlot": "S2"
   },
   "760516": {
     "id": "760516",
@@ -2269,7 +2299,8 @@
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
-    "completed": false
+    "completed": false,
+    "bracketSlot": "3RD"
   },
   "760517": {
     "id": "760517",
@@ -2288,6 +2319,7 @@
     },
     "odds": null,
     "status": "STATUS_SCHEDULED",
-    "completed": false
+    "completed": false,
+    "bracketSlot": "FINAL"
   }
 }
