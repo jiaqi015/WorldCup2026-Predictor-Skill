@@ -34,6 +34,8 @@ class TestFullSystemExperienceScript(unittest.TestCase):
                 "browser_guided_prediction",
                 "browser_mode_matrix",
                 "share_and_readonly_state",
+                "state_and_fact_integrity",
+                "static_artifact_performance",
                 "public_deployment",
             },
         )

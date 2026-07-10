@@ -17,6 +17,7 @@ import subprocess
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 from typing import Any, Dict, Iterator, List, Optional
@@ -97,6 +98,30 @@ COVERAGE_CONTRACT = [
             "fresh browser page opened from getSharePredictionUrl()",
             "body.view-mode and disabled form controls",
             "SHARE_STATE_VERSION marker in index.html",
+        ],
+    },
+    {
+        "area": "state_and_fact_integrity",
+        "requirements": [
+            "local predictions migrate into one versioned atomic storage envelope",
+            "corrupt saves recover without breaking rendering",
+            "stale partial detail caches cannot override more complete embedded ESPN facts",
+        ],
+        "evidence": [
+            "isolated browser storage contexts in run_browser_experience()",
+            "APP_DIAGNOSTICS storage and fact coverage contracts",
+            "release_check.py completed goal-event coverage gate",
+        ],
+    },
+    {
+        "area": "static_artifact_performance",
+        "requirements": [
+            "the canonical single-file app stays within raw and compressed size budgets",
+            "generated prediction data cannot rewrite runtime application behavior",
+        ],
+        "evidence": [
+            "release_check.py app size budget",
+            "test_embed_prediction_data.py deterministic boundary tests",
         ],
     },
     {
@@ -244,6 +269,22 @@ def is_valid_share_url(url: Any) -> bool:
     return isinstance(url, str) and ("#s=" in url or "#p=" in url)
 
 
+def factual_leaderboard_maxima() -> tuple[int, int]:
+    details = load_json(ROOT / "data" / "matches" / "match_details.json")
+    goals: Dict[str, int] = {}
+    assists: Dict[str, int] = {}
+    for detail in details.values():
+        for event in detail.get("events", []):
+            if event.get("type") in {"goal", "penalty_goal"} and not event.get("own_goal"):
+                scorer = event.get("scorer_source_name") or event.get("scorer")
+                if scorer:
+                    goals[scorer] = goals.get(scorer, 0) + 1
+            assist = event.get("assist_source_name") or event.get("assist")
+            if assist:
+                assists[assist] = assists.get(assist, 0) + 1
+    return max(goals.values(), default=0), max(assists.values(), default=0)
+
+
 def validate_coverage_contract() -> None:
     expected = {
         "skill_install_learn_use_verify",
@@ -251,6 +292,8 @@ def validate_coverage_contract() -> None:
         "browser_guided_prediction",
         "browser_mode_matrix",
         "share_and_readonly_state",
+        "state_and_fact_integrity",
+        "static_artifact_performance",
         "public_deployment",
     }
     actual = {item.get("area") for item in COVERAGE_CONTRACT}
@@ -458,6 +501,39 @@ def assert_browser_result(payload: Dict[str, Any]) -> None:
         fail(f"stats projection omitted or duplicated completed matches: {stats_projection}")
     if int(stats_projection.get("actualGoalCount") or 0) != int(stats_projection.get("detailGoalCount") or 0):
         fail(f"stats projection goal events drifted from factual match details: {stats_projection}")
+    if stats_projection.get("incompleteDetailIds"):
+        fail(f"completed matches have incomplete factual goal events: {stats_projection}")
+    diagnostics = stats_projection.get("diagnostics")
+    if not isinstance(diagnostics, dict):
+        fail(f"app fact diagnostics are missing: {stats_projection}")
+    if diagnostics.get("incompleteMatchIds") or int(diagnostics.get("expectedGoalEvents") or 0) != int(diagnostics.get("observedGoalEvents") or 0):
+        fail(f"app fact diagnostics report incomplete goal events: {diagnostics}")
+    if int(diagnostics.get("completedMatches") or 0) != int(stats_projection.get("completedScheduleCount") or 0):
+        fail(f"app fact diagnostics drifted from the completed schedule: {diagnostics}")
+    leaderboard = payload.get("factualLeaderboard")
+    expected_goals, expected_assists = factual_leaderboard_maxima()
+    if not isinstance(leaderboard, dict):
+        fail(f"browser factual leaderboard evidence is missing: {leaderboard}")
+    if int(leaderboard.get("topGoals") or 0) != expected_goals or int(leaderboard.get("topAssists") or 0) != expected_assists:
+        fail(
+            "browser leaderboard drifted from factual ESPN events: "
+            f"browser={leaderboard}, expected_goals={expected_goals}, expected_assists={expected_assists}"
+        )
+    storage_migration = payload.get("storageMigration")
+    if not isinstance(storage_migration, dict) or storage_migration.get("status") != "migrated":
+        fail(f"legacy prediction storage did not migrate: {storage_migration}")
+    if storage_migration.get("score") != ["9", "8"] or storage_migration.get("legacyKeysRemain"):
+        fail(f"legacy prediction state changed or remained split after migration: {storage_migration}")
+    storage_recovery = payload.get("storageRecovery")
+    if not isinstance(storage_recovery, dict) or storage_recovery.get("status") != "recovered":
+        fail(f"corrupt prediction storage did not recover: {storage_recovery}")
+    if storage_recovery.get("renderError"):
+        fail(f"corrupt prediction storage broke rendering: {storage_recovery}")
+    cache_protection = payload.get("cacheProtection")
+    if not isinstance(cache_protection, dict) or cache_protection.get("status") != "complete":
+        fail(f"stale partial match-detail cache overrode embedded facts: {cache_protection}")
+    if int(cache_protection.get("observed") or 0) != int(cache_protection.get("expected") or 0):
+        fail(f"stale match-detail cache changed factual event coverage: {cache_protection}")
     ok("browser completed mode matrix and read-only share flow")
 
 
@@ -526,7 +602,23 @@ async () => {
     actualMatchCount: actualProjectedMatches.length,
     completedScheduleCount: completedSchedule.length,
     actualGoalCount: actualProjectedMatches.reduce((sum, match) => sum + (match.events || []).filter(isCountedGoal).length, 0),
-    detailGoalCount: completedSchedule.reduce((sum, match) => sum + (((MATCH_DETAILS[match.id] || {}).events || []).filter((event) => event.type === "goal" && !event.own_goal).length), 0)
+    detailGoalCount: completedSchedule.reduce((sum, match) => sum + (((MATCH_DETAILS[match.id] || {}).events || []).filter(isCountedGoal).length), 0),
+    incompleteDetailIds: completedSchedule.filter((match) => {
+      const detail = MATCH_DETAILS[match.id] || {};
+      return detail.goalEventsStatus !== "complete" || detail.goalEventCount !== detail.expectedGoalCount;
+    }).map((match) => match.id),
+    diagnostics: APP_DIAGNOSTICS.facts
+  };
+  tab = "scorers";
+  render();
+  const leaderboardCards = Array.from(document.querySelectorAll(".lb-card"));
+  const leaderboardValue = (card) => {
+    const cells = card ? Array.from(card.querySelectorAll("tbody tr:first-child td")) : [];
+    return cells.length ? Number((cells[cells.length - 1].textContent || "").trim()) : 0;
+  };
+  const factualLeaderboard = {
+    topGoals: leaderboardValue(leaderboardCards[0]),
+    topAssists: leaderboardValue(leaderboardCards[1])
   };
   for (const combo of combos) {
     clearState();
@@ -574,6 +666,7 @@ async () => {
   return {
     landing,
     statsProjection,
+    factualLeaderboard,
     modeRuns,
     finalShareUrl: modeRuns[modeRuns.length - 1].shareUrl
   };
@@ -618,6 +711,118 @@ async () => {
 })}
                     """
                 )
+                legacy_state = page.evaluate(
+                    """
+() => {
+  const legacy = initGM();
+  legacy.A[0].hs = "9";
+  legacy.A[0].as = "8";
+  legacy.A[0].predictionSource = "user";
+  return JSON.stringify(legacy);
+}
+                    """
+                )
+                parsed_url = urllib.parse.urlsplit(url)
+                preview_origin = f"{parsed_url.scheme}://{parsed_url.netloc}"
+                migration_context = browser.new_context(
+                    viewport={"width": 1280, "height": 900},
+                    storage_state={
+                        "cookies": [],
+                        "origins": [{
+                            "origin": preview_origin,
+                            "localStorage": [
+                                {"name": "wc26_gm", "value": legacy_state},
+                                {"name": "wc26_ko", "value": "{}"},
+                                {"name": "wc26_slog", "value": "[]"},
+                            ],
+                        }],
+                    },
+                )
+                migration_page = migration_context.new_page()
+                migration_page.on("console", lambda msg: console_errors.append(msg.text) if msg.type == "error" else None)
+                migration_page.on("pageerror", lambda exc: console_errors.append(str(exc)))
+                migration_page.goto(url, wait_until="domcontentloaded", timeout=int(args.timeout * 1000))
+                migration_page.wait_for_selector("#tabs .tabs-inner", timeout=int(args.timeout * 1000))
+                payload["storageMigration"] = migration_page.evaluate(
+                    """
+() => ({
+  status: APP_DIAGNOSTICS.storage.status,
+  score: [gm.A[0].hs, gm.A[0].as],
+  envelopeVersion: JSON.parse(localStorage.getItem(LOCAL_STATE_KEY) || "{}").v,
+  legacyKeysRemain: ["wc26_gm", "wc26_ko", "wc26_slog", "wc26_expG"]
+    .some((key) => localStorage.getItem(key) !== null)
+})
+                    """
+                )
+                migration_context.close()
+                recovery_context = browser.new_context(
+                    viewport={"width": 1280, "height": 900},
+                    storage_state={
+                        "cookies": [],
+                        "origins": [{
+                            "origin": preview_origin,
+                            "localStorage": [{"name": "wc26_state_v1", "value": "{broken-json"}],
+                        }],
+                    },
+                )
+                recovery_page = recovery_context.new_page()
+                recovery_page.on("console", lambda msg: console_errors.append(msg.text) if msg.type == "error" else None)
+                recovery_page.on("pageerror", lambda exc: console_errors.append(str(exc)))
+                recovery_page.goto(url, wait_until="domcontentloaded", timeout=int(args.timeout * 1000))
+                recovery_page.wait_for_selector("#tabs .tabs-inner", timeout=int(args.timeout * 1000))
+                payload["storageRecovery"] = recovery_page.evaluate(
+                    """
+() => ({
+  status: APP_DIAGNOSTICS.storage.status,
+  hasError: Boolean(APP_DIAGNOSTICS.storage.error),
+  renderError: document.body.innerText.includes("错误:")
+})
+                    """
+                )
+                recovery_context.close()
+                partial_detail = json.dumps(
+                    {
+                        "760503": {
+                            "matchId": "760503",
+                            "homeTeamCn": "巴拉圭",
+                            "awayTeamCn": "法国",
+                            "homeScore": 0,
+                            "awayScore": 1,
+                            "expectedGoalCount": 1,
+                            "goalEventCount": 0,
+                            "goalEventsStatus": "partial",
+                            "events": [],
+                        }
+                    },
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                )
+                cache_context = browser.new_context(
+                    viewport={"width": 1280, "height": 900},
+                    storage_state={
+                        "cookies": [],
+                        "origins": [{
+                            "origin": preview_origin,
+                            "localStorage": [{"name": "wc26_match_details", "value": partial_detail}],
+                        }],
+                    },
+                )
+                cache_page = cache_context.new_page()
+                cache_page.on("console", lambda msg: console_errors.append(msg.text) if msg.type == "error" else None)
+                cache_page.on("pageerror", lambda exc: console_errors.append(str(exc)))
+                cache_page.goto(url, wait_until="domcontentloaded", timeout=int(args.timeout * 1000))
+                cache_page.wait_for_selector("#tabs .tabs-inner", timeout=int(args.timeout * 1000))
+                payload["cacheProtection"] = cache_page.evaluate(
+                    """
+() => ({
+  status: MATCH_DETAILS["760503"].goalEventsStatus,
+  observed: MATCH_DETAILS["760503"].goalEventCount,
+  expected: MATCH_DETAILS["760503"].expectedGoalCount,
+  scorer: (MATCH_DETAILS["760503"].events.find((event) => event.type === "penalty_goal") || {}).scorer_source_name || ""
+})
+                    """
+                )
+                cache_context.close()
                 assert_browser_result(payload)
             except RuntimeError:
                 raise

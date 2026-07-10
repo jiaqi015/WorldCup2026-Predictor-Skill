@@ -10,14 +10,12 @@ Adds/updates:
 - MATCH_SCHEDULE: ESPN fixture snapshot, including bilingual venue fields
 - MATCH_DETAILS: completed match events, including team-scoped player mappings
 - MATCH_DATA_META: source manifest for the match snapshot
-- weightedPick: modified to use PLAYER_THREATS_MAP
-- normalizeOddsMarket: modified to try COMPLETE_ODDS
 - TEAM_STRENGTH_TIERS: sync with corrected JSON
+- STRENGTH: derived 1-5 team power values
 """
 
 import json
 import re
-import sys
 from pathlib import Path
 
 BASE = Path(__file__).parent.parent
@@ -25,8 +23,6 @@ INDEX_FILE = BASE / "index.html"
 SKILL_INDEX = BASE / "skills" / "world-cup-2026-predictor" / "assets" / "predictor" / "index.html"
 PREDICTION_FILE = BASE / "data" / "prediction" / "prediction_data_v1.json"
 ELO_FILE = BASE / "data" / "rankings" / "elo_ratings_full.json"
-ODDS_FILE = BASE / "data" / "matches" / "complete_odds.json"
-THREATS_FILE = BASE / "data" / "prediction" / "player_threats.json"
 STRENGTH_TIERS_FILE = BASE / "data" / "rankings" / "team_strength_tiers.json"
 MATCH_SCHEDULE_FILE = BASE / "data" / "matches" / "match_schedule.json"
 MATCH_DETAILS_FILE = BASE / "data" / "matches" / "match_details.json"
@@ -54,12 +50,35 @@ def upsert_var(html, var_name, js_value):
     return html[:idx] + f"var {var_name}={js_value};\n" + html[idx:]
 
 
+def validate_runtime_integrations(html):
+    """Keep data generation from silently rewriting application behavior."""
+    required = {
+        "player threat integration": (
+            "function weightedPick(players,team,weights,fallback,type)",
+            'type==="assist"',
+            'threatMap[team+"|"+p]',
+        ),
+        "complete odds integration": (
+            "function normalizeOddsMarket(market,matchId)",
+            "COMPLETE_ODDS[matchId]",
+            "normalizeOddsMarket(options.oddsMarket,options.matchId)",
+        ),
+    }
+    missing = [
+        name
+        for name, markers in required.items()
+        if not all(marker in html for marker in markers)
+    ]
+    if missing:
+        raise RuntimeError(
+            "index.html is missing runtime integration: " + ", ".join(missing)
+        )
+
+
 def main():
     # Load data
     prediction = load_json(PREDICTION_FILE)
     elo_data = load_json(ELO_FILE)
-    odds_data = load_json(ODDS_FILE)
-    threats_list = load_json(THREATS_FILE)
     strength_tiers = load_json(STRENGTH_TIERS_FILE)
     match_schedule = load_json(MATCH_SCHEDULE_FILE)
     match_details = load_json(MATCH_DETAILS_FILE)
@@ -74,6 +93,10 @@ def main():
     power_scores = {}
     for t in prediction["teams"]:
         power_scores[t["team_cn"]] = t["power_score_0_100"]
+    strength_float = {
+        team_cn: round(power_score / 20, 1)
+        for team_cn, power_score in power_scores.items()
+    }
 
     # Build PLAYER_THREATS_MAP (team-qualified `team|player` key + bare key fallback).
     # Cross-team同名球员（"阿尔瓦雷斯"在阿根廷+墨西哥）需要 team-qualified 区分；
@@ -111,6 +134,7 @@ def main():
     threats_js = to_minified_js(player_threats_map)
     odds_js = to_minified_js(complete_odds)
     tiers_js = to_minified_js(strength_tiers)
+    strength_js = to_minified_js(strength_float)
     schedule_js = to_minified_js(match_schedule)
     details_js = to_minified_js(match_details)
     manifest_js = to_minified_js(match_manifest)
@@ -131,6 +155,7 @@ def main():
 
     html = upsert_var(html, "ELO_RATINGS", elo_js)
     html = upsert_var(html, "TEAM_STRENGTH_TIERS", tiers_js)
+    html = upsert_var(html, "STRENGTH", strength_js)
     html = upsert_var(html, "POWER_SCORES", power_js)
     html = upsert_var(html, "PLAYER_THREATS_MAP", threats_js)
     html = upsert_var(html, "COMPLETE_ODDS", odds_js)
@@ -138,129 +163,13 @@ def main():
     html = upsert_var(html, "MATCH_DETAILS", details_js)
     html = upsert_var(html, "MATCH_DATA_META", manifest_js)
     changes.append(
-        "ELO_RATINGS, TEAM_STRENGTH_TIERS, POWER_SCORES, "
+        "ELO_RATINGS, TEAM_STRENGTH_TIERS, STRENGTH, POWER_SCORES, "
         "PLAYER_THREATS_MAP, COMPLETE_ODDS, MATCH_SCHEDULE, "
         "MATCH_DETAILS, MATCH_DATA_META (idempotent)"
     )
 
-    # 4. Modify weightedPick to use PLAYER_THREATS_MAP
-    old_weighted_pick = '''function weightedPick(players,team,weights,fallback){
-  if(!players||!players.length)return null;
-  var pool=[];
-  for(var i=0;i<players.length;i++){
-    var p=players[i],pos=getPos(p,team);
-    var w=weights[pos];if(w===undefined)w=fallback;
-    for(var j=0;j<w;j++)pool.push(p);
-  }
-  if(!pool.length)return players[Math.floor(Math.random()*players.length)];
-  return pool[Math.floor(Math.random()*pool.length)];
-}'''
-
-    new_weighted_pick = '''function weightedPick(players,team,weights,fallback,type){
-  if(!players||!players.length)return null;
-  var pool=[];
-  var threatMap=(typeof PLAYER_THREATS_MAP!=="undefined")?PLAYER_THREATS_MAP:null;
-  for(var i=0;i<players.length;i++){
-    var p=players[i],pos=getPos(p,team);
-    var w=weights[pos];if(w===undefined)w=fallback;
-    if(threatMap){
-      // team-qualified key 优先（区分跨队同名），bare key 作 fallback
-      var tEntry=team?threatMap[team+"|"+p]:null;
-      var entry=tEntry||threatMap[p];
-      if(entry){
-        var mult=(type==="assist")?entry.a:entry.g;
-        if(mult>0)w=Math.max(1,Math.round(w*mult));
-      }
-    }
-    for(var j=0;j<w;j++)pool.push(p);
-  }
-  if(!pool.length)return players[Math.floor(Math.random()*players.length)];
-  return pool[Math.floor(Math.random()*pool.length)];
-}'''
-
-    if old_weighted_pick in html:
-        html = html.replace(old_weighted_pick, new_weighted_pick)
-        changes.append("weightedPick (added PLAYER_THREATS_MAP integration)")
-    elif (
-        "function weightedPick(players,team,weights,fallback,type)" in html
-        and 'type==="assist"' in html
-    ):
-        changes.append("weightedPick (already integrated)")
-    else:
-        # Try minified version matching
-        print("[embed] WARNING: Could not find weightedPick exact match, trying fuzzy...")
-        # The code might be minified differently, try to find and replace the key logic
-        old_pattern = r'var w=weights\[pos\];if\(w===undefined\)w=fallback;\s*for\(var j=0;j<w;j\+\+\)pool\.push\(p\);'
-        new_logic = 'var w=weights[pos];if(w===undefined)w=fallback;var _tm=(typeof PLAYER_THREATS_MAP!=="undefined")?PLAYER_THREATS_MAP:null;if(_tm){var _te=team?_tm[team+"|"+p]:null;var _e=_te||_tm[p];if(_e){var _m=(type==="assist")?_e.a:_e.g;if(_m>0)w=Math.max(1,Math.round(w*_m));}}for(var j=0;j<w;j++)pool.push(p);'
-        if re.search(old_pattern, html):
-            html = re.sub(old_pattern, new_logic, html)
-            # Also need to add the type parameter to the function signature
-            html = html.replace(
-                'function weightedPick(players,team,weights,fallback)',
-                'function weightedPick(players,team,weights,fallback,type)'
-            )
-            changes.append("weightedPick (fuzzy match)")
-        else:
-            print("[embed] WARNING: Could not modify weightedPick")
-
-    # 5. Modify normalizeOddsMarket to try COMPLETE_ODDS
-    old_normalize = '''function normalizeOddsMarket(market){
-  if(!market)return null;
-  var implied={};
-  if(Number(market.home)>1)implied.home=1/Number(market.home);
-  if(Number(market.draw)>1)implied.draw=1/Number(market.draw);
-  if(Number(market.away)>1)implied.away=1/Number(market.away);
-  if(!implied.home||!implied.away)return null;
-  return normalize(implied);
-}'''
-
-    new_normalize = '''function normalizeOddsMarket(market,matchId){
-  var co=(typeof COMPLETE_ODDS!=="undefined"&&matchId)?COMPLETE_ODDS[matchId]:null;
-  if(co){
-    var ci={home:1/co.h,draw:1/co.d,away:1/co.a};
-    return normalize(ci);
-  }
-  if(!market)return null;
-  var implied={};
-  if(Number(market.home)>1)implied.home=1/Number(market.home);
-  if(Number(market.draw)>1)implied.draw=1/Number(market.draw);
-  if(Number(market.away)>1)implied.away=1/Number(market.away);
-  if(!implied.home||!implied.away)return null;
-  return normalize(implied);
-}'''
-
-    if old_normalize in html:
-        html = html.replace(old_normalize, new_normalize)
-        changes.append("normalizeOddsMarket (COMPLETE_ODDS integration)")
-
-        # Update call site to pass matchId
-        # Find: normalizeOddsMarket(options.oddsMarket)
-        # Replace with: normalizeOddsMarket(options.oddsMarket,options.matchId)
-        html = html.replace(
-            'normalizeOddsMarket(options.oddsMarket)',
-            'normalizeOddsMarket(options.oddsMarket,options.matchId)'
-        )
-        changes.append("normalizeOddsMarket call site (added matchId param)")
-    elif (
-        "function normalizeOddsMarket(market,matchId)" in html
-        and "COMPLETE_ODDS[matchId]" in html
-    ):
-        changes.append("normalizeOddsMarket (already integrated)")
-    else:
-        print("[embed] WARNING: Could not find normalizeOddsMarket exact match")
-
-    # 6. Update STRENGTH variable with float power scores (backward compatible)
-    # Convert power scores to 1-5 float scale for STRENGTH
-    strength_float = {}
-    for team_cn, ps in power_scores.items():
-        strength_float[team_cn] = round(ps / 20, 1)  # 0→0.0, 50→2.5, 100→5.0
-    strength_js = to_minified_js(strength_float)
-
-    # Check if STRENGTH exists and replace it
-    strength_pattern = r'var STRENGTH=\{[^}]+\};'
-    if re.search(strength_pattern, html, re.DOTALL):
-        html = re.sub(strength_pattern, f'var STRENGTH={strength_js};', html, flags=re.DOTALL)
-        changes.append("STRENGTH (upgraded from integer tiers to float power scores)")
+    validate_runtime_integrations(html)
+    changes.append("runtime integration contract (validated, not rewritten)")
 
     # Write output
     INDEX_FILE.write_text(html, encoding="utf-8")

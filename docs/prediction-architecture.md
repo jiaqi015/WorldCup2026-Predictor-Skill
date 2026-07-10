@@ -101,6 +101,23 @@ with a deliberate compatibility map:
 Changing gameplay mode automatically selects the first compatible strategy when
 the previous selection is no longer valid.
 
+## State And Fact Boundaries
+
+- `gm`, `ko`, and `slog` are one user-owned prediction snapshot, persisted in a
+  versioned atomic envelope and migrated from legacy split local-storage keys.
+- `ACTUAL_RESULTS`, `MATCH_SCHEDULE`, and `MATCH_DETAILS` are facts. They never
+  become editable prediction state.
+- ESPN summary events are normalized into `goal`, `penalty_goal`, and
+  `own_goal`; score totals and event totals must agree before release.
+- The runtime detail cache is quality-monotonic: a partial cached summary cannot
+  overwrite a complete embedded summary for the same scoreline.
+- `APP_DIAGNOSTICS` exposes storage recovery and factual event coverage for
+  browser and deployment verification.
+
+Generated-data scripts only replace declared data variables. They validate the
+`weightedPick` and `normalizeOddsMarket` runtime contracts but never rewrite
+those functions.
+
 ## Provider Extension Points
 
 Provider modules should adapt external data into the engine inputs instead of changing UI code:

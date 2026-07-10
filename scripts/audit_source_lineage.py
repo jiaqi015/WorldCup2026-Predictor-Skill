@@ -176,6 +176,16 @@ def assert_match_lineage(errors: list[str]) -> None:
             fail(f"{mid}: missing goal events but status is not partial", errors)
         if len(goal_events) == expected_goals and match.get("goalEventsStatus") != "complete":
             fail(f"{mid}: complete goal event coverage but status is not complete", errors)
+        coverage = match.get("goalEventCoverage")
+        expected_coverage = {
+            "expected": expected_goals,
+            "observed": len(goal_events),
+            "missing": max(0, expected_goals - len(goal_events)),
+            "status": match.get("goalEventsStatus"),
+            "source": "ESPN summary API keyEvents",
+        }
+        if coverage != expected_coverage:
+            fail(f"{mid}: goalEventCoverage does not match the normalized event list", errors)
 
 
 def assert_prediction_lineage(errors: list[str]) -> None:

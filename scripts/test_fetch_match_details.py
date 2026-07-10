@@ -132,21 +132,22 @@ class TestParseKeyEvents(unittest.TestCase):
         fdm.PLAYER_DATA_NORMALIZED.clear()
         fdm.PLAYER_DISPLAY_CN.clear()
         add_player_mapping("Penalty Taker", {"cn": "点球手", "team": "主队", "jersey": 10})
+        add_player_mapping("Scorer One", {"cn": "进球者", "team": "主队", "jersey": 9})
         add_player_mapping("Defender OG", {"cn": "乌龙后卫", "team": "客队", "jersey": 4})
 
     def test_penalty_and_own_goal_are_scoring_events(self):
         events = fdm.parse_key_events(
             [
                 {
-                    "type": {"id": "70", "text": "Penalty - Scored"},
-                    "penaltyKick": True,
+                    "type": {"id": "98", "text": "Penalty - Scored"},
+                    "text": "Goal! Home 1, Away 0. Penalty Taker converts the penalty.",
                     "team": {"id": "1"},
                     "clock": {"displayValue": "17'"},
                     "participants": [{"athlete": {"displayName": "Penalty Taker"}}],
                 },
                 {
-                    "type": {"id": "70", "text": "Own Goal"},
-                    "ownGoal": True,
+                    "type": {"id": "97", "text": "Own Goal"},
+                    "text": "Own Goal by Defender OG, Away. Home 2, Away 0.",
                     "team": {"id": "1"},
                     "clock": {"displayValue": "44'"},
                     "participants": [{"athlete": {"displayName": "Defender OG"}}],
@@ -165,6 +166,32 @@ class TestParseKeyEvents(unittest.TestCase):
         self.assertEqual(events[1]["scoring_team_cn"], "主队")
         self.assertEqual(events[1]["player_team_cn"], "客队")
         self.assertEqual(events[1]["scorer_team_cn"], "客队")
+
+    def test_goal_detection_uses_event_text_without_matching_saved_shots(self):
+        events = fdm.parse_key_events(
+            [
+                {
+                    "type": {"id": "999", "text": "Scoring Play"},
+                    "text": "Goal! Home 1, Away 0. Scorer One scores.",
+                    "team": {"id": "1"},
+                    "clock": {"displayValue": "8'"},
+                    "participants": [{"athlete": {"displayName": "Scorer One"}}],
+                },
+                {
+                    "type": {"id": "106", "text": "Shot On Target"},
+                    "text": "Attempt saved in the centre of the goal.",
+                    "team": {"id": "1"},
+                    "clock": {"displayValue": "9'"},
+                    "participants": [{"athlete": {"displayName": "Penalty Taker"}}],
+                },
+            ],
+            "1",
+            "主队",
+            "客队",
+        )
+
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]["type"], "goal")
 
     def test_goal_event_carries_factual_display_name(self):
         fdm.PLAYER_DISPLAY_CN["Gabriel Martinelli"] = "马丁内利"

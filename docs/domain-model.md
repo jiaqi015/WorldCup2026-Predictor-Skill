@@ -210,6 +210,12 @@ score is not enough once a shootout can leave the official scoreline level.
 Shootout kicks decide advancement only. They must not enter the official
 scoreline, scorer leaderboard, or assist leaderboard.
 
+Observed ESPN events use the same scoring taxonomy. Every completed match
+stores a `goalEventCoverage` contract with `expected`, `observed`, `missing`,
+`status`, and source. A release is rejected when the scoreline total differs
+from normalized scoring events. This prevents a completed score from silently
+producing an incomplete leaderboard or award result.
+
 Compact share URLs may use the older winner/loser shape only for regulation
 wins. Extra-time and shootout decisions require the full state payload so the
 winner, official scoreline, and shootout score survive round-trips.
@@ -251,6 +257,18 @@ Every fact, feature, and prediction should carry:
    prediction history is durable.
 
 This sequence improves auditability without forcing a large UI rewrite.
+
+## Browser State Contract
+
+Editable prediction state is persisted as one versioned `wc26_state_v1`
+envelope containing group predictions, knockout decisions, event logs, model
+mode, and expected-goals selection. The browser validates the full envelope
+before applying it. Legacy split keys are migrated once; malformed state is
+discarded as a unit instead of mixing valid and corrupt fragments.
+
+External match-detail cache is a read-through fact cache, not prediction
+state. A cached detail may replace embedded data only when the scoreline is the
+same and its goal-event coverage is strictly more complete.
 
 ## Machine-Readable Assets
 

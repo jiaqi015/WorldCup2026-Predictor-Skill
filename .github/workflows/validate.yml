@@ -20,5 +20,11 @@ jobs:
           python-version: "3.12"
       - name: Validate skill, plugin, and predictor
         run: python3 scripts/release_check.py
+      - name: Install browser verification runtime
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Verify complete browser journeys and storage migrations
+        run: python3 scripts/full_system_experience_test.py
       - name: Check whitespace
         run: git diff --check

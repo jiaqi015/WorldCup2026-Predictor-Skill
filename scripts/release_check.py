@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import gzip
 import json
 import os
 import re
@@ -23,6 +24,8 @@ SEMVER = re.compile(
     r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
     r"(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$"
 )
+MAX_APP_BYTES = 3_500_000
+MAX_APP_GZIP_BYTES = 600_000
 
 
 def fail(message: str) -> None:
@@ -151,6 +154,16 @@ def validate_match_data_consistency() -> None:
     details_count = len(details)
     schedule_ids = {mid for mid, match in schedule.items() if match.get("completed")}
     detail_ids = set(details.keys())
+    incomplete_goal_events = {
+        mid: {
+            "expected": detail.get("expectedGoalCount"),
+            "observed": detail.get("goalEventCount"),
+            "status": detail.get("goalEventsStatus"),
+        }
+        for mid, detail in details.items()
+        if detail.get("goalEventsStatus") != "complete"
+        or detail.get("goalEventCount") != detail.get("expectedGoalCount")
+    }
 
     html_source = (ROOT / "index.html").read_text(encoding="utf-8")
     embedded_details = json.loads(extract_js_object(html_source, "MATCH_DETAILS"))
@@ -182,11 +195,32 @@ def validate_match_data_consistency() -> None:
             f"missing_details={missing_details}, "
             f"extra_details={extra_details}"
         )
+    if incomplete_goal_events:
+        fail(
+            "completed match goal-event coverage is incomplete: "
+            + json.dumps(incomplete_goal_events, ensure_ascii=False, sort_keys=True)
+        )
+
+
+def validate_app_size_budget() -> None:
+    payload = (ROOT / "index.html").read_bytes()
+    raw_size = len(payload)
+    gzip_size = len(gzip.compress(payload, compresslevel=9))
+    if raw_size > MAX_APP_BYTES or gzip_size > MAX_APP_GZIP_BYTES:
+        fail(
+            "single-file app exceeded its performance budget: "
+            f"raw={raw_size}/{MAX_APP_BYTES}, gzip={gzip_size}/{MAX_APP_GZIP_BYTES}"
+        )
+    print(
+        "App size budget passed: "
+        f"raw={raw_size}/{MAX_APP_BYTES}, gzip={gzip_size}/{MAX_APP_GZIP_BYTES}."
+    )
 
 
 def main() -> int:
     try:
         version = validate_metadata()
+        validate_app_size_budget()
         run(
             [
                 sys.executable,
@@ -223,6 +257,7 @@ def main() -> int:
         run([sys.executable, str(ROOT / "scripts" / "test_photo_pipeline_integration.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_update_index.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_fetch_match_details.py")])
+        run([sys.executable, str(ROOT / "scripts" / "test_embed_prediction_data.py")])
         run([sys.executable, str(ROOT / "scripts" / "test_verify_public_deployment.py")])
         validate_match_data_consistency()
         if shutil.which("node"):

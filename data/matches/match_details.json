@@ -10,6 +10,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -1114,6 +1121,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -2167,6 +2181,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -3255,6 +3276,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "own_goal",
@@ -4435,8 +4463,15 @@
     "attendance": 67966,
     "referee": "Martínez, Héctor",
     "expectedGoalCount": 2,
-    "goalEventCount": 1,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 2,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -4453,6 +4488,26 @@
         "player_position": null,
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Mahmoud Abunada"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "17'",
+        "team": "away",
+        "team_cn": "瑞士",
+        "scoring_team_cn": "瑞士",
+        "player_team_cn": "瑞士",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Breel Embolo",
+        "scorer_display_name_cn": "恩博洛",
+        "scorer_cn": "恩博洛",
+        "scorer_app_alias": "恩博洛",
+        "scorer_team_cn": "瑞士",
+        "scorer_jersey": "7",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Breel Embolo"
       },
       {
         "type": "yellowCard",
@@ -5455,6 +5510,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -6478,6 +6540,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -7512,6 +7581,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -8525,8 +8601,15 @@
     "attendance": 68021,
     "referee": "Jalal Jayed",
     "expectedGoalCount": 8,
-    "goalEventCount": 7,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 8,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 8,
+      "observed": 8,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -8605,6 +8688,26 @@
         "assist_position": null,
         "assist_mapping_status": "matched_team_player",
         "assist_mapping_key": "Nathaniel Brown"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "45'+5'",
+        "team": "home",
+        "team_cn": "德国",
+        "scoring_team_cn": "德国",
+        "player_team_cn": "德国",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Kai Havertz",
+        "scorer_display_name_cn": "哈弗茨",
+        "scorer_cn": "哈弗茨",
+        "scorer_app_alias": "哈弗茨",
+        "scorer_team_cn": "德国",
+        "scorer_jersey": "7",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Kai Havertz"
       },
       {
         "type": "goal",
@@ -9671,6 +9774,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -10785,6 +10895,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -11828,6 +11945,13 @@
     "expectedGoalCount": 6,
     "goalEventCount": 6,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 6,
+      "observed": 6,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -12959,6 +13083,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -13941,6 +14072,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -14987,6 +15125,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -15959,6 +16104,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -17015,6 +17167,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -18072,6 +18231,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -19165,6 +19331,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -20191,8 +20364,15 @@
     "attendance": 68527,
     "referee": "Beida Damane",
     "expectedGoalCount": 4,
-    "goalEventCount": 3,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 4,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -20287,6 +20467,26 @@
         "player_position": "M",
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Marcel Sabitzer"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "90'+12'",
+        "team": "home",
+        "team_cn": "奥地利",
+        "scoring_team_cn": "奥地利",
+        "player_team_cn": "奥地利",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Marko Arnautovic",
+        "scorer_display_name_cn": "阿瑙托维奇",
+        "scorer_cn": "阿瑙托维奇",
+        "scorer_app_alias": "阿瑙托维奇",
+        "scorer_team_cn": "奥地利",
+        "scorer_jersey": "7",
+        "scorer_position": null,
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Marko Arnautovic"
       }
     ],
     "stats": {
@@ -21237,6 +21437,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -22307,9 +22514,36 @@
     "attendance": 70389,
     "referee": "Clément Turpin",
     "expectedGoalCount": 6,
-    "goalEventCount": 5,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 6,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 6,
+      "observed": 6,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
+      {
+        "type": "penalty_goal",
+        "minute": "12'",
+        "team": "home",
+        "team_cn": "英格兰",
+        "scoring_team_cn": "英格兰",
+        "player_team_cn": "英格兰",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Harry Kane",
+        "scorer_display_name_cn": "凯恩",
+        "scorer_cn": "凯恩",
+        "scorer_app_alias": "凯恩",
+        "scorer_team_cn": "英格兰",
+        "scorer_jersey": "9",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Harry Kane"
+      },
       {
         "type": "goal",
         "minute": "36'",
@@ -23387,6 +23621,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -24397,6 +24638,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -25484,8 +25732,15 @@
     "attendance": 67442,
     "referee": "Tori Penso",
     "expectedGoalCount": 2,
-    "goalEventCount": 1,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 2,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -25563,6 +25818,26 @@
         "player_position": null,
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Ladislav Krejcí"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "83'",
+        "team": "away",
+        "team_cn": "南非",
+        "scoring_team_cn": "南非",
+        "player_team_cn": "南非",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Teboho Mokoena",
+        "scorer_display_name_cn": "莫科纳",
+        "scorer_cn": "莫科纳",
+        "scorer_app_alias": "莫科纳",
+        "scorer_team_cn": "南非",
+        "scorer_jersey": "4",
+        "scorer_position": "M",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Teboho Mokoena"
       }
     ],
     "stats": {
@@ -26460,8 +26735,15 @@
     "attendance": 70026,
     "referee": "João Pinheiro",
     "expectedGoalCount": 5,
-    "goalEventCount": 4,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 5,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -26624,6 +26906,26 @@
         "scorer_position": null,
         "scorer_mapping_status": "matched_team_player",
         "scorer_mapping_key": "Ermin Mahmic"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "90'+7'",
+        "team": "home",
+        "team_cn": "瑞士",
+        "scoring_team_cn": "瑞士",
+        "player_team_cn": "瑞士",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Granit Xhaka",
+        "scorer_display_name_cn": "扎卡",
+        "scorer_cn": "扎卡",
+        "scorer_app_alias": "扎卡",
+        "scorer_team_cn": "瑞士",
+        "scorer_jersey": "10",
+        "scorer_position": "M",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Granit Xhaka"
       }
     ],
     "stats": {
@@ -27557,6 +27859,13 @@
     "expectedGoalCount": 6,
     "goalEventCount": 6,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 6,
+      "observed": 6,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -28683,6 +28992,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -29668,6 +29984,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "own_goal",
@@ -30753,6 +31076,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -31764,6 +32094,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -32839,6 +33176,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -33866,6 +34210,13 @@
     "expectedGoalCount": 6,
     "goalEventCount": 6,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 6,
+      "observed": 6,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -35021,6 +35372,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -36049,6 +36407,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -37095,6 +37460,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -38127,6 +38499,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -39216,6 +39595,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -40180,6 +40566,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -41249,6 +41642,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -42363,6 +42763,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -43426,6 +43833,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -44479,6 +44893,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -45565,6 +45986,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -46608,6 +47036,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -47708,6 +48143,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -48690,6 +49132,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -49701,6 +50150,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -50728,6 +51184,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -51766,6 +52229,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -52800,6 +53270,13 @@
     "expectedGoalCount": 6,
     "goalEventCount": 6,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 6,
+      "observed": 6,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "own_goal",
@@ -53954,6 +54431,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -55022,6 +55506,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -56058,6 +56549,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -57035,6 +57533,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -58091,6 +58596,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -59158,6 +59670,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -60197,6 +60716,13 @@
     "expectedGoalCount": 4,
     "goalEventCount": 4,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "own_goal",
@@ -61220,6 +61746,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -62151,6 +62684,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -63227,6 +63767,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -64354,6 +64901,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -65512,6 +66066,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -66492,6 +67053,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -67551,6 +68119,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -68628,6 +69203,13 @@
     "expectedGoalCount": 6,
     "goalEventCount": 6,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 6,
+      "observed": 6,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -69723,6 +70305,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -70792,6 +71381,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -71831,6 +72427,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -72795,8 +73398,15 @@
     "attendance": 68239,
     "referee": "Felix Zwayer",
     "expectedGoalCount": 4,
-    "goalEventCount": 3,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 4,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -72906,6 +73516,26 @@
         "player_position": "M",
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Samuel Moutoussamy"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "68'",
+        "team": "home",
+        "team_cn": "刚果金",
+        "scoring_team_cn": "刚果金",
+        "player_team_cn": "刚果金",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Yoane Wissa",
+        "scorer_display_name_cn": "维萨",
+        "scorer_cn": "维萨",
+        "scorer_app_alias": "维萨",
+        "scorer_team_cn": "刚果金",
+        "scorer_jersey": "20",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Yoane Wissa"
       },
       {
         "type": "goal",
@@ -73905,6 +74535,13 @@
     "expectedGoalCount": 6,
     "goalEventCount": 6,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 6,
+      "observed": 6,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -75017,8 +75654,15 @@
     "attendance": 70649,
     "referee": "Istvan Kovacs",
     "expectedGoalCount": 4,
-    "goalEventCount": 3,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 4,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 4,
+      "observed": 4,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -75055,6 +75699,26 @@
         "scorer_position": null,
         "scorer_mapping_status": "matched_team_player",
         "scorer_mapping_key": "Giovani Lo Celso"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "31'",
+        "team": "away",
+        "team_cn": "阿根廷",
+        "scoring_team_cn": "阿根廷",
+        "player_team_cn": "阿根廷",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Lautaro Martínez",
+        "scorer_display_name_cn": "劳塔罗",
+        "scorer_cn": "劳塔罗",
+        "scorer_app_alias": "劳塔罗",
+        "scorer_team_cn": "阿根廷",
+        "scorer_jersey": "22",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Lautaro Martínez"
       },
       {
         "type": "goal",
@@ -76086,6 +76750,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -77054,6 +77725,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -78145,6 +78823,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -79183,6 +79868,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -80207,6 +80899,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -81260,6 +81959,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -82280,6 +82986,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -83352,6 +84065,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -84419,8 +85139,15 @@
     "attendance": 66925,
     "referee": "Martínez, Héctor",
     "expectedGoalCount": 5,
-    "goalEventCount": 4,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 5,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -84560,6 +85287,26 @@
         "assist_position": "F",
         "assist_mapping_status": "matched_team_player",
         "assist_mapping_key": "Leandro Trossard"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "120'+5'",
+        "team": "home",
+        "team_cn": "比利时",
+        "scoring_team_cn": "比利时",
+        "player_team_cn": "比利时",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Youri Tielemans",
+        "scorer_display_name_cn": "蒂勒曼斯",
+        "scorer_cn": "蒂勒曼斯",
+        "scorer_app_alias": "蒂勒曼斯",
+        "scorer_team_cn": "比利时",
+        "scorer_jersey": "8",
+        "scorer_position": "M",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Youri Tielemans"
       }
     ],
     "stats": {
@@ -85476,6 +86223,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -86464,6 +87218,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -87515,8 +88276,15 @@
     "attendance": 43036,
     "referee": "Espen Eskas",
     "expectedGoalCount": 3,
-    "goalEventCount": 2,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 3,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -87569,6 +88337,26 @@
         "player_position": null,
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Luka Modric"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "68'",
+        "team": "home",
+        "team_cn": "葡萄牙",
+        "scoring_team_cn": "葡萄牙",
+        "player_team_cn": "葡萄牙",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Cristiano Ronaldo",
+        "scorer_display_name_cn": "C罗",
+        "scorer_cn": "C罗",
+        "scorer_app_alias": "C罗",
+        "scorer_team_cn": "葡萄牙",
+        "scorer_jersey": "7",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Cristiano Ronaldo"
       },
       {
         "type": "goal",
@@ -88564,6 +89352,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -89544,6 +90339,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -90490,6 +91292,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -91608,6 +92417,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -92667,6 +93483,13 @@
     "expectedGoalCount": 3,
     "goalEventCount": 3,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -93813,8 +94636,15 @@
     "attendance": 68324,
     "referee": "Ilgiz Tantashev",
     "expectedGoalCount": 1,
-    "goalEventCount": 0,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 1,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -93831,6 +94661,26 @@
         "player_position": null,
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Bradley Barcola"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "70'",
+        "team": "away",
+        "team_cn": "法国",
+        "scoring_team_cn": "法国",
+        "player_team_cn": "法国",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Kylian Mbappé",
+        "scorer_display_name_cn": "姆巴佩",
+        "scorer_cn": "姆巴佩",
+        "scorer_app_alias": "姆巴佩",
+        "scorer_team_cn": "法国",
+        "scorer_jersey": "10",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Kylian Mbappé"
       },
       {
         "type": "yellowCard",
@@ -94811,8 +95661,15 @@
     "attendance": 80663,
     "referee": "Ismail Elfath",
     "expectedGoalCount": 3,
-    "goalEventCount": 2,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 3,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 3,
+      "observed": 3,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -94887,6 +95744,26 @@
         "player_position": "F",
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Neymar"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "90'+10'",
+        "team": "home",
+        "team_cn": "巴西",
+        "scoring_team_cn": "巴西",
+        "player_team_cn": "巴西",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Neymar",
+        "scorer_display_name_cn": "内马尔",
+        "scorer_cn": "内马尔",
+        "scorer_app_alias": "内马尔",
+        "scorer_team_cn": "巴西",
+        "scorer_jersey": "10",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Neymar"
       }
     ],
     "stats": {
@@ -95801,8 +96678,15 @@
     "attendance": 80824,
     "referee": "Alireza Faghani",
     "expectedGoalCount": 5,
-    "goalEventCount": 3,
-    "goalEventsStatus": "partial",
+    "goalEventCount": 5,
+    "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -95915,6 +96799,26 @@
         "player_mapping_key": "Jarell Quansah"
       },
       {
+        "type": "penalty_goal",
+        "minute": "60'",
+        "team": "away",
+        "team_cn": "英格兰",
+        "scoring_team_cn": "英格兰",
+        "player_team_cn": "英格兰",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Harry Kane",
+        "scorer_display_name_cn": "凯恩",
+        "scorer_cn": "凯恩",
+        "scorer_app_alias": "凯恩",
+        "scorer_team_cn": "英格兰",
+        "scorer_jersey": "9",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Harry Kane"
+      },
+      {
         "type": "yellowCard",
         "minute": "68'",
         "team": "away",
@@ -95929,6 +96833,26 @@
         "player_position": "D",
         "player_mapping_status": "matched_team_player",
         "player_mapping_key": "Marc Guéhi"
+      },
+      {
+        "type": "penalty_goal",
+        "minute": "69'",
+        "team": "home",
+        "team_cn": "墨西哥",
+        "scoring_team_cn": "墨西哥",
+        "player_team_cn": "墨西哥",
+        "own_goal": false,
+        "penalty_kick": true,
+        "source": "ESPN summary API",
+        "scorer_source_name": "Raúl Jiménez",
+        "scorer_display_name_cn": "劳尔·希门尼斯",
+        "scorer_cn": "劳尔·希门尼斯",
+        "scorer_app_alias": "希门尼斯MEX",
+        "scorer_team_cn": "墨西哥",
+        "scorer_jersey": "9",
+        "scorer_position": "F",
+        "scorer_mapping_status": "matched_team_player",
+        "scorer_mapping_key": "Raúl Jiménez (Mexico)"
       },
       {
         "type": "yellowCard",
@@ -96943,6 +97867,13 @@
     "expectedGoalCount": 1,
     "goalEventCount": 1,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 1,
+      "observed": 1,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -97970,6 +98901,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -99071,6 +100009,13 @@
     "expectedGoalCount": 5,
     "goalEventCount": 5,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 5,
+      "observed": 5,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",
@@ -100196,6 +101141,13 @@
     "expectedGoalCount": 0,
     "goalEventCount": 0,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 0,
+      "observed": 0,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "yellowCard",
@@ -101175,6 +102127,13 @@
     "expectedGoalCount": 2,
     "goalEventCount": 2,
     "goalEventsStatus": "complete",
+    "goalEventCoverage": {
+      "expected": 2,
+      "observed": 2,
+      "missing": 0,
+      "status": "complete",
+      "source": "ESPN summary API keyEvents"
+    },
     "events": [
       {
         "type": "goal",

@@ -265,6 +265,8 @@ Important accuracy notes:
 - Some three-way odds are model completions of partial source fields.
 - Player and squad data is a dated simulation snapshot, not a final FIFA registration list.
 - ESPN public payloads are external contracts and can change.
+- Completed-result releases require every scoreline goal to have a normalized ESPN event; the data tab reports the observed/expected event coverage.
+- Browser predictions use one versioned local snapshot. Legacy saves migrate automatically, and corrupt saves recover as a unit.
 
 ## Real Result Scoring
 

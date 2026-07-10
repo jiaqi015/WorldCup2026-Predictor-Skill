@@ -34,6 +34,7 @@ TEAM_CN = {
 PLAYER_DATA = {}
 PLAYER_DATA_NORMALIZED = {}
 SCORING_EVENT_TYPES = {"goal", "penalty_goal", "own_goal"}
+ESPN_SCORING_TYPE_IDS = {"70", "97", "98", "137", "138", "173"}
 
 PLAYER_DISPLAY_CN = {
     "Julián Quiñones": "胡利安·基尼奥内斯",
@@ -234,6 +235,32 @@ def fetch_json(url):
                 print(f"  ERROR fetching {url}: {e}", file=sys.stderr)
                 return None
 
+def is_espn_goal_event(event):
+    """Recognize ESPN scoring events without matching ordinary shots at goal."""
+    event_type = event.get("type") or {}
+    type_id = str(event_type.get("id") or "")
+    type_text = str(event_type.get("text") or event_type.get("type") or "").lower()
+    event_text = str(event.get("text") or "").lower().lstrip()
+    return (
+        type_id in ESPN_SCORING_TYPE_IDS
+        or "goal" in type_text
+        or ("penalty" in type_text and "scored" in type_text)
+        or event_text.startswith("goal!")
+        or event_text.startswith("own goal")
+    )
+
+
+def goal_event_coverage(expected, observed):
+    status = "complete" if observed == expected else "partial" if observed < expected else "extra"
+    return {
+        "expected": expected,
+        "observed": observed,
+        "missing": max(0, expected - observed),
+        "status": status,
+        "source": "ESPN summary API keyEvents",
+    }
+
+
 def parse_key_events(key_events, home_team_id, home_team_cn, away_team_cn):
     """Parse key events to extract goals, cards, etc."""
     events = []
@@ -242,12 +269,13 @@ def parse_key_events(key_events, home_team_id, home_team_cn, away_team_cn):
         type_id = event_type.get("id")
         type_text = event_type.get("text", "")
 
-        type_text_l = str(type_text or event.get("text", "")).lower()
+        event_text_l = str(event.get("text", "")).lower()
+        combined_text_l = f"{type_text} {event_text_l}".lower()
 
         # Goal events (type 70 = goal, 137 = header goal). Keep special goal
         # types in the same scoring-event family so score/detail coverage stays
         # correct when ESPN marks penalties or own goals explicitly.
-        if type_id in ["70", "137"] or "goal" in type_text_l:
+        if is_espn_goal_event(event):
             participants = event.get("participants", [])
             scorer = participants[0].get("athlete", {}).get("displayName", "") if len(participants) > 0 else ""
             assister = participants[1].get("athlete", {}).get("displayName", "") if len(participants) > 1 else None
@@ -255,8 +283,12 @@ def parse_key_events(key_events, home_team_id, home_team_cn, away_team_cn):
             team_id = event.get("team", {}).get("id", "")
             team_cn = "home" if team_id == home_team_id else "away"
             expected_team = home_team_cn if team_cn == "home" else away_team_cn
-            own_goal = bool(event.get("ownGoal")) or "own goal" in type_text_l
-            penalty_kick = (not own_goal) and (bool(event.get("penaltyKick")) or "penalty" in type_text_l)
+            own_goal = bool(event.get("ownGoal")) or "own goal" in combined_text_l
+            penalty_kick = (not own_goal) and (
+                bool(event.get("penaltyKick"))
+                or "penalty" in str(type_text).lower()
+                or "converts the penalty" in event_text_l
+            )
             player_team = (
                 away_team_cn if own_goal and team_cn == "home"
                 else home_team_cn if own_goal
@@ -496,12 +528,8 @@ def main():
         events = parse_key_events(key_events, home_team_id, home_cn, away_cn)
         expected_goal_count = home_score + away_score
         goal_event_count = sum(1 for e in events if e.get("type") in SCORING_EVENT_TYPES)
-        if goal_event_count == expected_goal_count:
-            goal_events_status = "complete"
-        elif goal_event_count < expected_goal_count:
-            goal_events_status = "partial"
-        else:
-            goal_events_status = "extra"
+        coverage = goal_event_coverage(expected_goal_count, goal_event_count)
+        goal_events_status = coverage["status"]
 
         # Parse team stats
         boxscore = summary.get("boxscore", {})
@@ -519,6 +547,7 @@ def main():
             "expectedGoalCount": expected_goal_count,
             "goalEventCount": goal_event_count,
             "goalEventsStatus": goal_events_status,
+            "goalEventCoverage": coverage,
             "events": events,
             "stats": stats,
             "lineups": lineups,

@@ -112,7 +112,8 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
   assert.match(html, /event\.type==="own_goal"/);
   assert.match(html, /ownGoal:isOwn/);
   assert.match(html, /event\.type==="penalty_goal"/);
-  assert.match(html, /event\.ownGoal\|\|event\.own_goal/);
+  assert.match(html, /ownGoal:!!e\.own_goal/);
+  assert.match(html, /ownGoal:!!s\.ownGoal/);
   assert.match(html, /function pushAutoGoalFromEvent\(target,event,scoringTeam,opponentTeam,mid\)\{/);
   assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)return/);
   assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)continue/);
@@ -549,11 +550,15 @@ test("fresh live scores hydrate missing ESPN summary goal events at runtime", ()
   assert.match(html, /actual\.homeScore!=null\?actual\.homeScore:actual\.h/);
   assert.match(html, /actual\.awayScore!=null\?actual\.awayScore:actual\.a/);
   assert.match(html, /function parseEspnSummaryDetails\(summary,matchId,actual\)/);
+  assert.match(html, /id==="98"/);
+  assert.match(html, /eventText\.indexOf\("goal!"\)===0/);
   assert.match(html, /function fetchActualMatchDetails\(matchId,actual\)/);
   assert.match(html, /function hydrateMissingActualDetails\(\)/);
   assert.match(html, /var knockout=ACTUAL_RESULTS&&ACTUAL_RESULTS\.knockout\?ACTUAL_RESULTS\.knockout:\{\}/);
   assert.match(html, /matchDetailNeedsHydration\(koMatchId,koActual\)/);
   assert.match(html, /function loadCachedMatchDetails\(\)/);
+  assert.match(html, /function shouldUseCachedMatchDetail\(cached,current\)/);
+  assert.match(html, /matchDetailCoverageScore\(cached\)>matchDetailCoverageScore\(current\)/);
   assert.match(html, /localStorage\.getItem\("wc26_match_details"\)/);
   assert.match(html, /MATCH_DETAILS\[matchId\]=detail/);
   assert.match(html, /fetch\(DETAIL_API\+encodeURIComponent\(matchId\)\)/);
@@ -562,19 +567,17 @@ test("fresh live scores hydrate missing ESPN summary goal events at runtime", ()
   assert.match(html, /renderActualGoalEvents\(m\.id\|\|actual\.id,actual\)/);
 });
 
-test("completed match details expose partial ESPN goal-event coverage", () => {
+test("completed match details have complete ESPN goal-event coverage", () => {
   const partials = Object.values(matchDetails).filter(
     (detail) => detail.expectedGoalCount > detail.goalEventCount,
   );
-  assert.ok(partials.length > 0);
+  assert.deepEqual(partials, []);
   assert.ok(
-    partials.every((detail) => detail.goalEventsStatus === "partial"),
+    Object.values(matchDetails).every(
+      (detail) => detail.goalEventsStatus === "complete"
+        && detail.goalEventCount === detail.expectedGoalCount,
+    ),
   );
-  for (const detail of partials) {
-    assert.ok(detail.matchId);
-    assert.equal(detail.goalEventsStatus, "partial");
-    assert.ok(detail.goalEventCount < detail.expectedGoalCount);
-  }
 });
 
 test("Argentina vs Algeria completed match embeds ESPN goal scorers", () => {
@@ -691,6 +694,22 @@ test("shared prediction links use a shorter schedule hash while preserving old l
   );
   assert.match(html, /if\(isViewMode\)\{showViewBanner\(\);applyViewModeLockdown\(\);\}/);
   assert.doesNotMatch(html, /class="vb-icon"|👁/);
+});
+
+test("local prediction state uses one versioned envelope and migrates legacy saves", () => {
+  assert.match(html, /var LOCAL_STATE_KEY="wc26_state_v1",LOCAL_STATE_VERSION=1/);
+  assert.match(html, /function persistedStateSnapshot\(\)/);
+  assert.match(html, /function validatePersistedState\(state\)/);
+  assert.match(html, /\["normal","clone","chaos"\]\.indexOf\(state\.playMode\)===-1/);
+  assert.match(html, /function restorePersistedState\(state\)/);
+  assert.match(html, /function readLegacyPersistedState\(\)/);
+  assert.match(html, /localStorage\.setItem\(LOCAL_STATE_KEY,JSON\.stringify\(persistedStateSnapshot\(\)\)\)/);
+  assert.match(html, /APP_DIAGNOSTICS\.storage\.status="migrated"/);
+  assert.match(html, /APP_DIAGNOSTICS\.storage\.status="recovered"/);
+  assert.match(html, /localStorage\.removeItem\(LOCAL_STATE_KEY\)/);
+  assert.doesNotMatch(html, /localStorage\.setItem\("wc26_gm"/);
+  assert.doesNotMatch(html, /localStorage\.setItem\("wc26_ko"/);
+  assert.doesNotMatch(html, /localStorage\.setItem\("wc26_slog"/);
 });
 
 test("share actions guide clicks and keep long copy text readable", () => {
@@ -1204,13 +1223,16 @@ test("stats leaderboard includes actual scorers and assists exactly once", () =>
   assert.match(html, /function collectTournamentStatMatches\(\)/);
   assert.match(html, /matches=collectTournamentStatMatches\(\)/);
   assert.match(html, /return collectTournamentStatMatches\(\);/);
-  assert.match(html, /function addProjectedEvents\(match\)/);
-  assert.match(html, /function projectedEventTeam\(match,value,fallbackSide\)/);
-  assert.match(html, /function projectedAssistName\(assist\)/);
-  assert.match(html, /statsSourceNote:"已赛 \{actual\} 场使用真实数据 · 未赛 \{simulated\} 场使用你的模拟"/);
-  assert.match(html, /renderAwardsPanel\(PredictionEngine\.deriveTournamentAwards\(\{matches:matches\}\),matches\)/);
-  assert.match(html, /type!=="goal"&&type!=="penalty_goal"/);
-  assert.match(html, /event\.ownGoal\|\|event\.own_goal/);
+  assert.match(html, /awards=PredictionEngine\.deriveTournamentAwards\(\{matches:matches\}\)/);
+  assert.match(html, /awards\.topScorers\|\|\[\]/);
+  assert.match(html, /awards\.topAssists\|\|\[\]/);
+  assert.match(html, /statsSourceNote:"已赛 \{actual\} 场真实数据 · 进球事件 \{observed\}\/\{expected\} · 未赛 \{simulated\} 场模拟"/);
+  assert.match(html, /function tournamentStatCoverage\(matches\)/);
+  assert.match(html, /observed:coverage\.observed,expected:coverage\.expected/);
+  assert.match(html, /renderAwardsPanel\(awards,matches\)/);
+  assert.doesNotMatch(html, /function addProjectedEvents\(match\)/);
+  assert.doesNotMatch(html, /function projectedEventTeam\(/);
+  assert.doesNotMatch(html, /function projectedAssistName\(/);
   assert.doesNotMatch(html, /\}\}add\(slog\);/);
 });
 
