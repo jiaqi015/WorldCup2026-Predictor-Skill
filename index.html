@@ -2111,8 +2111,8 @@ function serializeState(){
       g[grp]=arr;
     }
     var k={};
-    for(var kid in ko){
-      var ks=ko[kid];
+    for(var ki=0;ki<KO_SHARE_IDS.length;ki++){
+      var kid=KO_SHARE_IDS[ki],ks=getKOResult(kid);
       if(!ks||!ks.w)continue;
       var matchScorers=slog.filter(function(s){return s.mid===kid&&s.g===1;}).map(function(s){return [tIdx(s.t),pIdx(s.t,s.p)];});
       var matchAssists =slog.filter(function(s){return s.mid===kid&&s.a===1;}).map(function(s){return [tIdx(s.t),pIdx(s.t,s.p)];});
@@ -2261,7 +2261,7 @@ function serializeShortState(){
       }
     }
     for(var i=0;i<KO_SHARE_IDS.length;i++){
-      var id=KO_SHARE_IDS[i],r=ko[id];
+      var id=KO_SHARE_IDS[i],r=getKOResult(id);
       if(!r||!r.w){
         pushShareBits(bits,63,6);pushShareBits(bits,63,6);pushShareBits(bits,31,5);pushShareBits(bits,31,5);
         continue;
@@ -2574,7 +2574,9 @@ function getActualKOMatchResult(id,ht,at){
   return null;
 }
 function getKOResult(id,ht,at){
-  var actual=getActualKOMatchResult(id,ht,at);
+  // Shared links are immutable prediction snapshots. Live results drive the
+  // interactive tournament, but must not rewrite a guest's saved bracket.
+  var actual=isViewMode?null:getActualKOMatchResult(id,ht,at);
   return actual||(ko&&ko[id])||null;
 }
 function getKOResultWinner(id,ht,at){
@@ -5281,7 +5283,7 @@ function delKO(id){
 // A KO entry is "stale" if its stored winner is no longer one of the two
 // teams the bracket currently expects for that slot.
 function pruneStaleKO(){
-  if(!gm||!ko)return;
+  if(isViewMode||!gm||!ko)return;
   // Need standings to resolve R32 source codes (1A, 2B, 3_ABCDF, ...)
   var st,t3,complete=allDone();
   try{st=getSt();t3=getT3(st);if(complete)assignThirds(t3);else t3Assign={};}catch(e){return;}

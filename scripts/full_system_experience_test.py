@@ -398,13 +398,19 @@ def local_preview(host: str, port: int, timeout: float) -> Iterator[str]:
             process.stdout.close()
 
 
+def has_visible_label(values: Any, expected: str) -> bool:
+    if not isinstance(values, list):
+        return False
+    return any(isinstance(value, str) and value.strip().startswith(expected) for value in values)
+
+
 def assert_browser_result(payload: Dict[str, Any]) -> None:
     landing = payload.get("landing")
     if not isinstance(landing, dict):
         fail("browser did not return landing summary")
     tabs = landing.get("tabs")
     modes = landing.get("modes")
-    if not isinstance(tabs, list) or not {"小组赛", "淘汰赛", "数据榜"}.issubset(set(tabs)):
+    if not all(has_visible_label(tabs, label) for label in ("小组赛", "淘汰赛", "数据榜")):
         fail(f"browser tabs are incomplete: {tabs}")
     if not isinstance(modes, list) or not {"标准模式", "娱乐模式", "爆冷模式"}.issubset(set(modes)):
         fail(f"browser play modes are incomplete: {modes}")
@@ -505,9 +511,9 @@ async () => {
       playMode,
       predictionMode,
       groupDone: allDone(),
-      champion: ko.FINAL && ko.FINAL.w ? ko.FINAL.w : "",
-      third: ko["3RD"] && ko["3RD"].w ? ko["3RD"].w : "",
-      koCount: Object.keys(ko).length,
+      champion: getKOResult("FINAL") && getKOResult("FINAL").w ? getKOResult("FINAL").w : "",
+      third: getKOResult("3RD") && getKOResult("3RD").w ? getKOResult("3RD").w : "",
+      koCount: KO_SHARE_IDS.filter((id) => Boolean(getKOResult(id))).length,
       scoreRows: document.querySelectorAll("tbody tr").length,
       shareUrl: getSharePredictionUrl()
     });
@@ -532,9 +538,20 @@ async () => {
                 view.wait_for_function("document.body.classList.contains('view-mode')", timeout=int(args.timeout * 1000))
                 payload["share"] = view.evaluate(
                     """
-() => ({
+() => {
+  const hash = window.location.hash;
+  const decoded = hash.startsWith("#p=") ? shareDecodeJson(hash.slice(3)) : null;
+  return ({
   isViewMode: window.isViewMode === true,
-  champion: window.ko && window.ko.FINAL && window.ko.FINAL.w ? window.ko.FINAL.w : "",
+  champion: getKOResult("FINAL") && getKOResult("FINAL").w ? getKOResult("FINAL").w : "",
+  koKeys: Object.keys(window.ko || {}),
+  finalRaw: window.ko && window.ko.FINAL ? window.ko.FINAL : null,
+  hashPrefix: hash.slice(0, 3),
+  decodedKoKeys: decoded && decoded.k ? Object.keys(decoded.k) : [],
+  decodedFinal: decoded && decoded.k ? decoded.k.FINAL : null,
+  decodedFinalTeams: decoded && decoded.k && decoded.k.FINAL
+    ? [Object.keys(PL)[decoded.k.FINAL[0]], Object.keys(PL)[decoded.k.FINAL[1]]]
+    : [],
   enabledFormControls: Array.from(document.querySelectorAll("input, button, select, textarea"))
     .filter((control) => !control.disabled && control.getAttribute("aria-disabled") !== "true")
     .filter((control) => {
@@ -545,7 +562,7 @@ async () => {
     })
     .length,
   hasViewCopy: document.body.innerText.includes("分享") || document.body.innerText.includes("read-only")
-})
+})}
                     """
                 )
                 assert_browser_result(payload)

@@ -83,6 +83,17 @@ class TestFullSystemExperienceScript(unittest.TestCase):
         self.assertTrue(any(item["primary_surface"] == "codex_skill" for item in matrix.values()))
         self.assertTrue(any(item["primary_surface"] == "hybrid" for item in matrix.values()))
 
+    def test_visible_label_accepts_trailing_icon_text(self):
+        module = load_module()
+        self.assertTrue(module.has_visible_label(["小组赛", "淘汰赛→", "数据榜"], "淘汰赛"))
+        self.assertFalse(module.has_visible_label(["小组赛", "数据榜"], "淘汰赛"))
+
+    def test_browser_counts_effective_knockout_results(self):
+        source = SCRIPT.read_text(encoding="utf-8")
+        self.assertIn('KO_SHARE_IDS.filter((id) => Boolean(getKOResult(id))).length', source)
+        self.assertNotIn('koCount: Object.keys(ko).length', source)
+        self.assertIn('champion: getKOResult("FINAL")', source)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

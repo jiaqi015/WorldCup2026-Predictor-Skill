@@ -1030,7 +1030,10 @@ test("completed knockout results flow from ESPN snapshot into bracket cards and 
   assert.match(html, /function orientKOMatchResult\(rec,ht,at\)/);
   assert.match(html, /function getActualKOMatchResult\(id,ht,at\)/);
   assert.match(html, /function getKOResult\(id,ht,at\)/);
-  assert.match(html, /var actual=getActualKOMatchResult\(id,ht,at\);\n  return actual\|\|\(ko&&ko\[id\]\)\|\|null;/);
+  assert.match(html, /var actual=isViewMode\?null:getActualKOMatchResult\(id,ht,at\);\n  return actual\|\|\(ko&&ko\[id\]\)\|\|null;/);
+  assert.match(html, /for\(var ki=0;ki<KO_SHARE_IDS\.length;ki\+\+\)\{\n      var kid=KO_SHARE_IDS\[ki\],ks=getKOResult\(kid\);/);
+  assert.match(html, /var id=KO_SHARE_IDS\[i\],r=getKOResult\(id\);/);
+  assert.match(html, /function pruneStaleKO\(\)\{\n  if\(isViewMode\|\|!gm\|\|!ko\)return;/);
   assert.match(html, /function getKOResultWinner\(id,ht,at\)/);
   assert.match(html, /function getKOResultLoser\(id,ht,at\)/);
   assert.match(html, /function isKOResultComplete\(id,ht,at\)/);
