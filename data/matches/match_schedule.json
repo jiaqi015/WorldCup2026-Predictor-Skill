@@ -1730,17 +1730,12 @@
       "country": "Mexico",
       "country_cn": "墨西哥"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 175,
-      "spread": null,
-      "overUnder": 1.5,
-      "details": "MEX +135"
-    },
-    "status": "STATUS_FIRST_HALF",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 0,
+    "winner": "墨西哥"
   },
   "760495": {
     "id": "760495",
@@ -1757,17 +1752,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 425,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ENG -350"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 1,
+    "winner": "英格兰"
   },
   "760493": {
     "id": "760493",
@@ -1784,17 +1774,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 230,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "BEL +115"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FINAL_AET",
+    "completed": true,
+    "homeScore": 3,
+    "awayScore": 2,
+    "winner": "比利时"
   },
   "760494": {
     "id": "760494",
@@ -1811,17 +1796,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 400,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "USA -265"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 0,
+    "winner": "美国"
   },
   "760497": {
     "id": "760497",
@@ -1838,17 +1818,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 425,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ESP -300"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 3,
+    "awayScore": 0,
+    "winner": "西班牙"
   },
   "760496": {
     "id": "760496",
@@ -1865,17 +1840,12 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 260,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "POR -125"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 1,
+    "winner": "葡萄牙"
   },
   "760498": {
     "id": "760498",
@@ -1892,17 +1862,12 @@
       "country": "Canada",
       "country_cn": "加拿大"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 230,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "SUI +105"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 0,
+    "winner": "瑞士"
   },
   "760499": {
     "id": "760499",
@@ -1919,17 +1884,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 190,
-      "spread": null,
-      "overUnder": 1.5,
-      "details": "EGY +150"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FINAL_PEN",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 1,
+    "winner": "埃及"
   },
   "760500": {
     "id": "760500",
@@ -1946,17 +1906,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 650,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ARG -575"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FINAL_AET",
+    "completed": true,
+    "homeScore": 3,
+    "awayScore": 2,
+    "winner": "阿根廷"
   },
   "760501": {
     "id": "760501",
@@ -1973,17 +1928,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 310,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "COL -190"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 0,
+    "winner": "哥伦比亚"
   },
   "760502": {
     "id": "760502",
@@ -2000,17 +1950,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 255,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "MAR -120"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 0,
+    "awayScore": 3,
+    "winner": "摩洛哥"
   },
   "760503": {
     "id": "760503",
@@ -2027,17 +1972,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 600,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "FRA -500"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 0,
+    "awayScore": 1,
+    "winner": "法国"
   },
   "760504": {
     "id": "760504",
@@ -2054,25 +1994,20 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 260,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "BRA -110"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 2,
+    "winner": "挪威"
   },
   "760505": {
     "id": "760505",
-    "date": "2026-07-06T00:00Z",
+    "date": "2026-07-06T01:00Z",
     "stage": "L",
     "group": null,
-    "home": "Round of 32 7 Winner",
-    "away": "Round of 32 8 Winner",
+    "home": "墨西哥",
+    "away": "英格兰",
     "venue": {
       "name": "Estadio Banorte",
       "name_cn": "巴诺特体育场",
@@ -2082,16 +2017,19 @@
       "country_cn": "墨西哥"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 3,
+    "winner": "英格兰"
   },
   "760506": {
     "id": "760506",
     "date": "2026-07-06T19:00Z",
     "stage": "L",
     "group": null,
-    "home": "Round of 32 11 Winner",
-    "away": "Round of 32 12 Winner",
+    "home": "葡萄牙",
+    "away": "西班牙",
     "venue": {
       "name": "AT&T Stadium",
       "name_cn": "AT&T体育场",
@@ -2101,16 +2039,19 @@
       "country_cn": "美国"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 0,
+    "awayScore": 1,
+    "winner": "西班牙"
   },
   "760507": {
     "id": "760507",
     "date": "2026-07-07T00:00Z",
     "stage": "L",
     "group": null,
-    "home": "Round of 32 9 Winner",
-    "away": "Round of 32 10 Winner",
+    "home": "美国",
+    "away": "比利时",
     "venue": {
       "name": "Lumen Field",
       "name_cn": "流明球场",
@@ -2120,16 +2061,19 @@
       "country_cn": "美国"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 4,
+    "winner": "比利时"
   },
   "760509": {
     "id": "760509",
     "date": "2026-07-07T16:00Z",
     "stage": "L",
     "group": null,
-    "home": "Round of 32 14 Winner",
-    "away": "Round of 32 16 Winner",
+    "home": "阿根廷",
+    "away": "埃及",
     "venue": {
       "name": "Mercedes-Benz Stadium",
       "name_cn": "梅赛德斯-奔驰体育场",
@@ -2139,16 +2083,19 @@
       "country_cn": "美国"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 3,
+    "awayScore": 2,
+    "winner": "阿根廷"
   },
   "760508": {
     "id": "760508",
     "date": "2026-07-07T20:00Z",
     "stage": "L",
     "group": null,
-    "home": "Round of 32 13 Winner",
-    "away": "Round of 32 15 Winner",
+    "home": "瑞士",
+    "away": "哥伦比亚",
     "venue": {
       "name": "BC Place",
       "name_cn": "卑诗体育馆",
@@ -2158,16 +2105,19 @@
       "country_cn": "加拿大"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "status": "STATUS_FINAL_PEN",
+    "completed": true,
+    "homeScore": 0,
+    "awayScore": 0,
+    "winner": "瑞士"
   },
   "760510": {
     "id": "760510",
     "date": "2026-07-09T20:00Z",
     "stage": "Q",
     "group": null,
-    "home": "Round of 16 1 Winner",
-    "away": "Round of 16 2 Winner",
+    "home": "法国",
+    "away": "摩洛哥",
     "venue": {
       "name": "Gillette Stadium",
       "name_cn": "吉列体育场",
@@ -2177,16 +2127,19 @@
       "country_cn": "美国"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 0,
+    "winner": "法国"
   },
   "760511": {
     "id": "760511",
     "date": "2026-07-10T19:00Z",
     "stage": "Q",
     "group": null,
-    "home": "Round of 16 5 Winner",
-    "away": "Round of 16 6 Winner",
+    "home": "西班牙",
+    "away": "比利时",
     "venue": {
       "name": "SoFi Stadium",
       "name_cn": "SoFi体育场",
@@ -2195,7 +2148,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 290,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ESP -155"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -2204,8 +2165,8 @@
     "date": "2026-07-11T21:00Z",
     "stage": "Q",
     "group": null,
-    "home": "Round of 16 3 Winner",
-    "away": "Round of 16 4 Winner",
+    "home": "挪威",
+    "away": "英格兰",
     "venue": {
       "name": "Hard Rock Stadium",
       "name_cn": "硬石体育场",
@@ -2214,7 +2175,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 270,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ENG -115"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -2223,8 +2192,8 @@
     "date": "2026-07-12T01:00Z",
     "stage": "Q",
     "group": null,
-    "home": "Round of 16 7 Winner",
-    "away": "Round of 16 8 Winner",
+    "home": "阿根廷",
+    "away": "瑞士",
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
       "name_cn": "箭头体育场GEHA球场",
@@ -2233,7 +2202,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 255,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ARG -145"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false
   },
@@ -2242,7 +2219,7 @@
     "date": "2026-07-14T19:00Z",
     "stage": "S",
     "group": null,
-    "home": "Quarterfinal 1 Winner",
+    "home": "法国",
     "away": "Quarterfinal 2 Winner",
     "venue": {
       "name": "AT&T Stadium",
