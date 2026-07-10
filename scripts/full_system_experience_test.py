@@ -439,6 +439,8 @@ def assert_browser_result(payload: Dict[str, Any]) -> None:
             fail(f"browser run leaked ESPN placeholder teams: {run}")
         if run.get("officialPairMismatches"):
             fail(f"browser run attached official results to the wrong teams: {run}")
+        if int(run.get("scoreRows") or 0) <= 0 or run.get("renderError"):
+            fail(f"stats leaderboard failed to render: {run}")
         if not is_valid_share_url(run.get("shareUrl")):
             fail(f"browser run did not create share URL: {run}")
 
@@ -449,6 +451,13 @@ def assert_browser_result(payload: Dict[str, Any]) -> None:
         fail(f"shared page did not restore champion: {share}")
     if int(share.get("enabledFormControls") or 0) != 0:
         fail(f"shared page still has enabled controls: {share}")
+    stats_projection = payload.get("statsProjection")
+    if not isinstance(stats_projection, dict):
+        fail(f"browser did not return tournament stats projection: {stats_projection}")
+    if int(stats_projection.get("actualMatchCount") or 0) != int(stats_projection.get("completedScheduleCount") or 0):
+        fail(f"stats projection omitted or duplicated completed matches: {stats_projection}")
+    if int(stats_projection.get("actualGoalCount") or 0) != int(stats_projection.get("detailGoalCount") or 0):
+        fail(f"stats projection goal events drifted from factual match details: {stats_projection}")
     ok("browser completed mode matrix and read-only share flow")
 
 
@@ -507,6 +516,18 @@ async () => {
     {playModeValue: "chaos", predictionValue: "random"}
   ];
   const modeRuns = [];
+  clearState();
+  applyActualResultsToBlankPredictions();
+  const projectedMatches = collectTournamentStatMatches();
+  const completedSchedule = Object.values(MATCH_SCHEDULE).filter((match) => match.completed);
+  const actualProjectedMatches = projectedMatches.filter((match) => match.source === "actual");
+  const isCountedGoal = (event) => event && (event.type === "goal" || event.type === "penalty_goal") && !event.ownGoal && !event.own_goal;
+  const statsProjection = {
+    actualMatchCount: actualProjectedMatches.length,
+    completedScheduleCount: completedSchedule.length,
+    actualGoalCount: actualProjectedMatches.reduce((sum, match) => sum + (match.events || []).filter(isCountedGoal).length, 0),
+    detailGoalCount: completedSchedule.reduce((sum, match) => sum + (((MATCH_DETAILS[match.id] || {}).events || []).filter((event) => event.type === "goal" && !event.own_goal).length), 0)
+  };
   for (const combo of combos) {
     clearState();
     setPlayMode(combo.playModeValue);
@@ -545,12 +566,14 @@ async () => {
       englishPlaceholderCards: knockoutCards.filter((card) => /Round of|Winner|Loser/.test(card.text)).map((card) => card.slot),
       officialPairMismatches,
       scoreRows: document.querySelectorAll("tbody tr").length,
+      renderError: document.body.innerText.includes("错误:"),
       shareUrl: getSharePredictionUrl()
     });
     await sleep(0);
   }
   return {
     landing,
+    statsProjection,
     modeRuns,
     finalShareUrl: modeRuns[modeRuns.length - 1].shareUrl
   };

@@ -112,7 +112,7 @@ test("simulation stores event-aware goal logs and knockout decisions", () => {
   assert.match(html, /event\.type==="own_goal"/);
   assert.match(html, /ownGoal:isOwn/);
   assert.match(html, /event\.type==="penalty_goal"/);
-  assert.match(html, /if\(s\.ownGoal\)continue/);
+  assert.match(html, /event\.ownGoal\|\|event\.own_goal/);
   assert.match(html, /function pushAutoGoalFromEvent\(target,event,scoringTeam,opponentTeam,mid\)\{/);
   assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)return/);
   assert.match(html, /if\(!isTimelineScoringEvent\(event\)\)continue/);
@@ -224,7 +224,7 @@ test("stats and share poster expose tournament awards derived from match events"
   assert.match(html, /function collectAwardMatches\(\)/);
   assert.match(html, /function computeTournamentAwards\(\)/);
   assert.match(html, /PredictionEngine\.deriveTournamentAwards/);
-  assert.match(html, /function renderAwardsPanel\(awards\)/);
+  assert.match(html, /function renderAwardsPanel\(awards,matches\)/);
   assert.match(html, /awardPanelTitle:"奖项"/);
   assert.doesNotMatch(html, /awardPanelTitle:"模拟奖项"/);
   assert.match(html, /awardGoldenBoot:"金靴"/);
@@ -1201,10 +1201,17 @@ test("stats tab has a distinct selected state and normalized photo priming", () 
 });
 
 test("stats leaderboard includes actual scorers and assists exactly once", () => {
-  assert.match(html, /function addActual\(events\)/);
-  assert.match(html, /actualEventPlayerName\(e,"scorer"\)/);
-  assert.match(html, /actualEventPlayerName\(e,"assist"\)/);
-  assert.match(html, /match\.predictionSource==="actual"&&match\.actualEvents&&match\.actualEvents\.length/);
+  assert.match(html, /function collectTournamentStatMatches\(\)/);
+  assert.match(html, /matches=collectTournamentStatMatches\(\)/);
+  assert.match(html, /return collectTournamentStatMatches\(\);/);
+  assert.match(html, /function addProjectedEvents\(match\)/);
+  assert.match(html, /function projectedEventTeam\(match,value,fallbackSide\)/);
+  assert.match(html, /function projectedAssistName\(assist\)/);
+  assert.match(html, /statsSourceNote:"已赛 \{actual\} 场使用真实数据 · 未赛 \{simulated\} 场使用你的模拟"/);
+  assert.match(html, /renderAwardsPanel\(PredictionEngine\.deriveTournamentAwards\(\{matches:matches\}\),matches\)/);
+  assert.match(html, /type!=="goal"&&type!=="penalty_goal"/);
+  assert.match(html, /event\.ownGoal\|\|event\.own_goal/);
+  assert.doesNotMatch(html, /\}\}add\(slog\);/);
 });
 
 test("player display names normalize factual and stored source names in Chinese UI", () => {
