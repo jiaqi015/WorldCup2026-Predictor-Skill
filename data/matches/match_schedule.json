@@ -2173,17 +2173,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 295,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ESP -160"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false,
+    "odds": null,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 2,
+    "awayScore": 1,
+    "winner": "西班牙",
     "bracketSlot": "Q2"
   },
   "760512": {
@@ -2201,17 +2196,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 270,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ENG -115"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false,
+    "odds": null,
+    "status": "STATUS_FINAL_AET",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 2,
+    "winner": "英格兰",
     "bracketSlot": "Q3"
   },
   "760513": {
@@ -2229,17 +2219,12 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": {
-      "provider": "DraftKings",
-      "homeML": null,
-      "awayML": null,
-      "drawML": 255,
-      "spread": null,
-      "overUnder": 2.5,
-      "details": "ARG -145"
-    },
-    "status": "STATUS_SCHEDULED",
-    "completed": false,
+    "odds": null,
+    "status": "STATUS_FINAL_AET",
+    "completed": true,
+    "homeScore": 3,
+    "awayScore": 1,
+    "winner": "阿根廷",
     "bracketSlot": "Q4"
   },
   "760514": {
@@ -2248,7 +2233,7 @@
     "stage": "S",
     "group": null,
     "home": "法国",
-    "away": "Quarterfinal 2 Winner",
+    "away": "西班牙",
     "venue": {
       "name": "AT&T Stadium",
       "name_cn": "AT&T体育场",
@@ -2258,8 +2243,11 @@
       "country_cn": "美国"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 0,
+    "awayScore": 2,
+    "winner": "西班牙",
     "bracketSlot": "S1"
   },
   "760515": {
@@ -2267,8 +2255,8 @@
     "date": "2026-07-15T19:00Z",
     "stage": "S",
     "group": null,
-    "home": "Quarterfinal 3 Winner",
-    "away": "Quarterfinal 4 Winner",
+    "home": "英格兰",
+    "away": "阿根廷",
     "venue": {
       "name": "Mercedes-Benz Stadium",
       "name_cn": "梅赛德斯-奔驰体育场",
@@ -2278,8 +2266,11 @@
       "country_cn": "美国"
     },
     "odds": null,
-    "status": "STATUS_SCHEDULED",
-    "completed": false,
+    "status": "STATUS_FULL_TIME",
+    "completed": true,
+    "homeScore": 1,
+    "awayScore": 2,
+    "winner": "阿根廷",
     "bracketSlot": "S2"
   },
   "760516": {
@@ -2287,8 +2278,8 @@
     "date": "2026-07-18T21:00Z",
     "stage": "3RD",
     "group": null,
-    "home": "Semifinal 1 Loser",
-    "away": "Semifinal 2 Loser",
+    "home": "法国",
+    "away": "英格兰",
     "venue": {
       "name": "Hard Rock Stadium",
       "name_cn": "硬石体育场",
@@ -2297,7 +2288,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 285,
+      "spread": null,
+      "overUnder": 3.5,
+      "details": "FRA -110"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false,
     "bracketSlot": "3RD"
@@ -2307,8 +2306,8 @@
     "date": "2026-07-19T19:00Z",
     "stage": "FINAL",
     "group": null,
-    "home": "Semifinal 1 Winner",
-    "away": "Semifinal 2 Winner",
+    "home": "西班牙",
+    "away": "阿根廷",
     "venue": {
       "name": "MetLife Stadium",
       "name_cn": "大都会人寿体育场",
@@ -2317,7 +2316,15 @@
       "country": "USA",
       "country_cn": "美国"
     },
-    "odds": null,
+    "odds": {
+      "provider": "DraftKings",
+      "homeML": null,
+      "awayML": null,
+      "drawML": 195,
+      "spread": null,
+      "overUnder": 2.5,
+      "details": "ESP +130"
+    },
     "status": "STATUS_SCHEDULED",
     "completed": false,
     "bracketSlot": "FINAL"

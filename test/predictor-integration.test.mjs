@@ -167,6 +167,7 @@ test("simulated group and knockout matches open a unified timeline detail modal"
   assert.match(html, /detailOfficialPending:"官方比赛尚未开赛；赛后将自动同步比分与比赛事件。"/);
   assert.match(html, /detailOfficialLive:"比赛正在进行；比分与比赛事件将持续同步。"/);
   assert.match(html, /function renderMatchDetailModal\(model\)/);
+  assert.match(html, /function openGroupMatchDetail\(gk,mi\)/);
   assert.match(html, /class="match-detail-close" onclick="cM\(\)" aria-label="'\+T\("btnCloseModal"\)\+'"/);
   assert.match(html, /class="modal match-detail-modal"/);
   assert.match(html, /class="match-detail-shell"/);
@@ -194,6 +195,19 @@ test("simulated group and knockout matches open a unified timeline detail modal"
   assert.match(html, /detailPenalty:"点球"/);
   assert.match(html, /detailExtraTime:"加时"/);
   assert.match(html, /detailShootout:"点球大战"/);
+});
+
+test("motion uses shared spring tokens and one race-safe modal lifecycle", () => {
+  assert.match(html, /--spring:cubic-bezier\(0\.2, 0\.8, 0\.2, 1\)/);
+  assert.match(html, /--spring-duration:0\.35s/);
+  assert.equal((html.match(/@media \(prefers-reduced-motion:reduce\)/g) || []).length, 1);
+  assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\*,\*::before,\*::after\{animation:none!important;transition-duration:0\.01ms!important;scroll-behavior:auto!important\}\}/);
+  assert.match(html, /var modalCloseTimer=null/);
+  assert.match(html, /function showModal\(html\)/);
+  assert.match(html, /if\(modalCloseTimer\)\{clearTimeout\(modalCloseTimer\);modalCloseTimer=null;\}/);
+  assert.match(html, /if\(root\.contains\(bg\)\)root\.innerHTML=""/);
+  assert.doesNotMatch(html, /\}\(gk,mi\)\{/);
+  assert.doesNotMatch(html, /mr\.innerHTML='<div class="modal-bg"/);
 });
 
 test("match detail timelines render non-scoring events from the unified event stream", () => {
@@ -730,7 +744,7 @@ test("share actions guide clicks and keep long copy text readable", () => {
   assert.match(html, /\.share-cta\{[^}]*color:var\(--ink-dark\)/);
   assert.match(html, /\.share-cta\{[^}]*white-space:normal/);
   assert.doesNotMatch(html, /@keyframes shareCtaPulse\{[^}]*transform:/);
-  assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.share-cta\{animation:none\}\}/);
+  assert.match(html, /@media \(prefers-reduced-motion:reduce\)/);
   assert.match(html, /body\.dark \.share-cta/);
   assert.match(html, /\.global-sharebar button\{[^}]*display:inline-flex/);
   assert.match(html, /\.share-cta\.dim\{[^}]*animation:none/);
@@ -770,7 +784,7 @@ test("share poster modal uses a designed landscape preview and side actions", ()
 
 test("knockout tab gently guides users after group stage completion", () => {
   assert.match(html, /\.tabs button\.tab-guide\{[^}]*animation:tabGuidePulse/);
-  assert.match(html, /@media \(prefers-reduced-motion:reduce\)\{\.tabs button\.tab-guide,\.tabs button\.tab-guide svg\{animation:none\}\}/);
+  assert.match(html, /@media \(prefers-reduced-motion:reduce\)/);
   assert.match(html, /var groupDone=allDone\(\),knockoutDone=isKnockoutComplete\(\)/);
   assert.match(html, /var guideKO=tab==="groups"&&groupDone&&!knockoutDone/);
   assert.match(html, /ts\[i\]==="knockout"&&guideKO\?" tab-guide":""/);
